@@ -1,3 +1,2 @@
-res://assets/shader/stars.gdshader
 res://game/main.tscn
-res://game/main.gd
+res://assets/shader/stars.gdshader

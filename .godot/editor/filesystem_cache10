@@ -1,9 +1,9 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1773522315
+::res://::1773522624
 core_data_loader.gd::GDScript::366834942328670565::1773260491::0::1::::CoreDataLoader<>RefCounted<><>0<>0<><>::
 icon.svg::CompressedTexture2D::4477256308345710895::1772643303::1772643308::1::::<><><>0<>0<>ce7fba60b54ef7439fc8634df95747cf<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://assets/::1773182720
-::res://assets/db_pictures/::1773522315
+::res://assets/db_pictures/::1773522316
 test_pic.jpg::CompressedTexture2D::2799781517425112276::1773182727::1773522316::1::::<><><>0<>0<>912bb986bc971a02a87c567063362160<>res://.godot/imported/test_pic.jpg-2bc12734dc56e6249c28c6e419331d4f.ctex::
 ::res://assets/fonts/::1773100506
 VictorMono-Bold.ttf::FontFile::2969580939823140270::1773100506::1773100506::1::::<><><>0<>0<>fec120c746cc4191e342b2218946a731<>res://.godot/imported/VictorMono-Bold.ttf-558b98a4d8e019928c6227a7579f8d9f.fontdata::
@@ -18,8 +18,8 @@ Moon_256.png::CompressedTexture2D::8006342539960474215::1773084395::1773084456::
 Planet_256.png::CompressedTexture2D::4217473920616160573::1773084371::1773084456::1::::<><><>0<>0<>efedb38edbec38360b37927be513e434<>res://.godot/imported/Planet_256.png-d06d701157c0e1aad314c474a3ff1843.ctex::
 Struct_256.png::CompressedTexture2D::9101190549298005419::1773084411::1773084456::1::::<><><>0<>0<>37e2b81525c6ee3bc628f6bfb2c2a414<>res://.godot/imported/Struct_256.png-e43f40634e9d78435c4cbff7832a194d.ctex::
 Sun_256.png::CompressedTexture2D::9147222362741940440::1773084258::1773084456::1::::<><><>0<>0<>dd8114611f2d142fe5045bbbf4e904cb<>res://.godot/imported/Sun_256.png-35810f3465e2daaf24319235d8099d9e.ctex::
-::res://assets/shader/::1773522291
-stars.gdshader::Shader::3569896617619953775::1773426347::0::1::::<><><>0<>0<><>::
+::res://assets/shader/::1773522335
+stars.gdshader::Shader::3569896617619953775::1773522335::0::1::::<><><>0<>0<><>::
 ::res://assets/sounds/::1773522299
 ::res://core/::1773426140
 autoload_sim_clock.gd::GDScript::2598679574096434057::1773426136::0::1::::SimulationClock<>Node<><>0<>0<><>::
@@ -37,8 +37,8 @@ solar_system_sim_data.json::JSON::-1::1773520921::0::1::::<><><>0<>0<><>::
 ::res://docs/::1773522163
 ARCHITECTURE.md::TextFile::-1::1773522072::0::1::::<><><>0<>0<><>::
 SPEC_solar_system_sim_data.md::TextFile::-1::1773521606::0::1::::<><><>0<>0<><>::
-::res://game/::1773444194
-main.gd::GDScript::8449215349857726556::1773257949::0::1::::<>Node<><>0<>0<><>::
-main.tscn::PackedScene::3422817489261810544::1773434878::0::1::::<><><>0<>0<><>::uid://dsm4lv1mqbyoy::::res://game/main.gd<>uid://cdhs1wv2xejns::::res://assets/shader/monitor.gdshader<>uid://csfh2gapnrkbc::::res://game/map/nav_map.gd<>uid://bq4jw8ewaljul::::res://assets/shader/stars.gdshader
+::res://game/::1773522375
+main.gd::GDScript::8449215349857726556::1773522417::0::1::::<>Node<><>0<>0<><>::
+main.tscn::PackedScene::3422817489261810544::1773522375::0::1::::<><><>0<>0<><>::uid://dsm4lv1mqbyoy::::res://game/main.gd<>uid://bq4jw8ewaljul::::res://assets/shader/stars.gdshader
 ::res://game/map/::1773522254
 ::res://ui/::1773443557
