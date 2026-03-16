@@ -7,7 +7,6 @@
 # factor. This way the user can directly controll the simulation speed.
 # The clock runs inside Godots _physics_process, to keep tick intervals at a fixed, rather than a fps dependent rate.
 
-# TODO Implent time offset to given date. This may be used to calculate different starting dates for the simulation.
 
 class_name SimulationClock
 extends Node
@@ -49,9 +48,9 @@ const DAYS_PER_MONTH:  int = 30
 # Central time for simulation in solar standard time sst
 var _sst_s: float = 0.0
 # Factor by which advancing time is scaled in physics_process
-var _time_scale = 1.0
+var _time_scale = 86400.0
 # State variable for clock status
-var _running: bool = false
+var _running: bool = true
 
 # ----------------------------------------------------------------------------------------------------------------------
 # Initialization

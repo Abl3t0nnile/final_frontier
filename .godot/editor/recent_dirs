@@ -1,10 +1,4 @@
-res://assets/fonts/
-res://ui/themes/
-res://assets/shader/
-res://ui/styling/debug_menu/
-res://ui/modules/map_control/
-res://ui/modules/clock_control/
-res://core/sim/
-res://data/
 res://game/map/
-res://game/cam/
+res://assets/fonts/
+res://assets/shader/
+res://data/

@@ -1,2 +1,13 @@
 res://game/main.tscn
 res://assets/shader/stars.gdshader
+res://game/map/nav_map/nav_map.gd
+res://game/map/body_marker/body_marker.gd
+res://game/map/nav_map/NavMap.tscn
+res://game/ui/sim_clock_control/SimClockControl.tscn
+res://game/map/base_map.gd
+res://game/map/nav_map/body_info_panel/BodyInfoPanel.tscn
+res://game/map/orbits/orbit_renderer.gd
+res://core/autoload_sim_clock.gd
+res://game/map/body_marker/BodyMarker.tscn
+res://game/ui/body_info_panel/BodyInfoPanel.tscn
+res://game/ui/body_info_panel/body_info_panel.gd

@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://dnj0f1y1r0q3u"]
+
+[ext_resource type="Script" uid="uid://r7yh4m6r1kse" path="res://game/ui/body_info_panel/body_info_panel.gd" id="1_bipanel"]
+[ext_resource type="Texture2D" uid="uid://bf5h80m0k44jg" path="res://assets/db_pictures/test_pic.jpg" id="2_f52f5"]
+
+[node name="BodyInfoPanel" type="PanelContainer" unique_id=301010101]
+custom_minimum_size = Vector2(280, 0)
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 0.9
+size_flags_horizontal = 0
+script = ExtResource("1_bipanel")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=301010120]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer" unique_id=301010102]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer" unique_id=301010103]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="LabelName" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=301010104]
+layout_mode = 2
+text = "Terra"
+
+[node name="LabelType" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=301010105]
+layout_mode = 2
+text = "—"
+
+[node name="HSep0" type="HSeparator" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=301010121]
+layout_mode = 2
+
+[node name="BtnSectionInfo" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=301010122]
+layout_mode = 2
+text = "▼ Info"
+flat = true
+alignment = 0
+
+[node name="SectionInfo" type="VBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=301010123]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="BodyImage" type="TextureRect" parent="ScrollContainer/MarginContainer/VBoxContainer/SectionInfo" unique_id=301010124]
+custom_minimum_size = Vector2(256, 128)
+layout_mode = 2
+texture = ExtResource("2_f52f5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LabelFlavor" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/SectionInfo" unique_id=301010125]
+layout_mode = 2
+text = "Kein Beschreibungstext vorhanden."
+autowrap_mode = 3
+
+[node name="HSep1" type="HSeparator" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=301010126]
+layout_mode = 2
+
+[node name="BtnSectionPhysics" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=301010127]
+layout_mode = 2
+text = "▼ Physik"
+flat = true
+alignment = 0
+
+[node name="SectionPhysics" type="VBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=301010128]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="LabelRadius" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/SectionPhysics" unique_id=301010108]
+layout_mode = 2
+text = "Radius:    — km"
+
+[node name="LabelMass" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/SectionPhysics" unique_id=301010129]
+layout_mode = 2
+text = "Masse:     — kg"
+
+[node name="LabelDensity" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/SectionPhysics" unique_id=301010130]
+layout_mode = 2
+text = "Dichte:    — g/cm³"
+
+[node name="LabelMu" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/SectionPhysics" unique_id=301010109]
+layout_mode = 2
+text = "μ:         — km³/s²"
+
+[node name="HSep2" type="HSeparator" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=301010131]
+layout_mode = 2
+
+[node name="BtnSectionOrbit" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=301010132]
+layout_mode = 2
+text = "▼ Orbit"
+flat = true
+alignment = 0
+
+[node name="SectionOrbit" type="VBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=301010133]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="LabelParent" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/SectionOrbit" unique_id=301010112]
+layout_mode = 2
+text = "Elternkörper: —"
+
+[node name="LabelOrbitDetails" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/SectionOrbit" unique_id=301010113]
+layout_mode = 2
+text = "—"
+autowrap_mode = 3
+
+[node name="HSep3" type="HSeparator" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=301010134]
+layout_mode = 2
+
+[node name="BtnSectionChildren" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=301010135]
+layout_mode = 2
+text = "▼ Satelites"
+flat = true
+alignment = 0
+
+[node name="SectionChildren" type="VBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=301010136]
+layout_mode = 2
+theme_override_constants/separation = 4

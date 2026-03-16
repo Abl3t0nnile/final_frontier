@@ -1699,21 +1699,21 @@
       "type": "struct",
       "subtype": "relay",
       "parent_id": "mercury",
-      "radius_km": 2.0,
+      "radius_km": 0.0,
       "mu_km3_s2": 0.0,
       "map_icon": "station",
       "color_rgba": [
-        0.72,
-        0.8,
+        0.6,
+        0.85,
         0.95,
         1.0
       ],
       "motion": {
         "model": "circular",
         "params": {
-          "orbital_radius_km": 3200.0,
-          "phase_rad": 0.15,
-          "period_s": 11200.0,
+          "orbital_radius_km": 4200.0,
+          "phase_rad": 0.3,
+          "period_s": 11522.0,
           "clockwise": false
         }
       },
@@ -1722,10 +1722,43 @@
         "mercurian_system",
         "minor_body"
       ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 24000000000.0
-      }
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "mercury_dawn_station",
+      "name": "Mercury Dawn Station",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "mercury",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 5800.0,
+          "phase_rad": 2.9,
+          "period_s": 18698.1,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "mercurian_system",
+        "minor_body",
+        "landmark"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
     },
     {
       "id": "venus_high_anchor",
@@ -1733,21 +1766,55 @@
       "type": "struct",
       "subtype": "station",
       "parent_id": "venus",
-      "radius_km": 4.5,
+      "radius_km": 0.0,
       "mu_km3_s2": 0.0,
       "map_icon": "station",
       "color_rgba": [
-        0.95,
-        0.82,
         0.6,
+        0.85,
+        0.95,
         1.0
       ],
       "motion": {
         "model": "circular",
         "params": {
-          "orbital_radius_km": 9000.0,
-          "phase_rad": 1.4,
-          "period_s": 18800.0,
+          "orbital_radius_km": 12000.0,
+          "phase_rad": 1.5,
+          "period_s": 14491.2,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "venusian_system",
+        "minor_body",
+        "landmark"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "venus_sulfur_yard",
+      "name": "Venus Sulfur Yard",
+      "type": "struct",
+      "subtype": "shipyard",
+      "parent_id": "venus",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 15000.0,
+          "phase_rad": 4.2,
+          "period_s": 20252.1,
           "clockwise": false
         }
       },
@@ -1756,66 +1823,64 @@
         "venusian_system",
         "minor_body"
       ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 82000000000.0
-      }
+      "gameplay_tags": [
+        "nav_network"
+      ]
     },
     {
-      "id": "earth_leo_shipyard",
+      "id": "venus_cloud_relay",
+      "name": "Venus Cloud Relay",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "venus",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 8500.0,
+          "phase_rad": 0.7,
+          "period_s": 8639.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "venusian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "terra_leo_shipyard",
       "name": "Earth LEO Shipyard",
       "type": "struct",
       "subtype": "shipyard",
       "parent_id": "terra",
-      "radius_km": 6.0,
+      "radius_km": 0.0,
       "mu_km3_s2": 0.0,
       "map_icon": "station",
       "color_rgba": [
-        0.65,
-        0.88,
-        1.0,
-        1.0
-      ],
-      "motion": {
-        "model": "circular",
-        "params": {
-          "orbital_radius_km": 6878.0,
-          "phase_rad": 2.1,
-          "period_s": 5670.0,
-          "clockwise": false
-        }
-      },
-      "map_tags": [
-        "inner_system",
-        "terran_system",
-        "minor_body"
-      ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 160000000000.0
-      }
-    },
-    {
-      "id": "earth_l1_transfer_node",
-      "name": "Earth L1 Transfer Node",
-      "type": "struct",
-      "subtype": "navigation_point",
-      "parent_id": "terra",
-      "radius_km": 1.0,
-      "mu_km3_s2": 0.0,
-      "map_icon": "object",
-      "color_rgba": [
-        0.9,
+        0.6,
+        0.85,
         0.95,
-        1.0,
         1.0
       ],
       "motion": {
         "model": "circular",
         "params": {
-          "orbital_radius_km": 326000.0,
-          "phase_rad": 0.6,
-          "period_s": 2360591.0,
+          "orbital_radius_km": 6778.0,
+          "phase_rad": 0.0,
+          "period_s": 5553.5,
           "clockwise": false
         }
       },
@@ -1824,32 +1889,164 @@
         "terran_system",
         "minor_body"
       ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 800000000.0
-      }
+      "gameplay_tags": [
+        "nav_network"
+      ]
     },
     {
-      "id": "moon_far_side_outpost",
+      "id": "terra_geo_hub",
+      "name": "Earth GEO Hub",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "terra",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 42164.0,
+          "phase_rad": 1.2,
+          "period_s": 86163.6,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "terran_system",
+        "minor_body",
+        "landmark"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "terra_halo_relay",
+      "name": "Earth Halo Relay",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "terra",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 100000.0,
+          "phase_rad": 3.7,
+          "period_s": 314710.3,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "terran_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "terra_highguard_station",
+      "name": "Highguard Station",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "terra",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 250000.0,
+          "phase_rad": 5.4,
+          "period_s": 1244001.8,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "terran_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "terra_cislunar_yard",
+      "name": "Cislunar Assembly Yard",
+      "type": "struct",
+      "subtype": "shipyard",
+      "parent_id": "terra",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 320000.0,
+          "phase_rad": 0.8,
+          "period_s": 1801507.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "terran_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "moon_farside_outpost",
       "name": "Moon Far Side Outpost",
       "type": "struct",
       "subtype": "outpost",
       "parent_id": "moon",
-      "radius_km": 1.8,
+      "radius_km": 0.0,
       "mu_km3_s2": 0.0,
       "map_icon": "station",
       "color_rgba": [
-        0.8,
-        0.8,
-        0.82,
+        0.6,
+        0.85,
+        0.95,
         1.0
       ],
       "motion": {
         "model": "circular",
         "params": {
-          "orbital_radius_km": 1847.0,
-          "phase_rad": 3.1,
-          "period_s": 9800.0,
+          "orbital_radius_km": 2500.0,
+          "phase_rad": 3.14,
+          "period_s": 11216.8,
           "clockwise": false
         }
       },
@@ -1858,10 +2055,75 @@
         "terran_system",
         "minor_body"
       ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 19000000000.0
-      }
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "moon_orbit_station",
+      "name": "Selene Orbital",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "moon",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 3800.0,
+          "phase_rad": 1.0,
+          "period_s": 21020.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "terran_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "moon_tycho_relay",
+      "name": "Tycho Relay",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "moon",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 2200.0,
+          "phase_rad": 5.5,
+          "period_s": 9259.6,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "terran_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
     },
     {
       "id": "mars_low_orbit_station",
@@ -1869,55 +2131,55 @@
       "type": "struct",
       "subtype": "station",
       "parent_id": "mars",
-      "radius_km": 5.0,
+      "radius_km": 0.0,
       "mu_km3_s2": 0.0,
       "map_icon": "station",
       "color_rgba": [
-        0.92,
-        0.58,
-        0.42,
-        1.0
-      ],
-      "motion": {
-        "model": "circular",
-        "params": {
-          "orbital_radius_km": 3890.0,
-          "phase_rad": 1.05,
-          "period_s": 7200.0,
-          "clockwise": false
-        }
-      },
-      "map_tags": [
-        "inner_system",
-        "martian_system",
-        "minor_body"
-      ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 95000000000.0
-      }
-    },
-    {
-      "id": "phobos_ring_node",
-      "name": "Phobos Ring Node",
-      "type": "struct",
-      "subtype": "navigation_point",
-      "parent_id": "mars",
-      "radius_km": 0.8,
-      "mu_km3_s2": 0.0,
-      "map_icon": "object",
-      "color_rgba": [
-        0.88,
-        0.9,
+        0.6,
+        0.85,
         0.95,
         1.0
       ],
       "motion": {
         "model": "circular",
         "params": {
-          "orbital_radius_km": 12000.0,
-          "phase_rad": 4.2,
-          "period_s": 36000.0,
+          "orbital_radius_km": 4200.0,
+          "phase_rad": 2.0,
+          "period_s": 8264.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "martian_system",
+        "minor_body",
+        "landmark"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "mars_areo_yard",
+      "name": "Areo Shipyard",
+      "type": "struct",
+      "subtype": "shipyard",
+      "parent_id": "mars",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 6500.0,
+          "phase_rad": 4.5,
+          "period_s": 15910.5,
           "clockwise": false
         }
       },
@@ -1926,10 +2188,75 @@
         "martian_system",
         "minor_body"
       ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 650000000.0
-      }
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "deimos_ring_station",
+      "name": "Deimos Ring Station",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "mars",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 24000.0,
+          "phase_rad": 0.6,
+          "period_s": 112883.6,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "martian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "mars_polar_relay",
+      "name": "Mars Polar Relay",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "mars",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 3800.0,
+          "phase_rad": 5.8,
+          "period_s": 7112.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "martian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
     },
     {
       "id": "ceres_freeport",
@@ -1937,33 +2264,33 @@
       "type": "struct",
       "subtype": "station",
       "parent_id": "ceres",
-      "radius_km": 4.0,
+      "radius_km": 0.0,
       "mu_km3_s2": 0.0,
       "map_icon": "station",
       "color_rgba": [
-        0.78,
-        0.78,
-        0.82,
+        0.6,
+        0.85,
+        0.95,
         1.0
       ],
       "motion": {
         "model": "circular",
         "params": {
-          "orbital_radius_km": 900.0,
-          "phase_rad": 0.95,
-          "period_s": 21600.0,
+          "orbital_radius_km": 800.0,
+          "phase_rad": 0.5,
+          "period_s": 17964.9,
           "clockwise": false
         }
       },
       "map_tags": [
         "inner_system",
         "asteroid_belt",
-        "minor_body"
+        "minor_body",
+        "landmark"
       ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 78000000000.0
-      }
+      "gameplay_tags": [
+        "nav_network"
+      ]
     },
     {
       "id": "ceres_mass_driver_yard",
@@ -1971,21 +2298,21 @@
       "type": "struct",
       "subtype": "shipyard",
       "parent_id": "ceres",
-      "radius_km": 3.2,
+      "radius_km": 0.0,
       "mu_km3_s2": 0.0,
       "map_icon": "station",
       "color_rgba": [
-        0.72,
-        0.76,
-        0.82,
+        0.6,
+        0.85,
+        0.95,
         1.0
       ],
       "motion": {
         "model": "circular",
         "params": {
-          "orbital_radius_km": 1100.0,
-          "phase_rad": 2.5,
-          "period_s": 28800.0,
+          "orbital_radius_km": 1200.0,
+          "phase_rad": 3.1,
+          "period_s": 33003.5,
           "clockwise": false
         }
       },
@@ -1994,44 +2321,141 @@
         "asteroid_belt",
         "minor_body"
       ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 54000000000.0
-      }
+      "gameplay_tags": [
+        "nav_network"
+      ]
     },
     {
-      "id": "jupiter_inner_relay",
-      "name": "Jupiter Inner Relay",
+      "id": "ceres_highport",
+      "name": "Ceres Highport",
       "type": "struct",
-      "subtype": "relay",
-      "parent_id": "jupiter",
-      "radius_km": 2.5,
+      "subtype": "station",
+      "parent_id": "ceres",
+      "radius_km": 0.0,
       "mu_km3_s2": 0.0,
       "map_icon": "station",
       "color_rgba": [
-        0.86,
-        0.74,
-        0.62,
+        0.6,
+        0.85,
+        0.95,
         1.0
       ],
       "motion": {
         "model": "circular",
         "params": {
-          "orbital_radius_km": 150000.0,
-          "phase_rad": 5.4,
-          "period_s": 42000.0,
+          "orbital_radius_km": 1800.0,
+          "phase_rad": 5.0,
+          "period_s": 60631.4,
           "clockwise": false
         }
       },
       "map_tags": [
-        "outer_system",
-        "jovian_system",
+        "inner_system",
+        "asteroid_belt",
         "minor_body"
       ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 29000000000.0
-      }
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "ceres_dawn_relay",
+      "name": "Ceres Dawn Relay",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "ceres",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 600.0,
+          "phase_rad": 1.8,
+          "period_s": 11668.5,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "ceres_ore_processing",
+      "name": "Ceres Ore Processing Hub",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "ceres",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 950.0,
+          "phase_rad": 4.3,
+          "period_s": 23247.4,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "ceres_transit_dock",
+      "name": "Ceres Transit Dock",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "ceres",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 2500.0,
+          "phase_rad": 2.2,
+          "period_s": 99242.7,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
     },
     {
       "id": "europa_gate_station",
@@ -2039,33 +2463,33 @@
       "type": "struct",
       "subtype": "station",
       "parent_id": "europa",
-      "radius_km": 4.8,
+      "radius_km": 0.0,
       "mu_km3_s2": 0.0,
       "map_icon": "station",
       "color_rgba": [
-        0.82,
-        0.88,
-        0.92,
+        0.6,
+        0.85,
+        0.95,
         1.0
       ],
       "motion": {
         "model": "circular",
         "params": {
           "orbital_radius_km": 2200.0,
-          "phase_rad": 1.7,
-          "period_s": 13200.0,
+          "phase_rad": 0.4,
+          "period_s": 11456.6,
           "clockwise": false
         }
       },
       "map_tags": [
         "outer_system",
         "jovian_system",
-        "minor_body"
+        "minor_body",
+        "landmark"
       ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 88000000000.0
-      }
+      "gameplay_tags": [
+        "nav_network"
+      ]
     },
     {
       "id": "ganymede_high_yard",
@@ -2073,21 +2497,21 @@
       "type": "struct",
       "subtype": "shipyard",
       "parent_id": "ganymede",
-      "radius_km": 5.5,
+      "radius_km": 0.0,
       "mu_km3_s2": 0.0,
       "map_icon": "station",
       "color_rgba": [
-        0.74,
-        0.76,
-        0.78,
+        0.6,
+        0.85,
+        0.95,
         1.0
       ],
       "motion": {
         "model": "circular",
         "params": {
           "orbital_radius_km": 3500.0,
-          "phase_rad": 0.4,
-          "period_s": 17000.0,
+          "phase_rad": 2.1,
+          "period_s": 13083.7,
           "clockwise": false
         }
       },
@@ -2096,32 +2520,31 @@
         "jovian_system",
         "minor_body"
       ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 140000000000.0
-      }
+      "gameplay_tags": [
+        "nav_network"
+      ]
     },
     {
-      "id": "callisto_deep_dock",
-      "name": "Callisto Deep Dock",
+      "id": "ganymede_low_relay",
+      "name": "Ganymede Low Relay",
       "type": "struct",
-      "subtype": "outpost",
-      "parent_id": "callisto",
-      "radius_km": 2.8,
+      "subtype": "relay",
+      "parent_id": "ganymede",
+      "radius_km": 0.0,
       "mu_km3_s2": 0.0,
       "map_icon": "station",
       "color_rgba": [
-        0.62,
-        0.64,
-        0.68,
+        0.6,
+        0.85,
+        0.95,
         1.0
       ],
       "motion": {
         "model": "circular",
         "params": {
-          "orbital_radius_km": 3000.0,
-          "phase_rad": 2.8,
-          "period_s": 15400.0,
+          "orbital_radius_km": 2800.0,
+          "phase_rad": 5.0,
+          "period_s": 9362.0,
           "clockwise": false
         }
       },
@@ -2130,10 +2553,175 @@
         "jovian_system",
         "minor_body"
       ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 33000000000.0
-      }
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "callisto_deep_dock",
+      "name": "Callisto Deep Dock",
+      "type": "struct",
+      "subtype": "shipyard",
+      "parent_id": "callisto",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 3200.0,
+          "phase_rad": 1.7,
+          "period_s": 13423.4,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "jovian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "callisto_sentinel",
+      "name": "Callisto Sentinel",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "callisto",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 4000.0,
+          "phase_rad": 4.4,
+          "period_s": 18759.8,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "jovian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "jupiter_inner_relay",
+      "name": "Jupiter Inner Relay",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "jupiter",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 350000.0,
+          "phase_rad": 0.9,
+          "period_s": 115589.1,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "jovian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "jupiter_equatorial_hub",
+      "name": "Jupiter Equatorial Hub",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "jupiter",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 500000.0,
+          "phase_rad": 3.3,
+          "period_s": 197364.8,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "jovian_system",
+        "minor_body",
+        "landmark"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "jupiter_outer_picket",
+      "name": "Jupiter Outer Picket",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "jupiter",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 2500000.0,
+          "phase_rad": 5.7,
+          "period_s": 2206605.3,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "jovian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
     },
     {
       "id": "saturn_ring_hub",
@@ -2141,55 +2729,55 @@
       "type": "struct",
       "subtype": "station",
       "parent_id": "saturn",
-      "radius_km": 5.2,
+      "radius_km": 0.0,
       "mu_km3_s2": 0.0,
       "map_icon": "station",
       "color_rgba": [
-        0.92,
-        0.84,
-        0.68,
+        0.6,
+        0.85,
+        0.95,
         1.0
       ],
       "motion": {
         "model": "circular",
         "params": {
-          "orbital_radius_km": 145000.0,
-          "phase_rad": 1.9,
-          "period_s": 39600.0,
+          "orbital_radius_km": 200000.0,
+          "phase_rad": 1.4,
+          "period_s": 91248.7,
           "clockwise": false
         }
       },
       "map_tags": [
         "outer_system",
         "saturnian_system",
-        "minor_body"
+        "minor_body",
+        "landmark"
       ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 110000000000.0
-      }
+      "gameplay_tags": [
+        "nav_network"
+      ]
     },
     {
       "id": "titan_transfer_node",
       "name": "Titan Transfer Node",
       "type": "struct",
-      "subtype": "navigation_point",
+      "subtype": "station",
       "parent_id": "titan",
-      "radius_km": 0.9,
+      "radius_km": 0.0,
       "mu_km3_s2": 0.0,
-      "map_icon": "object",
+      "map_icon": "station",
       "color_rgba": [
-        0.94,
-        0.9,
-        0.78,
+        0.6,
+        0.85,
+        0.95,
         1.0
       ],
       "motion": {
         "model": "circular",
         "params": {
-          "orbital_radius_km": 3400.0,
-          "phase_rad": 4.8,
-          "period_s": 18500.0,
+          "orbital_radius_km": 12000.0,
+          "phase_rad": 2.8,
+          "period_s": 87168.5,
           "clockwise": false
         }
       },
@@ -2198,10 +2786,1096 @@
         "saturnian_system",
         "minor_body"
       ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 750000000.0
-      }
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "titan_surface_relay",
+      "name": "Titan Surface Relay",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "titan",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 3800.0,
+          "phase_rad": 0.2,
+          "period_s": 15533.3,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "saturnian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "enceladus_research_post",
+      "name": "Enceladus Research Post",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "saturn",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 240000.0,
+          "phase_rad": 4.9,
+          "period_s": 119949.5,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "saturnian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "rhea_anchorage",
+      "name": "Rhea Anchorage",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "saturn",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 530000.0,
+          "phase_rad": 0.1,
+          "period_s": 393636.5,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "saturnian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "titania_waystation",
+      "name": "Titania Waystation",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "titania",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 1500.0,
+          "phase_rad": 1.3,
+          "period_s": 23796.1,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "uranian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "oberon_outpost",
+      "name": "Oberon Outpost",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "oberon",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 1200.0,
+          "phase_rad": 4.0,
+          "period_s": 18418.1,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "uranian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "uranus_polar_relay",
+      "name": "Uranus Polar Relay",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "uranus",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 300000.0,
+          "phase_rad": 2.5,
+          "period_s": 428918.1,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "uranian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "triton_base_camp",
+      "name": "Triton Base Camp",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "triton",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 2000.0,
+          "phase_rad": 0.8,
+          "period_s": 14869.1,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "neptunian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "neptune_deep_relay",
+      "name": "Neptune Deep Relay",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "neptune",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 250000.0,
+          "phase_rad": 3.5,
+          "period_s": 300380.7,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "neptunian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "triton_high_dock",
+      "name": "Triton High Dock",
+      "type": "struct",
+      "subtype": "shipyard",
+      "parent_id": "triton",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 3500.0,
+          "phase_rad": 5.1,
+          "period_s": 34422.5,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "neptunian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "pluto_charon_station",
+      "name": "Pluto-Charon Station",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "pluto",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 25000.0,
+          "phase_rad": 1.1,
+          "period_s": 841890.1,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "kuiper_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "eris_edge_outpost",
+      "name": "Eris Edge Outpost",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "eris",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 5000.0,
+          "phase_rad": 4.6,
+          "period_s": 66736.7,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "kuiper_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "deimos_relay",
+      "name": "Deimos Relay",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "mars",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 23800.0,
+          "phase_rad": 3.2,
+          "period_s": 111475.5,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "martian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_circular_depot_alpha",
+      "name": "Belt Depot Alpha",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 370000000.0,
+          "phase_rad": 1.3,
+          "period_s": 122751451.8,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_circular_depot_beta",
+      "name": "Belt Depot Beta",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 430000000.0,
+          "phase_rad": 4.7,
+          "period_s": 153789517.6,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "venus_low_relay",
+      "name": "Venus Low Relay",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "venus",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 7200.0,
+          "phase_rad": 3.6,
+          "period_s": 6734.9,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "venusian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "terra_meo_station",
+      "name": "Earth MEO Station",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "terra",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 20200.0,
+          "phase_rad": 4.8,
+          "period_s": 28571.8,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "terran_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "ganymede_surface_relay",
+      "name": "Ganymede Surface Relay",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "ganymede",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "circular",
+        "params": {
+          "orbital_radius_km": 2900.0,
+          "phase_rad": 0.6,
+          "period_s": 9868.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "jovian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "mercury_eccentric_relay",
+      "name": "Mercury Eccentric Relay",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "mercury",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 8000.0,
+          "e": 0.25,
+          "arg_pe_rad": 1.4,
+          "mean_anomaly_epoch_rad": 0.8,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "mercurian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "venus_patrol_beacon",
+      "name": "Venus Patrol Beacon",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "venus",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 20000.0,
+          "e": 0.15,
+          "arg_pe_rad": 2.7,
+          "mean_anomaly_epoch_rad": 1.2,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "venusian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "terra_molniya_relay",
+      "name": "Terra Molniya Relay",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "terra",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 26000.0,
+          "e": 0.72,
+          "arg_pe_rad": 4.7,
+          "mean_anomaly_epoch_rad": 0.0,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "terran_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "terra_eccentric_monitor",
+      "name": "Terra Eccentric Monitor",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "terra",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 180000.0,
+          "e": 0.45,
+          "arg_pe_rad": 1.1,
+          "mean_anomaly_epoch_rad": 3.5,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "terran_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "mars_eccentric_outpost",
+      "name": "Mars Eccentric Outpost",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "mars",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 15000.0,
+          "e": 0.35,
+          "arg_pe_rad": 0.5,
+          "mean_anomaly_epoch_rad": 2.0,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "martian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "mars_patrol_arc",
+      "name": "Mars Patrol Arc",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "mars",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 30000.0,
+          "e": 0.28,
+          "arg_pe_rad": 3.8,
+          "mean_anomaly_epoch_rad": 4.5,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "martian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "mars_deimos_sweep",
+      "name": "Deimos Sweep Beacon",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "mars",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 25000.0,
+          "e": 0.18,
+          "arg_pe_rad": 5.5,
+          "mean_anomaly_epoch_rad": 1.0,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "martian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "terra_van_allen_monitor",
+      "name": "Van Allen Monitor",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "terra",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 45000.0,
+          "e": 0.55,
+          "arg_pe_rad": 2.3,
+          "mean_anomaly_epoch_rad": 5.8,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "terran_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "ceres_prospector_route",
+      "name": "Ceres Prospector Route",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "ceres",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 3000.0,
+          "e": 0.3,
+          "arg_pe_rad": 0.8,
+          "mean_anomaly_epoch_rad": 1.5,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_inner_sweep",
+      "name": "Belt Inner Sweep",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 350000000.0,
+          "e": 0.12,
+          "arg_pe_rad": 1.0,
+          "mean_anomaly_epoch_rad": 2.5,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_outer_sweep",
+      "name": "Belt Outer Sweep",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 480000000.0,
+          "e": 0.1,
+          "arg_pe_rad": 3.5,
+          "mean_anomaly_epoch_rad": 0.7,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_prospector_alpha",
+      "name": "Belt Prospector Alpha",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 400000000.0,
+          "e": 0.18,
+          "arg_pe_rad": 5.0,
+          "mean_anomaly_epoch_rad": 4.2,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_eccentric_hub",
+      "name": "Belt Eccentric Hub",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 420000000.0,
+          "e": 0.22,
+          "arg_pe_rad": 2.2,
+          "mean_anomaly_epoch_rad": 3.0,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body",
+        "landmark"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_mining_arc",
+      "name": "Belt Mining Arc",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 380000000.0,
+          "e": 0.15,
+          "arg_pe_rad": 4.4,
+          "mean_anomaly_epoch_rad": 5.5,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_patrol_route",
+      "name": "Belt Patrol Route",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 440000000.0,
+          "e": 0.2,
+          "arg_pe_rad": 0.3,
+          "mean_anomaly_epoch_rad": 1.8,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
     },
     {
       "id": "himalia_remote_outpost",
@@ -2209,22 +3883,22 @@
       "type": "struct",
       "subtype": "outpost",
       "parent_id": "jupiter",
-      "radius_km": 1.5,
+      "radius_km": 0.0,
       "mu_km3_s2": 0.0,
       "map_icon": "station",
       "color_rgba": [
-        0.7,
-        0.72,
-        0.76,
+        0.6,
+        0.85,
+        0.95,
         1.0
       ],
       "motion": {
         "model": "kepler2d",
         "params": {
-          "a_km": 11850000.0,
-          "e": 0.12,
-          "arg_pe_rad": 0.9,
-          "mean_anomaly_epoch_rad": 1.3,
+          "a_km": 11500000.0,
+          "e": 0.17,
+          "arg_pe_rad": 3.6,
+          "mean_anomaly_epoch_rad": 2.3,
           "epoch_tt_s": 0.0,
           "clockwise": false
         }
@@ -2234,10 +3908,9 @@
         "jovian_system",
         "minor_body"
       ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 18000000000.0
-      }
+      "gameplay_tags": [
+        "nav_network"
+      ]
     },
     {
       "id": "pasiphae_watch_relay",
@@ -2245,22 +3918,22 @@
       "type": "struct",
       "subtype": "relay",
       "parent_id": "jupiter",
-      "radius_km": 1.2,
+      "radius_km": 0.0,
       "mu_km3_s2": 0.0,
       "map_icon": "station",
       "color_rgba": [
-        0.76,
-        0.82,
-        0.96,
+        0.6,
+        0.85,
+        0.95,
         1.0
       ],
       "motion": {
         "model": "kepler2d",
         "params": {
-          "a_km": 23900000.0,
-          "e": 0.34,
-          "arg_pe_rad": 2.4,
-          "mean_anomaly_epoch_rad": 5.2,
+          "a_km": 23800000.0,
+          "e": 0.39,
+          "arg_pe_rad": 2.3,
+          "mean_anomaly_epoch_rad": 1.4,
           "epoch_tt_s": 0.0,
           "clockwise": true
         }
@@ -2270,10 +3943,114 @@
         "jovian_system",
         "minor_body"
       ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 11000000000.0
-      }
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "jupiter_halo_beacon",
+      "name": "Jupiter Halo Beacon",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "jupiter",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 5000000.0,
+          "e": 0.12,
+          "arg_pe_rad": 4.8,
+          "mean_anomaly_epoch_rad": 0.5,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "jovian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "callisto_far_sweep",
+      "name": "Callisto Far Sweep",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "jupiter",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 3000000.0,
+          "e": 0.08,
+          "arg_pe_rad": 1.5,
+          "mean_anomaly_epoch_rad": 3.7,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "jovian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "europa_ice_survey",
+      "name": "Europa Ice Survey",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "jupiter",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 750000.0,
+          "e": 0.04,
+          "arg_pe_rad": 5.9,
+          "mean_anomaly_epoch_rad": 4.1,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "jovian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
     },
     {
       "id": "phoebe_black_yard",
@@ -2281,22 +4058,22 @@
       "type": "struct",
       "subtype": "shipyard",
       "parent_id": "saturn",
-      "radius_km": 2.4,
+      "radius_km": 0.0,
       "mu_km3_s2": 0.0,
       "map_icon": "station",
       "color_rgba": [
-        0.56,
-        0.58,
-        0.64,
+        0.6,
+        0.85,
+        0.95,
         1.0
       ],
       "motion": {
         "model": "kepler2d",
         "params": {
-          "a_km": 13100000.0,
-          "e": 0.14,
-          "arg_pe_rad": 1.7,
-          "mean_anomaly_epoch_rad": 2.9,
+          "a_km": 13000000.0,
+          "e": 0.17,
+          "arg_pe_rad": 5.2,
+          "mean_anomaly_epoch_rad": 0.8,
           "epoch_tt_s": 0.0,
           "clockwise": true
         }
@@ -2306,10 +4083,184 @@
         "saturnian_system",
         "minor_body"
       ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 44000000000.0
-      }
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "saturn_shepherd_relay",
+      "name": "Saturn Shepherd Relay",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "saturn",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 160000.0,
+          "e": 0.05,
+          "arg_pe_rad": 0.6,
+          "mean_anomaly_epoch_rad": 2.4,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "saturnian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "hyperion_drift_post",
+      "name": "Hyperion Drift Post",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "saturn",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 1500000.0,
+          "e": 0.11,
+          "arg_pe_rad": 3.2,
+          "mean_anomaly_epoch_rad": 5.0,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "saturnian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "iapetus_survey_beacon",
+      "name": "Iapetus Survey Beacon",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "saturn",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 3600000.0,
+          "e": 0.06,
+          "arg_pe_rad": 2.8,
+          "mean_anomaly_epoch_rad": 1.1,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "saturnian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "uranus_ring_surveyor",
+      "name": "Uranus Ring Surveyor",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "uranus",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 100000.0,
+          "e": 0.08,
+          "arg_pe_rad": 1.9,
+          "mean_anomaly_epoch_rad": 4.3,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "uranian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "uranus_outer_watch",
+      "name": "Uranus Outer Watch",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "uranus",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 700000.0,
+          "e": 0.14,
+          "arg_pe_rad": 4.1,
+          "mean_anomaly_epoch_rad": 0.6,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "uranian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
     },
     {
       "id": "nereid_far_marker",
@@ -2317,22 +4268,22 @@
       "type": "struct",
       "subtype": "navigation_point",
       "parent_id": "neptune",
-      "radius_km": 0.7,
+      "radius_km": 0.0,
       "mu_km3_s2": 0.0,
       "map_icon": "object",
       "color_rgba": [
-        0.84,
-        0.9,
-        0.98,
+        0.6,
+        0.85,
+        0.95,
         1.0
       ],
       "motion": {
         "model": "kepler2d",
         "params": {
           "a_km": 5600000.0,
-          "e": 0.68,
-          "arg_pe_rad": 4.4,
-          "mean_anomaly_epoch_rad": 0.4,
+          "e": 0.72,
+          "arg_pe_rad": 4.7,
+          "mean_anomaly_epoch_rad": 0.7,
           "epoch_tt_s": 0.0,
           "clockwise": false
         }
@@ -2342,33 +4293,67 @@
         "neptunian_system",
         "minor_body"
       ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 400000000.0
-      }
+      "gameplay_tags": [
+        "nav_network"
+      ]
     },
     {
-      "id": "eris_edge_outpost",
-      "name": "Eris Edge Outpost",
+      "id": "neptune_scatter_relay",
+      "name": "Neptune Scatter Relay",
       "type": "struct",
-      "subtype": "outpost",
-      "parent_id": "eris",
-      "radius_km": 1.6,
+      "subtype": "relay",
+      "parent_id": "neptune",
+      "radius_km": 0.0,
       "mu_km3_s2": 0.0,
       "map_icon": "station",
       "color_rgba": [
-        0.78,
-        0.84,
-        0.9,
+        0.6,
+        0.85,
+        0.95,
         1.0
       ],
       "motion": {
         "model": "kepler2d",
         "params": {
-          "a_km": 6800.0,
-          "e": 0.18,
-          "arg_pe_rad": 3.2,
-          "mean_anomaly_epoch_rad": 1.1,
+          "a_km": 800000.0,
+          "e": 0.1,
+          "arg_pe_rad": 2.5,
+          "mean_anomaly_epoch_rad": 3.3,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "neptunian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "eris_deep_survey",
+      "name": "Eris Deep Survey",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "eris",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "kepler2d",
+        "params": {
+          "a_km": 8000.0,
+          "e": 0.2,
+          "arg_pe_rad": 1.7,
+          "mean_anomaly_epoch_rad": 5.2,
           "epoch_tt_s": 0.0,
           "clockwise": false
         }
@@ -2378,183 +4363,381 @@
         "kuiper_belt",
         "minor_body"
       ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 20000000000.0
-      }
+      "gameplay_tags": [
+        "nav_network"
+      ]
     },
     {
-      "id": "sol_central_beacon",
-      "name": "Sol Central Beacon",
+      "id": "pluto_shepherd_beacon",
+      "name": "Pluto Shepherd Beacon",
       "type": "struct",
       "subtype": "navigation_point",
-      "parent_id": "sun",
-      "radius_km": 1.0,
+      "parent_id": "pluto",
+      "radius_km": 0.0,
       "mu_km3_s2": 0.0,
       "map_icon": "object",
       "color_rgba": [
-        1.0,
-        0.95,
-        0.7,
-        1.0
-      ],
-      "motion": {
-        "model": "fixed",
-        "params": {
-          "x_km": 2500000.0,
-          "y_km": 0.0
-        }
-      },
-      "map_tags": [
-        "solar_orbit",
-        "landmark"
-      ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 900000000.0
-      }
-    },
-    {
-      "id": "inner_system_junction",
-      "name": "Inner System Junction",
-      "type": "struct",
-      "subtype": "relay",
-      "parent_id": "sun",
-      "radius_km": 1.5,
-      "mu_km3_s2": 0.0,
-      "map_icon": "station",
-      "color_rgba": [
-        0.82,
-        0.9,
-        1.0,
-        1.0
-      ],
-      "motion": {
-        "model": "fixed",
-        "params": {
-          "x_km": 180000000.0,
-          "y_km": 40000000.0
-        }
-      },
-      "map_tags": [
-        "inner_system",
-        "solar_orbit",
-        "minor_body"
-      ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 17000000000.0
-      }
-    },
-    {
-      "id": "mars_cycler_anchor",
-      "name": "Mars Cycler Anchor",
-      "type": "struct",
-      "subtype": "station",
-      "parent_id": "sun",
-      "radius_km": 3.0,
-      "mu_km3_s2": 0.0,
-      "map_icon": "station",
-      "color_rgba": [
-        0.9,
-        0.72,
         0.6,
+        0.85,
+        0.95,
         1.0
       ],
       "motion": {
-        "model": "fixed",
+        "model": "kepler2d",
         "params": {
-          "x_km": 205000000.0,
-          "y_km": -35000000.0
-        }
-      },
-      "map_tags": [
-        "inner_system",
-        "solar_orbit",
-        "minor_body"
-      ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 46000000000.0
-      }
-    },
-    {
-      "id": "belt_trade_crossing",
-      "name": "Belt Trade Crossing",
-      "type": "struct",
-      "subtype": "outpost",
-      "parent_id": "sun",
-      "radius_km": 2.2,
-      "mu_km3_s2": 0.0,
-      "map_icon": "station",
-      "color_rgba": [
-        0.76,
-        0.78,
-        0.82,
-        1.0
-      ],
-      "motion": {
-        "model": "fixed",
-        "params": {
-          "x_km": 410000000.0,
-          "y_km": 90000000.0
-        }
-      },
-      "map_tags": [
-        "asteroid_belt",
-        "solar_orbit",
-        "minor_body"
-      ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 28000000000.0
-      }
-    },
-    {
-      "id": "outer_system_reference_zero",
-      "name": "Outer System Reference Zero",
-      "type": "struct",
-      "subtype": "navigation_point",
-      "parent_id": "sun",
-      "radius_km": 0.8,
-      "mu_km3_s2": 0.0,
-      "map_icon": "object",
-      "color_rgba": [
-        0.9,
-        0.96,
-        1.0,
-        1.0
-      ],
-      "motion": {
-        "model": "fixed",
-        "params": {
-          "x_km": 3200000000.0,
-          "y_km": -600000000.0
+          "a_km": 35000.0,
+          "e": 0.15,
+          "arg_pe_rad": 3.4,
+          "mean_anomaly_epoch_rad": 2.6,
+          "epoch_tt_s": 0.0,
+          "clockwise": false
         }
       },
       "map_tags": [
         "outer_system",
-        "solar_orbit",
+        "kuiper_belt",
         "minor_body"
       ],
-      "gameplay_tags": [],
-      "meta": {
-        "mass_kg": 500000000.0
-      }
+      "gameplay_tags": [
+        "nav_network"
+      ]
     },
     {
-      "id": "nav_relay_l4_terra",
-      "name": "NavRelay L4 Terra",
+      "id": "mercury_l1_gate",
+      "name": "Mercury L1 Gate",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "mercury",
+          "point": 1
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "mercurian_system",
+        "minor_body",
+        "landmark"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "mercury_l2_relay",
+      "name": "Mercury L2 Relay",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "mercury",
+          "point": 2
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "mercurian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "mercury_l4_depot",
+      "name": "Mercury L4 Depot",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "mercury",
+          "point": 4
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "mercurian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "venus_l1_observatory",
+      "name": "Venus L1 Observatory",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "venus",
+          "point": 1
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "venusian_system",
+        "minor_body",
+        "landmark"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "venus_l2_haven",
+      "name": "Venus L2 Haven",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "venus",
+          "point": 2
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "venusian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "venus_l4_forge",
+      "name": "Venus L4 Forge",
+      "type": "struct",
+      "subtype": "shipyard",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "venus",
+          "point": 4
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "venusian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "venus_l5_anchor",
+      "name": "Venus L5 Anchor",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "venus",
+          "point": 5
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "venusian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "terra_l1_transfer_node",
+      "name": "Earth L1 Transfer Node",
       "type": "struct",
       "subtype": "navigation_point",
       "parent_id": "sun",
-      "radius_km": 0.05,
+      "radius_km": 0.0,
       "mu_km3_s2": 0.0,
-      "map_icon": "struct",
+      "map_icon": "object",
       "color_rgba": [
-        0.4,
-        0.8,
-        1.0,
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "terra",
+          "point": 1
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "terran_system",
+        "minor_body",
+        "landmark"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "terra_l2_deep_eye",
+      "name": "Earth L2 Deep Eye",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "terra",
+          "point": 2
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "terran_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "terra_l3_shadow_post",
+      "name": "Earth L3 Shadow Post",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "terra",
+          "point": 3
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "terran_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "nav_relay_l4_terra",
+      "name": "Terra L4 Nav Relay",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
         1.0
       ],
       "motion": {
@@ -2566,15 +4749,2821 @@
         }
       },
       "map_tags": [
-        "inner_system"
+        "inner_system",
+        "terran_system",
+        "minor_body"
       ],
       "gameplay_tags": [
         "nav_network"
+      ]
+    },
+    {
+      "id": "terra_l5_colony_hub",
+      "name": "Earth L5 Colony Hub",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
       ],
-      "meta": {
-        "mass_kg": 50000.0,
-        "density_kg_m3": 0.0
-      }
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "terra",
+          "point": 5
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "terran_system",
+        "minor_body",
+        "landmark"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "cislunar_l1_gate",
+      "name": "Cislunar L1 Gate",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "terra",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "terra",
+          "secondary_id": "moon",
+          "point": 1
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "terran_system",
+        "minor_body",
+        "landmark"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "cislunar_l2_farwatch",
+      "name": "Cislunar L2 Farwatch",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "terra",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "terra",
+          "secondary_id": "moon",
+          "point": 2
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "terran_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "cislunar_l4_yard",
+      "name": "Cislunar L4 Yard",
+      "type": "struct",
+      "subtype": "shipyard",
+      "parent_id": "terra",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "terra",
+          "secondary_id": "moon",
+          "point": 4
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "terran_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "mars_l1_checkpoint",
+      "name": "Mars L1 Checkpoint",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "mars",
+          "point": 1
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "martian_system",
+        "minor_body",
+        "landmark"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "mars_l2_sentinel",
+      "name": "Mars L2 Sentinel",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "mars",
+          "point": 2
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "martian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "mars_l3_counterpoint",
+      "name": "Mars L3 Counterpoint",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "mars",
+          "point": 3
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "martian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "mars_l4_trojan_depot",
+      "name": "Mars L4 Trojan Depot",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "mars",
+          "point": 4
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "martian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "mars_l5_trojan_post",
+      "name": "Mars L5 Trojan Post",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "mars",
+          "point": 5
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "martian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "ceres_l1_waypoint",
+      "name": "Ceres L1 Waypoint",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "ceres",
+          "point": 1
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "ceres_l2_depot",
+      "name": "Ceres L2 Depot",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "ceres",
+          "point": 2
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "ceres_l4_rock_cluster",
+      "name": "Ceres L4 Rock Cluster",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "ceres",
+          "point": 4
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "ceres_l5_salvage_yard",
+      "name": "Ceres L5 Salvage Yard",
+      "type": "struct",
+      "subtype": "shipyard",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "ceres",
+          "point": 5
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "jupiter_l1_customs",
+      "name": "Jupiter L1 Customs",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "jupiter",
+          "point": 1
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "jovian_system",
+        "minor_body",
+        "landmark"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "jupiter_l2_outwatch",
+      "name": "Jupiter L2 Outwatch",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "jupiter",
+          "point": 2
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "jovian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "jupiter_l3_ghost_post",
+      "name": "Jupiter L3 Ghost Post",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "jupiter",
+          "point": 3
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "jovian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "jupiter_l4_trojan_haven",
+      "name": "Jupiter L4 Trojan Haven",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "jupiter",
+          "point": 4
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "jovian_system",
+        "minor_body",
+        "landmark"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "jupiter_l5_greek_camp",
+      "name": "Jupiter L5 Greek Camp",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "jupiter",
+          "point": 5
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "jovian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "ganymede_l1_bridge",
+      "name": "Ganymede L1 Bridge",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "jupiter",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "jupiter",
+          "secondary_id": "ganymede",
+          "point": 1
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "jovian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "ganymede_l2_observatory",
+      "name": "Ganymede L2 Observatory",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "jupiter",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "jupiter",
+          "secondary_id": "ganymede",
+          "point": 2
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "jovian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "callisto_l1_gateway",
+      "name": "Callisto L1 Gateway",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "jupiter",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "jupiter",
+          "secondary_id": "callisto",
+          "point": 1
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "jovian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "saturn_l1_threshold",
+      "name": "Saturn L1 Threshold",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "saturn",
+          "point": 1
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "saturnian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "saturn_l2_farpost",
+      "name": "Saturn L2 Farpost",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "saturn",
+          "point": 2
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "saturnian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "saturn_l4_caravan_stop",
+      "name": "Saturn L4 Caravan Stop",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "saturn",
+          "point": 4
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "saturnian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "saturn_l5_drift_yard",
+      "name": "Saturn L5 Drift Yard",
+      "type": "struct",
+      "subtype": "shipyard",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "saturn",
+          "point": 5
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "saturnian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "titan_l1_crossroads",
+      "name": "Titan L1 Crossroads",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "saturn",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "saturn",
+          "secondary_id": "titan",
+          "point": 1
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "saturnian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "titan_l2_backwater",
+      "name": "Titan L2 Backwater",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "saturn",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "saturn",
+          "secondary_id": "titan",
+          "point": 2
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "saturnian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "uranus_l1_gateway",
+      "name": "Uranus L1 Gateway",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "uranus",
+          "point": 1
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "uranian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "uranus_l4_silent_post",
+      "name": "Uranus L4 Silent Post",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "uranus",
+          "point": 4
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "uranian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "uranus_l5_drift_relay",
+      "name": "Uranus L5 Drift Relay",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "uranus",
+          "point": 5
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "uranian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "neptune_l1_checkpoint",
+      "name": "Neptune L1 Checkpoint",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "neptune",
+          "point": 1
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "neptunian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "neptune_l2_signal_post",
+      "name": "Neptune L2 Signal Post",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "neptune",
+          "point": 2
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "neptunian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "neptune_l4_lonesome_camp",
+      "name": "Neptune L4 Lonesome Camp",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "neptune",
+          "point": 4
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "neptunian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "pluto_l1_margin",
+      "name": "Pluto L1 Margin",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "pluto",
+          "point": 1
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "kuiper_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "pluto_l4_void_marker",
+      "name": "Pluto L4 Void Marker",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "pluto",
+          "point": 4
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "kuiper_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "eris_l1_last_light",
+      "name": "Eris L1 Last Light",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "eris",
+          "point": 1
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "kuiper_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "europa_l1_ice_gate",
+      "name": "Europa L1 Ice Gate",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "jupiter",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "jupiter",
+          "secondary_id": "europa",
+          "point": 1
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "jovian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "rhea_l1_ring_watch",
+      "name": "Rhea L1 Ring Watch",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "saturn",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "saturn",
+          "secondary_id": "rhea",
+          "point": 1
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "saturnian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "haumea_l1_edge_marker",
+      "name": "Haumea L1 Edge Marker",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "lagrange",
+        "params": {
+          "primary_id": "sun",
+          "secondary_id": "haumea",
+          "point": 1
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "kuiper_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "sol_central_beacon",
+      "name": "Sol Central Beacon",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 0.0,
+          "y_km": 0.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "solar_orbit",
+        "landmark"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "sol_north_marker",
+      "name": "Sol North Marker",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 0.0,
+          "y_km": -5000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "solar_orbit",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "sol_south_marker",
+      "name": "Sol South Marker",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 0.0,
+          "y_km": 5000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "solar_orbit",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "sol_east_marker",
+      "name": "Sol East Marker",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 5000000.0,
+          "y_km": 0.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "solar_orbit",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "sol_west_marker",
+      "name": "Sol West Marker",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -5000000.0,
+          "y_km": 0.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "solar_orbit",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "inner_system_junction",
+      "name": "Inner System Junction",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 80000000.0,
+          "y_km": 30000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "solar_orbit",
+        "minor_body",
+        "landmark"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "venus_terra_midpoint",
+      "name": "Venus-Terra Midpoint Beacon",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -95000000.0,
+          "y_km": 70000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "solar_orbit",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "terra_mars_waypoint",
+      "name": "Terra-Mars Waypoint",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 120000000.0,
+          "y_km": -130000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "solar_orbit",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "mercury_approach_beacon",
+      "name": "Mercury Approach Beacon",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -40000000.0,
+          "y_km": -30000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "mercurian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "venus_approach_beacon",
+      "name": "Venus Approach Beacon",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 75000000.0,
+          "y_km": 75000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "venusian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "mars_cycler_anchor",
+      "name": "Mars Cycler Anchor",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -180000000.0,
+          "y_km": 100000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "solar_orbit",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "inner_transit_alpha",
+      "name": "Inner Transit Alpha",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 60000000.0,
+          "y_km": -80000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "solar_orbit",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "inner_transit_beta",
+      "name": "Inner Transit Beta",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -110000000.0,
+          "y_km": -40000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "solar_orbit",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_trade_crossing",
+      "name": "Belt Trade Crossing",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 200000000.0,
+          "y_km": 310000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body",
+        "landmark"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_nav_alpha",
+      "name": "Belt Nav Alpha",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -350000000.0,
+          "y_km": 150000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_nav_beta",
+      "name": "Belt Nav Beta",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 280000000.0,
+          "y_km": -300000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_nav_gamma",
+      "name": "Belt Nav Gamma",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -250000000.0,
+          "y_km": -320000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_nav_delta",
+      "name": "Belt Nav Delta",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 400000000.0,
+          "y_km": 100000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_refinery_zero",
+      "name": "Belt Refinery Zero",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -180000000.0,
+          "y_km": 380000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_salvage_point",
+      "name": "Belt Salvage Point",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 310000000.0,
+          "y_km": -220000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_watchtower",
+      "name": "Belt Watchtower",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -420000000.0,
+          "y_km": 50000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_drydock_outskirts",
+      "name": "Belt Drydock Outskirts",
+      "type": "struct",
+      "subtype": "shipyard",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 150000000.0,
+          "y_km": 400000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_ore_exchange",
+      "name": "Belt Ore Exchange",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -300000000.0,
+          "y_km": -180000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body",
+        "landmark"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_crossroads_station",
+      "name": "Belt Crossroads Station",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -100000000.0,
+          "y_km": 420000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_debris_marker",
+      "name": "Belt Debris Marker",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 450000000.0,
+          "y_km": -50000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_guild_hall",
+      "name": "Belt Guild Hall",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -380000000.0,
+          "y_km": -250000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body",
+        "landmark"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_courier_anchor",
+      "name": "Belt Courier Anchor",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 220000000.0,
+          "y_km": 350000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "mars_belt_gate",
+      "name": "Mars-Belt Gate",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -250000000.0,
+          "y_km": 80000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body",
+        "landmark"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_inner_marker",
+      "name": "Belt Inner Marker",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 270000000.0,
+          "y_km": 200000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_outer_marker",
+      "name": "Belt Outer Marker",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -470000000.0,
+          "y_km": -100000000.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "jupiter_approach_beacon",
+      "name": "Jupiter Approach Beacon",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 600000000.0,
+          "y_km": 350000000.0
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "solar_orbit",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "outer_system_reference_zero",
+      "name": "Outer System Reference Zero",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -550000000.0,
+          "y_km": -400000000.0
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "solar_orbit",
+        "landmark"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "belt_jupiter_corridor",
+      "name": "Belt-Jupiter Corridor Beacon",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 650000000.0,
+          "y_km": -200000000.0
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "solar_orbit",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "saturn_approach_marker",
+      "name": "Saturn Approach Marker",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -1000000000.0,
+          "y_km": 800000000.0
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "solar_orbit",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "saturn_far_relay",
+      "name": "Saturn Far Relay",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 1200000000.0,
+          "y_km": -600000000.0
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "solar_orbit",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "mid_outer_waypoint",
+      "name": "Mid-Outer Waypoint",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -900000000.0,
+          "y_km": -500000000.0
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "solar_orbit",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "uranus_approach_marker",
+      "name": "Uranus Approach Marker",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 2000000000.0,
+          "y_km": 1500000000.0
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "solar_orbit",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "neptune_approach_marker",
+      "name": "Neptune Approach Marker",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -3500000000.0,
+          "y_km": 2000000000.0
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "solar_orbit",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "deep_space_relay_alpha",
+      "name": "Deep Space Relay Alpha",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 1800000000.0,
+          "y_km": -2200000000.0
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "solar_orbit",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "deep_space_relay_beta",
+      "name": "Deep Space Relay Beta",
+      "type": "struct",
+      "subtype": "relay",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -2800000000.0,
+          "y_km": -1500000000.0
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "solar_orbit",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "kuiper_inner_marker",
+      "name": "Kuiper Inner Marker",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 4500000000.0,
+          "y_km": 2500000000.0
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "kuiper_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "void_terminus_beacon",
+      "name": "Void Terminus Beacon",
+      "type": "struct",
+      "subtype": "navigation_point",
+      "parent_id": "sun",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "object",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -8000000000.0,
+          "y_km": 4000000000.0
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "trans_neptunian",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "moon_nearside_base",
+      "name": "Moon Nearside Base",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "moon",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 500.0,
+          "y_km": -300.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "terran_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "moon_south_pole_station",
+      "name": "Moon South Pole Station",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "moon",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -100.0,
+          "y_km": 1700.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "terran_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "ceres_surface_depot",
+      "name": "Ceres Surface Depot",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "ceres",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 200.0,
+          "y_km": -150.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "ceres_occator_base",
+      "name": "Ceres Occator Base",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "ceres",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -300.0,
+          "y_km": 250.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "asteroid_belt",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "mars_olympus_base",
+      "name": "Mars Olympus Base",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "mars",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 1500.0,
+          "y_km": -800.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "martian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "mars_valles_depot",
+      "name": "Mars Valles Depot",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "mars",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -1200.0,
+          "y_km": 600.0
+        }
+      },
+      "map_tags": [
+        "inner_system",
+        "martian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "titan_kraken_outpost",
+      "name": "Titan Kraken Outpost",
+      "type": "struct",
+      "subtype": "outpost",
+      "parent_id": "titan",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": 800.0,
+          "y_km": -600.0
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "saturnian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
+    },
+    {
+      "id": "titan_ligeia_base",
+      "name": "Titan Ligeia Base",
+      "type": "struct",
+      "subtype": "station",
+      "parent_id": "titan",
+      "radius_km": 0.0,
+      "mu_km3_s2": 0.0,
+      "map_icon": "station",
+      "color_rgba": [
+        0.6,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "motion": {
+        "model": "fixed",
+        "params": {
+          "x_km": -500.0,
+          "y_km": 900.0
+        }
+      },
+      "map_tags": [
+        "outer_system",
+        "saturnian_system",
+        "minor_body"
+      ],
+      "gameplay_tags": [
+        "nav_network"
+      ]
     }
   ]
 }

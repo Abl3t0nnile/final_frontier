@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dyno820owxc3k"]
+
+[ext_resource type="Script" uid="uid://da5ym5gbqq6dd" path="res://game/map/nav_map/nav_map.gd" id="1_223ll"]
+[ext_resource type="PackedScene" uid="uid://dnj0f1y1r0q3u" path="res://game/ui/body_info_panel/BodyInfoPanel.tscn" id="2_bipanel"]
+
+[node name="NavMap" type="Node2D" unique_id=249609610]
+script = ExtResource("1_223ll")
+min_scale_exp = 2.0
+max_scale_exp = 8.0
+zoom_stage_threshold_1_2 = 3.5
+zoom_stage_threshold_2_3 = 5.5
+marker_size_star = Vector3i(128, 196, 256)
+marker_size_planet = Vector3i(64, 96, 128)
+marker_size_dwarf = Vector3i(40, 40, 48)
+marker_size_moon = Vector3i(20, 32, 40)
+marker_size_struct = Vector3i(16, 24, 32)
+
+[node name="NavMapCamera" type="Camera2D" parent="." unique_id=887692369]
+
+[node name="OrbitsLayer" type="Node2D" parent="." unique_id=812345671]
+
+[node name="BodyLayer" type="Node2D" parent="." unique_id=935082543]
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=375512139]
+layer = 10
+
+[node name="BodyInfoPanel" parent="UILayer" unique_id=302010101 instance=ExtResource("2_bipanel")]
+anchors_preset = 11
