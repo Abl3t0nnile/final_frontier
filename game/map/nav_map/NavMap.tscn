@@ -25,4 +25,3 @@ marker_size_struct = Vector3i(16, 24, 32)
 layer = 10
 
 [node name="BodyInfoPanel" parent="UILayer" unique_id=302010101 instance=ExtResource("2_bipanel")]
-anchors_preset = 11

@@ -79,6 +79,7 @@ marker_size_planet = Vector3i(164, 96, 48)
 marker_size_dwarf = Vector3i(100, 60, 30)
 marker_size_moon = Vector3i(80, 40, 20)
 marker_size_struct = Vector3i(80, 40, 20)
+orbit_preparation_batch_size = 20
 
 [node name="StarField" type="CanvasLayer" parent="." unique_id=1764005371]
 layer = -1

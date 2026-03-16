@@ -11,3 +11,4 @@ res://core/autoload_sim_clock.gd
 res://game/map/body_marker/BodyMarker.tscn
 res://game/ui/body_info_panel/BodyInfoPanel.tscn
 res://game/ui/body_info_panel/body_info_panel.gd
+res://game/ui/body_info_panel/BodyPanel.tscn
