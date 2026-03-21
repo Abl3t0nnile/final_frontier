@@ -51,7 +51,7 @@ func setup(belt: BeltDef) -> void:
 	apply_rotation = belt.apply_rotation
 
 	var rng := RandomNumberGenerator.new()
-	rng.seed = belt.seed
+	rng.seed = belt.rng_seed
 
 	var count: int = belt.max_points
 	_radii_km.resize(count)

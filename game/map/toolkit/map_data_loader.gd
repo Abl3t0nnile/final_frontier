@@ -69,7 +69,7 @@ func _build_belt_def(d: Dictionary) -> BeltDef:
 	def.angular_spread_rad = float(d.get("angular_spread_rad", TAU))
 	def.min_points         = int(d.get("min_points", 100))
 	def.max_points         = int(d.get("max_points", 500))
-	def.seed               = int(d.get("seed", 0))
+	def.rng_seed           = int(d.get("seed", 0))
 	def.color_rgba         = _parse_color(d.get("color_rgba", [1.0, 1.0, 1.0, 1.0]))
 	def.apply_rotation     = bool(d.get("apply_rotation", true))
 	return def

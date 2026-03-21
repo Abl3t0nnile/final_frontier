@@ -31,7 +31,7 @@ extends Resource
 @export var max_points: int = 1000
 
 # Seed für den Pseudo-Zufallsgenerator. Gleicher Seed = identische Punktwolke.
-@export var seed: int = 0
+@export var rng_seed: int = 0
 
 # Darstellungsfarbe inklusive Alpha.
 @export var color_rgba: Color = Color(0.8, 0.7, 0.6, 0.6)
