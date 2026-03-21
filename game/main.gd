@@ -21,4 +21,4 @@ func _ready() -> void:
     solar_system = SolarSystemScript.new()
     solar_system.name = "SolarSystem"
     add_child(solar_system)
-    solar_system.setup(sim_clock, bodies_data_path, structs_data_path, start_sst_s)
+    solar_system.setup(sim_clock, bodies_data_path, structs_data_path)

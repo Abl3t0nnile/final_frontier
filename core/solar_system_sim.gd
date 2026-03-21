@@ -43,8 +43,7 @@ var _clock: SimulationClock = null
 func setup(
     clock: SimulationClock,
     bodies_path: String = CoreDataLoader.DEFAULT_DATA_PATH,
-    structs_path: String = CoreDataLoader.DEFAULT_STRUCTS_PATH,
-    start_sst_s: float = 0.0
+    structs_path: String = CoreDataLoader.DEFAULT_STRUCTS_PATH
 ) -> void:
     _clock = clock
     _build_sim_from_loader(bodies_path, structs_path, true)

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cimcbl7teq1bp"]
 
-[ext_resource type="PackedScene" uid="uid://b1ma4sv3ut7g6" path="res://game/map/test/MapTestScene.tscn" id="1_hybcy"]
-[ext_resource type="Texture2D" uid="uid://bf5h80m0k44jg" path="res://assets/db_pictures/test_pic.jpg" id="2_56yso"]
+[ext_resource type="Texture2D" uid="uid://bf5h80m0k44jg" path="res://assets/db_pictures/test_pic.jpg" id="1_74x83"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emt18"]
 bg_color = Color(0.11764706, 0.3137255, 0.10980392, 0.39215687)
@@ -65,8 +64,6 @@ handle_input_locally = false
 size = Vector2i(1352, 1016)
 render_target_update_mode = 4
 
-[node name="MapTestScene" parent="HBox/StarChartScreen/MainPanel/ViewContainer/SubViewport" unique_id=996806836 instance=ExtResource("1_hybcy")]
-
 [node name="Footer" type="PanelContainer" parent="HBox/StarChartScreen" unique_id=944079633]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_emt18")
@@ -88,9 +85,9 @@ layout_mode = 2
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_emt18")
 
-[node name="Label" type="Label" parent="HBox/InfoPanel/Header" unique_id=1773906302]
+[node name="NameLabel" type="Label" parent="HBox/InfoPanel/Header" unique_id=1773906302]
 layout_mode = 2
-text = "Star Chart"
+text = "Fokus Body Name"
 horizontal_alignment = 1
 
 [node name="MainPanel" type="PanelContainer" parent="HBox/InfoPanel" unique_id=1062100797]
@@ -103,7 +100,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="HBox/InfoPanel/MainPanel/FoldableContainer" unique_id=1735270932]
 layout_mode = 2
-texture = ExtResource("2_56yso")
+texture = ExtResource("1_74x83")
 expand_mode = 5
 
 [node name="BoxContainer" type="TabContainer" parent="HBox/InfoPanel/MainPanel/FoldableContainer" unique_id=251930179]

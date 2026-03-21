@@ -127,8 +127,7 @@ Hält den vollständigen Positionszustand aller Himmelskörper zu jedem Simulati
 setup(
     clock: SimulationClock,
     bodies_path: String = CoreDataLoader.DEFAULT_DATA_PATH,
-    structs_path: String = CoreDataLoader.DEFAULT_STRUCTS_PATH,
-    start_sst_s: float = 0.0
+    structs_path: String = CoreDataLoader.DEFAULT_STRUCTS_PATH
 ) -> void
 
 # Signal
@@ -154,13 +153,19 @@ get_body_positions_at_time(ids: Array[String], sst: float) -> Dictionary
 get_body_position_at_time(id: String, sst: float) -> Vector2
 ```
 
+**Konfiguration:**
+
+```gdscript
+max_segments: float = 512.0   # Maximale Segmentanzahl für Kepler2D-Orbitpfade
+```
+
 **Orbitpfade (gecacht, lokal zum Elternkörper):**
 
 ```gdscript
 get_local_orbit_path(id: String) -> Array[Vector2]
 # Vorberechneter Pfad in lokalen Koordinaten (relativ zum Elternkörper).
 # Für circular: immer 64 Punkte.
-# Für kepler2d: 64–256 Punkte, skaliert mit Exzentrizität.
+# Für kepler2d: 64–512 Punkte, skaliert mit Exzentrizität (gesteuert von max_segments).
 ```
 
 **Strukturelle Abfragen:**
@@ -345,7 +350,7 @@ sim_clock.setup(start_sst_s)
 solar_system = SolarSystemModel.new()
 solar_system.name = "SolarSystem"
 add_child(solar_system)
-solar_system.setup(sim_clock, bodies_path, structs_path, start_sst_s)
+solar_system.setup(sim_clock, bodies_path, structs_path)
 ```
 
 ### Positionen pro Frame abfragen

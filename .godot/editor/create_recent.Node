@@ -1,8 +1,9 @@
+VBoxContainer
+HBoxContainer
 RichTextLabel
 ScrollContainer
 Label
 GridContainer
-VBoxContainer
 TextureRect
 FoldableContainer
 TabContainer
@@ -10,6 +11,4 @@ Control
 SubViewport
 SubViewportContainer
 BoxContainer
-HBoxContainer
 AspectRatioContainer
-HSplitContainer

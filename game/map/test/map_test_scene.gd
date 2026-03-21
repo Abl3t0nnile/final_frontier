@@ -73,7 +73,7 @@ func _ready() -> void:
 		solar_system = SOLAR_SYSTEM_SCRIPT.new()
 		solar_system.name = "SolarSystem"
 		add_child(solar_system)
-		solar_system.setup(sim_clock, BODIES_DATA_PATH, STRUCTS_DATA_PATH, 0.0)
+		solar_system.setup(sim_clock, BODIES_DATA_PATH, STRUCTS_DATA_PATH)
 	start()
 
 
