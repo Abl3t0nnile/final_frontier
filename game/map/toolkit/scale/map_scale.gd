@@ -13,9 +13,9 @@ var _km_per_px: float = pow(10.0, 5.0)
 var _origin_km: Vector2 = Vector2.ZERO
 
 
-func set_scale_exp(exp: float) -> void:
-	_scale_exp = exp
-	_km_per_px = pow(10.0, exp)
+func set_scale_exp(exponent: float) -> void:
+	_scale_exp = exponent
+	_km_per_px = pow(10.0, exponent)
 	_px_per_km = 1.0 / _km_per_px
 
 func get_scale_exp() -> float:
