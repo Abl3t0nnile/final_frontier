@@ -1,11 +1,8 @@
 [gd_scene format=3 uid="uid://bo1bklnfyima7"]
 
-[ext_resource type="Script" uid="uid://dsm4lv1mqbyoy" path="res://game/main.gd" id="1_oa506"]
-[ext_resource type="PackedScene" uid="uid://dyno820owxc3k" path="res://game/map/nav_map/NavMap.tscn" id="2_emt18"]
+[ext_resource type="Script" uid="uid://dfl5nwfltondb" path="res://game/main.gd" id="1_oa506"]
 [ext_resource type="Shader" uid="uid://d0hehva3ksgxy" path="res://assets/shader/shader_starfield.gdshader" id="3_emt18"]
-[ext_resource type="Script" uid="uid://kfub5ouqeqat" path="res://game/map/map_bg_star_field.gd" id="3_vop5m"]
 [ext_resource type="Shader" uid="uid://bxoaaymjdou52" path="res://assets/shader/shader_monitor.gdshader" id="5_5un7r"]
-[ext_resource type="PackedScene" uid="uid://jod8w0mf7at4" path="res://game/ui/sim_clock_control/SimClockControl.tscn" id="6_simctrl"]
 
 [sub_resource type="Environment" id="Environment_emt18"]
 background_mode = 3
@@ -61,30 +58,12 @@ shader_parameter/aberration_amount = 1.8000000855
 
 [node name="Main" type="Node" unique_id=676464493]
 script = ExtResource("1_oa506")
-sim_running = true
-sim_speed = 3600.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=132669620]
 environment = SubResource("Environment_emt18")
 
-[node name="NavMap" parent="." unique_id=249609610 instance=ExtResource("2_emt18")]
-min_scale_exp = 1.4
-max_scale_exp = 9.0
-zoom_tween_duration = 1.0
-marker_cull_threshold_px = 128.0
-orbit_cull_threshold_px = 128.0
-focus_release_threshold_px = 128.0
-marker_size_star = Vector3i(128, 194, 256)
-marker_size_planet = Vector3i(164, 96, 48)
-marker_size_dwarf = Vector3i(100, 60, 30)
-marker_size_moon = Vector3i(80, 40, 20)
-marker_size_struct = Vector3i(80, 40, 20)
-orbit_preparation_batch_size = 20
-
 [node name="StarField" type="CanvasLayer" parent="." unique_id=1764005371]
 layer = -1
-script = ExtResource("3_vop5m")
-parallax_scale_near = 0.03
 
 [node name="ColorRect" type="ColorRect" parent="StarField" unique_id=1191938899]
 material = SubResource("ShaderMaterial_dgpao")
@@ -109,7 +88,3 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="UiLayer" type="CanvasLayer" parent="." unique_id=143627714]
-
-[node name="SimClockControl" parent="UiLayer" unique_id=201010101 instance=ExtResource("6_simctrl")]
-size_flags_horizontal = 4
-size_flags_vertical = 8

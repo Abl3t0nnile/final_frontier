@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b1ma4sv3ut7g6"]
+
+[ext_resource type="Script" uid="uid://bq8gbapiixcvq" path="res://game/map/test/map_test_scene.gd" id="1_script"]
+
+[node name="MapTestScene" type="Node2D" unique_id=996806836]
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="." unique_id=615614884]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.04, 0.04, 0.08, 1)
+
+[node name="GridLayer" type="Node2D" parent="." unique_id=54763346]
+
+[node name="BeltLayer" type="Node2D" parent="." unique_id=165675410]
+
+[node name="ZoneLayer" type="Node2D" parent="." unique_id=1775672863]
+
+[node name="OrbitLayer" type="Node2D" parent="." unique_id=1827657052]
+
+[node name="BodyLayer" type="Node2D" parent="." unique_id=1476929792]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1363406313]
+
+[node name="HudLabel" type="Label" parent="HUD" unique_id=1121929302]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 700.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 14

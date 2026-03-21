@@ -6,7 +6,7 @@
 # lookup funtions for the current position of every single simulated object or groups of objects. This simulation is
 # completely independent from any gameplay events like ships moving in space. This simulation is 100 % deterministic.
 
-class_name SolarSystemModel
+class_name SolarSystemModelV2
 
 extends Node
 
@@ -37,7 +37,9 @@ var _current_state: Dictionary = {}
 # Cached local orbital path points for rendering. These paths are relative to the parent origin and therefore only need
 # to be calculated once on build or rebuild.
 var _local_orbit_path_cache: Dictionary = {}
-var _min_orbit_radius_km_cache: float = -1.0
+
+# Upper limit for points in object orbit paths
+var max_segments: float = 512.0
 
 
 # This autoload singleton has to be after SimClock and SolarDB in the load order, as it references both objects
@@ -160,7 +162,6 @@ func _build_update_order() -> bool:
 
 func _reset_local_orbit_path_cache() -> void:
 	_local_orbit_path_cache.clear()
-	_min_orbit_radius_km_cache = -1.0
 
 # Calculates the positional data for all objects within this simulation at given solar standard time.
 func _update_simulation(sst_s: float) -> void:
@@ -374,18 +375,15 @@ func _build_local_orbit_path(body: BodyDef, min_segments: int = 64) -> Array[Vec
 		_local_orbit_path_cache[body.id] = zero_points
 		return zero_points
 
-	var min_orbit_radius_km: float = _get_min_orbit_radius_km()
-	var radius_scale: float = max(a_km / max(min_orbit_radius_km, 1.0), 1.0)
-	var segments: int = maxi(min_segments, int(ceil(min_segments * sqrt(radius_scale))))
-	segments = maxi(segments, 12)
-
-	points = []
-	points.resize(segments + 1)
+	var segments: int = min_segments
 
 	match body.motion.model:
 		"circular":
 			var motion := body.motion as CircularMotionDef
 			var direction: float = -1.0 if motion.clockwise else 1.0
+
+			points = []
+			points.resize(segments + 1)
 			for i in range(segments + 1):
 				var t: float = float(i) / float(segments)
 				var theta: float = motion.phase_rad + direction * TAU * t
@@ -393,6 +391,9 @@ func _build_local_orbit_path(body: BodyDef, min_segments: int = 64) -> Array[Vec
 
 		"kepler2d":
 			var motion := body.motion as Kepler2DMotionDef
+			# Higher eccentricity needs more segments for smooth periapsis region
+			segments = clampi(min_segments + int(192.0 * motion.e), min_segments, max_segments)
+
 			var parent_body: BodyDef = _bodies_by_id.get(body.parent_id, null)
 			var parent_mu_km3_s2: float = 0.0
 			if parent_body != null:
@@ -400,6 +401,8 @@ func _build_local_orbit_path(body: BodyDef, min_segments: int = 64) -> Array[Vec
 
 			var period_s: float = _get_kepler2d_period_s(motion, parent_mu_km3_s2)
 
+			points = []
+			points.resize(segments + 1)
 			for i in range(segments + 1):
 				var t: float = float(i) / float(segments)
 				var orbit_time_s: float = motion.epoch_tt_s + period_s * t
@@ -427,26 +430,6 @@ func _get_body_orbit_radius_km(body: BodyDef) -> float:
 		_:
 			return 0.0
 
-func _get_min_orbit_radius_km() -> float:
-	if _min_orbit_radius_km_cache > 0.0:
-		return _min_orbit_radius_km_cache
-
-	var min_radius: float = INF
-
-	for group_name in ["planets", "dwarfes", "moons", "structs"]:
-		for body in _sim_objects[group_name]:
-			if body == null or body.motion == null or body.motion.model == "fixed":
-				continue
-
-			var orbit_radius := _get_body_orbit_radius_km(body)
-			if orbit_radius > 0.0 and orbit_radius < min_radius:
-				min_radius = orbit_radius
-
-	if min_radius == INF:
-		min_radius = 1.0
-
-	_min_orbit_radius_km_cache = min_radius
-	return _min_orbit_radius_km_cache
 
 ########################################################################################################################
 # PUBLIC - API
@@ -468,10 +451,74 @@ func get_body(id: String) -> BodyDef:
 func get_body_position(id: String) -> Vector2:
 	return _current_state.get(id, Vector2.ZERO)
 
+
+func get_body_orbit_radius_km(id: String) -> float:
+	var body = _bodies_by_id.get(id, null)
+	if body == null:
+		return 0.0
+	return _get_body_orbit_radius_km(body)
+
+
+# Returns the world positions of a set of bodies at an arbitrary point in time.
+# Does NOT modify _current_state — pure function, no side effects.
+# Makes a single pass through _update_order (topological order) and resolves all
+# ancestors needed by the requested ids. Returns a Dictionary { id -> Vector2 }.
+#
+# Prefer this over get_body_position_at_time when querying multiple bodies at once
+# (e.g. all visible bodies in StarChart Vorspul-Modus). With 200+ bodies in the
+# simulation a per-body call would rebuild the full ancestor chain repeatedly.
+func get_body_positions_at_time(ids: Array[String], sst: float) -> Dictionary:
+	if ids.is_empty():
+		return {}
+
+	# Build a set of all ids we need to resolve: the requested bodies plus all
+	# their ancestors (required by _calculate_world_position_for_body).
+	var needed: Dictionary = {}
+	for id in ids:
+		if not _bodies_by_id.has(id):
+			continue
+		# Walk up the parent chain and mark every ancestor as needed.
+		var current_id: String = id
+		while current_id != "":
+			if needed.has(current_id):
+				break  # Already marked — ancestor chain already covered.
+			needed[current_id] = true
+			var body: BodyDef = _bodies_by_id.get(current_id, null)
+			if body == null:
+				break
+			current_id = body.parent_id
+
+	# Single pass in topological order — only compute bodies we actually need.
+	var temp_state: Dictionary = {}
+	for body in _update_order:
+		if not needed.has(body.id):
+			continue
+		if body.parent_id == "":
+			temp_state[body.id] = Vector2.ZERO
+		else:
+			temp_state[body.id] = _calculate_world_position_for_body(body, sst, temp_state)
+
+	# Return only the originally requested ids.
+	var result: Dictionary = {}
+	for id in ids:
+		if temp_state.has(id):
+			result[id] = temp_state[id]
+
+	return result
+
+
+# Convenience wrapper for a single body. For multiple bodies prefer
+# get_body_positions_at_time to avoid redundant ancestor resolution.
+func get_body_position_at_time(id: String, sst: float) -> Vector2:
+	var result := get_body_positions_at_time([id], sst)
+	return result.get(id, Vector2.ZERO)
+
+
 # Returns the local orbit path of a given body by id. These points are relative to the parent origin and are meant to
 # be drawn by a node that is attached to the moving parent node.
 func get_local_orbit_path(id: String) -> Array[Vector2]:
 	return _local_orbit_path_cache.get(id, [Vector2.ZERO])
+
 
 # Returns all direct child body defs of the given parent body id.
 func get_child_bodies(parent_id: String) -> Array[BodyDef]:
@@ -523,6 +570,7 @@ func get_root_bodies() -> Array[BodyDef]:
 			roots.append(body)
 
 	return roots
+
 
 # Debug print function
 func print_current_state() -> void:
