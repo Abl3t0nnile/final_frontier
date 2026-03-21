@@ -9,6 +9,7 @@ class_name BodyMarker
 extends Node2D
 
 signal clicked(body_id: String)
+signal double_clicked(body_id: String)
 signal hovered(body_id: String)
 signal unhovered(body_id: String)
 
@@ -83,7 +84,10 @@ func get_body_id() -> String:
 
 func _on_area_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		clicked.emit(_body_id)
+		if event.double_click:
+			double_clicked.emit(_body_id)
+		else:
+			clicked.emit(_body_id)
 
 
 func _on_area_mouse_entered() -> void:
