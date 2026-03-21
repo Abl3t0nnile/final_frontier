@@ -46,6 +46,12 @@ var _is_panning:       bool    = false
 var _pan_start_mouse:  Vector2 = Vector2.ZERO
 var _pan_start_center: Vector2 = Vector2.ZERO
 
+const SIM_CLOCK_SCRIPT    := preload("res://core/sim_clock.gd")
+const SOLAR_SYSTEM_SCRIPT := preload("res://core/solar_system_sim.gd")
+
+const BODIES_DATA_PATH:  String = "res://data/solar_system_data.json"
+const STRUCTS_DATA_PATH: String = "res://data/struct_data.json"
+
 const SCALE_EXP_START: float = 7.5
 const SCALE_EXP_MIN:   float = 4.0
 const SCALE_EXP_MAX:   float = 10.0
@@ -58,7 +64,17 @@ var _selected_body_text: String = ""
 # ─── Init ─────────────────────────────────────────────────────────────────────
 
 func _ready() -> void:
-	pass  # Initialisierung via start(), aufgerufen von main.gd nach Injection der Service-Refs
+	if sim_clock == null:
+		sim_clock = SIM_CLOCK_SCRIPT.new()
+		sim_clock.name = "SimClock"
+		add_child(sim_clock)
+		sim_clock.setup(0.0)
+	if solar_system == null:
+		solar_system = SOLAR_SYSTEM_SCRIPT.new()
+		solar_system.name = "SolarSystem"
+		add_child(solar_system)
+		solar_system.setup(sim_clock, BODIES_DATA_PATH, STRUCTS_DATA_PATH, 0.0)
+	start()
 
 
 func start() -> void:
