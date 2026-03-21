@@ -1,0 +1,16 @@
+# Godot 4
+.godot/
+*.translation
+
+# Godot export templates & builds
+export_presets.cfg
+builds/
+
+# Assets (art, audio, etc.)
+assets/
+
+# Claude Code
+.claude/
+
+# macOS
+.DS_Store
