@@ -1,5 +1,8 @@
 # Godot 4
 .godot/
+
+# VSCode
+.vscode/
 *.translation
 
 # Godot export templates & builds
