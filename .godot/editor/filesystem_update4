@@ -6,3 +6,7 @@ res://core/solar_system_sim.gd
 res://game/map/test/MapTestScene.tscn
 res://game/map/views/star_chart.tscn
 res://game/screens/star_chart_screen.tscn
+res://core/defs/belt_def.gd
+res://game/map/toolkit/map_data_loader.gd
+res://game/map/toolkit/renderer/belt_renderer.gd
+res://game/map/toolkit/scale/map_scale.gd
