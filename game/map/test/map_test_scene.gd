@@ -4,6 +4,10 @@
 # ScopeConfig, ScopeResolver, MapViewController, MapDataLoader.
 extends Node2D
 
+# ─── Service refs (injected by main) ──────────────────────────────────────────
+@export var sim_clock:    SimulationClock    = null
+@export var solar_system: SolarSystemModel = null
+
 # ─── Scene refs ───────────────────────────────────────────────────────────────
 @onready var _grid_layer:  Node2D = $GridLayer
 @onready var _belt_layer:  Node2D = $BeltLayer
@@ -54,13 +58,20 @@ var _selected_body_text: String = ""
 # ─── Init ─────────────────────────────────────────────────────────────────────
 
 func _ready() -> void:
+	pass  # Initialisierung via start(), aufgerufen von main.gd nach Injection der Service-Refs
+
+
+func start() -> void:
+	if sim_clock == null or solar_system == null:
+		push_error("MapTestScene: sim_clock und solar_system müssen vor start() gesetzt sein!")
+		return
 	_setup_scale_and_scope()
 	_setup_grids()
 	_load_belts_and_zones()
 	_spawn_bodies()
 	_refresh_positions()
-	SolarSystem.simulation_updated.connect(_on_simulation_updated)
-	SimClock.start()
+	solar_system.simulation_updated.connect(_on_simulation_updated)
+	sim_clock.start()
 
 
 func _setup_scale_and_scope() -> void:
@@ -135,8 +146,8 @@ func _load_belts_and_zones() -> void:
 func _spawn_bodies() -> void:
 	var scope := _view_controller.get_current_scope()
 
-	for body_id: String in SolarSystem.get_all_body_ids():
-		var body: BodyDef = SolarSystem.get_body(body_id)
+	for body_id: String in solar_system.get_all_body_ids():
+		var body: BodyDef = solar_system.get_body(body_id)
 
 		var marker: BodyMarker = BODY_MARKER_SCENE.instantiate()
 		_body_layer.add_child(marker)  # erst in den Baum, dann setup — @onready-Vars brauchen den Baum
@@ -145,7 +156,7 @@ func _spawn_bodies() -> void:
 		_markers[body_id] = marker
 
 		if not body.parent_id.is_empty():
-			var path: Array[Vector2] = SolarSystem.get_local_orbit_path(body_id)
+			var path: Array[Vector2] = solar_system.get_local_orbit_path(body_id)
 			if path.size() > 1:
 				var orbit: OrbitRenderer = ORBIT_SCENE.instantiate()
 				orbit.setup(body_id, body.parent_id, body.color_rgba, path)
@@ -171,15 +182,15 @@ func _refresh_positions() -> void:
 
 	# Bodies
 	for body_id: String in _markers:
-		var body:   BodyDef    = SolarSystem.get_body(body_id)
+		var body:   BodyDef    = solar_system.get_body(body_id)
 		var marker: BodyMarker = _markers[body_id]
 
-		var orbit_km   := SolarSystem.get_body_orbit_radius_km(body_id)
+		var orbit_km   := solar_system.get_body_orbit_radius_km(body_id)
 		var is_vis := _view_controller.is_body_visible(body, orbit_km)
 
 		if is_vis:
-			var world_pos  := SolarSystem.get_body_position(body_id)
-			var parent_pos := SolarSystem.get_body_position(body.parent_id) \
+			var world_pos  := solar_system.get_body_position(body_id)
+			var parent_pos := solar_system.get_body_position(body.parent_id) \
 								if not body.parent_id.is_empty() else Vector2.ZERO
 			var scr := _view_controller.world_to_display(world_pos, body, parent_pos)
 			marker.position = scr
@@ -190,7 +201,7 @@ func _refresh_positions() -> void:
 		# Orbit
 		if body_id in _orbits:
 			var orbit: OrbitRenderer = _orbits[body_id]
-			var parent_pos := SolarSystem.get_body_position(body.parent_id) \
+			var parent_pos := solar_system.get_body_position(body.parent_id) \
 								if not body.parent_id.is_empty() else Vector2.ZERO
 			orbit.position = _map_scale.world_to_screen(parent_pos)
 
@@ -208,14 +219,14 @@ func _refresh_positions() -> void:
 	# Belts — positioned at parent-body screen position
 	for belt_id: String in _belt_renderers:
 		var belt: BeltDef = _belt_defs[belt_id]
-		var parent_pos := SolarSystem.get_body_position(belt.parent_id) \
+		var parent_pos := solar_system.get_body_position(belt.parent_id) \
 							if not belt.parent_id.is_empty() else Vector2.ZERO
 		_belt_renderers[belt_id].position = _map_scale.world_to_screen(parent_pos)
 
 	# Zones — positioned at parent-body screen position
 	for zone_id: String in _zone_renderers:
 		var zone: ZoneDef = _zone_defs[zone_id]
-		var parent_pos := SolarSystem.get_body_position(zone.parent_id) \
+		var parent_pos := solar_system.get_body_position(zone.parent_id) \
 							if not zone.parent_id.is_empty() else Vector2.ZERO
 		_zone_renderers[zone_id].position = _map_scale.world_to_screen(parent_pos)
 
@@ -297,7 +308,7 @@ func _on_simulation_updated() -> void:
 
 
 func _on_body_clicked(body_id: String) -> void:
-	var body := SolarSystem.get_body(body_id)
+	var body := solar_system.get_body(body_id)
 	if body:
 		_selected_body_text = "Ausgewählt: %s  [%s / %s]" % [body.name, body.type, body_id]
 	_update_hud()
@@ -310,7 +321,7 @@ func _update_hud() -> void:
 	var mkm_per_px := _map_scale.get_km_per_px() / 1_000_000.0
 	var scope      := _view_controller.get_current_scope()
 	var scope_name := scope.scope_name if scope else "—"
-	var time_str   := SimClock.get_time_stamp_string_now()
+	var time_str   := sim_clock.get_time_stamp_string_now()
 
 	var lines: Array[String] = [
 		"Zoom: %.1f  |  %.2f Mkm/px  |  Scope: %s" % [scale_exp, mkm_per_px, scope_name],

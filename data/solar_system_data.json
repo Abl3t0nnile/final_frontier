@@ -395,7 +395,7 @@
       "map_tags": [
         "inner_system",
         "asteroid_belt",
-        "major_body"
+        "minor_body"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -432,7 +432,7 @@
       "map_tags": [
         "outer_system",
         "kuiper_belt",
-        "major_body"
+        "minor_body"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -469,7 +469,7 @@
       "map_tags": [
         "outer_system",
         "kuiper_belt",
-        "major_body"
+        "minor_body"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -506,7 +506,7 @@
       "map_tags": [
         "outer_system",
         "kuiper_belt",
-        "major_body"
+        "minor_body"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -543,7 +543,7 @@
       "map_tags": [
         "outer_system",
         "kuiper_belt",
-        "major_body"
+        "minor_body"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -578,7 +578,7 @@
       "map_tags": [
         "inner_system",
         "terran_system",
-        "minor_body"
+        "major_moon"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -613,7 +613,7 @@
       "map_tags": [
         "inner_system",
         "martian_system",
-        "minor_body"
+        "minor_moon"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -648,7 +648,7 @@
       "map_tags": [
         "inner_system",
         "martian_system",
-        "minor_body"
+        "minor_moon"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -683,7 +683,7 @@
       "map_tags": [
         "outer_system",
         "jovian_system",
-        "minor_body",
+        "minor_moon",
         "inner_orbit"
       ],
       "gameplay_tags": [],
@@ -719,7 +719,7 @@
       "map_tags": [
         "outer_system",
         "jovian_system",
-        "minor_body",
+        "minor_moon",
         "inner_orbit"
       ],
       "gameplay_tags": [],
@@ -755,7 +755,7 @@
       "map_tags": [
         "outer_system",
         "jovian_system",
-        "minor_body",
+        "minor_moon",
         "inner_orbit"
       ],
       "gameplay_tags": [],
@@ -791,7 +791,7 @@
       "map_tags": [
         "outer_system",
         "jovian_system",
-        "minor_body"
+        "major_moon"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -826,7 +826,7 @@
       "map_tags": [
         "outer_system",
         "jovian_system",
-        "minor_body"
+        "major_moon"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -861,7 +861,7 @@
       "map_tags": [
         "outer_system",
         "jovian_system",
-        "minor_body"
+        "major_moon"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -896,7 +896,7 @@
       "map_tags": [
         "outer_system",
         "jovian_system",
-        "minor_body"
+        "major_moon"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -933,7 +933,7 @@
       "map_tags": [
         "outer_system",
         "jovian_system",
-        "minor_body",
+        "minor_moon",
         "outer_orbit"
       ],
       "gameplay_tags": [],
@@ -971,7 +971,7 @@
       "map_tags": [
         "outer_system",
         "jovian_system",
-        "minor_body",
+        "minor_moon",
         "outer_orbit"
       ],
       "gameplay_tags": [],
@@ -1009,7 +1009,7 @@
       "map_tags": [
         "outer_system",
         "jovian_system",
-        "minor_body",
+        "minor_moon",
         "outer_orbit"
       ],
       "gameplay_tags": [],
@@ -1045,7 +1045,7 @@
       "map_tags": [
         "outer_system",
         "saturnian_system",
-        "minor_body",
+        "minor_moon",
         "inner_orbit"
       ],
       "gameplay_tags": [],
@@ -1081,7 +1081,7 @@
       "map_tags": [
         "outer_system",
         "saturnian_system",
-        "minor_body"
+        "major_moon"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -1116,7 +1116,7 @@
       "map_tags": [
         "outer_system",
         "saturnian_system",
-        "minor_body"
+        "major_moon"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -1151,7 +1151,7 @@
       "map_tags": [
         "outer_system",
         "saturnian_system",
-        "minor_body"
+        "major_moon"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -1186,7 +1186,7 @@
       "map_tags": [
         "outer_system",
         "saturnian_system",
-        "minor_body"
+        "major_moon"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -1221,7 +1221,7 @@
       "map_tags": [
         "outer_system",
         "saturnian_system",
-        "minor_body"
+        "major_moon"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -1256,7 +1256,7 @@
       "map_tags": [
         "outer_system",
         "saturnian_system",
-        "minor_body"
+        "major_moon"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -1293,7 +1293,7 @@
       "map_tags": [
         "outer_system",
         "saturnian_system",
-        "minor_body",
+        "minor_moon",
         "outer_orbit"
       ],
       "gameplay_tags": [],
@@ -1329,7 +1329,7 @@
       "map_tags": [
         "outer_system",
         "saturnian_system",
-        "minor_body"
+        "major_moon"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -1366,7 +1366,7 @@
       "map_tags": [
         "outer_system",
         "saturnian_system",
-        "minor_body",
+        "minor_moon",
         "outer_orbit"
       ],
       "gameplay_tags": [],
@@ -1402,7 +1402,7 @@
       "map_tags": [
         "outer_system",
         "uranian_system",
-        "minor_body"
+        "major_moon"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -1437,7 +1437,7 @@
       "map_tags": [
         "outer_system",
         "uranian_system",
-        "minor_body"
+        "major_moon"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -1472,7 +1472,7 @@
       "map_tags": [
         "outer_system",
         "uranian_system",
-        "minor_body"
+        "major_moon"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -1507,7 +1507,7 @@
       "map_tags": [
         "outer_system",
         "uranian_system",
-        "minor_body"
+        "major_moon"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -1542,7 +1542,7 @@
       "map_tags": [
         "outer_system",
         "uranian_system",
-        "minor_body"
+        "major_moon"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -1577,7 +1577,7 @@
       "map_tags": [
         "outer_system",
         "neptunian_system",
-        "minor_body"
+        "major_moon"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -1612,7 +1612,7 @@
       "map_tags": [
         "outer_system",
         "neptunian_system",
-        "minor_body"
+        "major_moon"
       ],
       "gameplay_tags": [],
       "meta": {
@@ -1649,7 +1649,7 @@
       "map_tags": [
         "outer_system",
         "neptunian_system",
-        "minor_body",
+        "minor_moon",
         "outer_orbit"
       ],
       "gameplay_tags": [],
@@ -1685,7 +1685,7 @@
       "map_tags": [
         "outer_system",
         "kuiper_belt",
-        "minor_body"
+        "major_moon"
       ],
       "gameplay_tags": [],
       "meta": {

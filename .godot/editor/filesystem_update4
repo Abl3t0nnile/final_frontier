@@ -1,0 +1,7 @@
+res://game/main.tscn
+res://assets/shader/stars.gdshader
+res://game/main.gd
+res://game/map/test/map_test_scene.gd
+res://core/solar_system_sim.gd
+res://game/map/test/MapTestScene.tscn
+res://game/map/views/star_chart.tscn

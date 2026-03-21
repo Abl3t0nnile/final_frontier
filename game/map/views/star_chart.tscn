@@ -1,0 +1,244 @@
+[gd_scene format=3 uid="uid://cimcbl7teq1bp"]
+
+[ext_resource type="PackedScene" uid="uid://b1ma4sv3ut7g6" path="res://game/map/test/MapTestScene.tscn" id="1_hybcy"]
+[ext_resource type="Texture2D" uid="uid://bf5h80m0k44jg" path="res://assets/db_pictures/test_pic.jpg" id="2_56yso"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emt18"]
+bg_color = Color(0.11764706, 0.3137255, 0.10980392, 0.39215687)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.11764706, 0.3137255, 0.10980392, 0.39215687)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vop5m"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.11764706, 0.3137255, 0.10980392, 0.39215687)
+
+[node name="StarChart" type="Control" unique_id=882351000]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBox" type="HBoxContainer" parent="." unique_id=56188639]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StarChartScreen" type="VBoxContainer" parent="HBox" unique_id=355290612]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Header" type="PanelContainer" parent="HBox/StarChartScreen" unique_id=1427522554]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_emt18")
+
+[node name="Label" type="Label" parent="HBox/StarChartScreen/Header" unique_id=2002846255]
+layout_mode = 2
+text = "Star Chart"
+horizontal_alignment = 1
+
+[node name="MainPanel" type="PanelContainer" parent="HBox/StarChartScreen" unique_id=2019076486]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vop5m")
+
+[node name="ViewContainer" type="SubViewportContainer" parent="HBox/StarChartScreen/MainPanel" unique_id=1865038474]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="HBox/StarChartScreen/MainPanel/ViewContainer" unique_id=587281802]
+handle_input_locally = false
+size = Vector2i(1352, 1016)
+render_target_update_mode = 4
+
+[node name="MapTestScene" parent="HBox/StarChartScreen/MainPanel/ViewContainer/SubViewport" unique_id=996806836 instance=ExtResource("1_hybcy")]
+
+[node name="Footer" type="PanelContainer" parent="HBox/StarChartScreen" unique_id=944079633]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_emt18")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBox/StarChartScreen/Footer" unique_id=284421638]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBox/StarChartScreen/Footer/HBoxContainer" unique_id=871218575]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Footer Panel"
+horizontal_alignment = 1
+
+[node name="InfoPanel" type="VBoxContainer" parent="HBox" unique_id=1075765694]
+custom_minimum_size = Vector2(560, 0)
+layout_mode = 2
+
+[node name="Header" type="PanelContainer" parent="HBox/InfoPanel" unique_id=774131036]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_emt18")
+
+[node name="Label" type="Label" parent="HBox/InfoPanel/Header" unique_id=1773906302]
+layout_mode = 2
+text = "Star Chart"
+horizontal_alignment = 1
+
+[node name="MainPanel" type="PanelContainer" parent="HBox/InfoPanel" unique_id=1062100797]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vop5m")
+
+[node name="FoldableContainer" type="VBoxContainer" parent="HBox/InfoPanel/MainPanel" unique_id=56930847]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBox/InfoPanel/MainPanel/FoldableContainer" unique_id=1735270932]
+layout_mode = 2
+texture = ExtResource("2_56yso")
+expand_mode = 5
+
+[node name="BoxContainer" type="TabContainer" parent="HBox/InfoPanel/MainPanel/FoldableContainer" unique_id=251930179]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 2
+
+[node name="Physics Data" type="GridContainer" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer" unique_id=898182134]
+visible = false
+layout_mode = 2
+columns = 2
+metadata/_tab_index = 0
+
+[node name="NameLabel" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/Physics Data" unique_id=586393639]
+layout_mode = 2
+text = "Property:"
+
+[node name="ValueLabel" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/Physics Data" unique_id=1410460660]
+layout_mode = 2
+text = "Value"
+
+[node name="NameLabel2" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/Physics Data" unique_id=1274241830]
+layout_mode = 2
+text = "Property:"
+
+[node name="ValueLabel2" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/Physics Data" unique_id=1153352114]
+layout_mode = 2
+text = "Value"
+
+[node name="NameLabel3" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/Physics Data" unique_id=1671514581]
+layout_mode = 2
+text = "Property:"
+
+[node name="ValueLabel3" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/Physics Data" unique_id=1895627692]
+layout_mode = 2
+text = "Value"
+
+[node name="NameLabel4" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/Physics Data" unique_id=1946788976]
+layout_mode = 2
+text = "Property:"
+
+[node name="ValueLabel4" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/Physics Data" unique_id=1604324713]
+layout_mode = 2
+text = "Value"
+
+[node name="NameLabel5" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/Physics Data" unique_id=1964667380]
+layout_mode = 2
+text = "Property:"
+
+[node name="ValueLabel5" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/Physics Data" unique_id=187317708]
+layout_mode = 2
+text = "Value"
+
+[node name="NameLabel6" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/Physics Data" unique_id=884092292]
+layout_mode = 2
+text = "Property:"
+
+[node name="ValueLabel6" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/Physics Data" unique_id=1260842992]
+layout_mode = 2
+text = "Value"
+
+[node name="OrbitData" type="GridContainer" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer" unique_id=1268367011]
+visible = false
+layout_mode = 2
+columns = 2
+metadata/_tab_index = 1
+
+[node name="NameLabel" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/OrbitData" unique_id=944279537]
+layout_mode = 2
+text = "Property:"
+
+[node name="ValueLabel" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/OrbitData" unique_id=111892703]
+layout_mode = 2
+text = "Value"
+
+[node name="NameLabel2" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/OrbitData" unique_id=878774521]
+layout_mode = 2
+text = "Property:"
+
+[node name="ValueLabel2" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/OrbitData" unique_id=1768860419]
+layout_mode = 2
+text = "Value"
+
+[node name="NameLabel3" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/OrbitData" unique_id=1355175450]
+layout_mode = 2
+text = "Property:"
+
+[node name="ValueLabel3" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/OrbitData" unique_id=1444879595]
+layout_mode = 2
+text = "Value"
+
+[node name="NameLabel4" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/OrbitData" unique_id=456087655]
+layout_mode = 2
+text = "Property:"
+
+[node name="ValueLabel4" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/OrbitData" unique_id=1986945706]
+layout_mode = 2
+text = "Value"
+
+[node name="NameLabel5" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/OrbitData" unique_id=1582837018]
+layout_mode = 2
+text = "Property:"
+
+[node name="ValueLabel5" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/OrbitData" unique_id=1575935473]
+layout_mode = 2
+text = "Value"
+
+[node name="NameLabel6" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/OrbitData" unique_id=562591760]
+layout_mode = 2
+text = "Property:"
+
+[node name="ValueLabel6" type="Label" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/OrbitData" unique_id=2045660543]
+layout_mode = 2
+text = "Value"
+
+[node name="Info" type="ScrollContainer" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer" unique_id=1349403577]
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBox/InfoPanel/MainPanel/FoldableContainer/BoxContainer/Info" unique_id=1211414426]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci."
+fit_content = true
+
+[node name="Footer" type="PanelContainer" parent="HBox/InfoPanel" unique_id=1087809786]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_emt18")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBox/InfoPanel/Footer" unique_id=716733132]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBox/InfoPanel/Footer/HBoxContainer" unique_id=1419508598]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Footer Panel"
+horizontal_alignment = 1

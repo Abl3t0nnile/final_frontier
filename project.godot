@@ -20,11 +20,6 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=60
 config/icon="res://icon.svg"
 
-[autoload]
-
-SimClock="*res://core/autoload_sim_clock.gd"
-SolarSystem="*uid://0h4xrovhifs5"
-
 [display]
 
 window/size/viewport_width=1920

@@ -45,7 +45,12 @@ extends Resource
     # Zone-IDs die in diesem Scope sichtbar sind.
     # Referenziert Zonen über ihre eindeutige ID.
     # Leeres Array = alle Zonen sichtbar (kein Zonen-Filter).
-    # Beispiel: ["asteroid_belt"] zeigt nur den Asteroidengürtel.
+
+@export var visible_belts: Array[String]
+    # Belt-IDs die in diesem Scope sichtbar sind.
+    # Referenziert Gürtel über ihre eindeutige ID.
+    # Leeres Array = alle Belts sichtbar (kein Belt-Filter).
+    # Beispiel: ["asteroid_belt", "kuiper_belt"] zeigt nur diese zwei Gürtel.
 
 @export var min_orbit_px: float
     # Mindestradius eines Orbits in Pixeln (allgemeiner Filter).

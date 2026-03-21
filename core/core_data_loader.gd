@@ -1,7 +1,8 @@
 class_name CoreDataLoader
 extends RefCounted
 
-const DEFAULT_DATA_PATH := "res://data/solar_system_sim_data.json"
+const DEFAULT_DATA_PATH    := "res://data/solar_system_sim_data.json"
+const DEFAULT_STRUCTS_PATH := "res://data/struct_data.json"
 
 
 func load_all_body_defs(data_path: String = DEFAULT_DATA_PATH) -> Array[BodyDef]:
@@ -20,6 +21,31 @@ func load_all_body_defs(data_path: String = DEFAULT_DATA_PATH) -> Array[BodyDef]
         return result
 
     for entry in raw_bodies:
+        if typeof(entry) != TYPE_DICTIONARY:
+            continue
+
+        var body_def := _build_body_def(entry)
+        if body_def != null:
+            result.append(body_def)
+
+    return result
+
+
+func load_all_struct_defs(data_path: String = DEFAULT_STRUCTS_PATH) -> Array[BodyDef]:
+    var result: Array[BodyDef] = []
+    var raw_data: Variant = _load_json_file(data_path)
+
+    if typeof(raw_data) != TYPE_DICTIONARY:
+        push_warning("CoreDataLoader: root json is not a dictionary in '%s'" % data_path)
+        return result
+
+    var raw_structs: Variant = raw_data.get("structs", [])
+
+    if typeof(raw_structs) != TYPE_ARRAY:
+        push_warning("CoreDataLoader: 'structs' is not an array in '%s'" % data_path)
+        return result
+
+    for entry in raw_structs:
         if typeof(entry) != TYPE_DICTIONARY:
             continue
 

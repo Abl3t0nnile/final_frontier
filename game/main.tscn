@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://bo1bklnfyima7"]
 
 [ext_resource type="Script" uid="uid://dfl5nwfltondb" path="res://game/main.gd" id="1_oa506"]
-[ext_resource type="Shader" uid="uid://d0hehva3ksgxy" path="res://assets/shader/shader_starfield.gdshader" id="3_emt18"]
-[ext_resource type="Shader" uid="uid://bxoaaymjdou52" path="res://assets/shader/shader_monitor.gdshader" id="5_5un7r"]
 
 [sub_resource type="Environment" id="Environment_emt18"]
 background_mode = 3
@@ -12,79 +10,8 @@ glow_intensity = 1.2
 glow_strength = 0.9
 glow_bloom = 0.6
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dgpao"]
-shader = ExtResource("3_emt18")
-shader_parameter/scroll_offset_far = Vector2(0, 0)
-shader_parameter/density_far = 0.55
-shader_parameter/size_min_far = 0.4
-shader_parameter/size_max_far = 1.8
-shader_parameter/size_bias_far = 2.5
-shader_parameter/twinkle_speed_far = 0.8
-shader_parameter/twinkle_amount_far = 0.2
-shader_parameter/twinkle_variation_far = 0.5
-shader_parameter/brightness_far = 0.75
-shader_parameter/seed_far = 0.0
-shader_parameter/scroll_offset_near = Vector2(0, 0)
-shader_parameter/density_near = 0.2
-shader_parameter/size_min_near = 1.5
-shader_parameter/size_max_near = 4.0
-shader_parameter/size_bias_near = 2.0
-shader_parameter/twinkle_speed_near = 1.8
-shader_parameter/twinkle_amount_near = 0.45
-shader_parameter/twinkle_variation_near = 0.7
-shader_parameter/brightness_near = 1.0
-shader_parameter/seed_near = 42.0
-shader_parameter/star_color = Color(1, 1, 1, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wjctj"]
-shader = ExtResource("5_5un7r")
-shader_parameter/pixel_size = 2.0
-shader_parameter/scanlines_enabled = true
-shader_parameter/scanline_thickness = 0.5
-shader_parameter/scanline_opacity = 0.35
-shader_parameter/scanline_speed = 3.0
-shader_parameter/scanline_scroll_strength = 0.15
-shader_parameter/tint_enabled = false
-shader_parameter/tint_color = Color(1.0163021, 0.46069166, 0.21041662, 1)
-shader_parameter/tint_strength = 0.5
-shader_parameter/vignette_enabled = true
-shader_parameter/vignette_strength = 0.400000019
-shader_parameter/curvature_enabled = false
-shader_parameter/curvature_amount = 0.06
-shader_parameter/flicker_enabled = false
-shader_parameter/flicker_strength = 0.0400000019
-shader_parameter/aberration_enabled = true
-shader_parameter/aberration_amount = 1.8000000855
-
 [node name="Main" type="Node" unique_id=676464493]
 script = ExtResource("1_oa506")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=132669620]
 environment = SubResource("Environment_emt18")
-
-[node name="StarField" type="CanvasLayer" parent="." unique_id=1764005371]
-layer = -1
-
-[node name="ColorRect" type="ColorRect" parent="StarField" unique_id=1191938899]
-material = SubResource("ShaderMaterial_dgpao")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-mouse_filter = 2
-
-[node name="ShaderLayer" type="CanvasLayer" parent="." unique_id=1426330102]
-
-[node name="ColorRect" type="ColorRect" parent="ShaderLayer" unique_id=1954090403]
-material = SubResource("ShaderMaterial_wjctj")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="UiLayer" type="CanvasLayer" parent="." unique_id=143627714]

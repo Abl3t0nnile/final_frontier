@@ -36,6 +36,12 @@ func is_zone_visible(zone: ZoneDef, scope: ScopeConfig) -> bool:
 	return scope.visible_zones.is_empty() or zone.id in scope.visible_zones
 
 
+func is_belt_visible(belt: BeltDef, scope: ScopeConfig) -> bool:
+	if scope == null or belt == null:
+		return false
+	return scope.visible_belts.is_empty() or belt.id in scope.visible_belts
+
+
 func is_body_visible(body: BodyDef, scope: ScopeConfig, orbit_px: float) -> bool:
 	if scope == null or body == null:
 		return false
