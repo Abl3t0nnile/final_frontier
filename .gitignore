@@ -17,3 +17,7 @@ assets/
 
 # macOS
 .DS_Store
+**/.DS_Store
+
+# Editor config
+.editorconfig
