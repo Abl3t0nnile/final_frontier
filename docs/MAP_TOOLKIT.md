@@ -6,18 +6,20 @@
 
 ## Überblick
 
-Das Map Toolkit ist eine Sammlung **view-agnostischer, wiederverwendbarer Komponenten** für kartographische Ansichten. Es kümmert sich um Koordinatentransformation, Sichtbarkeitsfilterung und Rendering. Die konkrete Ansicht (StarChart, SensorDisplay etc.) orchestriert das Toolkit — kennt das Toolkit aber nicht umgekehrt.
+Das Map Toolkit ist eine Sammlung **view-agnostischer, wiederverwendbarer Komponenten** für kartographische Ansichten. Es kümmert sich um Koordinatentransformation, Kamera-Navigation, Sichtbarkeitsfilterung und Rendering. Die konkrete Ansicht (StarChart, SensorDisplay etc.) orchestriert das Toolkit — kennt das Toolkit aber nicht umgekehrt.
 
 ```
 map/
 ├── toolkit/
-│   ├── map_view_controller.gd        # Haupt-API: Orchestriert alle Layer
+│   ├── map_view_controller.gd        # Haupt-API: Culling, Exag, Koordinaten
+│   ├── MapViewController.tscn        # Scene: @export-Werte im Editor konfigurierbar
+│   ├── map_camera_controller.gd      # Kamera-Navigation: Pan, Zoom, Inertia, Input
 │   ├── map_data_loader.gd            # JSON-Loader für Belts & Zones
+│   ├── filter/
+│   │   ├── map_filter_state.gd      # Filter-State (Node, @export-Toggles)
+│   │   └── MapFilterState.tscn      # Scene: Defaults im Editor setzbar
 │   ├── scale/
 │   │   └── map_scale.gd             # Koordinatensystem & Zoom-Zustand
-│   ├── scope/
-│   │   ├── scope_config.gd          # Datenklass: Filterregeln pro Zoombereich
-│   │   └── scope_resolver.gd        # Logik: Scope-Matching & Sichtbarkeit
 │   └── renderer/
 │       ├── body_marker.gd           # Klickbares Icon + Label
 │       ├── orbit_renderer.gd        # Orbitbahn (solid/dashed/dotted)
@@ -26,24 +28,29 @@ map/
 │       ├── concentric_grid_renderer.gd
 │       └── square_grid_renderer.gd
 ├── test/
-│   └── map_test_scene.gd            # Demo & Integrationsttest
+│   └── map_test_scene.gd            # Demo & Integrationstest
 └── views/                           # Reserviert für konkrete Views
 ```
 
 ---
 
-## Architektur: 4-Layer-Pipeline
+## Architektur: 2-Regel-Culling + Filter
 
-Jeder Körper durchläuft vier unabhängige Filter- und Transformations-Layer:
+Für jeden Körper gelten zwei Culling-Regeln plus ein Filter:
 
 ```
-Layer A  ScopeResolver       →  Welcher Scope ist aktiv? (Zoomstufe + Fokus-Körper)
-Layer B  ScopeResolver       →  Ist der Körper im aktiven Scope sichtbar?
-Layer C  MapViewController   →  Exaggeration + Koordinatentransformation
-Layer D  MapViewController   →  Viewport-Culling
+Regel 1  min_orbit_px     →  orbit_km × px_per_km ≥ min_orbit_px?  (Root-Bodies ausgenommen)
+Regel 2  Viewport-Culling →  Screen-Position innerhalb get_cull_rect()?
+
+Filter   MapFilterState   →  Type/Subtype-Toggle aktiv?
 ```
 
-Der `MapViewController` ist die öffentliche API für alle vier Layer.
+**Exaggeration** wird automatisch aktiviert, wenn ein Fokus gesetzt ist:
+
+- Exag-Kinder: `orbit_px × exag_faktor` wird gegen `min_orbit_px` geprüft
+- Koordinate: `parent_screen + (child_world − parent_world) × px_per_km × exag_faktor`
+
+Der `MapViewController` ist die öffentliche API für alle Sichtbarkeits- und Koordinaten-Entscheidungen.
 
 ---
 
@@ -72,102 +79,163 @@ px_to_km(px: float) -> float
 
 ---
 
-### `ScopeConfig`
+### `MapCameraController`
 
-Datenklasse (kein Node). Definiert Filterregeln und Darstellungsparameter für einen Zoombereich.
+Kapselt den gesamten Navigations-State und Input für kartenbasierte Views. Steuert `MapScale` direkt — Pan, Zoom, Inertia, Gummiband, Smooth-Gleiten.
+
+Wird als Kind-Node eingehängt und via `setup()` konfiguriert. Hat keine Abhängigkeit zur View oder zu `SolarSystem`.
 
 ```gdscript
-# Matching-Bedingungen
-scope_name: String
-zoom_min: float           # scale_exp-Untergrenze (inklusiv)
-zoom_max: float           # scale_exp-Obergrenze (inklusiv)
-fokus_tags: Array[String] # Tags des fokussierten Körpers (OR-Logik; leer = immer)
-
-# Sichtbarkeitsfilter
-visible_types: Array[String]  # Körper-Typen ("star", "planet" …); leer = alle
-visible_tags:  Array[String]  # Körper-Tags (OR-Logik); leer = alle
-visible_zones: Array[String]  # Zone-IDs; leer = alle
-visible_belts: Array[String]  # Belt-IDs; leer = alle
-
-# Darstellungsparameter
-exag_faktor:          float  # Orbitale Spreizung (1.0 = keine)
-min_orbit_px:         float  # Mindest-Orbitradius in Pixeln
-context_min_orbit_px: float  # Mindest-Orbitradius für exaggerierte Kinder
-marker_sizes: Dictionary     # Typ → Größe in px
-
-get_marker_size(body_type: String) -> int
+# Setup
+func setup(map_scale: MapScale, config: Dictionary = {}) -> void
 ```
+
+**Config-Keys** (alle optional):
+
+| Key | Default | Bedeutung |
+| --- | --- | --- |
+| `scale_exp_min` | `1.0` | Untere Zoom-Grenze |
+| `scale_exp_max` | `11.0` | Obere Zoom-Grenze |
+| `scale_exp_start` | `7.5` | Start-Zoom |
+| `zoom_step` | `0.08` | scale_exp-Delta pro Mausrad-Tick |
+| `rubber_band_margin` | `0.5` | Überzoom-Spielraum an den Grenzen |
+| `rubber_band_speed` | `5.0` | Rückfeder-Geschwindigkeit |
+| `pan_inertia_decay` | `4.0` | Abbremsfaktor für Pan-Trägheit |
+| `smooth_zoom_speed` | `8.0` | Interpolationsgeschwindigkeit Zoom |
+| `smooth_pan_speed` | `8.0` | Interpolationsgeschwindigkeit Pan |
+| `pan_key_speed_px` | `400.0` | Tastatur-Pan in px/s |
+| `zoom_key_speed` | `1.5` | scale_exp-Delta/s bei Q/E |
+
+**Signale:**
+
+```gdscript
+signal camera_moved                                        # Jedes Frame bei Positionsänderung
+signal zoom_changed(scale_exp: float)                      # Bei Zoom-Änderung
+signal empty_click(world_km: Vector2)                      # Linksklick ins Leere
+signal context_menu_requested(screen_pos, world_km)        # Rechtsklick
+```
+
+**Navigation-API:**
+
+```gdscript
+pan_to(world_km: Vector2)            # Smooth gleiten zum Weltpunkt
+jump_to(world_km: Vector2)           # Sofortsprung, kein Smoothing
+zoom_to(scale_exp: float)            # Smooth zoomen
+reset_view()                         # Zurück zu Start-Position + Start-Zoom
+
+set_focus_anchor(world_km: Vector2)  # Zoom zentriert auf diesen Punkt (+ löscht Inertia)
+clear_focus_anchor()                 # Zoom zentriert auf Cursor
+```
+
+**Abfragen:**
+
+```gdscript
+get_world_center() -> Vector2
+get_scale_exp() -> float
+get_mouse_world_position() -> Vector2
+is_panning() -> bool
+```
+
+**Input Actions** (müssen in `project.godot` definiert sein):
+
+| Action | Taste | Verhalten |
+| --- | --- | --- |
+| `cam_pan_up/down/left/right` | W S A D | Pan, skaliert mit Zoom |
+| `cam_zoom_in` / `cam_zoom_out` | Q / E | Kontinuierliches Zoomen |
+| `cam_reset` | R | Zurück zu Start |
+
+Mausrad, Mittelklick-Pan, Trackpad-Pan und Pinch-to-Zoom werden intern verarbeitet.
+
+**Verhalten Linksklick:**
+
+- Kein Fokus-Anker gesetzt → Kamera gleitet zum Klickpunkt + emittiert `empty_click`
+- Fokus-Anker gesetzt → nur `empty_click` emittieren, View entscheidet (z.B. Fokus lösen)
 
 ---
 
-### `ScopeResolver`
+### `MapFilterState`
 
-Sucht zum aktuellen Zoom + Fokus-Körper den passenden `ScopeConfig` und prüft Sichtbarkeit.
+Node-Klasse mit `@export`-Toggles für die Sichtbarkeit von Bodies, Orbits, Zonen und Gürteln. Lebt als Kind-Node in der View-Scene oder in MapFilterState.tscn.
 
 ```gdscript
-setup(scopes: Array[ScopeConfig]) -> void
+# Type-Toggles (hierarchisch: Type aus → alle Subtypes auch aus)
+@export var show_stars, show_planets, show_dwarfs, show_moons, show_structs: bool
 
-resolve(scale_exp: float, focused_body: BodyDef) -> ScopeConfig
-# Iteriert Scopes der Reihe nach; gibt ersten Treffer zurück.
-# Fallback: letzter Scope in der Liste.
+# Subtype-Toggles (nur relevant wenn Parent-Type aktiv)
+@export var show_g_type, show_terrestrial, show_gas_giant, ...
 
-is_body_visible(body: BodyDef, scope: ScopeConfig, orbit_px: float) -> bool
-# Prüft: Typ-Filter, Tag-Filter, Mindest-Orbitradius
+# Orbits, Zones, Belts
+@export var show_planet_orbits, show_radiation_zones, show_asteroid_belt, ...
 
-is_zone_visible(zone: ZoneDef, scope: ScopeConfig) -> bool
-is_belt_visible(belt: BeltDef, scope: ScopeConfig) -> bool
+signal filter_changed
+
+# Query
+func is_body_visible(type: String, subtype: String) -> bool
+func is_orbit_visible(parent_type: String) -> bool
+func is_zone_visible(zone_type: String) -> bool
+func is_belt_visible(belt_id: String) -> bool
+
+# Setter (für UI — emittieren filter_changed)
+func set_type_enabled(type: String, enabled: bool) -> void
+func set_subtype_enabled(subtype: String, enabled: bool) -> void
+func set_orbit_enabled(parent_type: String, enabled: bool) -> void
+func set_zone_type_enabled(zone_type: String, enabled: bool) -> void
+func set_belt_enabled(belt_id: String, enabled: bool) -> void
 ```
 
-**Matching-Algorithmus:**
-1. Ist `scale_exp` im Bereich `[zoom_min, zoom_max]`?
-2. Hat der Fokus-Körper mindestens ein Tag aus `fokus_tags`? (leer = immer wahr)
-3. Erster Treffer gewinnt.
+Filter sind persistent über Fokus-Wechsel. Views reagieren auf `filter_changed` mit einem Redraw.
 
 ---
 
 ### `MapViewController`
 
-Haupt-API des Toolkits. Kombiniert alle 4 Layer. Hat keine Abhängigkeit zur konkreten View.
+Haupt-API des Toolkits für Sichtbarkeit und Koordinaten. Extends `Node`, konfigurierbar über `@export`. Hat keine Abhängigkeit zur konkreten View.
 
 ```gdscript
-setup(resolver: ScopeResolver, scale: MapScale) -> void
+# @export
+@export var min_orbit_px: float = 8.0
+@export var cull_margin_px: float = 100.0
+@export var exag_faktor: float = 5.0
+@export var marker_sizes: Dictionary = {"star": 32, "planet": 24, ...}
 
-# Scope
-resolve_scope(scale_exp: float, focused_body: BodyDef) -> ScopeConfig
-set_exag_bodies(ids: Array[String]) -> void  # Körper, die exaggeriert werden
-get_current_scope() -> ScopeConfig
+# Setup
+func setup(scale: MapScale, filter: MapFilterState) -> void
 
-# Sichtbarkeit (Layer A + B + D)
-is_body_visible(body: BodyDef, orbit_km: float) -> bool
+# Sichtbarkeit
+func is_body_visible(body: BodyDef, orbit_km: float) -> bool
+func get_marker_size(body_type: String) -> int
 
-# Koordinaten mit Exaggeration (Layer C)
-world_to_display(
+# Koordinaten mit Exaggeration
+func world_to_display(
     world_km: Vector2,
     body: BodyDef,
     parent_pos_km: Vector2 = Vector2.ZERO
 ) -> Vector2
 
 # Culling
-get_cull_rect(cam_pos: Vector2, vp_size: Vector2) -> Rect2
-is_in_viewport(screen_pos: Vector2, cull_rect: Rect2) -> bool
+func get_cull_rect(cam_pos: Vector2, vp_size: Vector2) -> Rect2
+func is_in_viewport(screen_pos: Vector2, cull_rect: Rect2) -> bool
+
+# Fokus & Exaggeration (automatisch verknüpft)
+func set_focus(body_id: String) -> void
+func clear_focus() -> void
+func get_focused_body_id() -> String
+func is_focused() -> bool
+
+# Zoom-to-Fit bei Fokus
+func calc_fit_scale_exp(max_child_orbit_km: float, vp_size: Vector2) -> float
 
 # Belt-LOD
-get_belt_density(belt: BeltDef) -> int
+func get_belt_density(belt: BeltDef) -> int
 ```
 
-**Exaggeration-Logik (`world_to_display`):**
+**`is_body_visible` — Prüfkette:**
 
-Wenn der Elternkörper eines Körpers exaggeriert ist:
-```
-screen_pos = parent_screen + (child_world − parent_world) × px_per_km × exag_faktor
-```
-Nicht-exaggerierte Körper: direkte Welttransformation über `MapScale`.
-
-**`is_body_visible` — vollständige Prüfkette:**
-1. Orbit in px berechnen. Ist Elternteil exaggeriert? → mit `exag_faktor` multiplizieren.
-2. Typ-/Tag-/Mindestradius-Filter via `ScopeResolver`.
-3. Exaggeration-Gate: Monde/Structs sind nur sichtbar, wenn ihr Elternteil exaggeriert ist.
-4. Kontext-Schwelle: exaggerierte Kinder müssen `context_min_orbit_px` überschreiten.
+1. Root-Body (leere `parent_id`)? → min_orbit_px-Check überspringen
+2. `orbit_px = orbit_km × px_per_km`
+3. Exag-Kind? → `orbit_px × exag_faktor`
+4. `orbit_px ≥ min_orbit_px`?
+5. `filter.is_body_visible(body.type, body.subtype)`?
 
 ---
 
@@ -193,8 +261,10 @@ Alle Renderer sind `Node2D`-Subklassen. Sie sind **dumb**: Sie empfangen Daten u
 Klickbares Icon + Label für einen Himmelskörper.
 
 ```gdscript
-# Signal
-clicked(body_id: String)
+signal clicked(body_id: String)
+signal double_clicked(body_id: String)
+signal hovered(body_id: String)
+signal unhovered(body_id: String)
 
 setup(body: BodyDef, size_px: int) -> void
 set_size(size_px: int) -> void
@@ -230,11 +300,6 @@ setup(belt: BeltDef) -> void
 set_density(visible_count: int) -> void        # LOD: erste N Partikel rendern
 set_reference_angle(angle_rad: float) -> void  # Für Trojaner (L4/L5)
 set_px_per_km(px_per_km: float) -> void
-
-# Export-Variablen
-rotation_speed_0: float  # Rotationsgeschwindigkeit Layer 0 (rad/s)
-rotation_speed_1: float  # Rotationsgeschwindigkeit Layer 1 (etwas schneller)
-apply_rotation: bool     # false für Trojaner
 ```
 
 **Intern:** Partikel werden einmalig deterministisch (Seeded RNG) generiert und in zwei `ArrayMesh`-Layern gespeichert → 2 Draw Calls statt N. LOD steuert, wie viele der vorgemischten Partikel sichtbar sind.
@@ -280,29 +345,42 @@ set_draw_rect(rect_screen: Rect2) -> void  # Sichtbarer Viewport-Bereich
 ## Integrations-Pattern
 
 ```gdscript
-## 1. Komponenten erzeugen
-_map_scale      = MapScale.new()
-_scope_resolver = ScopeResolver.new()
+# 1. MapScale erzeugen (RefCounted — kein add_child nötig)
+_map_scale = MapScale.new()
+
+# 2. Filter + ViewController als Nodes einrichten
+_filter = MapFilterState.new()
+add_child(_filter)
+
 _view_controller = MapViewController.new()
+add_child(_view_controller)
+_view_controller.setup(_map_scale, _filter)
 
-## 2. Scopes konfigurieren & einrichten
-_scope_resolver.setup([scope_a, scope_b, ...])
-_view_controller.setup(_scope_resolver, _map_scale)
+# 3. CameraController als Node einrichten (add_child VOR setup!)
+_cam_controller = MapCameraController.new()
+add_child(_cam_controller)
+_cam_controller.setup(_map_scale, {
+    "scale_exp_start": 7.5,
+    "scale_exp_min":   4.0,
+    "scale_exp_max":   10.0,
+})
+_cam_controller.camera_moved.connect(_refresh_positions)
 
-## 3. Daten laden
+# 4. Daten laden
 var loader = MapDataLoader.new()
 _belts = loader.load_all_belt_defs()
 _zones = loader.load_all_zone_defs()
 
-## 4. Renderer instanziieren (add_child VOR setup!)
+# 5. Renderer instanziieren (add_child VOR setup bei @onready-Nodes!)
 var marker = BODY_MARKER_SCENE.instantiate()
 add_child(marker)
-marker.setup(body_def, scope.get_marker_size(body_def.type))
+marker.setup(body_def, _view_controller.get_marker_size(body_def.type))
 
-## 5. Pro Frame: Positionen & Sichtbarkeit aktualisieren
-func _refresh():
-    _map_scale.set_origin(camera_world_km)
-    var cull_rect = _view_controller.get_cull_rect(cam_pos, vp_size)
+# 6. Refresh-Methode — wird von camera_moved + simulation_updated aufgerufen
+func _refresh_positions():
+    var px_per_km := _map_scale.get_px_per_km()
+    var vp_size   := get_viewport_rect().size
+    var cull_rect := _view_controller.get_cull_rect(Vector2.ZERO, vp_size)
 
     for body_id in SolarSystem.get_all_body_ids():
         var body     = SolarSystem.get_body(body_id)
@@ -316,9 +394,18 @@ func _refresh():
             marker.visible  = _view_controller.is_in_viewport(screen_pos, cull_rect)
         else:
             marker.visible = false
+
+# 7. Fokus setzen (z.B. bei Doppelklick)
+_view_controller.set_focus(body_id)          # Exag automatisch an
+_cam_controller.set_focus_anchor(body_pos)   # Zoom zentriert auf Body
+
+# 8. Fokus lösen
+_view_controller.clear_focus()              # Exag automatisch aus
+_cam_controller.clear_focus_anchor()        # Zoom zentriert auf Cursor
+_cam_controller.pan_to(pre_focus_center)    # Kamera gleitet zurück
 ```
 
-**Wichtig:** `add_child()` immer vor `setup()`, da `setup()` auf `@onready`-Variablen zugreifen kann.
+**Wichtig:** `add_child()` immer vor `setup()` bei Nodes die `@onready`-Variablen nutzen. `MapScale` ist `RefCounted` und braucht kein `add_child()`.
 
 ---
 
@@ -328,7 +415,8 @@ Das Toolkit übernimmt **keine** dieser Aufgaben — sie liegen bei der konkrete
 
 - Körperpositionen von `SolarSystem` abfragen
 - Orbitpfade berechnen
-- Kamera-/Pan-Steuerung
-- Input-Events verarbeiten
-- Gepinnte Körper verwalten
-- Update-Loop treiben
+- Fokus-Logik (Doppelklick → `set_focus`, Escape → `clear_focus`, pre_focus-State speichern)
+- Selektion + Selection-Ring zeichnen
+- Hover-Reaktion (Cursor, Tooltip)
+- Screen über Änderungen informieren
+- Update-Loop antreiben (`simulation_updated` verbinden)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://map_view_controller"]
+
+[ext_resource type="Script" path="res://game/map/toolkit/map_view_controller.gd" id="1_mvc"]
+
+[node name="MapViewController" type="Node"]
+script = ExtResource("1_mvc")
+min_orbit_px = 8.0
+cull_margin_px = 100.0
+exag_faktor = 5.0
+marker_sizes = {"dwarf": 16, "moon": 14, "planet": 24, "star": 32, "struct": 12}

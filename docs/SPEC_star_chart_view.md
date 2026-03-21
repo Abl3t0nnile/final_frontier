@@ -27,8 +27,8 @@ Kein Autoload. Empfängt alle Abhängigkeiten via `setup()`.
 | `SolarSystemModel` | Referenz | `setup()` Parameter |
 | `StarChartScreen` | Referenz | `setup()` Parameter |
 | `MapScale` | Eigene Instanz | `= MapScale.new()` |
-| `ScopeResolver` | Eigene Instanz | `= ScopeResolver.new()` |
-| `MapViewController` | Eigene Instanz | `= MapViewController.new()` |
+| `MapViewController` | Kind-Node aus Scene | `$MapViewController` |
+| `MapFilterState` | Kind-Node aus Scene | `$MapFilterState` |
 | `MapCameraController` | Kind-Node | Via `add_child()` + `setup(map_scale, config)` |
 | `MapDataLoader` | Lokale Instanz | Nur beim Laden von Belts/Zones |
 
@@ -56,23 +56,23 @@ Zwei getrennte Konzepte mit unterschiedlicher Funktion:
 | Eigenschaft | Wert |
 |---|---|
 | Auslöser | Doppelklick auf BodyMarker |
-| Effekte | Alles von Selektion + Scope wechselt (Kinder werden sichtbar) + Zoom-to-fit + Stack-Push |
+| Effekte | Alles von Selektion + Exaggeration wird aktiviert (Kinder werden spreizend sichtbar) + Zoom-to-fit |
 | Tracking | Kamera trackt den fokussierten Body (identisch zu Selektion) |
-| State | `_focus_stack: Array[FocusState]` |
+| State | `_focused_body_id: String` (leer = kein Fokus) |
 
 ### Drei Interaktionsstufen auf Bodies
 
 | Aktion | Effekt |
 |---|---|
 | Einfachklick | Selektion: InfoPanel, Ring, Kamera gleitet hin + trackt |
-| Doppelklick | Fokus: Selektion + Scope-Wechsel + Zoom-to-fit + Stack-Push |
+| Doppelklick | Fokus: Selektion + Exag an + Zoom-to-fit |
 | Rechtsklick | Kontextmenü (vorerst leer, Infrastruktur vorbereiten) |
 
 ### Klicks auf leeren Bereich
 
 | Aktion | Effekt |
 |---|---|
-| Linksklick (Fokus aktiv) | Stack poppt komplett, kein Fokus, keine Selektion |
+| Linksklick (Fokus aktiv) | Fokus lösen, Exag aus, Kamera zurück zu `_pre_focus_*` |
 | Linksklick (kein Fokus) | Kamera gleitet zum Klickpunkt |
 | Rechtsklick | Kontextmenü (eigene Optionen — Details offen) |
 
@@ -81,50 +81,47 @@ Zwei getrennte Konzepte mit unterschiedlicher Funktion:
 | Situation | Pan-Effekt |
 |---|---|
 | Selektion aktiv, kein Fokus | Alles löst sich: Tracking, Ring, InfoPanel, Selektion weg |
-| Fokus aktiv | Stack poppt komplett, Rückkehr zum vorherigen Zoom/Scope |
+| Fokus aktiv | Fokus lösen, Exag aus, Rückkehr zu `_pre_focus_*` |
 
 ---
 
-## 4 — Fokus-Stack
+## 4 — Fokus-System (kein Stack)
 
-Der Fokus-Stack speichert den Kamerazustand beim Eintauchen in ein Subsystem. Jeder Stack-Eintrag merkt sich den Zustand *vor* dem Fokus-Wechsel.
+Kein FocusState-Objekt, kein Stack. Der Fokus-Zustand besteht aus drei Variablen:
 
-### FocusState (Stack-Eintrag)
-
-```
-focused_body: BodyDef       # Der fokussierte Body auf dieser Ebene
-scale_exp: float             # Zoom-Level vor dem Fokus-Wechsel
-world_center_km: Vector2    # Kameraposition vor dem Fokus-Wechsel
+```gdscript
+_focused_body_id:    String   # Body-ID des Fokus; leer = kein Fokus
+_pre_focus_scale_exp: float   # Zoom-Level vor dem Fokus setzen
+_pre_focus_center_km: Vector2 # Kameraposition vor dem Fokus setzen
 ```
 
-### Stack-Operationen
-
-| Aktion | Operation |
-|---|---|
-| Doppelklick auf Kind des Fokus-Bodys | Push (neuer Level, tiefere Hierarchie) |
-| Doppelklick auf Geschwister (z.B. Jupiter fokussiert → Doppelklick Mars) | Replace (aktueller Level wird ersetzt) |
-| Escape | Pop eine Ebene (zurück zum vorherigen Fokus) |
-| Linksklick ins Leere | Pop komplett (Stack leer, kein Fokus, keine Selektion) |
-| Pan | Pop komplett (Stack leer, Rückkehr zum vorherigen Zoom/Scope) |
-
-### Stack-Beispiel
+### Fokus setzen (Doppelklick)
 
 ```
-Start:              Stack = []                   scale_exp=7.5, kein Fokus
-Doppelklick Jupiter: Stack = [{exp=7.5, center=(0,0)}]   → Fokus=Jupiter, zoom-to-fit
-Doppelklick Io:      Stack = [{...}, {exp=5.2, center=Jup_pos}]  → Fokus=Io, zoom-to-fit
-Escape:             Stack = [{exp=7.5, center=(0,0)}]   → Fokus=Jupiter, exp=5.2
-Escape:             Stack = []                   → scale_exp=7.5, kein Fokus
+1. _pre_focus_scale_exp = aktueller scale_exp
+2. _pre_focus_center_km = aktueller world_center_km
+3. _view_controller.set_focus(body_id)
+4. Zoom-to-fit: calc_fit_scale_exp(max_child_orbit_km, vp_size)
+5. Kamera gleitet zum fokussierten Body
+6. screen.update_focus_body(body.name)
 ```
 
-### Doppelklick auf Geschwister
+### Fokus wechseln (Doppelklick auf anderen Body)
 
 ```
-Jupiter fokussiert:  Stack = [{exp=7.5, center=(0,0)}]
-Doppelklick Mars:   Stack = [{exp=7.5, center=(0,0)}]   → Replace: Fokus=Mars, zoom-to-fit
+1. _view_controller.set_focus(new_body_id)   ← pre_focus bleibt erhalten
+2. Zoom-to-fit für neuen Body
+3. Kamera gleitet zum neuen Body
+4. screen.update_focus_body(new_body.name)
 ```
 
-Der unterste Stack-Eintrag (Rückkehr-Zustand) bleibt erhalten. Nur der aktuelle Fokus-Body und Zoom wechseln.
+### Fokus lösen (Escape / Klick ins Leere / Pan)
+
+```
+1. _view_controller.clear_focus()
+2. Kamera gleitet zurück zu _pre_focus_center_km + _pre_focus_scale_exp
+3. screen.update_focus_body("")
+```
 
 ### Tracking-Verhalten
 
@@ -171,8 +168,8 @@ Visueller Indikator um den selektierten Body.
 
 | Methode | Wann |
 |---|---|
-| `screen.update_header_info(scope, zoom, scale)` | Zoom-Änderung, Scope-Wechsel |
-| `screen.update_focus_body(name)` | Fokus-Wechsel (Push/Pop/Replace) |
+| `screen.update_header_info(zoom, scale)` | Zoom-Änderung |
+| `screen.update_focus_body(name)` | Fokus setzen / wechseln / lösen |
 | `screen.update_cursor_info(world_km)` | Mausbewegung |
 | `screen.select_body(body)` | Einfachklick / Doppelklick auf Body |
 | `screen.deselect_body()` | Selektion aufgehoben (Pan, Klick ins Leere, Escape) |
@@ -196,28 +193,50 @@ Infrastruktur wird vorbereitet, Inhalte kommen später.
 
 ---
 
-## 9 — Scopes
+## 9 — Culling
 
-*Noch zu planen. Wird als nächstes definiert.*
+Zwei Regeln bestimmen ob ein Body gerendert wird:
+
+1. **min_orbit_px** — `orbit_km × px_per_km ≥ min_orbit_px` → sichtbar
+   - Root-Bodies (kein Parent) sind immer sichtbar
+   - Exag-Kinder: `orbit_px × exag_faktor` vor dem Vergleich
+2. **Viewport-Culling** — Bodies außerhalb von `get_cull_rect()` werden nicht gerendert
+
+Zusätzlich greift `MapFilterState`: Type/Subtype-Toggles können Bodies unabhängig vom Orbit-Radius ausblenden.
+
+Exaggeration wird automatisch aktiviert wenn ein Fokus gesetzt ist, und automatisch deaktiviert wenn der Fokus gelöst wird. Kein manueller Toggle.
 
 ---
 
-## 10 — Abgrenzung
+## 10 — Map Settings Panel
+
+Das `StarChartScreen` stellt ein einblendbares Filter-Panel auf der linken Seite bereit:
+
+- Toggle via "FILTER"-Button im Header
+- Enthält alle `MapFilterState`-Toggles (Bodies, Orbits, Zones, Belts)
+- Verdrahtung über `screen.connect_settings_panel(filter)` nach dem View-Setup
+- Filter persistent über Fokus-Wechsel
+
+---
+
+## 11 — Abgrenzung
 
 **Die View macht:**
-- Toolkit orchestrieren (MapScale, ScopeResolver, MapViewController)
+
+- Toolkit orchestrieren (MapScale, MapViewController, MapFilterState)
 - MapCameraController als Kind-Node einbinden
 - Renderer spawnen und updaten
-- Selektion/Fokus-Logik mit Stack
+- Selektion/Fokus-Logik (ohne Stack)
 - Hover-Reaktion (Cursor, Tooltip)
 - Selection-Ring zeichnen
 - Screen über Änderungen informieren
+- Settings-Panel nach Setup mit Filter verdrahten
 
 **Die View macht NICHT:**
+
 - UI-Elemente bauen (→ StarChartScreen)
 - Time-Scale steuern (→ StarChartScreen)
 - Input für Pan/Zoom/Tastatur verarbeiten (→ MapCameraController)
 - Simulationszeit berechnen (→ SimClock)
 - Body-Positionen berechnen (→ SolarSystemModel)
 - Sichtbarkeitsentscheidungen treffen (→ MapViewController)
-- Scope-Dateien editieren (→ Scope Inspector Addon)

@@ -1,9 +1,4 @@
 final_frontier
-├── addons
-│   └── scope_inspector               # Editor-Plugin: Scope-Inspektor für die Kartenentwicklung
-│       ├── plugin.cfg
-│       ├── plugin.gd
-│       └── scope_inspector_dock.gd
 ├── assets
 │   ├── db_pictures
 │   │   └── test_pic.jpg
@@ -52,7 +47,7 @@ final_frontier
 │   ├── belt_data.json                # Gürtel & Trojaner-Wolken (BeltDef)
 │   └── zone_data.json                # Räumliche Zonen (ZoneDef)
 ├── docs
-│   ├── MAP_TOOLKIT.md                # Dokumentation: Map Toolkit (Renderer, Scope, Scale, Controller)
+│   ├── MAP_TOOLKIT.md                # Dokumentation: Map Toolkit (Renderer, Filter, Scale, Controller)
 │   ├── SIM_CORE.md                   # Dokumentation: Sim Core (SimClock, SolarSystem, CoreDataLoader)
 │   ├── SPEC_solar_system_sim_data.md # Spezifikation: JSON-Datenbankformat (BodyDef, BeltDef, ZoneDef)
 │   └── file_structure.txt            # Diese Datei
@@ -64,8 +59,13 @@ final_frontier
 │   │   │   ├── MapTestScene.tscn
 │   │   │   └── map_test_scene.gd     # Integrations-Demo für das Map Toolkit
 │   │   ├── toolkit                   # Map Toolkit: view-agnostische Kartenkomponenten
-│   │   │   ├── map_view_controller.gd    # Haupt-API: Scope, Sichtbarkeit, Koordinaten, Culling
+│   │   │   ├── map_view_controller.gd    # Haupt-API: Culling, Exag, Koordinaten, Fokus
+│   │   │   ├── MapViewController.tscn   # Scene: @export-Werte im Editor konfigurierbar
+│   │   │   ├── map_camera_controller.gd  # Kamera-Navigation: Pan, Zoom, Inertia, Input
 │   │   │   ├── map_data_loader.gd        # Lädt belt_data.json + zone_data.json
+│   │   │   ├── filter
+│   │   │   │   ├── map_filter_state.gd   # Filter-State: Type/Subtype/Orbit/Zone/Belt-Toggles
+│   │   │   │   └── MapFilterState.tscn   # Scene: Defaults im Editor setzbar
 │   │   │   ├── renderer
 │   │   │   │   ├── BodyMarker.tscn
 │   │   │   │   ├── body_marker.gd        # Klickbares Icon + Label für einen Himmelskörper
@@ -79,11 +79,8 @@ final_frontier
 │   │   │   │   ├── concentric_grid_renderer.gd   # Konzentrische Referenzringe
 │   │   │   │   ├── SquareGridRenderer.tscn
 │   │   │   │   └── square_grid_renderer.gd       # Rechteckiges Koordinatengitter
-│   │   │   ├── scale
-│   │   │   │   └── map_scale.gd          # Koordinatensystem: Zoom-Zustand, Welt↔Bildschirm-Transformation
-│   │   │   └── scope
-│   │   │       ├── scope_config.gd       # Datenklasse: Filterregeln & Darstellungsparameter pro Zoombereich
-│   │   │       └── scope_resolver.gd     # Logik: Scope-Matching & Sichtbarkeitsfilterung
+│   │   │   └── scale
+│   │   │       └── map_scale.gd          # Koordinatensystem: Zoom-Zustand, Welt↔Bildschirm-Transformation
 │   │   └── views                     # Reserviert für konkrete Kartenansichten (StarChart etc.)
 │   └── screens                       # Reserviert für Game-Screens (Hauptmenü, HUD etc.)
 ├── project.godot

@@ -61,11 +61,13 @@ var solar_system: SolarSystemModel = null
 # ─── Node-Referenzen (gebaut in _build_ui) ────────────────────────────────────
 
 # Header
-var _header_scope_label:  Label = null
-var _header_zoom_label:   Label = null
-var _header_scale_label:  Label = null
-var _header_focus_label:  Label = null
-var _info_toggle_btn:     Button = null
+var _header_zoom_label:    Label = null
+var _header_scale_label:   Label = null
+var _header_focus_label:   Label = null
+var _filter_toggle_btn:    Button = null
+var _info_toggle_btn:      Button = null
+var _map_settings_panel:   PanelContainer = null
+var _settings_visible:     bool = false
 
 # Content
 var _content_hbox:        HBoxContainer = null
@@ -142,9 +144,7 @@ func get_sub_viewport() -> SubViewport:
 	return _sub_viewport
 
 
-func update_header_info(scope_name: String, scale_exp: float, mkm_per_px: float) -> void:
-	if _header_scope_label:
-		_header_scope_label.text = "Scope: %s" % scope_name
+func update_header_info(scale_exp: float, mkm_per_px: float) -> void:
 	if _header_zoom_label:
 		_header_zoom_label.text = "Zoom: %.1f" % scale_exp
 	if _header_scale_label:
@@ -198,6 +198,7 @@ func _build_ui() -> void:
 	_content_hbox.add_theme_constant_override("separation", 0)
 	root_vbox.add_child(_content_hbox)
 
+	_content_hbox.add_child(_build_settings_panel())
 	_content_hbox.add_child(_build_map_panel())
 	_content_hbox.add_child(_build_info_panel())
 
@@ -223,11 +224,6 @@ func _build_header() -> PanelContainer:
 
 	hbox.add_child(_make_header_sep())
 
-	_header_scope_label = _make_label("Scope: —", TEXT_MID, 10)
-	hbox.add_child(_header_scope_label)
-
-	hbox.add_child(_make_header_sep())
-
 	_header_zoom_label = _make_label("Zoom: —", TEXT_MID, 10)
 	hbox.add_child(_header_zoom_label)
 
@@ -244,9 +240,23 @@ func _build_header() -> PanelContainer:
 	_header_focus_label = _make_label("", TEXT_MID, 10)
 	hbox.add_child(_header_focus_label)
 
+	# Filter-Toggle-Button (links)
+	_filter_toggle_btn = Button.new()
+	_filter_toggle_btn.text = "FILTER  ▸"
+	_filter_toggle_btn.add_theme_font_size_override("font_size", 9)
+	_filter_toggle_btn.add_theme_color_override("font_color", TEXT_BRIGHT)
+	_filter_toggle_btn.add_theme_color_override("font_hover_color", TEXT_BRIGHT)
+	_filter_toggle_btn.add_theme_color_override("font_pressed_color", TEXT_BRIGHT)
+	_filter_toggle_btn.add_theme_stylebox_override("normal", _make_btn_style(false))
+	_filter_toggle_btn.add_theme_stylebox_override("hover", _make_btn_style(true))
+	_filter_toggle_btn.add_theme_stylebox_override("pressed", _make_btn_style(true))
+	_filter_toggle_btn.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
+	_filter_toggle_btn.pressed.connect(_toggle_settings_panel)
+	hbox.add_child(_filter_toggle_btn)
+
 	hbox.add_child(_make_header_sep())
 
-	# Toggle-Button
+	# INFO-Toggle-Button (rechts)
 	_info_toggle_btn = Button.new()
 	_info_toggle_btn.text = "INFO  ✕"
 	_info_toggle_btn.add_theme_font_size_override("font_size", 9)
@@ -610,6 +620,128 @@ func _input(event: InputEvent) -> void:
 		_select_time_scale(3)
 	elif event.is_action_pressed("time_scale_5"):
 		_select_time_scale(4)
+
+
+# ── Settings Panel ────────────────────────────────────────────────────────────
+
+func _build_settings_panel() -> PanelContainer:
+	_map_settings_panel = PanelContainer.new()
+	_map_settings_panel.custom_minimum_size.x = INFO_PANEL_WIDTH
+	_map_settings_panel.size_flags_horizontal = SIZE_SHRINK_BEGIN
+	_map_settings_panel.size_flags_vertical = SIZE_EXPAND_FILL
+	_map_settings_panel.add_theme_stylebox_override("panel", _make_flat_box(BG_INFO, CHROME_BG))
+	_map_settings_panel.visible = false
+
+	var scroll := ScrollContainer.new()
+	scroll.size_flags_horizontal = SIZE_EXPAND_FILL
+	scroll.size_flags_vertical = SIZE_EXPAND_FILL
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	_map_settings_panel.add_child(scroll)
+
+	var vbox := VBoxContainer.new()
+	vbox.size_flags_horizontal = SIZE_EXPAND_FILL
+	vbox.add_theme_constant_override("separation", 0)
+	var margin := _wrap_margin(vbox, 10, 10, 14, 14)
+	scroll.add_child(margin)
+
+	vbox.add_child(_make_label("MAP SETTINGS", TEXT_LABEL, 8))
+	vbox.add_child(_make_settings_sep())
+	vbox.add_child(_make_settings_section_label("BODIES"))
+	vbox.add_child(_make_settings_toggle("Stars", "show_stars"))
+	vbox.add_child(_make_settings_toggle("  G-Type", "show_g_type"))
+	vbox.add_child(_make_settings_toggle("Planets", "show_planets"))
+	vbox.add_child(_make_settings_toggle("  Terrestrial", "show_terrestrial"))
+	vbox.add_child(_make_settings_toggle("  Gas Giant", "show_gas_giant"))
+	vbox.add_child(_make_settings_toggle("  Ice Giant", "show_ice_giant"))
+	vbox.add_child(_make_settings_toggle("  Sub-Neptune", "show_sub_neptune"))
+	vbox.add_child(_make_settings_toggle("Dwarfs", "show_dwarfs"))
+	vbox.add_child(_make_settings_toggle("  Asteroid Dwarf", "show_asteroid_dwarf"))
+	vbox.add_child(_make_settings_toggle("  Plutoid", "show_plutoid"))
+	vbox.add_child(_make_settings_toggle("Moons", "show_moons"))
+	vbox.add_child(_make_settings_toggle("  Major Moon", "show_major_moon"))
+	vbox.add_child(_make_settings_toggle("  Minor Moon", "show_minor_moon"))
+	vbox.add_child(_make_settings_toggle("Structures", "show_structs"))
+	vbox.add_child(_make_settings_toggle("  Station", "show_station"))
+	vbox.add_child(_make_settings_toggle("  Shipyard", "show_shipyard"))
+	vbox.add_child(_make_settings_toggle("  Outpost", "show_outpost"))
+	vbox.add_child(_make_settings_toggle("  Relay", "show_relay"))
+	vbox.add_child(_make_settings_toggle("  Nav Point", "show_navigation_point"))
+	vbox.add_child(_make_settings_sep())
+	vbox.add_child(_make_settings_section_label("ORBITS"))
+	vbox.add_child(_make_settings_toggle("Planet Orbits", "show_planet_orbits"))
+	vbox.add_child(_make_settings_toggle("Dwarf Orbits", "show_dwarf_orbits"))
+	vbox.add_child(_make_settings_toggle("Moon Orbits", "show_moon_orbits"))
+	vbox.add_child(_make_settings_toggle("Struct Orbits", "show_struct_orbits"))
+	vbox.add_child(_make_settings_sep())
+	vbox.add_child(_make_settings_section_label("ZONES"))
+	vbox.add_child(_make_settings_toggle("Radiation", "show_radiation_zones"))
+	vbox.add_child(_make_settings_toggle("Magnetic", "show_magnetic_zones"))
+	vbox.add_child(_make_settings_toggle("Gravity", "show_gravity_zones"))
+	vbox.add_child(_make_settings_toggle("Habitable", "show_habitable_zones"))
+	vbox.add_child(_make_settings_sep())
+	vbox.add_child(_make_settings_section_label("BELTS"))
+	vbox.add_child(_make_settings_toggle("Asteroid Belt", "show_asteroid_belt"))
+	vbox.add_child(_make_settings_toggle("Kuiper Belt", "show_kuiper_belt"))
+
+	return _map_settings_panel
+
+
+func _make_settings_section_label(text: String) -> Label:
+	var lbl := _make_label(text, TEXT_LABEL, 8)
+	lbl.add_theme_constant_override("margin_top", 6)
+	return lbl
+
+
+func _make_settings_sep() -> HSeparator:
+	var sep := HSeparator.new()
+	sep.add_theme_color_override("color", SEP_COLOR)
+	sep.add_theme_constant_override("separation", 4)
+	return sep
+
+
+func _make_settings_toggle(label_text: String, property: String) -> HBoxContainer:
+	var hbox := HBoxContainer.new()
+	hbox.add_theme_constant_override("separation", 8)
+
+	var lbl := _make_label(label_text, TEXT_MID, 10)
+	lbl.size_flags_horizontal = SIZE_EXPAND_FILL
+	hbox.add_child(lbl)
+
+	var chk := CheckBox.new()
+	chk.button_pressed = true
+	chk.add_theme_font_size_override("font_size", 9)
+	chk.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
+	# Store property name for later wiring via connect_settings_panel()
+	chk.set_meta("filter_property", property)
+	hbox.add_child(chk)
+
+	return hbox
+
+
+func connect_settings_panel(filter: MapFilterState) -> void:
+	if _map_settings_panel == null or filter == null:
+		return
+	_wire_toggles(_map_settings_panel, filter)
+
+
+func _wire_toggles(node: Node, filter: MapFilterState) -> void:
+	for child in node.get_children():
+		if child is CheckBox and child.has_meta("filter_property"):
+			var prop: String = child.get_meta("filter_property")
+			child.button_pressed = filter.get(prop)
+			child.toggled.connect(func(pressed: bool) -> void:
+				filter.set(prop, pressed)
+				filter.filter_changed.emit()
+			)
+		_wire_toggles(child, filter)
+
+
+# ── Settings Panel Toggle ────────────────────────────────────────────────────
+
+func _toggle_settings_panel() -> void:
+	_settings_visible = not _settings_visible
+	_map_settings_panel.visible = _settings_visible
+	_filter_toggle_btn.text = "FILTER  ✕" if _settings_visible else "FILTER  ▸"
 
 
 # ── Info Panel Toggle ─────────────────────────────────────────────────────────
