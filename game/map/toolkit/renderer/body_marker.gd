@@ -3,11 +3,14 @@
 # Feste Pixelgröße — skaliert nicht mit dem Zoom, nur bei Scope-Wechsel.
 # Empfängt fertige Daten von der View — keine eigene Logik über Sichtbarkeit oder Position.
 # Click-Detection via Area2D — emittiert clicked(body_id) bei Linksklick.
+# Hover-Detection via Area2D — emittiert hovered/unhovered für View-spezifische Reaktionen.
 class_name BodyMarker
 
 extends Node2D
 
 signal clicked(body_id: String)
+signal hovered(body_id: String)
+signal unhovered(body_id: String)
 
 const ICON_FALLBACK: String = "res://assets/map_icons/Cross.png"
 
@@ -45,6 +48,8 @@ var _body_type: String = ""
 
 func _ready() -> void:
 	_area.input_event.connect(_on_area_input_event)
+	_area.mouse_entered.connect(_on_area_mouse_entered)
+	_area.mouse_exited.connect(_on_area_mouse_exited)
 
 
 func setup(body: BodyDef, size_px: int) -> void:
@@ -79,3 +84,11 @@ func get_body_id() -> String:
 func _on_area_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		clicked.emit(_body_id)
+
+
+func _on_area_mouse_entered() -> void:
+	hovered.emit(_body_id)
+
+
+func _on_area_mouse_exited() -> void:
+	unhovered.emit(_body_id)
