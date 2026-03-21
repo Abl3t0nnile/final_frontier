@@ -175,9 +175,9 @@ func _refresh_positions() -> void:
 		var marker: BodyMarker = _markers[body_id]
 
 		var orbit_km   := SolarSystem.get_body_orbit_radius_km(body_id)
-		var is_visible := _view_controller.is_body_visible(body, orbit_km)
+		var is_vis := _view_controller.is_body_visible(body, orbit_km)
 
-		if is_visible:
+		if is_vis:
 			var world_pos  := SolarSystem.get_body_position(body_id)
 			var parent_pos := SolarSystem.get_body_position(body.parent_id) \
 								if not body.parent_id.is_empty() else Vector2.ZERO
@@ -194,7 +194,7 @@ func _refresh_positions() -> void:
 								if not body.parent_id.is_empty() else Vector2.ZERO
 			orbit.position = _map_scale.world_to_screen(parent_pos)
 
-			if is_visible:
+			if is_vis:
 				var km_pts  := orbit.get_path_points_km()
 				var scr_pts := PackedVector2Array()
 				scr_pts.resize(km_pts.size())
