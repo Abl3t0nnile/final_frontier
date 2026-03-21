@@ -124,7 +124,7 @@ func get_sst_s_now() -> float:
 func get_time_scale() -> float:
     return _time_scale
 
-static func get_time_stamp_array(sst_s: float) -> Array:
+static func get_time_stamp_array(sst_s: float) -> Array[int]:
     var years: int = int(floor(sst_s / (SEC_PER_DAY * DAYS_PER_YEAR)))
     var remainder: float = fmod(sst_s, SEC_PER_DAY * DAYS_PER_YEAR)
 
@@ -160,13 +160,14 @@ static func get_time_stamp_array(sst_s: float) -> Array:
         days = 0
         years += 1
 
-    return [years, days, hours, minutes, seconds, hundredths]
+    var result: Array[int] = [years, days, hours, minutes, seconds, hundredths]
+    return result
 
-func get_time_stamp_array_now() -> Array:
+func get_time_stamp_array_now() -> Array[int]:
     return get_time_stamp_array(_sst_s)
 
 func get_time_stamp_string(sst_s: float) -> String:
-    var time_array: Array = get_time_stamp_array(sst_s)
+    var time_array: Array[int] = get_time_stamp_array(sst_s)
     return "[%04d:%03d:%02d:%02d:%02d:%02d]" % [
         time_array[0],
         time_array[1],
