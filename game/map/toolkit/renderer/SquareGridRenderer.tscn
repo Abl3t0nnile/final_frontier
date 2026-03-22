@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://sgrid_scene_1"]
+[gd_scene format=3 uid="uid://tscn8sqgrid"]
 
-[ext_resource type="Script" path="res://game/map/toolkit/renderer/square_grid_renderer.gd" id="1_sgrid"]
+[ext_resource type="Script" uid="uid://sqr4gr1drndr55" path="res://game/map/toolkit/renderer/square_grid_renderer.gd" id="1_sgrd1"]
 
 [node name="SquareGridRenderer" type="Node2D"]
-script = ExtResource("1_sgrid")
+script = ExtResource("1_sgrd1")

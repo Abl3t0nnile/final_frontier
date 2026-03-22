@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://cgrid_scene_1"]
+[gd_scene format=3 uid="uid://hbb813eigepj"]
 
-[ext_resource type="Script" path="res://game/map/toolkit/renderer/concentric_grid_renderer.gd" id="1_cgrid"]
+[ext_resource type="Script" uid="uid://cgr4conc3ntric" path="res://game/map/toolkit/renderer/concentric_grid_renderer.gd" id="1_cgrd1"]
 
 [node name="ConcentricGridRenderer" type="Node2D"]
-script = ExtResource("1_cgrid")
+script = ExtResource("1_cgrd1")

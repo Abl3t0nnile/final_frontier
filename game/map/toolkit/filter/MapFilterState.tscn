@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://map_filter_state"]
-
-[ext_resource type="Script" path="res://game/map/toolkit/filter/map_filter_state.gd" id="1_filterstate"]
-
-[node name="MapFilterState" type="Node"]
-script = ExtResource("1_filterstate")

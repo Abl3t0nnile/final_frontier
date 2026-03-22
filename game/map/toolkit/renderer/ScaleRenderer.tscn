@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://hbccip0reeuj"]
+
+[ext_resource type="Script" uid="uid://c08eii84mxpvc" path="res://game/map/toolkit/renderer/scale_renderer.gd" id="1_scl1"]
+
+[node name="ScaleRenderer" type="Node2D"]
+script = ExtResource("1_scl1")

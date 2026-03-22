@@ -1,21 +1,6 @@
-[gd_scene format=3 uid="uid://bmarkr_scene_1"]
+[gd_scene format=3 uid="uid://dj6w3n28gnc54"]
 
-[ext_resource type="Script" path="res://game/map/toolkit/renderer/body_marker.gd" id="1_bmark"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
-radius = 16.0
+[ext_resource type="Script" uid="uid://bf67i5671nk4c" path="res://game/map/toolkit/renderer/body_marker.gd" id="1_bmrk1"]
 
 [node name="BodyMarker" type="Node2D"]
-script = ExtResource("1_bmark")
-
-[node name="Icon" type="Sprite2D" parent="."]
-
-[node name="Label" type="Label" parent="."]
-position = Vector2(12, -8)
-text = ""
-label_settings = null
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_1")
+script = ExtResource("1_bmrk1")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dfviw53oqvl62"]
+
+[ext_resource type="Script" uid="uid://1kuom0hshka5" path="res://game/map/views/star_chart/star_chart_view.gd" id="1_scv1"]
+
+[node name="StarChartView" type="Node"]
+script = ExtResource("1_scv1")

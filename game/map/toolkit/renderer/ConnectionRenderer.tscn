@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://tscnbconnrnd"]
+
+[ext_resource type="Script" uid="uid://5j5oo7wde11t" path="res://game/map/toolkit/renderer/connection_renderer.gd" id="1_conn1"]
+
+[node name="ConnectionRenderer" type="Node2D"]
+script = ExtResource("1_conn1")

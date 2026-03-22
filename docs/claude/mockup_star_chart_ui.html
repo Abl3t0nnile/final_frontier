@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Star Chart UI Mockup</title>
+<style>body{margin:0;padding:20px;background:#111;display:flex;justify-content:center;}</style>
+</head>
+<body>
+<div style="font-family: 'Courier New', monospace; background: #060e0a; color: #c8d8d0; width: 100%; max-width: 1600px; aspect-ratio: 16/9; display: flex; flex-direction: column; border: 0.5px solid #1e5032; border-radius: 4px; overflow: hidden;">
+
+  <!-- HEADER -->
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 4px 12px; background: rgba(30,80,50,0.25); border-bottom: 0.5px solid #1e5032; flex-shrink: 0;">
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <span style="font-size: 11px; font-weight: 500; color: #4aff8a; letter-spacing: 0.08em;">STAR CHART</span>
+      <span style="font-size: 11px; color: #4a6a5a;">Zoom: 5.8</span>
+      <span style="font-size: 11px; color: #4a6a5a;">0.63 Mkm/px</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="display: flex; align-items: center; gap: 4px;">
+        <span style="font-size: 9px; color: #4a6a5a;">SCALE</span>
+        <div style="display: flex; gap: 2px;">
+          <div style="padding: 1px 6px; border: 0.5px solid #4aff8a; border-radius: 2px; font-size: 10px; color: #4aff8a; cursor: pointer; background: rgba(74,255,138,0.08);">LIN</div>
+          <div style="padding: 1px 6px; border: 0.5px solid #1e5032; border-radius: 2px; font-size: 10px; color: #a0b8ac; cursor: pointer;">LOG</div>
+        </div>
+      </div>
+      <div style="width: 0.5px; height: 14px; background: #1e5032;"></div>
+      <div style="display: flex; align-items: center; gap: 4px;">
+        <span style="font-size: 9px; color: #4a6a5a;">EXAG</span>
+        <div style="display: flex; align-items: center; gap: 2px;">
+          <div style="padding: 1px 5px; border: 0.5px solid #1e5032; border-radius: 2px; font-size: 10px; color: #a0b8ac; cursor: pointer;">−</div>
+          <span style="font-size: 10px; color: #4aff8a; min-width: 26px; text-align: center;">5×</span>
+          <div style="padding: 1px 5px; border: 0.5px solid #1e5032; border-radius: 2px; font-size: 10px; color: #a0b8ac; cursor: pointer;">+</div>
+        </div>
+      </div>
+      <div style="width: 0.5px; height: 14px; background: #1e5032;"></div>
+      <div style="display: flex; align-items: center; gap: 4px;">
+        <span style="font-size: 9px; color: #4a6a5a;">MIN ORBIT</span>
+        <div style="display: flex; align-items: center; gap: 2px;">
+          <div style="padding: 1px 5px; border: 0.5px solid #1e5032; border-radius: 2px; font-size: 10px; color: #a0b8ac; cursor: pointer;">−</div>
+          <span style="font-size: 10px; color: #4aff8a; min-width: 26px; text-align: center;">8 px</span>
+          <div style="padding: 1px 5px; border: 0.5px solid #1e5032; border-radius: 2px; font-size: 10px; color: #a0b8ac; cursor: pointer;">+</div>
+        </div>
+      </div>
+      <div style="width: 0.5px; height: 14px; background: #1e5032;"></div>
+      <div style="display: flex; align-items: center; gap: 4px;">
+        <span style="font-size: 9px; color: #4a6a5a;">GRID</span>
+        <div style="display: flex; gap: 2px;">
+          <div style="padding: 1px 6px; border: 0.5px solid #4aff8a; border-radius: 2px; font-size: 10px; color: #4aff8a; cursor: pointer; background: rgba(74,255,138,0.08);">RAD</div>
+          <div style="padding: 1px 6px; border: 0.5px solid #1e5032; border-radius: 2px; font-size: 10px; color: #a0b8ac; cursor: pointer;">SQR</div>
+          <div style="padding: 1px 6px; border: 0.5px solid #1e5032; border-radius: 2px; font-size: 10px; color: #a0b8ac; cursor: pointer;">OFF</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAP VIEWPORT -->
+  <div style="flex: 1; position: relative; overflow: hidden; background: #040a07;">
+    <div style="position: absolute; top: 10px; left: 10px; z-index: 2; padding: 5px 7px; background: rgba(10,26,20,0.85); border: 0.5px solid #1e5032; border-radius: 3px; cursor: pointer; display: flex; flex-direction: column; gap: 3px;">
+      <div style="width: 14px; height: 1.5px; background: #4aff8a;"></div>
+      <div style="width: 14px; height: 1.5px; background: #4aff8a;"></div>
+      <div style="width: 14px; height: 1.5px; background: #4aff8a;"></div>
+    </div>
+    <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet">
+      <line x1="800" y1="0" x2="800" y2="900" stroke="rgba(74,255,138,0.05)" stroke-width="0.5"/>
+      <line x1="0" y1="450" x2="1600" y2="450" stroke="rgba(74,255,138,0.05)" stroke-width="0.5"/>
+      <circle cx="800" cy="450" r="42" fill="none" stroke="rgba(120,180,160,0.12)" stroke-width="0.5"/>
+      <circle cx="800" cy="450" r="78" fill="none" stroke="rgba(120,180,160,0.12)" stroke-width="0.5"/>
+      <circle cx="800" cy="450" r="110" fill="none" stroke="rgba(120,180,160,0.12)" stroke-width="0.5"/>
+      <circle cx="800" cy="450" r="168" fill="none" stroke="rgba(120,180,160,0.12)" stroke-width="0.5"/>
+      <circle cx="800" cy="450" r="280" fill="none" stroke="rgba(120,180,160,0.08)" stroke-width="0.5"/>
+      <circle cx="800" cy="450" r="420" fill="none" stroke="rgba(120,180,160,0.08)" stroke-width="0.5"/>
+      <circle cx="800" cy="450" r="570" fill="none" stroke="rgba(120,180,160,0.06)" stroke-width="0.5"/>
+      <circle cx="800" cy="450" r="720" fill="none" stroke="rgba(120,180,160,0.04)" stroke-width="0.5"/>
+      <circle cx="520" cy="250" r="1.2" fill="rgba(140,160,150,0.25)"/>
+      <circle cx="500" cy="270" r="0.8" fill="rgba(140,160,150,0.2)"/>
+      <circle cx="540" cy="235" r="0.7" fill="rgba(140,160,150,0.18)"/>
+      <circle cx="480" cy="290" r="0.9" fill="rgba(140,160,150,0.22)"/>
+      <circle cx="560" cy="255" r="1" fill="rgba(140,160,150,0.2)"/>
+      <circle cx="460" cy="310" r="0.7" fill="rgba(140,160,150,0.17)"/>
+      <circle cx="575" cy="275" r="0.8" fill="rgba(140,160,150,0.19)"/>
+      <circle cx="1080" cy="630" r="0.9" fill="rgba(140,160,150,0.2)"/>
+      <circle cx="1100" cy="655" r="1.2" fill="rgba(140,160,150,0.25)"/>
+      <circle cx="1060" cy="665" r="0.7" fill="rgba(140,160,150,0.18)"/>
+      <circle cx="1120" cy="645" r="0.8" fill="rgba(140,160,150,0.2)"/>
+      <circle cx="510" cy="650" r="0.9" fill="rgba(140,160,150,0.2)"/>
+      <circle cx="490" cy="665" r="0.7" fill="rgba(140,160,150,0.18)"/>
+      <circle cx="530" cy="640" r="1" fill="rgba(140,160,150,0.22)"/>
+      <circle cx="1050" cy="250" r="0.8" fill="rgba(140,160,150,0.2)"/>
+      <circle cx="1070" cy="235" r="0.9" fill="rgba(140,160,150,0.22)"/>
+      <circle cx="800" cy="450" r="20" fill="#332a08"/>
+      <circle cx="800" cy="450" r="14" fill="#887420"/>
+      <circle cx="800" cy="450" r="9" fill="#ccb830"/>
+      <circle cx="800" cy="450" r="4.5" fill="#ffe860"/>
+      <text x="812" y="468" fill="#7a8a80" font-size="10" font-family="Courier New">Sol</text>
+      <circle cx="772" cy="418" r="3.5" fill="#a09488" stroke="rgba(160,148,136,0.4)" stroke-width="0.5"/>
+      <text x="778" y="414" fill="#7a8a80" font-size="10" font-family="Courier New">Mercury</text>
+      <circle cx="745" cy="510" r="4.5" fill="#c8b898" stroke="rgba(200,184,152,0.4)" stroke-width="0.5"/>
+      <text x="752" y="516" fill="#7a8a80" font-size="10" font-family="Courier New">Venus</text>
+      <circle cx="845" cy="550" r="4.5" fill="#4a88aa" stroke="rgba(74,136,170,0.4)" stroke-width="0.5"/>
+      <text x="852" y="555" fill="#7a8a80" font-size="10" font-family="Courier New">Earth</text>
+      <circle cx="940" cy="340" r="4.5" fill="#c87040" stroke="rgba(200,112,64,0.4)" stroke-width="0.5"/>
+      <text x="948" y="336" fill="#7a8a80" font-size="10" font-family="Courier New">Mars</text>
+      <circle cx="580" cy="215" r="8" fill="#c8a878" stroke="rgba(200,168,120,0.3)" stroke-width="0.5"/>
+      <text x="592" y="213" fill="#7a8a80" font-size="10" font-family="Courier New">Jupiter</text>
+      <circle cx="380" cy="550" r="7" fill="#d4c498" stroke="rgba(212,196,152,0.3)" stroke-width="0.5"/>
+      <text x="390" y="556" fill="#7a8a80" font-size="10" font-family="Courier New">Saturn</text>
+      <circle cx="250" cy="280" r="5.5" fill="#88b8c8" stroke="rgba(136,184,200,0.3)" stroke-width="0.5"/>
+      <text x="258" y="277" fill="#7a8a80" font-size="10" font-family="Courier New">Uranus</text>
+      <circle cx="1350" cy="720" r="5" fill="#5878b8" stroke="rgba(88,120,184,0.3)" stroke-width="0.5"/>
+      <text x="1358" y="717" fill="#7a8a80" font-size="10" font-family="Courier New">Neptune</text>
+      <circle cx="525" cy="260" r="3" fill="none" stroke="rgba(74,255,138,0.25)" stroke-width="0.5"/>
+      <line x1="525" y1="256" x2="525" y2="264" stroke="rgba(74,255,138,0.25)" stroke-width="0.5"/>
+      <line x1="521" y1="260" x2="529" y2="260" stroke="rgba(74,255,138,0.25)" stroke-width="0.5"/>
+      <text x="533" y="263" fill="#4a8a6a" font-size="9" font-family="Courier New">Belt Mining Arc</text>
+      <circle cx="480" cy="300" r="3" fill="none" stroke="rgba(74,255,138,0.25)" stroke-width="0.5"/>
+      <line x1="480" y1="296" x2="480" y2="304" stroke="rgba(74,255,138,0.25)" stroke-width="0.5"/>
+      <line x1="476" y1="300" x2="484" y2="300" stroke="rgba(74,255,138,0.25)" stroke-width="0.5"/>
+      <text x="488" y="303" fill="#4a8a6a" font-size="9" font-family="Courier New">Belt Inner Sweep</text>
+      <line x1="1350" y1="855" x2="1530" y2="855" stroke="rgba(74,255,138,0.4)" stroke-width="1"/>
+      <line x1="1350" y1="849" x2="1350" y2="861" stroke="rgba(74,255,138,0.4)" stroke-width="0.5"/>
+      <line x1="1530" y1="849" x2="1530" y2="861" stroke="rgba(74,255,138,0.4)" stroke-width="0.5"/>
+      <text x="1415" y="847" fill="#4a8a6a" font-size="9" font-family="Courier New">1 AU</text>
+    </svg>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 4px 12px; background: rgba(30,80,50,0.25); border-top: 0.5px solid #1e5032; flex-shrink: 0;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="display: flex; align-items: center; gap: 5px; padding: 2px 8px; border-radius: 3px; background: rgba(74,255,138,0.12); border: 0.5px solid #1e5032;">
+        <div style="width: 5px; height: 5px; border-radius: 50%; background: #4aff8a;"></div>
+        <span style="font-size: 11px; color: #4aff8a;">LIVE</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 1px;">
+        <span style="font-size: 11px; color: #a0b8ac;">MAP T: 0042:187:14:32:05</span>
+        <span style="font-size: 9px; color: #4a6a5a;">6 Jul 2284 · 14:32 UTC</span>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 4px;">
+      <div style="padding: 2px 6px; border: 0.5px solid #1e5032; border-radius: 2px; font-size: 11px; color: #4a6a5a; cursor: pointer;">|◁</div>
+      <div style="padding: 2px 6px; border: 0.5px solid #1e5032; border-radius: 2px; font-size: 11px; color: #4a6a5a; cursor: pointer;">◁◁</div>
+      <div style="padding: 2px 6px; border: 0.5px solid #1e5032; border-radius: 2px; font-size: 11px; color: #4a6a5a; cursor: pointer;">◁</div>
+      <div style="padding: 2px 8px; border: 0.5px solid #1e5032; border-radius: 2px; font-size: 11px; color: #4aff8a; cursor: pointer; background: rgba(74,255,138,0.08);">▶</div>
+      <div style="padding: 2px 6px; border: 0.5px solid #1e5032; border-radius: 2px; font-size: 11px; color: #4a6a5a; cursor: pointer;">▷</div>
+      <div style="padding: 2px 6px; border: 0.5px solid #1e5032; border-radius: 2px; font-size: 11px; color: #4a6a5a; cursor: pointer;">▷▷</div>
+      <div style="width: 12px;"></div>
+      <span style="font-size: 9px; color: #4a6a5a;">STEP</span>
+      <div style="display: flex; align-items: center; gap: 3px;">
+        <div style="padding: 2px 6px; border: 0.5px solid #1e5032; border-radius: 2px; font-size: 10px; color: #a0b8ac; cursor: pointer;">1h</div>
+        <div style="padding: 2px 6px; border: 0.5px solid #4aff8a; border-radius: 2px; font-size: 10px; color: #4aff8a; cursor: pointer; background: rgba(74,255,138,0.08);">1d</div>
+        <div style="padding: 2px 6px; border: 0.5px solid #1e5032; border-radius: 2px; font-size: 10px; color: #a0b8ac; cursor: pointer;">10d</div>
+        <div style="padding: 2px 6px; border: 0.5px solid #1e5032; border-radius: 2px; font-size: 10px; color: #a0b8ac; cursor: pointer;">100d</div>
+      </div>
+    </div>
+    <div style="min-width: 120px;"></div>
+  </div>
+</div>
+</body>
+</html>

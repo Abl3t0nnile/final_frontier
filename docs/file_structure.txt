@@ -29,8 +29,8 @@ final_frontier
 │   │   └── stars.gdshader
 │   └── sounds
 ├── core                              # Sim Core: Simulation, Daten-Loading, Def-Klassen
-│   ├── sim_clock.gd                  # Autoload SimClock: Simulationszeit (SST), Tick-Rate, Pause
-│   ├── solar_system_sim.gd           # Autoload SolarSystem: Positionsberechnung aller Körper
+│   ├── sim_clock.gd                  # SimulationClock: Simulationszeit (SST), Tick-Rate, Pause/Start
+│   ├── solar_system_sim.gd           # SolarSystemModel: Positionsberechnung aller Körper
 │   ├── core_data_loader.gd           # Lädt solar_system_data.json + struct_data.json → BodyDef[]
 │   └── defs
 │       ├── body_def.gd               # Datendefinition: Himmelskörper & Strukturen
@@ -47,12 +47,14 @@ final_frontier
 │   ├── belt_data.json                # Gürtel & Trojaner-Wolken (BeltDef)
 │   └── zone_data.json                # Räumliche Zonen (ZoneDef)
 ├── docs
-│   ├── MAP_TOOLKIT.md                # Dokumentation: Map Toolkit (Renderer, Filter, Scale, Controller)
+│   ├── memory                        # Auto-Memory (Claude Code)
+│   │   ├── MEMORY.md
+│   │   └── project_map_cam_done.md
 │   ├── SIM_CORE.md                   # Dokumentation: Sim Core (SimClock, SolarSystem, CoreDataLoader)
 │   ├── SPEC_solar_system_sim_data.md # Spezifikation: JSON-Datenbankformat (BodyDef, BeltDef, ZoneDef)
 │   └── file_structure.txt            # Diese Datei
 ├── game
-│   ├── main.gd                       # Einstiegspunkt: Szenen-Root, Autoload-Initialisierung
+│   ├── main.gd                       # Einstiegspunkt: instanziiert SimClock + SolarSystemModel
 │   ├── main.tscn
 │   ├── map
 │   │   ├── test
@@ -81,8 +83,9 @@ final_frontier
 │   │   │   │   └── square_grid_renderer.gd       # Rechteckiges Koordinatengitter
 │   │   │   └── scale
 │   │   │       └── map_scale.gd          # Koordinatensystem: Zoom-Zustand, Welt↔Bildschirm-Transformation
-│   │   └── views                     # Reserviert für konkrete Kartenansichten (StarChart etc.)
-│   └── screens                       # Reserviert für Game-Screens (Hauptmenü, HUD etc.)
+│   │   └── views
+│   │       └── star_chart                # StarChart-Kartenansicht (wird neu implementiert)
+│   └── screens                           # Game-Screens (wird neu implementiert)
 ├── project.godot
 └── ui
     └── styles                        # Reserviert für UI-Themes und StyleBoxen
