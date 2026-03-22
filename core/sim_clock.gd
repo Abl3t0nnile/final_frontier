@@ -51,7 +51,7 @@ var _sst_s: float = 0.0
 # Factor by which advancing time is scaled in physics_process
 var _time_scale = 86400.0
 # State variable for clock status
-var _running: bool = true
+var _running: bool = false
 
 
 func setup(start_sst_s: float = 0.0) -> void:

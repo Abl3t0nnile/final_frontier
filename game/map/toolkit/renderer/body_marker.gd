@@ -88,6 +88,7 @@ func _on_area_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -
 			double_clicked.emit(_body_id)
 		else:
 			clicked.emit(_body_id)
+		get_viewport().set_input_as_handled()
 
 
 func _on_area_mouse_entered() -> void:

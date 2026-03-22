@@ -34,7 +34,7 @@ var _current_state: Dictionary = {}
 var _local_orbit_path_cache: Dictionary = {}
 
 # Upper limit for points in object orbit paths
-var max_segments: float = 512.0
+var max_segments: float = 1028.0
 
 # Reference to SimulationClock — set via setup()
 var _clock: SimulationClock = null

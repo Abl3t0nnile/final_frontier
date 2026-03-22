@@ -96,6 +96,10 @@ func _process(delta: float) -> void:
 	if _map_scale == null:
 		return
 
+	# Immer aktuelle Viewport-Größe lesen — _ready() läuft bevor der SubViewport
+	# seine finale Größe hat, daher nie den Cached-Wert von _ready() verwenden.
+	_viewport_size = get_viewport().get_visible_rect().size
+
 	_handle_keyboard_input(delta)
 	_update_inertia(delta)
 	_update_smoothing(delta)

@@ -4,3 +4,6 @@
 
 [node name="Main" type="Node" unique_id=676464493]
 script = ExtResource("1_oa506")
+bodies_data_path = null
+structs_data_path = null
+start_sst_s = null

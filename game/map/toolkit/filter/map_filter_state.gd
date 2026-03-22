@@ -47,6 +47,7 @@ signal filter_changed
 
 # ─── Zones: per Zone-Type ────────────────────────────────────────────────
 
+@export var show_region_zones: bool = true
 @export var show_radiation_zones: bool = true
 @export var show_magnetic_zones: bool = true
 @export var show_gravity_zones: bool = true
@@ -114,6 +115,7 @@ func is_orbit_visible(parent_type: String) -> bool:
 
 func is_zone_visible(zone_type: String) -> bool:
 	match zone_type:
+		"region": return show_region_zones
 		"radiation": return show_radiation_zones
 		"magnetic": return show_magnetic_zones
 		"gravity": return show_gravity_zones
