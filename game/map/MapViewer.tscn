@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://juhwbh352o14"]
+
+[node name="MapController" type="Node2D" unique_id=2139173473]
+
+[node name="MapClock" type="Node" parent="." unique_id=532626702]
+
+[node name="MapTransform" type="Node" parent="." unique_id=1595793106]
+
+[node name="MarkerLayer" type="Node2D" parent="." unique_id=265776919]
+
+[node name="OrbitLayer" type="Node2D" parent="." unique_id=466650191]
+
+[node name="BeltLayer" type="Node2D" parent="." unique_id=1688289869]
+
+[node name="ZoneLayer" type="Node2D" parent="." unique_id=1484841153]

@@ -1,8 +1,0 @@
-[gd_resource type="LabelSettings" format=3 uid="uid://b1kkcsx0sd3nd"]
-
-[ext_resource type="FontFile" uid="uid://bikqtgianu2co" path="res://assets/fonts/VictorMono-Bold.ttf" id="1_1nlqb"]
-
-[resource]
-font = ExtResource("1_1nlqb")
-font_size = 24
-font_color = Color(0, 0, 0, 1)

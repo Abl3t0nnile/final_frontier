@@ -37,7 +37,7 @@ enabled=PackedStringArray()
 
 [gui]
 
-theme/custom_font="uid://bvdqvfa1t4ssu"
+theme/default_font_antialiasing=2
 
 [input]
 

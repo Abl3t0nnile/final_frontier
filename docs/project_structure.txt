@@ -1,0 +1,92 @@
+final_frontier/
+├── README.md
+├── project.godot
+│
+├── assets/
+│   ├── db_pictures/
+│   │   └── test_pic.jpg
+│   ├── fonts/
+│   │   └── ui_fonts/
+│   │       ├── SUSEMono-Bold.ttf
+│   │       ├── SUSEMono-ExtraBold.ttf
+│   │       ├── SUSEMono-ExtraLight.ttf
+│   │       ├── SUSEMono-Light.ttf
+│   │       ├── SUSEMono-Medium.ttf
+│   │       ├── SUSEMono-Regular.ttf
+│   │       ├── SUSEMono-SemiBold.ttf
+│   │       └── SUSEMono-Thin.ttf
+│   ├── map/
+│   │   ├── map_icons.af
+│   │   └── icons/
+│   │       ├── cross.png
+│   │       ├── default.png
+│   │       ├── marker.png
+│   │       ├── poi.png
+│   │       ├── dwarf/
+│   │       │   ├── asteroid_dwarf.png
+│   │       │   └── plutoid.png
+│   │       ├── moon/
+│   │       │   ├── major_moon.png
+│   │       │   └── minor_moon.png
+│   │       ├── planet/
+│   │       │   ├── gas_giant.png
+│   │       │   ├── ice_giant.png
+│   │       │   ├── sub_neptune.png
+│   │       │   └── terrestrial.png
+│   │       ├── star/
+│   │       │   └── g_type.png
+│   │       └── struct/
+│   │           ├── navigation_point.png
+│   │           ├── outpost.png
+│   │           ├── relay.png
+│   │           ├── satelite.png
+│   │           ├── shipyard.png
+│   │           └── station.png
+│   ├── shader/
+│   │   ├── shader_monitor.gdshader
+│   │   ├── shader_starfield.gdshader
+│   │   └── stars.gdshader
+│   └── sounds/
+│
+├── core/
+│   ├── core_data_loader.gd
+│   ├── sim_clock.gd
+│   ├── solar_system_sim.gd
+│   └── defs/
+│       ├── base_motion_def.gd
+│       ├── belt_def.gd
+│       ├── body_def.gd
+│       ├── circular_motion_def.gd
+│       ├── fixed_motion_def.gd
+│       ├── kepler2d_motion_def.gd
+│       ├── lagrange_motion_def.gd
+│       └── zone_def.gd
+│
+├── data/
+│   ├── belt_data.json
+│   ├── solar_system_data.json
+│   ├── struct_data.json
+│   └── zone_data.json
+│
+├── docs/
+│   ├── MANIFEST.md
+│   ├── SIM_CORE.md
+│   ├── SPEC_solar_system_sim_data.md
+│   └── mockups/
+│       ├── info_panel_tab2_info.html
+│       ├── info_panel_tab3_children.html
+│       ├── star_chart_info_panel_mockup.html
+│       └── star_chart_ui_no_panel.html
+│
+└── game/
+    ├── main.gd
+    ├── main.tscn
+    └── map/
+        ├── MapViewer.tscn
+        ├── map_controller.gd
+        └── renderer/
+            ├── BodyMarker.tscn
+            ├── belt_renderer.gd
+            ├── body_marker.gd
+            ├── orbit_renderer.gd
+            └── zone_render.gd

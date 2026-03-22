@@ -1,7 +1,7 @@
 class_name CoreDataLoader
 extends RefCounted
 
-const DEFAULT_DATA_PATH    := "res://data/solar_system_sim_data.json"
+const DEFAULT_DATA_PATH    := "res://data/solar_system_data.json"
 const DEFAULT_STRUCTS_PATH := "res://data/struct_data.json"
 
 
