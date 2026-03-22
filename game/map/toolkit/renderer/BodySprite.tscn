@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://dj7w3n3fvnblq"]
-
-[ext_resource type="Script" uid="uid://dcflnuvjbh731" path="res://game/map/toolkit/renderer/body_sprite.gd" id="1_bspr1"]
-
-[node name="BodySprite" type="Node2D"]
-script = ExtResource("1_bspr1")

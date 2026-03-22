@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://tscn4beltrnd"]
-
-[ext_resource type="Script" uid="uid://37d1tkokjilf" path="res://game/map/toolkit/renderer/belt_renderer.gd" id="1_belt1"]
-
-[node name="BeltRenderer" type="Node2D"]
-script = ExtResource("1_belt1")

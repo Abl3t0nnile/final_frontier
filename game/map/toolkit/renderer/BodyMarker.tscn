@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://dj6w3n28gnc54"]
-
-[ext_resource type="Script" uid="uid://bf67i5671nk4c" path="res://game/map/toolkit/renderer/body_marker.gd" id="1_bmrk1"]
-
-[node name="BodyMarker" type="Node2D"]
-script = ExtResource("1_bmrk1")
