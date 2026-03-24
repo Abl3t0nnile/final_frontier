@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://buo7ox47lbany"]
+
+[ext_resource type="FontFile" uid="uid://cwtmr3u57mjmh" path="res://assets/fonts/ui_fonts/Recursive/Recursive-ExtraBold.ttf" id="1_4ntba"]
+
+[resource]
+font = ExtResource("1_4ntba")
+font_size = 24
+font_color = Color(0, 0, 0, 1)

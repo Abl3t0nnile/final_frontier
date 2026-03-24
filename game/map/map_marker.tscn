@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://oh0ilsm3feqq"]
+
+[ext_resource type="Script" uid="uid://oift30so6eqq" path="res://game/map/map_marker.gd" id="1_marker"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 16.0
+
+[node name="MapMarker" type="Area2D" unique_id=9558473]
+script = ExtResource("1_marker")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2121869397]
+texture_filter = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=654875358]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Label" type="Label" parent="." unique_id=1733020959]
+visible = false
+offset_right = 120.0
+offset_bottom = 23.0

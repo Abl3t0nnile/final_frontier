@@ -30,12 +30,6 @@ var _bodies_by_id: Dictionary = {}
 # Current world position of every object, ordered by id.
 var _current_state: Dictionary = {}
 
-# Cached local orbital path points for rendering. Relative to parent origin.
-var _local_orbit_path_cache: Dictionary = {}
-
-# Upper limit for points in object orbit paths
-var max_segments: float = 1028.0
-
 # Reference to SimulationClock — set via setup()
 var _clock: SimulationClock = null
 
@@ -65,7 +59,6 @@ func _build_sim_from_loader(bodies_path: String, structs_path: String, verbose: 
     _sim_objects["structs"].clear()
     _sim_objects["belts"].clear()
     _bodies_by_id.clear()
-    _reset_local_orbit_path_cache()
 
     var data_loader := CoreDataLoader.new()
     var all_bodies: Array[BodyDef] = data_loader.load_all_body_defs(bodies_path)
@@ -94,11 +87,6 @@ func _build_sim_from_loader(bodies_path: String, structs_path: String, verbose: 
         push_error("Solar System Model: failed to build update order. Check parent_ids.")
 
     _update_simulation(0.0)
-
-    for body in combined:
-        if body == null:
-            continue
-        _build_local_orbit_path(body)
 
     if verbose:
         print_current_state()
@@ -149,10 +137,6 @@ func _build_update_order() -> bool:
         return false
 
     return true
-
-
-func _reset_local_orbit_path_cache() -> void:
-    _local_orbit_path_cache.clear()
 
 
 func _update_simulation(sst_s: float) -> void:
@@ -336,66 +320,6 @@ func _calculate_world_position_for_body(body: BodyDef, sst_s: float, state: Dict
         _:
             return Vector2.ZERO
 
-func _build_local_orbit_path(body: BodyDef, min_segments: int = 64) -> Array[Vector2]:
-    if body == null:
-        return [Vector2.ZERO]
-
-    if _local_orbit_path_cache.has(body.id):
-        return _local_orbit_path_cache[body.id]
-
-    var points: Array[Vector2]
-
-    if body.motion == null or body.motion.model == "fixed":
-        points = [Vector2.ZERO]
-        _local_orbit_path_cache[body.id] = points
-        return points
-
-    var a_km: float = _get_body_orbit_radius_km(body)
-    if a_km <= 0.0:
-        var zero_points: Array[Vector2] = [Vector2.ZERO]
-        _local_orbit_path_cache[body.id] = zero_points
-        return zero_points
-
-    var segments: int = min_segments
-
-    match body.motion.model:
-        "circular":
-            var motion := body.motion as CircularMotionDef
-            var direction: float = -1.0 if motion.clockwise else 1.0
-
-            points = []
-            points.resize(segments + 1)
-            for i in range(segments + 1):
-                var t: float = float(i) / float(segments)
-                var theta: float = motion.phase_rad + direction * TAU * t
-                points[i] = Vector2(cos(theta), sin(theta)) * motion.orbital_radius_km
-
-        "kepler2d":
-            var motion := body.motion as Kepler2DMotionDef
-            segments = clampi(min_segments + int(192.0 * motion.e), min_segments, max_segments)
-
-            var parent_body: BodyDef = _bodies_by_id.get(body.parent_id, null)
-            var parent_mu_km3_s2: float = 0.0
-            if parent_body != null:
-                parent_mu_km3_s2 = parent_body.mu_km3_s2
-
-            var period_s: float = _get_kepler2d_period_s(motion, parent_mu_km3_s2)
-
-            points = []
-            points.resize(segments + 1)
-            for i in range(segments + 1):
-                var t: float = float(i) / float(segments)
-                var orbit_time_s: float = motion.epoch_tt_s + period_s * t
-                points[i] = _sample_kepler2d_local_position(motion, parent_mu_km3_s2, orbit_time_s)
-
-        _:
-            var fallback_points: Array[Vector2] = [Vector2.ZERO]
-            _local_orbit_path_cache[body.id] = fallback_points
-            return fallback_points
-
-    _local_orbit_path_cache[body.id] = points
-    return points
-
 func _get_body_orbit_radius_km(body: BodyDef) -> float:
     if body == null or body.motion == null:
         return 0.0
@@ -467,9 +391,6 @@ func get_body_positions_at_time(ids: Array[String], sst: float) -> Dictionary:
 func get_body_position_at_time(id: String, sst: float) -> Vector2:
     var result := get_body_positions_at_time([id], sst)
     return result.get(id, Vector2.ZERO)
-
-func get_local_orbit_path(id: String) -> Array[Vector2]:
-    return _local_orbit_path_cache.get(id, [Vector2.ZERO])
 
 func get_child_bodies(parent_id: String) -> Array[BodyDef]:
     var children: Array[BodyDef] = []

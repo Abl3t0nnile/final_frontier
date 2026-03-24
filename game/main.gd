@@ -21,9 +21,9 @@ func _ready() -> void:
 	add_child(solar_system)
 	solar_system.setup(sim_clock)
 
-	# 2. Solar Map UI initialisieren
-	var solar_map = $SolarMap
-	solar_map.setup(solar_system, sim_clock)
+	# 2. Star Chart initialisieren
+	var star_chart = $StarChart
+	star_chart.setup(solar_system, sim_clock)
 
 	# 3. Simulation starten
 	sim_clock.start()

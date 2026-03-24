@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://dqhn3fhqryxt4"]
+
+[ext_resource type="FontFile" uid="uid://c208ipi0j6lka" path="res://assets/fonts/ui_fonts/SpaceGrotesk/SpaceGrotesk-Light.ttf" id="1_i8tdd"]
+
+[resource]
+font = ExtResource("1_i8tdd")
+font_size = 12
+font_color = Color(0.47058824, 0.47058824, 0.47058824, 1)
