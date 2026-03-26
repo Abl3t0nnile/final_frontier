@@ -12,7 +12,7 @@
       "min_points": 400,
       "max_points": 1400,
       "seed": 1,
-      "color_rgba": [0.55, 0.08, 0.08, 0.50],
+      "color_rgba": [0.55, 0.08, 0.08, 0.8],
       "apply_rotation": true
     },
     {
@@ -27,7 +27,7 @@
       "min_points": 600,
       "max_points": 1800,
       "seed": 2,
-      "color_rgba": [0.30, 0.08, 0.45, 0.65],
+      "color_rgba": [0.30, 0.08, 0.45, 0.8],
       "apply_rotation": true
     },
     {
@@ -42,7 +42,7 @@
       "min_points": 300,
       "max_points": 1000,
       "seed": 3,
-      "color_rgba": [0.08, 0.40, 0.38, 0.65],
+      "color_rgba": [0.08, 0.40, 0.38, 0.8],
       "apply_rotation": true
     },
     {
@@ -57,7 +57,7 @@
       "min_points": 80,
       "max_points": 400,
       "seed": 4,
-      "color_rgba": [0.60, 0.28, 0.05, 0.60],
+      "color_rgba": [0.60, 0.28, 0.05, 0.8],
       "apply_rotation": false
     },
     {

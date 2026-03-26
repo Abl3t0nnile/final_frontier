@@ -1,7 +1,0 @@
-[gd_resource type="LabelSettings" format=3 uid="uid://b1fxdfgykw1hr"]
-
-[ext_resource type="FontFile" uid="uid://ct6hnrnoi5h8b" path="res://assets/fonts/ui_fonts/SpaceGrotesk/SpaceGrotesk-SemiBold.ttf" id="1_81vcw"]
-
-[resource]
-font = ExtResource("1_81vcw")
-font_color = Color(0, 0, 0, 1)

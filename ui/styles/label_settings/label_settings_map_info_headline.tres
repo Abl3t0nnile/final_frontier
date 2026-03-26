@@ -1,8 +1,0 @@
-[gd_resource type="LabelSettings" format=3 uid="uid://dxvf4h33hqxoq"]
-
-[ext_resource type="FontFile" uid="uid://buowms151ljuv" path="res://assets/fonts/ui_fonts/SpaceGrotesk/SpaceGrotesk-Regular.ttf" id="1_vsnyx"]
-
-[resource]
-font = ExtResource("1_vsnyx")
-font_size = 18
-font_color = Color(0.47058824, 0.47058824, 0.47058824, 1)

@@ -7,4 +7,4 @@ content_margin_right = 4.0
 content_margin_bottom = 2.0
 draw_center = false
 border_width_bottom = 2
-border_color = Color(0.78431374, 0.78431374, 0.78431374, 1)
+border_color = Color(0.46666667, 0.53333336, 0.6, 1)

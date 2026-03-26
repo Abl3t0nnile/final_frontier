@@ -1,18 +1,16 @@
 [gd_scene format=3 uid="uid://dsqtejcswhv73"]
 
+[ext_resource type="StyleBox" uid="uid://o4jgl3k0v6v1" path="res://ui/styles/styleboxes/style_box_flat_outline_2px.tres" id="1_0vqmj"]
 [ext_resource type="Script" uid="uid://03i3omvmms2f" path="res://game/map/views/info_panel.gd" id="1_47nrd"]
-[ext_resource type="LabelSettings" uid="uid://c2fgia768kdex" path="res://ui/styles/label_settings/label_settings_map_type_label.tres" id="1_dlqfd"]
 [ext_resource type="FontFile" uid="uid://daqa2qcuq0xh0" path="res://assets/fonts/ui_fonts/Recursive/Recursive-Bold.ttf" id="1_hrd36"]
 [ext_resource type="Texture2D" uid="uid://btnainrejlp5" path="res://assets/db_pictures/mercury_test.webp" id="2_27rbp"]
 [ext_resource type="FontFile" uid="uid://buowms151ljuv" path="res://assets/fonts/ui_fonts/SpaceGrotesk/SpaceGrotesk-Regular.ttf" id="3_m01c7"]
-[ext_resource type="LabelSettings" uid="uid://dqhn3fhqryxt4" path="res://ui/styles/label_settings/label_settings_data_point_caption.tres" id="4_27rbp"]
-[ext_resource type="LabelSettings" uid="uid://dxvf4h33hqxoq" path="res://ui/styles/label_settings/label_settings_map_info_headline.tres" id="4_m01c7"]
 [ext_resource type="PackedScene" uid="uid://bnepv4l5qbte4" path="res://game/map/views/data_point_display.tscn" id="5_m01c7"]
 [ext_resource type="FontFile" uid="uid://ct6hnrnoi5h8b" path="res://assets/fonts/ui_fonts/SpaceGrotesk/SpaceGrotesk-SemiBold.ttf" id="5_of81v"]
 [ext_resource type="StyleBox" uid="uid://cglnb3tch36px" path="res://ui/styles/button_styles/style_box_panel_selector_normal.tres" id="6_axbvv"]
 [ext_resource type="StyleBox" uid="uid://o6odenhsv7ne" path="res://ui/styles/button_styles/style_box_panel_selector_pressed.tres" id="7_fwlb6"]
 [ext_resource type="FontFile" uid="uid://du7tb1fbo5kcu" path="res://assets/fonts/ui_fonts/Recursive/Recursive-Light.ttf" id="10_fwlb6"]
-[ext_resource type="LabelSettings" uid="uid://bnljnfv324626" path="res://ui/styles/label_settings/label_settings_map_value.tres" id="12_wdxm8"]
+[ext_resource type="PackedScene" uid="uid://cr27qejmdjlqj" path="res://game/map/views/satelite_btn.tscn" id="14_s8u8v"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dlqfd"]
 font = ExtResource("1_hrd36")
@@ -66,6 +64,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_0vqmj")
 script = ExtResource("1_47nrd")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1754757795]
@@ -87,13 +86,11 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/Body/Header/TypeDisplay" unique_id=1455488633]
 layout_mode = 2
 text = "PLANET"
-label_settings = ExtResource("1_dlqfd")
 uppercase = true
 
 [node name="Label2" type="Label" parent="MarginContainer/Body/Header/TypeDisplay" unique_id=1439789828]
 layout_mode = 2
 text = "TERRESTRIAL"
-label_settings = ExtResource("1_dlqfd")
 uppercase = true
 
 [node name="NameLabel" type="Label" parent="MarginContainer/Body/Header" unique_id=1898752921]
@@ -211,7 +208,6 @@ size_flags_vertical = 3
 [node name="Label" type="Label" parent="MarginContainer/Body/Data" unique_id=1641136570]
 layout_mode = 2
 text = "ORBIT"
-label_settings = ExtResource("4_m01c7")
 clip_text = true
 
 [node name="OrbitDataPoints" type="GridContainer" parent="MarginContainer/Body/Data" unique_id=251383957]
@@ -224,41 +220,49 @@ columns = 2
 layout_mode = 2
 caption = "aphelion"
 value = "0.467 AU"
+caption_label_settings = null
 
 [node name="DataPointDisplay10" parent="MarginContainer/Body/Data/OrbitDataPoints" unique_id=1301019362 instance=ExtResource("5_m01c7")]
 layout_mode = 2
 caption = "parent"
 value = "Sol"
+caption_label_settings = null
 
 [node name="DataPointDisplay11" parent="MarginContainer/Body/Data/OrbitDataPoints" unique_id=1343144261 instance=ExtResource("5_m01c7")]
 layout_mode = 2
 caption = "perihelion"
 value = "0.307 AU"
+caption_label_settings = null
 
 [node name="DataPointDisplay12" parent="MarginContainer/Body/Data/OrbitDataPoints" unique_id=728556355 instance=ExtResource("5_m01c7")]
 layout_mode = 2
 caption = "period"
 value = "87.9 d"
+caption_label_settings = null
 
 [node name="DataPointDisplay13" parent="MarginContainer/Body/Data/OrbitDataPoints" unique_id=388655195 instance=ExtResource("5_m01c7")]
 layout_mode = 2
 caption = "semi-major-axis"
 value = "0.387 AU"
+caption_label_settings = null
 
 [node name="DataPointDisplay14" parent="MarginContainer/Body/Data/OrbitDataPoints" unique_id=312506268 instance=ExtResource("5_m01c7")]
 layout_mode = 2
 caption = "inclination"
 value = "6.35 °"
+caption_label_settings = null
 
 [node name="DataPointDisplay15" parent="MarginContainer/Body/Data/OrbitDataPoints" unique_id=19896170 instance=ExtResource("5_m01c7")]
 layout_mode = 2
 caption = "eccentricity"
 value = "0.205"
+caption_label_settings = null
 
 [node name="DataPointDisplay16" parent="MarginContainer/Body/Data/OrbitDataPoints" unique_id=1494930462 instance=ExtResource("5_m01c7")]
 layout_mode = 2
 caption = "avg. orbital speed"
 value = "47.36 km/s"
+caption_label_settings = null
 
 [node name="8PxVSep" type="HSeparator" parent="MarginContainer/Body/Data" unique_id=1255689944]
 layout_mode = 2
@@ -268,7 +272,6 @@ theme_override_styles/separator = SubResource("StyleBoxLine_fwlb6")
 [node name="Label2" type="Label" parent="MarginContainer/Body/Data" unique_id=759730067]
 layout_mode = 2
 text = "PHYSICS"
-label_settings = ExtResource("4_m01c7")
 clip_text = true
 
 [node name="OrbitDataPoints2" type="GridContainer" parent="MarginContainer/Body/Data" unique_id=2121753949]
@@ -281,44 +284,51 @@ columns = 2
 layout_mode = 2
 caption = "radius"
 value = "2439.7 km"
+caption_label_settings = null
 
 [node name="DataPointDisplay2" parent="MarginContainer/Body/Data/OrbitDataPoints2" unique_id=2039114746 instance=ExtResource("5_m01c7")]
 layout_mode = 2
 caption = "mass"
 value = "3.3011e23"
+caption_label_settings = null
 
 [node name="DataPointDisplay3" parent="MarginContainer/Body/Data/OrbitDataPoints2" unique_id=111834288 instance=ExtResource("5_m01c7")]
 layout_mode = 2
 caption = "gravity"
 value = "0.38 g"
+caption_label_settings = null
 
 [node name="DataPointDisplay7" parent="MarginContainer/Body/Data/OrbitDataPoints2" unique_id=1306474326 instance=ExtResource("5_m01c7")]
 layout_mode = 2
 caption = "density"
 value = "5.427 g/cm3"
+caption_label_settings = null
 
 [node name="DataPointDisplay5" parent="MarginContainer/Body/Data/OrbitDataPoints2" unique_id=137962638 instance=ExtResource("5_m01c7")]
 layout_mode = 2
 caption = "avg. temperatur"
 value = "437 K"
+caption_label_settings = null
 
 [node name="DataPointDisplay6" parent="MarginContainer/Body/Data/OrbitDataPoints2" unique_id=1339142927 instance=ExtResource("5_m01c7")]
 layout_mode = 2
 caption = "atmosphere"
 value = "thin O2"
+caption_label_settings = null
 
 [node name="DataPointDisplay8" parent="MarginContainer/Body/Data/OrbitDataPoints2" unique_id=2144473903 instance=ExtResource("5_m01c7")]
 layout_mode = 2
 caption = "rotation"
 value = "176 d"
+caption_label_settings = null
 
 [node name="DataPointDisplay4" parent="MarginContainer/Body/Data/OrbitDataPoints2" unique_id=1940538575 instance=ExtResource("5_m01c7")]
 layout_mode = 2
 caption = "atmospheric pressure"
 value = "0.5 pa"
+caption_label_settings = null
 
 [node name="Info" type="ScrollContainer" parent="MarginContainer/Body" unique_id=1914284943]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 3
@@ -332,7 +342,6 @@ size_flags_vertical = 3
 [node name="Label" type="Label" parent="MarginContainer/Body/Info/ScrollBox" unique_id=1328214775]
 layout_mode = 2
 text = "Description"
-label_settings = ExtResource("4_m01c7")
 uppercase = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Body/Info/ScrollBox" unique_id=1606610987]
@@ -355,7 +364,6 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 0
 text = "Relevant Settlements"
-label_settings = ExtResource("4_m01c7")
 uppercase = true
 
 [node name="Tag" type="PanelContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer" unique_id=1969814081]
@@ -378,12 +386,10 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer/Tag/HBoxContainer2/HBoxContainer" unique_id=691449458]
 layout_mode = 2
 text = "Capital"
-label_settings = ExtResource("4_27rbp")
 
 [node name="Label2" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer/Tag/HBoxContainer2/HBoxContainer" unique_id=76583041]
 layout_mode = 2
 text = "Olympus City"
-label_settings = ExtResource("12_wdxm8")
 
 [node name="Tag2" type="PanelContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer" unique_id=912631414]
 layout_mode = 2
@@ -405,12 +411,10 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer/Tag2/HBoxContainer2/HBoxContainer" unique_id=238706597]
 layout_mode = 2
 text = "Capital"
-label_settings = ExtResource("4_27rbp")
 
 [node name="Label2" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer/Tag2/HBoxContainer2/HBoxContainer" unique_id=1697243]
 layout_mode = 2
 text = "Olympus City"
-label_settings = ExtResource("12_wdxm8")
 
 [node name="Tag3" type="PanelContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer" unique_id=146936524]
 layout_mode = 2
@@ -432,12 +436,10 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer/Tag3/HBoxContainer2/HBoxContainer" unique_id=805183099]
 layout_mode = 2
 text = "Capital"
-label_settings = ExtResource("4_27rbp")
 
 [node name="Label2" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer/Tag3/HBoxContainer2/HBoxContainer" unique_id=958279871]
 layout_mode = 2
 text = "Olympus City"
-label_settings = ExtResource("12_wdxm8")
 
 [node name="8PxVSep" type="HSeparator" parent="MarginContainer/Body/Info/ScrollBox" unique_id=1495302603]
 layout_mode = 2
@@ -473,12 +475,10 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2/Tag/HBoxContainer2/HBoxContainer" unique_id=1278490635]
 layout_mode = 2
 text = "Capital"
-label_settings = ExtResource("4_27rbp")
 
 [node name="Label2" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2/Tag/HBoxContainer2/HBoxContainer" unique_id=327293994]
 layout_mode = 2
 text = "Olympus City"
-label_settings = ExtResource("12_wdxm8")
 
 [node name="Tag2" type="PanelContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2" unique_id=503308427]
 layout_mode = 2
@@ -500,12 +500,10 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2/Tag2/HBoxContainer2/HBoxContainer" unique_id=1366306437]
 layout_mode = 2
 text = "Capital"
-label_settings = ExtResource("4_27rbp")
 
 [node name="Label2" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2/Tag2/HBoxContainer2/HBoxContainer" unique_id=221393787]
 layout_mode = 2
 text = "Olympus City"
-label_settings = ExtResource("12_wdxm8")
 
 [node name="Tag3" type="PanelContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2" unique_id=134764998]
 layout_mode = 2
@@ -527,12 +525,10 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2/Tag3/HBoxContainer2/HBoxContainer" unique_id=1524322477]
 layout_mode = 2
 text = "Capital"
-label_settings = ExtResource("4_27rbp")
 
 [node name="Label2" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2/Tag3/HBoxContainer2/HBoxContainer" unique_id=1429297104]
 layout_mode = 2
 text = "Olympus City"
-label_settings = ExtResource("12_wdxm8")
 
 [node name="8PxVSep3" type="HSeparator" parent="MarginContainer/Body/Info/ScrollBox" unique_id=1809510775]
 layout_mode = 2
@@ -540,7 +536,6 @@ theme_override_constants/separation = 8
 theme_override_styles/separator = SubResource("StyleBoxLine_fwlb6")
 
 [node name="Satelites" type="ScrollContainer" parent="MarginContainer/Body" unique_id=152838806]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 3
@@ -558,89 +553,22 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 0
 text = "Moons"
-label_settings = ExtResource("4_m01c7")
 uppercase = true
 
-[node name="Tag" type="PanelContainer" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList" unique_id=61439024]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_47nrd")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList/Tag" unique_id=1416610841]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList/Tag/HBoxContainer2" unique_id=962072024]
-custom_minimum_size = Vector2(8, 8)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList/Tag/HBoxContainer2" unique_id=461907093]
+[node name="Tag" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList" unique_id=1446893005 instance=ExtResource("14_s8u8v")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList/Tag/HBoxContainer2/HBoxContainer" unique_id=1376613585]
-layout_mode = 2
-text = "Capital"
-label_settings = ExtResource("4_27rbp")
-
-[node name="Label2" type="Label" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList/Tag/HBoxContainer2/HBoxContainer" unique_id=1439750964]
-layout_mode = 2
-text = "Olympus City"
-label_settings = ExtResource("12_wdxm8")
-
-[node name="Tag2" type="PanelContainer" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList" unique_id=2135543342]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_47nrd")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList/Tag2" unique_id=307303751]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList/Tag2/HBoxContainer2" unique_id=2140071544]
-custom_minimum_size = Vector2(8, 8)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList/Tag2/HBoxContainer2" unique_id=343422419]
+[node name="Tag2" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList" unique_id=499176179 instance=ExtResource("14_s8u8v")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList/Tag2/HBoxContainer2/HBoxContainer" unique_id=57858733]
-layout_mode = 2
-text = "Capital"
-label_settings = ExtResource("4_27rbp")
-
-[node name="Label2" type="Label" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList/Tag2/HBoxContainer2/HBoxContainer" unique_id=1818995716]
-layout_mode = 2
-text = "Olympus City"
-label_settings = ExtResource("12_wdxm8")
-
-[node name="Tag3" type="PanelContainer" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList" unique_id=793596149]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_47nrd")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList/Tag3" unique_id=2024600194]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList/Tag3/HBoxContainer2" unique_id=508133500]
-custom_minimum_size = Vector2(8, 8)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList/Tag3/HBoxContainer2" unique_id=805495760]
+[node name="Tag3" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList" unique_id=1828856745 instance=ExtResource("14_s8u8v")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList/Tag3/HBoxContainer2/HBoxContainer" unique_id=137312434]
+[node name="Tag4" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList" unique_id=694885810 instance=ExtResource("14_s8u8v")]
 layout_mode = 2
-text = "Capital"
-label_settings = ExtResource("4_27rbp")
 
-[node name="Label2" type="Label" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList/Tag3/HBoxContainer2/HBoxContainer" unique_id=1873257817]
+[node name="Tag5" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList" unique_id=1051321323 instance=ExtResource("14_s8u8v")]
 layout_mode = 2
-text = "Olympus City"
-label_settings = ExtResource("12_wdxm8")
 
 [node name="8PxVSep" type="HSeparator" parent="MarginContainer/Body/Satelites/ScrollBox" unique_id=614752336]
 layout_mode = 2
@@ -654,89 +582,46 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 0
 text = "Structures"
-label_settings = ExtResource("4_m01c7")
 uppercase = true
 
-[node name="Tag" type="PanelContainer" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=626979981]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_47nrd")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Body/Satelites/ScrollBox/StructList/Tag" unique_id=1538636928]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/Body/Satelites/ScrollBox/StructList/Tag/HBoxContainer2" unique_id=1675889706]
-custom_minimum_size = Vector2(8, 8)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer/Body/Satelites/ScrollBox/StructList/Tag/HBoxContainer2" unique_id=715579772]
+[node name="Tag6" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=1315138482 instance=ExtResource("14_s8u8v")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/Body/Satelites/ScrollBox/StructList/Tag/HBoxContainer2/HBoxContainer" unique_id=1988986032]
-layout_mode = 2
-text = "Capital"
-label_settings = ExtResource("4_27rbp")
-
-[node name="Label2" type="Label" parent="MarginContainer/Body/Satelites/ScrollBox/StructList/Tag/HBoxContainer2/HBoxContainer" unique_id=729482616]
-layout_mode = 2
-text = "Olympus City"
-label_settings = ExtResource("12_wdxm8")
-
-[node name="Tag2" type="PanelContainer" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=1304900104]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_47nrd")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Body/Satelites/ScrollBox/StructList/Tag2" unique_id=36800979]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/Body/Satelites/ScrollBox/StructList/Tag2/HBoxContainer2" unique_id=2115842212]
-custom_minimum_size = Vector2(8, 8)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer/Body/Satelites/ScrollBox/StructList/Tag2/HBoxContainer2" unique_id=732430454]
+[node name="Tag7" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=482744593 instance=ExtResource("14_s8u8v")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/Body/Satelites/ScrollBox/StructList/Tag2/HBoxContainer2/HBoxContainer" unique_id=1339353673]
-layout_mode = 2
-text = "Capital"
-label_settings = ExtResource("4_27rbp")
-
-[node name="Label2" type="Label" parent="MarginContainer/Body/Satelites/ScrollBox/StructList/Tag2/HBoxContainer2/HBoxContainer" unique_id=95030269]
-layout_mode = 2
-text = "Olympus City"
-label_settings = ExtResource("12_wdxm8")
-
-[node name="Tag3" type="PanelContainer" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=121567916]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_47nrd")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Body/Satelites/ScrollBox/StructList/Tag3" unique_id=1199658267]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/Body/Satelites/ScrollBox/StructList/Tag3/HBoxContainer2" unique_id=676578080]
-custom_minimum_size = Vector2(8, 8)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer/Body/Satelites/ScrollBox/StructList/Tag3/HBoxContainer2" unique_id=204979605]
+[node name="Tag8" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=706569724 instance=ExtResource("14_s8u8v")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/Body/Satelites/ScrollBox/StructList/Tag3/HBoxContainer2/HBoxContainer" unique_id=2095164611]
+[node name="Tag9" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=944501643 instance=ExtResource("14_s8u8v")]
 layout_mode = 2
-text = "Capital"
-label_settings = ExtResource("4_27rbp")
 
-[node name="Label2" type="Label" parent="MarginContainer/Body/Satelites/ScrollBox/StructList/Tag3/HBoxContainer2/HBoxContainer" unique_id=2065442998]
+[node name="Tag10" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=1440445686 instance=ExtResource("14_s8u8v")]
 layout_mode = 2
-text = "Olympus City"
-label_settings = ExtResource("12_wdxm8")
+
+[node name="Tag11" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=1738941725 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag12" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=1818965031 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag13" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=442570023 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag14" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=1578094174 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag15" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=1567383624 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag16" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=1561727652 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag17" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=1276835576 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag18" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=1478928050 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
 
 [node name="8PxVSep3" type="HSeparator" parent="MarginContainer/Body/Satelites/ScrollBox" unique_id=1295345259]
 layout_mode = 2

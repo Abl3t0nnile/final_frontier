@@ -5,7 +5,24 @@
 
 extends Control
 
-@onready var _map_viewer := $Components/Body/MapPanel/ViewportContainer/MapViewport/MapViewer
+@export var ui_color: Color = Color(0.706, 0.706, 0.706, 1):
+	set(v):
+		ui_color = v
+		if is_node_ready():
+			_apply_ui_color()
+
+@export var text_color: Color = Color(0, 0, 0, 1):
+	set(v):
+		text_color = v
+		if is_node_ready():
+			_apply_text_color()
+
+@onready var _map_viewer  := $Components/Body/MapPanel/ViewportContainer/MapViewport/MapViewer
+@onready var _info_panel  := $Components/Body/InfoPanel
+
+@onready var _header   := $Components/Header
+@onready var _footer   := $Components/Footer
+@onready var _map_panel := $Components/Body/MapPanel
 
 @onready var _scale_exp_label := $Components/Header/Components/ScaleDisplay/ScaleExpLabel
 @onready var _km_px_label     := $Components/Header/Components/ScaleDisplay/KmPxLabel
@@ -25,6 +42,11 @@ extends Control
 	$Components/Footer/Components/TimeStepControl/TimeScaleBtn5,
 ]
 
+var _panel_style: StyleBoxFlat
+var _border_style: StyleBoxFlat
+var _btn_pressed_style: StyleBoxFlat
+var _btn_hover_style: StyleBoxFlat
+
 const TIME_SCALES: Array[float] = [
 	3600.0,       # 1 h
 	86400.0,      # 1 d
@@ -36,11 +58,72 @@ const TIME_SCALES: Array[float] = [
 var _clock: SimulationClock = null
 
 
+func _ready() -> void:
+	_panel_style = (_header.get_theme_stylebox("panel") as StyleBoxFlat).duplicate()
+	_border_style = (_map_panel.get_theme_stylebox("panel") as StyleBoxFlat).duplicate()
+	_btn_pressed_style = (_grid_toggle_btn.get_theme_stylebox("pressed") as StyleBoxFlat).duplicate()
+	_btn_hover_style = (_grid_toggle_btn.get_theme_stylebox("hover") as StyleBoxFlat).duplicate()
+	_apply_ui_color()
+	_apply_text_color()
+
+
+func _apply_ui_color() -> void:
+	_panel_style.bg_color = ui_color
+	_header.add_theme_stylebox_override("panel", _panel_style)
+	_footer.add_theme_stylebox_override("panel", _panel_style)
+
+	_border_style.border_color = ui_color
+	_map_panel.add_theme_stylebox_override("panel", _border_style)
+
+	_btn_pressed_style.border_color = ui_color
+	_btn_hover_style.bg_color = ui_color
+	var all_btns: Array = [_grid_toggle_btn, _clock_pause_btn, _clock_play_btn]
+	all_btns.append_array(_time_scale_btns)
+	for btn: Button in all_btns:
+		btn.add_theme_stylebox_override("pressed", _btn_pressed_style)
+		btn.add_theme_stylebox_override("hover", _btn_hover_style)
+
+	_info_panel.set_text_color(ui_color)
+
+
+func _apply_text_color() -> void:
+	for label: Label in _collect_labels(_header):
+		label.add_theme_color_override("font_color", text_color)
+	for label: Label in _collect_labels(_footer):
+		label.add_theme_color_override("font_color", text_color)
+
+	var all_btns: Array = [_grid_toggle_btn, _clock_pause_btn, _clock_play_btn]
+	all_btns.append_array(_time_scale_btns)
+	for btn: Button in all_btns:
+		btn.add_theme_color_override("font_color", text_color)
+		btn.add_theme_color_override("font_pressed_color", text_color)
+
+
+func _collect_labels(node: Node) -> Array[Label]:
+	var result: Array[Label] = []
+	for child in node.get_children():
+		if child is Label:
+			result.append(child)
+		result.append_array(_collect_labels(child))
+	return result
+
+
 func setup(model: SolarSystemModel, clock: SimulationClock) -> void:
 	_clock = clock
 	_map_viewer.setup(model, clock)
+	_info_panel.setup(model)
+	_info_panel.hide()
 	_wire_header()
 	_wire_footer()
+	_wire_info_panel()
+
+
+func _wire_info_panel() -> void:
+	_map_viewer.body_selected.connect(func(id: String):
+		_info_panel.load_body(id)
+		_info_panel.show()
+	)
+	_map_viewer.body_deselected.connect(func(): _info_panel.hide())
 
 
 func _wire_header() -> void:

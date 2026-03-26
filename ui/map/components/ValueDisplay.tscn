@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bdggxwbanbvx4"]
+
+[ext_resource type="Script" uid="uid://dfe25ewoe0nq7" path="res://ui/map/components/value_unit_display.gd" id="1_66rt0"]
+[ext_resource type="FontFile" uid="uid://fbt8us42nt7c" path="res://assets/fonts/ui_fonts/ShareTechMono-Regular.ttf" id="1_ypem7"]
+[ext_resource type="StyleBox" uid="uid://d04agchmj5207" path="res://ui/styles/styleboxes/stylebox_solid_panel.tres" id="2_66rt0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iq4sh"]
+font = ExtResource("1_ypem7")
+font_color = Color(0.83137256, 0.627451, 0.09019608, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dg86s"]
+font = ExtResource("1_ypem7")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vd2bd"]
+font = ExtResource("1_ypem7")
+font_color = Color(0, 0, 0, 1)
+
+[node name="ValueDisplay" type="VBoxContainer" unique_id=959652915]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+script = ExtResource("1_66rt0")
+
+[node name="CaptionLabel" type="Label" parent="." unique_id=652062227]
+layout_mode = 2
+text = "Caption"
+label_settings = SubResource("LabelSettings_iq4sh")
+
+[node name="TextLabels" type="HBoxContainer" parent="." unique_id=1670666929]
+layout_mode = 2
+
+[node name="ValuePanel" type="PanelContainer" parent="TextLabels" unique_id=1208538344]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("2_66rt0")
+
+[node name="ValueLabel" type="Label" parent="TextLabels/ValuePanel" unique_id=869760442]
+layout_mode = 2
+text = "Value"
+label_settings = SubResource("LabelSettings_dg86s")
+
+[node name="UnitPanel" type="PanelContainer" parent="TextLabels" unique_id=1903584272]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_66rt0")
+
+[node name="UnitLabel" type="Label" parent="TextLabels/UnitPanel" unique_id=1726325150]
+layout_mode = 2
+text = "---"
+label_settings = SubResource("LabelSettings_vd2bd")

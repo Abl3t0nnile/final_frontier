@@ -10,6 +10,8 @@ signal marker_clicked(body_id: String)
 signal marker_double_clicked(body_id: String)
 signal marker_hovered(body_id: String)
 signal marker_unhovered(body_id: String)
+signal body_selected(body_id: String)
+signal body_deselected()
 
 
 # ---------------------------------------------------------------------------
@@ -345,6 +347,7 @@ func _on_marker_clicked_follow(id: String) -> void:
 	print("follow: ", id)
 	_deselect_current_follow()
 	_follow_body_id = id
+	body_selected.emit(id)
 	var marker: MapMarker = _markers.get(id, null)
 	if marker:
 		marker.set_state(MapMarker.MarkerState.SELECTED)
@@ -366,6 +369,7 @@ func _deselect_current_follow() -> void:
 func _on_panned() -> void:
 	_deselect_current_follow()
 	_follow_body_id = ""
+	body_deselected.emit()
 
 
 func _update_follow() -> void:

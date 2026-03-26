@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://dntixs1m3hbo7"]
+
+[ext_resource type="Script" uid="uid://bmdbe1tm10xsm" path="res://ui/map/main_display.gd" id="1_heih2"]
+[ext_resource type="PackedScene" uid="uid://dwmmasj5ribd4" path="res://ui/map/components/SidePanel.tscn" id="2_cyxpt"]
+[ext_resource type="StyleBox" uid="uid://d04agchmj5207" path="res://ui/styles/styleboxes/stylebox_solid_panel.tres" id="2_fai4v"]
+[ext_resource type="StyleBox" uid="uid://o4jgl3k0v6v1" path="res://ui/styles/styleboxes/style_box_flat_outline_2px.tres" id="4_fai4v"]
+[ext_resource type="PackedScene" uid="uid://juhwbh352o14" path="res://game/map/MapViewer.tscn" id="5_mtaub"]
+[ext_resource type="FontFile" uid="uid://csl2winkllipd" path="res://assets/fonts/ui_fonts/BebasNeue-Regular.ttf" id="6_0y8mh"]
+[ext_resource type="FontFile" uid="uid://fbt8us42nt7c" path="res://assets/fonts/ui_fonts/ShareTechMono-Regular.ttf" id="6_t1n4e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ku5bu"]
+font = ExtResource("6_0y8mh")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0y8mh"]
+font = ExtResource("6_t1n4e")
+font_color = Color(0.83137256, 0.627451, 0.09019608, 1)
+
+[node name="MainDisplay" type="MarginContainer" unique_id=275592188]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+script = ExtResource("1_heih2")
+primary_color = Color(0.83137256, 0.627451, 0.09019608, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1050152182]
+layout_mode = 2
+
+[node name="MapViewer" type="VBoxContainer" parent="HBoxContainer" unique_id=399702923]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/MapViewer" unique_id=410876840]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_fai4v")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MapViewer/PanelContainer" unique_id=1433720786]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/MapViewer/PanelContainer/HBoxContainer" unique_id=1321426342]
+layout_mode = 2
+text = "SOLAR MAP"
+label_settings = SubResource("LabelSettings_ku5bu")
+
+[node name="Control" type="PanelContainer" parent="HBoxContainer/MapViewer" unique_id=1424190699]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("4_fai4v")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/MapViewer/Control" unique_id=564821547]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/MapViewer/Control/SubViewportContainer" unique_id=1300503565]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1888, 1010)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="MapViewer" parent="HBoxContainer/MapViewer/Control/SubViewportContainer/SubViewport" unique_id=2139173473 instance=ExtResource("5_mtaub")]
+zoom_exp_min = 1.0
+zoom_exp_initial = 5.8
+min_parent_dist_px = 128.0
+marker_thresholds = Vector2(4, 6)
+marker_sizes_star = Vector3i(128, 96, 64)
+marker_sizes_planet = Vector3i(64, 32, 24)
+marker_sizes_moon = Vector3i(32, 32, 32)
+marker_sizes_struct = Vector3i(24, 24, 24)
+marker_label_settings = SubResource("LabelSettings_0y8mh")
+belt_point_size_near = 4.0
+belt_point_size_far = 3.0
+grid_ring_color = Color(0.83137256, 0.627451, 0.09019608, 0.47058824)
+grid_major_color = Color(0.83137256, 0.627451, 0.09019608, 0.7058824)
+grid_axis_color = Color(0.83137256, 0.627451, 0.09019608, 0.7058824)
+grid_label_color = Color(0.83137256, 0.627451, 0.09019608, 1)
+
+[node name="InfoPanel" parent="HBoxContainer" unique_id=826571587 instance=ExtResource("2_cyxpt")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
