@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://bo1bklnfyima7"]
 
 [ext_resource type="Script" uid="uid://dfl5nwfltondb" path="res://game/main.gd" id="1_oa506"]
-[ext_resource type="Shader" uid="uid://lqofgpw7b7qf" path="res://assets/shader/crt_shader.gdshader" id="2_5un7r"]
-[ext_resource type="Shader" uid="uid://d0hehva3ksgxy" path="res://assets/shader/shader_starfield.gdshader" id="3_5un7r"]
-[ext_resource type="Shader" uid="uid://bf0rln8x8xmpy" path="res://assets/shader/map_view_shader.gdshader" id="4_vop5m"]
-[ext_resource type="PackedScene" uid="uid://dntixs1m3hbo7" path="res://ui/map/MainDisplay.tscn" id="5_5un7r"]
+[ext_resource type="Shader" uid="uid://bxoaaymjdou52" path="res://assets/shader/shader_monitor.gdshader" id="2_emt18"]
+[ext_resource type="PackedScene" uid="uid://dntixs1m3hbo7" path="res://ui/main/MainDisplay.tscn" id="5_5un7r"]
 
 [sub_resource type="Environment" id="Environment_emt18"]
 background_mode = 3
@@ -14,51 +12,25 @@ glow_bloom = 0.2
 glow_hdr_threshold = 0.8
 glow_hdr_scale = 1.8
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vop5m"]
-shader = ExtResource("2_5un7r")
-shader_parameter/phosphor_scale = 6.0
-shader_parameter/phosphor_gap = 0.10000000475
-shader_parameter/scanline_strength = 0.0
-shader_parameter/brightness = 2.0
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dgpao"]
+shader = ExtResource("2_emt18")
+shader_parameter/pixel_size = 1.0
+shader_parameter/scanlines_enabled = false
+shader_parameter/scanline_thickness = 0.5
+shader_parameter/scanline_opacity = 0.35
+shader_parameter/scanline_speed = 3.0
+shader_parameter/scanline_scroll_strength = 0.15
+shader_parameter/tint_enabled = false
 shader_parameter/tint_color = Color(0.2, 1, 0.3, 1)
 shader_parameter/tint_strength = 0.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wjctj"]
-shader = ExtResource("4_vop5m")
-shader_parameter/pixel_size = 1.0
-shader_parameter/wobble_enabled = true
-shader_parameter/wobble_strength = 8.00000038
-shader_parameter/wobble_width = 0.15000000642648
-shader_parameter/wobble_speed = 0.2000000095
-shader_parameter/wobble_randomness = 1.0
 shader_parameter/vignette_enabled = false
-shader_parameter/vignette_strength = 0.2000000095
+shader_parameter/vignette_strength = 0.85
+shader_parameter/curvature_enabled = false
+shader_parameter/curvature_amount = 0.02000000095
+shader_parameter/flicker_enabled = true
+shader_parameter/flicker_strength = 0.10000000149012
 shader_parameter/aberration_enabled = true
-shader_parameter/aberration_amount = 2.000000095
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dgpao"]
-shader = ExtResource("3_5un7r")
-shader_parameter/scroll_offset_far = Vector2(0, 0)
-shader_parameter/density_far = 0.55
-shader_parameter/size_min_far = 0.4
-shader_parameter/size_max_far = 1.8
-shader_parameter/size_bias_far = 2.5
-shader_parameter/twinkle_speed_far = 0.8
-shader_parameter/twinkle_amount_far = 0.2
-shader_parameter/twinkle_variation_far = 0.5
-shader_parameter/brightness_far = 0.75
-shader_parameter/seed_far = 0.0
-shader_parameter/scroll_offset_near = Vector2(0, 0)
-shader_parameter/density_near = 0.2
-shader_parameter/size_min_near = 1.5
-shader_parameter/size_max_near = 4.0
-shader_parameter/size_bias_near = 2.0
-shader_parameter/twinkle_speed_near = 1.8
-shader_parameter/twinkle_amount_near = 0.45
-shader_parameter/twinkle_variation_near = 0.7
-shader_parameter/brightness_near = 1.0
-shader_parameter/seed_near = 42.0
-shader_parameter/star_color = Color(1, 1, 1, 1)
+shader_parameter/aberration_amount = 1.5690000745275001
 
 [node name="Main" type="Node" unique_id=1068877941]
 script = ExtResource("1_oa506")
@@ -66,35 +38,20 @@ script = ExtResource("1_oa506")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=316498260]
 environment = SubResource("Environment_emt18")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1079053070]
+[node name="ShaderLayer" type="CanvasLayer" parent="." unique_id=702843786]
+layer = -1
 
-[node name="MonitorEffect" type="ColorRect" parent="CanvasLayer" unique_id=478553383]
-visible = false
-z_index = 100
-material = SubResource("ShaderMaterial_vop5m")
+[node name="ScanLineBg" type="ColorRect" parent="ShaderLayer" unique_id=684473207]
+material = SubResource("ShaderMaterial_dgpao")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-mouse_filter = 2
 
-[node name="Distortion" type="ColorRect" parent="CanvasLayer" unique_id=1506574243]
-visible = false
-material = SubResource("ShaderMaterial_wjctj")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-mouse_filter = 2
+[node name="ShaderLayer2" type="CanvasLayer" parent="." unique_id=458179607]
 
-[node name="StarField" type="ColorRect" parent="CanvasLayer" unique_id=1830869002]
-visible = false
-z_index = -1
+[node name="ScanLineBg" type="ColorRect" parent="ShaderLayer2" unique_id=242620982]
 material = SubResource("ShaderMaterial_dgpao")
 anchors_preset = 15
 anchor_right = 1.0
@@ -102,6 +59,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(1, 1, 1, 0.47058824)
 
 [node name="MainDisplay" parent="." unique_id=275592188 instance=ExtResource("5_5un7r")]

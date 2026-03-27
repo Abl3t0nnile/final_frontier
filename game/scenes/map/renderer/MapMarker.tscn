@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://chsjrlg2ad5lw"]
+
+[ext_resource type="LabelSettings" uid="uid://csi4num5oi44f" path="res://ui/styles/label_settings/label_settings_map_marker.tres" id="1_hjgg4"]
+[ext_resource type="StyleBox" uid="uid://bmor2nb0hsuqa" path="res://ui/styles/styleboxes/stylebox_solid_map_marker.tres" id="1_u2cjj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aqcgj"]
+
+[node name="MapMarker" type="Area2D" unique_id=2049250559]
+
+[node name="ClickShape" type="CollisionShape2D" parent="." unique_id=1553436586]
+shape = SubResource("CircleShape2D_aqcgj")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=291345094]
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=815375852]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = ExtResource("1_u2cjj")
+
+[node name="NameLabel" type="Label" parent="PanelContainer" unique_id=1043382036]
+layout_mode = 2
+text = "Name goes here"
+label_settings = ExtResource("1_hjgg4")

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="MapColorPreset" uid="uid://djk3l8m2n5opq" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/map_color_preset.gd" id="1_0vn2h"]
+
+[resource]
+script = ExtResource("1_0vn2h")
+preset_name = "Vibrant"
+description = "Bright, saturated colors for high visibility"
+color_star = Color(1.0, 0.8, 0.0, 1)
+color_planet = Color(0.2, 0.8, 1.0, 1)
+color_moon = Color(1.0, 0.4, 0.8, 1)
+color_dwarf = Color(0.8, 0.6, 0.2, 1)
+color_struct = Color(0.4, 1.0, 0.4, 1)
+belt_color = Color(1.0, 0.3, 0.3, 1)
+highlight_alpha_multiplier = 1.5
+dimmed_alpha_multiplier = 0.25
+orbit_alpha_offset = 0.0

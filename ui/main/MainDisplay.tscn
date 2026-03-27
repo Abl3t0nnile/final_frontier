@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://dntixs1m3hbo7"]
+
+[ext_resource type="Script" uid="uid://bmdbe1tm10xsm" path="res://ui/main/main_display.gd" id="1_heih2"]
+[ext_resource type="PackedScene" uid="uid://dwmmasj5ribd4" path="res://ui/components/panels/SidePanel.tscn" id="2_cyxpt"]
+[ext_resource type="StyleBox" uid="uid://dvx5312561koa" path="res://ui/styles/styleboxes/stylebox_solid_panel.tres" id="2_fai4v"]
+[ext_resource type="LabelSettings" uid="uid://cafqfop1r2grs" path="res://ui/styles/label_settings/label_setting_info_panel_h1.tres" id="3_ijws0"]
+[ext_resource type="StyleBox" uid="uid://domnfulpxfx70" path="res://ui/styles/styleboxes/style_box_flat_outline_2px.tres" id="4_fai4v"]
+[ext_resource type="PackedScene" uid="uid://juhwbh352o14" path="res://game/scenes/map/MapViewer.tscn" id="5_mtaub"]
+[ext_resource type="LabelSettings" uid="uid://csi4num5oi44f" path="res://ui/styles/label_settings/label_settings_map_marker.tres" id="6_3i8e8"]
+[ext_resource type="Shader" uid="uid://d0hehva3ksgxy" path="res://assets/shader/shader_starfield.gdshader" id="7_3i8e8"]
+[ext_resource type="Resource" uid="uid://cfr5qak1l6mno" path="res://data/presets/monochrome_colors.tres" id="7_6otpn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6otpn"]
+shader = ExtResource("7_3i8e8")
+shader_parameter/scroll_offset_far = Vector2(0, 0)
+shader_parameter/density_far = 0.55
+shader_parameter/size_min_far = 0.4
+shader_parameter/size_max_far = 1.8
+shader_parameter/size_bias_far = 2.5
+shader_parameter/twinkle_speed_far = 0.8
+shader_parameter/twinkle_amount_far = 0.2
+shader_parameter/twinkle_variation_far = 0.5
+shader_parameter/brightness_far = 0.75
+shader_parameter/seed_far = 0.0
+shader_parameter/scroll_offset_near = Vector2(0, 0)
+shader_parameter/density_near = 0.2
+shader_parameter/size_min_near = 1.5
+shader_parameter/size_max_near = 4.0
+shader_parameter/size_bias_near = 2.0
+shader_parameter/twinkle_speed_near = 1.8
+shader_parameter/twinkle_amount_near = 0.45
+shader_parameter/twinkle_variation_near = 0.7
+shader_parameter/brightness_near = 1.0
+shader_parameter/seed_near = 42.0
+shader_parameter/star_color = Color(1, 1, 1, 1)
+
+[node name="MainDisplay" type="MarginContainer" unique_id=275592188]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+script = ExtResource("1_heih2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1050152182]
+layout_mode = 2
+
+[node name="MapViewer" type="VBoxContainer" parent="HBoxContainer" unique_id=399702923]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/MapViewer" unique_id=410876840]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_fai4v")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MapViewer/PanelContainer" unique_id=1433720786]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/MapViewer/PanelContainer/HBoxContainer" unique_id=1321426342]
+layout_mode = 2
+text = "SOLAR MAP"
+label_settings = ExtResource("3_ijws0")
+
+[node name="Control" type="PanelContainer" parent="HBoxContainer/MapViewer" unique_id=1424190699]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("4_fai4v")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/MapViewer/Control" unique_id=564821547]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/MapViewer/Control/SubViewportContainer" unique_id=1300503565]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1888, 1010)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="MapViewer" parent="HBoxContainer/MapViewer/Control/SubViewportContainer/SubViewport" unique_id=2139173473 instance=ExtResource("5_mtaub")]
+zoom_exp_min = 1.0
+zoom_exp_initial = 6.0
+min_parent_dist_px = 128.0
+marker_thresholds = Vector2(4, 6)
+marker_sizes_star = Vector3i(128, 96, 64)
+marker_sizes_planet = Vector3i(48, 32, 24)
+marker_sizes_moon = Vector3i(32, 32, 32)
+marker_sizes_struct = Vector3i(24, 24, 24)
+marker_label_settings = ExtResource("6_3i8e8")
+enable_color_overrides = true
+color_preset = ExtResource("7_6otpn")
+belt_point_size_near = 4.0
+belt_point_size_far = 3.0
+orbit_highlight_width = 2.0
+orbit_dimmed_width = 2.0
+orbit_alpha_default = 0.6
+orbit_alpha_dimmed = 0.4
+grid_ring_color = Color(1, 1, 1, 0.19607843)
+grid_major_color = Color(1, 1, 1, 0.3137255)
+grid_axis_color = Color(1, 1, 1, 0.3137255)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="HBoxContainer/MapViewer/Control/SubViewportContainer/SubViewport" unique_id=1272879389]
+layer = -1
+
+[node name="StarField" type="ColorRect" parent="HBoxContainer/MapViewer/Control/SubViewportContainer/SubViewport/CanvasLayer" unique_id=1441129813]
+z_index = -1
+material = SubResource("ShaderMaterial_6otpn")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0.47058824)
+
+[node name="InfoPanel" parent="HBoxContainer" unique_id=826571587 instance=ExtResource("2_cyxpt")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4

@@ -1,7 +1,7 @@
 extends Node
 
-const SimClockScript    := preload("res://core/sim_clock.gd")
-const SolarSystemScript := preload("res://core/solar_system_sim.gd")
+const SimClockScript    := preload("res://core/simulation/sim_clock.gd")
+const SolarSystemScript := preload("res://core/simulation/solar_system_sim.gd")
 
 var sim_clock:    SimulationClock  = null
 var solar_system: SolarSystemModel = null

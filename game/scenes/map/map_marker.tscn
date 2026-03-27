@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://oh0ilsm3feqq"]
+
+[ext_resource type="Script" uid="uid://oift30so6eqq" path="res://game/systems/map/map_marker.gd" id="1_marker"]
+[ext_resource type="LabelSettings" uid="uid://csi4num5oi44f" path="res://ui/styles/label_settings/label_settings_map_marker.tres" id="3_0lnwc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 16.0
+
+[node name="MapMarker" type="Area2D" unique_id=9558473]
+script = ExtResource("1_marker")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2121869397]
+texture_filter = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=654875358]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Label" type="Label" parent="." unique_id=1733020959]
+z_index = 5
+offset_left = 22.0
+offset_top = -8.0
+offset_right = 100.0
+offset_bottom = 8.0
+text = "Body Name"
+label_settings = ExtResource("3_0lnwc")
