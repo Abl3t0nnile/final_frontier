@@ -1,40 +1,35 @@
-# circular_motion_def.gd
+## CircularMotionDef
+## Gleichförmige Kreisbewegung
+## Erweitert: BaseMotionDef
+
 class_name CircularMotionDef
 extends BaseMotionDef
 
-# Abstand zum Zentrum der Kreisbahn in Kilometern.
+## Public Properties
+var orbital_radius_km: float : get = get_orbital_radius_km
+var initial_phase_rad: float : get = get_initial_phase_rad
+var orbital_period_s: float : get = get_orbital_period_s
+var orbit_direction: int : get = get_orbit_direction  # +1 prograd, -1 retrograd
+
+## Private
 var _orbital_radius_km: float = 0.0
-# Startwinkel auf der Bahn in Radiant.
-var _phase_rad: float = 0.0
-# Umlaufdauer in Sekunden.
-var _period_s: float = 0.0
-# Drehrichtung der Bahn; true = im Uhrzeigersinn.
-var _clockwise: bool = false
+var _initial_phase_rad: float = 0.0
+var _orbital_period_s: float = 0.0
+var _orbit_direction: int = 1
 
-var orbital_radius_km: float : get = get_orbital_radius_km, set = _set_orbital_radius_km
-var phase_rad: float : get = get_phase_rad, set = _set_phase_rad
-var period_s: float : get = get_period_s, set = _set_period_s
-var clockwise: bool : get = is_clockwise, set = _set_clockwise
-
+## Constructor
 func _init() -> void:
 	_model = "circular"
 
+## Getters
 func get_orbital_radius_km() -> float:
 	return _orbital_radius_km
 
-func _set_orbital_radius_km(_value: float) -> void: pass
+func get_initial_phase_rad() -> float:
+	return _initial_phase_rad
 
-func get_phase_rad() -> float:
-	return _phase_rad
+func get_orbital_period_s() -> float:
+	return _orbital_period_s
 
-func _set_phase_rad(_value: float) -> void: pass
-
-func get_period_s() -> float:
-	return _period_s
-
-func _set_period_s(_value: float) -> void: pass
-
-func is_clockwise() -> bool:
-	return _clockwise
-
-func _set_clockwise(_value: bool) -> void: pass
+func get_orbit_direction() -> int:
+	return _orbit_direction
