@@ -1,6 +1,6 @@
 ## BeltDef
-## Datendefinition für prozedurale Gürtel-Darstellungen (Asteroiden, Trojaner, Ringe).
-## Visuelle Map-Daten – nicht Teil des Core/Simulation-Layers.
+## Data definition for procedural belt representations (asteroids, trojans, rings).
+## Visual map data - not part of the Core/Simulation layer.
 
 class_name BeltDef
 extends Resource

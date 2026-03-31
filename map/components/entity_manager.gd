@@ -1,5 +1,5 @@
 ## EntityManager
-## Erstellt und verwaltet MapMarker für alle GameObjects
+## Creates and manages MapMarkers for all GameObjects
 
 class_name EntityManager
 extends Node

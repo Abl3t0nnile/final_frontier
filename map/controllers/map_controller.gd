@@ -1,11 +1,11 @@
 ## MapController
-## Basis-Controller: verdrahtet alle Manager und delegiert an sie.
-## Kein God Object — enthält keine Culling-, Selections- oder Follow-Logik.
+## Base controller: wires up all managers and delegates to them.
+## Not a God Object — contains no culling, selection, or follow logic.
 
 class_name MapController
 extends Node2D
 
-## Signals (forwarded von InteractionManager)
+## Signals (forwarded from InteractionManager)
 signal body_selected(id: String)
 signal body_deselected()
 signal marker_hovered(id: String)
@@ -13,7 +13,7 @@ signal marker_unhovered(id: String)
 signal body_pinned(id: String)
 signal body_unpinned(id: String)
 
-## Konfiguration (wird via apply_config() von SolarMap gesetzt)
+## Configuration (set via apply_config() from SolarMap)
 var zoom_exp_min: float      = 3.0
 var zoom_exp_max: float      = 10.0
 var zoom_exp_step: float     = 0.1

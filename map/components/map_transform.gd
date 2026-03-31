@@ -1,5 +1,5 @@
 ## MapTransform
-## Koordinatentransformation und Kamera-Steuerung mit Zoom/Pan-Input
+## Coordinate transformation and camera control with zoom/pan input
 
 class_name MapTransform
 extends Node
@@ -38,7 +38,7 @@ var _drag_start_mouse: Vector2 = Vector2.ZERO
 var _drag_start_cam: Vector2 = Vector2.ZERO
 var _zoom_hold_timer: float = 0.0
 
-## Koordinatentransformation
+## Coordinate transformation
 func km_to_px(pos_km: Vector2) -> Vector2:
 	return Vector2(pos_km.x / km_per_px, pos_km.y / km_per_px)
 
