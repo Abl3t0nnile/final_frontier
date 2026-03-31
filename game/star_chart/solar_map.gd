@@ -141,32 +141,29 @@ func _ready() -> void:
 	add_child(_solar_system)
 	_solar_system.setup(_clock, bodies)
 
-	# Config an Controller übergeben
+	# Pass config to controller
 	_map_controller.apply_config(_build_config())
 	_map_controller.setup(_solar_system, _clock, null)
 	_map_controller.focus_body("sun")
 
-	# Signals verdrahten
+	# Wire up signals
 	_connect_signals()
 
-	# Simulation starten
+	# Start simulation
 	_clock.start()
 
 
 func _process(delta: float) -> void:
-	# Sim-Uhr vorantreiben
+	# SimClock advancement
 	if _clock and _clock.is_running:
 		_clock.advance_time(delta)
 	
-	# Map-Uhr vorantreiben (wenn entkoppelt und laufend)
-	var map_clock := _map_controller.get_map_clock()
-	if map_clock and not _map_controller.is_clock_coupled() and map_clock.is_running:
-		map_clock.advance_time(delta)
+	# MapClock now handles its own advancement in _physics_process
 
 
-## Öffentliche API für Eltern-Szenen
+## Public API for parent scenes
 
-# Zeit-Kontrolle
+# Time control
 func play() -> void:
 	if _clock: _clock.start()
 
