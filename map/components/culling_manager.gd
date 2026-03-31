@@ -1,65 +1,242 @@
 ## CullingManager
-## Performance-Optimierung durch Culling
-## Erweitert: Node
+## Verwaltet Sichtbarkeit und Größe von MapMarkern basierend auf Zoom und Nähe.
 
 class_name CullingManager
 extends Node
 
-## Culling modes
-enum CullingMode {
-	NONE,
-	VIEWPORT,
-	PROXIMITY,
-	HYBRID
+## Prioritäten für Proximity-Culling (niedrigere Zahl = höhere Priorität)
+const TYPE_PRIORITY := {
+	"star":   0,
+	"planet": 1,
+	"dwarf":  2,
+	"moon":   3,
+	"struct": 4,
 }
 
-## Public Properties
-var culling_mode: CullingMode : get = get_mode, set = set_mode
+var min_parent_dist_px: float = 32.0
+var marker_thresholds: Vector2    = Vector2(5.0, 7.0)
+var marker_sizes_star:   Vector3i = Vector3i(40, 28, 18)
+var marker_sizes_planet: Vector3i = Vector3i(28, 20, 14)
+var marker_sizes_moon:   Vector3i = Vector3i(18, 12, 8)
+var marker_sizes_struct: Vector3i = Vector3i(14, 10, 6)
 
-## Private
-var _mode: CullingMode = CullingMode.HYBRID
-var _viewport_size: Vector2
-var _camera_pos: Vector2
-var _zoom: float
-var _culling_distance: float = 10000.0  # km
+var _entity_manager: EntityManager   = null
+var _model: SolarSystemModel         = null
+var _map_transform: MapTransform     = null
+var _orbits: Dictionary              = {}  # id -> OrbitRenderer (optional)
+var _belt_manager: BeltManager       = null
+var _ring_manager: RingManager       = null
+var _zone_manager: ZoneManager       = null
 
-## Public Methods
-func update_culling(camera_pos: Vector2, viewport_size_px: Vector2, zoom: float) -> void:
-	"""Aktualisiert Culling basierend auf Kamera-Zustand"""
-	_camera_pos = camera_pos
-	_viewport_size = viewport_size_px
-	_zoom = zoom
+
+func setup(entity_manager: EntityManager, model: SolarSystemModel, map_transform: MapTransform) -> void:
+	_entity_manager = entity_manager
+	_model          = model
+	_map_transform  = map_transform
+
+
+func set_orbits(orbit_dict: Dictionary) -> void:
+	_orbits = orbit_dict
+
+
+func set_belt_manager(belt_manager: BeltManager) -> void:
+	_belt_manager = belt_manager
+
+
+func set_ring_manager(ring_manager: RingManager) -> void:
+	_ring_manager = ring_manager
+
+
+func set_zone_manager(zone_manager: ZoneManager) -> void:
+	_zone_manager = zone_manager
+
+
+func apply_culling(selected_id: String, pinned_ids: Array[String]) -> void:
+	var markers := _entity_manager.get_markers()
+
+	# Pass 1: Zustände initialisieren
+	for id in markers:
+		var marker := markers[id] as MapMarker
+		if id in pinned_ids:
+			marker.set_state(MapMarker.MarkerState.PINNED)
+		elif id == selected_id:
+			marker.set_state(MapMarker.MarkerState.SELECTED)
+		else:
+			marker.set_state(MapMarker.MarkerState.DEFAULT)
+
+	# Pass 2: Structs ausblenden, außer wenn ihr Parent selected ist
+	for id in markers:
+		var def: BodyDef = _model.get_body(id)
+		if def == null:
+			continue
+		if def.type == "struct" and id not in pinned_ids and id != selected_id:
+			if selected_id == "" or def.parent_id != selected_id:
+				markers[id].set_state(MapMarker.MarkerState.INACTIVE)
+
+	# Pass 3: Pairwise Proximity-Culling aller sichtbaren Marker
+	# (behandelt Geschwister wie Venus/Erde; fokussierter Marker gewinnt immer,
+	#  d.h. der Parent wird ausgeblendet wenn das fokussierte Kind zu nah kommt)
+	var visible_ids: Array[String] = []
+	for id in markers:
+		if markers[id].current_state != MapMarker.MarkerState.INACTIVE:
+			visible_ids.append(id)
+
+	for i in range(visible_ids.size()):
+		var id_a := visible_ids[i]
+		var marker_a := markers[id_a] as MapMarker
+		if marker_a.current_state == MapMarker.MarkerState.INACTIVE:
+			continue
+		var focused_a: bool = (id_a in pinned_ids or id_a == selected_id)
+
+		for j in range(i + 1, visible_ids.size()):
+			var id_b := visible_ids[j]
+			var marker_b := markers[id_b] as MapMarker
+			if marker_b.current_state == MapMarker.MarkerState.INACTIVE:
+				continue
+
+			var dist: float = (marker_a.global_position - marker_b.global_position).length()
+			if dist >= min_parent_dist_px:
+				continue
+
+			var focused_b: bool = (id_b in pinned_ids or id_b == selected_id)
+
+			# Beide fokussiert → keiner wird ausgeblendet
+			if focused_a and focused_b:
+				continue
+
+			# Fokussierter Marker gewinnt immer
+			if focused_a:
+				marker_b.set_state(MapMarker.MarkerState.INACTIVE)
+				continue
+			if focused_b:
+				marker_a.set_state(MapMarker.MarkerState.INACTIVE)
+				continue
+
+			# Sonst: höhere Priorität (niedrigere Zahl) gewinnt
+			var def_a: BodyDef = _model.get_body(id_a)
+			var def_b: BodyDef = _model.get_body(id_b)
+			var prio_a: int = int(TYPE_PRIORITY.get(def_a.type if def_a != null else "struct", 4))
+			var prio_b: int = int(TYPE_PRIORITY.get(def_b.type if def_b != null else "struct", 4))
+
+			if prio_a < prio_b:
+				marker_b.set_state(MapMarker.MarkerState.INACTIVE)
+			elif prio_b < prio_a:
+				marker_a.set_state(MapMarker.MarkerState.INACTIVE)
+			else:
+				# Gleiche Priorität: stabiler Tiebreak per id (lexikographisch)
+				if id_a < id_b:
+					marker_b.set_state(MapMarker.MarkerState.INACTIVE)
+				else:
+					marker_a.set_state(MapMarker.MarkerState.INACTIVE)
+
+	# Orbits synchronisieren
+	if not _orbits.is_empty():
+		for id in _orbits:
+			var orbit = _orbits[id]
+			var marker := _entity_manager.get_marker(id)
+			if marker != null:
+				orbit.visible = (marker.current_state != MapMarker.MarkerState.INACTIVE)
+
+	# Belts, Rings und Zones synchronisieren
+	_apply_belt_culling()
+	_apply_ring_culling()
+	_apply_zone_culling()
+
+
+func update_marker_sizes(zoom_exp: float) -> void:
+	var markers := _entity_manager.get_markers()
+	for id in markers:
+		var def: BodyDef = _model.get_body(id)
+		if def == null:
+			continue
+		var size := _calc_size_px(def, zoom_exp)
+		markers[id].set_size_px(size)
+
+
+func _apply_belt_culling() -> void:
+	if _belt_manager == null:
+		return
+	_apply_renderer_culling(_belt_manager.get_renderers(), _belt_manager.get_belt_defs())
+
+
+func _apply_ring_culling() -> void:
+	if _ring_manager == null:
+		return
+	_apply_renderer_culling(_ring_manager.get_renderers(), _ring_manager.get_ring_defs())
+
+
+func _apply_renderer_culling(renderers: Array, defs: Array) -> void:
+	var km_per_px: float = _map_transform.km_per_px
 	
-	# TODO: Update visibility of entities based on culling mode
+	for i in renderers.size():
+		var renderer: BeltRenderer = renderers[i]
+		var def: BeltDef = defs[i]
+		
+		# Proximity-Culling: Belt/Ring ausblenden wenn Parent-Marker zu nah an anderen ist
+		if def.parent_id != "":
+			var marker := _entity_manager.get_marker(def.parent_id)
+			if marker != null:
+				# Wenn Parent-Marker durch Proximity-Culling ausgeblendet wurde
+				if marker.current_state == MapMarker.MarkerState.INACTIVE:
+					renderer.visible = false
+					continue
+				
+				# Pixel-Radius des Belts/Rings prüfen
+				var outer_radius_px: float = def.outer_radius_km / km_per_px
+				# Ausblenden wenn zu klein (< min_parent_dist_px) oder zu groß
+				if outer_radius_px < min_parent_dist_px or outer_radius_px > 2000.0:
+					renderer.visible = false
+					continue
+		
+		renderer.visible = true
 
-func is_entity_visible(id: String) -> bool:
-	"""Prüft ob Entität sichtbar ist"""
-	match _mode:
-		CullingMode.NONE:
-			return true
-		CullingMode.VIEWPORT:
-			return _is_in_viewport(id)
-		CullingMode.PROXIMITY:
-			return _is_in_proximity(id)
-		CullingMode.HYBRID:
-			return _is_in_viewport(id) or _is_in_proximity(id)
-	return true
 
-func set_culling_mode(mode: CullingMode) -> void:
-	"""Setzt Culling-Modus"""
-	_mode = mode
+func _apply_zone_culling() -> void:
+	if _zone_manager == null:
+		return
+	var km_per_px: float = _map_transform.km_per_px
+	var renderers := _zone_manager.get_renderers()
+	var zone_defs := _zone_manager.get_zone_defs()
+	
+	for i in renderers.size():
+		var renderer: ZoneRenderer = renderers[i]
+		var def: ZoneDef = zone_defs[i]
+		
+		# Parent-Culling: ausblenden wenn Parent nicht sichtbar
+		if def.parent_id != "":
+			var marker := _entity_manager.get_marker(def.parent_id)
+			if marker != null and marker.current_state == MapMarker.MarkerState.INACTIVE:
+				renderer.visible = false
+				continue
+		
+		# Pixel-Größen-Culling: zu klein (< 0.5px)
+		var r_outer: float
+		match def.geometry:
+			"ring":
+				r_outer = def.outer_radius_km / km_per_px
+			_:
+				r_outer = def.radius_km / km_per_px
+		
+		if r_outer < 0.5:
+			renderer.visible = false
+			continue
+		
+		renderer.visible = true
 
-## Private Methods
-func _is_in_viewport(id: String) -> bool:
-	"""Prüft ob Entität im Viewport ist"""
-	# TODO: Check if entity is within viewport bounds
-	return true
 
-func _is_in_proximity(id: String) -> bool:
-	"""Prüft ob Entität in der Nähe ist"""
-	# TODO: Check distance to camera
-	return true
+func _calc_size_px(def: BodyDef, zoom_exp_val: float) -> int:
+	var sizes: Vector3i
+	match def.type:
+		"star":   sizes = marker_sizes_star
+		"planet": sizes = marker_sizes_planet
+		"moon":   sizes = marker_sizes_moon
+		"struct": sizes = marker_sizes_struct
+		_:        sizes = marker_sizes_moon
 
-## Getters
-func get_mode() -> CullingMode:
-	return _mode
+	if zoom_exp_val <= marker_thresholds.x:
+		return sizes.x
+	elif zoom_exp_val >= marker_thresholds.y:
+		return sizes.z
+	else:
+		var t := (zoom_exp_val - marker_thresholds.x) / (marker_thresholds.y - marker_thresholds.x)
+		return int(lerpf(float(sizes.x), float(sizes.z), t))

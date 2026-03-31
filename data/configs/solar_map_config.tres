@@ -1,35 +1,7 @@
-[gd_resource type="Resource" script_class="MapConfig" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="MapConfig" format=3 uid="uid://cwv86xuaeaale"]
 
-[ext_resource type="Script" path="res://data/configs/map_config.gd" id="1_0abcd"]
+[ext_resource type="Script" uid="uid://bqtxb0u30imy5" path="res://data/configs/map_config.gd" id="1_0abcd"]
 
 [resource]
-script = ExtResource("1_0abcd")
 resource_name = "Solar Map Configuration"
-
-# Zoom Settings
-min_zoom = 0.1
-max_zoom = 10000.0
-zoom_step = 1.2
-initial_zoom = 1.0
-
-# Marker Settings
-marker_size_star = 32
-marker_size_planet = 24
-marker_size_moon = 16
-marker_size_station = 12
-marker_size_asteroid = 8
-
-# Culling Settings
-culling_distance = 10000.0
-max_visible_markers = 500
-
-# Interaction Settings
-enable_selection = true
-enable_hover = true
-double_click_to_focus = true
-
-# Visual Settings
-show_grid = true
-show_orbits = true
-show_labels = true
-label_zoom_threshold = 0.5
+script = ExtResource("1_0abcd")

@@ -1,10 +1,11 @@
-## BeltManager
-## Lädt Gürtel-Daten und verwaltet BeltRenderer-Instanzen.
+## RingManager
+## Lädt Planeten-Ring-Daten und verwaltet BeltRenderer-Instanzen.
+## Unabhängig vom BeltManager – Ringe werden nicht durch Belt-Toggle beeinflusst.
 
-class_name BeltManager
+class_name RingManager
 extends Node
 
-const DEFAULT_DATA_PATH := "res://data/belt_data.json"
+const DEFAULT_DATA_PATH := "res://data/ring_data.json"
 
 # Config (setzt BeltRenderer-Parameter)
 var zoom_near: float       = 10_000.0
@@ -14,23 +15,23 @@ var point_size_near: float = 3.0
 var point_size_mid: float  = 2.0
 var point_size_far: float  = 1.0
 
-var _belt_layer: Node2D          = null
+var _ring_layer: Node2D          = null
 var _map_transform: MapTransform = null
 var _model: SolarSystemModel     = null
 var _renderers: Array            = []  # Array[BeltRenderer]
-var _belt_defs: Array            = []  # Array[BeltDef]
+var _ring_defs: Array            = []  # Array[BeltDef]
 
 
-func setup(belt_layer: Node2D, map_transform: MapTransform, model: SolarSystemModel,
+func setup(ring_layer: Node2D, map_transform: MapTransform, model: SolarSystemModel,
 		data_path: String = DEFAULT_DATA_PATH) -> void:
-	_belt_layer    = belt_layer
+	_ring_layer    = ring_layer
 	_map_transform = map_transform
 	_model         = model
-	_belt_defs     = _load_belt_defs(data_path)
+	_ring_defs     = _load_ring_defs(data_path)
 
-	for def in _belt_defs:
+	for def in _ring_defs:
 		var renderer := BeltRenderer.new()
-		_belt_layer.add_child(renderer)
+		_ring_layer.add_child(renderer)
 		_apply_config(renderer)
 		renderer.setup(def, _map_transform)
 		_renderers.append(renderer)
@@ -45,24 +46,16 @@ func _apply_config(renderer: BeltRenderer) -> void:
 	renderer.point_size_far  = point_size_far
 
 
-func update_belts() -> void:
+func update_rings() -> void:
 	for i in _renderers.size():
-		var def: BeltDef   = _belt_defs[i]
-		var renderer       = _renderers[i]
+		var def: BeltDef = _ring_defs[i]
+		var renderer     = _renderers[i]
 
 		if def.parent_id != "" and _model != null:
 			var parent_pos_km: Vector2 = _model.get_body_position(def.parent_id)
 			renderer.position = _map_transform.km_to_px(parent_pos_km)
 		else:
 			renderer.position = Vector2.ZERO
-
-		if def.reference_body_id != "" and not def.apply_rotation and _model != null:
-			var ref_pos_km: Vector2    = _model.get_body_position(def.reference_body_id)
-			var ref_pos_px: Vector2    = _map_transform.km_to_px(ref_pos_km)
-			var local_ref: Vector2     = ref_pos_px - renderer.position
-			renderer.rotation          = local_ref.angle()
-
-		# kein queue_redraw() — MultiMeshInstance2D rendert automatisch
 
 
 func update_zoom(km_per_px: float) -> void:
@@ -74,15 +67,15 @@ func get_renderers() -> Array:
 	return _renderers
 
 
-func get_belt_defs() -> Array:
-	return _belt_defs
+func get_ring_defs() -> Array:
+	return _ring_defs
 
 
 # ---------------------------------------------------------------------------
 # Data loading
 # ---------------------------------------------------------------------------
 
-func _load_belt_defs(path: String) -> Array:
+func _load_ring_defs(path: String) -> Array:
 	var result: Array = []
 	if not FileAccess.file_exists(path):
 		return result
@@ -95,28 +88,28 @@ func _load_belt_defs(path: String) -> Array:
 	var err: Error = json.parse(file.get_as_text())
 	file.close()
 	if err != OK:
-		push_warning("BeltManager: parse error in '%s'" % path)
+		push_warning("RingManager: parse error in '%s'" % path)
 		return result
 
 	var raw: Variant = json.data
 	if typeof(raw) != TYPE_DICTIONARY:
 		return result
 
-	var entries: Variant = raw.get("belts", [])
+	var entries: Variant = raw.get("rings", [])
 	if typeof(entries) != TYPE_ARRAY:
 		return result
 
 	for entry in entries:
 		if typeof(entry) != TYPE_DICTIONARY:
 			continue
-		var def := _build_belt_def(entry)
+		var def := _build_ring_def(entry)
 		if def != null:
 			result.append(def)
 
 	return result
 
 
-func _build_belt_def(data: Dictionary) -> BeltDef:
+func _build_ring_def(data: Dictionary) -> BeltDef:
 	if data.is_empty():
 		return null
 	var def := BeltDef.new()

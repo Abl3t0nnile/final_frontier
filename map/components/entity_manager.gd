@@ -1,51 +1,41 @@
 ## EntityManager
-## Verwaltung aller visuellen Entitäten
-## Erweitert: Node
+## Erstellt und verwaltet MapMarker für alle GameObjects
 
 class_name EntityManager
 extends Node
 
-## Public Properties
-var markers: Dictionary : get = get_markers
+const MARKER_SCENE := preload("res://map/markers/map_marker.tscn")
 
-## Signals
 signal entity_hovered(id: String)
 signal entity_selected(id: String)
 
-## Private
-var _markers: Dictionary = {}  # id -> MapMarker
-var _game_object_registry: GameObjectRegistry
+var markers: Dictionary : get = get_markers
 
-## Public Methods
+var _markers: Dictionary = {}  # id -> MapMarker
+var _model: SolarSystemModel = null
+var _map_transform: MapTransform = null
+var _world_root: Node2D = null
+
+func setup(model: SolarSystemModel, map_transform: MapTransform, world_root: Node2D) -> void:
+	_model        = model
+	_map_transform = map_transform
+	_world_root   = world_root
+
 func create_marker(game_object: GameObject) -> MapMarker:
-	"""Erstellt neuen Marker für GameObject"""
-	var marker = MapMarker.new()
-	add_child(marker)
-	
-	# TODO: Setup marker with game_object
-	marker.setup(game_object, null)  # TODO: Get label_settings
-	
+	var marker := MARKER_SCENE.instantiate() as MapMarker
+	_world_root.add_child(marker)
+	marker.setup(game_object, null)
 	_markers[game_object.id] = marker
 	return marker
 
 func update_all_positions() -> void:
-	"""Aktualisiert alle Marker-Positionen"""
 	for id in _markers:
-		var marker = _markers[id]
-		var game_object = _game_object_registry.get_game_object(id)
-		if game_object:
-			marker.update_position(game_object.position)
+		var pos_km: Vector2 = _model.get_body_position(id)
+		var pos_px: Vector2 = _map_transform.km_to_px(pos_km)
+		_markers[id].update_position(pos_px)
 
 func get_marker(id: String) -> MapMarker:
-	"""Holt Marker per ID"""
 	return _markers.get(id, null)
 
-func get_markers_in_group(group: String) -> Array[MapMarker]:
-	"""Holt alle Marker einer Gruppe"""
-	var result: Array[MapMarker] = []
-	# TODO: Filter by group
-	return result
-
-## Getters
 func get_markers() -> Dictionary:
 	return _markers

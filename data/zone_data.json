@@ -1,0 +1,56 @@
+{
+  "zones": [
+    {
+      "id": "sun_habitable_zone",
+      "name": "Habitable Zone",
+      "parent_id": "sun",
+      "zone_type": "habitable",
+      "geometry": "ring",
+      "inner_radius_km": 128000000,
+      "outer_radius_km": 213000000,
+      "color_rgba": [0.20, 0.65, 0.20, 0.08],
+      "border_color_rgba": [0.30, 0.80, 0.30, 0.35]
+    },
+    {
+      "id": "sun_frost_line",
+      "name": "Frost Line",
+      "parent_id": "sun",
+      "zone_type": "frost_line",
+      "geometry": "ring",
+      "inner_radius_km": 700000000,
+      "outer_radius_km": 740000000,
+      "color_rgba": [0.55, 0.75, 0.95, 0.10],
+      "border_color_rgba": [0.60, 0.80, 1.00, 0.50]
+    },
+    {
+      "id": "jupiter_magnetosphere",
+      "name": "Jupiter Magnetosphere",
+      "parent_id": "jupiter",
+      "zone_type": "magnetic",
+      "geometry": "circle",
+      "radius_km": 4000000,
+      "color_rgba": [0.55, 0.20, 0.75, 0.07],
+      "border_color_rgba": [0.65, 0.30, 0.90, 0.30]
+    },
+    {
+      "id": "saturn_magnetosphere",
+      "name": "Saturn Magnetosphere",
+      "parent_id": "saturn",
+      "zone_type": "magnetic",
+      "geometry": "circle",
+      "radius_km": 1200000,
+      "color_rgba": [0.45, 0.55, 0.80, 0.07],
+      "border_color_rgba": [0.55, 0.65, 0.90, 0.30]
+    },
+    {
+      "id": "earth_magnetosphere",
+      "name": "Earth Magnetosphere",
+      "parent_id": "earth",
+      "zone_type": "magnetic",
+      "geometry": "circle",
+      "radius_km": 65000,
+      "color_rgba": [0.20, 0.40, 0.80, 0.08],
+      "border_color_rgba": [0.30, 0.55, 0.95, 0.35]
+    }
+  ]
+}
