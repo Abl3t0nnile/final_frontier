@@ -27,7 +27,7 @@ func get_game_object(id: String) -> GameObject:
 
 func get_all_objects() -> Array[GameObject]:
 	"""Get all GameObjects"""
-	return _game_objects.values()
+	return _game_objects.values() as Array[GameObject]
 
 func get_objects_in_group(_group: String) -> Array[GameObject]:
 	"""Get all objects in a group (TODO: implement group membership)"""
