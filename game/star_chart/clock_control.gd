@@ -237,11 +237,11 @@ func _on_rewind_pressed() -> void:
 
 func _on_pause_pressed() -> void:
 	if _solar_map:
-		_solar_map.pause()
+		_solar_map.map_pause()
 
 func _on_play_pressed() -> void:
 	if _solar_map:
-		_solar_map.play()
+		_solar_map.map_play()
 
 func _on_forward_pressed() -> void:
 	if _solar_map and not _is_live_mode:
@@ -250,7 +250,10 @@ func _on_forward_pressed() -> void:
 
 func _on_time_scale_toggled(pressed: bool, time_scale: float) -> void:
 	if pressed and _solar_map:
-		_solar_map.set_time_scale(time_scale)
+		if _is_live_mode:
+			_solar_map.set_time_scale(time_scale)  # Control SimClock in live mode
+		else:
+			_solar_map.map_set_time_scale(time_scale)  # Control MapClock in scrub mode
 
 func _update_time_scale_buttons(current_scale: float) -> void:
 	# Alle Buttons deaktivieren

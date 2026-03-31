@@ -314,23 +314,23 @@ func get_map_clock() -> MapClock:
 	return _map_controller.get_map_clock()
 
 
-# New time control API
-func play() -> void:
+# New MapClock control API
+func map_play() -> void:
 	_map_controller.get_map_clock().play()
 
-func pause() -> void:
+func map_pause() -> void:
 	_map_controller.get_map_clock().pause()
 
-func reverse() -> void:
+func map_reverse() -> void:
 	_map_controller.get_map_clock().reverse()
 
-func set_time_scale(scale: float) -> void:
+func map_set_time_scale(scale: float) -> void:
 	_map_controller.get_map_clock().set_time_scale(scale)
 
-func scrub_to(sst_s: float) -> void:
+func map_scrub_to(sst_s: float) -> void:
 	_map_controller.get_map_clock().set_time(sst_s)
 
-func go_live() -> void:
+func map_go_live() -> void:
 	_map_controller.get_map_clock().enter_live_mode(_clock)
 
 

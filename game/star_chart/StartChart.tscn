@@ -130,20 +130,35 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/SubViewportContainer" unique_id=1383873112]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(1396, 1004)
+size = Vector2i(1396, 961)
 render_target_update_mode = 4
 
 [node name="SolarMap" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/SubViewportContainer/SubViewport" unique_id=531017108 instance=ExtResource("1_solarmap")]
 zoom_exp_min = 2.0
+zoom_exp_max = null
+zoom_exp_step = null
 zoom_exp_initial = 5.8
+zoom_scale_presets = null
+move_speed_px_s = null
+move_accel = null
+move_decel = null
 culling_min_parent_dist_px = 64.0
+has_orbits = null
+has_grid = null
+has_belts = null
+has_zones = null
+markers_clickable = null
+markers_hoverable = null
+marker_zoom_thresholds = null
 marker_sizes_star = Vector3i(128, 64, 32)
 marker_sizes_planet = Vector3i(48, 36, 24)
 marker_sizes_moon = Vector3i(40, 30, 20)
 marker_sizes_struct = Vector3i(40, 30, 20)
 marker_selection_color = Color(0.3572619, 0.5585786, 0.25989878, 0.9019608)
+marker_selection_width = null
 marker_pinned_color = Color(0.75388426, 0.29074594, 0.18142468, 0.9019608)
 marker_pinned_width = 2.0
+marker_label_offset = null
 orbit_width_default = 2.0
 orbit_width_highlight = 3.0
 orbit_width_dimmed = 1.0
@@ -154,10 +169,16 @@ orbit_color_override_enabled = true
 orbit_color_planet = Color(0.28235295, 0.41960785, 0.49803922, 1)
 orbit_color_moon = Color(0.26666668, 0.2784314, 0.3764706, 1)
 orbit_color_dwarf = Color(0.44313726, 0.24705882, 0.32156864, 1)
+orbit_color_struct = null
+belt_zoom_near = null
+belt_zoom_mid = null
+belt_zoom_far = null
 belt_point_size_near = 6.0
 belt_point_size_mid = 3.0
 belt_point_size_far = 2.0
 time_scale_initial = 3600.0
+time_scale_presets = null
+time_scale_labels = null
 
 [node name="UiOverlay" type="CanvasLayer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/SubViewportContainer/SubViewport/SolarMap" unique_id=1219670187]
 
@@ -401,7 +422,6 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_cx451")
 
 [node name="FooterPanel" type="PanelContainer" parent="UILayer/MainDisplay/VFrame" unique_id=1304846700]
-visible = false
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_footer")
