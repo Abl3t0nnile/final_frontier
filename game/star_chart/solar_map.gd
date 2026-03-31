@@ -120,14 +120,24 @@ signal camera_moved(pos_px: Vector2)
 
 var _clock: SimClock            = null
 var _solar_system: SolarSystemModel = null
+var _game_object_registry: GameObjectRegistry = null
 
 
 func _ready() -> void:
-	# Daten laden
+	# 1. Load data
 	var data_loader := DataLoader.new()
 	var bodies: Array[BodyDef] = data_loader.load_core_data()
 
-	# SimClock
+	# 2. Populate registry
+	_game_object_registry = GameObjectRegistry.new()
+	_game_object_registry.name = "GameObjectRegistry"
+	add_child(_game_object_registry)
+	
+	for body_def in bodies:
+		var game_object := GameObject.new().init(body_def)
+		_game_object_registry.register_game_object(game_object)
+
+	# 3. Setup sim from registry
 	_clock = SimClock.new()
 	_clock.name = "SimClock"
 	_clock.init(false)
@@ -135,15 +145,14 @@ func _ready() -> void:
 	_clock.set_time_scale(time_scale_initial)
 	add_child(_clock)
 
-	# SolarSystemModel
 	_solar_system = SolarSystemModel.new()
 	_solar_system.name = "SolarSystemModel"
 	add_child(_solar_system)
-	_solar_system.setup(_clock, bodies)
+	_solar_system.setup(_clock, _game_object_registry.get_all_body_defs())
 
-	# Pass config to controller
+	# 4. Setup map with registry reference
 	_map_controller.apply_config(_build_config())
-	_map_controller.setup(_solar_system, _clock, null)
+	_map_controller.setup(_solar_system, _clock, _game_object_registry, null)
 	_map_controller.focus_body("sun")
 
 	# Wire up signals
@@ -290,10 +299,6 @@ func get_body_data(id: String) -> BodyDef:
 	return _solar_system.get_body(id) if _solar_system else null
 
 
-func get_all_body_ids() -> Array:
-	return _solar_system.get_all_body_ids() if _solar_system else []
-
-
 # Interne Referenzen (für fortgeschrittene Nutzung)
 func get_map_controller() -> SolarMapController:
 	return _map_controller
@@ -305,6 +310,10 @@ func get_clock() -> SimClock:
 
 func get_solar_system() -> SolarSystemModel:
 	return _solar_system
+
+
+func get_game_object_registry() -> GameObjectRegistry:
+	return _game_object_registry
 
 
 func get_map_clock() -> MapClock:

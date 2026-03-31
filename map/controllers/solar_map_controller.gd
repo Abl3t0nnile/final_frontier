@@ -18,8 +18,8 @@ func _init() -> void:
 
 ## Setup (Solar-specific)
 
-func setup(model: SolarSystemModel, clock: SimClock, config: MapConfig) -> void:
-	super.setup(model, clock, config)
+func setup(model: SolarSystemModel, clock: SimClock, registry: GameObjectRegistry, config: MapConfig) -> void:
+	super.setup(model, clock, registry, config)
 	# Follow start/stop on selection
 	_interaction_manager.body_selected.connect(_follow_manager.start_following)
 	_interaction_manager.body_deselected.connect(_follow_manager.stop_following)

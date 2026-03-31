@@ -12,11 +12,13 @@ var _markers: Dictionary = {}  # id -> MapMarker
 var _model: SolarSystemModel = null
 var _map_transform: MapTransform = null
 var _world_root: Node2D = null
+var _game_object_registry: GameObjectRegistry = null
 
-func setup(model: SolarSystemModel, map_transform: MapTransform, world_root: Node2D) -> void:
+func setup(model: SolarSystemModel, map_transform: MapTransform, world_root: Node2D, registry: GameObjectRegistry = null) -> void:
 	_model        = model
 	_map_transform = map_transform
 	_world_root   = world_root
+	_game_object_registry = registry
 
 func create_marker(game_object: GameObject) -> MapMarker:
 	var marker := MARKER_SCENE.instantiate() as MapMarker

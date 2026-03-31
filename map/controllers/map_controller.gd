@@ -85,8 +85,7 @@ var _entity_manager: EntityManager      = null
 var _model: SolarSystemModel            = null
 var _clock: SimClock                    = null  ## Reference to simulation clock
 var _map_clock: MapClock                = null  ## User-controlled map clock
-var _game_object_registry: GameObjectRegistry = null
-
+var _game_object_registry: GameObjectRegistry = null  ## Registry for entity metadata
 var _culling_manager: CullingManager       = null
 var _interaction_manager: InteractionManager = null
 var _follow_manager: FollowManager         = null
@@ -98,9 +97,10 @@ var _zone_manager: ZoneManager = null
 var _ring_manager: RingManager = null
 
 
-func setup(model: SolarSystemModel, clock: SimClock, _config: MapConfig) -> void:
+func setup(model: SolarSystemModel, clock: SimClock, registry: GameObjectRegistry, _config: MapConfig) -> void:
 	_model = model
 	_clock = clock
+	_game_object_registry = registry
 
 	# Create MapClock for user-controlled time navigation
 	_map_clock = MapClock.new()
@@ -127,12 +127,7 @@ func setup(model: SolarSystemModel, clock: SimClock, _config: MapConfig) -> void
 	_entity_manager = EntityManager.new()
 	_entity_manager.name = "EntityManager"
 	add_child(_entity_manager)
-	_entity_manager.setup(_model, _map_transform, _marker_layer)
-
-	# GameObjectRegistry
-	_game_object_registry = GameObjectRegistry.new()
-	_game_object_registry.name = "GameObjectRegistry"
-	add_child(_game_object_registry)
+	_entity_manager.setup(_model, _map_transform, _marker_layer, _game_object_registry)
 
 	# CullingManager
 	_culling_manager = CullingManager.new()
@@ -144,7 +139,7 @@ func setup(model: SolarSystemModel, clock: SimClock, _config: MapConfig) -> void
 	_culling_manager.marker_sizes_planet = marker_sizes_planet
 	_culling_manager.marker_sizes_moon   = marker_sizes_moon
 	_culling_manager.marker_sizes_struct = marker_sizes_struct
-	_culling_manager.setup(_entity_manager, _model, _map_transform)
+	_culling_manager.setup(_entity_manager, _model, _map_transform, _game_object_registry)
 
 	# InteractionManager
 	_interaction_manager = InteractionManager.new()
@@ -158,14 +153,12 @@ func setup(model: SolarSystemModel, clock: SimClock, _config: MapConfig) -> void
 	add_child(_follow_manager)
 	_follow_manager.setup(_map_transform, _model)
 
-	# Marker erstellen und Signals verdrahten
-	for id in _model.get_all_body_ids():
-		var def: BodyDef = _model.get_body(id)
-		if def == null:
+	# Create markers and wire signals from registry
+	for game_object in _game_object_registry.get_all_objects():
+		if not game_object:
 			continue
-		var obj := GameObject.new().init(def)
-		_game_object_registry.register_game_object(obj)
-		var marker := _entity_manager.create_marker(obj)
+		var id: String = game_object.id
+		var marker := _entity_manager.create_marker(game_object)
 		_apply_marker_config(marker)
 		marker.clicked.connect(func(_m: MapMarker): _interaction_manager.select_entity(id))
 		marker.hovered.connect(func(_m: MapMarker): _interaction_manager.on_marker_hovered(id))

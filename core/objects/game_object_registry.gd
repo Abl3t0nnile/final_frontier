@@ -1,6 +1,6 @@
 ## GameObjectRegistry
-## Zentraler Cache und API für alle GameObjects
-## Erweitert: Node
+## Central cache and API for all GameObjects
+## Extends: Node
 
 class_name GameObjectRegistry
 extends Node
@@ -18,27 +18,35 @@ var _data_loader: DataLoader
 
 ## Public Methods
 func register_game_object(obj: GameObject) -> void:
-	"""Registriert ein GameObject"""
+	"""Register a GameObject"""
 	_game_objects[obj.id] = obj
 
 func get_game_object(id: String) -> GameObject:
-	"""Holt GameObject per ID"""
+	"""Get GameObject by ID"""
 	return _game_objects.get(id, null)
 
 func get_all_objects() -> Array[GameObject]:
-	"""Holt alle GameObjects"""
+	"""Get all GameObjects"""
 	return _game_objects.values()
 
 func get_objects_in_group(group: String) -> Array[GameObject]:
-	"""Holt alle Objekte einer Gruppe"""
+	"""Get all objects in a group"""
 	var result: Array[GameObject] = []
 	for obj in _game_objects.values():
 		# TODO: Check group membership
 		pass
 	return result
 
+func get_all_body_defs() -> Array[BodyDef]:
+	"""Get BodyDef from all registered GameObjects"""
+	var body_defs: Array[BodyDef] = []
+	for obj in _game_objects.values():
+		if obj and obj.body_def:
+			body_defs.append(obj.body_def)
+	return body_defs
+
 func clear_cache() -> void:
-	"""Leert den Cache"""
+	"""Clear the cache"""
 	_game_objects.clear()
 
 ## Getters

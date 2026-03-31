@@ -1,10 +1,10 @@
 ## CullingManager
-## Verwaltet Sichtbarkeit und Größe von MapMarkern basierend auf Zoom und Nähe.
+## Manages visibility and size of MapMarkers based on zoom and proximity.
 
 class_name CullingManager
 extends Node
 
-## Prioritäten für Proximity-Culling (niedrigere Zahl = höhere Priorität)
+## Priorities for proximity culling (lower number = higher priority)
 const TYPE_PRIORITY := {
 	"star":   0,
 	"planet": 1,
@@ -23,16 +23,18 @@ var marker_sizes_struct: Vector3i = Vector3i(14, 10, 6)
 var _entity_manager: EntityManager   = null
 var _model: SolarSystemModel         = null
 var _map_transform: MapTransform     = null
+var _game_object_registry: GameObjectRegistry = null
 var _orbits: Dictionary              = {}  # id -> OrbitRenderer (optional)
 var _belt_manager: BeltManager       = null
 var _ring_manager: RingManager       = null
 var _zone_manager: ZoneManager       = null
 
 
-func setup(entity_manager: EntityManager, model: SolarSystemModel, map_transform: MapTransform) -> void:
+func setup(entity_manager: EntityManager, model: SolarSystemModel, map_transform: MapTransform, registry: GameObjectRegistry = null) -> void:
 	_entity_manager = entity_manager
 	_model          = model
 	_map_transform  = map_transform
+	_game_object_registry = registry
 
 
 func set_orbits(orbit_dict: Dictionary) -> void:
