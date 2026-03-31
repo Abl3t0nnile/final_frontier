@@ -9,6 +9,7 @@ extends VBoxContainer
 var selected_object: GameObject : get = get_selected_object
 
 ## Signals
+# Note: These signals are prepared for future functionality
 signal location_requested(location_id: String)
 signal trade_requested(ware_id: String)
 
