@@ -13,7 +13,7 @@ var game_objects: Dictionary : get = get_game_objects
 # signal game_data_loaded(id: String)
 
 ## Private
-var _game_objects: Dictionary = {}
+var _game_objects: Dictionary[String, GameObject] = {}
 # var _data_loader: DataLoader  # Reserved for future lazy loading
 
 ## Public Methods
@@ -27,7 +27,9 @@ func get_game_object(id: String) -> GameObject:
 
 func get_all_objects() -> Array[GameObject]:
 	"""Get all GameObjects"""
-	return _game_objects.values() as Array[GameObject]
+	var result: Array[GameObject] = []
+	result.assign(_game_objects.values())
+	return result
 
 func get_objects_in_group(_group: String) -> Array[GameObject]:
 	"""Get all objects in a group (TODO: implement group membership)"""
