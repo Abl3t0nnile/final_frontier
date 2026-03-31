@@ -24,9 +24,9 @@ var _entity_manager: EntityManager   = null
 var _model: SolarSystemModel         = null
 var _map_transform: MapTransform     = null
 var _game_object_registry: GameObjectRegistry = null
-var _orbits: Dictionary              = {}  # id -> OrbitRenderer (optional)
-var _belt_manager: BeltManager       = null
-var _ring_manager: RingManager       = null
+var _orbit_manager: OrbitManager     = null
+var _belt_manager: PointCloudManager = null  # Updated from BeltManager
+var _ring_manager: PointCloudManager = null  # Updated from RingManager
 var _zone_manager: ZoneManager       = null
 
 
@@ -37,15 +37,15 @@ func setup(entity_manager: EntityManager, model: SolarSystemModel, map_transform
 	_game_object_registry = registry
 
 
-func set_orbits(orbit_dict: Dictionary) -> void:
-	_orbits = orbit_dict
+func set_orbits(orbit_manager: OrbitManager) -> void:
+	_orbit_manager = orbit_manager
 
 
-func set_belt_manager(belt_manager: BeltManager) -> void:
+func set_belt_manager(belt_manager: PointCloudManager) -> void:
 	_belt_manager = belt_manager
 
 
-func set_ring_manager(ring_manager: RingManager) -> void:
+func set_ring_manager(ring_manager: PointCloudManager) -> void:
 	_ring_manager = ring_manager
 
 
@@ -132,12 +132,12 @@ func apply_culling(selected_id: String, pinned_ids: Array[String]) -> void:
 					marker_a.set_state(MapMarker.MarkerState.INACTIVE)
 
 	# Orbits synchronisieren
-	if not _orbits.is_empty():
-		for id in _orbits:
-			var orbit = _orbits[id]
+	if _orbit_manager:
+		var orbits = _orbit_manager.get_orbits()
+		for id in orbits:
 			var marker := _entity_manager.get_marker(id)
 			if marker != null:
-				orbit.visible = (marker.current_state != MapMarker.MarkerState.INACTIVE)
+				_orbit_manager.set_visibility(id, marker.current_state != MapMarker.MarkerState.INACTIVE)
 
 	# Belts, Rings und Zones synchronisieren
 	_apply_belt_culling()

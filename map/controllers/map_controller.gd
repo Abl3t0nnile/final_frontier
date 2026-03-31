@@ -92,9 +92,10 @@ var _follow_manager: FollowManager         = null
 
 var _orbits: Dictionary    = {}  # id -> OrbitRenderer
 var _grid: Node2D          = null
-var _belt_manager: BeltManager = null
+var _belt_manager: PointCloudManager = null  # Replaces BeltManager
 var _zone_manager: ZoneManager = null
-var _ring_manager: RingManager = null
+var _ring_manager: PointCloudManager = null  # Replaces RingManager
+var _orbit_manager: OrbitManager = null  # New orbit manager
 
 
 func setup(model: SolarSystemModel, clock: SimClock, registry: GameObjectRegistry, _config: MapConfig) -> void:
@@ -185,7 +186,7 @@ func setup(model: SolarSystemModel, clock: SimClock, registry: GameObjectRegistr
 		_setup_grid()
 	if has_orbits:
 		_setup_orbits()
-		_culling_manager.set_orbits(_orbits)
+		_culling_manager.set_orbits(_orbit_manager)
 		_interaction_manager.marker_hovered.connect(_on_marker_hovered_orbit)
 		_interaction_manager.marker_unhovered.connect(_on_marker_unhovered_orbit)
 	if has_belts:
@@ -205,11 +206,11 @@ func setup(model: SolarSystemModel, clock: SimClock, registry: GameObjectRegistr
 	if has_orbits:
 		_update_orbits()
 	if has_belts:
-		_belt_manager.update_belts()
+		_belt_manager.update_positions()
 	if has_zones:
 		_zone_manager.update_zones()
 	if has_rings:
-		_ring_manager.update_rings()
+		_ring_manager.update_positions()
 	call_deferred("_on_camera_moved", _map_transform.cam_pos_px)
 
 
@@ -223,20 +224,6 @@ func _apply_marker_config(marker: MapMarker) -> void:
 	marker.label_offset    = marker_label_offset
 
 
-func _apply_orbit_config(orbit: OrbitRenderer, def: BodyDef) -> void:
-	orbit.base_width      = orbit_width_default
-	orbit.highlight_width = orbit_width_highlight
-	orbit.dimmed_width    = orbit_width_dimmed
-	orbit.alpha_default   = orbit_alpha_default
-	orbit.alpha_highlight = orbit_alpha_highlight
-	orbit.alpha_dimmed    = orbit_alpha_dimmed
-	
-	if orbit_color_override_enabled:
-		match def.type:
-			"planet": orbit.color = orbit_color_planet
-			"moon":   orbit.color = orbit_color_moon
-			"dwarf":  orbit.color = orbit_color_dwarf
-			"struct": orbit.color = orbit_color_struct
 
 
 func apply_config(config: Dictionary) -> void:
@@ -361,11 +348,11 @@ func _update_features() -> void:
 	if has_orbits:
 		_update_orbits()
 	if has_belts and _belt_manager:
-		_belt_manager.update_belts()
+		_belt_manager.update_positions()
 	if has_zones and _zone_manager:
 		_zone_manager.update_zones()
 	if has_rings and _ring_manager:
-		_ring_manager.update_rings()
+		_ring_manager.update_positions()
 
 
 func _update_features_zoom(km_per_px: float) -> void:
@@ -378,51 +365,42 @@ func _update_features_zoom(km_per_px: float) -> void:
 	
 	if has_orbits:
 		_update_orbits()
-		for id in _orbits:
-			(_orbits[id] as OrbitRenderer).notify_zoom_changed(km_per_px)
+		if _orbit_manager:
+			_orbit_manager.update_zoom(km_per_px)
 	if has_belts and _belt_manager:
-		_belt_manager.update_belts()
+		_belt_manager.update_positions()
 		_belt_manager.update_zoom(km_per_px)
 	if has_zones and _zone_manager:
 		_zone_manager.update_zones()
 		_zone_manager.update_zoom(km_per_px)
 	if has_rings and _ring_manager:
-		_ring_manager.update_rings()
+		_ring_manager.update_positions()
 		_ring_manager.update_zoom(km_per_px)
 	if has_grid and _grid != null:
-		_grid.call("notify_zoom_changed")
+		_grid.notify_zoom_changed()
 
 
 ## Feature Setup
 
 func _setup_grid() -> void:
-	_grid = Node2D.new()
+	_grid = GridRenderer.new()
 	_grid.name = "GridRenderer"
 	_grid_layer.add_child(_grid)
-	var script := load("res://map/renderers/grid_renderer.gd")
-	if script != null:
-		_grid.set_script(script)
-		_grid.call("setup", _map_transform)
+	_grid.setup(_map_transform)
 
 
 func _setup_orbits() -> void:
-	for id in _model.get_all_body_ids():
-		var def: BodyDef = _model.get_body(id)
-		if def == null or def.motion == null:
-			continue
-		if def.motion.model not in ["circular", "kepler2d"]:
-			continue
-		var orbit := OrbitRenderer.new()
-		_orbit_layer.add_child(orbit)
-		orbit.setup(def, _map_transform)
-		_apply_orbit_config(orbit, def)
-		_orbits[id] = orbit
+	_orbit_manager = OrbitManager.new()
+	_orbit_manager.name = "OrbitManager"
+	add_child(_orbit_manager)
+	_orbit_manager.setup(_orbit_layer, _map_transform, _model, _game_object_registry)
+	_orbits = _orbit_manager.get_orbits()
 
 
 func _setup_belts() -> void:
-	_belt_manager = BeltManager.new()
+	_belt_manager = PointCloudManager.new()
 	_belt_manager.name = "BeltManager"
-	# Config vor setup() setzen
+	# Config before setup()
 	_belt_manager.zoom_near       = belt_zoom_near
 	_belt_manager.zoom_mid        = belt_zoom_mid
 	_belt_manager.zoom_far        = belt_zoom_far
@@ -430,7 +408,7 @@ func _setup_belts() -> void:
 	_belt_manager.point_size_mid  = belt_point_size_mid
 	_belt_manager.point_size_far  = belt_point_size_far
 	add_child(_belt_manager)
-	_belt_manager.setup(_belt_layer, _map_transform, _model)
+	_belt_manager.setup(_belt_layer, _map_transform, _model, "res://data/belt_data.json", "belts")
 
 
 func _setup_zones() -> void:
@@ -441,40 +419,30 @@ func _setup_zones() -> void:
 
 
 func _setup_rings() -> void:
-	_ring_manager = RingManager.new()
+	_ring_manager = PointCloudManager.new()
 	_ring_manager.name = "RingManager"
 	add_child(_ring_manager)
-	_ring_manager.setup(_ring_layer, _map_transform, _model)
+	_ring_manager.setup(_ring_layer, _map_transform, _model, "res://data/ring_data.json", "rings")
 
 
 func _update_orbits() -> void:
-	for id in _orbits:
-		var orbit: OrbitRenderer = _orbits[id]
-		if orbit.parent_id == "":
-			orbit.position = Vector2.ZERO
-		else:
-			orbit.position = _map_transform.km_to_px(_model.get_body_position(orbit.parent_id))
+	if _orbit_manager:
+		_orbit_manager.update_orbits()
 
 
 func _on_marker_hovered_orbit(id: String) -> void:
-	for orbit_id in _orbits:
-		var orbit: OrbitRenderer = _orbits[orbit_id]
-		if orbit_id == id:
-			orbit.set_state(OrbitRenderer.OrbitState.HIGHLIGHT)
-		elif orbit.current_state == OrbitRenderer.OrbitState.HIGHLIGHT:
-			orbit.set_state(OrbitRenderer.OrbitState.DEFAULT)
+	if _orbit_manager:
+		_orbit_manager.set_highlight(id, true)
 
 
-func _on_marker_unhovered_orbit(_id: String) -> void:
-	for orbit_id in _orbits:
-		var orbit: OrbitRenderer = _orbits[orbit_id]
-		if orbit.current_state == OrbitRenderer.OrbitState.HIGHLIGHT:
-			orbit.set_state(OrbitRenderer.OrbitState.DEFAULT)
+func _on_marker_unhovered_orbit(id: String) -> void:
+	if _orbit_manager:
+		_orbit_manager.set_highlight(id, false)
 
 
-## Getters für Manager
+## Getters for Managers
 
-func get_belt_manager() -> BeltManager:
+func get_belt_manager() -> PointCloudManager:
 	return _belt_manager
 
 
@@ -482,5 +450,9 @@ func get_zone_manager() -> ZoneManager:
 	return _zone_manager
 
 
-func get_ring_manager() -> RingManager:
+func get_ring_manager() -> PointCloudManager:
 	return _ring_manager
+
+
+func get_orbit_manager() -> OrbitManager:
+	return _orbit_manager

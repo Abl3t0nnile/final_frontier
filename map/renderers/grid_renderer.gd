@@ -1,6 +1,7 @@
 ## GridRenderer
-## CPU-basiertes Navigationsgitter mit konzentrischen Ringen
+## CPU-based navigation grid with concentric rings
 
+class_name GridRenderer
 extends Node2D
 
 const AU_KM: float = 149_597_870.7
@@ -36,6 +37,7 @@ func _draw() -> void:
 		return
 
 	var vp_size := get_viewport_rect().size
+	var _vp_center: Vector2 = get_viewport().get_visible_rect().size / 2.0
 	var vp_center := vp_size * 0.5
 
 	# Position des Weltzentrums (Sonne) in Screen-Koordinaten
