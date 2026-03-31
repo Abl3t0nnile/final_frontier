@@ -6,9 +6,6 @@ extends Node
 
 const MARKER_SCENE := preload("res://map/markers/map_marker.tscn")
 
-signal entity_hovered(id: String)
-signal entity_selected(id: String)
-
 var markers: Dictionary : get = get_markers
 
 var _markers: Dictionary = {}  # id -> MapMarker

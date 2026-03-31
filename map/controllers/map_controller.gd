@@ -71,7 +71,6 @@ var belt_point_size_mid: float  = 2.0
 var belt_point_size_far: float  = 1.0
 
 ## Private
-@onready var _world_root: Node2D    = $WorldRoot
 @onready var _marker_layer: Node2D  = $WorldRoot/MarkerLayer
 @onready var _orbit_layer: Node2D   = $WorldRoot/OrbitLayer
 @onready var _grid_layer: Node2D    = $WorldRoot/GridLayer

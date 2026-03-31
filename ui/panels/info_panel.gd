@@ -38,28 +38,28 @@ func display_object(obj: GameObject) -> void:
 		# TODO: Display mission data
 		pass
 
-func show_exploration_data(component: ExplorationComponent) -> void:
-	"""Zeigt Erkundungs-Daten"""
+func show_exploration_data(_component: ExplorationComponent) -> void:
+	"""Display exploration data"""
 	# TODO: Display exploration information
 	pass
 
-func show_trading_data(component: TradingComponent) -> void:
-	"""Zeigt Handels-Daten"""
+func show_trading_data(_component: TradingComponent) -> void:
+	"""Display trading data"""
 	# TODO: Display trading information
 	pass
 
 func set_map_viewer(map_viewer: MapController) -> void:
-	"""Setzt Map-Viewer Referenz"""
+	"""Set map viewer reference"""
 	_map_viewer = map_viewer
 
 ## Private Methods
 func _clear_display() -> void:
-	"""Leert aktuelle Anzeige"""
+	"""Clear current display"""
 	# TODO: Clear all child widgets
 	pass
 
-func _display_basic_info(obj: GameObject) -> void:
-	"""Zeigt grundlegende Informationen"""
+func _display_basic_info(_obj: GameObject) -> void:
+	"""Display basic information"""
 	# TODO: Display name, type, position, etc.
 	pass
 
