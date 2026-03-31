@@ -1,6 +1,6 @@
 ## InfoPanel
-## Anzeige von Informationen über ausgewählte Objekte
-## Erweitert: VBoxContainer
+## Display information about selected objects
+## Extends: VBoxContainer
 
 class_name InfoPanel
 extends VBoxContainer
@@ -18,7 +18,7 @@ var _map_viewer: MapController
 
 ## Public Methods
 func display_object(obj: GameObject) -> void:
-	"""Zeigt Informationen zu GameObject"""
+	"""Display information about GameObject"""
 	_selected_object = obj
 	
 	# Clear current display

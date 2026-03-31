@@ -1,5 +1,5 @@
 ## MapConfig
-## Basis-Ressourcenklasse für Kartenkonfigurationen
+## Base resource class for map configurations
 
 class_name MapConfig
 extends Resource
