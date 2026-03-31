@@ -83,9 +83,8 @@ var belt_point_size_far: float  = 1.0
 var _map_transform: MapTransform        = null
 var _entity_manager: EntityManager      = null
 var _model: SolarSystemModel            = null
-var _clock: SimClock                    = null  ## Referenz auf Simulations-Uhr
-var _map_clock: SimClock                = null  ## Eigene Map-Uhr für Time-Scrubbing (allow_rewind=true)
-var _clock_coupled: bool                = true  ## true = Map folgt Sim-Uhr, false = unabhängig (Scrubbing)
+var _clock: SimClock                    = null  ## Reference to simulation clock
+var _map_clock: MapClock                = null  ## User-controlled map clock
 var _game_object_registry: GameObjectRegistry = null
 
 var _culling_manager: CullingManager       = null
@@ -103,16 +102,12 @@ func setup(model: SolarSystemModel, clock: SimClock, _config: MapConfig) -> void
 	_model = model
 	_clock = clock
 
-	# Map-eigene Uhr für Time-Scrubbing (erlaubt Rückwärts-Navigation)
-	_map_clock = SimClock.new().init(true)  # allow_rewind = true
+	# Create MapClock for user-controlled time navigation
+	_map_clock = MapClock.new()
 	_map_clock.name = "MapClock"
 	add_child(_map_clock)
-	_map_clock.setup(_clock.current_time)
-	_map_clock.tick.connect(_on_map_clock_tick)
-	_map_clock.time_changed.connect(_on_map_clock_time_changed)
-	
-	# Sim-Uhr tick propagiert zur Map-Uhr wenn gekoppelt
-	_clock.tick.connect(_on_sim_clock_tick)
+	_map_clock.tick.connect(_on_map_time_updated)
+	_map_clock.time_changed.connect(_on_map_time_updated)
 
 	# MapTransform
 	_map_transform = MapTransform.new()
@@ -340,49 +335,17 @@ func get_interaction_manager() -> InteractionManager: return _interaction_manage
 func get_follow_manager() -> FollowManager: return _follow_manager
 
 
-func get_map_clock() -> SimClock: return _map_clock
+## Time control API
+
+func get_map_clock() -> MapClock:
+	"""Get the MapClock instance for direct control"""
+	return _map_clock
 
 
-func is_clock_coupled() -> bool: return _clock_coupled
-
-
-func couple_clock() -> void:
-	"""Koppelt Map-Uhr an Sim-Uhr (synchron)"""
-	if _clock_coupled:
-		return
-	_clock_coupled = true
-	_map_clock.set_time(_clock.current_time)  # Sync zur aktuellen Sim-Zeit
-
-
-func decouple_clock() -> void:
-	"""Entkoppelt Map-Uhr von Sim-Uhr (für Scrubbing)"""
-	_clock_coupled = false
-
-
-## Signal-Handler (Subtypen überschreiben für spezifisches Verhalten)
-
-func _on_clock_tick(_time: float) -> void:
-	pass
-
-
-func _on_sim_clock_tick(time: float) -> void:
-	"""Sim-Uhr tick - propagiert zur Map-Uhr wenn gekoppelt"""
-	if _clock_coupled:
-		_map_clock.set_time(time)
-
-
-func _on_map_clock_tick(time: float) -> void:
-	"""Map-Uhr hat Zeit fortgeschritten (normal tick)"""
-	_on_map_time_updated(time)
-
-
-func _on_map_clock_time_changed(time: float) -> void:
-	"""Map-Uhr hat Zeit gesprungen (scrubbing/rewind)"""
-	_on_map_time_updated(time)
-
+## Signal handlers (subclasses override for specific behavior)
 
 func _on_map_time_updated(time: float) -> void:
-	"""Aktualisiert Map-Elemente bei Zeitänderung"""
+	"""Update map elements when time changes"""
 	if _model == null:
 		return
 	_model.update_to_time(time)

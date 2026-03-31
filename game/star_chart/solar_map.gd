@@ -198,40 +198,40 @@ func get_time_scale_presets() -> Array[float]:
 func get_time_scale_labels() -> Array[String]:
 	return time_scale_labels
 
-# Clock Mode Steuerung
+# Clock mode control
 func set_live_mode() -> void:
-	"""Aktiviert Live Mode (koppelt an Sim-Uhr an)"""
-	_map_controller.couple_clock()
+	"""Activate live mode (tracks simulation clock)"""
+	_map_controller.get_map_clock().enter_live_mode(_clock)
 	clock_mode_changed.emit(true)
 
 func set_scrub_mode() -> void:
-	"""Aktiviert Scrub Mode (entkoppelt von Sim-Uhr)"""
-	_map_controller.decouple_clock()
+	"""Activate scrub mode (independent time control)"""
+	_map_controller.get_map_clock().exit_live_mode()
 	clock_mode_changed.emit(false)
 
 func is_live_mode() -> bool:
-	return _map_controller.is_clock_coupled()
+	return _map_controller.get_map_clock().is_live()
 
-# Spulfunktionen für Scrub Mode
+# Scrub functions for scrub mode
 func scrub_forward(seconds: float) -> void:
 	if not is_live_mode():
 		var map_clock = _map_controller.get_map_clock()
 		if map_clock:
 			var current_time = map_clock.get_current_time()
-			map_clock.setup(current_time + seconds)
+			map_clock.set_time(current_time + seconds)
 
 func scrub_backward(seconds: float) -> void:
 	if not is_live_mode():
 		var map_clock = _map_controller.get_map_clock()
 		if map_clock:
 			var current_time = map_clock.get_current_time()
-			map_clock.setup(current_time - seconds)
+			map_clock.set_time(current_time - seconds)
 
 
 
 
 
-# Karten-Navigation
+# Map navigation
 func focus_body(id: String) -> void:
 	_map_controller.focus_body(id)
 
@@ -310,26 +310,34 @@ func get_solar_system() -> SolarSystemModel:
 	return _solar_system
 
 
-func get_map_clock() -> SimClock:
+func get_map_clock() -> MapClock:
 	return _map_controller.get_map_clock()
 
 
-func is_clock_coupled() -> bool:
-	return _map_controller.is_clock_coupled()
+# New time control API
+func play() -> void:
+	_map_controller.get_map_clock().play()
 
+func pause() -> void:
+	_map_controller.get_map_clock().pause()
 
-func couple_clock() -> void:
-	_map_controller.couple_clock()
+func reverse() -> void:
+	_map_controller.get_map_clock().reverse()
 
+func set_time_scale(scale: float) -> void:
+	_map_controller.get_map_clock().set_time_scale(scale)
 
-func decouple_clock() -> void:
-	_map_controller.decouple_clock()
+func scrub_to(sst_s: float) -> void:
+	_map_controller.get_map_clock().set_time(sst_s)
+
+func go_live() -> void:
+	_map_controller.get_map_clock().enter_live_mode(_clock)
 
 
 
 
 func _connect_signals() -> void:
-	# Body-Events vom Controller
+	# Body events from controller
 	_map_controller.body_selected.connect(body_selected.emit)
 	_map_controller.body_deselected.connect(body_deselected.emit)
 	_map_controller.marker_hovered.connect(marker_hovered.emit)
@@ -337,13 +345,13 @@ func _connect_signals() -> void:
 	_map_controller.body_pinned.connect(body_pinned.emit)
 	_map_controller.body_unpinned.connect(body_unpinned.emit)
 
-	# Zeit-Events von Clock
+	# Time events from clock
 	_clock.tick.connect(func(t: float): time_changed.emit(t))
 	_clock.time_scale_changed.connect(func(s: float): time_scale_changed.emit(s))
 	_clock.started.connect(clock_started.emit)
 	_clock.paused.connect(clock_paused.emit)
 
-	# Karten-Events von MapTransform (via Controller)
+	# Map events from MapTransform (via controller)
 	var map_transform := _map_controller.get_map_transform()
 	map_transform.zoom_changed.connect(zoom_changed.emit)
 	map_transform.camera_moved.connect(camera_moved.emit)

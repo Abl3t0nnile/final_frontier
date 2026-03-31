@@ -1,5 +1,5 @@
 ## ClockControl
-## Steuert die Zeit-UI in der StartChart-Szene
+## Controls the time UI in the StartChart scene
 
 extends Node
 
@@ -27,101 +27,101 @@ var _blink_timer: Timer = null
 var _is_live_mode: bool = true
 
 func _ready() -> void:
-	# Blink-Timer für Live Mode
+	# Blink timer for live mode
 	_blink_timer = Timer.new()
 	_blink_timer.wait_time = 0.5
 	_blink_timer.timeout.connect(_on_blink_timer)
 	add_child(_blink_timer)
 	
-	print("ClockControl _ready() gestartet")
+	print("ClockControl _ready() started")
 	
-	# Buttons mit Funktionen verbinden
+	# Connect buttons with functions
 	if _jump_btn:
 		_jump_btn.pressed.connect(_on_jump_pressed)
-		print("JumpBtn verbunden")
+		print("JumpBtn connected")
 	else:
-		print("FEHLER: JumpBtn nicht gefunden!")
+		print("ERROR: JumpBtn not found!")
 		
 	if _rewind_btn:
 		_rewind_btn.pressed.connect(_on_rewind_pressed)
-		print("RewindBtn verbunden")
+		print("RewindBtn connected")
 	else:
-		print("FEHLER: RewindBtn nicht gefunden!")
+		print("ERROR: RewindBtn not found!")
 		
 	if _pause_btn:
 		_pause_btn.pressed.connect(_on_pause_pressed)
-		print("PauseBtn verbunden")
+		print("PauseBtn connected")
 	else:
-		print("FEHLER: PauseBtn nicht gefunden!")
+		print("ERROR: PauseBtn not found!")
 		
 	if _play_btn:
 		_play_btn.pressed.connect(_on_play_pressed)
-		print("PlayBtn verbunden")
+		print("PlayBtn connected")
 	else:
-		print("FEHLER: PlayBtn nicht gefunden!")
+		print("ERROR: PlayBtn not found!")
 		
 	if _forward_btn:
 		_forward_btn.pressed.connect(_on_forward_pressed)
-		print("ForwardBtn verbunden")
+		print("ForwardBtn connected")
 	else:
-		print("FEHLER: ForwardBtn nicht gefunden!")
+		print("ERROR: ForwardBtn not found!")
 	
-	# Time Scale Buttons verbinden
+	# Connect time scale buttons
 	if _sec_btn:
-		_sec_btn.toggled.connect(_on_time_scale_toggled.bind(1.0))  # 1 Sekunde
-		print("SecBtn verbunden")
+		_sec_btn.toggled.connect(_on_time_scale_toggled.bind(1.0))  # 1 second
+		print("SecBtn connected")
 	else:
-		print("FEHLER: SecBtn nicht gefunden!")
+		print("ERROR: SecBtn not found!")
 		
 	if _min_btn:
-		_min_btn.toggled.connect(_on_time_scale_toggled.bind(60.0))  # 1 Minute
-		print("MinBtn verbunden")
+		_min_btn.toggled.connect(_on_time_scale_toggled.bind(60.0))  # 1 minute
+		print("MinBtn connected")
 	else:
-		print("FEHLER: MinBtn nicht gefunden!")
+		print("ERROR: MinBtn not found!")
 		
 	if _hour_btn:
-		_hour_btn.toggled.connect(_on_time_scale_toggled.bind(3600.0))  # 1 Stunde
-		print("HourBtn verbunden")
+		_hour_btn.toggled.connect(_on_time_scale_toggled.bind(3600.0))  # 1 hour
+		print("HourBtn connected")
 	else:
-		print("FEHLER: HourBtn nicht gefunden!")
+		print("ERROR: HourBtn not found!")
 		
 	if _day_btn:
-		_day_btn.toggled.connect(_on_time_scale_toggled.bind(86400.0))  # 1 Tag
-		print("DayBtn verbunden")
+		_day_btn.toggled.connect(_on_time_scale_toggled.bind(86400.0))  # 1 day
+		print("DayBtn connected")
 	else:
-		print("FEHLER: DayBtn nicht gefunden!")
+		print("ERROR: DayBtn not found!")
 		
 	if _week_btn:
-		_week_btn.toggled.connect(_on_time_scale_toggled.bind(518400.0))  # 1 Woche (6 Tage)
-		print("WeekBtn verbunden")
+		_week_btn.toggled.connect(_on_time_scale_toggled.bind(518400.0))  # 1 week (6 days)
+		print("WeekBtn connected")
 	else:
-		print("FEHLER: WeekBtn nicht gefunden!")
+		print("ERROR: WeekBtn not found!")
 		
 	if _month_btn:
-		_month_btn.toggled.connect(_on_time_scale_toggled.bind(2592000.0))  # 1 Monat (30 Tage)
-		print("MonthBtn verbunden")
+		_month_btn.toggled.connect(_on_time_scale_toggled.bind(2592000.0))  # 1 month (30 days)
+		print("MonthBtn connected")
 	else:
-		print("FEHLER: MonthBtn nicht gefunden!")
+		print("ERROR: MonthBtn not found!")
 		
 	if _month6_btn:
-		_month6_btn.toggled.connect(_on_time_scale_toggled.bind(15552000.0))  # 6 Monate
-		print("Month6Btn verbunden")
+		_month6_btn.toggled.connect(_on_time_scale_toggled.bind(15552000.0))  # 6 months
+		print("Month6Btn connected")
 	else:
-		print("FEHLER: Month6Btn nicht gefunden!")
+		print("ERROR: Month6Btn not found!")
 		
 	if _year_btn:
-		_year_btn.toggled.connect(_on_time_scale_toggled.bind(31536000.0))  # 1 Jahr
-		print("YearBtn verbunden")
+		_year_btn.toggled.connect(_on_time_scale_toggled.bind(31536000.0))  # 1 year
+		print("YearBtn connected")
 	else:
-		print("FEHLER: YearBtn nicht gefunden!")
+		print("ERROR: YearBtn not found!")
 	
-	# SolarMap finden
+	# Find SolarMap
 	_solar_map = _find_solar_map()
 	if _solar_map:
-		print("SolarMap gefunden!")
+		print("SolarMap found!")
 		_connect_signals()
 		
-		# Initialen Zustand setzen
+		# Set initial state
 		_is_live_mode = _solar_map.is_live_mode()
 		if _is_live_mode:
 			if _mode_label:
@@ -135,7 +135,7 @@ func _ready() -> void:
 			if _jump_btn:
 				_jump_btn.button_pressed = true
 		
-		# Play/Pause Button Zustand
+		# Play/Pause button state
 		var clock = _solar_map.get_clock()
 		if clock and clock.is_running:
 			if _pause_btn:
@@ -148,25 +148,25 @@ func _ready() -> void:
 			if _play_btn:
 				_play_btn.visible = true
 		
-		# Rewind/Forward Buttons initial deaktivieren im Live Mode
+		# Rewind/Forward buttons initially disabled in live mode
 		if _rewind_btn:
 			_rewind_btn.disabled = _is_live_mode
 		if _forward_btn:
 			_forward_btn.disabled = _is_live_mode
 		
-		# Aktuelle Time Scale setzen und entsprechenden Button aktivieren
+		# Set current time scale and activate corresponding button
 		_update_time_scale_buttons(_solar_map.get_time_scale())
 	else:
-		print("FEHLER: SolarMap nicht gefunden!")
+		print("ERROR: SolarMap not found!")
 
 func _find_solar_map() -> Node:
-	# SolarMap ist ein direktes Kind von StartChart
+	# SolarMap is a direct child of StartChart
 	var solar_map = $UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/SubViewportContainer/SubViewport/SolarMap
 	if solar_map:
-		print("SolarMap gefunden!")
+		print("SolarMap found!")
 		return solar_map
 	
-	print("SolarMap nicht gefunden!")
+	print("SolarMap not found!")
 	return null
 
 func _connect_signals() -> void:
@@ -183,15 +183,15 @@ func _process(_delta: float) -> void:
 	if not _solar_map or not _time_label or not _date_label:
 		return
 	
-	# Zeit-Labels aktualisieren
+	# Update time labels
 	var current_time: float
 	if _is_live_mode:
-		# Im Live Mode die SimClock Zeit verwenden
+		# In live mode use SimClock time
 		var sim_clock = _solar_map.get_clock()
 		if sim_clock:
 			current_time = sim_clock.get_current_time()
 	else:
-		# Im Scrub Mode die MapClock Zeit verwenden
+		# In scrub mode use MapClock time
 		var map_clock = _solar_map.get_map_clock()
 		if map_clock:
 			current_time = map_clock.get_current_time()
@@ -204,23 +204,23 @@ func _update_time_display(time: float) -> void:
 		
 	var time_stamp = SimClock.get_time_stamp_array(time)
 	
-	# TimeLabel - formatiert als JJJJ:TTT:SS:MM:SS
+	# TimeLabel - formatted as YYYY:DDD:HH:MM:SS
 	_time_label.text = "%04d:%03d:%02d:%02d:%02d" % [
-		time_stamp[0],  # Jahre
-		time_stamp[1],  # Tage
-		time_stamp[2],  # Stunden
-		time_stamp[3],  # Minuten
-		time_stamp[4]   # Sekunden
+		time_stamp[0],  # Years
+		time_stamp[1],  # Days
+		time_stamp[2],  # Hours
+		time_stamp[3],  # Minutes
+		time_stamp[4]   # Seconds
 	]
 	
-	# DateLabel - formatiert als "Tag Monat Jahr - HH:MM:SS"
+	# DateLabel - formatted as "Day Month Year - HH:MM:SS"
 	var date_str = SimClock.get_date_string(time_stamp)
 	var clock_str = SimClock.get_clock_string(time_stamp)
 	_date_label.text = "%s - %s" % [date_str, clock_str]
 
 func _on_blink_timer() -> void:
 	if _is_live_mode and _mode_label:
-		# Toggle visibility für blinkenden Effekt
+		# Toggle visibility for blinking effect
 		_mode_label.visible = not _mode_label.visible
 
 func _on_jump_pressed() -> void:

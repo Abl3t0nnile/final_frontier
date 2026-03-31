@@ -1,6 +1,6 @@
 ## StartChartController
-## Zentraler Controller für die StartChart-Szene
-## Steuert nur das Map-Overlay
+## Central controller for the StartChart scene
+## Controls only the map overlay
 
 extends Node
 
@@ -18,23 +18,23 @@ var _solar_map: Node = null
 var _km_per_px: float = 1_000_000.0
 
 func _ready() -> void:
-	# SolarMap finden
+	# Find SolarMap
 	_solar_map = $UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/SubViewportContainer/SubViewport/SolarMap
 	if _solar_map:
 		_setup_map_overlay()
 
 func _setup_map_overlay() -> void:
-	# Prüfen, ob SolarMap schon ready ist
+	# Check if SolarMap is ready
 	if _solar_map.is_inside_tree():
 		_setup_map_overlay_signals()
 	else:
-		# Auf SolarMap ready warten
+		# Wait for SolarMap ready
 		_solar_map.ready.connect(_setup_map_overlay_signals, CONNECT_ONE_SHOT)
 
 func _setup_map_overlay_signals() -> void:
 	_km_per_px = _solar_map.get_zoom_level()
 	
-	# Signale verbinden
+	# Connect signals
 	if _solar_map.has_signal("zoom_changed"):
 		_solar_map.zoom_changed.connect(_on_zoom_changed)
 		

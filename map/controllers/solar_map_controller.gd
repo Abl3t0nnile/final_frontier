@@ -1,14 +1,14 @@
 ## SolarMapController
-## Konfiguriert MapController für die Sonnensystem-Ansicht.
-## Alle Features (Orbits, Grid, Belts, Zones) sind aktiviert.
-## Definiert spezifisches Kamera- und Follow-Verhalten.
+## Configures MapController for solar system view.
+## All features (Orbits, Grid, Belts, Zones) are enabled.
+## Defines specific camera and follow behavior.
 
 class_name SolarMapController
 extends MapController
 
 
 func _init() -> void:
-	# Solar-spezifische Defaults
+	# Solar-specific defaults
 	has_orbits = true
 	has_grid   = true
 	has_belts  = true
@@ -16,22 +16,25 @@ func _init() -> void:
 	has_rings  = true
 
 
-## Setup (Solar-spezifisch)
+## Setup (Solar-specific)
 
 func setup(model: SolarSystemModel, clock: SimClock, config: MapConfig) -> void:
 	super.setup(model, clock, config)
-	# Follow bei Selektion starten/stoppen
+	# Follow start/stop on selection
 	_interaction_manager.body_selected.connect(_follow_manager.start_following)
 	_interaction_manager.body_deselected.connect(_follow_manager.stop_following)
-	# Nach Unpin/Deselect: Positionen und Culling neu berechnen
+	# Refresh positions and culling on unpin/deselect
 	_interaction_manager.body_unpinned.connect(_refresh_culling)
 	_interaction_manager.body_deselected.connect(_refresh_culling)
 
 
-## Signal-Handler (Solar-spezifisch)
+## Signal handlers (Solar-specific)
 
-func _on_clock_tick(_time: float) -> void:
-	_entity_manager.update_all_positions()
+func _on_map_time_updated(time: float) -> void:
+	"""Override to add solar-specific updates"""
+	# Call parent for base updates
+	super._on_map_time_updated(time)
+	# Add solar-specific updates
 	_follow_manager.update_camera_position()
 	_update_features()
 
