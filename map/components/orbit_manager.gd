@@ -4,6 +4,19 @@
 class_name OrbitManager
 extends Node
 
+# Configuration properties
+var base_width: float      = 1.0
+var highlight_width: float = 2.0
+var dimmed_width: float    = 0.5
+var alpha_default: float   = 0.2
+var alpha_highlight: float = 0.6
+var alpha_dimmed: float    = 0.08
+var color_override_enabled: bool = false
+var color_planet: Color    = Color.CYAN
+var color_moon: Color      = Color.GRAY
+var color_dwarf: Color     = Color.ORANGE
+var color_struct: Color    = Color.YELLOW
+
 var _orbit_layer: Node2D         = null
 var _map_transform: MapTransform = null
 var _model: SolarSystemModel     = null
@@ -37,23 +50,21 @@ func setup(orbit_layer: Node2D, map_transform: MapTransform,
 
 
 func _apply_orbit_config(orbit: OrbitRenderer, def: BodyDef) -> void:
-	# Apply configuration based on body type
-	match def.type:
-		"star":
-			orbit.color = Color.YELLOW
-			orbit.base_width = 2.0
-		"planet":
-			orbit.color = Color.CYAN
-			orbit.base_width = 1.5
-		"dwarf":
-			orbit.color = Color.GRAY
-			orbit.base_width = 1.0
-		"moon":
-			orbit.color = Color.WHITE
-			orbit.base_width = 0.8
-		_:
-			orbit.color = Color.GRAY
-			orbit.base_width = 1.0
+	# Apply width configuration
+	orbit.base_width = base_width
+	orbit.highlight_width = highlight_width
+	orbit.dimmed_width = dimmed_width
+	orbit.alpha_default = alpha_default
+	orbit.alpha_highlight = alpha_highlight
+	orbit.alpha_dimmed = alpha_dimmed
+	
+	# Apply color configuration if enabled
+	if color_override_enabled:
+		match def.type:
+			"planet": orbit.color = color_planet
+			"moon":   orbit.color = color_moon
+			"dwarf":  orbit.color = color_dwarf
+			"struct": orbit.color = color_struct
 
 
 func update_orbits() -> void:
@@ -67,7 +78,9 @@ func update_orbits() -> void:
 		if def.parent_id != "":
 			parent_pos = _model.get_body_position(def.parent_id)
 		
-		orbit.set_global_position(parent_pos)
+		# Convert to map transform coordinates
+		var map_pos := _map_transform.km_to_px(parent_pos)
+		orbit.position = map_pos
 
 
 func update_zoom(_km_per_px: float) -> void:

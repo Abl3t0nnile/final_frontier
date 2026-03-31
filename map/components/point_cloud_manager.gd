@@ -53,12 +53,14 @@ func update_positions() -> void:
 		var def: BeltDef   = _defs[i]
 		var renderer: BeltRenderer = _renderers[i]
 		var parent_pos: Vector2 = _model.get_body_position(def.parent_id)
-		renderer.set_global_position(parent_pos)
+		# Convert to map transform coordinates
+		var map_pos := _map_transform.km_to_px(parent_pos)
+		renderer.position = map_pos
 
 
-func update_zoom(_km_per_px: float) -> void:
+func update_zoom(km_per_px: float) -> void:
 	for renderer in _renderers:
-		renderer.notify_zoom_changed()
+		renderer.notify_zoom_changed(km_per_px)
 
 
 func get_renderers() -> Array:
@@ -95,7 +97,24 @@ func _load_defs(data_path: String, json_root_key: String) -> Array:
 	var raw_defs = data[json_root_key]
 	for raw_def in raw_defs:
 		var def := BeltDef.new()
-		def.parse_json_dict(raw_def)
+		# Set properties directly from JSON
+		if raw_def.has("id"): def.id = raw_def.id
+		if raw_def.has("name"): def.name = raw_def.name
+		if raw_def.has("parent_id"): def.parent_id = raw_def.parent_id
+		if raw_def.has("reference_body_id"): def.reference_body_id = raw_def.reference_body_id
+		if raw_def.has("inner_radius_km"): def.inner_radius_km = raw_def.inner_radius_km
+		if raw_def.has("outer_radius_km"): def.outer_radius_km = raw_def.outer_radius_km
+		if raw_def.has("angular_offset_rad"): def.angular_offset_rad = raw_def.angular_offset_rad
+		if raw_def.has("angular_spread_rad"): def.angular_spread_rad = raw_def.angular_spread_rad
+		if raw_def.has("min_points"): def.min_points = raw_def.min_points
+		if raw_def.has("max_points"): def.max_points = raw_def.max_points
+		if raw_def.has("rng_seed"): def.rng_seed = raw_def.rng_seed
+		if raw_def.has("color_rgba"): 
+			if raw_def.color_rgba is Array:
+				def.color_rgba = Color(raw_def.color_rgba[0], raw_def.color_rgba[1], raw_def.color_rgba[2], raw_def.color_rgba[3])
+			else:
+				def.color_rgba = raw_def.color_rgba
+		if raw_def.has("apply_rotation"): def.apply_rotation = raw_def.apply_rotation
 		defs.append(def)
 	
 	return defs

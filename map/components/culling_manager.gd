@@ -158,13 +158,13 @@ func update_marker_sizes(zoom_exp: float) -> void:
 func _apply_belt_culling() -> void:
 	if _belt_manager == null:
 		return
-	_apply_renderer_culling(_belt_manager.get_renderers(), _belt_manager.get_belt_defs())
+	_apply_renderer_culling(_belt_manager.get_renderers(), _belt_manager.get_defs())
 
 
 func _apply_ring_culling() -> void:
 	if _ring_manager == null:
 		return
-	_apply_renderer_culling(_ring_manager.get_renderers(), _ring_manager.get_ring_defs())
+	_apply_renderer_culling(_ring_manager.get_renderers(), _ring_manager.get_defs())
 
 
 func _apply_renderer_culling(renderers: Array, defs: Array) -> void:

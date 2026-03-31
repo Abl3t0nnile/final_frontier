@@ -392,6 +392,18 @@ func _setup_grid() -> void:
 func _setup_orbits() -> void:
 	_orbit_manager = OrbitManager.new()
 	_orbit_manager.name = "OrbitManager"
+	# Apply configuration before setup
+	_orbit_manager.base_width = orbit_width_default
+	_orbit_manager.highlight_width = orbit_width_highlight
+	_orbit_manager.dimmed_width = orbit_width_dimmed
+	_orbit_manager.alpha_default = orbit_alpha_default
+	_orbit_manager.alpha_highlight = orbit_alpha_highlight
+	_orbit_manager.alpha_dimmed = orbit_alpha_dimmed
+	_orbit_manager.color_override_enabled = orbit_color_override_enabled
+	_orbit_manager.color_planet = orbit_color_planet
+	_orbit_manager.color_moon = orbit_color_moon
+	_orbit_manager.color_dwarf = orbit_color_dwarf
+	_orbit_manager.color_struct = orbit_color_struct
 	add_child(_orbit_manager)
 	_orbit_manager.setup(_orbit_layer, _map_transform, _model, _game_object_registry)
 	_orbits = _orbit_manager.get_orbits()
