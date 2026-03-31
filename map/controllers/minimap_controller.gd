@@ -16,7 +16,7 @@ func set_aggressive_culling() -> void:
 	# TODO: Setup aggressive culling
 	pass
 
-func sync_with_main_camera(main_transform: MapTransform) -> void:
+func sync_with_main_camera(_main_transform: MapTransform) -> void:
 	"""Synchronize with main camera"""
 	# TODO: Sync camera position and zoom
 	pass
