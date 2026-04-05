@@ -15,6 +15,12 @@ run/main_scene="uid://bo1bklnfyima7"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameRegistry="*res://core/objects/game_object_registry.gd"
+GameClock="*res://core/simulation/sim_clock.gd"
+SolarSystem="*res://core/simulation/solar_system_model.gd"
+
 [debug]
 
 gdscript/warnings/narrowing_conversion=0

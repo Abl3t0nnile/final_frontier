@@ -118,85 +118,40 @@ signal camera_moved(pos_px: Vector2)
 
 @onready var _map_controller: SolarMapController = $SolarMapController
 
-var _clock: SimClock            = null
-var _solar_system: SolarSystemModel = null
-var _game_object_registry: GameObjectRegistry = null
 
-
-func _ready() -> void:
-	# 1. Load data
-	var data_loader := DataLoader.new()
-	var bodies: Array[BodyDef] = data_loader.load_core_data()
-
-	# 2. Populate registry
-	_game_object_registry = GameObjectRegistry.new()
-	_game_object_registry.name = "GameObjectRegistry"
-	add_child(_game_object_registry)
-	
-	for body_def in bodies:
-		var game_object := GameObject.new().init(body_def)
-		_game_object_registry.register_game_object(game_object)
-
-	# 3. Setup sim from registry
-	_clock = SimClock.new()
-	_clock.name = "SimClock"
-	_clock.init(false)
-	_clock.setup(0.0)
-	_clock.set_time_scale(time_scale_initial)
-	add_child(_clock)
-
-	_solar_system = SolarSystemModel.new()
-	_solar_system.name = "SolarSystemModel"
-	add_child(_solar_system)
-	_solar_system.setup(_clock, _game_object_registry.get_all_body_defs())
-
-	# 4. Setup map with registry reference
+func setup() -> void:
 	_map_controller.apply_config(_build_config())
-	_map_controller.setup(_solar_system, _clock, _game_object_registry, null)
+	_map_controller.setup(SolarSystem, GameClock, GameRegistry, null)
 	_map_controller.focus_body("sun")
-
-	# Wire up signals
 	_connect_signals()
-
-	# Start simulation
-	_clock.start()
-
-
-func _process(delta: float) -> void:
-	# SimClock advancement
-	if _clock and _clock.is_running:
-		_clock.advance_time(delta)
-	
-	# MapClock now handles its own advancement in _physics_process
 
 
 ## Public API for parent scenes
 
 # Time control
 func play() -> void:
-	if _clock: _clock.start()
+	GameClock.start()
 
 func pause() -> void:
-	if _clock: _clock.stop()
+	GameClock.stop()
 
 func toggle_playback() -> void:
-	if _clock:
-		if _clock.is_running:
-			_clock.stop()
-		else:
-			_clock.start()
+	if GameClock.is_running:
+		GameClock.stop()
+	else:
+		GameClock.start()
 
 func set_time_scale(scale: float) -> void:
-	if _clock: _clock.set_time_scale(scale)
+	GameClock.set_time_scale(scale)
 
 func get_time_scale() -> float:
-	return _clock.get_time_scale() if _clock else 1.0
+	return GameClock.get_time_scale()
 
 func set_sim_time(time: float) -> void:
-	if _clock: _clock.setup(time)
+	GameClock.setup(time)
 
 func get_sim_time() -> float:
-	return _clock.get_current_time() if _clock else 0.0
+	return GameClock.get_current_time()
 
 func get_time_scale_presets() -> Array[float]:
 	return time_scale_presets
@@ -207,7 +162,7 @@ func get_time_scale_labels() -> Array[String]:
 # Clock mode control
 func set_live_mode() -> void:
 	"""Activate live mode (tracks simulation clock)"""
-	_map_controller.get_map_clock().enter_live_mode(_clock)
+	_map_controller.get_map_clock().enter_live_mode(GameClock)
 	clock_mode_changed.emit(true)
 
 func set_scrub_mode() -> void:
@@ -296,7 +251,7 @@ func unpin_body(id: String) -> void:
 
 
 func get_body_data(id: String) -> BodyDef:
-	return _solar_system.get_body(id) if _solar_system else null
+	return SolarSystem.get_body(id)
 
 
 # Interne Referenzen (für fortgeschrittene Nutzung)
@@ -305,15 +260,15 @@ func get_map_controller() -> SolarMapController:
 
 
 func get_clock() -> SimClock:
-	return _clock
+	return GameClock
 
 
 func get_solar_system() -> SolarSystemModel:
-	return _solar_system
+	return SolarSystem
 
 
 func get_game_object_registry() -> GameObjectRegistry:
-	return _game_object_registry
+	return GameRegistry
 
 
 func get_map_clock() -> MapClock:
@@ -337,7 +292,7 @@ func map_scrub_to(sst_s: float) -> void:
 	_map_controller.get_map_clock().set_time(sst_s)
 
 func map_go_live() -> void:
-	_map_controller.get_map_clock().enter_live_mode(_clock)
+	_map_controller.get_map_clock().enter_live_mode(GameClock)
 
 
 
@@ -353,10 +308,10 @@ func _connect_signals() -> void:
 	interaction.body_unpinned.connect(body_unpinned.emit)
 
 	# Time events from clock
-	_clock.tick.connect(func(t: float): time_changed.emit(t))
-	_clock.time_scale_changed.connect(func(s: float): time_scale_changed.emit(s))
-	_clock.started.connect(clock_started.emit)
-	_clock.paused.connect(clock_paused.emit)
+	GameClock.tick.connect(func(t: float): time_changed.emit(t))
+	GameClock.time_scale_changed.connect(func(s: float): time_scale_changed.emit(s))
+	GameClock.started.connect(clock_started.emit)
+	GameClock.paused.connect(clock_paused.emit)
 
 	# Map events from MapTransform (via controller)
 	var map_transform := _map_controller.get_map_transform()

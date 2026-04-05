@@ -30,6 +30,30 @@ shader_parameter/star_color = Color(1, 1, 1, 1)
 
 [node name="SolarMap" type="Node" unique_id=92857702]
 script = ExtResource("1_solar_map")
+zoom_exp_min = 2.0
+zoom_exp_initial = 5.8
+culling_min_parent_dist_px = 64.0
+marker_sizes_star = Vector3i(128, 64, 32)
+marker_sizes_planet = Vector3i(48, 36, 24)
+marker_sizes_moon = Vector3i(40, 30, 20)
+marker_sizes_struct = Vector3i(40, 30, 20)
+marker_selection_color = Color(0.3572619, 0.5585786, 0.25989878, 0.9019608)
+marker_pinned_color = Color(0.75388426, 0.29074594, 0.18142468, 0.9019608)
+marker_pinned_width = 2.0
+orbit_width_default = 2.0
+orbit_width_highlight = 3.0
+orbit_width_dimmed = 1.0
+orbit_alpha_default = 0.8
+orbit_alpha_highlight = 1.0
+orbit_alpha_dimmed = 0.4
+orbit_color_override_enabled = true
+orbit_color_planet = Color(0.28235295, 0.41960785, 0.49803922, 1)
+orbit_color_moon = Color(0.26666668, 0.2784314, 0.3764706, 1)
+orbit_color_dwarf = Color(0.44313726, 0.24705882, 0.32156864, 1)
+belt_point_size_near = 6.0
+belt_point_size_mid = 3.0
+belt_point_size_far = 2.0
+time_scale_initial = 3600.0
 
 [node name="SolarMapController" type="Node2D" parent="." unique_id=1327403086]
 script = ExtResource("2_solar_map_controller")

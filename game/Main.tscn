@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://bo1bklnfyima7"]
 
+[ext_resource type="PackedScene" uid="uid://b0abcd1234" path="res://game/star_chart/SolarMap.tscn" id="2_2fjjk"]
 [ext_resource type="PackedScene" uid="uid://dy3prfbgdcq52" path="res://game/star_chart/StartChart.tscn" id="2_8gaax"]
+[ext_resource type="Script" uid="uid://c1v3wo13h2efs" path="res://game/game_controller.gd" id="3_gamecontroller"]
 
 [node name="Main" type="Node" unique_id=1627069167]
+
+[node name="GameController" type="Node" parent="." unique_id=1627069168 node_paths=PackedStringArray("start_chart")]
+script = ExtResource("3_gamecontroller")
+solar_map_scene = ExtResource("2_2fjjk")
+start_chart = NodePath("../StartChart")
 
 [node name="StartChart" parent="." unique_id=-54483432 instance=ExtResource("2_8gaax")]
