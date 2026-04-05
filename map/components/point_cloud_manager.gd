@@ -56,6 +56,10 @@ func update_positions() -> void:
 		# Convert to map transform coordinates
 		var map_pos := _map_transform.km_to_px(parent_pos)
 		renderer.position = map_pos
+		# Trojaner/Lagrange: Wolke mit Referenzkörper mitrotieren
+		if def.reference_body_id != "" and not def.apply_rotation:
+			var ref_pos := _model.get_body_position(def.reference_body_id)
+			renderer.rotation = atan2(ref_pos.y, ref_pos.x)
 
 
 func update_zoom(km_per_px: float) -> void:

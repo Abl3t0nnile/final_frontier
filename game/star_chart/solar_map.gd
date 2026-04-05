@@ -343,13 +343,14 @@ func map_go_live() -> void:
 
 
 func _connect_signals() -> void:
-	# Body events from controller
-	_map_controller.body_selected.connect(body_selected.emit)
-	_map_controller.body_deselected.connect(body_deselected.emit)
-	_map_controller.marker_hovered.connect(marker_hovered.emit)
-	_map_controller.marker_unhovered.connect(marker_unhovered.emit)
-	_map_controller.body_pinned.connect(body_pinned.emit)
-	_map_controller.body_unpinned.connect(body_unpinned.emit)
+	# Body events direct from InteractionManager
+	var interaction := _map_controller.get_interaction_manager()
+	interaction.body_selected.connect(body_selected.emit)
+	interaction.body_deselected.connect(body_deselected.emit)
+	interaction.marker_hovered.connect(marker_hovered.emit)
+	interaction.marker_unhovered.connect(marker_unhovered.emit)
+	interaction.body_pinned.connect(body_pinned.emit)
+	interaction.body_unpinned.connect(body_unpinned.emit)
 
 	# Time events from clock
 	_clock.tick.connect(func(t: float): time_changed.emit(t))

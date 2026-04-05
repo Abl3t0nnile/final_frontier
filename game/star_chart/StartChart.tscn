@@ -135,30 +135,15 @@ render_target_update_mode = 4
 
 [node name="SolarMap" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/SubViewportContainer/SubViewport" unique_id=531017108 instance=ExtResource("1_solarmap")]
 zoom_exp_min = 2.0
-zoom_exp_max = null
-zoom_exp_step = null
 zoom_exp_initial = 5.8
-zoom_scale_presets = null
-move_speed_px_s = null
-move_accel = null
-move_decel = null
 culling_min_parent_dist_px = 64.0
-has_orbits = null
-has_grid = null
-has_belts = null
-has_zones = null
-markers_clickable = null
-markers_hoverable = null
-marker_zoom_thresholds = null
 marker_sizes_star = Vector3i(128, 64, 32)
 marker_sizes_planet = Vector3i(48, 36, 24)
 marker_sizes_moon = Vector3i(40, 30, 20)
 marker_sizes_struct = Vector3i(40, 30, 20)
 marker_selection_color = Color(0.3572619, 0.5585786, 0.25989878, 0.9019608)
-marker_selection_width = null
 marker_pinned_color = Color(0.75388426, 0.29074594, 0.18142468, 0.9019608)
 marker_pinned_width = 2.0
-marker_label_offset = null
 orbit_width_default = 2.0
 orbit_width_highlight = 3.0
 orbit_width_dimmed = 1.0
@@ -169,16 +154,10 @@ orbit_color_override_enabled = true
 orbit_color_planet = Color(0.28235295, 0.41960785, 0.49803922, 1)
 orbit_color_moon = Color(0.26666668, 0.2784314, 0.3764706, 1)
 orbit_color_dwarf = Color(0.44313726, 0.24705882, 0.32156864, 1)
-orbit_color_struct = null
-belt_zoom_near = null
-belt_zoom_mid = null
-belt_zoom_far = null
 belt_point_size_near = 6.0
 belt_point_size_mid = 3.0
 belt_point_size_far = 2.0
 time_scale_initial = 3600.0
-time_scale_presets = null
-time_scale_labels = null
 
 [node name="UiOverlay" type="CanvasLayer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/SubViewportContainer/SubViewport/SolarMap" unique_id=1219670187]
 
@@ -209,7 +188,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_iu7s2")
 layout_mode = 2
 theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 theme_override_font_sizes/font_size = 32
-text = "SolarMap"
+text = "Solar System"
 
 [node name="MarginContainer" type="MarginContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/SubViewportContainer/SubViewport/SolarMap/UiOverlay/MapOverlay/MapOverlay/TopLeftPanel" unique_id=1271678805]
 layout_mode = 2
@@ -480,13 +459,76 @@ icon = ExtResource("7_cx451")
 icon_alignment = 1
 expand_icon = true
 
-[node name="DateLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl" unique_id=1788200182]
-custom_minimum_size = Vector2(140, 0)
+[node name="DateDisplay" type="VBoxContainer" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl" unique_id=568863706]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="HBox" type="HBoxContainer" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay" unique_id=1556057040]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="DayLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=1788200182]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 theme_override_font_sizes/font_size = 18
-text = "1 Sol 2475 - 00:00:00"
+text = "1"
+horizontal_alignment = 2
+
+[node name="MonthLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=102075549]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_font_sizes/font_size = 18
+text = "Sol"
+
+[node name="YearLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=1391561111]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_font_sizes/font_size = 18
+text = "2475"
+
+[node name="HourLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=458840706]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_font_sizes/font_size = 18
+text = "00"
+horizontal_alignment = 1
+
+[node name="Dots" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=448045391]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_font_sizes/font_size = 18
+text = ":"
+horizontal_alignment = 1
+
+[node name="MinuteLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=913400673]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_font_sizes/font_size = 18
+text = "00"
+horizontal_alignment = 1
+
+[node name="Dots2" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=2008748717]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_font_sizes/font_size = 18
+text = ":"
+horizontal_alignment = 1
+
+[node name="SecondLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=1905749685]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_font_sizes/font_size = 18
+text = "00"
 horizontal_alignment = 1
 
 [node name="TimeScaleBtns" type="HBoxContainer" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl" unique_id=1706207590]

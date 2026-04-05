@@ -5,14 +5,6 @@
 class_name MapController
 extends Node2D
 
-## Signals (forwarded from InteractionManager)
-signal body_selected(id: String)
-signal body_deselected()
-signal marker_hovered(id: String)
-signal marker_unhovered(id: String)
-signal body_pinned(id: String)
-signal body_unpinned(id: String)
-
 ## Configuration (set via apply_config() from SolarMap)
 var zoom_exp_min: float      = 3.0
 var zoom_exp_max: float      = 10.0
@@ -164,14 +156,6 @@ func setup(model: SolarSystemModel, clock: SimClock, registry: GameObjectRegistr
 		marker.clicked.connect(func(_m: MapMarker): _interaction_manager.select_entity(id))
 		marker.hovered.connect(func(_m: MapMarker): _interaction_manager.on_marker_hovered(id))
 		marker.unhovered.connect(func(_m: MapMarker): _interaction_manager.on_marker_unhovered(id))
-
-	# Forward InteractionManager signals (follow connection in subtypes)
-	_interaction_manager.body_selected.connect(body_selected.emit)
-	_interaction_manager.body_deselected.connect(body_deselected.emit)
-	_interaction_manager.marker_hovered.connect(marker_hovered.emit)
-	_interaction_manager.marker_unhovered.connect(marker_unhovered.emit)
-	_interaction_manager.body_pinned.connect(body_pinned.emit)
-	_interaction_manager.body_unpinned.connect(body_unpinned.emit)
 
 	# MapTransform signals
 	_map_transform.panned.connect(_on_panned)
