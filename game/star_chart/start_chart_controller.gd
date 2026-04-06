@@ -1,121 +1,59 @@
 ## StartChartController
 ## UI-Layer für die StarChart-Szene.
 ## Empfängt die fertige SolarMap von GameController via receive_solar_map().
-## Verbindet sich mit SolarMap-Signalen und aktualisiert eigene UI-Nodes.
+## Delegiert Overlay, Clock und Nav an eigene Komponenten-Scripts.
 
 extends Node
 
 ## SubViewport — SolarMap wird hier eingehängt
 @onready var _subviewport: SubViewport = $UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/SubViewportContainer/SubViewport
 
-## Map Overlay UI (direkt in dieser Szene, nicht in SolarMap)
-@onready var _scale_value: Label       = $UILayer/UiOverlay/MapOverlay/MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer/ScaleValue
-@onready var _km_px_value: Label       = $UILayer/UiOverlay/MapOverlay/MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer/KmPxValue
-@onready var _focus_box: VBoxContainer = $UILayer/UiOverlay/MapOverlay/MapOverlay/TopRightPanel/Focus
-@onready var _focus_name: Label        = $UILayer/UiOverlay/MapOverlay/MapOverlay/TopRightPanel/Focus/FocusDisplay/BodyNameLabel
-@onready var _pins_box: VBoxContainer  = $UILayer/UiOverlay/MapOverlay/MapOverlay/TopRightPanel/Pins
-@onready var _pins_name: Label         = $UILayer/UiOverlay/MapOverlay/MapOverlay/TopRightPanel/Pins/PinnedDisplay/BodyNameLabel
-@onready var _pos_x: Label             = $UILayer/UiOverlay/MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer/PosXValue
-@onready var _pos_y: Label             = $UILayer/UiOverlay/MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer/PosYValue
+## Komponenten
+@onready var _clock_control = $UILayer/MainDisplay/VFrame/FooterPanel/ClockControl
+@onready var _nav_panel     = $UILayer/MainDisplay/VFrame/BodyPanel/NavPanel
+@onready var _info_panel    = $UILayer/MainDisplay/VFrame/BodyPanel/InfoPanel
+@onready var _map_overlay   = $UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay
 
-var _solar_map: Node  = null
-var _km_per_px: float = 1_000_000.0
+var _solar_map: Node = null
 
 
-## Wird von GameController aufgerufen sobald SolarMap bereit ist
+## Wird von GameController aufgerufen sobald SolarMap bereit ist.
 func receive_solar_map(map: Node) -> void:
 	_solar_map = map
 	_subviewport.add_child(map)
-	_km_per_px = _solar_map.get_zoom_level()
-	_connect_map_signals()
-	_update_scale_display()
-
-
-func _process(_delta: float) -> void:
-	if _solar_map == null:
-		return
-	_update_cursor_position()
-
-
-## Signal-Verbindungen
-
-func _connect_map_signals() -> void:
-	if _solar_map.has_signal("zoom_changed"):
-		_solar_map.zoom_changed.connect(_on_zoom_changed)
-	if _solar_map.has_signal("body_selected"):
-		_solar_map.body_selected.connect(_on_body_selected)
-	if _solar_map.has_signal("body_deselected"):
-		_solar_map.body_deselected.connect(_on_body_deselected)
-	if _solar_map.has_signal("body_pinned"):
-		_solar_map.body_pinned.connect(_on_body_pinned)
-	if _solar_map.has_signal("body_unpinned"):
-		_solar_map.body_unpinned.connect(_on_body_unpinned)
-
-
-## Overlay-Updates
-
-func _on_zoom_changed(km_per_px: float) -> void:
-	_km_per_px = km_per_px
-	_update_scale_display()
-
-
-func _update_scale_display() -> void:
-	if not _scale_value or not _km_px_value:
-		return
-	var zoom_exp := log(_km_per_px) / log(10.0)
-	_scale_value.text = "%.1f" % zoom_exp
-	_km_px_value.text = SpaceMath.format_km_scientific(_km_per_px)
-
-
-func _update_cursor_position() -> void:
-	if not _pos_x or not _pos_y:
-		return
-	var map_transform: MapTransform = _solar_map.get_map_controller().get_map_transform()
-	if map_transform == null:
-		return
-	var vp := get_viewport()
-	if vp == null:
-		return
-	var mouse_pos    := vp.get_mouse_position()
-	var vp_center    := vp.get_visible_rect().size * 0.5
-	var offset_px    := mouse_pos - vp_center
-	var world_pos_km := (map_transform.cam_pos_px + offset_px) * _km_per_px
-	var world_pos_au := SpaceMath.km_to_au_vec(world_pos_km)
-	_pos_x.text = "%.3f AU" % world_pos_au.x
-	_pos_y.text = "%.3f AU" % world_pos_au.y
+	map.setup()
+	_clock_control.setup(map)
+	_nav_panel.setup(map)
+	_map_overlay.setup(map)
+	_subviewport.size_changed.connect(_on_viewport_resized)
+	if map.has_signal("body_selected"):
+		map.body_selected.connect(_on_body_selected)
+	if map.has_signal("body_deselected"):
+		map.body_deselected.connect(_on_body_deselected)
 
 
 func _on_body_selected(id: String) -> void:
-	if not _focus_name or not _focus_box:
-		return
-	var def: BodyDef = SolarSystem.get_body(id)
-	_focus_name.text = def.name if def else id
-	_focus_box.visible = true
+	_info_panel.load_body(id)
+	_info_panel.visible = true
 
 
 func _on_body_deselected() -> void:
-	if _focus_box:
-		_focus_box.visible = false
+	_info_panel.clear()
+	_info_panel.visible = false
 
 
-func _on_body_pinned(_id: String) -> void:
-	_refresh_pins()
+func _on_viewport_resized() -> void:
+	# Einen weiteren Frame warten bis der Viewport die finale Größe hat
+	await get_tree().process_frame
+	if _solar_map:
+		var map_transform: MapTransform = _solar_map.get_map_controller().get_map_transform()
+		if map_transform:
+			map_transform.camera_moved.emit(map_transform.cam_pos_px)
 
 
-func _on_body_unpinned(_id: String) -> void:
-	_refresh_pins()
-
-
-func _refresh_pins() -> void:
-	if not _pins_box or not _pins_name:
-		return
-	var ids: Array = _solar_map.get_map_controller().get_interaction_manager().get_pinned_entities()
-	if ids.is_empty():
-		_pins_box.visible = false
-		return
-	var names: Array[String] = []
-	for id in ids:
-		var def: BodyDef = SolarSystem.get_body(id)
-		names.append(def.name if def else id)
-	_pins_name.text = "\n".join(names)
-	_pins_box.visible = true
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_N:
+			_nav_panel.visible = not _nav_panel.visible
+		if event.keycode == KEY_I:
+			_info_panel.visible = not _info_panel.visible

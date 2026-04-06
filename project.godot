@@ -42,6 +42,7 @@ enabled=PackedStringArray()
 [gui]
 
 theme/default_font_antialiasing=2
+theme/custom_font="uid://x86ksuga1q3t"
 
 [importer_defaults]
 

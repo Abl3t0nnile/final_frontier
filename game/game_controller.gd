@@ -82,7 +82,6 @@ func _enter_ready() -> void:
 
 func _build_map() -> void:
 	start_chart.receive_solar_map(_solar_map)
-	_solar_map.setup()
 	_enter_running()
 
 

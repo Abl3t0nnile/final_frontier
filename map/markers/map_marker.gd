@@ -52,6 +52,7 @@ func setup(game_object: GameObject, _label_settings) -> void:
 
 	_icon.setup(body_def)
 	_label.text = body_def.name
+	_label.add_theme_font_size_override("font_size", 12)
 
 	# Shared Shape pro Typ zuweisen
 	_collision.shape = _get_or_create_shape()

@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://dy3prfbgdcq52"]
 
 [ext_resource type="Shader" uid="uid://by65xe0atpxl5" path="res://assets/shader/scan_lines.gdshader" id="1_iu7s2"]
+[ext_resource type="PackedScene" uid="uid://pf507g31tv1q" path="res://ui/panels/nav_panel.tscn" id="3_kfx34"]
 [ext_resource type="Texture2D" uid="uid://71kkbyb55g02" path="res://assets/ui_icons/previous.png" id="3_oqwm6"]
+[ext_resource type="Script" uid="uid://c8e8ug2ip6bq6" path="res://game/star_chart/map_overlay.gd" id="4_60spy"]
 [ext_resource type="Texture2D" uid="uid://cxq0qsvwc2k6a" path="res://assets/ui_icons/rewind.png" id="4_uetrt"]
 [ext_resource type="Texture2D" uid="uid://c4w172cw8ihtk" path="res://assets/ui_icons/pause.png" id="5_cx451"]
 [ext_resource type="Texture2D" uid="uid://dben4by1skq6e" path="res://assets/ui_icons/forward.png" id="6_jwid8"]
+[ext_resource type="Script" uid="uid://c1acrqnc55nes" path="res://ui/panels/info_panel.gd" id="6_skbn7"]
+[ext_resource type="PackedScene" uid="uid://c3uif55gf74ep" path="res://ui/panels/info_panel.tscn" id="7_4lm6u"]
 [ext_resource type="Texture2D" uid="uid://c04d6kumv6re5" path="res://assets/ui_icons/fastForward.png" id="7_cx451"]
 [ext_resource type="Script" uid="uid://x6le68o1sye" path="res://game/star_chart/start_chart_controller.gd" id="8_controller"]
+[ext_resource type="Script" uid="uid://qr7os7f21yr0" path="res://game/star_chart/clock_control.gd" id="9_clock"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x8wnj"]
 shader = ExtResource("1_iu7s2")
@@ -20,6 +25,18 @@ shader_parameter/vignette_softness = 0.2
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uetrt"]
 bg_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skbn7"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2g6yo"]
 draw_center = false
 border_width_left = 2
@@ -27,27 +44,6 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx451"]
-content_margin_left = 8.0
-content_margin_top = 4.0
-content_margin_right = 8.0
-content_margin_bottom = 0.0
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_footer"]
-content_margin_left = 4.0
-content_margin_top = 2.0
-content_margin_right = 4.0
-content_margin_bottom = 2.0
-bg_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_cx451"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iu7s2"]
 content_margin_left = 8.0
@@ -69,12 +65,21 @@ content_margin_left = 8.0
 content_margin_right = 8.0
 bg_color = Color(1, 1, 1, 0.039215688)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_footer"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+bg_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_cx451"]
+
 [node name="StartChart" type="Node" unique_id=-54483432]
 script = ExtResource("8_controller")
 
 [node name="ScanLines" type="CanvasLayer" parent="." unique_id=1231146387]
 
-[node name="ColorRect" type="ColorRect" parent="ScanLines" unique_id=-1571454866]
+[node name="ScanLineShader" type="ColorRect" parent="ScanLines" unique_id=-1571454866]
 material = SubResource("ShaderMaterial_x8wnj")
 anchors_preset = 15
 anchor_right = 1.0
@@ -100,6 +105,7 @@ layout_mode = 2
 theme_override_constants/separation = 8
 
 [node name="HeaderPanel" type="PanelContainer" parent="UILayer/MainDisplay/VFrame" unique_id=2048708553]
+visible = false
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_uetrt")
@@ -109,16 +115,244 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 8
 
-[node name="NavPanel" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel" unique_id=1973872712]
+[node name="NavPanel" parent="UILayer/MainDisplay/VFrame/BodyPanel" unique_id=1835426544 instance=ExtResource("3_kfx34")]
 visible = false
-custom_minimum_size = Vector2(480, 0)
+custom_minimum_size = Vector2(420, 0)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_skbn7")
 
 [node name="ViewPanel" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel" unique_id=1979707458]
 custom_minimum_size = Vector2(940, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_2g6yo")
+
+[node name="MapOverlay" type="MarginContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel" unique_id=12944065]
+z_index = 1
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("4_60spy")
+
+[node name="MapOverlay" type="GridContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay" unique_id=1402445367]
+layout_mode = 2
+columns = 3
+
+[node name="TopLeftPanel" type="VBoxContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay" unique_id=1696522759]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/TopLeftPanel" unique_id=1654848880]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iu7s2")
+
+[node name="Title" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/TopLeftPanel/PanelContainer" unique_id=1698702608]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_font_sizes/font_size = 32
+text = "Solar System"
+
+[node name="MarginContainer" type="MarginContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/TopLeftPanel" unique_id=1271678805]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/TopLeftPanel/MarginContainer" unique_id=1170096128]
+layout_mode = 2
+
+[node name="ScaleLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=-13651632]
+layout_mode = 2
+text = "Scale:"
+label_settings = SubResource("LabelSettings_x8wnj")
+
+[node name="ScaleValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=2043207273]
+custom_minimum_size = Vector2(36, 0)
+layout_mode = 2
+text = "5.8"
+label_settings = SubResource("LabelSettings_uetrt")
+
+[node name="KmPxValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=2057114572]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "2.347 e 23"
+label_settings = SubResource("LabelSettings_uetrt")
+horizontal_alignment = 2
+
+[node name="KmPxLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=1960992700]
+layout_mode = 2
+text = "per px"
+label_settings = SubResource("LabelSettings_x8wnj")
+
+[node name="TopCenterPanel" type="Control" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay" unique_id=-775725622]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TopRightPanel" type="VBoxContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay" unique_id=96694540]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+
+[node name="Focus" type="VBoxContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/TopRightPanel" unique_id=1540186459]
+visible = false
+layout_mode = 2
+
+[node name="FocusTitle" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/TopRightPanel/Focus" unique_id=1466102864]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_iu7s2")
+
+[node name="CaptionLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/TopRightPanel/Focus/FocusTitle" unique_id=2107730454]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_font_sizes/font_size = 16
+text = "Focus Body"
+
+[node name="FocusDisplay" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/TopRightPanel/Focus" unique_id=1104229318]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_oqwm6")
+
+[node name="BodyNameLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/TopRightPanel/Focus/FocusDisplay" unique_id=1614106233]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
+theme_override_font_sizes/font_size = 12
+text = "Focus Body"
+
+[node name="Pins" type="VBoxContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/TopRightPanel" unique_id=1497816328]
+visible = false
+layout_mode = 2
+
+[node name="PinnedTitle" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/TopRightPanel/Pins" unique_id=1469524484]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_iu7s2")
+
+[node name="CaptionDisplay" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/TopRightPanel/Pins/PinnedTitle" unique_id=-1568459562]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_font_sizes/font_size = 16
+text = "Pinned Bodys"
+
+[node name="PinnedDisplay" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/TopRightPanel/Pins" unique_id=231981044]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_oqwm6")
+
+[node name="BodyNameLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/TopRightPanel/Pins/PinnedDisplay" unique_id=1051896967]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
+theme_override_font_sizes/font_size = 12
+text = "Pinned Body A"
+
+[node name="CenterLeftPanel" type="Control" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay" unique_id=1474339380]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CenterPanel" type="Control" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay" unique_id=333646954]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="CenterRightPanel" type="Control" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay" unique_id=1486022730]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="BottomLeftPanel" type="VBoxContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay" unique_id=1362466612]
+layout_mode = 2
+
+[node name="TitlePanel" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/BottomLeftPanel" unique_id=1535624263]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_iu7s2")
+
+[node name="CaptionLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/BottomLeftPanel/TitlePanel" unique_id=1562881742]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_font_sizes/font_size = 16
+text = "Cursor Position"
+
+[node name="MarginContainer" type="MarginContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/BottomLeftPanel" unique_id=1755217452]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer" unique_id=1155089077]
+layout_mode = 2
+
+[node name="PosXLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=-199448676]
+layout_mode = 2
+text = "Pos X:"
+label_settings = SubResource("LabelSettings_x8wnj")
+
+[node name="PosXValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=1519932630]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "5.789 AU"
+label_settings = SubResource("LabelSettings_uetrt")
+
+[node name="PosYLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=1197648830]
+layout_mode = 2
+text = "Pos Y:"
+label_settings = SubResource("LabelSettings_x8wnj")
+
+[node name="PosYValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=1897152234]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-3.436 AU"
+label_settings = SubResource("LabelSettings_uetrt")
+horizontal_alignment = 2
+
+[node name="BottomCenterPanel" type="Control" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay" unique_id=1608756588]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="BottomRightPanel" type="VBoxContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay" unique_id=-1021232212]
+visible = false
+layout_mode = 2
+
+[node name="TitlePanel" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/BottomRightPanel" unique_id=-1321867596]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_iu7s2")
+
+[node name="CaptionLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/BottomRightPanel/TitlePanel" unique_id=-973859696]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_font_sizes/font_size = 16
+text = "Cursor Position"
+
+[node name="MarginContainer" type="MarginContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/BottomRightPanel" unique_id=1489700004]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/BottomRightPanel/MarginContainer" unique_id=1595749045]
+layout_mode = 2
+
+[node name="PosXLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/BottomRightPanel/MarginContainer/HBoxContainer" unique_id=1083439464]
+layout_mode = 2
+text = "Pos X:"
+label_settings = SubResource("LabelSettings_x8wnj")
+
+[node name="PosXValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/BottomRightPanel/MarginContainer/HBoxContainer" unique_id=-458479122]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "5.789 AU"
+label_settings = SubResource("LabelSettings_uetrt")
+
+[node name="PosYLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/BottomRightPanel/MarginContainer/HBoxContainer" unique_id=1628190777]
+layout_mode = 2
+text = "Pos Y:"
+label_settings = SubResource("LabelSettings_x8wnj")
+
+[node name="PosYValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/MapOverlay/MapOverlay/BottomRightPanel/MarginContainer/HBoxContainer" unique_id=1165167224]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-3.436 AU"
+label_settings = SubResource("LabelSettings_uetrt")
+horizontal_alignment = 2
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel" unique_id=1578271659]
 layout_mode = 2
@@ -129,7 +363,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="UILayer/MainDisplay/VFrame/BodyPanel/ViewPanel/SubViewportContainer" unique_id=1383873112]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(1396, 961)
+size = Vector2i(1884, 991)
 render_target_update_mode = 4
 
 [node name="Almanach" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel" unique_id=422823678]
@@ -137,33 +371,82 @@ visible = false
 custom_minimum_size = Vector2(940, 0)
 layout_mode = 2
 
-[node name="InfoPanel" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel" unique_id=1946272644]
-custom_minimum_size = Vector2(480, 0)
+[node name="InfoPanel" parent="UILayer/MainDisplay/VFrame/BodyPanel" unique_id=1197745249 instance=ExtResource("7_4lm6u")]
+visible = false
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_cx451")
+theme_override_styles/panel = SubResource("StyleBoxFlat_skbn7")
+script = ExtResource("6_skbn7")
 
 [node name="FooterPanel" type="PanelContainer" parent="UILayer/MainDisplay/VFrame" unique_id=1304846700]
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_footer")
 
 [node name="ClockControl" type="HBoxContainer" parent="UILayer/MainDisplay/VFrame/FooterPanel" unique_id=-1752777716]
 layout_mode = 2
+script = ExtResource("9_clock")
 
 [node name="ModeLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl" unique_id=1055099106]
 layout_mode = 2
 size_flags_horizontal = 0
+size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 text = "Live Mode"
+vertical_alignment = 1
 
-[node name="TimeLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl" unique_id=1137277447]
+[node name="TimeDisplay" type="HBoxContainer" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl" unique_id=1906680764]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Grid" type="GridContainer" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/TimeDisplay" unique_id=1945188908]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+columns = 2
+
+[node name="MapTimeCaption" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/TimeDisplay/Grid" unique_id=1137277447]
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 16
+text = "Map Time"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MapTimeLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/TimeDisplay/Grid" unique_id=1717691207]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_font_sizes/font_size = 16
 text = "0000:000:00:00:00"
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SSTCaption" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/TimeDisplay/Grid" unique_id=2037882264]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_font_sizes/font_size = 12
+text = "Solar Standard Time"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SSTLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/TimeDisplay/Grid" unique_id=1831278098]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_font_sizes/font_size = 12
+text = "0000:000:00:00:00"
+vertical_alignment = 1
 
 [node name="JumpBtn" type="Button" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl" unique_id=1909128394]
 custom_minimum_size = Vector2(36, 24)
@@ -208,38 +491,47 @@ size_flags_horizontal = 3
 [node name="HBox" type="HBoxContainer" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay" unique_id=1556057040]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 3
 
 [node name="DayLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=1788200182]
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
 size_flags_horizontal = 0
+size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 theme_override_font_sizes/font_size = 18
 text = "1"
 horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="MonthLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=102075549]
 layout_mode = 2
 size_flags_horizontal = 0
+size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 theme_override_font_sizes/font_size = 18
 text = "Sol"
+vertical_alignment = 1
 
 [node name="YearLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=1391561111]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 0
+size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 theme_override_font_sizes/font_size = 18
 text = "2475"
+vertical_alignment = 1
 
 [node name="HourLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=458840706]
 layout_mode = 2
 size_flags_horizontal = 0
+size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 theme_override_font_sizes/font_size = 18
 text = "00"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Dots" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=448045391]
 layout_mode = 2
@@ -252,26 +544,32 @@ horizontal_alignment = 1
 [node name="MinuteLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=913400673]
 layout_mode = 2
 size_flags_horizontal = 0
+size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 theme_override_font_sizes/font_size = 18
 text = "00"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Dots2" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=2008748717]
 layout_mode = 2
 size_flags_horizontal = 0
+size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 theme_override_font_sizes/font_size = 18
 text = ":"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SecondLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=1905749685]
 layout_mode = 2
 size_flags_horizontal = 0
+size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 theme_override_font_sizes/font_size = 18
 text = "00"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TimeScaleBtns" type="HBoxContainer" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl" unique_id=1706207590]
 layout_mode = 2
@@ -332,235 +630,3 @@ layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_cx451")
 text = "1 Y"
-
-[node name="UiOverlay" type="CanvasLayer" parent="UILayer" unique_id=1219670187]
-visible = false
-
-[node name="MapOverlay" type="MarginContainer" parent="UILayer/UiOverlay" unique_id=12944065]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="MapOverlay" type="GridContainer" parent="UILayer/UiOverlay/MapOverlay" unique_id=1402445367]
-layout_mode = 2
-columns = 3
-
-[node name="TopLeftPanel" type="VBoxContainer" parent="UILayer/UiOverlay/MapOverlay/MapOverlay" unique_id=1696522759]
-custom_minimum_size = Vector2(280, 0)
-layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/TopLeftPanel" unique_id=1654848880]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_iu7s2")
-
-[node name="Title" type="Label" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/TopLeftPanel/PanelContainer" unique_id=1698702608]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
-theme_override_font_sizes/font_size = 32
-text = "Solar System"
-
-[node name="MarginContainer" type="MarginContainer" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/TopLeftPanel" unique_id=1271678805]
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_right = 8
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/TopLeftPanel/MarginContainer" unique_id=1170096128]
-layout_mode = 2
-
-[node name="ScaleLabel" type="Label" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=-13651632]
-layout_mode = 2
-text = "Scale:"
-label_settings = SubResource("LabelSettings_x8wnj")
-
-[node name="ScaleValue" type="Label" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=2043207273]
-custom_minimum_size = Vector2(36, 0)
-layout_mode = 2
-text = "5.8"
-label_settings = SubResource("LabelSettings_uetrt")
-
-[node name="KmPxValue" type="Label" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=2057114572]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-text = "2.347 e 23"
-label_settings = SubResource("LabelSettings_uetrt")
-horizontal_alignment = 2
-
-[node name="KmPxLabel" type="Label" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=1960992700]
-layout_mode = 2
-text = "per px"
-label_settings = SubResource("LabelSettings_x8wnj")
-
-[node name="TopCenterPanel" type="Control" parent="UILayer/UiOverlay/MapOverlay/MapOverlay" unique_id=-775725622]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="TopRightPanel" type="VBoxContainer" parent="UILayer/UiOverlay/MapOverlay/MapOverlay" unique_id=96694540]
-custom_minimum_size = Vector2(280, 0)
-layout_mode = 2
-
-[node name="Focus" type="VBoxContainer" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/TopRightPanel" unique_id=1540186459]
-visible = false
-layout_mode = 2
-
-[node name="FocusTitle" type="PanelContainer" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/TopRightPanel/Focus" unique_id=1466102864]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_iu7s2")
-
-[node name="CaptionLabel" type="Label" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/TopRightPanel/Focus/FocusTitle" unique_id=2107730454]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
-theme_override_font_sizes/font_size = 16
-text = "Focus Body"
-
-[node name="FocusDisplay" type="PanelContainer" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/TopRightPanel/Focus" unique_id=1104229318]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_oqwm6")
-
-[node name="BodyNameLabel" type="Label" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/TopRightPanel/Focus/FocusDisplay" unique_id=1614106233]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
-theme_override_font_sizes/font_size = 12
-text = "Focus Body"
-
-[node name="Pins" type="VBoxContainer" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/TopRightPanel" unique_id=1497816328]
-visible = false
-layout_mode = 2
-
-[node name="PinnedTitle" type="PanelContainer" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/TopRightPanel/Pins" unique_id=1469524484]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_iu7s2")
-
-[node name="CaptionDisplay" type="Label" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/TopRightPanel/Pins/PinnedTitle" unique_id=-1568459562]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
-theme_override_font_sizes/font_size = 16
-text = "Pinned Bodys"
-
-[node name="PinnedDisplay" type="PanelContainer" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/TopRightPanel/Pins" unique_id=231981044]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_oqwm6")
-
-[node name="BodyNameLabel" type="Label" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/TopRightPanel/Pins/PinnedDisplay" unique_id=1051896967]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
-theme_override_font_sizes/font_size = 12
-text = "Pinned Body A"
-
-[node name="CenterLeftPanel" type="Control" parent="UILayer/UiOverlay/MapOverlay/MapOverlay" unique_id=1474339380]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="CenterPanel" type="Control" parent="UILayer/UiOverlay/MapOverlay/MapOverlay" unique_id=333646954]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-mouse_filter = 2
-
-[node name="CenterRightPanel" type="Control" parent="UILayer/UiOverlay/MapOverlay/MapOverlay" unique_id=1486022730]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="BottomLeftPanel" type="VBoxContainer" parent="UILayer/UiOverlay/MapOverlay/MapOverlay" unique_id=1362466612]
-layout_mode = 2
-
-[node name="TitlePanel" type="PanelContainer" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/BottomLeftPanel" unique_id=1535624263]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_iu7s2")
-
-[node name="CaptionLabel" type="Label" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/BottomLeftPanel/TitlePanel" unique_id=1562881742]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
-theme_override_font_sizes/font_size = 16
-text = "Cursor Position"
-
-[node name="MarginContainer" type="MarginContainer" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/BottomLeftPanel" unique_id=1755217452]
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_right = 8
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer" unique_id=1155089077]
-layout_mode = 2
-
-[node name="PosXLabel" type="Label" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=-199448676]
-layout_mode = 2
-text = "Pos X:"
-label_settings = SubResource("LabelSettings_x8wnj")
-
-[node name="PosXValue" type="Label" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=1519932630]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "5.789 AU"
-label_settings = SubResource("LabelSettings_uetrt")
-
-[node name="PosYLabel" type="Label" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=1197648830]
-layout_mode = 2
-text = "Pos Y:"
-label_settings = SubResource("LabelSettings_x8wnj")
-
-[node name="PosYValue" type="Label" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=1897152234]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "-3.436 AU"
-label_settings = SubResource("LabelSettings_uetrt")
-horizontal_alignment = 2
-
-[node name="BottomCenterPanel" type="Control" parent="UILayer/UiOverlay/MapOverlay/MapOverlay" unique_id=1608756588]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="BottomRightPanel" type="VBoxContainer" parent="UILayer/UiOverlay/MapOverlay/MapOverlay" unique_id=-1021232212]
-visible = false
-layout_mode = 2
-
-[node name="TitlePanel" type="PanelContainer" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/BottomRightPanel" unique_id=-1321867596]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_iu7s2")
-
-[node name="CaptionLabel" type="Label" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/BottomRightPanel/TitlePanel" unique_id=-973859696]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
-theme_override_font_sizes/font_size = 16
-text = "Cursor Position"
-
-[node name="MarginContainer" type="MarginContainer" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/BottomRightPanel" unique_id=1489700004]
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_right = 8
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/BottomRightPanel/MarginContainer" unique_id=1595749045]
-layout_mode = 2
-
-[node name="PosXLabel" type="Label" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/BottomRightPanel/MarginContainer/HBoxContainer" unique_id=1083439464]
-layout_mode = 2
-text = "Pos X:"
-label_settings = SubResource("LabelSettings_x8wnj")
-
-[node name="PosXValue" type="Label" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/BottomRightPanel/MarginContainer/HBoxContainer" unique_id=-458479122]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "5.789 AU"
-label_settings = SubResource("LabelSettings_uetrt")
-
-[node name="PosYLabel" type="Label" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/BottomRightPanel/MarginContainer/HBoxContainer" unique_id=1628190777]
-layout_mode = 2
-text = "Pos Y:"
-label_settings = SubResource("LabelSettings_x8wnj")
-
-[node name="PosYValue" type="Label" parent="UILayer/UiOverlay/MapOverlay/MapOverlay/BottomRightPanel/MarginContainer/HBoxContainer" unique_id=1165167224]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "-3.436 AU"
-label_settings = SubResource("LabelSettings_uetrt")
-horizontal_alignment = 2

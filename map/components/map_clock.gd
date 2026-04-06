@@ -46,6 +46,9 @@ func set_time(sst_s: float) -> void:
 	_current_time = sst_s
 	time_changed.emit(_current_time)
 
+func get_time_scale() -> float:
+	return _time_scale
+
 func set_time_scale(scale: float) -> void:
 	"""Set speed (always positive, direction via play/reverse)"""
 	if _live:

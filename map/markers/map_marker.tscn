@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dmk4p7xwn2qef"]
 
 [ext_resource type="Script" uid="uid://hfy07cp3h0ru" path="res://map/markers/map_marker.gd" id="1_marker"]
-[ext_resource type="Script" path="res://map/markers/map_marker_icon.gd" id="2_icon"]
+[ext_resource type="Script" uid="uid://bq5r8cntj6yvx" path="res://map/markers/map_marker_icon.gd" id="2_icon"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1"]
 radius = 18.0

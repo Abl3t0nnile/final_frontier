@@ -477,6 +477,121 @@
 			"grav_param_km3_s2": 1108.0
 		},
 		{
+			"id": "orcus",
+			"name": "Orcus",
+			"type": "dwarf",
+			"subtype": "plutoid",
+			"parent_id": "sun",
+			"map_icon": "dwarf",
+			"color_rgba": [0.5, 0.02, 0.02, 1.0],
+			"motion": {
+				"model": "kepler2d",
+				"params": {
+					"mean_anomaly_epoch_rad": 2.95,
+					"semi_major_axis_km": 5897000000.0,
+					"eccentricity": 0.227,
+					"argument_of_periapsis_rad": 1.262,
+					"epoch_time_s": 0.0,
+					"orbit_direction": 1
+				}
+			},
+			"map_tags": ["outer_system", "kuiper_belt", "minor_body"],
+			"body_radius_km": 458.0,
+			"grav_param_km3_s2": 42.4
+		},
+		{
+			"id": "quaoar",
+			"name": "Quaoar",
+			"type": "dwarf",
+			"subtype": "plutoid",
+			"parent_id": "sun",
+			"map_icon": "dwarf",
+			"color_rgba": [0.5, 0.02, 0.02, 1.0],
+			"motion": {
+				"model": "kepler2d",
+				"params": {
+					"mean_anomaly_epoch_rad": 4.52,
+					"semi_major_axis_km": 6537000000.0,
+					"eccentricity": 0.039,
+					"argument_of_periapsis_rad": 2.574,
+					"epoch_time_s": 0.0,
+					"orbit_direction": 1
+				}
+			},
+			"map_tags": ["outer_system", "kuiper_belt", "minor_body"],
+			"body_radius_km": 555.0,
+			"grav_param_km3_s2": 80.0
+		},
+		{
+			"id": "gonggong",
+			"name": "Gonggong",
+			"type": "dwarf",
+			"subtype": "plutoid",
+			"parent_id": "sun",
+			"map_icon": "dwarf",
+			"color_rgba": [0.5, 0.02, 0.02, 1.0],
+			"motion": {
+				"model": "kepler2d",
+				"params": {
+					"mean_anomaly_epoch_rad": 1.42,
+					"semi_major_axis_km": 10073000000.0,
+					"eccentricity": 0.506,
+					"argument_of_periapsis_rad": 3.616,
+					"epoch_time_s": 0.0,
+					"orbit_direction": 1
+				}
+			},
+			"map_tags": ["outer_system", "scattered_disc", "minor_body"],
+			"body_radius_km": 615.0,
+			"grav_param_km3_s2": 117.0
+		},
+		{
+			"id": "sedna",
+			"name": "Sedna",
+			"type": "dwarf",
+			"subtype": "sednoid",
+			"parent_id": "sun",
+			"map_icon": "dwarf",
+			"color_rgba": [0.5, 0.02, 0.02, 1.0],
+			"motion": {
+				"model": "kepler2d",
+				"params": {
+					"mean_anomaly_epoch_rad": 6.09,
+					"semi_major_axis_km": 75826000000.0,
+					"eccentricity": 0.850,
+					"argument_of_periapsis_rad": 5.436,
+					"epoch_time_s": 0.0,
+					"orbit_direction": 1
+				}
+			},
+			"map_tags": ["outer_system", "detached", "minor_body"],
+			"body_radius_km": 495.0,
+			"grav_param_km3_s2": 55.0
+		},
+		{
+			"id": "salacia",
+			"name": "Salacia",
+			"type": "dwarf",
+			"subtype": "plutoid",
+			"parent_id": "sun",
+			"map_icon": "dwarf",
+			"color_rgba": [0.5, 0.02, 0.02, 1.0],
+			"motion": {
+				"model": "kepler2d",
+				"params": {
+					"mean_anomaly_epoch_rad": 0.78,
+					"semi_major_axis_km": 6312000000.0,
+					"eccentricity": 0.106,
+					"argument_of_periapsis_rad": 5.437,
+					"epoch_time_s": 0.0,
+					"orbit_direction": 1
+				}
+			},
+			"map_tags": ["outer_system", "kuiper_belt", "minor_body"],
+			"body_radius_km": 423.0,
+			"grav_param_km3_s2": 30.0
+		},
+		{
 			"id": "moon",
 			"name": "Moon",
 			"type": "moon",

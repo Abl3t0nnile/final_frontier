@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bpxdjhjimm5yy"]
+
+[ext_resource type="Script" uid="uid://rvcaacv7axp8" path="res://ui/components/unit_value_display.gd" id="1_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g47l6"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+bg_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
+
+[node name="UnitValueDisplay" type="VBoxContainer" unique_id=375893399]
+size_flags_horizontal = 3
+script = ExtResource("1_script")
+
+[node name="Caption" type="Label" parent="." unique_id=680023644]
+layout_mode = 2
+text = "Caption"
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=1677024918]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g47l6")
+
+[node name="HBox" type="HBoxContainer" parent="Panel" unique_id=398643753]
+layout_mode = 2
+
+[node name="Value" type="Label" parent="Panel/HBox" unique_id=896924182]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Value"
+
+[node name="Unit" type="Label" parent="Panel/HBox" unique_id=826986839]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Unit"

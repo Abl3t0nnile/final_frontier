@@ -8,7 +8,8 @@ extends RefCounted
 const KEPLER_MAX_ITERATIONS := 12
 const KEPLER_TOLERANCE := 0.000001
 
-const AU_KM: float = 149_597_870.7  ## 1 Astronomische Einheit in km
+const AU_KM: float        = 149_597_870.7   ## 1 Astronomische Einheit in km
+const G_KM3_KG_S2: float  = 6.674e-20       ## Gravitationskonstante in km³/(kg·s²)
 
 
 ## AU-Konvertierungen (skalare Distanzen)
@@ -204,6 +205,54 @@ static func calculate_delta_v(_initial_orbit: Dictionary, _final_orbit: Dictiona
 	"""Berechnet Delta-V für Orbit-Wechsel"""
 	# TODO: Implement general delta-v calculation
 	return 0.0
+
+
+## Physikalische Körperberechnungen
+
+static func body_mass_kg(mu_km3_s2: float) -> float:
+	## M = µ / G
+	if mu_km3_s2 <= 0.0: return 0.0
+	return mu_km3_s2 / G_KM3_KG_S2
+
+
+static func body_volume_km3(radius_km: float) -> float:
+	## V = (4/3)π r³
+	if radius_km <= 0.0: return 0.0
+	return (4.0 / 3.0) * PI * pow(radius_km, 3.0)
+
+
+static func body_density_g_cm3(mu_km3_s2: float, radius_km: float) -> float:
+	## ρ = M / V, umgerechnet kg/km³ → g/cm³  (×1e-12)
+	var vol_km3 := body_volume_km3(radius_km)
+	if vol_km3 <= 0.0: return 0.0
+	return (body_mass_kg(mu_km3_s2) / vol_km3) * 1.0e-12
+
+
+static func surface_gravity_ms2(mu_km3_s2: float, radius_km: float) -> float:
+	## g = µ / r²,  km/s² → m/s²  (×1000)
+	if radius_km <= 0.0: return 0.0
+	return (mu_km3_s2 / pow(radius_km, 2.0)) * 1000.0
+
+
+static func escape_velocity_km_s(mu_km3_s2: float, radius_km: float) -> float:
+	## v_e = √(2µ / r)
+	if radius_km <= 0.0 or mu_km3_s2 <= 0.0: return 0.0
+	return sqrt(2.0 * mu_km3_s2 / radius_km)
+
+
+## Orbitale Hilfsberechnungen
+
+static func orbit_periapsis_km(semi_major_axis_km: float, eccentricity: float) -> float:
+	return semi_major_axis_km * (1.0 - eccentricity)
+
+
+static func orbit_apoapsis_km(semi_major_axis_km: float, eccentricity: float) -> float:
+	return semi_major_axis_km * (1.0 + eccentricity)
+
+
+static func mean_orbital_velocity_km_s(semi_major_axis_km: float, period_s: float) -> float:
+	if period_s <= 0.0: return 0.0
+	return TAU * semi_major_axis_km / period_s
 
 
 ## Skalierungen
