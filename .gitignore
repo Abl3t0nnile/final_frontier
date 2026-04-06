@@ -21,3 +21,7 @@ assets/
 
 # Editor config
 .editorconfig
+
+# Prototype & IDE tool folders
+.prototype/
+.windsurf/
