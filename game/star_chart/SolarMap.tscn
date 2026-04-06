@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c8051g0t0rwrj" path="res://game/star_chart/solar_map.gd" id="1_solar_map"]
 [ext_resource type="Script" uid="uid://df7sqi13afp4q" path="res://map/controllers/solar_map_controller.gd" id="2_solar_map_controller"]
-[ext_resource type="Shader" uid="uid://dhiv1gcuoq7qo" path="res://assets/shader/stars_bg.gdshader" id="3_mwffk"]
+[ext_resource type="Shader" uid="uid://dhiv1gcuoq7qo" path="res://shader/stars_bg.gdshader" id="3_mwffk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_auugl"]
 shader = ExtResource("3_mwffk")
@@ -31,8 +31,10 @@ shader_parameter/star_color = Color(1, 1, 1, 1)
 [node name="SolarMap" type="Node" unique_id=92857702]
 script = ExtResource("1_solar_map")
 zoom_exp_min = 2.0
-zoom_exp_initial = 5.8
+zoom_exp_max = 12.0
+zoom_exp_initial = 5.6
 culling_min_parent_dist_px = 64.0
+has_grid = false
 has_zones = false
 marker_sizes_star = Vector3i(128, 64, 32)
 marker_sizes_planet = Vector3i(48, 36, 24)
@@ -48,10 +50,11 @@ orbit_width_dimmed = 1.0
 orbit_alpha_default = 0.8
 orbit_alpha_highlight = 1.0
 orbit_alpha_dimmed = 0.4
-orbit_color_override_enabled = true
 orbit_color_planet = Color(0.77254903, 0.5058824, 0.16078432, 1)
 orbit_color_moon = Color(0.9019608, 0.58431375, 0.32156864, 1)
 orbit_color_dwarf = Color(0.654902, 0.24313726, 0.17254902, 1)
+orbit_color_struct = Color(0.5176816, 0.5176817, 0, 1)
+orbit_color_comet = Color(0.8096817, 0.0050751953, 0.57061416, 1)
 belt_zoom_exp_near = 5.5
 belt_zoom_exp_mid = 6.5
 belt_zoom_exp_far = 8.0

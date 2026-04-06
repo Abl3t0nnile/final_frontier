@@ -11,6 +11,7 @@ const TYPE_PRIORITY := {
 	"dwarf":  2,
 	"moon":   3,
 	"struct": 4,
+	"comet":  5,
 }
 
 var min_parent_dist_px: float = 32.0
@@ -19,6 +20,7 @@ var marker_sizes_star:   Vector3i = Vector3i(40, 28, 18)
 var marker_sizes_planet: Vector3i = Vector3i(28, 20, 14)
 var marker_sizes_moon:   Vector3i = Vector3i(18, 12, 8)
 var marker_sizes_struct: Vector3i = Vector3i(14, 10, 6)
+var marker_sizes_comet:  Vector3i = Vector3i(14, 10, 6)
 
 var _entity_manager: EntityManager   = null
 var _model: SolarSystemModel         = null
@@ -232,6 +234,7 @@ func _calc_size_px(def: BodyDef, zoom_exp_val: float) -> int:
 		"planet": sizes = marker_sizes_planet
 		"moon":   sizes = marker_sizes_moon
 		"struct": sizes = marker_sizes_struct
+		"comet":  sizes = marker_sizes_comet
 		_:        sizes = marker_sizes_moon
 
 	if zoom_exp_val <= marker_thresholds.x:

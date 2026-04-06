@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://b00mvf8jh3x6i"]
+
+[ext_resource type="Script" uid="uid://diks243gs3v16" path="res://ui/panels/almanach_panel.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://ib8eckgxchmb" path="res://assets/ui_icons/white/home.png" id="2_rmmbg"]
+[ext_resource type="Texture2D" uid="uid://oe5lrq85fvet" path="res://assets/ui_icons/white/backward.png" id="3_mhxxn"]
+[ext_resource type="Texture2D" uid="uid://b1qx4f57hy75q" path="res://assets/ui_icons/white/forward.png" id="4_1bccr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_331wc"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9411765, 0.9411765, 0.9411765, 0.4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_hover"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+bg_color = Color(0.9411765, 0.9411765, 0.9411765, 0.12)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9411765, 0.9411765, 0.9411765, 0.6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_disabled"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9411765, 0.9411765, 0.9411765, 0.15)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a1f1e"]
+font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_content"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+draw_center = false
+
+[node name="AlmanachPanel" type="PanelContainer" unique_id=1785972889]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_331wc")
+script = ExtResource("1_script")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1408531895]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Header" type="HBoxContainer" parent="VBox" unique_id=1376606025]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="HomeBtn" type="Button" parent="VBox/Header" unique_id=411836219]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
+theme_override_colors/font_disabled_color = Color(0.9411765, 0.9411765, 0.9411765, 0.25)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_btn_disabled")
+disabled = true
+icon = ExtResource("2_rmmbg")
+expand_icon = true
+
+[node name="TitleLabel" type="Label" parent="VBox/Header" unique_id=158884037]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.9411765, 0.9411765, 0.9411765, 0.6)
+theme_override_font_sizes/font_size = 11
+text = "Almanach"
+label_settings = SubResource("LabelSettings_a1f1e")
+vertical_alignment = 1
+uppercase = true
+
+[node name="BackButton" type="Button" parent="VBox/Header" unique_id=1458644746]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
+theme_override_colors/font_disabled_color = Color(0.9411765, 0.9411765, 0.9411765, 0.25)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_btn_disabled")
+disabled = true
+icon = ExtResource("3_mhxxn")
+expand_icon = true
+
+[node name="ForwardButton" type="Button" parent="VBox/Header" unique_id=1732998826]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
+theme_override_colors/font_disabled_color = Color(0.9411765, 0.9411765, 0.9411765, 0.25)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_btn_disabled")
+disabled = true
+icon = ExtResource("4_1bccr")
+expand_icon = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBox" unique_id=2147253323]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_content")
+
+[node name="ArticleContent" type="RichTextLabel" parent="VBox/ScrollContainer" unique_id=79178317]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="PanelContainer" type="PanelContainer" parent="VBox" unique_id=193502160]
+layout_mode = 2

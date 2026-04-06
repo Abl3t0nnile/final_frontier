@@ -8,9 +8,9 @@
 			"parent_id": "",
 			"map_icon": "sun",
 			"color_rgba": [
-				1.0,
-				0.85,
-				0.3,
+				0.77,
+				0.56,
+				0.16,
 				1.0
 			],
 			"motion": {
@@ -37,8 +37,8 @@
 			"map_icon": "planet",
 			"color_rgba": [
 				0.72,
-				0.7,
-				0.66,
+				0.41,
+				0.19,
 				1.0
 			],
 			"motion": {
@@ -69,8 +69,8 @@
 			"map_icon": "planet",
 			"color_rgba": [
 				0.72,
-				0.7,
-				0.66,
+				0.41,
+				0.19,
 				1.0
 			],
 			"motion": {
@@ -101,8 +101,8 @@
 			"map_icon": "planet",
 			"color_rgba": [
 				0.72,
-				0.7,
-				0.66,
+				0.41,
+				0.19,
 				1.0
 			],
 			"motion": {
@@ -133,8 +133,8 @@
 			"map_icon": "planet",
 			"color_rgba": [
 				0.72,
-				0.7,
-				0.66,
+				0.41,
+				0.19,
 				1.0
 			],
 			"motion": {
@@ -164,9 +164,9 @@
 			"parent_id": "sun",
 			"map_icon": "planet",
 			"color_rgba": [
-				0.84,
-				0.66,
-				0.47,
+				0.35,
+				0.62,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -196,9 +196,9 @@
 			"parent_id": "sun",
 			"map_icon": "planet",
 			"color_rgba": [
-				0.84,
-				0.66,
-				0.47,
+				0.35,
+				0.62,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -228,8 +228,8 @@
 			"parent_id": "sun",
 			"map_icon": "planet",
 			"color_rgba": [
-				0.84,
-				0.66,
+				0.23,
+				0.47,
 				0.47,
 				1.0
 			],
@@ -260,8 +260,8 @@
 			"parent_id": "sun",
 			"map_icon": "planet",
 			"color_rgba": [
-				0.84,
-				0.66,
+				0.23,
+				0.47,
 				0.47,
 				1.0
 			],
@@ -292,9 +292,9 @@
 			"parent_id": "sun",
 			"map_icon": "planet",
 			"color_rgba": [
-				0.84,
-				0.66,
-				0.47,
+				0.3,
+				0.48,
+				0.45,
 				1.0
 			],
 			"motion": {
@@ -324,9 +324,9 @@
 			"parent_id": "sun",
 			"map_icon": "dwarf",
 			"color_rgba": [
-				0.5,
-				0.02,
-				0.02,
+				0.63,
+				0.19,
+				0.33,
 				1.0
 			],
 			"motion": {
@@ -356,9 +356,9 @@
 			"parent_id": "sun",
 			"map_icon": "dwarf",
 			"color_rgba": [
-				0.5,
-				0.02,
-				0.02,
+				0.48,
+				0.12,
+				0.26,
 				1.0
 			],
 			"motion": {
@@ -388,9 +388,9 @@
 			"parent_id": "sun",
 			"map_icon": "dwarf",
 			"color_rgba": [
-				0.5,
-				0.02,
-				0.02,
+				0.48,
+				0.12,
+				0.26,
 				1.0
 			],
 			"motion": {
@@ -420,9 +420,9 @@
 			"parent_id": "sun",
 			"map_icon": "dwarf",
 			"color_rgba": [
-				0.5,
-				0.02,
-				0.02,
+				0.48,
+				0.12,
+				0.26,
 				1.0
 			],
 			"motion": {
@@ -452,9 +452,9 @@
 			"parent_id": "sun",
 			"map_icon": "dwarf",
 			"color_rgba": [
-				0.5,
-				0.02,
-				0.02,
+				0.48,
+				0.12,
+				0.26,
 				1.0
 			],
 			"motion": {
@@ -483,7 +483,12 @@
 			"subtype": "plutoid",
 			"parent_id": "sun",
 			"map_icon": "dwarf",
-			"color_rgba": [0.5, 0.02, 0.02, 1.0],
+			"color_rgba": [
+				0.48,
+				0.12,
+				0.26,
+				1.0
+			],
 			"motion": {
 				"model": "kepler2d",
 				"params": {
@@ -495,7 +500,11 @@
 					"orbit_direction": 1
 				}
 			},
-			"map_tags": ["outer_system", "kuiper_belt", "minor_body"],
+			"map_tags": [
+				"outer_system",
+				"kuiper_belt",
+				"minor_body"
+			],
 			"body_radius_km": 458.0,
 			"grav_param_km3_s2": 42.4
 		},
@@ -506,7 +515,12 @@
 			"subtype": "plutoid",
 			"parent_id": "sun",
 			"map_icon": "dwarf",
-			"color_rgba": [0.5, 0.02, 0.02, 1.0],
+			"color_rgba": [
+				0.48,
+				0.12,
+				0.26,
+				1.0
+			],
 			"motion": {
 				"model": "kepler2d",
 				"params": {
@@ -518,7 +532,11 @@
 					"orbit_direction": 1
 				}
 			},
-			"map_tags": ["outer_system", "kuiper_belt", "minor_body"],
+			"map_tags": [
+				"outer_system",
+				"kuiper_belt",
+				"minor_body"
+			],
 			"body_radius_km": 555.0,
 			"grav_param_km3_s2": 80.0
 		},
@@ -529,7 +547,12 @@
 			"subtype": "plutoid",
 			"parent_id": "sun",
 			"map_icon": "dwarf",
-			"color_rgba": [0.5, 0.02, 0.02, 1.0],
+			"color_rgba": [
+				0.48,
+				0.12,
+				0.26,
+				1.0
+			],
 			"motion": {
 				"model": "kepler2d",
 				"params": {
@@ -541,7 +564,11 @@
 					"orbit_direction": 1
 				}
 			},
-			"map_tags": ["outer_system", "scattered_disc", "minor_body"],
+			"map_tags": [
+				"outer_system",
+				"scattered_disc",
+				"minor_body"
+			],
 			"body_radius_km": 615.0,
 			"grav_param_km3_s2": 117.0
 		},
@@ -552,19 +579,28 @@
 			"subtype": "sednoid",
 			"parent_id": "sun",
 			"map_icon": "dwarf",
-			"color_rgba": [0.5, 0.02, 0.02, 1.0],
+			"color_rgba": [
+				0.59,
+				0.13,
+				0.28,
+				1.0
+			],
 			"motion": {
 				"model": "kepler2d",
 				"params": {
 					"mean_anomaly_epoch_rad": 6.09,
 					"semi_major_axis_km": 75826000000.0,
-					"eccentricity": 0.850,
+					"eccentricity": 0.85,
 					"argument_of_periapsis_rad": 5.436,
 					"epoch_time_s": 0.0,
 					"orbit_direction": 1
 				}
 			},
-			"map_tags": ["outer_system", "detached", "minor_body"],
+			"map_tags": [
+				"outer_system",
+				"detached",
+				"minor_body"
+			],
 			"body_radius_km": 495.0,
 			"grav_param_km3_s2": 55.0
 		},
@@ -575,7 +611,12 @@
 			"subtype": "plutoid",
 			"parent_id": "sun",
 			"map_icon": "dwarf",
-			"color_rgba": [0.5, 0.02, 0.02, 1.0],
+			"color_rgba": [
+				0.48,
+				0.12,
+				0.26,
+				1.0
+			],
 			"motion": {
 				"model": "kepler2d",
 				"params": {
@@ -587,7 +628,11 @@
 					"orbit_direction": 1
 				}
 			},
-			"map_tags": ["outer_system", "kuiper_belt", "minor_body"],
+			"map_tags": [
+				"outer_system",
+				"kuiper_belt",
+				"minor_body"
+			],
 			"body_radius_km": 423.0,
 			"grav_param_km3_s2": 30.0
 		},
@@ -599,9 +644,9 @@
 			"parent_id": "terra",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.82,
-				0.82,
-				0.8,
+				0.66,
+				0.61,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -630,8 +675,8 @@
 			"map_icon": "moon",
 			"color_rgba": [
 				0.55,
-				0.5,
-				0.46,
+				0.49,
+				0.47,
 				1.0
 			],
 			"motion": {
@@ -659,9 +704,9 @@
 			"parent_id": "mars",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.6,
-				0.56,
-				0.52,
+				0.55,
+				0.49,
+				0.47,
 				1.0
 			],
 			"motion": {
@@ -689,9 +734,9 @@
 			"parent_id": "jupiter",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.56,
-				0.5,
-				0.46,
+				0.55,
+				0.49,
+				0.47,
 				1.0
 			],
 			"motion": {
@@ -720,9 +765,9 @@
 			"parent_id": "jupiter",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.7,
-				0.42,
-				0.3,
+				0.55,
+				0.49,
+				0.47,
 				1.0
 			],
 			"motion": {
@@ -751,9 +796,9 @@
 			"parent_id": "jupiter",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.64,
-				0.48,
-				0.38,
+				0.55,
+				0.49,
+				0.47,
 				1.0
 			],
 			"motion": {
@@ -782,9 +827,9 @@
 			"parent_id": "jupiter",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.95,
-				0.85,
-				0.4,
+				0.66,
+				0.61,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -812,9 +857,9 @@
 			"parent_id": "jupiter",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.88,
-				0.84,
-				0.74,
+				0.66,
+				0.61,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -842,9 +887,9 @@
 			"parent_id": "jupiter",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.62,
-				0.6,
-				0.56,
+				0.66,
+				0.61,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -872,9 +917,9 @@
 			"parent_id": "jupiter",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.46,
-				0.44,
-				0.42,
+				0.66,
+				0.61,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -902,9 +947,9 @@
 			"parent_id": "jupiter",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.58,
-				0.56,
-				0.54,
+				0.55,
+				0.49,
+				0.47,
 				1.0
 			],
 			"motion": {
@@ -935,9 +980,9 @@
 			"parent_id": "jupiter",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.54,
-				0.52,
-				0.5,
+				0.55,
+				0.49,
+				0.47,
 				1.0
 			],
 			"motion": {
@@ -968,9 +1013,9 @@
 			"parent_id": "jupiter",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.48,
-				0.48,
-				0.5,
+				0.55,
+				0.49,
+				0.47,
 				1.0
 			],
 			"motion": {
@@ -1001,9 +1046,9 @@
 			"parent_id": "saturn",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.66,
-				0.64,
-				0.62,
+				0.55,
+				0.49,
+				0.47,
 				1.0
 			],
 			"motion": {
@@ -1032,9 +1077,9 @@
 			"parent_id": "saturn",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.76,
-				0.76,
-				0.78,
+				0.66,
+				0.61,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -1062,9 +1107,9 @@
 			"parent_id": "saturn",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.92,
-				0.94,
-				0.98,
+				0.66,
+				0.61,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -1092,9 +1137,9 @@
 			"parent_id": "saturn",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.86,
-				0.86,
-				0.88,
+				0.66,
+				0.61,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -1122,9 +1167,9 @@
 			"parent_id": "saturn",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.8,
-				0.8,
-				0.82,
+				0.66,
+				0.61,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -1152,9 +1197,9 @@
 			"parent_id": "saturn",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.78,
-				0.78,
-				0.76,
+				0.66,
+				0.61,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -1182,9 +1227,9 @@
 			"parent_id": "saturn",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.84,
-				0.7,
-				0.42,
+				0.66,
+				0.61,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -1212,9 +1257,9 @@
 			"parent_id": "saturn",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.58,
-				0.52,
-				0.44,
+				0.55,
+				0.49,
+				0.47,
 				1.0
 			],
 			"motion": {
@@ -1245,9 +1290,9 @@
 			"parent_id": "saturn",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.62,
-				0.58,
-				0.5,
+				0.66,
+				0.61,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -1275,9 +1320,9 @@
 			"parent_id": "saturn",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.42,
-				0.42,
-				0.44,
+				0.55,
+				0.49,
+				0.47,
 				1.0
 			],
 			"motion": {
@@ -1308,9 +1353,9 @@
 			"parent_id": "uranus",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.74,
-				0.74,
-				0.76,
+				0.66,
+				0.61,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -1338,9 +1383,9 @@
 			"parent_id": "uranus",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.84,
-				0.84,
-				0.86,
+				0.66,
+				0.61,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -1368,9 +1413,9 @@
 			"parent_id": "uranus",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.4,
-				0.4,
-				0.44,
+				0.66,
+				0.61,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -1398,9 +1443,9 @@
 			"parent_id": "uranus",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.74,
-				0.72,
-				0.74,
+				0.66,
+				0.61,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -1428,9 +1473,9 @@
 			"parent_id": "uranus",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.52,
-				0.5,
-				0.5,
+				0.66,
+				0.61,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -1458,9 +1503,9 @@
 			"parent_id": "neptune",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.46,
-				0.44,
-				0.46,
+				0.66,
+				0.61,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -1488,9 +1533,9 @@
 			"parent_id": "neptune",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.86,
-				0.82,
-				0.78,
+				0.66,
+				0.61,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -1518,9 +1563,9 @@
 			"parent_id": "neptune",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.62,
-				0.64,
-				0.68,
+				0.55,
+				0.49,
+				0.47,
 				1.0
 			],
 			"motion": {
@@ -1551,9 +1596,9 @@
 			"parent_id": "pluto",
 			"map_icon": "moon",
 			"color_rgba": [
-				0.64,
-				0.64,
 				0.66,
+				0.61,
+				0.55,
 				1.0
 			],
 			"motion": {
@@ -1572,6 +1617,294 @@
 			],
 			"body_radius_km": 606.0,
 			"grav_param_km3_s2": 105.9
+		},
+		{
+			"id": "halley",
+			"name": "1P/Halley",
+			"type": "comet",
+			"subtype": "poi",
+			"parent_id": "sun",
+			"map_icon": "poi",
+			"color_rgba": [
+				0.23,
+				0.75,
+				0.71,
+				1.0
+			],
+			"motion": {
+				"model": "kepler2d",
+				"params": {
+					"semi_major_axis_km": 2662842000.0,
+					"eccentricity": 0.967,
+					"argument_of_periapsis_rad": 1.96,
+					"mean_anomaly_epoch_rad": 0.0,
+					"epoch_time_s": 0.0,
+					"orbit_direction": -1
+				}
+			},
+			"map_tags": [
+				"outer_system",
+				"comet",
+				"periodic"
+			],
+			"body_radius_km": 5.5,
+			"grav_param_km3_s2": 0.0
+		},
+		{
+			"id": "encke",
+			"name": "2P/Encke",
+			"type": "comet",
+			"subtype": "poi",
+			"parent_id": "sun",
+			"map_icon": "poi",
+			"color_rgba": [
+				0.23,
+				0.75,
+				0.71,
+				1.0
+			],
+			"motion": {
+				"model": "kepler2d",
+				"params": {
+					"semi_major_axis_km": 331789000.0,
+					"eccentricity": 0.848,
+					"argument_of_periapsis_rad": 2.65,
+					"mean_anomaly_epoch_rad": 1.2,
+					"epoch_time_s": 0.0,
+					"orbit_direction": 1
+				}
+			},
+			"map_tags": [
+				"inner_system",
+				"comet",
+				"periodic"
+			],
+			"body_radius_km": 2.4,
+			"grav_param_km3_s2": 0.0
+		},
+		{
+			"id": "churyumov_gerasimenko",
+			"name": "67P/C-G",
+			"type": "comet",
+			"subtype": "poi",
+			"parent_id": "sun",
+			"map_icon": "poi",
+			"color_rgba": [
+				0.23,
+				0.75,
+				0.71,
+				1.0
+			],
+			"motion": {
+				"model": "kepler2d",
+				"params": {
+					"semi_major_axis_km": 518268000.0,
+					"eccentricity": 0.641,
+					"argument_of_periapsis_rad": 1.3,
+					"mean_anomaly_epoch_rad": 2.8,
+					"epoch_time_s": 0.0,
+					"orbit_direction": 1
+				}
+			},
+			"map_tags": [
+				"outer_system",
+				"comet",
+				"periodic"
+			],
+			"body_radius_km": 2.0,
+			"grav_param_km3_s2": 0.0
+		},
+		{
+			"id": "tempel1",
+			"name": "9P/Tempel 1",
+			"type": "comet",
+			"subtype": "poi",
+			"parent_id": "sun",
+			"map_icon": "poi",
+			"color_rgba": [
+				0.23,
+				0.75,
+				0.71,
+				1.0
+			],
+			"motion": {
+				"model": "kepler2d",
+				"params": {
+					"semi_major_axis_km": 467224000.0,
+					"eccentricity": 0.5175,
+					"argument_of_periapsis_rad": 3.12,
+					"mean_anomaly_epoch_rad": 0.6,
+					"epoch_time_s": 0.0,
+					"orbit_direction": 1
+				}
+			},
+			"map_tags": [
+				"inner_system",
+				"comet",
+				"periodic"
+			],
+			"body_radius_km": 3.0,
+			"grav_param_km3_s2": 0.0
+		},
+		{
+			"id": "borrelly",
+			"name": "19P/Borrelly",
+			"type": "comet",
+			"subtype": "poi",
+			"parent_id": "sun",
+			"map_icon": "poi",
+			"color_rgba": [
+				0.23,
+				0.75,
+				0.71,
+				1.0
+			],
+			"motion": {
+				"model": "kepler2d",
+				"params": {
+					"semi_major_axis_km": 540338000.0,
+					"eccentricity": 0.6241,
+					"argument_of_periapsis_rad": 1.56,
+					"mean_anomaly_epoch_rad": 3.9,
+					"epoch_time_s": 0.0,
+					"orbit_direction": 1
+				}
+			},
+			"map_tags": [
+				"outer_system",
+				"comet",
+				"periodic"
+			],
+			"body_radius_km": 4.0,
+			"grav_param_km3_s2": 0.0
+		},
+		{
+			"id": "wirtanen",
+			"name": "46P/Wirtanen",
+			"type": "comet",
+			"subtype": "poi",
+			"parent_id": "sun",
+			"map_icon": "poi",
+			"color_rgba": [
+				0.23,
+				0.75,
+				0.71,
+				1.0
+			],
+			"motion": {
+				"model": "kepler2d",
+				"params": {
+					"semi_major_axis_km": 462577000.0,
+					"eccentricity": 0.6516,
+					"argument_of_periapsis_rad": 0.36,
+					"mean_anomaly_epoch_rad": 5.1,
+					"epoch_time_s": 0.0,
+					"orbit_direction": 1
+				}
+			},
+			"map_tags": [
+				"inner_system",
+				"comet",
+				"periodic"
+			],
+			"body_radius_km": 0.6,
+			"grav_param_km3_s2": 0.0
+		},
+		{
+			"id": "wild2",
+			"name": "81P/Wild 2",
+			"type": "comet",
+			"subtype": "poi",
+			"parent_id": "sun",
+			"map_icon": "poi",
+			"color_rgba": [
+				0.23,
+				0.75,
+				0.71,
+				1.0
+			],
+			"motion": {
+				"model": "kepler2d",
+				"params": {
+					"semi_major_axis_km": 516450000.0,
+					"eccentricity": 0.5393,
+					"argument_of_periapsis_rad": 2.65,
+					"mean_anomaly_epoch_rad": 1.8,
+					"epoch_time_s": 0.0,
+					"orbit_direction": 1
+				}
+			},
+			"map_tags": [
+				"outer_system",
+				"comet",
+				"periodic"
+			],
+			"body_radius_km": 2.0,
+			"grav_param_km3_s2": 0.0
+		},
+		{
+			"id": "hartley2",
+			"name": "103P/Hartley 2",
+			"type": "comet",
+			"subtype": "poi",
+			"parent_id": "sun",
+			"map_icon": "poi",
+			"color_rgba": [
+				0.23,
+				0.75,
+				0.71,
+				1.0
+			],
+			"motion": {
+				"model": "kepler2d",
+				"params": {
+					"semi_major_axis_km": 520042000.0,
+					"eccentricity": 0.6942,
+					"argument_of_periapsis_rad": 3.16,
+					"mean_anomaly_epoch_rad": 2.3,
+					"epoch_time_s": 0.0,
+					"orbit_direction": 1
+				}
+			},
+			"map_tags": [
+				"outer_system",
+				"comet",
+				"periodic"
+			],
+			"body_radius_km": 0.6,
+			"grav_param_km3_s2": 0.0
+		},
+		{
+			"id": "swift_tuttle",
+			"name": "109P/Swift-Tuttle",
+			"type": "comet",
+			"subtype": "poi",
+			"parent_id": "sun",
+			"map_icon": "poi",
+			"color_rgba": [
+				0.23,
+				0.75,
+				0.71,
+				1.0
+			],
+			"motion": {
+				"model": "kepler2d",
+				"params": {
+					"semi_major_axis_km": 3903400000.0,
+					"eccentricity": 0.9632,
+					"argument_of_periapsis_rad": 2.67,
+					"mean_anomaly_epoch_rad": 0.1,
+					"epoch_time_s": 0.0,
+					"orbit_direction": -1
+				}
+			},
+			"map_tags": [
+				"outer_system",
+				"comet",
+				"periodic"
+			],
+			"body_radius_km": 13.0,
+			"grav_param_km3_s2": 0.0
 		}
 	]
 }

@@ -16,6 +16,8 @@ var color_planet: Color    = Color.CYAN
 var color_moon: Color      = Color.GRAY
 var color_dwarf: Color     = Color.ORANGE
 var color_struct: Color    = Color.YELLOW
+var color_comet: Color     = Color(0.75, 0.88, 1.0)
+var has_comets: bool       = true
 
 var _orbit_layer: Node2D         = null
 var _map_transform: MapTransform = null
@@ -41,6 +43,8 @@ func setup(orbit_layer: Node2D, map_transform: MapTransform,
 			continue
 		if def.motion.model not in ["circular", "kepler2d"]:
 			continue
+		if def.type == "comet" and not has_comets:
+			continue
 		
 		var orbit := OrbitRenderer.new()
 		_orbit_layer.add_child(orbit)
@@ -65,6 +69,7 @@ func _apply_orbit_config(orbit: OrbitRenderer, def: BodyDef) -> void:
 			"moon":   orbit.color = color_moon
 			"dwarf":  orbit.color = color_dwarf
 			"struct": orbit.color = color_struct
+			"comet":  orbit.color = color_comet
 
 
 func update_orbits() -> void:

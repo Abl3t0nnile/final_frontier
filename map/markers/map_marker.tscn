@@ -1,13 +1,18 @@
 [gd_scene format=3 uid="uid://dmk4p7xwn2qef"]
 
 [ext_resource type="Script" uid="uid://hfy07cp3h0ru" path="res://map/markers/map_marker.gd" id="1_marker"]
+[ext_resource type="FontFile" uid="uid://btm5jjiukrhq2" path="res://assets/fonts/SUSEMono-SemiBold.ttf" id="2_ffplx"]
 [ext_resource type="Script" uid="uid://bq5r8cntj6yvx" path="res://map/markers/map_marker_icon.gd" id="2_icon"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0woa5"]
+font = ExtResource("2_ffplx")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1"]
 radius = 18.0
 
 [node name="MapMarker" type="Area2D" unique_id=1707746605]
 script = ExtResource("1_marker")
+label_settings = SubResource("LabelSettings_0woa5")
 
 [node name="MarkerIcon" type="Sprite2D" parent="." unique_id=1962418193]
 script = ExtResource("2_icon")
@@ -18,8 +23,6 @@ offset_left = 16.0
 offset_top = -8.0
 offset_right = 120.0
 offset_bottom = 8.0
-theme_override_colors/font_color = Color(1, 1, 1, 0.85)
-theme_override_font_sizes/font_size = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=176876210]
 shape = SubResource("CircleShape2D_1")

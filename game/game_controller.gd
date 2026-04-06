@@ -15,13 +15,15 @@ signal data_ready
 signal game_started
 
 ## Inspector-Referenzen (im Editor setzen)
-@export var solar_map_scene: PackedScene = null
+@export var solar_map_scene:  PackedScene = null
+@export var planet_view_scene: PackedScene = null
 @export var start_chart: Node = null
 @export var loading_screen: CanvasLayer = null
 
 var state: State = State.LOADING
 
-var _solar_map: Node = null
+var _solar_map:   Node = null
+var _planet_view: Node = null
 var _data_loaded: bool = false
 var _animation_done: bool = false
 
@@ -82,6 +84,9 @@ func _enter_ready() -> void:
 
 func _build_map() -> void:
 	start_chart.receive_solar_map(_solar_map)
+	if planet_view_scene:
+		_planet_view = planet_view_scene.instantiate()
+		start_chart.receive_planet_view(_planet_view)
 	_enter_running()
 
 

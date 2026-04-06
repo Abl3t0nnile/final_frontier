@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://crccqnjhmdewf"]
+
+[ext_resource type="FontFile" uid="uid://cysj7b68qqiw8" path="res://assets/fonts/SUSEMono-Bold.ttf" id="1_pnddq"]
+
+[resource]
+font = ExtResource("1_pnddq")
+font_size = 24
+font_color = Color(0, 0, 0, 1)

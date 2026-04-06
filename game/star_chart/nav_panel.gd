@@ -4,16 +4,20 @@
 
 extends PanelContainer
 
+signal body_focused(id: String)
+
 # Fold-Container (für folded-Property)
 @onready var _planet_fold: Node = $VBox/ScrollContainer/VBoxContainer/PlanetButtons
 @onready var _dwarf_fold:  Node = $VBox/ScrollContainer/VBoxContainer/DwarfButtons
 @onready var _moon_fold:   Node = $VBox/ScrollContainer/VBoxContainer/MoonButtons
+@onready var _comet_fold:  Node = $VBox/ScrollContainer/VBoxContainer/CometButtons
 
 # Button-Container (innere VBoxContainer bzw. StarButton direkt)
 @onready var _star_box:   VBoxContainer = $VBox/StarButton
 @onready var _planet_box: VBoxContainer = $VBox/ScrollContainer/VBoxContainer/PlanetButtons/VBoxContainer
 @onready var _dwarf_box:  VBoxContainer = $VBox/ScrollContainer/VBoxContainer/DwarfButtons/VBoxContainer
 @onready var _moon_box:   VBoxContainer = $VBox/ScrollContainer/VBoxContainer/MoonButtons/VBoxContainer
+@onready var _comet_box:  VBoxContainer = $VBox/ScrollContainer/VBoxContainer/CometButtons/VBoxContainer
 
 var _solar_map: Node = null
 
@@ -27,6 +31,7 @@ func setup(solar_map: Node) -> void:
 	var planets: Array[BodyDef] = all_defs.filter(func(d: BodyDef) -> bool: return d.type == "planet")
 	var dwarfs:  Array[BodyDef] = all_defs.filter(func(d: BodyDef) -> bool: return d.type == "dwarf")
 	var moons:   Array[BodyDef] = all_defs.filter(func(d: BodyDef) -> bool: return d.type == "moon")
+	var comets:  Array[BodyDef] = all_defs.filter(func(d: BodyDef) -> bool: return d.type == "comet")
 
 	planets.sort_custom(func(a: BodyDef, b: BodyDef) -> bool:
 		return _orbital_distance(a) < _orbital_distance(b))
@@ -38,14 +43,19 @@ func setup(solar_map: Node) -> void:
 			return pa < pb
 		return _orbital_distance(a) < _orbital_distance(b))
 
+	comets.sort_custom(func(a: BodyDef, b: BodyDef) -> bool:
+		return _orbital_distance(a) < _orbital_distance(b))
+
 	_fill(_star_box,   stars,   registry, false)
 	_fill(_planet_box, planets, registry, false)
 	_fill(_dwarf_box,  dwarfs,  registry, false)
 	_fill(_moon_box,   moons,   registry, true)
+	_fill(_comet_box,  comets,  registry, false)
 
 	_set_fold(_planet_fold, false)
 	_set_fold(_dwarf_fold,  true)
 	_set_fold(_moon_fold,   true)
+	_set_fold(_comet_fold,  true)
 
 
 # ── Befüllen ──────────────────────────────────────────────────────────────────
@@ -115,3 +125,4 @@ func _set_fold(container: Node, folded: bool) -> void:
 func _on_body_pressed(id: String) -> void:
 	if _solar_map:
 		_solar_map.focus_body(id)
+	body_focused.emit(id)

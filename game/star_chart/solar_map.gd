@@ -25,10 +25,11 @@ extends Node
 
 ## Feature Flags
 @export_group("Features")
-@export var has_orbits: bool = true
-@export var has_grid: bool   = true
-@export var has_belts: bool  = true
-@export var has_zones: bool  = true
+@export var has_orbits: bool  = true
+@export var has_grid: bool    = true
+@export var has_belts: bool   = true
+@export var has_zones: bool   = true
+@export var has_comets: bool  = true
 
 ## Interaction
 @export_group("Interaction")
@@ -44,6 +45,7 @@ extends Node
 @export var marker_sizes_planet: Vector3i = Vector3i(28, 20, 14)
 @export var marker_sizes_moon:   Vector3i = Vector3i(18, 12, 8)
 @export var marker_sizes_struct: Vector3i = Vector3i(14, 10, 6)
+@export var marker_sizes_comet:  Vector3i = Vector3i(14, 10, 6)
 @export_subgroup("Selection Ring")
 @export var marker_selection_color: Color  = Color(1.0, 1.0, 1.0, 0.9)
 @export var marker_selection_width: float  = 2.0
@@ -68,6 +70,7 @@ extends Node
 @export var orbit_color_moon: Color      = Color.GRAY
 @export var orbit_color_dwarf: Color     = Color.ORANGE
 @export var orbit_color_struct: Color    = Color.YELLOW
+@export var orbit_color_comet: Color     = Color(0.75, 0.88, 1.0)
 
 ## Konfiguration – Belts
 @export_group("Belts")
@@ -251,6 +254,11 @@ func unpin_body(id: String) -> void:
 		interaction.unpin_entity(id)
 
 
+func is_body_pinned(id: String) -> bool:
+	var interaction := _map_controller.get_interaction_manager()
+	return interaction.get_pinned_entities().has(id) if interaction else false
+
+
 func get_body_data(id: String) -> BodyDef:
 	return SolarSystem.get_body(id)
 
@@ -340,6 +348,7 @@ func _build_config() -> Dictionary:
 		"marker_sizes_planet": marker_sizes_planet,
 		"marker_sizes_moon": marker_sizes_moon,
 		"marker_sizes_struct": marker_sizes_struct,
+		"marker_sizes_comet": marker_sizes_comet,
 		"marker_selection_color": marker_selection_color,
 		"marker_selection_width": marker_selection_width,
 		"marker_pinned_color": marker_pinned_color,
@@ -357,6 +366,7 @@ func _build_config() -> Dictionary:
 		"orbit_color_moon": orbit_color_moon,
 		"orbit_color_dwarf": orbit_color_dwarf,
 		"orbit_color_struct": orbit_color_struct,
+		"orbit_color_comet": orbit_color_comet,
 		# Belts
 		"belt_zoom_exp_near": belt_zoom_exp_near,
 		"belt_zoom_exp_mid": belt_zoom_exp_mid,
@@ -369,6 +379,7 @@ func _build_config() -> Dictionary:
 		"has_grid": has_grid,
 		"has_belts": has_belts,
 		"has_zones": has_zones,
+		"has_comets": has_comets,
 		# Interaction
 		"markers_clickable": markers_clickable,
 		"markers_hoverable": markers_hoverable,

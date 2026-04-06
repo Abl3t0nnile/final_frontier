@@ -40,6 +40,12 @@ extends Control
 @export_group("Rotation")
 @export var drag_sensitivity: float = 0.005
 @export var pitch_limit: float = 1.4
+@export var auto_rotate: bool = false:
+	set(value):
+		auto_rotate = value
+		if is_inside_tree():
+			mouse_filter = Control.MOUSE_FILTER_IGNORE if auto_rotate else Control.MOUSE_FILTER_STOP
+@export_range(0.0, 2.0) var auto_rotate_speed: float = 0.15
 
 @export_group("Lighting")
 @export var light_direction: Vector3 = Vector3(0.5, -0.3, 0.8):
@@ -118,6 +124,8 @@ var _material: ShaderMaterial
 
 func _ready() -> void:
 	_setup_sphere()
+	if auto_rotate:
+		mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 
 func _process(delta: float) -> void:
@@ -128,6 +136,9 @@ func _process(delta: float) -> void:
 		if _cloud_offset > TAU:
 			_cloud_offset -= TAU
 		_set_param("cloud_rotation_offset", cloud_rotation_offset + _cloud_offset)
+	if auto_rotate and not Engine.is_editor_hint():
+		_rotation_y += delta * auto_rotate_speed
+		_set_param("rotation_y", _rotation_y)
 
 
 func _setup_sphere() -> void:
@@ -149,8 +160,8 @@ func _setup_sphere() -> void:
 
 
 func _get_shader_path() -> String:
-	var base: String = get_script().resource_path.get_base_dir() + "/shader/"
-	return base + ("sun_sphere.gdshader" if use_sun_shader else "planet_sphere.gdshader")
+	const BASE := "res://shader/"
+	return BASE + ("sun_sphere.gdshader" if use_sun_shader else "planet_sphere.gdshader")
 
 
 func _set_param(param: String, value: Variant) -> void:

@@ -14,6 +14,7 @@ func _init() -> void:
 	has_belts  = true
 	has_zones  = true
 	has_rings  = true
+	has_comets = true
 
 
 ## Setup (Solar-specific)

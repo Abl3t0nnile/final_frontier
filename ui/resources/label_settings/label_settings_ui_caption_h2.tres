@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://djss0uyws4nlk"]
+
+[ext_resource type="FontFile" uid="uid://dvbnsgphdfvje" path="res://assets/fonts/SUSEMono-Medium.ttf" id="1_cuj1m"]
+
+[resource]
+font = ExtResource("1_cuj1m")
+font_size = 24

@@ -5,6 +5,11 @@
 class_name InfoPanel
 extends PanelContainer
 
+signal almanach_requested(body_id: String)
+signal zoom_requested(body_id: String)
+signal pin_requested(body_id: String)
+signal unpin_requested(body_id: String)
+
 const _TEXTURE_BASE := "res://assets/textures/planets_16_levels/"
 
 ## body_id → { "surface": filename, "cloud": filename (optional) }
@@ -30,6 +35,12 @@ const _BODY_TEXTURES: Dictionary = {
 @onready var _subtype_label: Label = $VBox/Header/NameDisplay/HBoxContainer/SubtypeLabel
 @onready var _planet_viewer:  PlanetViewer = $VBox/Image/SubViewport/PlanetViewer
 @onready var _missing_label:  Label        = $VBox/Image/SubViewport/MissingLabel
+@onready var _almanach_btn:   Button = $VBox/Header/AlmanachBtn
+@onready var _pin_btn:        Button = $VBox/Header/PinBtn
+@onready var _unpin_btn:      Button = $VBox/Header/UnpinBtn
+@onready var _zoom_btn:       Button = $VBox/Header/ZoomBtn
+
+var _current_id: String = ""
 
 ## Physikalische Felder
 @onready var _phys_radius:   Node = $VBox/PhysikSection/PhysikGrid/Radius
@@ -48,7 +59,20 @@ const _BODY_TEXTURES: Dictionary = {
 
 
 
+func _ready() -> void:
+	_almanach_btn.pressed.connect(func() -> void: almanach_requested.emit(_current_id))
+	_pin_btn.pressed.connect(func() -> void: pin_requested.emit(_current_id))
+	_unpin_btn.pressed.connect(func() -> void: unpin_requested.emit(_current_id))
+	_zoom_btn.pressed.connect(func() -> void: zoom_requested.emit(_current_id))
+
+
+func set_pinned(pinned: bool) -> void:
+	_pin_btn.visible   = not pinned
+	_unpin_btn.visible = pinned
+
+
 func load_body(id: String) -> void:
+	_current_id = id
 	var def: BodyDef = SolarSystem.get_body(id)
 	_setup_planet_viewer(id)
 	if def == null:

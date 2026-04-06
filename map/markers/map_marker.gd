@@ -35,6 +35,12 @@ var pinned_color: Color     = Color(1.0, 1.0, 1.0, 0.35)
 var pinned_width: float     = 1.5
 var label_offset: Vector2   = Vector2(4.0, -8.0)
 
+@export var label_settings: LabelSettings:
+	set(value):
+		label_settings = value
+		if _label != null:
+			_label.label_settings = value
+
 var body_def: BodyDef = null
 var body_id: String = ""
 var groups: Array[String] = []
@@ -52,7 +58,8 @@ func setup(game_object: GameObject, _label_settings) -> void:
 
 	_icon.setup(body_def)
 	_label.text = body_def.name
-	_label.add_theme_font_size_override("font_size", 12)
+	if label_settings != null:
+		_label.label_settings = label_settings
 
 	# Shared Shape pro Typ zuweisen
 	_collision.shape = _get_or_create_shape()
@@ -71,6 +78,10 @@ func set_state(state: MarkerState) -> void:
 	visible = state != MarkerState.INACTIVE
 	_label.visible = (state != MarkerState.DIMMED and state != MarkerState.INACTIVE)
 	queue_redraw()
+
+
+func set_icon_color(color: Color) -> void:
+	_icon.self_modulate = color
 
 
 func set_size_px(px: int) -> void:
@@ -96,7 +107,7 @@ func _get_collision_padding() -> float:
 			return collision_padding_moon
 		"dwarf":
 			return collision_padding_dwarf
-		"struct", "station", "asteroid":
+		"struct", "station", "asteroid", "comet":
 			return collision_padding_struct
 		_:
 			return collision_padding_planet
@@ -121,7 +132,7 @@ func _get_or_create_shape() -> CircleShape2D:
 			if _shape_dwarf == null:
 				_shape_dwarf = CircleShape2D.new()
 			return _shape_dwarf
-		"struct", "station", "asteroid":
+		"struct", "station", "asteroid", "comet":
 			if _shape_struct == null:
 				_shape_struct = CircleShape2D.new()
 			return _shape_struct

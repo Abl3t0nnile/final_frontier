@@ -3,33 +3,56 @@
 [ext_resource type="PackedScene" uid="uid://b0abcd1234" path="res://game/star_chart/SolarMap.tscn" id="2_2fjjk"]
 [ext_resource type="PackedScene" uid="uid://dy3prfbgdcq52" path="res://game/star_chart/StartChart.tscn" id="2_8gaax"]
 [ext_resource type="Script" uid="uid://c1v3wo13h2efs" path="res://game/game_controller.gd" id="3_gamecontroller"]
-[ext_resource type="Shader" uid="uid://cg7o1xh3che8w" path="res://new_features/shader/phosphor_monitor.gdshader" id="4_ljq5a"]
+[ext_resource type="PackedScene" uid="uid://cx0qx7qyomjub" path="res://game/star_chart/planet_view.tscn" id="3_madmh"]
+[ext_resource type="Shader" uid="uid://jgquymtyyfyn" path="res://shader/ui_tint_overlay.gdshader" id="5_madmh"]
+[ext_resource type="Shader" uid="uid://pb0iqlt14w45" path="res://shader/phosphor_overlay.gdshader" id="6_yo8gm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_madmh"]
-shader = ExtResource("4_ljq5a")
-shader_parameter/phosphor_color = Color(0.77254903, 0.5058824, 0.16078432, 1)
-shader_parameter/tint_strength = 1.0
-shader_parameter/glow_strength = 1.200000057
-shader_parameter/glow_radius = 2.0000000475
-shader_parameter/chromatic_strength = 1.0000000475
-shader_parameter/brightness = 1.2
-shader_parameter/scanline_strength = 0.2
-shader_parameter/scanline_count = 420.0000152
+shader = ExtResource("5_madmh")
+shader_parameter/tint_color = Color(0.51851845, 0.44924885, 0.12819716, 1)
+shader_parameter/whiteness_threshold = 0.0
+shader_parameter/edge_softness = 0.29999999329439997
+shader_parameter/tint_strength = 0.999999977648
+shader_parameter/color_protection = 0.999999977648
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fk7ia"]
+shader = ExtResource("6_yo8gm")
+shader_parameter/glow_strength = 0.6999999843536
+shader_parameter/glow_spread = 3.0
+shader_parameter/scanline_strength = 0.0
+shader_parameter/scanline_sharpness = 8.0
+shader_parameter/chromatic_px = 1.40000002086168
+shader_parameter/flicker_strength = 0.0499999988824
+shader_parameter/brightness = 1.19999997690307
+shader_parameter/vignette_strength = 0.0
+shader_parameter/vignette_softness = 0.49999998882401
 
 [node name="Main" type="Node" unique_id=1627069167]
 
 [node name="GameController" type="Node" parent="." unique_id=1627069168 node_paths=PackedStringArray("start_chart")]
 script = ExtResource("3_gamecontroller")
 solar_map_scene = ExtResource("2_2fjjk")
+planet_view_scene = ExtResource("3_madmh")
 start_chart = NodePath("../StartChart")
 
 [node name="StartChart" parent="." unique_id=-54483432 instance=ExtResource("2_8gaax")]
 
 [node name="ShaderOverlay" type="CanvasLayer" parent="." unique_id=611693710]
+
+[node name="ColorOverlay" type="ColorRect" parent="ShaderOverlay" unique_id=1214630113]
+material = SubResource("ShaderMaterial_madmh")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ShaderOverlay2" type="CanvasLayer" parent="." unique_id=862808943]
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="ShaderOverlay" unique_id=1214630113]
-material = SubResource("ShaderMaterial_madmh")
+[node name="ColorOverlay2" type="ColorRect" parent="ShaderOverlay2" unique_id=1404396652]
+material = SubResource("ShaderMaterial_fk7ia")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://gtcy0apqvjip" path="res://assets/map_icons/terrestrial.png" id="3_ghnkj"]
 [ext_resource type="Texture2D" uid="uid://ciumn8o41y5u3" path="res://assets/map_icons/asteroid_dwarf.png" id="4_fwvt1"]
 [ext_resource type="Texture2D" uid="uid://be017lin5lw2a" path="res://assets/map_icons/major_moon.png" id="5_req6u"]
+[ext_resource type="Texture2D" uid="uid://ctbm118boovp" path="res://assets/map_icons/poi.png" id="6_comet"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqmsi"]
 draw_center = false
@@ -92,5 +93,19 @@ layout_mode = 2
 layout_mode = 2
 text = "Moon  (Terra)"
 icon = ExtResource("5_req6u")
+alignment = 0
+expand_icon = true
+
+[node name="CometButtons" type="FoldableContainer" parent="VBox/ScrollContainer/VBoxContainer" unique_id=998877665]
+layout_mode = 2
+title = "COMETS"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBox/ScrollContainer/VBoxContainer/CometButtons" unique_id=887766554]
+layout_mode = 2
+
+[node name="CometBtn" type="Button" parent="VBox/ScrollContainer/VBoxContainer/CometButtons/VBoxContainer" unique_id=776655443]
+layout_mode = 2
+text = "1P/Halley"
+icon = ExtResource("6_comet")
 alignment = 0
 expand_icon = true

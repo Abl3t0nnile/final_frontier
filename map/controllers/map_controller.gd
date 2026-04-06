@@ -19,11 +19,12 @@ var move_decel: float      = 18.0
 var culling_min_parent_dist_px: float  = 32.0
 
 # Feature Flags
-var has_orbits: bool = true
-var has_grid: bool   = true
-var has_belts: bool  = false
-var has_zones: bool  = false
-var has_rings: bool  = false
+var has_orbits: bool  = true
+var has_grid: bool    = true
+var has_belts: bool   = false
+var has_zones: bool   = false
+var has_rings: bool   = false
+var has_comets: bool  = false
 
 # Interaction
 var markers_clickable: bool = true
@@ -35,6 +36,7 @@ var marker_sizes_star:   Vector3i   = Vector3i(40, 28, 18)
 var marker_sizes_planet: Vector3i   = Vector3i(28, 20, 14)
 var marker_sizes_moon:   Vector3i   = Vector3i(18, 12, 8)
 var marker_sizes_struct: Vector3i   = Vector3i(14, 10, 6)
+var marker_sizes_comet:  Vector3i   = Vector3i(14, 10, 6)
 var marker_selection_color: Color   = Color(1.0, 1.0, 1.0, 0.9)
 var marker_selection_width: float   = 2.0
 var marker_pinned_color: Color      = Color(1.0, 1.0, 1.0, 0.35)
@@ -53,6 +55,7 @@ var orbit_color_planet: Color    = Color.CYAN
 var orbit_color_moon: Color      = Color.GRAY
 var orbit_color_dwarf: Color     = Color.ORANGE
 var orbit_color_struct: Color    = Color.YELLOW
+var orbit_color_comet: Color     = Color(0.75, 0.88, 1.0)
 
 # Belts
 var belt_zoom_exp_near: float   = 4.0
@@ -133,6 +136,7 @@ func setup(model: SolarSystemModel, clock: SimClock, registry: GameObjectRegistr
 	_culling_manager.marker_sizes_planet = marker_sizes_planet
 	_culling_manager.marker_sizes_moon   = marker_sizes_moon
 	_culling_manager.marker_sizes_struct = marker_sizes_struct
+	_culling_manager.marker_sizes_comet  = marker_sizes_comet
 	_culling_manager.setup(_entity_manager, _model, _map_transform, _game_object_registry)
 
 	# InteractionManager
@@ -150,6 +154,8 @@ func setup(model: SolarSystemModel, clock: SimClock, registry: GameObjectRegistr
 	# Create markers and wire signals from registry
 	for game_object in _game_object_registry.get_all_objects():
 		if not game_object:
+			continue
+		if game_object.body_def and game_object.body_def.type == "comet" and not has_comets:
 			continue
 		var id: String = game_object.id
 		var marker := _entity_manager.create_marker(game_object)
@@ -207,6 +213,20 @@ func _apply_marker_config(marker: MapMarker) -> void:
 	marker.pinned_color    = marker_pinned_color
 	marker.pinned_width    = marker_pinned_width
 	marker.label_offset    = marker_label_offset
+	marker.set_icon_color(_get_marker_color(marker.body_def))
+
+
+func _get_marker_color(def: BodyDef) -> Color:
+	if def == null:
+		return Color.WHITE
+	if orbit_color_override_enabled:
+		match def.type:
+			"planet": return orbit_color_planet
+			"moon":   return orbit_color_moon
+			"dwarf":  return orbit_color_dwarf
+			"struct", "station", "asteroid", "comet": return orbit_color_struct
+			_:        return Color.WHITE
+	return def.color_rgba
 
 
 
@@ -230,6 +250,7 @@ func apply_config(config: Dictionary) -> void:
 	if config.has("marker_sizes_planet"): marker_sizes_planet = config.marker_sizes_planet
 	if config.has("marker_sizes_moon"):   marker_sizes_moon = config.marker_sizes_moon
 	if config.has("marker_sizes_struct"): marker_sizes_struct = config.marker_sizes_struct
+	if config.has("marker_sizes_comet"): marker_sizes_comet = config.marker_sizes_comet
 	if config.has("marker_selection_color"): marker_selection_color = config.marker_selection_color
 	if config.has("marker_selection_width"): marker_selection_width = config.marker_selection_width
 	if config.has("marker_pinned_color"):    marker_pinned_color = config.marker_pinned_color
@@ -247,6 +268,7 @@ func apply_config(config: Dictionary) -> void:
 	if config.has("orbit_color_moon"):   orbit_color_moon = config.orbit_color_moon
 	if config.has("orbit_color_dwarf"):  orbit_color_dwarf = config.orbit_color_dwarf
 	if config.has("orbit_color_struct"): orbit_color_struct = config.orbit_color_struct
+	if config.has("orbit_color_comet"): orbit_color_comet = config.orbit_color_comet
 	# Belts
 	if config.has("belt_zoom_exp_near"):   belt_zoom_exp_near = config.belt_zoom_exp_near
 	if config.has("belt_zoom_exp_mid"):    belt_zoom_exp_mid = config.belt_zoom_exp_mid
@@ -259,7 +281,8 @@ func apply_config(config: Dictionary) -> void:
 	if config.has("has_grid"):   has_grid = config.has_grid
 	if config.has("has_belts"):  has_belts = config.has_belts
 	if config.has("has_zones"):  has_zones = config.has_zones
-	if config.has("has_rings"):  has_rings = config.has_rings
+	if config.has("has_rings"):   has_rings = config.has_rings
+	if config.has("has_comets"): has_comets = config.has_comets
 	# Interaction
 	if config.has("markers_clickable"): markers_clickable = config.markers_clickable
 	if config.has("markers_hoverable"): markers_hoverable = config.markers_hoverable
@@ -397,6 +420,8 @@ func _setup_orbits() -> void:
 	_orbit_manager.color_moon = orbit_color_moon
 	_orbit_manager.color_dwarf = orbit_color_dwarf
 	_orbit_manager.color_struct = orbit_color_struct
+	_orbit_manager.color_comet = orbit_color_comet
+	_orbit_manager.has_comets = has_comets
 	add_child(_orbit_manager)
 	_orbit_manager.setup(_orbit_layer, _map_transform, _model, _game_object_registry)
 	_orbits = _orbit_manager.get_orbits()

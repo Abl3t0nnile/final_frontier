@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://cx0qx7qyomjub"]
+
+[ext_resource type="Script" uid="uid://by5l1m8u4hj30" path="res://new_features/planet_viewer.gd" id="1_planet"]
+[ext_resource type="Script" uid="uid://3dxlfen6p73l" path="res://game/star_chart/planet_view.gd" id="2_script"]
+[ext_resource type="Shader" uid="uid://dhiv1gcuoq7qo" path="res://shader/stars_bg.gdshader" id="3_8vuyq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k5r60"]
+shader = ExtResource("3_8vuyq")
+shader_parameter/scroll_offset_far = Vector2(0, 0)
+shader_parameter/density_far = 0.55
+shader_parameter/size_min_far = 0.4
+shader_parameter/size_max_far = 1.8
+shader_parameter/size_bias_far = 2.5
+shader_parameter/twinkle_speed_far = 0.8
+shader_parameter/twinkle_amount_far = 0.2
+shader_parameter/twinkle_variation_far = 0.5
+shader_parameter/brightness_far = 0.75
+shader_parameter/seed_far = 0.0
+shader_parameter/scroll_offset_near = Vector2(0, 0)
+shader_parameter/density_near = 0.2
+shader_parameter/size_min_near = 1.5
+shader_parameter/size_max_near = 4.0
+shader_parameter/size_bias_near = 2.0
+shader_parameter/twinkle_speed_near = 1.8
+shader_parameter/twinkle_amount_near = 0.45
+shader_parameter/twinkle_variation_near = 0.7
+shader_parameter/brightness_near = 1.0
+shader_parameter/seed_near = 42.0
+shader_parameter/star_color = Color(1, 1, 1, 1)
+
+[node name="PlanetView" type="Control" unique_id=1149012203]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("2_script")
+
+[node name="PlanetViewer" type="Control" parent="." unique_id=192145353]
+custom_minimum_size = Vector2(900, 900)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -450.0
+offset_right = 450.0
+offset_bottom = 450.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+script = ExtResource("1_planet")
+cloud_transparency = 0.6
+sphere_size = 900
+auto_rotate_speed = 0.0
+light_direction = Vector3(0.5, 0.6, 0.8)
+bayer_scale = 2
+black_floor = 0.05
+white_ceil = 0.7
+outline_enabled = false
+
+[node name="MissingLabel" type="Label" parent="." unique_id=1690501596]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "--- MISSING IMAGE ---"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1308791476]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1056912767]
+material = SubResource("ShaderMaterial_k5r60")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
