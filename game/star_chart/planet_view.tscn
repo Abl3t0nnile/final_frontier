@@ -59,9 +59,9 @@ cloud_transparency = 0.6
 sphere_size = 724
 auto_rotate_speed = 0.0
 light_direction = Vector3(0.5, 0.6, 0.8)
-bayer_scale = 2
-black_floor = 0.05
-white_ceil = 0.7
+bayer_scale = 1
+black_floor = 0.1
+white_ceil = 0.6
 outline_enabled = false
 
 [node name="MissingLabel" type="Label" parent="." unique_id=1690501596]

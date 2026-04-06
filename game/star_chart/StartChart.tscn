@@ -13,8 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://b00mvf8jh3x6i" path="res://ui/panels/almanach_panel.tscn" id="5_reej1"]
 [ext_resource type="Texture2D" uid="uid://dben4by1skq6e" path="res://assets/ui_icons/black/forward.png" id="6_jwid8"]
 [ext_resource type="Script" uid="uid://c1acrqnc55nes" path="res://ui/panels/info_panel.gd" id="6_skbn7"]
+[ext_resource type="LabelSettings" uid="uid://daljrct8h8sc8" path="res://ui/resources/label_settings/label_settings_ui_caption_value.tres" id="6_u7t25"]
 [ext_resource type="Texture2D" uid="uid://bruaibdm7aobl" path="res://assets/input_icons/mouse_left_outline.png" id="6_uvj5g"]
 [ext_resource type="PackedScene" uid="uid://c3uif55gf74ep" path="res://ui/panels/info_panel.tscn" id="7_4lm6u"]
+[ext_resource type="LabelSettings" uid="uid://cf17clutp4k4a" path="res://ui/resources/label_settings/label_settings_ui_value.tres" id="7_6h8u5"]
 [ext_resource type="Texture2D" uid="uid://c04d6kumv6re5" path="res://assets/ui_icons/black/fastForward.png" id="7_cx451"]
 [ext_resource type="Texture2D" uid="uid://ohefi31rn4li" path="res://assets/input_icons/keyboard_arrows_none.png" id="7_hdwyb"]
 [ext_resource type="LabelSettings" uid="uid://clkwfyc31268q" path="res://ui/resources/label_settings/label_settings_ui_caption_small.tres" id="7_moesl"]
@@ -65,14 +67,6 @@ content_margin_top = 2.0
 content_margin_right = 8.0
 content_margin_bottom = 2.0
 bg_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_x8wnj"]
-font_size = 12
-font_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_uetrt"]
-font_size = 12
-font_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqwm6"]
 content_margin_left = 8.0
@@ -206,25 +200,25 @@ layout_mode = 2
 [node name="ScaleLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/SubViewport/MapOverlay/MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=-13651632]
 layout_mode = 2
 text = "Scale:"
-label_settings = SubResource("LabelSettings_x8wnj")
+label_settings = ExtResource("6_u7t25")
 
 [node name="ScaleValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/SubViewport/MapOverlay/MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=2043207273]
 custom_minimum_size = Vector2(36, 0)
 layout_mode = 2
 text = "5.8"
-label_settings = SubResource("LabelSettings_uetrt")
+label_settings = ExtResource("7_6h8u5")
 
 [node name="KmPxValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/SubViewport/MapOverlay/MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=2057114572]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "2.347 e 23"
-label_settings = SubResource("LabelSettings_uetrt")
+label_settings = ExtResource("7_6h8u5")
 horizontal_alignment = 2
 
 [node name="KmPxLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/SubViewport/MapOverlay/MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=1960992700]
 layout_mode = 2
 text = "per px"
-label_settings = SubResource("LabelSettings_x8wnj")
+label_settings = ExtResource("6_u7t25")
 
 [node name="TopCenterPanel" type="Control" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/SubViewport/MapOverlay/MapOverlay" unique_id=-775725622]
 layout_mode = 2
@@ -326,24 +320,24 @@ layout_mode = 2
 [node name="PosXLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/SubViewport/MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=-199448676]
 layout_mode = 2
 text = "Pos X:"
-label_settings = SubResource("LabelSettings_x8wnj")
+label_settings = ExtResource("6_u7t25")
 
 [node name="PosXValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/SubViewport/MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=1519932630]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "5.789 AU"
-label_settings = SubResource("LabelSettings_uetrt")
+label_settings = ExtResource("7_6h8u5")
 
 [node name="PosYLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/SubViewport/MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=1197648830]
 layout_mode = 2
 text = "Pos Y:"
-label_settings = SubResource("LabelSettings_x8wnj")
+label_settings = ExtResource("6_u7t25")
 
 [node name="PosYValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/SubViewport/MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=1897152234]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "-3.436 AU"
-label_settings = SubResource("LabelSettings_uetrt")
+label_settings = ExtResource("7_6h8u5")
 horizontal_alignment = 2
 
 [node name="BottomCenterPanel" type="Control" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/SubViewport/MapOverlay/MapOverlay" unique_id=1608756588]
@@ -501,24 +495,24 @@ layout_mode = 2
 [node name="TypeLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=398496916]
 layout_mode = 2
 text = "Type:"
-label_settings = SubResource("LabelSettings_x8wnj")
+label_settings = ExtResource("6_u7t25")
 
 [node name="TypeValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=265800583]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 text = "planet"
-label_settings = SubResource("LabelSettings_uetrt")
+label_settings = ExtResource("7_6h8u5")
 
 [node name="SubTypeLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=1797796455]
 layout_mode = 2
 text = "Subtype:"
-label_settings = SubResource("LabelSettings_x8wnj")
+label_settings = ExtResource("6_u7t25")
 
 [node name="SubTypeValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=1352467786]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 text = "terrestrial"
-label_settings = SubResource("LabelSettings_uetrt")
+label_settings = ExtResource("7_6h8u5")
 horizontal_alignment = 2
 
 [node name="TopCenterPanel" type="Control" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid" unique_id=1559039054]
@@ -589,24 +583,24 @@ layout_mode = 2
 [node name="PosXLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=1632225214]
 layout_mode = 2
 text = "Pos X:"
-label_settings = SubResource("LabelSettings_x8wnj")
+label_settings = ExtResource("6_u7t25")
 
 [node name="PosXValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=2075639708]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "5.789 AU"
-label_settings = SubResource("LabelSettings_uetrt")
+label_settings = ExtResource("7_6h8u5")
 
 [node name="PosYLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=244560311]
 layout_mode = 2
 text = "Pos Y:"
-label_settings = SubResource("LabelSettings_x8wnj")
+label_settings = ExtResource("6_u7t25")
 
 [node name="PosYValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=1478705721]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "-3.436 AU"
-label_settings = SubResource("LabelSettings_uetrt")
+label_settings = ExtResource("7_6h8u5")
 horizontal_alignment = 2
 
 [node name="BottomCenterPanel" type="Control" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid" unique_id=1603623508]

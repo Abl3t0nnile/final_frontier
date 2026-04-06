@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://clkwfyc31268q"]
+
+[ext_resource type="FontFile" uid="uid://btm5jjiukrhq2" path="res://assets/fonts/SUSEMono-SemiBold.ttf" id="1_xmvxo"]
+
+[resource]
+font = ExtResource("1_xmvxo")
+font_size = 20
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
