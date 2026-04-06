@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://bvoevx43ml0na"]
+
+[ext_resource type="FontFile" uid="uid://csl2winkllipd" path="res://assets/fonts/ui_fonts/BebasNeue-Regular.ttf" id="1_lq5i7"]
+
+[resource]
+font = ExtResource("1_lq5i7")
+font_size = 24
+font_color = Color(0, 0, 0, 1)

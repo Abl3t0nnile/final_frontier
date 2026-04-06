@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="MapConfig" format=3 uid="uid://cwv86xuaeaale"]
+
+[ext_resource type="Script" uid="uid://bqtxb0u30imy5" path="res://data/configs/map_config.gd" id="1_0abcd"]
+
+[resource]
+resource_name = "Solar Map Configuration"
+script = ExtResource("1_0abcd")

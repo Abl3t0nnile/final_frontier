@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bo1bklnfyima7"]
+
+[ext_resource type="Script" uid="uid://dfl5nwfltondb" path="res://game/main.gd" id="1_oa506"]
+[ext_resource type="Shader" uid="uid://bxoaaymjdou52" path="res://assets/shader/shader_monitor.gdshader" id="2_emt18"]
+[ext_resource type="PackedScene" uid="uid://dntixs1m3hbo7" path="res://ui/main/MainDisplay.tscn" id="5_5un7r"]
+
+[sub_resource type="Environment" id="Environment_emt18"]
+background_mode = 3
+glow_enabled = true
+glow_strength = 1.4
+glow_bloom = 0.2
+glow_hdr_threshold = 0.8
+glow_hdr_scale = 1.8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dgpao"]
+shader = ExtResource("2_emt18")
+shader_parameter/pixel_size = 1.0
+shader_parameter/scanlines_enabled = false
+shader_parameter/scanline_thickness = 0.5
+shader_parameter/scanline_opacity = 0.35
+shader_parameter/scanline_speed = 3.0
+shader_parameter/scanline_scroll_strength = 0.15
+shader_parameter/tint_enabled = false
+shader_parameter/tint_color = Color(0.2, 1, 0.3, 1)
+shader_parameter/tint_strength = 0.0
+shader_parameter/vignette_enabled = false
+shader_parameter/vignette_strength = 0.85
+shader_parameter/curvature_enabled = false
+shader_parameter/curvature_amount = 0.02000000095
+shader_parameter/flicker_enabled = true
+shader_parameter/flicker_strength = 0.10000000149012
+shader_parameter/aberration_enabled = true
+shader_parameter/aberration_amount = 1.5690000745275001
+
+[node name="Main" type="Node" unique_id=1068877941]
+script = ExtResource("1_oa506")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=316498260]
+environment = SubResource("Environment_emt18")
+
+[node name="ShaderLayer" type="CanvasLayer" parent="." unique_id=702843786]
+layer = -1
+
+[node name="ScanLineBg" type="ColorRect" parent="ShaderLayer" unique_id=684473207]
+material = SubResource("ShaderMaterial_dgpao")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShaderLayer2" type="CanvasLayer" parent="." unique_id=458179607]
+
+[node name="ScanLineBg" type="ColorRect" parent="ShaderLayer2" unique_id=242620982]
+material = SubResource("ShaderMaterial_dgpao")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MainDisplay" parent="." unique_id=275592188 instance=ExtResource("5_5un7r")]

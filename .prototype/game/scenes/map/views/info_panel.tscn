@@ -1,0 +1,653 @@
+[gd_scene format=3 uid="uid://dsqtejcswhv73"]
+
+[ext_resource type="StyleBox" uid="uid://o4jgl3k0v6v1" path="res://ui/styles/styleboxes/style_box_flat_outline_2px.tres" id="1_0vqmj"]
+[ext_resource type="Script" uid="uid://03i3omvmms2f" path="res://game/map/views/info_panel.gd" id="1_47nrd"]
+[ext_resource type="FontFile" uid="uid://daqa2qcuq0xh0" path="res://assets/fonts/ui_fonts/Recursive/Recursive-Bold.ttf" id="1_hrd36"]
+[ext_resource type="Texture2D" uid="uid://btnainrejlp5" path="res://assets/db_pictures/mercury_test.webp" id="2_27rbp"]
+[ext_resource type="FontFile" uid="uid://buowms151ljuv" path="res://assets/fonts/ui_fonts/SpaceGrotesk/SpaceGrotesk-Regular.ttf" id="3_m01c7"]
+[ext_resource type="PackedScene" uid="uid://bnepv4l5qbte4" path="res://game/map/views/data_point_display.tscn" id="5_m01c7"]
+[ext_resource type="FontFile" uid="uid://ct6hnrnoi5h8b" path="res://assets/fonts/ui_fonts/SpaceGrotesk/SpaceGrotesk-SemiBold.ttf" id="5_of81v"]
+[ext_resource type="StyleBox" uid="uid://cglnb3tch36px" path="res://ui/styles/button_styles/style_box_panel_selector_normal.tres" id="6_axbvv"]
+[ext_resource type="StyleBox" uid="uid://o6odenhsv7ne" path="res://ui/styles/button_styles/style_box_panel_selector_pressed.tres" id="7_fwlb6"]
+[ext_resource type="FontFile" uid="uid://du7tb1fbo5kcu" path="res://assets/fonts/ui_fonts/Recursive/Recursive-Light.ttf" id="10_fwlb6"]
+[ext_resource type="PackedScene" uid="uid://cr27qejmdjlqj" path="res://game/map/views/satelite_btn.tscn" id="14_s8u8v"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dlqfd"]
+font = ExtResource("1_hrd36")
+font_size = 24
+font_color = Color(0.78431374, 0.78431374, 0.78431374, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_fwlb6"]
+color = Color(0.3529412, 0.3529412, 0.3529412, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_of81v"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_hk7lg"]
+font = ExtResource("3_m01c7")
+font_size = 12
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_dlqfd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_47nrd"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
+bg_color = Color(0.23529412, 0.23529412, 0.23529412, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_axbvv"]
+color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+grow_begin = 0.0
+grow_end = 0.0
+
+[node name="InfoPanel" type="PanelContainer" unique_id=858141877]
+custom_minimum_size = Vector2(480, 0)
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_0vqmj")
+script = ExtResource("1_47nrd")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1754757795]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Body" type="VBoxContainer" parent="MarginContainer" unique_id=924612187]
+layout_mode = 2
+
+[node name="Header" type="VBoxContainer" parent="MarginContainer/Body" unique_id=325374631]
+layout_mode = 2
+
+[node name="TypeDisplay" type="HBoxContainer" parent="MarginContainer/Body/Header" unique_id=1118657050]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Body/Header/TypeDisplay" unique_id=1455488633]
+layout_mode = 2
+text = "PLANET"
+uppercase = true
+
+[node name="Label2" type="Label" parent="MarginContainer/Body/Header/TypeDisplay" unique_id=1439789828]
+layout_mode = 2
+text = "TERRESTRIAL"
+uppercase = true
+
+[node name="NameLabel" type="Label" parent="MarginContainer/Body/Header" unique_id=1898752921]
+layout_mode = 2
+text = "Mercury"
+label_settings = SubResource("LabelSettings_dlqfd")
+uppercase = true
+
+[node name="Image" type="TextureRect" parent="MarginContainer/Body/Header" unique_id=1186381364]
+layout_mode = 2
+texture = ExtResource("2_27rbp")
+expand_mode = 5
+
+[node name="8PxVSep" type="HSeparator" parent="MarginContainer/Body/Header" unique_id=532909312]
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxLine_fwlb6")
+
+[node name="Tags" type="HBoxContainer" parent="MarginContainer/Body/Header" unique_id=1645335111]
+layout_mode = 2
+
+[node name="Tag" type="PanelContainer" parent="MarginContainer/Body/Header/Tags" unique_id=803962324]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_of81v")
+
+[node name="Label" type="Label" parent="MarginContainer/Body/Header/Tags/Tag" unique_id=313729447]
+layout_mode = 2
+text = "Inner System"
+label_settings = SubResource("LabelSettings_hk7lg")
+
+[node name="Tag2" type="PanelContainer" parent="MarginContainer/Body/Header/Tags" unique_id=2078854339]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_of81v")
+
+[node name="Label" type="Label" parent="MarginContainer/Body/Header/Tags/Tag2" unique_id=1753155162]
+layout_mode = 2
+text = "Major Body"
+label_settings = SubResource("LabelSettings_hk7lg")
+
+[node name="Tag3" type="PanelContainer" parent="MarginContainer/Body/Header/Tags" unique_id=451588523]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_of81v")
+
+[node name="Label" type="Label" parent="MarginContainer/Body/Header/Tags/Tag3" unique_id=836087464]
+layout_mode = 2
+text = "Non Habitable"
+label_settings = SubResource("LabelSettings_hk7lg")
+
+[node name="8PxVSep" type="HSeparator" parent="MarginContainer/Body" unique_id=1138982923]
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxLine_fwlb6")
+
+[node name="SubPanelSelector" type="HBoxContainer" parent="MarginContainer/Body" unique_id=2072780401]
+layout_mode = 2
+
+[node name="DataBtn" type="Button" parent="MarginContainer/Body/SubPanelSelector" unique_id=955009126]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.47058824, 0.47058824, 0.47058824, 1)
+theme_override_colors/font_pressed_color = Color(0.78431374, 0.78431374, 0.78431374, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.47058824, 0.47058824, 0.47058824, 1)
+theme_override_fonts/font = ExtResource("5_of81v")
+theme_override_styles/normal = ExtResource("6_axbvv")
+theme_override_styles/pressed = ExtResource("7_fwlb6")
+theme_override_styles/hover = ExtResource("6_axbvv")
+theme_override_styles/hover_pressed = ExtResource("7_fwlb6")
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_dlqfd")
+text = "DATA"
+
+[node name="InfoBtn" type="Button" parent="MarginContainer/Body/SubPanelSelector" unique_id=560482376]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.47058824, 0.47058824, 0.47058824, 1)
+theme_override_colors/font_pressed_color = Color(0.78431374, 0.78431374, 0.78431374, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.47058824, 0.47058824, 0.47058824, 1)
+theme_override_fonts/font = ExtResource("5_of81v")
+theme_override_styles/normal = ExtResource("6_axbvv")
+theme_override_styles/pressed = ExtResource("7_fwlb6")
+theme_override_styles/hover = ExtResource("6_axbvv")
+theme_override_styles/hover_pressed = ExtResource("7_fwlb6")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_dlqfd")
+text = "INFO"
+
+[node name="SatelitesBtn" type="Button" parent="MarginContainer/Body/SubPanelSelector" unique_id=1489056542]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.47058824, 0.47058824, 0.47058824, 1)
+theme_override_colors/font_pressed_color = Color(0.78431374, 0.78431374, 0.78431374, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.47058824, 0.47058824, 0.47058824, 1)
+theme_override_fonts/font = ExtResource("5_of81v")
+theme_override_styles/normal = ExtResource("6_axbvv")
+theme_override_styles/pressed = ExtResource("7_fwlb6")
+theme_override_styles/hover = ExtResource("6_axbvv")
+theme_override_styles/hover_pressed = ExtResource("7_fwlb6")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_dlqfd")
+text = "SATELITES"
+
+[node name="8PxVSep2" type="HSeparator" parent="MarginContainer/Body" unique_id=1091046882]
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxLine_fwlb6")
+
+[node name="Data" type="VBoxContainer" parent="MarginContainer/Body" unique_id=1262187632]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/Body/Data" unique_id=1641136570]
+layout_mode = 2
+text = "ORBIT"
+clip_text = true
+
+[node name="OrbitDataPoints" type="GridContainer" parent="MarginContainer/Body/Data" unique_id=251383957]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="DataPointDisplay7" parent="MarginContainer/Body/Data/OrbitDataPoints" unique_id=919043758 instance=ExtResource("5_m01c7")]
+layout_mode = 2
+caption = "aphelion"
+value = "0.467 AU"
+caption_label_settings = null
+
+[node name="DataPointDisplay10" parent="MarginContainer/Body/Data/OrbitDataPoints" unique_id=1301019362 instance=ExtResource("5_m01c7")]
+layout_mode = 2
+caption = "parent"
+value = "Sol"
+caption_label_settings = null
+
+[node name="DataPointDisplay11" parent="MarginContainer/Body/Data/OrbitDataPoints" unique_id=1343144261 instance=ExtResource("5_m01c7")]
+layout_mode = 2
+caption = "perihelion"
+value = "0.307 AU"
+caption_label_settings = null
+
+[node name="DataPointDisplay12" parent="MarginContainer/Body/Data/OrbitDataPoints" unique_id=728556355 instance=ExtResource("5_m01c7")]
+layout_mode = 2
+caption = "period"
+value = "87.9 d"
+caption_label_settings = null
+
+[node name="DataPointDisplay13" parent="MarginContainer/Body/Data/OrbitDataPoints" unique_id=388655195 instance=ExtResource("5_m01c7")]
+layout_mode = 2
+caption = "semi-major-axis"
+value = "0.387 AU"
+caption_label_settings = null
+
+[node name="DataPointDisplay14" parent="MarginContainer/Body/Data/OrbitDataPoints" unique_id=312506268 instance=ExtResource("5_m01c7")]
+layout_mode = 2
+caption = "inclination"
+value = "6.35 °"
+caption_label_settings = null
+
+[node name="DataPointDisplay15" parent="MarginContainer/Body/Data/OrbitDataPoints" unique_id=19896170 instance=ExtResource("5_m01c7")]
+layout_mode = 2
+caption = "eccentricity"
+value = "0.205"
+caption_label_settings = null
+
+[node name="DataPointDisplay16" parent="MarginContainer/Body/Data/OrbitDataPoints" unique_id=1494930462 instance=ExtResource("5_m01c7")]
+layout_mode = 2
+caption = "avg. orbital speed"
+value = "47.36 km/s"
+caption_label_settings = null
+
+[node name="8PxVSep" type="HSeparator" parent="MarginContainer/Body/Data" unique_id=1255689944]
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxLine_fwlb6")
+
+[node name="Label2" type="Label" parent="MarginContainer/Body/Data" unique_id=759730067]
+layout_mode = 2
+text = "PHYSICS"
+clip_text = true
+
+[node name="OrbitDataPoints2" type="GridContainer" parent="MarginContainer/Body/Data" unique_id=2121753949]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="DataPointDisplay" parent="MarginContainer/Body/Data/OrbitDataPoints2" unique_id=1968642039 instance=ExtResource("5_m01c7")]
+layout_mode = 2
+caption = "radius"
+value = "2439.7 km"
+caption_label_settings = null
+
+[node name="DataPointDisplay2" parent="MarginContainer/Body/Data/OrbitDataPoints2" unique_id=2039114746 instance=ExtResource("5_m01c7")]
+layout_mode = 2
+caption = "mass"
+value = "3.3011e23"
+caption_label_settings = null
+
+[node name="DataPointDisplay3" parent="MarginContainer/Body/Data/OrbitDataPoints2" unique_id=111834288 instance=ExtResource("5_m01c7")]
+layout_mode = 2
+caption = "gravity"
+value = "0.38 g"
+caption_label_settings = null
+
+[node name="DataPointDisplay7" parent="MarginContainer/Body/Data/OrbitDataPoints2" unique_id=1306474326 instance=ExtResource("5_m01c7")]
+layout_mode = 2
+caption = "density"
+value = "5.427 g/cm3"
+caption_label_settings = null
+
+[node name="DataPointDisplay5" parent="MarginContainer/Body/Data/OrbitDataPoints2" unique_id=137962638 instance=ExtResource("5_m01c7")]
+layout_mode = 2
+caption = "avg. temperatur"
+value = "437 K"
+caption_label_settings = null
+
+[node name="DataPointDisplay6" parent="MarginContainer/Body/Data/OrbitDataPoints2" unique_id=1339142927 instance=ExtResource("5_m01c7")]
+layout_mode = 2
+caption = "atmosphere"
+value = "thin O2"
+caption_label_settings = null
+
+[node name="DataPointDisplay8" parent="MarginContainer/Body/Data/OrbitDataPoints2" unique_id=2144473903 instance=ExtResource("5_m01c7")]
+layout_mode = 2
+caption = "rotation"
+value = "176 d"
+caption_label_settings = null
+
+[node name="DataPointDisplay4" parent="MarginContainer/Body/Data/OrbitDataPoints2" unique_id=1940538575 instance=ExtResource("5_m01c7")]
+layout_mode = 2
+caption = "atmospheric pressure"
+value = "0.5 pa"
+caption_label_settings = null
+
+[node name="Info" type="ScrollContainer" parent="MarginContainer/Body" unique_id=1914284943]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="ScrollBox" type="VBoxContainer" parent="MarginContainer/Body/Info" unique_id=593628628]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/Body/Info/ScrollBox" unique_id=1328214775]
+layout_mode = 2
+text = "Description"
+uppercase = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/Body/Info/ScrollBox" unique_id=1606610987]
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("10_fwlb6")
+text = "Mercury is the first planet from the Sun and the smallest in the Solar System. It is a rocky planet with a trace atmosphere and a surface gravity slightly higher than that of Mars. The surface of Mercury is similar to Earth's Moon, being cratered, with an expansive rupes system generated from thrust faults, and bright ray systems, formed by ejecta. Its largest crater, Caloris Planitia, has a diameter of 1,550 km (960 mi), which is about one-third the diameter of the planet (4,880 km or 3,030 mi). Being the most inferior orbiting planet, it always appears close to the Sun in Earth's sky, either as a \"morning star\" or an \"evening star\". It is the planet with the highest delta-v required for travel from Earth, as well as to and from the other planets in the Solar System."
+fit_content = true
+scroll_active = false
+
+[node name="8PxVSep2" type="HSeparator" parent="MarginContainer/Body/Info/ScrollBox" unique_id=92100432]
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxLine_fwlb6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Body/Info/ScrollBox" unique_id=1784951729]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer" unique_id=1094781569]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Relevant Settlements"
+uppercase = true
+
+[node name="Tag" type="PanelContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer" unique_id=1969814081]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_47nrd")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer/Tag" unique_id=47157434]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer/Tag/HBoxContainer2" unique_id=1425386629]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer/Tag/HBoxContainer2" unique_id=1849097234]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer/Tag/HBoxContainer2/HBoxContainer" unique_id=691449458]
+layout_mode = 2
+text = "Capital"
+
+[node name="Label2" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer/Tag/HBoxContainer2/HBoxContainer" unique_id=76583041]
+layout_mode = 2
+text = "Olympus City"
+
+[node name="Tag2" type="PanelContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer" unique_id=912631414]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_47nrd")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer/Tag2" unique_id=659618407]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer/Tag2/HBoxContainer2" unique_id=763801107]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer/Tag2/HBoxContainer2" unique_id=59431103]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer/Tag2/HBoxContainer2/HBoxContainer" unique_id=238706597]
+layout_mode = 2
+text = "Capital"
+
+[node name="Label2" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer/Tag2/HBoxContainer2/HBoxContainer" unique_id=1697243]
+layout_mode = 2
+text = "Olympus City"
+
+[node name="Tag3" type="PanelContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer" unique_id=146936524]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_47nrd")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer/Tag3" unique_id=841318495]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer/Tag3/HBoxContainer2" unique_id=1289834535]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer/Tag3/HBoxContainer2" unique_id=1406480875]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer/Tag3/HBoxContainer2/HBoxContainer" unique_id=805183099]
+layout_mode = 2
+text = "Capital"
+
+[node name="Label2" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer/Tag3/HBoxContainer2/HBoxContainer" unique_id=958279871]
+layout_mode = 2
+text = "Olympus City"
+
+[node name="8PxVSep" type="HSeparator" parent="MarginContainer/Body/Info/ScrollBox" unique_id=1495302603]
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxLine_fwlb6")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Body/Info/ScrollBox" unique_id=1168772580]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2" unique_id=1947149295]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Relevant Settlements"
+uppercase = true
+
+[node name="Tag" type="PanelContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2" unique_id=1510352015]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_47nrd")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2/Tag" unique_id=1365346626]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2/Tag/HBoxContainer2" unique_id=1744731529]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2/Tag/HBoxContainer2" unique_id=1817329135]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2/Tag/HBoxContainer2/HBoxContainer" unique_id=1278490635]
+layout_mode = 2
+text = "Capital"
+
+[node name="Label2" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2/Tag/HBoxContainer2/HBoxContainer" unique_id=327293994]
+layout_mode = 2
+text = "Olympus City"
+
+[node name="Tag2" type="PanelContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2" unique_id=503308427]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_47nrd")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2/Tag2" unique_id=1233394076]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2/Tag2/HBoxContainer2" unique_id=586944900]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2/Tag2/HBoxContainer2" unique_id=1962312670]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2/Tag2/HBoxContainer2/HBoxContainer" unique_id=1366306437]
+layout_mode = 2
+text = "Capital"
+
+[node name="Label2" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2/Tag2/HBoxContainer2/HBoxContainer" unique_id=221393787]
+layout_mode = 2
+text = "Olympus City"
+
+[node name="Tag3" type="PanelContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2" unique_id=134764998]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_47nrd")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2/Tag3" unique_id=428656686]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2/Tag3/HBoxContainer2" unique_id=872929085]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2/Tag3/HBoxContainer2" unique_id=1743617237]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2/Tag3/HBoxContainer2/HBoxContainer" unique_id=1524322477]
+layout_mode = 2
+text = "Capital"
+
+[node name="Label2" type="Label" parent="MarginContainer/Body/Info/ScrollBox/VBoxContainer2/Tag3/HBoxContainer2/HBoxContainer" unique_id=1429297104]
+layout_mode = 2
+text = "Olympus City"
+
+[node name="8PxVSep3" type="HSeparator" parent="MarginContainer/Body/Info/ScrollBox" unique_id=1809510775]
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxLine_fwlb6")
+
+[node name="Satelites" type="ScrollContainer" parent="MarginContainer/Body" unique_id=152838806]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="ScrollBox" type="VBoxContainer" parent="MarginContainer/Body/Satelites" unique_id=1738237476]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MoonList" type="VBoxContainer" parent="MarginContainer/Body/Satelites/ScrollBox" unique_id=273552864]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList" unique_id=1638457086]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Moons"
+uppercase = true
+
+[node name="Tag" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList" unique_id=1446893005 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag2" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList" unique_id=499176179 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag3" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList" unique_id=1828856745 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag4" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList" unique_id=694885810 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag5" parent="MarginContainer/Body/Satelites/ScrollBox/MoonList" unique_id=1051321323 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="8PxVSep" type="HSeparator" parent="MarginContainer/Body/Satelites/ScrollBox" unique_id=614752336]
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxLine_fwlb6")
+
+[node name="StructList" type="VBoxContainer" parent="MarginContainer/Body/Satelites/ScrollBox" unique_id=60250739]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=1758164704]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Structures"
+uppercase = true
+
+[node name="Tag6" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=1315138482 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag7" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=482744593 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag8" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=706569724 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag9" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=944501643 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag10" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=1440445686 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag11" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=1738941725 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag12" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=1818965031 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag13" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=442570023 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag14" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=1578094174 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag15" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=1567383624 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag16" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=1561727652 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag17" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=1276835576 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="Tag18" parent="MarginContainer/Body/Satelites/ScrollBox/StructList" unique_id=1478928050 instance=ExtResource("14_s8u8v")]
+layout_mode = 2
+
+[node name="8PxVSep3" type="HSeparator" parent="MarginContainer/Body/Satelites/ScrollBox" unique_id=1295345259]
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxLine_fwlb6")
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/Body" unique_id=1796612303]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/separator = SubResource("StyleBoxLine_axbvv")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Body" unique_id=650724015]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Button" type="Button" parent="MarginContainer/Body/HBoxContainer" unique_id=1912096866]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pin Body"
+
+[node name="Button2" type="Button" parent="MarginContainer/Body/HBoxContainer" unique_id=964716605]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Focus Body"
+
+[node name="Button3" type="Button" parent="MarginContainer/Body/HBoxContainer" unique_id=1191594785]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Zoom to Fit"

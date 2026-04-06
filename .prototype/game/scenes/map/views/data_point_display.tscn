@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bnepv4l5qbte4"]
+
+[ext_resource type="Script" uid="uid://b8eqx4kvx5bin" path="res://game/map/views/data_point_display.gd" id="1_bivg2"]
+[ext_resource type="LabelSettings" uid="uid://dqhn3fhqryxt4" path="res://ui/styles/label_settings/label_settings_data_point_caption.tres" id="1_d17cf"]
+[ext_resource type="FontFile" uid="uid://buowms151ljuv" path="res://assets/fonts/ui_fonts/SpaceGrotesk/SpaceGrotesk-Regular.ttf" id="2_bivg2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bivg2"]
+font = ExtResource("2_bivg2")
+font_color = Color(0.78431374, 0.78431374, 0.78431374, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_bivg2"]
+color = Color(0.3529412, 0.3529412, 0.3529412, 1)
+grow_begin = 0.0
+grow_end = 0.0
+
+[node name="DataPointDisplay" type="VBoxContainer" unique_id=919043758]
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+script = ExtResource("1_bivg2")
+value = "Test"
+caption_label_settings = ExtResource("1_d17cf")
+value_label_settings = SubResource("LabelSettings_bivg2")
+line_style = SubResource("StyleBoxLine_bivg2")
+
+[node name="Labels" type="HBoxContainer" parent="." unique_id=120361836]
+layout_mode = 2
+
+[node name="CaptionLabel" type="Label" parent="Labels" unique_id=672425842]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Caption"
+label_settings = ExtResource("1_d17cf")
+vertical_alignment = 2
+
+[node name="ValueLabel" type="Label" parent="Labels" unique_id=515508255]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "---"
+label_settings = SubResource("LabelSettings_bivg2")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Underline" type="HSeparator" parent="." unique_id=319038547]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxLine_bivg2")

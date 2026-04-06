@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://orbitrend_scene_1"]
-
-[ext_resource type="Script" path="res://game/map/toolkit/renderer/orbit_renderer.gd" id="1_orbit"]
-
-[node name="OrbitRenderer" type="Node2D"]
-script = ExtResource("1_orbit")

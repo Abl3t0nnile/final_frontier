@@ -1,0 +1,371 @@
+[gd_scene format=3 uid="uid://ceu46edttkvnx"]
+
+[ext_resource type="PackedScene" uid="uid://juhwbh352o14" path="res://game/map/MapViewer.tscn" id="1_j36ah"]
+[ext_resource type="StyleBox" uid="uid://d04agchmj5207" path="res://ui/styles/styleboxes/stylebox_solid_panel.tres" id="2_l54qt"]
+[ext_resource type="Script" uid="uid://ddnax8lrk7iyy" path="res://game/map/views/star_chart.gd" id="2_starchart"]
+[ext_resource type="FontFile" uid="uid://csl2winkllipd" path="res://assets/fonts/ui_fonts/BebasNeue-Regular.ttf" id="3_u6466"]
+[ext_resource type="StyleBox" uid="uid://ce1y00vq6fouj" path="res://ui/styles/styleboxes/stylebox_button_flat.tres" id="6_m1e7a"]
+[ext_resource type="FontFile" uid="uid://dhkbyvy34t56a" path="res://assets/fonts/ui_fonts/SUSE/SUSEMono-Regular.ttf" id="6_we5d0"]
+[ext_resource type="StyleBox" uid="uid://o4jgl3k0v6v1" path="res://ui/styles/styleboxes/style_box_flat_outline_2px.tres" id="8_ibra8"]
+[ext_resource type="Texture2D" uid="uid://c5faljawhkgtg" path="res://assets/ui/kenney_game-icons/PNG/Black/1x/pause.png" id="9_iq6bs"]
+[ext_resource type="FontFile" uid="uid://ct6hnrnoi5h8b" path="res://assets/fonts/ui_fonts/SpaceGrotesk/SpaceGrotesk-SemiBold.ttf" id="9_u6466"]
+[ext_resource type="Texture2D" uid="uid://ckukd0qcfkw25" path="res://assets/ui/kenney_game-icons/PNG/Black/1x/forward.png" id="10_2u4km"]
+[ext_resource type="PackedScene" uid="uid://dsqtejcswhv73" path="res://game/map/views/info_panel.tscn" id="10_fh1uc"]
+[ext_resource type="FontFile" uid="uid://fbt8us42nt7c" path="res://assets/fonts/ui_fonts/ShareTechMono-Regular.ttf" id="10_ibra8"]
+[ext_resource type="FontFile" uid="uid://rf0oqqlo3exs" path="res://assets/fonts/ui_fonts/Recursive/Recursive-SemiBold.ttf" id="12_u6466"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ibra8"]
+font = ExtResource("3_u6466")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_buomd"]
+thickness = 2
+vertical = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_we5d0"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.7912497, 0.7912497, 0.7912497, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xjbkt"]
+bg_color = Color(0.77788156, 0.7778816, 0.7778815, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fh1uc"]
+font = ExtResource("9_u6466")
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_nlvsd"]
+font = ExtResource("10_ibra8")
+font_size = 18
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_xjbkt"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_we5d0"]
+
+[node name="StarChart" type="MarginContainer" unique_id=936285405]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("2_starchart")
+
+[node name="Components" type="VBoxContainer" parent="." unique_id=1890631129]
+layout_mode = 2
+
+[node name="Header" type="PanelContainer" parent="Components" unique_id=1081284792]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_l54qt")
+
+[node name="Components" type="HBoxContainer" parent="Components/Header" unique_id=31359819]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="Components/Header/Components" unique_id=111898115]
+layout_mode = 2
+text = "System Map"
+label_settings = SubResource("LabelSettings_ibra8")
+vertical_alignment = 1
+
+[node name="VSeparator3" type="VSeparator" parent="Components/Header/Components" unique_id=1225813549]
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxLine_buomd")
+
+[node name="ScaleDisplay" type="HBoxContainer" parent="Components/Header/Components" unique_id=1027458123]
+layout_mode = 2
+size_flags_horizontal = 0
+alignment = 2
+
+[node name="NameLabel" type="Label" parent="Components/Header/Components/ScaleDisplay" unique_id=1754274243]
+layout_mode = 2
+text = "Zoom Scale"
+vertical_alignment = 1
+
+[node name="ScaleExpLabel" type="Label" parent="Components/Header/Components/ScaleDisplay" unique_id=45551079]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "5.8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="Components/Header/Components/ScaleDisplay" unique_id=1003695058]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_buomd")
+
+[node name="KmPxLabel" type="Label" parent="Components/Header/Components/ScaleDisplay" unique_id=1815277829]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "0.74"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NameLabel2" type="Label" parent="Components/Header/Components/ScaleDisplay" unique_id=313413671]
+layout_mode = 2
+text = "Mio. km per px"
+vertical_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="Components/Header/Components" unique_id=72474428]
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxLine_buomd")
+
+[node name="GridControl" type="HBoxContainer" parent="Components/Header/Components" unique_id=1302773636]
+layout_mode = 2
+size_flags_horizontal = 0
+alignment = 2
+
+[node name="NameLabel" type="Label" parent="Components/Header/Components/GridControl" unique_id=704525861]
+layout_mode = 2
+text = "Map Grid"
+vertical_alignment = 1
+
+[node name="GridToggleBtn" type="Button" parent="Components/Header/Components/GridControl" unique_id=783251155]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.89488316, 0.89488316, 0.89488316, 1)
+theme_override_fonts/font = ExtResource("6_we5d0")
+theme_override_styles/normal = ExtResource("6_m1e7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_we5d0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xjbkt")
+theme_override_styles/focus = ExtResource("6_m1e7a")
+toggle_mode = true
+text = "RAD"
+flat = true
+
+[node name="Body" type="HBoxContainer" parent="Components" unique_id=454257482]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MapPanel" type="PanelContainer" parent="Components/Body" unique_id=1388002049]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("8_ibra8")
+
+[node name="ViewportContainer" type="SubViewportContainer" parent="Components/Body/MapPanel" unique_id=1752773622]
+layout_mode = 2
+stretch = true
+
+[node name="MapViewport" type="SubViewport" parent="Components/Body/MapPanel/ViewportContainer" unique_id=35452997]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+physics_object_picking = true
+size = Vector2i(1872, 956)
+render_target_update_mode = 4
+
+[node name="MapViewer" parent="Components/Body/MapPanel/ViewportContainer/MapViewport" unique_id=2139173473 instance=ExtResource("1_j36ah")]
+zoom_exp_min = 1.0
+zoom_exp_initial = 5.8
+min_parent_dist_px = 128.0
+marker_sizes_star = Vector3i(256, 192, 128)
+marker_sizes_planet = Vector3i(48, 36, 24)
+marker_sizes_moon = Vector3i(40, 30, 20)
+marker_sizes_struct = Vector3i(32, 24, 16)
+marker_label_settings = SubResource("LabelSettings_fh1uc")
+belt_zoom_exp_near = 5.0
+belt_zoom_exp_mid = 6.5
+belt_zoom_exp_far = 8.0
+belt_point_size_near = 5.0
+belt_point_size_mid = 3.0
+belt_point_size_far = 2.0
+orbit_dimmed_width = 2.0
+orbit_alpha_highlight = 1.2
+orbit_alpha_dimmed = 0.1
+grid_ring_color = Color(1, 1, 1, 0.05882353)
+grid_major_interval = 5
+grid_major_color = Color(1, 1, 1, 0.12156863)
+grid_axis_color = Color(1, 1, 1, 0.21960784)
+grid_label_color = Color(1, 1, 1, 0.34901962)
+
+[node name="InfoPanel" parent="Components/Body" unique_id=858141877 instance=ExtResource("10_fh1uc")]
+visible = false
+layout_mode = 2
+
+[node name="Footer" type="PanelContainer" parent="Components" unique_id=56563593]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_l54qt")
+
+[node name="Components" type="HBoxContainer" parent="Components/Footer" unique_id=1697220300]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Components/Footer/Components" unique_id=1863086575]
+layout_mode = 2
+text = "SST"
+label_settings = SubResource("LabelSettings_ibra8")
+vertical_alignment = 1
+
+[node name="TimeDisplay" type="HBoxContainer" parent="Components/Footer/Components" unique_id=1630763837]
+layout_mode = 2
+alignment = 2
+
+[node name="SSTLabel" type="Label" parent="Components/Footer/Components/TimeDisplay" unique_id=1611559790]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+text = "[0000:000:00:00:00:00]"
+label_settings = SubResource("LabelSettings_nlvsd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DateLabel" type="Label" parent="Components/Footer/Components/TimeDisplay" unique_id=797089911]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+text = "1 Sol 0000"
+label_settings = SubResource("LabelSettings_nlvsd")
+vertical_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="Components/Footer/Components" unique_id=403999658]
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxLine_buomd")
+
+[node name="ClockToggle" type="HBoxContainer" parent="Components/Footer/Components" unique_id=1658889335]
+layout_mode = 2
+alignment = 2
+
+[node name="NameLabel" type="Label" parent="Components/Footer/Components/ClockToggle" unique_id=1409111273]
+layout_mode = 2
+text = "Clock"
+vertical_alignment = 1
+
+[node name="ClockStartBtn" type="Button" parent="Components/Footer/Components/ClockToggle" unique_id=1351450743]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.89488316, 0.89488316, 0.89488316, 1)
+theme_override_fonts/font = ExtResource("6_we5d0")
+theme_override_styles/normal = ExtResource("6_m1e7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_we5d0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xjbkt")
+theme_override_styles/focus = ExtResource("6_m1e7a")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_xjbkt")
+icon = ExtResource("9_iq6bs")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="ClockStopBtn" type="Button" parent="Components/Footer/Components/ClockToggle" unique_id=496479729]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.89488316, 0.89488316, 0.89488316, 1)
+theme_override_fonts/font = ExtResource("6_we5d0")
+theme_override_styles/normal = ExtResource("6_m1e7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_we5d0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xjbkt")
+theme_override_styles/focus = ExtResource("6_m1e7a")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_xjbkt")
+icon = ExtResource("10_2u4km")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="VSeparator" type="VSeparator" parent="Components/Footer/Components" unique_id=435563136]
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxLine_buomd")
+
+[node name="TimeStepControl" type="HBoxContainer" parent="Components/Footer/Components" unique_id=513501902]
+layout_mode = 2
+alignment = 2
+
+[node name="NameLabel" type="Label" parent="Components/Footer/Components/TimeStepControl" unique_id=1264046999]
+layout_mode = 2
+text = "Step"
+vertical_alignment = 1
+
+[node name="TimeScaleBtn1" type="Button" parent="Components/Footer/Components/TimeStepControl" unique_id=168999995]
+custom_minimum_size = Vector2(52, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.89488316, 0.89488316, 0.89488316, 1)
+theme_override_fonts/font = ExtResource("12_u6466")
+theme_override_styles/normal = ExtResource("6_m1e7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_we5d0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xjbkt")
+theme_override_styles/focus = ExtResource("6_m1e7a")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_we5d0")
+text = "1 h"
+flat = true
+
+[node name="TimeScaleBtn2" type="Button" parent="Components/Footer/Components/TimeStepControl" unique_id=2065856555]
+custom_minimum_size = Vector2(52, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.89488316, 0.89488316, 0.89488316, 1)
+theme_override_fonts/font = ExtResource("12_u6466")
+theme_override_styles/normal = ExtResource("6_m1e7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_we5d0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xjbkt")
+theme_override_styles/focus = ExtResource("6_m1e7a")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_we5d0")
+text = "1 d"
+flat = true
+
+[node name="TimeScaleBtn3" type="Button" parent="Components/Footer/Components/TimeStepControl" unique_id=293956468]
+custom_minimum_size = Vector2(52, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.89488316, 0.89488316, 0.89488316, 1)
+theme_override_fonts/font = ExtResource("12_u6466")
+theme_override_styles/normal = ExtResource("6_m1e7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_we5d0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xjbkt")
+theme_override_styles/focus = ExtResource("6_m1e7a")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_we5d0")
+text = "6 d"
+flat = true
+
+[node name="TimeScaleBtn4" type="Button" parent="Components/Footer/Components/TimeStepControl" unique_id=1402264314]
+custom_minimum_size = Vector2(52, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.89488316, 0.89488316, 0.89488316, 1)
+theme_override_fonts/font = ExtResource("12_u6466")
+theme_override_styles/normal = ExtResource("6_m1e7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_we5d0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xjbkt")
+theme_override_styles/focus = ExtResource("6_m1e7a")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_we5d0")
+text = "30 d"
+flat = true
+
+[node name="TimeScaleBtn5" type="Button" parent="Components/Footer/Components/TimeStepControl" unique_id=336447995]
+custom_minimum_size = Vector2(52, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.89488316, 0.89488316, 0.89488316, 1)
+theme_override_fonts/font = ExtResource("12_u6466")
+theme_override_styles/normal = ExtResource("6_m1e7a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_we5d0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xjbkt")
+theme_override_styles/focus = ExtResource("6_m1e7a")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_we5d0")
+text = "1 y"
+flat = true

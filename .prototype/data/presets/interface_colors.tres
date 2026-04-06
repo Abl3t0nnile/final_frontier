@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MapColorPreset" format=3 uid="uid://j2cv6l0yspat"]
+
+[ext_resource type="Script" uid="uid://cifj4814nwi6k" path="res://data/resources/map_color_preset.gd" id="1_0vn2h"]
+
+[resource]
+script = ExtResource("1_0vn2h")
+preset_name = "Interface"
+description = "Colors inspired by retro-futuristic interface displays"
+color_star = Color(0.8, 0.5, 0.1, 1)
+color_dwarf = Color(0.8948412, 0.29960877, 0.20997715, 1)
+belt_color = Color(0.5392307, 0.14370161, 0.08597071, 1)

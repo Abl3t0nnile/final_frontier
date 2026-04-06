@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="MapColorPreset" uid="uid://bvxq8y7x4n2kl" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/resources/map_color_preset.gd" id="1_0vn2h"]
+
+[resource]
+script = ExtResource("1_0vn2h")
+preset_name = "Retro-Future"
+description = "Desaturated retro-futuristic colors inspired by classic sci-fi interfaces"
+color_star = Color(0.85, 0.55, 0.15, 1)
+color_planet = Color(0.9, 0.7, 0.25, 1)
+color_moon = Color(0.3, 0.6, 0.55, 1)
+color_dwarf = Color(0.75, 0.45, 0.15, 1)
+color_struct = Color(0.15, 0.65, 0.6, 1)
+belt_color = Color(0.7, 0.25, 0.2, 1)
+highlight_alpha_multiplier = 1.5
+dimmed_alpha_multiplier = 0.25
+orbit_alpha_offset = 0.0
