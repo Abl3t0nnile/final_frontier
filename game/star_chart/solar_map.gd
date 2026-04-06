@@ -71,10 +71,10 @@ extends Node
 
 ## Konfiguration – Belts
 @export_group("Belts")
-@export_subgroup("Zoom Thresholds (km/px)")
-@export var belt_zoom_near: float = 10_000.0
-@export var belt_zoom_mid: float  = 2_236_000.0
-@export var belt_zoom_far: float  = 500_000_000.0
+@export_subgroup("Zoom Thresholds (exp)")
+@export var belt_zoom_exp_near: float = 4.0
+@export var belt_zoom_exp_mid: float  = 6.35
+@export var belt_zoom_exp_far: float  = 8.7
 @export_subgroup("Point Sizes")
 @export var belt_point_size_near: float = 3.0
 @export var belt_point_size_mid: float  = 2.0
@@ -122,8 +122,9 @@ signal camera_moved(pos_px: Vector2)
 func setup() -> void:
 	_map_controller.apply_config(_build_config())
 	_map_controller.setup(SolarSystem, GameClock, GameRegistry, null)
-	_map_controller.focus_body("sun")
+	_map_controller.center_on_body("sun")
 	_connect_signals()
+	_map_controller.get_map_clock().enter_live_mode(GameClock)
 
 
 ## Public API for parent scenes
@@ -357,9 +358,9 @@ func _build_config() -> Dictionary:
 		"orbit_color_dwarf": orbit_color_dwarf,
 		"orbit_color_struct": orbit_color_struct,
 		# Belts
-		"belt_zoom_near": belt_zoom_near,
-		"belt_zoom_mid": belt_zoom_mid,
-		"belt_zoom_far": belt_zoom_far,
+		"belt_zoom_exp_near": belt_zoom_exp_near,
+		"belt_zoom_exp_mid": belt_zoom_exp_mid,
+		"belt_zoom_exp_far": belt_zoom_exp_far,
 		"belt_point_size_near": belt_point_size_near,
 		"belt_point_size_mid": belt_point_size_mid,
 		"belt_point_size_far": belt_point_size_far,

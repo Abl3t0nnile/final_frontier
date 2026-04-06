@@ -25,3 +25,6 @@ extends Resource
 @export var color_rgba: Color = Color(0.8, 0.7, 0.6, 0.6)
 
 @export var apply_rotation: bool = true
+
+## Punktform: "square" | "circle" | "diamond" | "cross" | "asteroid"
+@export var point_shape: String = "square"

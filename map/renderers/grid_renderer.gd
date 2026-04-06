@@ -37,11 +37,9 @@ func _draw() -> void:
 		return
 
 	var vp_size := get_viewport_rect().size
-	var _vp_center: Vector2 = get_viewport().get_visible_rect().size / 2.0
-	var vp_center := vp_size * 0.5
 
 	# Position des Weltzentrums (Sonne) in Screen-Koordinaten
-	# WorldRoot verschiebt alles um (-cam_pos + vp_center)
+	# WorldRoot verschiebt alles um (-cam_pos + vp_size * 0.5)
 	# GridRenderer ist Kind von WorldRoot, daher ist Welt-Ursprung bei (0,0) in unseren lokalen Koordinaten
 	# aber wir zeichnen relativ zur aktuellen Kamera-Ansicht
 

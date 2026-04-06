@@ -6,12 +6,12 @@ class_name PointCloudManager
 extends Node
 
 # Config (sets BeltRenderer parameters)
-var zoom_near: float       = 10_000.0
-var zoom_mid: float        = 2_236_000.0
-var zoom_far: float        = 500_000_000.0
-var point_size_near: float = 3.0
-var point_size_mid: float  = 2.0
-var point_size_far: float  = 1.0
+var zoom_exp_near: float   = 5.0
+var zoom_exp_mid: float    = 6.5
+var zoom_exp_far: float    = 8.0
+var point_size_near: float = 8.0
+var point_size_mid: float  = 4.0
+var point_size_far: float  = 2.0
 
 var _layer: Node2D              = null
 var _map_transform: MapTransform = null
@@ -40,9 +40,9 @@ func setup(layer: Node2D, map_transform: MapTransform, model: SolarSystemModel,
 
 
 func _apply_config(renderer: BeltRenderer) -> void:
-	renderer.zoom_near       = zoom_near
-	renderer.zoom_mid        = zoom_mid
-	renderer.zoom_far        = zoom_far
+	renderer.zoom_exp_near   = zoom_exp_near
+	renderer.zoom_exp_mid    = zoom_exp_mid
+	renderer.zoom_exp_far    = zoom_exp_far
 	renderer.point_size_near = point_size_near
 	renderer.point_size_mid  = point_size_mid
 	renderer.point_size_far  = point_size_far
@@ -119,6 +119,7 @@ func _load_defs(data_path: String, json_root_key: String) -> Array:
 			else:
 				def.color_rgba = raw_def.color_rgba
 		if raw_def.has("apply_rotation"): def.apply_rotation = raw_def.apply_rotation
+		if raw_def.has("point_shape"):    def.point_shape    = raw_def.point_shape
 		defs.append(def)
 	
 	return defs

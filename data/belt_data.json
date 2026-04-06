@@ -12,8 +12,14 @@
       "min_points": 400,
       "max_points": 1400,
       "seed": 1,
-      "color_rgba": [0.55, 0.08, 0.08, 0.8],
-      "apply_rotation": true
+      "color_rgba": [
+        0.55,
+        0.08,
+        0.08,
+        0.8
+      ],
+      "apply_rotation": true,
+      "point_shape": "asteroid"
     },
     {
       "id": "kuiper_belt",
@@ -27,8 +33,14 @@
       "min_points": 600,
       "max_points": 1800,
       "seed": 2,
-      "color_rgba": [0.30, 0.08, 0.45, 0.8],
-      "apply_rotation": true
+      "color_rgba": [
+        0.3,
+        0.08,
+        0.45,
+        0.8
+      ],
+      "apply_rotation": true,
+      "point_shape": "asteroid"
     },
     {
       "id": "scattered_disc",
@@ -42,8 +54,14 @@
       "min_points": 300,
       "max_points": 1000,
       "seed": 3,
-      "color_rgba": [0.08, 0.40, 0.38, 0.8],
-      "apply_rotation": true
+      "color_rgba": [
+        0.08,
+        0.4,
+        0.38,
+        0.8
+      ],
+      "apply_rotation": true,
+      "point_shape": "asteroid"
     },
     {
       "id": "jupiter_trojans_l4",
@@ -57,8 +75,14 @@
       "min_points": 80,
       "max_points": 400,
       "seed": 4,
-      "color_rgba": [0.60, 0.28, 0.05, 0.8],
-      "apply_rotation": false
+      "color_rgba": [
+        0.6,
+        0.28,
+        0.05,
+        0.8
+      ],
+      "apply_rotation": false,
+      "point_shape": "asteroid"
     },
     {
       "id": "jupiter_trojans_l5",
@@ -72,8 +96,14 @@
       "min_points": 80,
       "max_points": 400,
       "seed": 5,
-      "color_rgba": [0.60, 0.28, 0.05, 0.45],
-      "apply_rotation": false
+      "color_rgba": [
+        0.6,
+        0.28,
+        0.05,
+        0.45
+      ],
+      "apply_rotation": false,
+      "point_shape": "asteroid"
     },
     {
       "id": "oort_cloud",
@@ -87,8 +117,14 @@
       "min_points": 200,
       "max_points": 800,
       "seed": 6,
-      "color_rgba": [0.20, 0.25, 0.40, 0.8],
-      "apply_rotation": false
+      "color_rgba": [
+        0.2,
+        0.25,
+        0.4,
+        0.8
+      ],
+      "apply_rotation": false,
+      "point_shape": "asteroid"
     }
   ]
 }

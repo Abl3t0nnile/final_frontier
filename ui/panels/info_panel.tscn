@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://c3uif55gf74ep"]
+
+[ext_resource type="Texture2D" uid="uid://dksn4b84qewmn" path="res://assets/ui_icons/star.png" id="1_4lulw"]
+[ext_resource type="PackedScene" uid="uid://bpxdjhjimm5yy" path="res://ui/components/unit_value_display.tscn" id="2_y13in"]
+[ext_resource type="Script" uid="uid://by5l1m8u4hj30" path="res://new_features/planet_viewer.gd" id="3_planet"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx451"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 0.0
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
+
+[node name="InfoPanel" type="PanelContainer" unique_id=1197745249]
+custom_minimum_size = Vector2(480, 0)
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_right = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cx451")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1267853833]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Header" type="HBoxContainer" parent="VBox" unique_id=1486959362]
+layout_mode = 2
+
+[node name="NameDisplay" type="VBoxContainer" parent="VBox/Header" unique_id=1771135755]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBox/Header/NameDisplay" unique_id=1035645127]
+layout_mode = 2
+
+[node name="TypeLabel" type="Label" parent="VBox/Header/NameDisplay/HBoxContainer" unique_id=1595095378]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
+theme_override_font_sizes/font_size = 12
+text = "Type"
+
+[node name="SubtypeLabel" type="Label" parent="VBox/Header/NameDisplay/HBoxContainer" unique_id=420032760]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
+theme_override_font_sizes/font_size = 12
+text = "Subtype"
+
+[node name="NameLabel" type="Label" parent="VBox/Header/NameDisplay" unique_id=1217086208]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Object Name"
+uppercase = true
+
+[node name="NavButtons" type="VBoxContainer" parent="VBox/Header" unique_id=266711564]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBox/Header/NavButtons" unique_id=1411066641]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_vertical = 3
+icon = ExtResource("1_4lulw")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button2" type="Button" parent="VBox/Header/NavButtons" unique_id=1691663874]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_vertical = 3
+icon = ExtResource("1_4lulw")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Image" type="SubViewportContainer" parent="VBox" unique_id=343856192]
+custom_minimum_size = Vector2(0, 320)
+layout_mode = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="VBox/Image" unique_id=1940307446]
+handle_input_locally = false
+size = Vector2i(464, 320)
+render_target_update_mode = 4
+
+[node name="PlanetViewer" type="Control" parent="VBox/Image/SubViewport" unique_id=987654321]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_planet")
+sphere_size = 256
+light_direction = Vector3(0.5, 0.5, 0.7)
+bayer_scale = 2
+black_floor = 0.03
+white_ceil = 0.6
+outline_enabled = false
+use_sun_shader = true
+
+[node name="MissingLabel" type="Label" parent="VBox/Image/SubViewport" unique_id=123456789]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "--- MISSING IMAGE ---"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible = false
+
+[node name="PanelSelector" type="HBoxContainer" parent="VBox" unique_id=1111245236]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBox/PanelSelector" unique_id=851292903]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Data"
+
+[node name="Button2" type="Button" parent="VBox/PanelSelector" unique_id=1522535809]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Info"
+
+[node name="Button3" type="Button" parent="VBox/PanelSelector" unique_id=1903940798]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Satelites"
+
+[node name="OrbitSection" type="VBoxContainer" parent="VBox" unique_id=1111245237]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/OrbitSection" unique_id=2087667960]
+layout_mode = 2
+text = "Orbit"
+
+[node name="HSeparator" type="HSeparator" parent="VBox/OrbitSection" unique_id=1378644551]
+layout_mode = 2
+
+[node name="OrbitGrid" type="GridContainer" parent="VBox/OrbitSection" unique_id=1317425049]
+layout_mode = 2
+columns = 2
+
+[node name="Halbachse" parent="VBox/OrbitSection/OrbitGrid" unique_id=1441746687 instance=ExtResource("2_y13in")]
+layout_mode = 2
+
+[node name="Umlaufzeit" parent="VBox/OrbitSection/OrbitGrid" unique_id=1698933232 instance=ExtResource("2_y13in")]
+layout_mode = 2
+
+[node name="Periapsis" parent="VBox/OrbitSection/OrbitGrid" unique_id=210411637 instance=ExtResource("2_y13in")]
+layout_mode = 2
+
+[node name="Geschwindigkeit" parent="VBox/OrbitSection/OrbitGrid" unique_id=1752216032 instance=ExtResource("2_y13in")]
+layout_mode = 2
+
+[node name="Apoapsis" parent="VBox/OrbitSection/OrbitGrid" unique_id=2061630386 instance=ExtResource("2_y13in")]
+layout_mode = 2
+
+[node name="Exzentrizitaet" parent="VBox/OrbitSection/OrbitGrid" unique_id=119915109 instance=ExtResource("2_y13in")]
+layout_mode = 2
+
+[node name="PhysikSection" type="VBoxContainer" parent="VBox" unique_id=1570577791]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/PhysikSection" unique_id=1824520681]
+layout_mode = 2
+text = "Physik"
+
+[node name="HSeparator" type="HSeparator" parent="VBox/PhysikSection" unique_id=985400722]
+layout_mode = 2
+
+[node name="PhysikGrid" type="GridContainer" parent="VBox/PhysikSection" unique_id=825436254]
+layout_mode = 2
+columns = 2
+
+[node name="Radius" parent="VBox/PhysikSection/PhysikGrid" unique_id=2097675926 instance=ExtResource("2_y13in")]
+layout_mode = 2
+
+[node name="Masse" parent="VBox/PhysikSection/PhysikGrid" unique_id=288945367 instance=ExtResource("2_y13in")]
+layout_mode = 2
+
+[node name="Dichte" parent="VBox/PhysikSection/PhysikGrid" unique_id=1754418589 instance=ExtResource("2_y13in")]
+layout_mode = 2
+
+[node name="Schwerkraft" parent="VBox/PhysikSection/PhysikGrid" unique_id=1082168978 instance=ExtResource("2_y13in")]
+layout_mode = 2
+
+[node name="Fluchtgeschw" parent="VBox/PhysikSection/PhysikGrid" unique_id=2036421093 instance=ExtResource("2_y13in")]
+layout_mode = 2

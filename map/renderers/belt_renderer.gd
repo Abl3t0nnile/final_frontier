@@ -16,14 +16,18 @@ var _multimesh: MultiMesh        = null
 
 var _points_km: PackedVector2Array     = []
 var _point_weights: PackedFloat32Array = []
+var _point_phases: PackedFloat32Array  = []  # per-instance random phase for asteroid shape
 var _rotation_speed: float = 0.3  # Degrees per second
 
-var zoom_near: float       = 10_000.0
-var zoom_mid: float        = 2_236_000.0
-var zoom_far: float        = 500_000_000.0
-var point_size_near: float = 3.0
-var point_size_mid: float  = 2.0
-var point_size_far: float  = 1.0
+var zoom_exp_near: float   = 5.5
+var zoom_exp_mid: float    = 6.5
+var zoom_exp_far: float    = 7.5
+var point_size_near: float = 8.0
+var point_size_mid: float  = 4.0
+var point_size_far: float  = 2.0
+
+enum PointShape { SQUARE, CIRCLE, DIAMOND, CROSS, ASTEROID }
+var point_shape: int = PointShape.SQUARE
 
 const _FULL_RING_THRESHOLD: float = TAU * 0.95
 
@@ -33,6 +37,7 @@ func setup(def: BeltDef, map_transform: MapTransform) -> void:
 	belt_id        = def.id
 	_map_transform = map_transform
 
+	_parse_shape(def.point_shape)
 	_auto_adjust_zoom_thresholds()
 
 	var quad := QuadMesh.new()
@@ -41,7 +46,7 @@ func setup(def: BeltDef, map_transform: MapTransform) -> void:
 	_multimesh = MultiMesh.new()
 	_multimesh.transform_format = MultiMesh.TRANSFORM_2D
 	_multimesh.use_colors       = true
-	_multimesh.use_custom_data  = false
+	_multimesh.use_custom_data  = (point_shape == PointShape.ASTEROID)
 	_multimesh.mesh             = quad
 	# instance_count einmalig auf max_points setzen — wird nie mehr geändert.
 	# Änderungen an instance_count resetten in Godot alle Instanzdaten (→ Flackern).
@@ -50,6 +55,7 @@ func setup(def: BeltDef, map_transform: MapTransform) -> void:
 	_mmi = MultiMeshInstance2D.new()
 	_mmi.multimesh = _multimesh
 	add_child(_mmi)
+	_apply_shape_material()
 
 	_generate_points(belt_def.max_points)
 	notify_zoom_changed(map_transform.km_per_px)
@@ -57,9 +63,12 @@ func setup(def: BeltDef, map_transform: MapTransform) -> void:
 
 func _auto_adjust_zoom_thresholds() -> void:
 	var outer_km := belt_def.outer_radius_km
-	zoom_near = outer_km / 100.0
-	zoom_mid  = outer_km / 20.0
-	zoom_far  = outer_km / 2.0
+	# near: Belt-Ring füllt den Screen (~1000px Radius)
+	# mid:  Belt-Ring ist ein deutlicher Ring (~100px Radius)
+	# far:  Belt-Ring wird klein (~10px Radius)
+	zoom_exp_near = log(outer_km / 1000.0) / log(10.0)
+	zoom_exp_mid  = log(outer_km / 100.0)  / log(10.0)
+	zoom_exp_far  = log(outer_km / 10.0)   / log(10.0)
 
 
 func notify_zoom_changed(km_per_px: float) -> void:
@@ -95,6 +104,8 @@ func _update_multimesh_transforms(km_per_px: float) -> void:
 			belt_def.color_rgba.g,
 			belt_def.color_rgba.b,
 			alpha))
+		if point_shape == PointShape.ASTEROID:
+			_multimesh.set_instance_custom_data(i, Color(_point_phases[i], 0.0, 0.0, 0.0))
 
 	# Transforms erst setzen, dann visible_instance_count anpassen —
 	# so wird kein Frame mit ungültigen/alten Daten gerendert.
@@ -107,20 +118,20 @@ func _calc_lod(km_per_px: float) -> int:
 
 
 func _point_size_at(km_per_px: float) -> float:
-	if km_per_px <= zoom_mid:
-		return lerpf(point_size_near, point_size_mid, _zoom_t_range(km_per_px, zoom_near, zoom_mid))
+	var e := log(km_per_px) / log(10.0)
+	if e <= zoom_exp_near:
+		return point_size_near
+	elif e < zoom_exp_mid:
+		var t := (e - zoom_exp_near) / (zoom_exp_mid - zoom_exp_near)
+		return lerpf(point_size_near, point_size_mid, t)
 	else:
-		return lerpf(point_size_mid, point_size_far, _zoom_t_range(km_per_px, zoom_mid, zoom_far))
-
-
-func _zoom_t_range(km_per_px: float, from: float, to: float) -> float:
-	var clamped: float = clamp(km_per_px, from, to)
-	return (log(clamped) - log(from)) / (log(to) - log(from))
+		var t := (e - zoom_exp_mid) / (zoom_exp_far - zoom_exp_mid)
+		return lerpf(point_size_mid, point_size_far, clamp(t, 0.0, 1.0))
 
 
 func _zoom_t(km_per_px: float) -> float:
-	var clamped: float = clamp(km_per_px, zoom_near, zoom_far)
-	return (log(clamped) - log(zoom_near)) / (log(zoom_far) - log(zoom_near))
+	var e := log(km_per_px) / log(10.0)
+	return (clamp(e, zoom_exp_near, zoom_exp_far) - zoom_exp_near) / (zoom_exp_far - zoom_exp_near)
 
 
 func _generate_points(count: int) -> void:
@@ -129,6 +140,7 @@ func _generate_points(count: int) -> void:
 
 	_points_km.resize(count)
 	_point_weights.resize(count)
+	_point_phases.resize(count)
 
 	var is_cloud: bool      = belt_def.angular_spread_rad < _FULL_RING_THRESHOLD
 	var mid_radius: float   = (belt_def.inner_radius_km + belt_def.outer_radius_km) * 0.5
@@ -159,6 +171,7 @@ func _generate_points(count: int) -> void:
 
 		_points_km[i]     = Vector2(cos(angle) * radius, sin(angle) * radius)
 		_point_weights[i] = (1.0 - clamp(radial_t, 0.0, 1.0)) * (1.0 - clamp(angular_t, 0.0, 1.0))
+		_point_phases[i]  = rng.randf()
 
 
 func set_rotation_enabled(enabled: bool) -> void:
@@ -168,3 +181,63 @@ func set_rotation_enabled(enabled: bool) -> void:
 
 func set_rotation_speed(speed: float) -> void:
 	_rotation_speed = speed
+
+
+func _parse_shape(s: String) -> void:
+	match s:
+		"circle":   point_shape = PointShape.CIRCLE
+		"diamond":  point_shape = PointShape.DIAMOND
+		"cross":    point_shape = PointShape.CROSS
+		"asteroid": point_shape = PointShape.ASTEROID
+		_:          point_shape = PointShape.SQUARE
+
+
+func _apply_shape_material() -> void:
+	if point_shape == PointShape.SQUARE:
+		_mmi.material = null
+		return
+	var shader := Shader.new()
+	if point_shape == PointShape.ASTEROID:
+		# Unregelmäßiges Hexagon: 6 Eckpunkte mit per-Instanz Radius-Variation und Rotation.
+		# Kreuzprodukt-Test (konvexes Polygon, CCW-Reihenfolge).
+		shader.code = (
+			"shader_type canvas_item;\n"
+			+ "varying float seed;\n"
+			+ "void vertex() { seed = INSTANCE_CUSTOM.r; }\n"
+			+ "void fragment() {\n"
+			+ "  vec2 p = UV * 2.0 - 1.0;\n"
+			+ "  float rot = seed * 1.0472;\n"
+			+ "  float s = seed * 17.3;\n"
+			+ "  bool inside = true;\n"
+			+ "  for (int i = 0; i < 6; i++) {\n"
+			+ "    float a0 = rot + float(i) * 1.0472;\n"
+			+ "    float a1 = rot + float(i + 1) * 1.0472;\n"
+			+ "    float r0 = 0.43 + 0.08 * sin(s + float(i) * 1.618);\n"
+			+ "    float r1 = 0.43 + 0.08 * sin(s + float(i + 1) * 1.618);\n"
+			+ "    vec2 v0 = vec2(cos(a0), sin(a0)) * r0;\n"
+			+ "    vec2 v1 = vec2(cos(a1), sin(a1)) * r1;\n"
+			+ "    vec2 edge = v1 - v0;\n"
+			+ "    vec2 to_p = p - v0;\n"
+			+ "    if (edge.x * to_p.y - edge.y * to_p.x < 0.0) { inside = false; break; }\n"
+			+ "  }\n"
+			+ "  if (!inside) discard;\n"
+			+ "}"
+		)
+	else:
+		shader.code = (
+			"shader_type canvas_item;\n"
+			+ "uniform int shape_type = 1;\n"
+			+ "void fragment() {\n"
+			+ "  vec2 uv = UV - vec2(0.5);\n"
+			+ "  bool ok = false;\n"
+			+ "  if (shape_type == 1) { ok = length(uv) <= 0.5; }\n"
+			+ "  else if (shape_type == 2) { ok = (abs(uv.x) + abs(uv.y)) <= 0.5; }\n"
+			+ "  else if (shape_type == 3) { ok = abs(uv.x) <= 0.15 || abs(uv.y) <= 0.15; }\n"
+			+ "  if (!ok) discard;\n"
+			+ "}"
+		)
+	var mat := ShaderMaterial.new()
+	mat.shader = shader
+	if point_shape != PointShape.ASTEROID:
+		mat.set_shader_parameter("shape_type", int(point_shape))
+	_mmi.material = mat

@@ -36,11 +36,11 @@ var _c_km: float       = 0.0
 var _arg_pe_rad: float = 0.0
 
 
-func setup(body: BodyDef, transform: MapTransform) -> void:
+func setup(body: BodyDef, map_transform: MapTransform) -> void:
 	body_def       = body
 	parent_id      = body.parent_id
 	color          = body.color_rgba
-	_map_transform = transform
+	_map_transform = map_transform
 	_detect_draw_mode()
 	queue_redraw()
 

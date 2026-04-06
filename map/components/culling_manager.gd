@@ -183,10 +183,9 @@ func _apply_renderer_culling(renderers: Array, defs: Array) -> void:
 					renderer.visible = false
 					continue
 				
-				# Pixel-Radius des Belts/Rings prüfen
+				# Pixel-Radius des Belts/Rings prüfen — nur ausblenden wenn zu klein
 				var outer_radius_px: float = def.outer_radius_km / km_per_px
-				# Ausblenden wenn zu klein (< min_parent_dist_px) oder zu groß
-				if outer_radius_px < min_parent_dist_px or outer_radius_px > 2000.0:
+				if outer_radius_px < min_parent_dist_px:
 					renderer.visible = false
 					continue
 		

@@ -55,15 +55,16 @@ var orbit_color_dwarf: Color     = Color.ORANGE
 var orbit_color_struct: Color    = Color.YELLOW
 
 # Belts
-var belt_zoom_near: float       = 10_000.0
-var belt_zoom_mid: float        = 2_236_000.0
-var belt_zoom_far: float        = 500_000_000.0
+var belt_zoom_exp_near: float   = 4.0
+var belt_zoom_exp_mid: float    = 6.35
+var belt_zoom_exp_far: float    = 8.7
 var belt_point_size_near: float = 3.0
 var belt_point_size_mid: float  = 2.0
 var belt_point_size_far: float  = 1.0
 
 ## Private
-# Note: _world_root is used by SolarMapController._on_camera_moved()
+# Used by SolarMapController._on_camera_moved() via inheritance
+@warning_ignore("unused_private_class_variable")
 @onready var _world_root: Node2D    = $WorldRoot
 @onready var _marker_layer: Node2D  = $WorldRoot/MarkerLayer
 @onready var _orbit_layer: Node2D   = $WorldRoot/OrbitLayer
@@ -247,9 +248,9 @@ func apply_config(config: Dictionary) -> void:
 	if config.has("orbit_color_dwarf"):  orbit_color_dwarf = config.orbit_color_dwarf
 	if config.has("orbit_color_struct"): orbit_color_struct = config.orbit_color_struct
 	# Belts
-	if config.has("belt_zoom_near"):       belt_zoom_near = config.belt_zoom_near
-	if config.has("belt_zoom_mid"):        belt_zoom_mid = config.belt_zoom_mid
-	if config.has("belt_zoom_far"):        belt_zoom_far = config.belt_zoom_far
+	if config.has("belt_zoom_exp_near"):   belt_zoom_exp_near = config.belt_zoom_exp_near
+	if config.has("belt_zoom_exp_mid"):    belt_zoom_exp_mid = config.belt_zoom_exp_mid
+	if config.has("belt_zoom_exp_far"):    belt_zoom_exp_far = config.belt_zoom_exp_far
 	if config.has("belt_point_size_near"): belt_point_size_near = config.belt_point_size_near
 	if config.has("belt_point_size_mid"):  belt_point_size_mid = config.belt_point_size_mid
 	if config.has("belt_point_size_far"):  belt_point_size_far = config.belt_point_size_far
@@ -273,6 +274,14 @@ func deselect_body() -> void:
 
 
 func focus_body(id: String) -> void:
+	if _model == null:
+		return
+	var pos_px := _map_transform.km_to_px(_model.get_body_position(id))
+	_map_transform.focus_on_smooth(pos_px)
+	_interaction_manager.select_entity(id)
+
+
+func center_on_body(id: String) -> void:
 	if _model == null:
 		return
 	var pos_px := _map_transform.km_to_px(_model.get_body_position(id))
@@ -397,9 +406,9 @@ func _setup_belts() -> void:
 	_belt_manager = PointCloudManager.new()
 	_belt_manager.name = "BeltManager"
 	# Config before setup()
-	_belt_manager.zoom_near       = belt_zoom_near
-	_belt_manager.zoom_mid        = belt_zoom_mid
-	_belt_manager.zoom_far        = belt_zoom_far
+	_belt_manager.zoom_exp_near   = belt_zoom_exp_near
+	_belt_manager.zoom_exp_mid    = belt_zoom_exp_mid
+	_belt_manager.zoom_exp_far    = belt_zoom_exp_far
 	_belt_manager.point_size_near = belt_point_size_near
 	_belt_manager.point_size_mid  = belt_point_size_mid
 	_belt_manager.point_size_far  = belt_point_size_far

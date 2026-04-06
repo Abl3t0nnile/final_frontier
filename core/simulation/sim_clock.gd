@@ -120,9 +120,10 @@ static func get_date_from_stamp(time_stamp: Array[int]) -> Array[int]:
 	var year: int = time_stamp[0]
 	var day_of_year: int = time_stamp[1]
 	
+	@warning_ignore("integer_division")
 	year += day_of_year / DAYS_PER_YEAR
 	day_of_year = day_of_year % DAYS_PER_YEAR
-	
+	@warning_ignore("integer_division")
 	var month: int = (day_of_year / DAYS_PER_MONTH) + 1
 	var day: int = (day_of_year % DAYS_PER_MONTH) + 1
 	

@@ -12,8 +12,14 @@
       "min_points": 2000,
       "max_points": 4000,
       "seed": 7,
-      "color_rgba": [0.85, 0.75, 0.45, 1.0],
-      "apply_rotation": true
+      "color_rgba": [
+        0.85,
+        0.75,
+        0.45,
+        1.0
+      ],
+      "apply_rotation": true,
+      "point_shape": "circle"
     },
     {
       "id": "saturn_rings_e",
@@ -27,8 +33,14 @@
       "min_points": 400,
       "max_points": 800,
       "seed": 8,
-      "color_rgba": [0.55, 0.68, 0.85, 1.0],
-      "apply_rotation": true
+      "color_rgba": [
+        0.55,
+        0.68,
+        0.85,
+        1.0
+      ],
+      "apply_rotation": true,
+      "point_shape": "circle"
     },
     {
       "id": "uranus_rings",
@@ -42,8 +54,14 @@
       "min_points": 200,
       "max_points": 600,
       "seed": 9,
-      "color_rgba": [0.35, 0.55, 0.70, 1.0],
-      "apply_rotation": true
+      "color_rgba": [
+        0.35,
+        0.55,
+        0.7,
+        1.0
+      ],
+      "apply_rotation": true,
+      "point_shape": "circle"
     },
     {
       "id": "neptune_rings",
@@ -57,8 +75,14 @@
       "min_points": 150,
       "max_points": 500,
       "seed": 10,
-      "color_rgba": [0.25, 0.40, 0.72, 1.0],
-      "apply_rotation": true
+      "color_rgba": [
+        0.25,
+        0.4,
+        0.72,
+        1.0
+      ],
+      "apply_rotation": true,
+      "point_shape": "circle"
     }
   ]
 }
