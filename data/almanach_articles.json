@@ -153,6 +153,30 @@
     "nereid": {
       "description": "[b]Nereid[/b] ist ein irregulärer Mond des [url=body:neptune]Neptun[/url] mit einer der exzentrischsten Mondbahnenn im Sonnensystem ([url=concept:eccentricity]Exzentrizität[/url] ~0,75). Sein Abstand zu Neptun schwankt zwischen ~1,4 und ~9,7 Millionen km.\n\nEr wurde 1949 von Gerard Kuiper entdeckt und ist nach den Nymphen des Meeres in der griechischen Mythologie benannt. Seine hohe Exzentrizität deutet darauf hin, dass seine Bahn durch den Einfang von [url=body:triton]Triton[/url] stark gestört wurde."
     },
+    "hiʻiaka": {
+      "description": "[b]Hiʻiaka[/b] ist der größere der beiden bekannten Monde des [url=body:haumea]Haumea[/url] und nach der hawaiianischen Göttin der Insel Hawaiʻi benannt — einer Tochter von Haumea.\n\nMit einem Radius von ~160 km umkreist er Haumea in ~49.462 Tagen auf einer fast kreisförmigen Bahn. Seine Oberfläche zeigt Wassereis-Absorptionsbanden, die denen Haumeas ähneln, und deutet auf einen gemeinsamen Ursprung durch eine Kollision hin.\n\nHiʻiaka und [url=body:namaka]Namaka[/url] wurden 2005 mit dem Hubble-Weltraumteleskop entdeckt."
+    },
+    "namaka": {
+      "description": "[b]Namaka[/b] ist der kleinere und innere Mond des [url=body:haumea]Haumea[/url], benannt nach der hawaiianischen Meeresgöttin und Tochter von Haumea.\n\nEr umkreist Haumea in ~18.28 Tagen auf einer leicht exzentrischen und geneigten Bahn. Die Gravitationsstörungen durch [url=body:hiʻiaka]Hiʻiaka[/url] bewirken messbare Präzession seiner Bahn — was Rückschlüsse auf die Massenverteilung des Systems ermöglichte.\n\nNameka ist deutlich kleiner als Hiʻiaka mit einem Radius von ~85 km."
+    },
+    "mk2": {
+      "description": "[b]MK2[/b] (offiziell S/2015 (136472) 1) ist der einzige bekannte Mond des [url=body:makemake]Makemake[/url], entdeckt 2016 mit dem Hubble-Weltraumteleskop.\n\nEr ist bemerkenswert dunkel mit einer Albedo von nur ~0,04 — viel dunkler als Makemake selbst. Diese Eigenschaft schloss eine globale Atmosphäre auf Makemake nahezu aus: Wäre eine solche vorhanden, würde die atmosphärische Bremsung den Mond auf eine engere Bahn ziehen.\n\nMit einem Radius von ~87 km umkreist er Makemake in ~12.4 Tagen auf einer geneigten Bahn."
+    },
+    "dysnomia": {
+      "description": "[b]Dysnomia[/b] ist der einzige bekannte Mond des [url=body:eris]Eris[/url] und nach der Tochter der Göttin Eris — der Göttin der Gesetzlosigkeit — benannt.\n\nEr umkreist Eris in ~15.786 Tagen auf einer nahezu kreisförmigen Bahn. Die Analyse seiner Bahn erlaubte eine präzise Massebestimmung von Eris und zeigte, dass dieser schwerer als Pluto ist — ein Schlüsselergebnis in der Debatte um die Planetendefinition.\n\nDysnomia ist wahrscheinlich das Ergebnis einer Kollision in der frühen Geschichte des Eris-Systems."
+    },
+    "vanth": {
+      "description": "[b]Vanth[/b] ist der Mond des [url=body:orcus]Orcus[/url] und nach einer Begleiterin der Todesgöttin Vanth in der etruskischen Mythologie benannt — passend zur Unterwelt-Thematik des Hauptkörpers.\n\nMit einem Radius von ~221 km ist er im Verhältnis zu Orcus ungewöhnlich groß — ähnlich wie [url=body:charon]Charon[/url] im Pluto-System. Er umkreist Orcus in ~9.54 Tagen auf einer fast kreisförmigen Bahn.\n\nDie gegenseitige Umlaufbahn deutet darauf hin, dass Vanth durch eine kollisionale Genese entstanden ist."
+    },
+    "weywot": {
+      "description": "[b]Weywot[/b] ist der Mond des [url=body:quaoar]Quaoar[/url] und nach dem Himmelsgott des Tongva-Volkes und Sohn von Quaoar benannt.\n\nEr wurde 2006 entdeckt und umkreist Quaoar in ~12.44 Tagen aus ~14.500 km Entfernung. Durch die Analyse seiner Bahn wurde die Masse Quaoars bestimmt.\n\nWeywot hat einen Radius von ~87 km. Sein Verhältnis zu Quaoar ähnelt eher dem eines kleinen irregulären Trabanten als einem ausgeprägten Doppelsystem."
+    },
+    "xiangliu": {
+      "description": "[b]Xiangliu[/b] ist der Mond des [url=body:gonggong]Gonggong[/url], benannt nach dem neunköpfigen Schlangengeist aus der chinesischen Mythologie, der Gonggong begleitet.\n\nEr wurde 2016 mit dem Hubble-Weltraumteleskop entdeckt. Mit einem geschätzten Radius von ~62 km ist er deutlich kleiner als sein Hauptkörper. Er umkreist Gonggong in ~25.22 Tagen.\n\nDie Entdeckung von Xiangliu unterstützte die Einschätzung, dass Gonggong groß genug sein könnte, um als Zwergplanet zu gelten."
+    },
+    "actaea": {
+      "description": "[b]Actaea[/b] ist der Mond des [url=body:salacia]Salacia[/url], benannt nach einer der Nereiden der griechischen Mythologie.\n\nEr wurde 2006 entdeckt und bildet mit Salacia ein enges Binärsystem: Er umkreist den Hauptkörper aus nur ~5.720 km Entfernung in ~5.49 Tagen. Diese enge Bahn erlaubte eine sehr präzise Massenbestimmung des Gesamtsystems.\n\nActaea hat einen Radius von ~136 km und ist damit im Verhältnis zu Salacia relativ groß — das Paar gilt als eines der ausgewogeneren Binärsysteme im Kuipergürtel."
+    },
     "charon": {
       "description": "[b]Charon[/b] ist der größte Mond des [url=body:pluto]Pluto[/url] und im Verhältnis zum Hauptkörper der massereichste Mond im Sonnensystem. Mit einem Durchmesser von ~1.212 km ist er etwa halb so groß wie Pluto selbst.\n\nPluto und Charon bilden ein echtes Doppelsystem: Ihr gemeinsamer Schwerpunkt (Baryzentrum) liegt außerhalb beider Körper. Beide sind in gebundener Rotation — sie zeigen sich stets dieselbe Seite.\n\nNew Horizons zeigte 2015 eine vielfältige Oberfläche mit einem rötlichen Nordpolgebiet (Mordor Macula), das durch von Pluto übergeströmtes Methan entsteht, welches durch UV-Strahlung zu Tholins wird."
     },

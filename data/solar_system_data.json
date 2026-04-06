@@ -1905,6 +1905,174 @@
 			],
 			"body_radius_km": 13.0,
 			"grav_param_km3_s2": 0.0
+		},
+		{
+			"id": "hiʻiaka",
+			"name": "Hiʻiaka",
+			"type": "moon",
+			"subtype": "major_moon",
+			"parent_id": "haumea",
+			"map_icon": "moon",
+			"color_rgba": [0.78, 0.78, 0.80, 1.0],
+			"motion": {
+				"model": "circular",
+				"params": {
+					"orbital_radius_km": 49880.0,
+					"initial_phase_rad": 1.1,
+					"orbital_period_s": 4273517.0,
+					"orbit_direction": 1
+				}
+			},
+			"map_tags": ["outer_system", "kuiper_belt", "major_moon"],
+			"body_radius_km": 160.0,
+			"grav_param_km3_s2": 0.12
+		},
+		{
+			"id": "namaka",
+			"name": "Namaka",
+			"type": "moon",
+			"subtype": "minor_moon",
+			"parent_id": "haumea",
+			"map_icon": "moon",
+			"color_rgba": [0.72, 0.72, 0.74, 1.0],
+			"motion": {
+				"model": "circular",
+				"params": {
+					"orbital_radius_km": 25657.0,
+					"initial_phase_rad": 3.8,
+					"orbital_period_s": 1579245.0,
+					"orbit_direction": 1
+				}
+			},
+			"map_tags": ["outer_system", "kuiper_belt", "minor_moon"],
+			"body_radius_km": 85.0,
+			"grav_param_km3_s2": 0.012
+		},
+		{
+			"id": "mk2",
+			"name": "MK2",
+			"type": "moon",
+			"subtype": "minor_moon",
+			"parent_id": "makemake",
+			"map_icon": "moon",
+			"color_rgba": [0.22, 0.20, 0.19, 1.0],
+			"motion": {
+				"model": "circular",
+				"params": {
+					"orbital_radius_km": 21000.0,
+					"initial_phase_rad": 0.7,
+					"orbital_period_s": 1071360.0,
+					"orbit_direction": 1
+				}
+			},
+			"map_tags": ["outer_system", "kuiper_belt", "minor_moon"],
+			"body_radius_km": 87.0,
+			"grav_param_km3_s2": 0.003
+		},
+		{
+			"id": "dysnomia",
+			"name": "Dysnomia",
+			"type": "moon",
+			"subtype": "major_moon",
+			"parent_id": "eris",
+			"map_icon": "moon",
+			"color_rgba": [0.68, 0.66, 0.64, 1.0],
+			"motion": {
+				"model": "circular",
+				"params": {
+					"orbital_radius_km": 37350.0,
+					"initial_phase_rad": 2.2,
+					"orbital_period_s": 1363891.0,
+					"orbit_direction": 1
+				}
+			},
+			"map_tags": ["outer_system", "kuiper_belt", "major_moon"],
+			"body_radius_km": 175.0,
+			"grav_param_km3_s2": 0.5
+		},
+		{
+			"id": "vanth",
+			"name": "Vanth",
+			"type": "moon",
+			"subtype": "major_moon",
+			"parent_id": "orcus",
+			"map_icon": "moon",
+			"color_rgba": [0.65, 0.62, 0.58, 1.0],
+			"motion": {
+				"model": "circular",
+				"params": {
+					"orbital_radius_km": 9030.0,
+					"initial_phase_rad": 4.5,
+					"orbital_period_s": 824170.0,
+					"orbit_direction": 1
+				}
+			},
+			"map_tags": ["outer_system", "kuiper_belt", "major_moon"],
+			"body_radius_km": 221.0,
+			"grav_param_km3_s2": 0.42
+		},
+		{
+			"id": "weywot",
+			"name": "Weywot",
+			"type": "moon",
+			"subtype": "minor_moon",
+			"parent_id": "quaoar",
+			"map_icon": "moon",
+			"color_rgba": [0.60, 0.58, 0.55, 1.0],
+			"motion": {
+				"model": "circular",
+				"params": {
+					"orbital_radius_km": 14520.0,
+					"initial_phase_rad": 5.9,
+					"orbital_period_s": 1074643.0,
+					"orbit_direction": 1
+				}
+			},
+			"map_tags": ["outer_system", "kuiper_belt", "minor_moon"],
+			"body_radius_km": 87.0,
+			"grav_param_km3_s2": 0.003
+		},
+		{
+			"id": "xiangliu",
+			"name": "Xiangliu",
+			"type": "moon",
+			"subtype": "minor_moon",
+			"parent_id": "gonggong",
+			"map_icon": "moon",
+			"color_rgba": [0.55, 0.42, 0.38, 1.0],
+			"motion": {
+				"model": "circular",
+				"params": {
+					"orbital_radius_km": 24000.0,
+					"initial_phase_rad": 1.6,
+					"orbital_period_s": 2179008.0,
+					"orbit_direction": 1
+				}
+			},
+			"map_tags": ["outer_system", "kuiper_belt", "minor_moon"],
+			"body_radius_km": 62.0,
+			"grav_param_km3_s2": 0.001
+		},
+		{
+			"id": "actaea",
+			"name": "Actaea",
+			"type": "moon",
+			"subtype": "major_moon",
+			"parent_id": "salacia",
+			"map_icon": "moon",
+			"color_rgba": [0.30, 0.29, 0.28, 1.0],
+			"motion": {
+				"model": "circular",
+				"params": {
+					"orbital_radius_km": 5720.0,
+					"initial_phase_rad": 3.2,
+					"orbital_period_s": 474664.0,
+					"orbit_direction": 1
+				}
+			},
+			"map_tags": ["outer_system", "kuiper_belt", "major_moon"],
+			"body_radius_km": 136.0,
+			"grav_param_km3_s2": 0.035
 		}
 	]
 }
