@@ -116,6 +116,10 @@ func _on_zoom_requested(id: String) -> void:
 	_body_view.visible = true
 	_map_view.visible = false
 	_planet_view_overlay.visible = true
+	_info_panel.visible = false
+	if _almanach_panel:
+		_almanach_panel.open_body(id)
+		_almanach_panel.visible = true
 
 
 func _on_planet_view_info_requested(id: String) -> void:
@@ -126,12 +130,16 @@ func _on_planet_view_info_requested(id: String) -> void:
 			_info_panel.visible = false
 
 
-func _close_zoom() -> void:
+func _close_zoom(hide_almanach: bool = false) -> void:
 	if not _body_view.visible:
 		return
 	_body_view.visible = false
 	_planet_view_overlay.visible = false
 	_map_view.visible = true
+	if hide_almanach and _almanach_panel:
+		_almanach_panel.visible = false
+	if not _current_body_id.is_empty() and not (_almanach_panel and _almanach_panel.visible):
+		_info_panel.visible = true
 
 
 # ── Resize ─────────────────────────────────────────────────────────────────────
@@ -149,11 +157,15 @@ func _on_viewport_resized() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_ESCAPE:
-			_close_zoom()
+			_close_zoom(true)
 		if event.keycode == KEY_N:
 			_nav_panel.visible = not _nav_panel.visible
-		if event.keycode == KEY_I:
-			if not (_almanach_panel and _almanach_panel.visible):
+		if event.keycode == KEY_I and _map_view.visible:
+			if _almanach_panel and _almanach_panel.visible:
+				_almanach_panel.visible = false
+				if not _current_body_id.is_empty():
+					_info_panel.visible = true
+			else:
 				_info_panel.visible = not _info_panel.visible
 		if event.keycode == KEY_L and _almanach_panel:
 			_almanach_panel.visible = not _almanach_panel.visible

@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://c1v3wo13h2efs" path="res://game/game_controller.gd" id="3_gamecontroller"]
 [ext_resource type="PackedScene" uid="uid://cx0qx7qyomjub" path="res://game/star_chart/planet_view.tscn" id="3_madmh"]
 [ext_resource type="Shader" uid="uid://jgquymtyyfyn" path="res://shader/ui_tint_overlay.gdshader" id="5_madmh"]
-[ext_resource type="Shader" uid="uid://pb0iqlt14w45" path="res://shader/phosphor_overlay.gdshader" id="6_yo8gm"]
+[ext_resource type="Shader" uid="uid://bti71qu06gbo0" path="res://shader/crt_monitor.gdshader" id="6_yo8gm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_madmh"]
 shader = ExtResource("5_madmh")
@@ -17,15 +17,28 @@ shader_parameter/color_protection = 0.999999977648
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fk7ia"]
 shader = ExtResource("6_yo8gm")
-shader_parameter/glow_strength = 0.6999999843536
-shader_parameter/glow_spread = 3.0
-shader_parameter/scanline_strength = 0.0
-shader_parameter/scanline_sharpness = 8.0
-shader_parameter/chromatic_px = 1.40000002086168
-shader_parameter/flicker_strength = 0.0499999988824
-shader_parameter/brightness = 1.19999997690307
-shader_parameter/vignette_strength = 0.0
-shader_parameter/vignette_softness = 0.49999998882401
+shader_parameter/brightness = 2.0
+shader_parameter/contrast = 1.08
+shader_parameter/saturation = 1.1
+shader_parameter/gamma = 1.05
+shader_parameter/curvature = 0.0
+shader_parameter/corner_soften = 0.06
+shader_parameter/vignette = 0.38
+shader_parameter/scanline_strength = 0.70000003325
+shader_parameter/scanline_density = 1.15
+shader_parameter/interlace_strength = 0.2
+shader_parameter/mask_strength = 0.22
+shader_parameter/mask_scale = 1.0
+shader_parameter/chroma_offset_px = 2.38000011305
+shader_parameter/luma_smear_px = 8.0
+shader_parameter/jitter_px = 0.0
+shader_parameter/wobble_px = 0.0
+shader_parameter/tape_noise = 0.22
+shader_parameter/tape_lines = 0.0
+shader_parameter/roll_speed = 0.1
+shader_parameter/roll_strength = 0.15
+shader_parameter/glow_strength = 0.25
+shader_parameter/glow_threshold = 0.65
 
 [node name="Main" type="Node" unique_id=1627069167]
 
@@ -37,9 +50,9 @@ start_chart = NodePath("../StartChart")
 
 [node name="StartChart" parent="." unique_id=-54483432 instance=ExtResource("2_8gaax")]
 
-[node name="ShaderOverlay" type="CanvasLayer" parent="." unique_id=611693710]
+[node name="TintLayer" type="CanvasLayer" parent="." unique_id=611693710]
 
-[node name="ColorOverlay" type="ColorRect" parent="ShaderOverlay" unique_id=1214630113]
+[node name="ColorOverlay" type="ColorRect" parent="TintLayer" unique_id=1214630113]
 material = SubResource("ShaderMaterial_madmh")
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,10 +61,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="ShaderOverlay2" type="CanvasLayer" parent="." unique_id=862808943]
+[node name="CRTLayer" type="CanvasLayer" parent="." unique_id=862808943]
 visible = false
 
-[node name="ColorOverlay2" type="ColorRect" parent="ShaderOverlay2" unique_id=1404396652]
+[node name="ColorOverlay" type="ColorRect" parent="CRTLayer" unique_id=1404396652]
 material = SubResource("ShaderMaterial_fk7ia")
 anchors_preset = 15
 anchor_right = 1.0
