@@ -6,11 +6,14 @@
 class_name AlmanachPanel
 extends PanelContainer
 
+signal zoom_requested(body_id: String)
+
 const _ARTICLES_PATH := "res://data/almanach_articles.json"
 
 ## Navigation History: Array von article_ids (z.B. "body:terra", "concept:eccentricity")
 var _history: Array[String] = []
 var _current_index: int = -1
+var _current_body_id: String = ""
 
 ## Geladene Konzept-Artikel aus JSON
 var _concept_articles: Dictionary = {}
@@ -18,6 +21,7 @@ var _concept_articles: Dictionary = {}
 var _body_texts: Dictionary = {}
 
 @onready var _home_btn:    Button        = $VBox/Header/HomeBtn
+@onready var _zoom_btn:    Button        = $VBox/Header/ZoomButton
 @onready var _back_btn:    Button        = $VBox/Header/BackButton
 @onready var _fwd_btn:     Button        = $VBox/Header/ForwardButton
 @onready var _title_label: Label         = $VBox/Header/TitleLabel
@@ -27,6 +31,7 @@ var _body_texts: Dictionary = {}
 func _ready() -> void:
 	_load_concept_articles()
 	_home_btn.pressed.connect(open_home)
+	_zoom_btn.pressed.connect(func() -> void: zoom_requested.emit(_current_body_id))
 	_back_btn.pressed.connect(_navigate_back)
 	_fwd_btn.pressed.connect(_navigate_forward)
 	_content.meta_clicked.connect(_on_link_clicked)
@@ -119,6 +124,8 @@ func _display_article(article_id: String) -> void:
 # ── Artikel-Anzeige ────────────────────────────────────────────────────────────
 
 func _show_home() -> void:
+	_current_body_id = ""
+	_zoom_btn.visible = false
 	_title_label.text = "Almanach"
 	var text := "[font_size=18][b]Almanach des Sonnensystems[/b][/font_size]\n\n"
 	text += "Der Almanach ist ein interaktives Nachschlagewerk über die Himmelskörper und astronomischen Zusammenhänge dieses Sonnensystems. Klicke einen Körper auf der Karte an, um seinen Eintrag zu öffnen — oder navigiere direkt über die Listen unten.\n\n"
@@ -148,11 +155,15 @@ func _show_body_article(id: String) -> void:
 	if def == null:
 		_show_error("Kein Eintrag für '%s' gefunden." % id)
 		return
+	_current_body_id = id
+	_zoom_btn.visible = true
 	_title_label.text = def.name
 	_content.text = _generate_body_bbcode(def)
 
 
 func _show_concept_article(id: String) -> void:
+	_current_body_id = ""
+	_zoom_btn.visible = false
 	if not _concept_articles.has(id):
 		_show_error("Kein Konzept-Eintrag für '%s' gefunden." % id)
 		return

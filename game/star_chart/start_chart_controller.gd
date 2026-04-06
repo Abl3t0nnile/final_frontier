@@ -44,6 +44,7 @@ func receive_solar_map(map: Node) -> void:
 		map.body_deselected.connect(_on_body_deselected)
 	_info_panel.almanach_requested.connect(_on_almanach_requested)
 	_info_panel.zoom_requested.connect(_on_zoom_requested)
+	_almanach_panel.zoom_requested.connect(_on_zoom_requested)
 	_info_panel.pin_requested.connect(func(id: String) -> void:
 		_solar_map.pin_body(id))
 	_info_panel.unpin_requested.connect(func(id: String) -> void:
@@ -73,7 +74,10 @@ func _on_nav_body_focused(id: String) -> void:
 	_current_body_id = id
 	_info_panel.load_body(id)
 	_info_panel.set_pinned(_solar_map.is_body_pinned(id))
-	_info_panel.visible = true
+	if _almanach_panel:
+		_almanach_panel.open_body(id)
+	if not (_almanach_panel and _almanach_panel.visible):
+		_info_panel.visible = true
 	if _body_view.visible and _planet_view != null:
 		_planet_view.call("load_body", id)
 		_planet_view_overlay.load_body(id)
@@ -83,7 +87,10 @@ func _on_body_selected(id: String) -> void:
 	_current_body_id = id
 	_info_panel.load_body(id)
 	_info_panel.set_pinned(_solar_map.is_body_pinned(id))
-	_info_panel.visible = true
+	if _almanach_panel:
+		_almanach_panel.open_body(id)
+	if not (_almanach_panel and _almanach_panel.visible):
+		_info_panel.visible = true
 
 
 func _on_body_deselected() -> void:
@@ -115,6 +122,8 @@ func _on_planet_view_info_requested(id: String) -> void:
 	if _almanach_panel:
 		_almanach_panel.open_body(id)
 		_almanach_panel.visible = not _almanach_panel.visible
+		if _almanach_panel.visible:
+			_info_panel.visible = false
 
 
 func _close_zoom() -> void:
@@ -144,8 +153,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.keycode == KEY_N:
 			_nav_panel.visible = not _nav_panel.visible
 		if event.keycode == KEY_I:
-			_info_panel.visible = not _info_panel.visible
+			if not (_almanach_panel and _almanach_panel.visible):
+				_info_panel.visible = not _info_panel.visible
 		if event.keycode == KEY_L and _almanach_panel:
 			_almanach_panel.visible = not _almanach_panel.visible
-			if _almanach_panel.visible and not _almanach_panel.has_history():
-				_almanach_panel.open_home()
+			if _almanach_panel.visible:
+				_info_panel.visible = false
+				if not _almanach_panel.has_history():
+					_almanach_panel.open_home()

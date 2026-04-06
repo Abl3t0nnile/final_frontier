@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ib8eckgxchmb" path="res://assets/ui_icons/white/home.png" id="2_rmmbg"]
 [ext_resource type="Texture2D" uid="uid://oe5lrq85fvet" path="res://assets/ui_icons/white/backward.png" id="3_mhxxn"]
 [ext_resource type="Texture2D" uid="uid://b1qx4f57hy75q" path="res://assets/ui_icons/white/forward.png" id="4_1bccr"]
+[ext_resource type="Texture2D" uid="uid://dnk3bdvjj6boy" path="res://assets/ui_icons/white/larger.png" id="5_zoom"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_331wc"]
 content_margin_left = 16.0
@@ -119,6 +120,21 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_btn_disabled")
 disabled = true
 icon = ExtResource("3_mhxxn")
+expand_icon = true
+
+[node name="ZoomButton" type="Button" parent="VBox/Header" unique_id=1832998827]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
+theme_override_colors/font_disabled_color = Color(0.9411765, 0.9411765, 0.9411765, 0.25)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_btn_disabled")
+visible = false
+icon = ExtResource("5_zoom")
 expand_icon = true
 
 [node name="ForwardButton" type="Button" parent="VBox/Header" unique_id=1732998826]

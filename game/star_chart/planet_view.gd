@@ -21,6 +21,7 @@ const _BODY_TEXTURES: Dictionary = {
 	"eris":     { "surface": "2k_eris.png" },
 	"haumea":   { "surface": "2k_haumea.png" },
 	"makemake": { "surface": "2k_makemake.png" },
+	"pluto":    { "surface": "2k_pluto.png" },
 }
 
 @onready var _planet_viewer:  PlanetViewer = $PlanetViewer
