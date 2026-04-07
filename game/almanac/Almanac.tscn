@@ -5,9 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://oe5lrq85fvet" path="res://assets/icons/ui/white/backward.png" id="2_gssl0"]
 [ext_resource type="Texture2D" uid="uid://c1dv6tkdak65" path="res://assets/img/planets/terra_hero.jpg" id="4_gssl0"]
 [ext_resource type="Texture2D" uid="uid://b1qx4f57hy75q" path="res://assets/icons/ui/white/forward.png" id="4_hdqyh"]
+[ext_resource type="Texture2D" uid="uid://dnk3bdvjj6boy" path="res://assets/icons/ui/white/larger.png" id="4_w4vcb"]
 [ext_resource type="PackedScene" uid="uid://bpxdjhjimm5yy" path="res://ui/components/UnitValueDisplay.tscn" id="4_wgtfk"]
+[ext_resource type="FontFile" uid="uid://cysj7b68qqiw8" path="res://assets/fonts/SUSEMono-Bold.ttf" id="6_w4vcb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4vcb"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
 draw_center = false
 border_width_left = 2
 border_width_top = 2
@@ -54,6 +60,50 @@ border_color = Color(0.9411765, 0.9411765, 0.9411765, 0.15)
 [sub_resource type="LabelSettings" id="LabelSettings_b0ch5"]
 font_size = 32
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b0ch5"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9411765, 0.9411765, 0.9411765, 0.4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jb4x3"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+bg_color = Color(0.9411765, 0.9411765, 0.9411765, 0.12)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9411765, 0.9411765, 0.9411765, 0.6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8htlp"]
+content_margin_left = 6.0
+content_margin_top = 2.0
+content_margin_right = 6.0
+content_margin_bottom = 2.0
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.9411765, 0.9411765, 0.9411765, 0.15)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qowm7"]
+font = ExtResource("6_w4vcb")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_xdu6e"]
+font = ExtResource("6_w4vcb")
+font_size = 24
+
 [node name="Almanac" type="PanelContainer" unique_id=1838614985]
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,6 +115,7 @@ script = ExtResource("1_almanac")
 
 [node name="VBox" type="VBoxContainer" parent="." unique_id=2125989611]
 layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="Header" type="HBoxContainer" parent="VBox" unique_id=1389490786]
 layout_mode = 2
@@ -111,6 +162,21 @@ disabled = true
 icon = ExtResource("2_gssl0")
 expand_icon = true
 
+[node name="ZoomButton" type="Button" parent="VBox/Header" unique_id=431424022]
+visible = false
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
+theme_override_colors/font_disabled_color = Color(0.9411765, 0.9411765, 0.9411765, 0.25)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_b0ch5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jb4x3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jb4x3")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_8htlp")
+icon = ExtResource("4_w4vcb")
+expand_icon = true
+
 [node name="ForwardButton" type="Button" parent="VBox/Header" unique_id=849681104]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -137,6 +203,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 16
 
 [node name="Header" type="HBoxContainer" parent="VBox/ContentBox/Article" unique_id=941198124]
 layout_mode = 2
@@ -144,6 +211,7 @@ layout_mode = 2
 [node name="TitleLabel" type="Label" parent="VBox/ContentBox/Article/Header" unique_id=1737685456]
 layout_mode = 2
 text = "Article Title"
+label_settings = SubResource("LabelSettings_qowm7")
 uppercase = true
 
 [node name="Overview" type="HBoxContainer" parent="VBox/ContentBox/Article" unique_id=1197234601]
@@ -164,10 +232,12 @@ Der Mond ist im Verhältnis zur Planetenmasse ungewöhnlich groß. Seine Gravita
 [node name="Panel" type="VBoxContainer" parent="VBox/ContentBox/Article/Overview" unique_id=2110886432]
 custom_minimum_size = Vector2(480, 0)
 layout_mode = 2
+theme_override_constants/separation = 16
 
 [node name="Label" type="Label" parent="VBox/ContentBox/Article/Overview/Panel" unique_id=118746572]
 layout_mode = 2
 text = "Body Name"
+label_settings = SubResource("LabelSettings_xdu6e")
 
 [node name="Hero" type="MarginContainer" parent="VBox/ContentBox/Article/Overview/Panel" unique_id=860450107]
 layout_mode = 2
@@ -188,6 +258,7 @@ title = "ORBITAL DATEN"
 
 [node name="Grid" type="GridContainer" parent="VBox/ContentBox/Article/Overview/Panel/OrbitData" unique_id=1064933122]
 layout_mode = 2
+theme_override_constants/h_separation = 16
 columns = 2
 
 [node name="UnitValueDisplay" parent="VBox/ContentBox/Article/Overview/Panel/OrbitData/Grid" unique_id=375893399 instance=ExtResource("4_wgtfk")]
@@ -202,6 +273,7 @@ title = "PHYSIKALISCHE DATEN"
 
 [node name="Grid" type="GridContainer" parent="VBox/ContentBox/Article/Overview/Panel/PhysicsData" unique_id=1671513938]
 layout_mode = 2
+theme_override_constants/h_separation = 16
 columns = 2
 
 [node name="UnitValueDisplay" parent="VBox/ContentBox/Article/Overview/Panel/PhysicsData/Grid" unique_id=590644221 instance=ExtResource("4_wgtfk")]
@@ -219,6 +291,7 @@ layout_mode = 2
 
 [node name="Grid" type="GridContainer" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox" unique_id=188203920]
 layout_mode = 2
+theme_override_constants/h_separation = 16
 columns = 2
 
 [node name="UnitValueDisplay" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox/Grid" unique_id=1840174611 instance=ExtResource("4_wgtfk")]

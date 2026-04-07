@@ -23,10 +23,11 @@ signal game_started
 
 var state: State = State.LOADING
 
-var _solar_map:   Node = null
-var _planet_view: Node = null
-var _data_loaded: bool = false
-var _animation_done: bool = false
+var _solar_map:        Node = null
+var _planet_view:      Node = null
+var _data_loaded:      bool = false
+var _animation_done:   bool = false
+var _almanac_concepts: Dictionary = {}
 
 
 func _ready() -> void:
@@ -64,11 +65,7 @@ func _load_data() -> void:
 		if obj:
 			obj.add_component("almanach", almanach_data["bodies"][id])
 	
-	# Almanac instanziieren und Concepts injizieren
-	if almanac_scene:
-		var almanac = almanac_scene.instantiate()
-		almanac.set_concepts(almanach_data["concepts"])
-		# TODO: Almanac in UI-Struktur einhängen (abhängig von StarChart-Setup)
+	_almanac_concepts = almanach_data["concepts"]
 
 
 func _build_sim() -> void:
@@ -101,6 +98,10 @@ func _build_map() -> void:
 	if planet_view_scene:
 		_planet_view = planet_view_scene.instantiate()
 		start_chart.receive_planet_view(_planet_view)
+	# Concepts an den Almanac in der StarChart-Szene übergeben
+	var almanac := start_chart.get_node_or_null("UILayer/MainDisplay/VFrame/BodyPanel/Almanac") as Almanac
+	if almanac:
+		almanac.set_concepts(_almanac_concepts)
 	_enter_running()
 
 

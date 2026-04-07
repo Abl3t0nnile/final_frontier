@@ -42,6 +42,7 @@ const _BODY_TEXTURES: Dictionary = {
 @onready var _home_btn: Button        = $VBox/Header/HomeBtn
 @onready var _back_btn: Button        = $VBox/Header/BackButton
 @onready var _fwd_btn: Button         = $VBox/Header/ForwardButton
+@onready var _zoom_btn: Button        = $VBox/Header/ZoomButton
 @onready var _title_label: Label      = $VBox/Header/TitleLabel
 @onready var _article_title: Label    = $VBox/ContentBox/Article/Header/TitleLabel
 @onready var _summary_text: RichTextLabel = $VBox/ContentBox/Article/Overview/SummaryText
@@ -69,6 +70,7 @@ func _ready() -> void:
 	_hero_missing_label.add_theme_color_override("font_color", Color(0.94, 0.94, 0.94, 0.4))
 	_hero_missing_label.visible = false
 	_hero_container.add_child(_hero_missing_label)
+	_zoom_btn.pressed.connect(func() -> void: zoom_requested.emit(_current_body_id))
 	_home_btn.pressed.connect(open_home)
 	_back_btn.pressed.connect(_navigate_back)
 	_fwd_btn.pressed.connect(_navigate_forward)
@@ -168,6 +170,7 @@ func _display_article(article_id: String) -> void:
 
 func _show_home() -> void:
 	_current_body_id = ""
+	_zoom_btn.visible = false
 	_title_label.text = "Almanac"
 	_article_title.text = "Übersicht"
 	_clear_article_content()
@@ -175,6 +178,25 @@ func _show_home() -> void:
 	var text := "[font_size=18][b]Almanac des Sonnensystems[/b][/font_size]\n\n"
 	text += "Der Almanac ist ein interaktives Nachschlagewerk über die Himmelskörper und astronomischen Zusammenhänge dieses Sonnensystems. Klicke einen Körper auf der Karte an, um seinen Eintrag zu öffnen — oder navigiere direkt über die Listen unten.\n\n"
 	text += "Alle physikalischen Daten basieren auf realen Messwerten. Verlinkte Begriffe führen zu erklärenden Artikeln über Konzepte der Orbitalmechanik und Astronomie.\n\n"
+	text += "[color=#888888]────────────────────────[/color]\n\n"
+
+	# Himmelskörper
+	text += "[b]Himmelskörper[/b]\n"
+	for obj: GameObject in GameRegistry.get_all_objects():
+		var def := obj.body_def
+		var type_hint := ""
+		if not def.subtype.is_empty():
+			type_hint = " [color=#888888](%s)[/color]" % def.subtype
+		elif not def.type.is_empty():
+			type_hint = " [color=#888888](%s)[/color]" % def.type
+		text += "  • [url=body:%s]%s[/url]%s\n" % [def.id, def.name, type_hint]
+
+	# Konzepte
+	if not _concepts.is_empty():
+		text += "\n[b]Konzepte & Begriffserklärungen[/b]\n"
+		for concept_id: String in _concepts:
+			var article: Dictionary = _concepts[concept_id]
+			text += "  • [url=concept:%s]%s[/url]\n" % [concept_id, article.get("title", concept_id)]
 
 	_summary_text.text = text
 	_overview_panel.hide()
@@ -187,6 +209,7 @@ func _show_body_article(id: String) -> void:
 		return
 
 	_current_body_id = id
+	_zoom_btn.visible = true
 	_title_label.text = "Almanac"
 	_article_title.text = obj.body_def.name
 
@@ -203,6 +226,7 @@ func _show_concept_article(id: String) -> void:
 
 	var article: Dictionary = _concepts[id]
 	_current_body_id = ""
+	_zoom_btn.visible = false
 	_title_label.text = "Almanac"
 	_article_title.text = article.get("title", id)
 
