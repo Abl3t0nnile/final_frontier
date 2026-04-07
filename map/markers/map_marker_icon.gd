@@ -26,7 +26,15 @@ func _load_icon(def: BodyDef) -> Texture2D:
 		var path := ICON_BASE_PATH + def.subtype + ".png"
 		if ResourceLoader.exists(path):
 			return load(path)
-	return load(FALLBACK_ICON)
+	if ResourceLoader.exists(FALLBACK_ICON):
+		return load(FALLBACK_ICON)
+	return _create_fallback_texture()
+
+
+func _create_fallback_texture() -> ImageTexture:
+	var img := Image.create(16, 16, false, Image.FORMAT_RGBA8)
+	img.fill(Color(0.8, 0.8, 0.8, 0.7))
+	return ImageTexture.create_from_image(img)
 
 
 func _apply_scale() -> void:

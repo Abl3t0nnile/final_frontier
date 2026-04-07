@@ -9,8 +9,10 @@
 export_presets.cfg
 builds/
 
-# Assets (art, audio, etc.)
-assets/
+# Assets: Bilder und Fonts lokal, Shader werden getrackt
+assets/fonts/
+assets/icons/
+assets/textures/
 
 # Claude Code
 .claude/

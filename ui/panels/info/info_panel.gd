@@ -91,17 +91,18 @@ func load_body(id: String) -> void:
 
 func _setup_planet_viewer(id: String) -> void:
 	var entry: Dictionary = _BODY_TEXTURES.get(id, {})
-	var has_texture := not entry.is_empty()
+	var surface_path: String = _TEXTURE_BASE + (entry.get("surface", "") as String)
+	var has_texture := not entry.is_empty() and ResourceLoader.exists(surface_path)
 	_planet_viewer.visible = has_texture
 	_missing_label.visible = not has_texture
 	if not has_texture:
 		return
 	_planet_viewer.use_sun_shader = (id == "sun")
-	var surface_path: String = _TEXTURE_BASE + entry.get("surface", "black_surface.png")
 	_planet_viewer.surface_texture = load(surface_path) as Texture2D
 	if entry.has("cloud"):
-		_planet_viewer.cloud_texture = load(_TEXTURE_BASE + entry["cloud"]) as Texture2D
-		_planet_viewer.cloud_enabled = true
+		var cloud_path: String = _TEXTURE_BASE + (entry["cloud"] as String)
+		_planet_viewer.cloud_texture = load(cloud_path) as Texture2D if ResourceLoader.exists(cloud_path) else null
+		_planet_viewer.cloud_enabled = _planet_viewer.cloud_texture != null
 	else:
 		_planet_viewer.cloud_texture = null
 		_planet_viewer.cloud_enabled = false
