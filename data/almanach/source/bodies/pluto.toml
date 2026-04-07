@@ -6,3 +6,5 @@ description = """\
 Die Raumsonde New Horizons lieferte 2015 die ersten Nahaufnahmen: Pluto zeigt eine überraschend vielfältige Oberfläche mit Stickstoffgletschern, Eisgebirgen und der herzförmigen Ebene Tombaugh Regio. Er besitzt eine dünne Stickstoffatmosphäre, die je nach Entfernung zur Sonne teilweise gefriert.
 
 Sein größter Mond [url=body:charon]Charon[/url] ist im Verhältnis so groß, dass beide Körper ein Doppelsystem bilden — ihr gemeinsamer Schwerpunkt liegt außerhalb Plutos."""
+
+[infobox.atmosphere]

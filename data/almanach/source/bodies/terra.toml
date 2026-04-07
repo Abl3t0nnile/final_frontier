@@ -6,3 +6,16 @@ description = """\
 Ein starkes Magnetfeld schützt die Biosphäre vor dem Sonnenwind. Die Plattentektonik sorgt für einen langfristigen Kohlenstoffkreislauf, der die Temperatur über geologische Zeiträume stabilisiert.
 
 Der Mond ist im Verhältnis zur Planetenmasse ungewöhnlich groß. Seine Gravitation stabilisiert die Erdachse und hat die Gezeiten geprägt — beides gilt als wichtig für die Entwicklung komplexen Lebens."""
+
+[infobox.atmosphere]
+pressure  = 1.013
+temp_mean = 15
+temp_min  = -88
+temp_max  = 58
+
+[infobox.atmosphere.composition]
+"Stickstoff (N₂)"       = 78.08
+"Sauerstoff (O₂)"       = 20.95
+"Argon (Ar)"            = 0.93
+"Kohlenstoffdioxid (CO₂)" = 0.042
+"Neon (Ne)"             = 0.002

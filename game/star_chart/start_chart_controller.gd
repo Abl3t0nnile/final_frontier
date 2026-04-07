@@ -21,7 +21,7 @@ const _BASE := "UILayer/MainDisplay/VFrame/BodyPanel"
 @onready var _info_panel: InfoPanel = $"UILayer/MainDisplay/VFrame/BodyPanel/InfoPanel"
 @onready var _map_overlay         = $"UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/SubViewport/MapOverlay"
 @onready var _planet_view_overlay = $"UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay"
-@onready var _almanach_panel      = $"UILayer/MainDisplay/VFrame/BodyPanel/AlmanachPanel"
+@onready var _almanach_panel: Almanac = $"UILayer/MainDisplay/VFrame/BodyPanel/Almanac"
 
 var _solar_map:        Node   = null
 var _planet_view:      Node   = null

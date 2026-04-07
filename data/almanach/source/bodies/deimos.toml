@@ -6,3 +6,5 @@ description = """\
 Im Gegensatz zu [url=body:phobos]Phobos[/url] entfernt sich Deimos langsam von Mars — sein Schicksal ist der Austritt aus dem Marssystem. Er hat eine fast kreisförmige Bahn und rotiert synchron.
 
 Seine Oberfläche ist glatter als die von Phobos, bedeckt von feinem Regolith, der die Krater teilweise auffüllt."""
+
+[infobox.atmosphere]

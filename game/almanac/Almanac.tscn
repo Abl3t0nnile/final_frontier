@@ -228,7 +228,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Hauptbestandteile"
 
-[node name="UnitValueDisplay2" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox" unique_id=1527128674 instance=ExtResource("4_wgtfk")]
+[node name="AtmoGasLabel" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox" unique_id=1527128674 instance=ExtResource("4_wgtfk")]
 layout_mode = 2
 caption = "Stickstoff (N)"
 unit = "%"

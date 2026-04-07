@@ -6,3 +6,5 @@ description = """\
 Er ist bemerkenswert dunkel mit einer Albedo von nur ~0,04 — viel dunkler als Makemake selbst. Diese Eigenschaft schloss eine globale Atmosphäre auf Makemake nahezu aus: Wäre eine solche vorhanden, würde die atmosphärische Bremsung den Mond auf eine engere Bahn ziehen.
 
 Mit einem Radius von ~87 km umkreist er Makemake in ~12.4 Tagen auf einer geneigten Bahn."""
+
+[infobox.atmosphere]

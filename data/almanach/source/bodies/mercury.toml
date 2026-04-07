@@ -6,3 +6,5 @@ description = """\
 Aufgrund seiner hohen [url=concept:eccentricity]Exzentrizität[/url] von 0,206 variiert sein Abstand zur Sonne erheblich zwischen [url=concept:periapsis]Perihel[/url] und [url=concept:apoapsis]Aphel[/url]. An seinem Perihel ist er kaum 46 Millionen km von der Sonne entfernt.
 
 Merkur ist in einer 3:2-Spin-Orbit-Resonanz gebunden: Er dreht sich genau dreimal um seine eigene Achse, während er zweimal die Sonne umkreist. Ein Sonnentag auf Merkur dauert dadurch fast zwei merkurianische Jahre."""
+
+[infobox.atmosphere]
