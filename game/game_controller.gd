@@ -19,6 +19,7 @@ signal game_started
 @export var planet_view_scene: PackedScene = null
 @export var start_chart: Node = null
 @export var loading_screen: CanvasLayer = null
+@export var almanac_scene: PackedScene = null
 
 var state: State = State.LOADING
 
@@ -62,6 +63,12 @@ func _load_data() -> void:
 		var obj: GameObject = GameRegistry.get_game_object(id)
 		if obj:
 			obj.add_component("almanach", almanach_data["bodies"][id])
+	
+	# Almanac instanziieren und Concepts injizieren
+	if almanac_scene:
+		var almanac = almanac_scene.instantiate()
+		almanac.set_concepts(almanach_data["concepts"])
+		# TODO: Almanac in UI-Struktur einhängen (abhängig von StarChart-Setup)
 
 
 func _build_sim() -> void:
