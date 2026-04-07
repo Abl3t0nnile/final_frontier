@@ -347,7 +347,7 @@ func _build_body_sections(obj: GameObject) -> void:
 ## Section Renderer
 
 func _render_section(section: Dictionary) -> void:
-	var type := section.get("type", "text")
+	var type: String = section.get("type", "text")
 	
 	match type:
 		"text":
@@ -361,8 +361,8 @@ func _render_section(section: Dictionary) -> void:
 
 
 func _render_text_section(section: Dictionary) -> void:
-	var heading := section.get("heading", "")
-	var content := section.get("content", "")
+	var heading: String = section.get("heading", "")
+	var content: String = section.get("content", "")
 	
 	if not heading.is_empty():
 		var heading_label := Label.new()
@@ -385,7 +385,7 @@ func _render_text_section(section: Dictionary) -> void:
 
 
 func _render_gallery_section(section: Dictionary) -> void:
-	var heading := section.get("heading", "Galerie")
+	var heading: String = section.get("heading", "Galerie")
 	var images: Array = section.get("images", [])
 	
 	if not heading.is_empty():
@@ -413,7 +413,7 @@ func _render_gallery_section(section: Dictionary) -> void:
 
 
 func _render_table_section(section: Dictionary) -> void:
-	var heading := section.get("heading", "Tabelle")
+	var heading: String = section.get("heading", "Tabelle")
 	var headers: Array = section.get("headers", [])
 	var rows: Array = section.get("rows", [])
 	

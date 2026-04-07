@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://qgkgsneq1nsf"]
 
+[ext_resource type="Script" uid="uid://cjtscfxett5j2" path="res://game/almanac/almanac.gd" id="1_almanac"]
 [ext_resource type="Texture2D" uid="uid://ib8eckgxchmb" path="res://assets/icons/ui/white/home.png" id="1_wgtfk"]
 [ext_resource type="Texture2D" uid="uid://oe5lrq85fvet" path="res://assets/icons/ui/white/backward.png" id="2_gssl0"]
 [ext_resource type="Texture2D" uid="uid://c1dv6tkdak65" path="res://assets/img/planets/terra_hero.jpg" id="4_gssl0"]
@@ -49,8 +50,6 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.9411765, 0.9411765, 0.9411765, 0.15)
-
-[ext_resource type="Script" path="res://game/almanac/almanac.gd" id="1_almanac"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_b0ch5"]
 font_size = 32
@@ -183,157 +182,53 @@ texture = ExtResource("4_gssl0")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="OrbitData" type="VBoxContainer" parent="VBox/ContentBox/Article/Overview/Panel" unique_id=16441767]
+[node name="OrbitData" type="FoldableContainer" parent="VBox/ContentBox/Article/Overview/Panel" unique_id=948194930]
 layout_mode = 2
+title = "ORBITAL DATEN"
 
-[node name="Label" type="Label" parent="VBox/ContentBox/Article/Overview/Panel/OrbitData" unique_id=1455998473"]
-layout_mode = 2
-text = "ORBITAL DATEN"
-add_theme_font_size_override("font_size", 12)
-add_theme_color_override("font_color", Color(0.94, 0.94, 0.94, 0.8))
-
-[node name="Grid" type="GridContainer" parent="VBox/ContentBox/Article/Overview/Panel/OrbitData" unique_id=1455998474]
+[node name="Grid" type="GridContainer" parent="VBox/ContentBox/Article/Overview/Panel/OrbitData" unique_id=1064933122]
 layout_mode = 2
 columns = 2
 
 [node name="UnitValueDisplay" parent="VBox/ContentBox/Article/Overview/Panel/OrbitData/Grid" unique_id=375893399 instance=ExtResource("4_wgtfk")]
 layout_mode = 2
-caption = "Halbachse"
-unit = "AU"
-
-[node name="UnitValueDisplay2" parent="VBox/ContentBox/Article/Overview/Panel/OrbitData/Grid" unique_id=1764877944 instance=ExtResource("4_wgtfk")]
-layout_mode = 2
-caption = "Umlaufzeit"
-unit = "a"
-
-[node name="UnitValueDisplay3" parent="VBox/ContentBox/Article/Overview/Panel/OrbitData/Grid" unique_id=179722121 instance=ExtResource("4_wgtfk")]
-layout_mode = 2
-caption = "Periapsis"
-unit = "AU"
-
-[node name="UnitValueDisplay4" parent="VBox/ContentBox/Article/Overview/Panel/OrbitData/Grid" unique_id=1141141907 instance=ExtResource("4_wgtfk")]
-layout_mode = 2
-caption = "⌀ Geschwindigkeit"
-unit = "km/s"
-
-[node name="UnitValueDisplay5" parent="VBox/ContentBox/Article/Overview/Panel/OrbitData/Grid" unique_id=2024863372 instance=ExtResource("4_wgtfk")]
-layout_mode = 2
-caption = "Apoapsis"
-unit = "AU"
-
-[node name="UnitValueDisplay6" parent="VBox/ContentBox/Article/Overview/Panel/OrbitData/Grid" unique_id=1702465471 instance=ExtResource("4_wgtfk")]
-layout_mode = 2
-caption = "Exzentrizität"
-unit = ""
 
 [node name="HSeparator" type="HSeparator" parent="VBox/ContentBox/Article/Overview/Panel" unique_id=1393381792]
 layout_mode = 2
 
-[node name="PhysicsData" type="VBoxContainer" parent="VBox/ContentBox/Article/Overview/Panel" unique_id=1089071884]
+[node name="PhysicsData" type="FoldableContainer" parent="VBox/ContentBox/Article/Overview/Panel" unique_id=1525752492]
 layout_mode = 2
+title = "PHYSIKALISCHE DATEN"
 
-[node name="Label" type="Label" parent="VBox/ContentBox/Article/Overview/Panel/PhysicsData" unique_id=1089071885]
-layout_mode = 2
-text = "PHYSIKALISCHE DATEN"
-add_theme_font_size_override("font_size", 12)
-add_theme_color_override("font_color", Color(0.94, 0.94, 0.94, 0.8))
-
-[node name="Grid" type="GridContainer" parent="VBox/ContentBox/Article/Overview/Panel/PhysicsData" unique_id=741135211]
+[node name="Grid" type="GridContainer" parent="VBox/ContentBox/Article/Overview/Panel/PhysicsData" unique_id=1671513938]
 layout_mode = 2
 columns = 2
 
-[node name="UnitValueDisplay" parent="VBox/ContentBox/Article/Overview/Panel/PhysicsData/Grid" unique_id=531090586 instance=ExtResource("4_wgtfk")]
+[node name="UnitValueDisplay" parent="VBox/ContentBox/Article/Overview/Panel/PhysicsData/Grid" unique_id=590644221 instance=ExtResource("4_wgtfk")]
 layout_mode = 2
-caption = "Radius"
-unit = "km"
-
-[node name="UnitValueDisplay2" parent="VBox/ContentBox/Article/Overview/Panel/PhysicsData/Grid" unique_id=1202119239 instance=ExtResource("4_wgtfk")]
-layout_mode = 2
-caption = "Masse"
-unit = "kg"
-
-[node name="UnitValueDisplay3" parent="VBox/ContentBox/Article/Overview/Panel/PhysicsData/Grid" unique_id=535056191 instance=ExtResource("4_wgtfk")]
-layout_mode = 2
-caption = "Dichte"
-unit = "gm/c3"
-
-[node name="UnitValueDisplay4" parent="VBox/ContentBox/Article/Overview/Panel/PhysicsData/Grid" unique_id=1539077171 instance=ExtResource("4_wgtfk")]
-layout_mode = 2
-caption = "Schwerkraft"
-unit = "m/s2"
-
-[node name="UnitValueDisplay5" parent="VBox/ContentBox/Article/Overview/Panel/PhysicsData/Grid" unique_id=916175180 instance=ExtResource("4_wgtfk")]
-layout_mode = 2
-caption = "Fluchtgeschwindigkeit"
-unit = "m/s"
 
 [node name="HSeparator2" type="HSeparator" parent="VBox/ContentBox/Article/Overview/Panel" unique_id=2100975980]
 layout_mode = 2
 
-[node name="AthmoData" type="VBoxContainer" parent="VBox/ContentBox/Article/Overview/Panel" unique_id=1665084581]
+[node name="AthmoData" type="FoldableContainer" parent="VBox/ContentBox/Article/Overview/Panel" unique_id=27622522]
+layout_mode = 2
+title = "ATHMOSPHÄRISCHE DATEN"
+
+[node name="VBox" type="VBoxContainer" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData" unique_id=1943884056]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData" unique_id=1665084582]
-layout_mode = 2
-text = "ATHMOSPHÄRE"
-add_theme_font_size_override("font_size", 12)
-add_theme_color_override("font_color", Color(0.94, 0.94, 0.94, 0.8))
-
-[node name="VBox" type="VBoxContainer" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData" unique_id=2079235994]
-layout_mode = 2
-
-[node name="Grid" type="GridContainer" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox" unique_id=52658210]
+[node name="Grid" type="GridContainer" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox" unique_id=188203920]
 layout_mode = 2
 columns = 2
 
-[node name="Pressure" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox/Grid" unique_id=597673240 instance=ExtResource("4_wgtfk")]
+[node name="UnitValueDisplay" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox/Grid" unique_id=1840174611 instance=ExtResource("4_wgtfk")]
 layout_mode = 2
-caption = "Druck"
-unit = "bar"
 
-[node name="MedTemp" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox/Grid" unique_id=1577522374 instance=ExtResource("4_wgtfk")]
-layout_mode = 2
-caption = "Temp. ⌀"
-unit = "°C"
-
-[node name="MinTemp" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox/Grid" unique_id=246405110 instance=ExtResource("4_wgtfk")]
-layout_mode = 2
-caption = "Temp. Min"
-unit = "°C"
-
-[node name="MaxTemp" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox/Grid" unique_id=1329352784 instance=ExtResource("4_wgtfk")]
-layout_mode = 2
-caption = "Temp. Max"
-unit = "°C"
-
-[node name="Label" type="Label" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox" unique_id=1148527932]
+[node name="Label" type="Label" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox" unique_id=1089891171]
 layout_mode = 2
 text = "Hauptbestandteile"
 
-[node name="HSeparator2" type="HSeparator" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox" unique_id=1578817595]
-layout_mode = 2
-
-[node name="AtmoComponent" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox" unique_id=1854483361 instance=ExtResource("4_wgtfk")]
+[node name="UnitValueDisplay2" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox" unique_id=1527128674 instance=ExtResource("4_wgtfk")]
 layout_mode = 2
 caption = "Stickstoff (N)"
-unit = "%"
-
-[node name="AtmoComponent2" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox" unique_id=995964462 instance=ExtResource("4_wgtfk")]
-layout_mode = 2
-caption = "Sauerstoff (O2)"
-unit = "%"
-
-[node name="AtmoComponent3" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox" unique_id=1288224409 instance=ExtResource("4_wgtfk")]
-layout_mode = 2
-caption = "Argon (A)"
-unit = "%"
-
-[node name="AtmoComponent4" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox" unique_id=2105628384 instance=ExtResource("4_wgtfk")]
-layout_mode = 2
-caption = "Kohlenstoffdioxid (CO2)"
-unit = "%"
-
-[node name="AtmoComponent5" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox" unique_id=34170495 instance=ExtResource("4_wgtfk")]
-layout_mode = 2
-caption = "Neon (Ne)"
 unit = "%"
