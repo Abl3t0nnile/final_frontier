@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://b0abcd1234" path="res://game/star_chart/SolarMap.tscn" id="2_2fjjk"]
 [ext_resource type="PackedScene" uid="uid://dy3prfbgdcq52" path="res://game/star_chart/StartChart.tscn" id="2_8gaax"]
 [ext_resource type="Script" uid="uid://c1v3wo13h2efs" path="res://game/game_controller.gd" id="3_gamecontroller"]
-[ext_resource type="PackedScene" uid="uid://cx0qx7qyomjub" path="res://game/star_chart/planet_view.tscn" id="3_madmh"]
-[ext_resource type="Shader" uid="uid://jgquymtyyfyn" path="res://shader/ui_tint_overlay.gdshader" id="5_madmh"]
-[ext_resource type="Shader" uid="uid://bti71qu06gbo0" path="res://shader/crt_monitor.gdshader" id="6_yo8gm"]
+[ext_resource type="PackedScene" uid="uid://cx0qx7qyomjub" path="res://game/star_chart/PlanetView.tscn" id="3_madmh"]
+[ext_resource type="Shader" uid="uid://jgquymtyyfyn" path="res://assets/shaders/fx/ui_tint_overlay.gdshader" id="5_madmh"]
+[ext_resource type="Shader" uid="uid://bti71qu06gbo0" path="res://assets/shaders/fx/crt_monitor.gdshader" id="6_yo8gm"]
 
 [sub_resource type="Environment" id="Environment_yo8gm"]
 background_mode = 3
@@ -30,7 +30,7 @@ shader_parameter/pixel_size = 1.0
 shader_parameter/lod_blur = 0.0
 shader_parameter/chroma_offset_px = 2.000000095
 shader_parameter/saturation = 1.6000000760000002
-shader_parameter/contrast = 1.1200000294499999
+shader_parameter/contrast = 1.12000002945
 shader_parameter/shadow_lift = 0.06
 shader_parameter/scanline_strength = 0.0400000019
 shader_parameter/vignette_strength = 0.1

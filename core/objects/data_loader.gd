@@ -5,7 +5,7 @@
 class_name DataLoader
 extends RefCounted
 
-const DEFAULT_DATA_PATH := "res://data/solar_system_data.json"
+const DEFAULT_DATA_PATH := "res://data/solar_system/solar_system_data.json"
 
 
 ## Public Methods

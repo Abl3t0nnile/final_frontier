@@ -160,7 +160,7 @@ func _setup_sphere() -> void:
 
 
 func _get_shader_path() -> String:
-	const BASE := "res://shader/"
+	const BASE := "res://assets/shaders/planet/"
 	return BASE + ("sun_sphere.gdshader" if use_sun_shader else "planet_sphere.gdshader")
 
 

@@ -14,7 +14,7 @@ var _mmi: MeshInstance2D         = null
 var _quad_mesh: QuadMesh         = null
 var _mat: ShaderMaterial         = null
 
-const _SHADER_PATH := "res://map/shaders/zone_ring.gdshader"
+const _SHADER_PATH := "res://assets/shaders/map/zone_ring.gdshader"
 
 
 func setup(def: ZoneDef, map_transform: MapTransform) -> void:

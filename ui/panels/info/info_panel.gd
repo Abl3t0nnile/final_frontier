@@ -10,7 +10,7 @@ signal zoom_requested(body_id: String)
 signal pin_requested(body_id: String)
 signal unpin_requested(body_id: String)
 
-const _TEXTURE_BASE := "res://assets/textures/planets_16_levels/"
+const _TEXTURE_BASE := "res://assets/textures/planets/16_levels/"
 
 ## body_id → { "surface": filename, "cloud": filename (optional) }
 const _BODY_TEXTURES: Dictionary = {

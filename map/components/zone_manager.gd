@@ -4,7 +4,7 @@
 class_name ZoneManager
 extends Node
 
-const DEFAULT_DATA_PATH := "res://data/zone_data.json"
+const DEFAULT_DATA_PATH := "res://data/solar_system/zone_data.json"
 
 var _zone_layer: Node2D          = null
 var _map_transform: MapTransform = null

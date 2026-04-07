@@ -4,7 +4,7 @@
 class_name EntityManager
 extends Node
 
-const MARKER_SCENE := preload("res://map/markers/map_marker.tscn")
+const MARKER_SCENE := preload("res://map/markers/MapMarker.tscn")
 
 var markers: Dictionary : get = get_markers
 

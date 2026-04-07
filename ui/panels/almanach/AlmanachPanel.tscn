@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://b00mvf8jh3x6i"]
 
-[ext_resource type="Script" uid="uid://diks243gs3v16" path="res://ui/panels/almanach_panel.gd" id="1_script"]
-[ext_resource type="Texture2D" uid="uid://ib8eckgxchmb" path="res://assets/ui_icons/white/home.png" id="2_rmmbg"]
-[ext_resource type="Texture2D" uid="uid://oe5lrq85fvet" path="res://assets/ui_icons/white/backward.png" id="3_mhxxn"]
-[ext_resource type="Texture2D" uid="uid://b1qx4f57hy75q" path="res://assets/ui_icons/white/forward.png" id="4_1bccr"]
-[ext_resource type="Texture2D" uid="uid://dnk3bdvjj6boy" path="res://assets/ui_icons/white/larger.png" id="5_zoom"]
+[ext_resource type="Script" uid="uid://diks243gs3v16" path="res://ui/panels/almanach/almanach_panel.gd" id="1_2bvwq"]
+[ext_resource type="Texture2D" uid="uid://ib8eckgxchmb" path="res://assets/icons/ui/white/home.png" id="2_iclgs"]
+[ext_resource type="Texture2D" uid="uid://oe5lrq85fvet" path="res://assets/icons/ui/white/backward.png" id="3_ut317"]
+[ext_resource type="Texture2D" uid="uid://dnk3bdvjj6boy" path="res://assets/icons/ui/white/larger.png" id="4_gfeiv"]
+[ext_resource type="Texture2D" uid="uid://b1qx4f57hy75q" path="res://assets/icons/ui/white/forward.png" id="5_wichs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_331wc"]
 content_margin_left = 16.0
@@ -71,7 +71,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_331wc")
-script = ExtResource("1_script")
+script = ExtResource("1_2bvwq")
 
 [node name="VBox" type="VBoxContainer" parent="." unique_id=1408531895]
 layout_mode = 2
@@ -93,7 +93,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_hover")
 theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_btn_disabled")
 disabled = true
-icon = ExtResource("2_rmmbg")
+icon = ExtResource("2_iclgs")
 expand_icon = true
 
 [node name="TitleLabel" type="Label" parent="VBox/Header" unique_id=158884037]
@@ -119,10 +119,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_hover")
 theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_btn_disabled")
 disabled = true
-icon = ExtResource("3_mhxxn")
+icon = ExtResource("3_ut317")
 expand_icon = true
 
 [node name="ZoomButton" type="Button" parent="VBox/Header" unique_id=1832998827]
+visible = false
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_vertical = 4
@@ -133,8 +134,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_btn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_hover")
 theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_btn_disabled")
-visible = false
-icon = ExtResource("5_zoom")
+icon = ExtResource("4_gfeiv")
 expand_icon = true
 
 [node name="ForwardButton" type="Button" parent="VBox/Header" unique_id=1732998826]
@@ -149,7 +149,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_hover")
 theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_btn_disabled")
 disabled = true
-icon = ExtResource("4_1bccr")
+icon = ExtResource("5_wichs")
 expand_icon = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBox" unique_id=2147253323]

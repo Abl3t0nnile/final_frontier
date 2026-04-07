@@ -8,7 +8,7 @@ extends PanelContainer
 
 signal zoom_requested(body_id: String)
 
-const _ARTICLES_PATH := "res://data/almanach_articles.json"
+const _ARTICLES_PATH := "res://data/almanach/almanach_articles.json"
 
 ## Navigation History: Array von article_ids (z.B. "body:terra", "concept:eccentricity")
 var _history: Array[String] = []

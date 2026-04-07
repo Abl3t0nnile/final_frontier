@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cx0qx7qyomjub"]
 
-[ext_resource type="Script" uid="uid://by5l1m8u4hj30" path="res://new_features/planet_viewer.gd" id="1_planet"]
+[ext_resource type="Script" uid="uid://by5l1m8u4hj30" path="res://game/planet_view/planet_viewer.gd" id="1_planet"]
 [ext_resource type="Script" uid="uid://3dxlfen6p73l" path="res://game/star_chart/planet_view.gd" id="2_script"]
-[ext_resource type="Shader" uid="uid://dhiv1gcuoq7qo" path="res://shader/stars_bg.gdshader" id="3_8vuyq"]
+[ext_resource type="Shader" uid="uid://dhiv1gcuoq7qo" path="res://assets/shaders/map/stars_bg.gdshader" id="3_8vuyq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k5r60"]
 shader = ExtResource("3_8vuyq")

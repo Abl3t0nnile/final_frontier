@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://planet_viewer_main.gd" id="1_main_script"]
 [ext_resource type="Texture2D" path="res://assets/planets_16/2k_mars.png" id="4_bug2q"]
-[ext_resource type="Shader" uid="uid://brls6tdi7vomx" path="res://shader/sun_sphere.gdshader" id="4_uyj76"]
+[ext_resource type="Shader" uid="uid://brls6tdi7vomx" path="res://assets/shaders/planet/sun_sphere.gdshader" id="4_uyj76"]
 [ext_resource type="Texture2D" path="res://assets/planets_16/2k_sun.png" id="6_15puk"]
-[ext_resource type="Shader" uid="uid://b13qnhuhnsgio" path="res://shader/planet_sphere.gdshader" id="6_xmrtd"]
-[ext_resource type="Shader" uid="uid://cg7o1xh3che8w" path="res://shader/phosphor_monitor.gdshader" id="7_phosphor"]
+[ext_resource type="Shader" uid="uid://b13qnhuhnsgio" path="res://assets/shaders/planet/planet_sphere.gdshader" id="6_xmrtd"]
+[ext_resource type="Shader" uid="uid://cg7o1xh3che8w" path="res://assets/shaders/fx/phosphor_monitor.gdshader" id="7_phosphor"]
 
 [sub_resource type="Environment" id="Environment_3g2dq"]
 background_mode = 3

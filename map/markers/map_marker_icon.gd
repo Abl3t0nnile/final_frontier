@@ -1,12 +1,12 @@
 ## MarkerIcon
 ## Rendert das Icon eines Himmelskörpers als Sprite2D.
-## Icon-Auswahl: res://assets/map_icons/{subtype}.png, Fallback: default.png
+## Icon-Auswahl: res://assets/icons/map/{subtype}.png, Fallback: default.png
 
 class_name MarkerIcon
 extends Sprite2D
 
-const ICON_BASE_PATH := "res://assets/map_icons/"
-const FALLBACK_ICON  := "res://assets/map_icons/default.png"
+const ICON_BASE_PATH := "res://assets/icons/map/"
+const FALLBACK_ICON  := "res://assets/icons/map/default.png"
 
 var size_px: int = 24
 

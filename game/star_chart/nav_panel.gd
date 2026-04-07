@@ -74,9 +74,9 @@ func _fill(box: VBoxContainer, defs: Array[BodyDef], registry: GameObjectRegistr
 	for def: BodyDef in defs:
 		var btn: Button = template.duplicate() as Button
 		btn.text = _format_name(def, registry, show_parent)
-		var icon_path := "res://assets/map_icons/" + def.subtype + ".png"
+		var icon_path := "res://assets/icons/map/" + def.subtype + ".png"
 		if not ResourceLoader.exists(icon_path):
-			icon_path = "res://assets/map_icons/default.png"
+			icon_path = "res://assets/icons/map/default.png"
 		btn.icon = load(icon_path) as Texture2D
 		btn.pressed.connect(_on_body_pressed.bind(def.id))
 		new_buttons.append(btn)

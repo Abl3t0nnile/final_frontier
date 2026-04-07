@@ -438,7 +438,7 @@ func _setup_belts() -> void:
 	_belt_manager.point_size_mid  = belt_point_size_mid
 	_belt_manager.point_size_far  = belt_point_size_far
 	add_child(_belt_manager)
-	_belt_manager.setup(_belt_layer, _map_transform, _model, "res://data/belt_data.json", "belts")
+	_belt_manager.setup(_belt_layer, _map_transform, _model, "res://data/solar_system/belt_data.json", "belts")
 
 
 func _setup_zones() -> void:
@@ -452,7 +452,7 @@ func _setup_rings() -> void:
 	_ring_manager = PointCloudManager.new()
 	_ring_manager.name = "RingManager"
 	add_child(_ring_manager)
-	_ring_manager.setup(_ring_layer, _map_transform, _model, "res://data/ring_data.json", "rings")
+	_ring_manager.setup(_ring_layer, _map_transform, _model, "res://data/solar_system/ring_data.json", "rings")
 
 
 func _update_orbits() -> void:

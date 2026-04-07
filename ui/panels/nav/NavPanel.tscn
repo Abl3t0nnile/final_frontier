@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://pf507g31tv1q"]
 
 [ext_resource type="Script" uid="uid://c8adk0knbrxw3" path="res://game/star_chart/nav_panel.gd" id="1_gqmsi"]
-[ext_resource type="Texture2D" uid="uid://21t4ks0vac0u" path="res://assets/map_icons/g_type.png" id="2_j66st"]
-[ext_resource type="Texture2D" uid="uid://gtcy0apqvjip" path="res://assets/map_icons/terrestrial.png" id="3_ghnkj"]
-[ext_resource type="Texture2D" uid="uid://ciumn8o41y5u3" path="res://assets/map_icons/asteroid_dwarf.png" id="4_fwvt1"]
-[ext_resource type="Texture2D" uid="uid://be017lin5lw2a" path="res://assets/map_icons/major_moon.png" id="5_req6u"]
-[ext_resource type="Texture2D" uid="uid://ctbm118boovp" path="res://assets/map_icons/poi.png" id="6_comet"]
+[ext_resource type="Texture2D" uid="uid://21t4ks0vac0u" path="res://assets/icons/map/g_type.png" id="2_j66st"]
+[ext_resource type="Texture2D" uid="uid://gtcy0apqvjip" path="res://assets/icons/map/terrestrial.png" id="3_ghnkj"]
+[ext_resource type="Texture2D" uid="uid://ciumn8o41y5u3" path="res://assets/icons/map/asteroid_dwarf.png" id="4_fwvt1"]
+[ext_resource type="Texture2D" uid="uid://be017lin5lw2a" path="res://assets/icons/map/major_moon.png" id="5_req6u"]
+[ext_resource type="Texture2D" uid="uid://ctbm118boovp" path="res://assets/icons/map/poi.png" id="6_comet"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqmsi"]
 draw_center = false

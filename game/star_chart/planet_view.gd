@@ -5,7 +5,7 @@ class_name PlanetView
 extends Control
 
 
-const _TEXTURE_BASE := "res://assets/textures/planets_16_levels/"
+const _TEXTURE_BASE := "res://assets/textures/planets/16_levels/"
 const _BODY_TEXTURES: Dictionary = {
 	"sun":      { "surface": "2k_sun.png" },
 	"mercury":  { "surface": "2k_mercury.png" },

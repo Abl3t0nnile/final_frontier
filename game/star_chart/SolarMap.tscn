@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c8051g0t0rwrj" path="res://game/star_chart/solar_map.gd" id="1_solar_map"]
 [ext_resource type="Script" uid="uid://df7sqi13afp4q" path="res://map/controllers/solar_map_controller.gd" id="2_solar_map_controller"]
-[ext_resource type="Shader" uid="uid://dhiv1gcuoq7qo" path="res://shader/stars_bg.gdshader" id="3_mwffk"]
+[ext_resource type="Shader" uid="uid://dhiv1gcuoq7qo" path="res://assets/shaders/map/stars_bg.gdshader" id="3_mwffk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_auugl"]
 shader = ExtResource("3_mwffk")
