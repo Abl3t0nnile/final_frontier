@@ -1,0 +1,334 @@
+[semi_major_axis]
+title = "Große Halbachse"
+content = """\
+[font_size=18][b]Große Halbachse[/b][/font_size]
+[i]Astronomie · Orbitalmechanik[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]große Halbachse[/b] ist die Hälfte der längsten Ausdehnung einer Ellipse und beschreibt den mittleren Abstand eines Körpers zu seinem Zentralobjekt. In der [url=concept:kepler_laws]Keplerschen Mechanik[/url] ist sie die fundamentalste Größe zur Beschreibung einer Umlaufbahn.
+
+Sie wird gewöhnlich in [url=concept:astronomical_unit]Astronomischen Einheiten (AU)[/url] angegeben, wenn es sich um Abstände im Sonnensystem handelt.
+
+[b]Zusammenhang mit der Umlaufzeit[/b]
+Nach dem dritten [url=concept:kepler_laws]Keplerschen Gesetz[/url] gilt:
+
+[indent][i]T² ∝ a³[/i][/indent]
+
+Das heißt: Je größer die große Halbachse, desto länger die [url=concept:orbital_period]Umlaufzeit[/url]. Ein Planet mit doppelter Halbachse benötigt etwa 2,83-mal so lang für einen Umlauf.
+
+[b]Verwandte Begriffe[/b]
+• [url=concept:periapsis]Periapsis[/url] — Nächster Punkt der Bahn
+• [url=concept:apoapsis]Apoapsis[/url] — Fernster Punkt der Bahn
+• [url=concept:eccentricity]Exzentrizität[/url] — Maß für die Abweichung vom Kreis"""
+
+[orbital_period]
+title = "Umlaufzeit"
+content = """\
+[font_size=18][b]Umlaufzeit[/b][/font_size]
+[i]Astronomie · Auch: Siderische Periode[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Umlaufzeit[/b] (auch [b]siderische Periode[/b]) ist die Zeit, die ein Himmelskörper benötigt, um seinen Zentralkörper einmal vollständig zu umkreisen — gemessen gegenüber den Fixsternen.
+
+Sie unterscheidet sich von der [b]synodischen Periode[/b], welche die Zeit zwischen zwei gleichartigen Konstellationen relativ zur Erde beschreibt (z. B. zwei aufeinanderfolgende Oppositionen).
+
+[b]Berechnung nach Kepler[/b]
+Aus dem dritten [url=concept:kepler_laws]Keplerschen Gesetz[/url] folgt:
+
+[indent][i]T = 2π · √(a³ / μ)[/i][/indent]
+
+wobei [i]a[/i] die [url=concept:semi_major_axis]große Halbachse[/url] und [i]μ[/i] der [url=concept:gravitational_parameter]Gravitationsparameter[/url] des Zentralkörpers ist.
+
+[b]Einheiten im Almanach[/b]
+Umlaufzeiten werden in Tagen (d) oder Jahren (a) angegeben:
+• [b]1 a[/b] = 365,25 d = 31.557.600 s
+• [b]1 d[/b] = 86.400 s"""
+
+[eccentricity]
+title = "Exzentrizität"
+content = """\
+[font_size=18][b]Exzentrizität[/b][/font_size]
+[i]Astronomie · Orbitalmechanik[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Exzentrizität[/b] (Symbol: [i]e[/i]) beschreibt, wie stark eine Umlaufbahn von einem Kreis abweicht. Sie ist dimensionslos und nimmt folgende charakteristische Werte an:
+
+[indent]• [b]e = 0[/b] → Kreisbahn
+• [b]0 < e < 1[/b] → Ellipse (gebundene Bahn)
+• [b]e = 1[/b] → Parabel (Grenzbahn)
+• [b]e > 1[/b] → Hyperbel (nicht gebunden)[/indent]
+
+Die meisten Planeten des Sonnensystems haben Exzentrizitäten nahe Null, ihre Bahnen sind also fast kreisförmig. Kometen hingegen erreichen oft Werte nahe 1.
+
+[b]Einfluss auf Bahn und Klima[/b]
+Eine hohe Exzentrizität bewirkt große Unterschiede zwischen [url=concept:periapsis]Periapsis[/url] und [url=concept:apoapsis]Apoapsis[/url] und damit auch zwischen den Jahreszeiten-Extremen eines Planeten.
+
+[b]Verwandte Begriffe[/b]
+• [url=concept:semi_major_axis]Große Halbachse[/url]
+• [url=concept:periapsis]Periapsis[/url]
+• [url=concept:apoapsis]Apoapsis[/url]"""
+
+[periapsis]
+title = "Periapsis"
+content = """\
+[font_size=18][b]Periapsis[/b][/font_size]
+[i]Astronomie · Orbitalmechanik[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Periapsis[/b] ist der [b]nächste Punkt[/b] einer Umlaufbahn zum Zentralkörper. An diesem Punkt ist die [url=concept:orbital_velocity]Orbitalgeschwindigkeit[/url] am höchsten.
+
+Der Begriff ist allgemein für jeden Zentralkörper gültig. Bei spezifischen Körpern gibt es eigene Bezeichnungen:
+[indent]• [b]Perihel[/b] — nächster Punkt zur Sonne
+• [b]Perigäum[/b] — nächster Punkt zur Erde
+• [b]Perizentrum[/b] — allgemein[/indent]
+
+[b]Berechnung[/b]
+[indent][i]r_peri = a · (1 − e)[/i][/indent]
+
+wobei [i]a[/i] die [url=concept:semi_major_axis]große Halbachse[/url] und [i]e[/i] die [url=concept:eccentricity]Exzentrizität[/url] ist.
+
+[b]Siehe auch[/b]
+• [url=concept:apoapsis]Apoapsis[/url] — fernster Punkt der Bahn
+• [url=concept:eccentricity]Exzentrizität[/url]"""
+
+[apoapsis]
+title = "Apoapsis"
+content = """\
+[font_size=18][b]Apoapsis[/b][/font_size]
+[i]Astronomie · Orbitalmechanik[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Apoapsis[/b] ist der [b]fernste Punkt[/b] einer Umlaufbahn vom Zentralkörper. An diesem Punkt ist die [url=concept:orbital_velocity]Orbitalgeschwindigkeit[/url] am niedrigsten.
+
+Wie bei der [url=concept:periapsis]Periapsis[/url] existieren zentralkörper-spezifische Bezeichnungen:
+[indent]• [b]Aphel[/b] — fernster Punkt von der Sonne
+• [b]Apogäum[/b] — fernster Punkt von der Erde
+• [b]Apozentrum[/b] — allgemein[/indent]
+
+[b]Berechnung[/b]
+[indent][i]r_apo = a · (1 + e)[/i][/indent]
+
+[b]Siehe auch[/b]
+• [url=concept:periapsis]Periapsis[/url] — nächster Punkt der Bahn
+• [url=concept:semi_major_axis]Große Halbachse[/url]
+• [url=concept:eccentricity]Exzentrizität[/url]"""
+
+[orbital_velocity]
+title = "Orbitalgeschwindigkeit"
+content = """\
+[font_size=18][b]Orbitalgeschwindigkeit[/b][/font_size]
+[i]Astronomie · Orbitalmechanik[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Orbitalgeschwindigkeit[/b] ist die Geschwindigkeit, mit der sich ein Körper auf seiner Umlaufbahn bewegt. Sie ist nicht konstant — auf einer elliptischen Bahn ist sie an der [url=concept:periapsis]Periapsis[/url] am größten und an der [url=concept:apoapsis]Apoapsis[/url] am kleinsten (2. Keplersches Gesetz).
+
+[b]Mittlere Orbitalgeschwindigkeit[/b]
+[indent][i]v = 2π · a / T[/i][/indent]
+
+wobei [i]a[/i] die [url=concept:semi_major_axis]große Halbachse[/url] und [i]T[/i] die [url=concept:orbital_period]Umlaufzeit[/url] ist.
+
+[b]Einordnung[/b]
+Die mittlere Orbitalgeschwindigkeit der Erde beträgt ca. [b]29,8 km/s[/b]. Innere Planeten wie Merkur (47,9 km/s) sind schneller, äußere wie Neptun (5,4 km/s) deutlich langsamer.
+
+[b]Siehe auch[/b]
+• [url=concept:escape_velocity]Fluchtgeschwindigkeit[/url]
+• [url=concept:kepler_laws]Keplersche Gesetze[/url]"""
+
+[escape_velocity]
+title = "Fluchtgeschwindigkeit"
+content = """\
+[font_size=18][b]Fluchtgeschwindigkeit[/b][/font_size]
+[i]Astronomie · Physik[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Fluchtgeschwindigkeit[/b] ist die Mindestgeschwindigkeit, die ein Körper benötigt, um dem Gravitationsfeld eines anderen Körpers zu entkommen — ohne weiteren Antrieb.
+
+[b]Formel[/b]
+[indent][i]v_esc = √(2μ / r)[/i][/indent]
+
+wobei [i]μ[/i] der [url=concept:gravitational_parameter]Gravitationsparameter[/url] und [i]r[/i] der Radius des Körpers ist.
+
+[b]Beispiele[/b]
+[indent]• [b]Erde:[/b] ~11,2 km/s
+• [b]Mars:[/b] ~5,0 km/s
+• [b]Jupiter:[/b] ~59,5 km/s
+• [b]Sonne:[/b] ~617 km/s[/indent]
+
+Körper mit geringer Fluchtgeschwindigkeit (wie der Mond) können keine dichte Atmosphäre halten, da Gasmoleküle bei Umgebungstemperatur schnell genug sind, um zu entweichen.
+
+[b]Siehe auch[/b]
+• [url=concept:gravitational_parameter]Gravitationsparameter[/url]
+• [url=concept:orbital_velocity]Orbitalgeschwindigkeit[/url]"""
+
+[gravitational_parameter]
+title = "Gravitationsparameter"
+content = """\
+[font_size=18][b]Gravitationsparameter[/b][/font_size]
+[i]Physik · Orbitalmechanik[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Der [b]Gravitationsparameter[/b] (Symbol: [i]μ[/i]) eines Körpers ist das Produkt aus der [b]Gravitationskonstante G[/b] und der [b]Masse M[/b] des Körpers:
+
+[indent][i]μ = G · M[/i][/indent]
+
+Er wird in km³/s² angegeben und ist in der Praxis genauer bekannt als G und M einzeln, da er direkt aus Umlaufbahnen gemessen werden kann.
+
+[b]Verwendung[/b]
+Der Gravitationsparameter ist die zentrale Größe in allen orbitalmechanischen Berechnungen:
+• [url=concept:orbital_period]Umlaufzeit[/url] aus [url=concept:semi_major_axis]Halbachse[/url]
+• [url=concept:escape_velocity]Fluchtgeschwindigkeit[/url]
+• Bahnkorrekturen und Manöver
+
+[b]Werte (Sonnensystem)[/b]
+[indent]• [b]Sonne:[/b] 1,327 · 10¹¹ km³/s²
+• [b]Erde:[/b] 3,986 · 10⁵ km³/s²
+• [b]Jupiter:[/b] 1,267 · 10⁸ km³/s²[/indent]"""
+
+[astronomical_unit]
+title = "Astronomische Einheit"
+content = """\
+[font_size=18][b]Astronomische Einheit[/b][/font_size]
+[i]Astronomie · Maßeinheit[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Astronomische Einheit[/b] (Abkürzung: [b]AU[/b] oder [b]AE[/b]) ist eine Längeneinheit der Astronomie, definiert als der mittlere Abstand zwischen Erde und Sonne.
+
+[b]Definition[/b]
+[indent][b]1 AU = 149.597.870,7 km[/b] (exakt, seit 2012)[/indent]
+
+Sie ist die Standardeinheit für Abstände innerhalb von Planetensystemen.
+
+[b]Einordnung[/b]
+[indent]• Merkur: 0,387 AU
+• Venus: 0,723 AU
+• [b]Erde: 1,000 AU[/b]
+• Mars: 1,524 AU
+• Jupiter: 5,203 AU
+• Neptun: 30,07 AU[/indent]
+
+Licht benötigt für eine Strecke von 1 AU etwa [b]8 Minuten und 20 Sekunden[/b]."""
+
+[kepler_laws]
+title = "Keplersche Gesetze"
+content = """\
+[font_size=18][b]Keplersche Gesetze[/b][/font_size]
+[i]Astronomie · Johannes Kepler (1571–1630)[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]drei Keplerschen Gesetze[/b] beschreiben die Bewegung von Himmelskörpern auf Umlaufbahnen. Sie wurden von Johannes Kepler Anfang des 17. Jahrhunderts empirisch aus Tychoschen Beobachtungsdaten abgeleitet und später von Newton gravitationstheoretisch begründet.
+
+[b]1. Gesetz — Ellipsenbahn[/b]
+[indent]Alle Planeten bewegen sich auf [b]Ellipsen[/b], in deren einem Brennpunkt die Sonne steht.[/indent]
+
+[b]2. Gesetz — Flächensatz[/b]
+[indent]Der Fahrstrahl (Verbindungslinie Planet–Sonne) überstreicht in gleichen Zeiten [b]gleiche Flächen[/b]. Planeten sind nahe der [url=concept:periapsis]Periapsis[/url] schneller als nahe der [url=concept:apoapsis]Apoapsis[/url].[/indent]
+
+[b]3. Gesetz — Harmonisches Gesetz[/b]
+[indent]Das Quadrat der [url=concept:orbital_period]Umlaufzeit[/url] ist proportional zur dritten Potenz der [url=concept:semi_major_axis]großen Halbachse[/url]:
+[i]T² ∝ a³[/i][/indent]
+
+Die Keplersche Mechanik bildet die Grundlage der Simulationsmodelle dieses Systems."""
+
+[asteroid_belt]
+title = "Asteroidengürtel"
+content = """\
+[font_size=18][b]Asteroidengürtel[/b][/font_size]
+[i]Sonnensystem · Region[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Der [b]Asteroidengürtel[/b] (auch: Hauptgürtel) ist eine ringförmige Region zwischen den Orbits von [url=body:mars]Mars[/url] und [url=body:jupiter]Jupiter[/url], in der sich Millionen von Asteroiden und Kleinkörpern konzentrieren.
+
+[b]Lage[/b]
+[indent]• Innere Grenze: ~2,1 AU
+• Äußere Grenze: ~3,3 AU
+• Breiteste Ausdehnung: ~1,2 AU[/indent]
+
+[b]Entstehung[/b]
+Es wird angenommen, dass die starke Gravitationswirkung [url=body:jupiter]Jupiters[/url] verhindert hat, dass sich das Material des Gürtels zu einem Planeten zusammengeballt hat. [url=body:ceres]Ceres[/url] ist mit einem Durchmesser von ~940 km das größte Objekt im Hauptgürtel und wird als Zwergplanet klassifiziert.
+
+[b]Bekannte Objekte[/b]
+• [url=body:ceres]Ceres[/url] — Zwergplanet, größtes Objekt im Gürtel
+
+[b]Siehe auch[/b]
+• [url=concept:kuiper_belt]Kuipergürtel[/url]
+• [url=concept:frost_line]Frostlinie[/url]"""
+
+[kuiper_belt]
+title = "Kuipergürtel"
+content = """\
+[font_size=18][b]Kuipergürtel[/b][/font_size]
+[i]Sonnensystem · Region[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Der [b]Kuipergürtel[/b] ist eine scheibenförmige Region des äußeren Sonnensystems, die sich von der Bahn [url=body:neptune]Neptuns[/url] (~30 AU) bis etwa 50 AU erstreckt. Er enthält eine große Anzahl kleiner Eiskörper (Trans-Neptunische Objekte, TNO).
+
+[b]Lage[/b]
+[indent]• Innere Grenze: ~30 AU (Neptunbahn)
+• Äußere Grenze: ~50 AU
+• Deutlich größer als der [url=concept:asteroid_belt]Asteroidengürtel][/url][/indent]
+
+[b]Bekannte Objekte[/b]
+• [url=body:pluto]Pluto[/url] (falls vorhanden) — größtes bekanntes KBO
+• [url=body:eris]Eris[/url] — massereicher Zwergplanet
+• [url=body:makemake]Makemake[/url] — Zwergplanet
+• [url=body:haumea]Haumea[/url] — Zwergplanet mit Ringen
+
+[b]Bedeutung[/b]
+Der Kuipergürtel gilt als Reservoir für [b]kurzperiodische Kometen[/b]. Gravitationsstörungen durch die Gasriesen können KBOs auf innere Bahnen lenken.
+
+[b]Siehe auch[/b]
+• [url=concept:asteroid_belt]Asteroidengürtel[/url]"""
+
+[habitable_zone]
+title = "Habitable Zone"
+content = """\
+[font_size=18][b]Habitable Zone[/b][/font_size]
+[i]Astronomie · Astrobiologie[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Habitable Zone[/b] (auch: Goldlöckchen-Zone) ist der Bereich um einen Stern, in dem flüssiges Wasser auf der Oberfläche eines erdähnlichen Planeten existieren kann — eine der Grundvoraussetzungen für Leben, wie wir es kennen.
+
+[b]Im Sonnensystem[/b]
+Die Habitable Zone der Sonne erstreckt sich von ca. [b]0,95 AU[/b] bis [b]1,37 AU[/b]. Die Erde befindet sich mit 1,0 AU komfortabel innerhalb dieser Zone. Mars (~1,52 AU) liegt bereits außerhalb.
+
+[b]Einschränkungen[/b]
+Die Habitable Zone berücksichtigt nur den Strahlungseinfluss des Sterns. Weitere Faktoren — Atmosphäre, Magnetfeld, geologische Aktivität — sind ebenso entscheidend für die Habitabilität.
+
+[b]Verwandte Konzepte[/b]
+• [url=concept:frost_line]Frostlinie[/url] — Grenze, ab der Eis stabil ist
+• [url=concept:astronomical_unit]Astronomische Einheit[/url]"""
+
+[frost_line]
+title = "Frostlinie"
+content = """\
+[font_size=18][b]Frostlinie[/b][/font_size]
+[i]Astronomie · Planetenentstehung[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Frostlinie[/b] (auch: Schneelinie, Eislinie) ist die Entfernung von einem Stern, jenseits derer flüchtige Verbindungen wie Wasser, Ammoniak oder Methan zu Eis erstarren können.
+
+[b]Im Sonnensystem[/b]
+Die Frostlinie der Sonne liegt bei ca. [b]4–5 AU[/b] — zwischen den Orbits von [url=body:mars]Mars[/url] und [url=body:jupiter]Jupiter[/url]. Dies erklärt, warum:
+[indent]• Die inneren Planeten (< 4 AU) klein und felsig sind
+• Die äußeren Planeten (> 4 AU) reich an Eis und Gas sind[/indent]
+
+[b]Bedeutung für die Planetenentstehung[/b]
+Jenseits der Frostlinie standen in der Frühzeit des Sonnensystems deutlich mehr Feststoffe für die Planetenbildung zur Verfügung (Eis + Gestein). Dies erklärt die viel größeren Massen der [b]Gasriesen[/b].
+
+[b]Siehe auch[/b]
+• [url=concept:habitable_zone]Habitable Zone[/url]
+• [url=concept:asteroid_belt]Asteroidengürtel[/url]"""
