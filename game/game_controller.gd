@@ -56,6 +56,13 @@ func _load_data() -> void:
 	for body in bodies:
 		GameRegistry.register_game_object(GameObject.new().init(body))
 
+	# Almanach-Content laden und als Components anhängen
+	var almanach_data := loader.load_almanach_content()
+	for id: String in almanach_data["bodies"]:
+		var obj: GameObject = GameRegistry.get_game_object(id)
+		if obj:
+			obj.add_component("almanach", almanach_data["bodies"][id])
+
 
 func _build_sim() -> void:
 	GameClock.init(false)
