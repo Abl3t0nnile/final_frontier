@@ -8,3 +8,6 @@ Mit einem Radius von ~160 km umkreist er Haumea in ~49.462 Tagen auf einer fast 
 Hiʻiaka und [url=body:namaka]Namaka[/url] wurden 2005 mit dem Hubble-Weltraumteleskop entdeckt."""
 
 [infobox.atmosphere]
+temp_mean = -241
+temp_min  = -250
+temp_max  = -223

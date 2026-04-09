@@ -6,3 +6,6 @@ description = """\
 Die NASA-Stardust-Mission flog 2004 durch die Koma und fing Staubpartikel ein, die 2006 zur Erde zurückgebracht wurden. Dabei wurden komplexe organische Moleküle und sogar Aminosäuren-Vorläufer gefunden — Hinweise auf die Rolle von Kometen bei der Entstehung des Lebens."""
 
 [infobox.atmosphere]
+temp_mean = -55
+temp_min  = -73
+temp_max  = 25

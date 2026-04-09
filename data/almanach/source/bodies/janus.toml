@@ -6,3 +6,6 @@ description = """\
 Dieses Hufeisenbahn-System ist einzigartig im Sonnensystem. Janus liegt nahe dem äußeren Rand von Saturns A-Ring und beeinflusst dessen Struktur."""
 
 [infobox.atmosphere]
+temp_mean = -190
+temp_min  = -200
+temp_max  = -160

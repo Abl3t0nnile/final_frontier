@@ -1,10 +1,20 @@
 id = "neptune"
 
 description = """\
-[b]Neptun[/b] ist der äußerste Planet des Sonnensystems und ebenfalls ein Eisriese. Trotz seiner enormen Entfernung zur Sonne weist er die stärksten Winde im Sonnensystem auf — mit Böen von über 2.000 km/h.
+[b]Neptun[/b] ist der äußerste Planet des Sonnensystems mit einem Radius von 24.622 km und einer Masse von 1,024 × 10²⁶ kg. Er wurde 1846 entdeckt — als erster Planet, der durch mathematische Vorhersage gefunden wurde: Störungen in Uranus' Bahn ließen Urbain Le Verrier auf seine Position schließen. Bis 2011 hatte Neptun seit seiner Entdeckung erst einen vollständigen Umlauf (~165 Jahre) vollendet. Sein Inneres gleicht dem von Uranus — Wasser, Ammoniak und Methan dominieren unter hohem Druck — doch Neptun strahlt ~2,6-mal mehr Energie ab als er von der Sonne empfängt, was auf eine aktive interne Wärmequelle hindeutet.
 
-Neptun strahlt deutlich mehr Energie ab als er von der Sonne empfängt, was auf eine interne Wärmequelle hindeutet. Der Große Dunkle Fleck, ein dem Großen Roten Fleck Jupiters ähnliches Sturmsystem, wurde bei Voyager 2 beobachtet.
+Trotz seiner enormen Sonnenentfernung (~30 AU) erzeugt Neptun die stärksten Winde im Sonnensystem: Windgeschwindigkeiten von über 2.100 km/h wurden gemessen. Als Voyager 2 im August 1989 vorbeiflog, beobachtete die Sonde den [b]Großen Dunklen Fleck[/b] — ein Sturmsystem von Erddurchmesser-Größe. Hubble-Aufnahmen zeigten, dass dieser Sturm verschwunden und an anderer Stelle ein neuer entstanden war, was auf schnelle atmosphärische Dynamik hindeutet. Neptuns Atmosphäre enthält ~1,5 % Methan, das Blauanteile des Lichts absorbiert und dem Planeten seine charakteristische kobaltblaue Farbe gibt.
 
-Sein größter Mond Triton umkreist Neptun rückläufig — ein Zeichen, dass er ein eingefangenes Objekt aus dem [url=concept:kuiper_belt]Kuipergürtel[/url] ist. Triton ist geologisch aktiv und zeigt stickstoffausstoßende Geysire."""
+Das Magnetfeld Neptuns ist um ~47° zur Rotationsachse geneigt und hat seinen Ursprung nicht im Zentrum — strukturell ähnlich wie Uranus und möglicherweise durch einen ionischen Wasserkonvektionsbereich erzeugt. Neptun hat 16 bekannte Monde. Der größte, [url=body:triton]Triton[/url], umkreist Neptun retrograd und nähert sich durch Gezeitenbremsung langsam dem Planeten — in ~3,6 Milliarden Jahren wird er die [url=concept:roche_limit]Roche-Grenze[/url] unterschreiten und zu einem Ringsystem zerfallen.
+
+Voyager 2 (1989) ist bislang das einzige Raumfahrzeug, das Neptun besucht hat. Die Planungsarbeiten für einen dedizierten Neptun-Orbiter laufen, bisher ohne konkreten Start-Zeitplan."""
 
 [infobox.atmosphere]
+pressure  = 1.0
+temp_mean = -200
+temp_min  = -218
+
+[infobox.atmosphere.composition]
+"Wasserstoff (H₂)" = 80.0
+"Helium (He)"      = 19.0
+"Methan (CH₄)"     = 1.5

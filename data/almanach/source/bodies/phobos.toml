@@ -8,3 +8,6 @@ Phobos umkreist Mars schneller als der Planet rotiert — er geht im Westen auf 
 Seine unregelmäßige Form und seine Dichte deuten auf einen lockeren, porösen Körper hin — möglicherweise ein eingefangener Asteroid."""
 
 [infobox.atmosphere]
+temp_mean = -40
+temp_min  = -112
+temp_max  = -4

@@ -8,3 +8,6 @@ Halley hat eine retrograde Bahn mit hoher [url=concept:eccentricity]Exzentrizit√
 Halley ist die Quelle zweier j√§hrlicher Meteorschauer: der Eta-Aquariiden (Mai) und der Orioniden (Oktober)."""
 
 [infobox.atmosphere]
+temp_mean = -70
+temp_min  = -90
+temp_max  = 77

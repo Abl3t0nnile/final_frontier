@@ -6,3 +6,6 @@ description = """\
 Sein Kern ist mit ~1,2 km Durchmesser sehr klein, aber aktiv. Die grüne Farbe seiner Koma entsteht durch Dicarbon (C₂), das durch UV-Strahlung der Sonne aus dem Kometen freigesetzt wird."""
 
 [infobox.atmosphere]
+temp_mean = -60
+temp_min  = -80
+temp_max  = 50

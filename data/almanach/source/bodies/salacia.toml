@@ -6,3 +6,6 @@ description = """\
 Salacia bildet zusammen mit seinem Mond Actaea ein Doppelsystem. Die Analyse ihrer gegenseitigen Umlaufbahn ermöglichte eine genaue Massebestimmung. Seine Oberfläche ist ungewöhnlich dunkel und wenig reflektiv für ein Kuipergürtel-Objekt."""
 
 [infobox.atmosphere]
+temp_mean = -221
+temp_min  = -231
+temp_max  = -209

@@ -1,10 +1,22 @@
 id = "mercury"
 
 description = """\
-[b]Merkur[/b] ist der sonnennächste und kleinste Planet des Sonnensystems. Er hat weder eine nennensw erte Atmosphäre noch einen schützenden Magnetozean — seine Oberfläche ist direkt dem Sonnenwind ausgesetzt.
+[b]Merkur[/b] ist der sonnennächste und kleinste Planet des Sonnensystems mit einem Radius von 2.440 km — nur geringfügig größer als der Mond. Seine Masse beträgt 3,3 × 10²³ kg. Trotz seiner geringen Größe besitzt er ein schwaches globales Magnetfeld (~1 % der Erdstärke), das auf einen ungewöhnlich großen Eisenkern hindeutet, der etwa 85 % des Planetenradius einnimmt. Diese Besonderheit ist bis heute Gegenstand der Forschung.
 
-Aufgrund seiner hohen [url=concept:eccentricity]Exzentrizität[/url] von 0,206 variiert sein Abstand zur Sonne erheblich zwischen [url=concept:periapsis]Perihel[/url] und [url=concept:apoapsis]Aphel[/url]. An seinem Perihel ist er kaum 46 Millionen km von der Sonne entfernt.
+Aufgrund seiner hohen [url=concept:eccentricity]Exzentrizität[/url] von 0,206 schwankt sein Abstand zur Sonne zwischen 46 Millionen km ([url=concept:periapsis]Perihel[/url]) und 70 Millionen km ([url=concept:apoapsis]Aphel[/url]). Merkur ist in einer 3:2-Spin-Orbit-Resonanz gebunden: Er dreht sich genau dreimal um seine Achse, während er zweimal die Sonne umkreist. Dadurch dauert ein Sonnentag auf Merkur ~176 Erdtage — länger als ein merkurianisches Jahr (88 Erdtage).
 
-Merkur ist in einer 3:2-Spin-Orbit-Resonanz gebunden: Er dreht sich genau dreimal um seine eigene Achse, während er zweimal die Sonne umkreist. Ein Sonnentag auf Merkur dauert dadurch fast zwei merkurianische Jahre."""
+Die Oberfläche ist durch Milliarden von Jahren Meteoriteneinschläge geprägt. Das markanteste Merkmal ist das [b]Caloris-Becken[/b] — ein ~1.550 km großes Einschlagbecken, eines der größten im Sonnensystem. Dem Einschlag diagonale Schockwellen erzeugten an der gegenüberliegenden Seite des Planeten ein chaotisches Geländemuster, das als "Weird Terrain" bekannt ist. Die Temperaturschwankungen zwischen Tag- und Nachtseite gehören zu den extremsten im Sonnensystem: von +430 °C auf bis zu −180 °C.
+
+An Merkurs Polen — permanent im Schatten tiefer Krater — hat die NASA-Sonde MESSENGER (2011–2015) Wassereis und organische Verbindungen nachgewiesen. Die ESA/JAXA-Mission [b]BepiColombo[/b] ist seit 2018 unterwegs und wird ab 2026 aus zwei Orbitern das Magnetfeld, die Exosphäre und die innere Struktur des Planeten detailliert kartieren."""
 
 [infobox.atmosphere]
+temp_mean = 167
+temp_min  = -180
+temp_max  = 430
+
+[infobox.atmosphere.composition]
+"Sauerstoff (O₂)"  = 42.0
+"Natrium (Na)"     = 29.0
+"Wasserstoff (H₂)" = 22.0
+"Helium (He)"      = 6.0
+"Kalium (K)"       = 0.5

@@ -8,3 +8,6 @@ Mit einem Radius von ~221 km ist er im Verhältnis zu Orcus ungewöhnlich groß 
 Die gegenseitige Umlaufbahn deutet darauf hin, dass Vanth durch eine kollisionale Genese entstanden ist."""
 
 [infobox.atmosphere]
+temp_mean = -225
+temp_min  = -235
+temp_max  = -207

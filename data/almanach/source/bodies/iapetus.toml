@@ -1,10 +1,15 @@
 id = "iapetus"
 
 description = """\
-[b]Iapetus[/b] ist der drittgrößte Mond des [url=body:saturn]Saturn[/url] und bekannt für seinen extremen Helligkeitskontrast: Eine Hemisphäre ist so dunkel wie Kohle, die andere so hell wie frischer Schnee. Dies fiel schon dem Entdecker Cassini 1671 auf.
+[b]Iapetus[/b] ist mit einem Radius von 735 km der drittgrößte Mond des [url=body:saturn]Saturn[/url] und bekannt für einen der extremsten Helligkeitskontraste im Sonnensystem. Seine führende Hemisphäre, [b]Cassini Regio[/b], hat eine Albedo von nur 0,03–0,05 (so dunkel wie Asphalt), während die rückseitige Hemisphäre [b]Roncevaux Terra[/b] eine Albedo von ~0,5–0,6 (wie frischer Schnee) aufweist. Dieser Kontrast fiel schon dem Entdecker Giovanni Cassini 1671 auf — er konnte Iapetus nur auf einer Seite seiner Bahn sehen, weil er auf der anderen schlicht zu dunkel war.
 
-Die Ursache: Die dunkle Seite (Cassini Regio) sammelt dunkles Material aus dem äußeren Saturnmondbereich an, während die helle Seite aus reinem Eis besteht. Hinzu kommt ein thermischer Effekt, der die Farbdifferenz verstärkt.
+Die Ursache ist zweiteilig: Erstens sammelt die führende Seite im Orbit feines dunkles Staubmaterial, das hauptsächlich von den äußeren irregulären Monden Saturns stammt — insbesondere von [url=body:phoebe]Phoebe[/url], deren Staub durch den Phoebe-Ring nach innen driftet und auf Iapetus auftrifft. Zweitens verstärkt ein thermischer Rückkopplungseffekt den Kontrast: Die dunkle Seite erwärmt sich stärker und verliert Wassereis durch Sublimation; das Eis wandert auf die kältere helle Seite und kondensiert dort — was das Dunkel dunkler und das Helle heller macht.
 
-Iapetus besitzt außerdem einen riesigen Äquatorialkamm mit bis zu 20 km Höhe, dessen Entstehung noch ungeklärt ist."""
+Das zweite Rätsel von Iapetus ist sein [b]Äquatorialkamm[/b]: Ein riesiger Gebirgsrücken von bis zu 20 km Höhe und ~1.300 km Länge verläuft genau am Äquator und ist nur auf der dunklen Seite vollständig ausgeprägt. Für einen Mond dieser Größe ist das außergewöhnlich. Theorien reichen von früher schneller Rotation (Äquatorwulst durch Fliehkraft eingefroren) über das Einschmelzen eines früheren Ringsystems bis zum vollständig unverstandenen Prozess — keine Theorie erklärt alle Beobachtungen befriedigend.
+
+Iapetus hat eine extrem geneigte Umlaufbahn (~15° zur Saturnsäquatorebene) und eine Umlaufzeit von 79 Tagen — damit ist er weit genug von Saturn entfernt, um kaum Gezeitenheizung zu erfahren. Die Cassini-Sonde führte 2007 einen nahen Vorbeiflugs in ~2.000 km Abstand durch und lieferte die bisher detailliertesten Bilder dieser rätselhaften Welt."""
 
 [infobox.atmosphere]
+temp_mean = -143
+temp_min  = -173
+temp_max  = -100

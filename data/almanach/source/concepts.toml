@@ -311,6 +311,209 @@ Die Habitable Zone berücksichtigt nur den Strahlungseinfluss des Sterns. Weiter
 • [url=concept:frost_line]Frostlinie[/url] — Grenze, ab der Eis stabil ist
 • [url=concept:astronomical_unit]Astronomische Einheit[/url]"""
 
+[tidal_heating]
+title = "Gezeitenheizung"
+content = """\
+[font_size=18][b]Gezeitenheizung[/b][/font_size]
+[i]Astronomie · Planetologie[/i]
+
+[color=#888888]────────────────────────[/color]
+
+[b]Gezeitenheizung[/b] ist ein Prozess, bei dem die Gravitationskräfte eines Zentralkörpers (oder benachbarter Monde) einen Mond oder Planeten periodisch verformen — ähnlich wie ein Gummiball, den man immer wieder zusammendrückt und loslässt. Diese innere Reibung erzeugt Wärme und kann den Körper geologisch aktiv halten, obwohl er weit von seiner Sonne entfernt und eigentlich längst erkaltet sein sollte.
+
+[b]Voraussetzungen[/b]
+Gezeitenheizung wirkt besonders stark, wenn:
+[indent]• Der Mond in einer [url=concept:orbital_resonance]Bahnresonanz[/url] mit anderen Monden steht (verhindert Kreisbahnstabilisierung)
+• Der Mond nahe am massereichen Planeten kreist
+• Die Umlaufbahn eine gewisse Exzentrizität behält[/indent]
+
+[b]Beispiele im Sonnensystem[/b]
+[indent]• [url=body:io]Io[/url] — stärkste Gezeitenheizung im Sonnensystem (~100 TW), >400 aktive Vulkane
+• [url=body:europa]Europa[/url] — Ozean unter dem Eis durch Gezeitenheizung flüssig gehalten
+• [url=body:enceladus]Enceladus[/url] — aktive Geysire durch Gezeitenheizung angetrieben
+• [url=body:titan]Titan[/url] — beiträgt zur inneren Wärme[/indent]
+
+[b]Bedeutung für Astrobiologie[/b]
+Gezeitenheizung kann flüssiges Wasser in Regionen weit jenseits der [url=concept:habitable_zone]Habitablen Zone[/url] aufrechterhalten — und damit Lebensräume in der Tiefe kalter Eismonde schaffen.
+
+[b]Siehe auch[/b]
+• [url=concept:orbital_resonance]Bahnresonanz[/url]
+• [url=concept:roche_limit]Roche-Grenze[/url]"""
+
+[orbital_resonance]
+title = "Bahnresonanz"
+content = """\
+[font_size=18][b]Bahnresonanz[/b][/font_size]
+[i]Astronomie · Orbitalmechanik[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Eine [b]Bahnresonanz[/b] liegt vor, wenn zwei Himmelskörper ihre Umlaufzeiten in einem einfachen ganzzahligen Verhältnis stehen — z. B. 1:2, 2:3 oder 1:4. Durch die regelmäßigen Gravitationsimpulse, die dabei entstehen, können Resonanzen Bahnen entweder stabilisieren oder destabilisieren.
+
+[b]Typen[/b]
+[indent]• [b]Mittelbewegungsresonanz[/b] — Umlaufzeiten stehen im Verhältnis kleiner ganzer Zahlen
+• [b]Spin-Orbit-Resonanz[/b] — Rotation und Umlauf eines Körpers sind gekoppelt (z. B. gebundene Rotation des Mondes, 3:2-Resonanz Merkurs)[/indent]
+
+[b]Bekannte Beispiele[/b]
+[indent]• [b]Laplace-Resonanz[/b] — [url=body:io]Io[/url] : [url=body:europa]Europa[/url] : [url=body:ganymede]Ganymed[/url] = 1:2:4; erzeugt [url=concept:tidal_heating]Gezeitenheizung[/url] in allen drei Monden
+• [b]Mimas / Cassini-Division[/b] — 2:1-Resonanz zwischen Mimas und Ringteilchen leert die Cassini-Division in Saturns Ringen
+• [b]Plutinos[/b] — [url=body:pluto]Pluto[/url], [url=body:orcus]Orcus[/url] und andere KBOs in 3:2-Resonanz mit Neptun
+• [b]Merkur[/b] — 3:2-Spin-Orbit-Resonanz: 3 Eigenrotationen pro 2 Sonnenumläufe[/indent]
+
+[b]Stabilisierende und destabilisierende Wirkung[/b]
+Resonanzen können Bahnen über Milliarden von Jahren schützen (Plutinos) oder Regionen im [url=concept:asteroid_belt]Asteroidengürtel[/url] leerfegen (Kirkwood-Lücken durch Jupiter-Resonanzen).
+
+[b]Siehe auch[/b]
+• [url=concept:tidal_heating]Gezeitenheizung[/url]
+• [url=concept:roche_limit]Roche-Grenze[/url]"""
+
+[roche_limit]
+title = "Roche-Grenze"
+content = """\
+[font_size=18][b]Roche-Grenze[/b][/font_size]
+[i]Astronomie · Orbitalmechanik[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Roche-Grenze[/b] ist der kritische Abstand zu einem Zentralkörper, innerhalb dessen Gezeitenkräfte einen anfliegenden Körper auseinanderreißen, der nur durch seine eigene Gravitation zusammengehalten wird. Sie wurde 1848 von Édouard Roche berechnet.
+
+[b]Formel (vereinfacht)[/b]
+[indent][i]d = R · (2 · M / m)^(1/3)[/i][/indent]
+wobei R der Radius des Zentralkörpers, M seine Masse und m die Masse des kleinen Körpers ist.
+
+[b]Physikalische Bedeutung[/b]
+[indent]• [b]Innerhalb der Roche-Grenze:[/b] Gezeitenkräfte überwiegen die Eigengravitation — Material kann keinen zusammenhängenden Körper bilden. Hier entstehen Ringsysteme.
+• [b]Außerhalb der Roche-Grenze:[/b] Eigengravitation überwiegt — Monde können stabil existieren und Ringmaterial akkretiert zu Monden.[/indent]
+
+[b]Beispiele im Sonnensystem[/b]
+[indent]• Die Ringe von [url=body:saturn]Saturn[/url], [url=body:uranus]Uranus[/url] und [url=body:neptune]Neptun[/url] liegen innerhalb ihrer jeweiligen Roche-Grenze
+• [url=body:metis]Metis[/url] (Jupiter) liegt innerhalb der Roche-Grenze Jupiters
+• [url=body:triton]Triton[/url] nähert sich Neptuns Roche-Grenze (~3,6 Mrd. Jahre)
+• [url=body:quaoar]Quaoar[/url] hat überraschend einen Ring außerhalb seiner Roche-Grenze[/indent]
+
+[b]Siehe auch[/b]
+• [url=concept:tidal_heating]Gezeitenheizung[/url]
+• [url=concept:orbital_resonance]Bahnresonanz[/url]"""
+
+[cryovolcanism]
+title = "Kryovulkanismus"
+content = """\
+[font_size=18][b]Kryovulkanismus[/b][/font_size]
+[i]Planetologie · Geologie[/i]
+
+[color=#888888]────────────────────────[/color]
+
+[b]Kryovulkanismus[/b] (von griech. [i]kryos[/i] = Kälte) bezeichnet vulkanische Prozesse auf kalten Körpern, bei denen anstelle von Gesteinsschmelze [b]Wasser, Ammoniak, Methan oder Stickstoff[/b] als Magma-Analogon wirken. Wenn innere Wärme (durch [url=concept:tidal_heating]Gezeitenheizung[/url] oder radioaktiven Zerfall) diese Verbindungen verflüssigt, können sie durch Risse nach außen dringen und auf der kalten Oberfläche gefrieren.
+
+[b]Erscheinungsformen[/b]
+[indent]• [b]Geysire[/b] — gasförmige Ausbrüche (z. B. Stickstoffgeysire auf [url=body:triton]Triton[/url], Wasserdampf auf [url=body:enceladus]Enceladus[/url])
+• [b]Kryolavaströme[/b] — gefrorene Flüssigkeitsströme auf der Oberfläche
+• [b]Kryovulkankegel[/b] — Erhebungen wie Ahuna Mons auf [url=body:ceres]Ceres[/url][/indent]
+
+[b]Bedeutung[/b]
+Kryovulkanismus kann Oberflächen verjüngen (weniger Krater → jüngeres Terrain) und ist ein Indikator für interne Wärme. Zusammen mit [url=concept:tidal_heating]Gezeitenheizung[/url] macht er eisige Monde zu potentiell habitablen Welten.
+
+[b]Nachgewiesene oder vermutete Kryovulkane[/b]
+[indent]• [url=body:enceladus]Enceladus[/url] — aktive Wassergeysire (bestätigt)
+• [url=body:triton]Triton[/url] — Stickstoffgeysire (bestätigt, Voyager 2)
+• [url=body:ceres]Ceres[/url] — Ahuna Mons (bestätigt, Dawn)
+• [url=body:pluto]Pluto[/url] — möglicher Kryovulkan (Wright Mons)
+• [url=body:orcus]Orcus[/url] — Ammoniak-Hydrate deuten auf frühere Aktivität[/indent]
+
+[b]Siehe auch[/b]
+• [url=concept:tidal_heating]Gezeitenheizung[/url]"""
+
+[tholins]
+title = "Tholins"
+content = """\
+[font_size=18][b]Tholins[/b][/font_size]
+[i]Planetologie · Astrochemie[/i]
+
+[color=#888888]────────────────────────[/color]
+
+[b]Tholins[/b] (von griech. [i]tholos[/i] = trüb, schlammig) sind komplexe organische Makromoleküle, die entstehen, wenn einfache Verbindungen wie [b]Methan (CH₄), Stickstoff (N₂) und Wasser[/b] durch ultraviolette Strahlung oder kosmische Teilchen chemisch verarbeitet werden. Sie wurden erstmals 1979 von Carl Sagan und Bishun Khare im Labor nachgewiesen.
+
+[b]Entstehung[/b]
+[indent]• UV-Photonen oder kosmische Strahlung brechen Bindungen in CH₄ und N₂
+• Die entstandenen Radikale reagieren miteinander zu immer komplexeren organischen Ketten
+• Das Ergebnis: ein rötlich-brauner, wachsartiger Feststoff[/indent]
+
+[b]Vorkommen im Sonnensystem[/b]
+Tholins verleihen vielen äußeren Sonnensystemkörpern ihre charakteristische Rotfärbung:
+[indent]• [url=body:titan]Titan[/url] — dichte Tholinschicht in der Atmosphäre, Sanddünen aus Tholins
+• [url=body:pluto]Pluto[/url] — rötliche Bereiche (z. B. Tombaugh Regio Randgebiete)
+• [url=body:triton]Triton[/url] — polare Eiskappe mit Tholin-Überresten
+• [url=body:sedna]Sedna[/url], [url=body:gonggong]Gonggong[/url] — tiefrot, sehr hoher Tholinanteil
+• [url=body:makemake]Makemake[/url], [url=body:haumea]Haumea[/url] (Makulae) — organische Flecken[/indent]
+
+[b]Astrobiologische Bedeutung[/b]
+Tholins können Aminosäure-Vorläufer enthalten und sind möglicherweise eine Art präbiotische Chemie — ein erster Schritt in Richtung komplexer Moleküle des Lebens.
+
+[b]Siehe auch[/b]
+• [url=concept:cryovolcanism]Kryovulkanismus[/url]"""
+
+[scattered_disc]
+title = "Streuscheibs"
+content = """\
+[font_size=18][b]Streuscheibs[/b][/font_size]
+[i]Astronomie · Sonnensystemregion[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Der [b]Streuscheibs[/b] (engl. Scattered Disc) ist eine weitläufige, schwach bevölkerte Region des äußeren Sonnensystems, die sich von ~30 AU bis weit über 100 AU erstreckt. Im Gegensatz zum klassischen [url=concept:kuiper_belt]Kuipergürtel[/url] haben Streuscheibs-Objekte stark elliptische und oft stark geneigte Bahnen — ein Zeichen, dass ihre Bahnen durch gravitationale Wechselwirkung mit [url=body:neptune]Neptun[/url] in der Frühzeit des Sonnensystems "gestreut" wurden.
+
+[b]Entstehung[/b]
+Als sich die Riesenplaneten in der frühen Sonnensystemgeschichte nach außen wanderten (Nizza-Modell), streuten sie zahlreiche Planetesimale des Kuipergürtels auf weitreichende, exzentrische Bahnen. Diese Körper bilden den heutigen Streuscheibs.
+
+[b]Charakteristika[/b]
+[indent]• Perihelien typisch bei 30–38 AU (nahe Neptun)
+• Aphele können >100 AU erreichen
+• Starke Bahnneigungen zur Ekliptik[/indent]
+
+[b]Bekannte Objekte[/b]
+[indent]• [url=body:eris]Eris[/url] — massereichster bekannter Zwergplanet, Scattered Disc
+• [url=body:gonggong]Gonggong[/url] — großer roter Streuscheibs-Körper
+• [url=body:sedna]Sedna[/url] — gehört zur noch entfernteren Inneren Oortschen Wolke (Sonderfall)[/indent]
+
+[b]Abgrenzung[/b]
+[indent]• [b]Klassischer Kuipergürtel[/b]: ~42–48 AU, mäßige Exzentrizität, kaum durch Neptun beeinflusst
+• [b]Streuscheibs[/b]: durch Neptun gravitativ gestreut, stark exzentrische Bahnen
+• [b]Innere Oortsche Wolke[/b]: noch weiter, Perihelien >50 AU (Sedna-Objekte)[/indent]
+
+[b]Siehe auch[/b]
+• [url=concept:kuiper_belt]Kuipergürtel[/url]
+• [url=concept:orbital_resonance]Bahnresonanz[/url]"""
+
+[magnetosphere]
+title = "Magnetosphäre"
+content = """\
+[font_size=18][b]Magnetosphäre[/b][/font_size]
+[i]Physik · Planetologie[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Magnetosphäre[/b] ist der Bereich um einen Planeten oder Mond, in dem sein [b]Magnetfeld[/b] dominiert — gegenüber dem Sonnenwind und interplanetaren Feldern. Sie entsteht durch Konvektion in einem leitfähigen Kern (Dynamo-Effekt) oder durch induzierte Magnetfelder.
+
+[b]Entstehung: Der Dynamo-Effekt[/b]
+Ein flüssiger, elektrisch leitfähiger Kern (Schmelze aus Eisen oder ionisiertem Wasser), der durch Rotation und Konvektion bewegt wird, erzeugt Elektrische Ströme — und damit ein Magnetfeld. Voraussetzungen: Leitfähigkeit, Bewegung, Rotation.
+
+[b]Schutzfunktion[/b]
+Ohne Magnetosphäre prasseln Sonnenwind-Teilchen direkt auf die Atmosphäre und tragen diese über Millionen von Jahren ab ([url=body:mars]Mars[/url] ist ein Beispiel: kein Feld → dünne Atmosphäre). Die Erdmagnetosphäre schützt die Biosphäre und macht langfristiges Leben an der Oberfläche erst möglich.
+
+[b]Beispiele im Sonnensystem[/b]
+[indent]• [url=body:jupiter]Jupiter[/url] — stärkstes Planetenmagnetfeld, Magnetosphäre reicht bis [url=body:saturn]Saturns[/url] Bahn
+• [url=body:terra]Erde[/url] — schützt Atmosphäre und Biosphäre
+• [url=body:ganymede]Ganymed[/url] — einziger Mond mit eigenem intrinsischen Magnetfeld
+• [url=body:mercury]Merkur[/url] — schwaches Feld (~1 % der Erdstärke)
+• [url=body:venus]Venus[/url], [url=body:mars]Mars[/url] — kein oder nur induziertes Magnetfeld[/indent]
+
+[b]Magnetosphäre und Monde[/b]
+Monde innerhalb einer Planetenmagnetosphäre (wie [url=body:io]Io[/url] in Jupiters Feld) werden von intensiven Strahlungsgürteln durchdrungen, was ihre Oberflächen chemisch verändert und die Bewohnbarkeit beeinflusst.
+
+[b]Siehe auch[/b]
+• [url=concept:tidal_heating]Gezeitenheizung[/url]
+• [url=concept:habitable_zone]Habitable Zone[/url]"""
+
 [frost_line]
 title = "Frostlinie"
 content = """\

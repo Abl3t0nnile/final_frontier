@@ -100,10 +100,6 @@ border_color = Color(0.9411765, 0.9411765, 0.9411765, 0.15)
 font = ExtResource("6_w4vcb")
 font_size = 32
 
-[sub_resource type="LabelSettings" id="LabelSettings_xdu6e"]
-font = ExtResource("6_w4vcb")
-font_size = 24
-
 [node name="Almanac" type="PanelContainer" unique_id=1838614985]
 anchors_preset = 15
 anchor_right = 1.0
@@ -195,30 +191,34 @@ expand_icon = true
 [node name="HSeparator" type="HSeparator" parent="VBox" unique_id=1163784331]
 layout_mode = 2
 
-[node name="ContentBox" type="ScrollContainer" parent="VBox" unique_id=1226740331]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Article" type="VBoxContainer" parent="VBox/ContentBox" unique_id=1295564859]
+[node name="Article" type="VBoxContainer" parent="VBox" unique_id=1295564859]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 16
+theme_override_constants/separation = 8
 
-[node name="Header" type="HBoxContainer" parent="VBox/ContentBox/Article" unique_id=941198124]
+[node name="Header" type="HBoxContainer" parent="VBox/Article" unique_id=941198124]
 layout_mode = 2
 
-[node name="TitleLabel" type="Label" parent="VBox/ContentBox/Article/Header" unique_id=1737685456]
+[node name="TitleLabel" type="Label" parent="VBox/Article/Header" unique_id=1737685456]
 layout_mode = 2
 text = "Article Title"
 label_settings = SubResource("LabelSettings_qowm7")
 uppercase = true
 
-[node name="Overview" type="HBoxContainer" parent="VBox/ContentBox/Article" unique_id=1197234601]
+[node name="HSeparator" type="HSeparator" parent="VBox/Article" unique_id=1803623976]
+layout_mode = 2
+
+[node name="ContentBox" type="ScrollContainer" parent="VBox/Article" unique_id=1226740331]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="SummaryText" type="RichTextLabel" parent="VBox/ContentBox/Article/Overview" unique_id=1181222208]
+[node name="Overview" type="HBoxContainer" parent="VBox/Article/ContentBox" unique_id=1197234601]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SummaryText" type="RichTextLabel" parent="VBox/Article/ContentBox/Overview" unique_id=1181222208]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
@@ -228,80 +228,75 @@ Ein starkes Magnetfeld schützt die Biosphäre vor dem Sonnenwind. Die Plattente
 
 Der Mond ist im Verhältnis zur Planetenmasse ungewöhnlich groß. Seine Gravitation stabilisiert die Erdachse und hat die Gezeiten geprägt — beides gilt als wichtig für die Entwicklung komplexen Lebens.\"\"\"
 "
+fit_content = true
 
-[node name="Panel" type="VBoxContainer" parent="VBox/ContentBox/Article/Overview" unique_id=2110886432]
+[node name="Panel" type="VBoxContainer" parent="VBox/Article/ContentBox/Overview" unique_id=2110886432]
 custom_minimum_size = Vector2(480, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Label" type="Label" parent="VBox/ContentBox/Article/Overview/Panel" unique_id=118746572]
-layout_mode = 2
-text = "Body Name"
-label_settings = SubResource("LabelSettings_xdu6e")
-
-[node name="Hero" type="MarginContainer" parent="VBox/ContentBox/Article/Overview/Panel" unique_id=860450107]
+[node name="Hero" type="MarginContainer" parent="VBox/Article/ContentBox/Overview/Panel" unique_id=860450107]
 layout_mode = 2
 theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Image" type="TextureRect" parent="VBox/ContentBox/Article/Overview/Panel/Hero" unique_id=1939540305]
+[node name="Image" type="TextureRect" parent="VBox/Article/ContentBox/Overview/Panel/Hero" unique_id=1939540305]
 layout_mode = 2
 texture = ExtResource("4_gssl0")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="OrbitData" type="FoldableContainer" parent="VBox/ContentBox/Article/Overview/Panel" unique_id=948194930]
+[node name="OrbitData" type="FoldableContainer" parent="VBox/Article/ContentBox/Overview/Panel" unique_id=948194930]
 layout_mode = 2
 title = "ORBITAL DATEN"
 
-[node name="Grid" type="GridContainer" parent="VBox/ContentBox/Article/Overview/Panel/OrbitData" unique_id=1064933122]
+[node name="Grid" type="GridContainer" parent="VBox/Article/ContentBox/Overview/Panel/OrbitData" unique_id=1064933122]
 layout_mode = 2
 theme_override_constants/h_separation = 16
 columns = 2
 
-[node name="UnitValueDisplay" parent="VBox/ContentBox/Article/Overview/Panel/OrbitData/Grid" unique_id=375893399 instance=ExtResource("4_wgtfk")]
+[node name="UnitValueDisplay" parent="VBox/Article/ContentBox/Overview/Panel/OrbitData/Grid" unique_id=375893399 instance=ExtResource("4_wgtfk")]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="VBox/ContentBox/Article/Overview/Panel" unique_id=1393381792]
+[node name="HSeparator" type="HSeparator" parent="VBox/Article/ContentBox/Overview/Panel" unique_id=1393381792]
 layout_mode = 2
 
-[node name="PhysicsData" type="FoldableContainer" parent="VBox/ContentBox/Article/Overview/Panel" unique_id=1525752492]
+[node name="PhysicsData" type="FoldableContainer" parent="VBox/Article/ContentBox/Overview/Panel" unique_id=1525752492]
 layout_mode = 2
 title = "PHYSIKALISCHE DATEN"
 
-[node name="Grid" type="GridContainer" parent="VBox/ContentBox/Article/Overview/Panel/PhysicsData" unique_id=1671513938]
+[node name="Grid" type="GridContainer" parent="VBox/Article/ContentBox/Overview/Panel/PhysicsData" unique_id=1671513938]
 layout_mode = 2
 theme_override_constants/h_separation = 16
 columns = 2
 
-[node name="UnitValueDisplay" parent="VBox/ContentBox/Article/Overview/Panel/PhysicsData/Grid" unique_id=590644221 instance=ExtResource("4_wgtfk")]
+[node name="UnitValueDisplay" parent="VBox/Article/ContentBox/Overview/Panel/PhysicsData/Grid" unique_id=590644221 instance=ExtResource("4_wgtfk")]
 layout_mode = 2
 
-[node name="HSeparator2" type="HSeparator" parent="VBox/ContentBox/Article/Overview/Panel" unique_id=2100975980]
+[node name="HSeparator2" type="HSeparator" parent="VBox/Article/ContentBox/Overview/Panel" unique_id=2100975980]
 layout_mode = 2
 
-[node name="AthmoData" type="FoldableContainer" parent="VBox/ContentBox/Article/Overview/Panel" unique_id=27622522]
+[node name="AthmoData" type="FoldableContainer" parent="VBox/Article/ContentBox/Overview/Panel" unique_id=27622522]
 layout_mode = 2
 title = "ATHMOSPHÄRISCHE DATEN"
 
-[node name="VBox" type="VBoxContainer" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData" unique_id=1943884056]
+[node name="VBox" type="VBoxContainer" parent="VBox/Article/ContentBox/Overview/Panel/AthmoData" unique_id=1943884056]
 layout_mode = 2
 
-[node name="Grid" type="GridContainer" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox" unique_id=188203920]
+[node name="Grid" type="GridContainer" parent="VBox/Article/ContentBox/Overview/Panel/AthmoData/VBox" unique_id=188203920]
 layout_mode = 2
 theme_override_constants/h_separation = 16
 columns = 2
 
-[node name="UnitValueDisplay" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox/Grid" unique_id=1840174611 instance=ExtResource("4_wgtfk")]
+[node name="UnitValueDisplay" parent="VBox/Article/ContentBox/Overview/Panel/AthmoData/VBox/Grid" unique_id=1840174611 instance=ExtResource("4_wgtfk")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox" unique_id=1089891171]
+[node name="Label" type="Label" parent="VBox/Article/ContentBox/Overview/Panel/AthmoData/VBox" unique_id=1089891171]
 layout_mode = 2
 text = "Hauptbestandteile"
 
-[node name="AtmoGasLabel" parent="VBox/ContentBox/Article/Overview/Panel/AthmoData/VBox" unique_id=1527128674 instance=ExtResource("4_wgtfk")]
+[node name="AtmoGasLabel" parent="VBox/Article/ContentBox/Overview/Panel/AthmoData/VBox" unique_id=1527128674 instance=ExtResource("4_wgtfk")]
 layout_mode = 2
 caption = "Stickstoff (N)"
 unit = "%"

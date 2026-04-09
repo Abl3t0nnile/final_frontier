@@ -2,331 +2,622 @@
   "bodies": {
     "actaea": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -221,
+          "temp_min": -231,
+          "temp_max": -209
+        }
       },
       "description": "[b]Actaea[/b] ist der Mond des [url=body:salacia]Salacia[/url], benannt nach einer der Nereiden der griechischen Mythologie.\n\nEr wurde 2006 entdeckt und bildet mit Salacia ein enges Binärsystem: Er umkreist den Hauptkörper aus nur ~5.720 km Entfernung in ~5.49 Tagen. Diese enge Bahn erlaubte eine sehr präzise Massenbestimmung des Gesamtsystems.\n\nActaea hat einen Radius von ~136 km und ist damit im Verhältnis zu Salacia relativ groß — das Paar gilt als eines der ausgewogeneren Binärsysteme im Kuipergürtel."
     },
     "amalthea": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -113,
+          "temp_min": -163,
+          "temp_max": -73
+        }
       },
       "description": "[b]Amalthea[/b] ist der drittinnerste Mond des [url=body:jupiter]Jupiter[/url] und mit einem Durchmesser von ~168 km entlang seiner längsten Achse eines der größten irregulären Monde. Er hat eine tief rote Farbe — eine der rötesten Oberflächen im Sonnensystem.\n\nAmalthea ist tidally locked und strahlt mehr Wärme ab als sie von der Sonne empfängt — die Quelle ist Jupiters Magnetfeld, das Ströme in dem leitenden Körper induziert. Der Mond wurde 1892 von Edward Barnard entdeckt, als letzter Mond per direkter Sichtbeobachtung."
     },
     "ariel": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -210,
+          "temp_min": -223,
+          "temp_max": -183
+        }
       },
       "description": "[b]Ariel[/b] ist der hellste der großen Uranusmonde und zeigt die geologisch jüngste Oberfläche unter ihnen: wenig Krater, dafür breite Gräben und Täler, die auf innere tektonische Aktivität und möglicherweise Kryovulkanismus hindeuten.\n\nEr ist nach einem Sylph in Alexander Popes \"Der Lockenraub\" benannt. Ariel besteht aus einer Mischung aus Wassereis und dunklem Gestein und wurde 1851 von William Lassell entdeckt."
     },
     "borrelly": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -43,
+          "temp_min": -73,
+          "temp_max": 75
+        }
       },
       "description": "[b]19P/Borrelly[/b] ist ein kurzperiodischer Komet (~6,9 Jahre) mit einem langgezogenen, bowling-pin-förmigen Kern (~8 km). Die Deep Space 1 Mission fotografierte ihn 2001 aus nächster Nähe.\n\nSeine Oberfläche ist dunkel und sehr heterogen: Glatte Ebenen wechseln sich mit rauem Terrain ab. Die aktiven Ausgasungsregionen liegen vor allem in der flachen Zentralregion. Borrelly ist bekannt für ungewöhnlich energiereiche Gasausströmungen."
     },
     "callisto": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -139,
+          "temp_min": -193,
+          "temp_max": -108,
+          "composition": {
+            "Kohlenstoffdioxid (CO₂)": 100.0
+          }
+        }
       },
-      "description": "[b]Callisto[/b] ist der äußerste der vier Galileischen Monde des [url=body:jupiter]Jupiter[/url] und die am stärksten kraterübersäte Oberfläche im Sonnensystem. Sie zeigt kaum Anzeichen innerer geologischer Aktivität — Callisto ist seit Milliarden Jahren weitgehend unverändert.\n\nEr besteht aus einer annähernd gleichmäßigen Mischung aus Eis und Gestein ohne klare innere Schichtung — ein Zeichen, dass er sich nie vollständig differenziert hat. Auch Callisto hat vermutlich einen flüssigen Wasserozean in ~100–200 km Tiefe.\n\nSeine große Entfernung zu Jupiter schützt ihn weitgehend vor dessen intensiver Strahlung — er gilt als geeigneter Standort für eine zukünftige Forschungsstation."
+      "description": "[b]Callisto[/b] ist der äußerste der vier Galileischen Monde des [url=body:jupiter]Jupiter[/url] mit einem Radius von 2.410 km — fast so groß wie Merkur, aber mit weniger als einem Drittel von dessen Masse, da Callisto überwiegend aus Eis und Gestein besteht. Er hat die am stärksten eingeschlagene Oberfläche im Sonnensystem: Nahezu jeder Quadratkilometer zeigt Einschlagkrater; kaum ein Gebiet ist unberührt. Diese gesättigte Kraterdichte bedeutet, dass die Oberfläche seit ~4 Milliarden Jahren geologisch inaktiv ist.\n\nIm Gegensatz zu Ganymed ist Callisto nie vollständig differenziert worden. Er besteht wahrscheinlich aus einem homogenen Gemisch aus Eis und Silikatgestein ohne klaren Eisenkern. Galileo-Magnetfelddaten deuten jedoch auf einen flüssigen Ozean in ~100–200 km Tiefe hin — was überraschend ist für einen Körper ohne starke Gezeitenheizung. Möglicherweise verhindert ein Antifriergemisch aus Salz oder Ammoniak das vollständige Gefrieren. Das markanteste Oberflächenmerkmal ist [b]Valhalla[/b] — ein Einschlagbecken von ~3.800 km Durchmesser mit konzentrischen Ringen, das größte derartige Struktursystem im Sonnensystem.\n\nCallisto liegt außerhalb von Jupiters intensivstem Strahlungsgürtel — im Gegensatz zu den inneren Galileischen Monden, die von hochenergetischen Teilchen durchdrungen werden. Dies macht ihn zu einem der weniger unwirtlichen Orte im Jupiter-System aus Sicht möglicher zukünftiger Missionen. Mehrere NASA-Studien nannten Callisto als mögliche Basis für astronautische Erkundungen des Jupiter-Systems, da Raumfahrer dort weniger Strahlungsbelastung ausgesetzt wären als in engerer Jupiternähe.\n\nEine dünne Kohlenstoffdioxid-Exosphäre wurde durch die Galileo-Sonde nachgewiesen — das erste Mal, dass Callisto eine messbare Gashülle zeigte. Die ESA-Mission JUICE wird Callisto bei mehreren Vorbeiflybeobachtungen aus nächster Nähe untersuchen, bevor sie die finale Ganymed-Umlaufbahn erreicht."
     },
     "ceres": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -105,
+          "temp_min": -163,
+          "temp_max": -38
+        }
       },
-      "description": "[b]Ceres[/b] ist der größte Körper im [url=concept:asteroid_belt]Asteroidengürtel[/url] und seit 2006 als Zwergplanet klassifiziert. Mit einem Durchmesser von ~940 km enthält er etwa ein Drittel der gesamten Masse des Gürtels.\n\nDie Raumsonde Dawn entdeckte helle Flecken in Kratern — vermutlich Ablagerungen aus Natriumcarbonat, die durch salzhaltiges Wasser oder Wassereis an die Oberfläche gelangt sind. Ceres könnte unter seiner Oberfläche flüssiges Wasser besitzen.\n\nSeine fast kreisförmige Umlaufbahn und seine Größe unterscheiden ihn deutlich von den meisten anderen Gürtelobjekten."
+      "description": "[b]Ceres[/b] ist mit einem Radius von 473 km der größte Körper im [url=concept:asteroid_belt]Asteroidengürtel[/url] und der einzige Zwergplanet im inneren Sonnensystem. Er enthält schätzungsweise ~30 % der Gesamtmasse des Gürtels, obwohl diese Masse winzig ist verglichen mit jedem terrestrischen Planeten. Ceres wurde 1801 von Giuseppe Piazzi entdeckt — ursprünglich als Planet klassifiziert — und galt über 50 Jahre als solcher, bis die zunehmend entdeckten Nachbarkörper zur Einführung der Kategorie \"Asteroid\" führten. Die IAU klassifizierte ihn 2006 wieder neu, diesmal als Zwergplaneten.\n\nSeine fast kreisförmige Umlaufbahn (~4,6 Jahre, Exzentrizität 0,08) bei ~2,77 AU unterscheidet Ceres von den meisten irregulären Asteroiden des Gürtels. Die Oberfläche ist dunkel und einheitlich (Albedo ~0,09), doch die NASA-Sonde [b]Dawn[/b] (2015–2018) enthüllte bei näherer Betrachtung helle Flecken in mehreren Kratern. Die markantesten finden sich im [b]Occator-Krater[/b] (~92 km Durchmesser): Die helle Zentralstruktur [b]Cerealia Facula[/b] und umgebende Satellitenhelle Flecken (Vinalia Faculae) bestehen aus Natriumcarbonat — Salze, die durch salzhaltiges Wasser aus dem Inneren an die Oberfläche gelangten und dort im Vakuum auskristallisierten. Dampffahnen über Cerealia Facula sind ein Zeichen für andauernde Ausgasung.\n\nCeres besitzt außerdem [b]Ahuna Mons[/b] — einen ~4 km hohen, steilwandigen Cryovulkan, der jüngsten Ursprungs ist und keine Erosionsspuren zeigt. Dies belegt aktiven [url=concept:cryovolcanism]Kryovulkanismus[/url] in der geologisch jüngeren Vergangenheit. 2014 entdeckte das Herschel-Weltraumteleskop Wasserdampf über zwei Quellen auf Ceres — die erste Bestätigung von Ausgasung im Asteroidengürtel. Ceres besitzt eine sehr dünne Wasserdampf-Exosphäre.\n\nUnter der Oberfläche deuten Dichte (2,16 g/cm³) und Gravitationsdaten auf ein differenziertes Inneres hin: ein wasserreiches Mantel-Material (möglicherweise bis zu 25 % Wasser oder Eis) über einem felsigen Kern. Ob noch flüssiges Wasser tief im Inneren vorhanden ist, ist unklar — Ceres zeigt jedoch mehr Zeichen hydrogeologischer Aktivität als jeder andere Körper im Asteroidengürtel."
     },
     "charon": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -220,
+          "temp_min": -230,
+          "temp_max": -210
+        }
       },
       "description": "[b]Charon[/b] ist der größte Mond des [url=body:pluto]Pluto[/url] und im Verhältnis zum Hauptkörper der massereichste Mond im Sonnensystem. Mit einem Durchmesser von ~1.212 km ist er etwa halb so groß wie Pluto selbst.\n\nPluto und Charon bilden ein echtes Doppelsystem: Ihr gemeinsamer Schwerpunkt (Baryzentrum) liegt außerhalb beider Körper. Beide sind in gebundener Rotation — sie zeigen sich stets dieselbe Seite.\n\nNew Horizons zeigte 2015 eine vielfältige Oberfläche mit einem rötlichen Nordpolgebiet (Mordor Macula), das durch von Pluto übergeströmtes Methan entsteht, welches durch UV-Strahlung zu Tholins wird."
     },
     "churyumov_gerasimenko": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -70,
+          "temp_min": -130,
+          "temp_max": 70
+        }
       },
       "description": "[b]67P/Churyumov-Gerasimenko[/b] ist ein Kurzperiodkomet mit einer Umlaufzeit von ~6,4 Jahren, der durch die Rosetta-Mission der ESA Weltbekanntheit erlangte. Die Sonde begleitete den Kometen von 2014 bis 2016 auf seiner Reise durch das innere Sonnensystem.\n\nSein Kern hat eine ungewöhnliche Hantelform (~4 × 2,5 km) aus zwei Lappen — vermutlich das Ergebnis einer sanften Kollision zweier Objekte in der Frühzeit des Sonnensystems. Die Landeeinheit Philae setzte am 12. November 2014 auf der Oberfläche auf.\n\nRosetta lieferte Details über die Zusammensetzung des Kometen: Wassereis, organische Moleküle und schwere Edelgase geben Einblick in die Ur-Zusammensetzung des Sonnensystems."
     },
     "deimos": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -40,
+          "temp_min": -110,
+          "temp_max": -5
+        }
       },
       "description": "[b]Deimos[/b] ist der kleinere und äußere Mond des [url=body:mars]Mars[/url], benannt nach dem griechischen Gott der Furcht. Mit einem Radius von ~6 km ist er einer der kleinsten bekannten Monde im Sonnensystem.\n\nIm Gegensatz zu [url=body:phobos]Phobos[/url] entfernt sich Deimos langsam von Mars — sein Schicksal ist der Austritt aus dem Marssystem. Er hat eine fast kreisförmige Bahn und rotiert synchron.\n\nSeine Oberfläche ist glatter als die von Phobos, bedeckt von feinem Regolith, der die Krater teilweise auffüllt."
     },
     "dione": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -186,
+          "temp_min": -195,
+          "temp_max": -145
+        }
       },
-      "description": "[b]Dione[/b] ist ein Eismond des [url=body:saturn]Saturn[/url] mit einer geologisch aktiven Vergangenheit: Seine Oberfläche zeigt neben Kratern auch helle Eisklippen (\"Wispy Terrain\"), die aus gefrorenen Spalten entstanden sind — Hinweise auf frühere tektonische Aktivität.\n\nDione hat ebenfalls Trojaner-Monde (Helene und Polydeuces). Cassini-Daten legen nahe, dass Dione möglicherweise einen unterirdischen flüssigen Ozean besitzt, ähnlich wie [url=body:enceladus]Enceladus[/url], jedoch weniger aktiv."
+      "description": "[b]Dione[/b] ist ein Eismond des [url=body:saturn]Saturn[/url] mit einem Radius von 561 km und einer Dichte von ~1,48 g/cm³ — ein Zeichen, dass er neben Wassereis auch einen bedeutenden Silikatgesteinsanteil enthält, möglicherweise bis zu 45 % des Volumens. Er umrundet Saturn in 2,74 Tagen und befindet sich in einer 1:2-Bahnresonanz mit [url=body:enceladus]Enceladus[/url], die zu Gezeitenheizung in beiden Monden beiträgt.\n\nDas markanteste visuelle Merkmal ist das [b]Wispy Terrain[/b] auf der Rückseite: ein Netz aus hellen, schmalen Klippen, die sich über Hunderte von Kilometern erstrecken. Voyager-Bilder interpretierten dies zunächst als Frostablagerungen; Cassini-Daten zeigten, dass es sich um gefrorene Steilwände tektonischer Brüche handelt — das Eis wurde durch innere Kräfte auseinandergerissen, die Bruchkanten blieben als helle Felsen stehen. Dies belegt tektonische Aktivität in Diones Vergangenheit.\n\nCassini-Magnetfeldmessungen aus dem Jahr 2015 zeigten Anomalien, die mit einem leitfähigen, flüssigen Ozean in ~100 km Tiefe kompatibel sind — allerdings schwächer als die eindeutigen Signale von Enceladus oder Europa. Sauerstoffionen in der Umgebung Diones, entdeckt von Cassini 2011, deuten auf eine sehr dünne Exosphäre hin, die durch die Spaltung von Wassermolekülen durch Saturns Strahlung erzeugt wird.\n\nWie [url=body:tethys]Tethys[/url] hat Dione zwei Trojaner-Monde: [b]Helene[/b] (L4) und [b]Polydeuces[/b] (L5), von denen letzterer ungewöhnlich weit von seinem Lagrangepunkt abweicht und eine komplexe librierende Bahn beschreibt."
     },
     "dysnomia": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -231,
+          "temp_min": -243,
+          "temp_max": -213
+        }
       },
       "description": "[b]Dysnomia[/b] ist der einzige bekannte Mond des [url=body:eris]Eris[/url] und nach der Tochter der Göttin Eris — der Göttin der Gesetzlosigkeit — benannt.\n\nEr umkreist Eris in ~15.786 Tagen auf einer nahezu kreisförmigen Bahn. Die Analyse seiner Bahn erlaubte eine präzise Massebestimmung von Eris und zeigte, dass dieser schwerer als Pluto ist — ein Schlüsselergebnis in der Debatte um die Planetendefinition.\n\nDysnomia ist wahrscheinlich das Ergebnis einer Kollision in der frühen Geschichte des Eris-Systems."
     },
     "elara": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -161,
+          "temp_min": -173,
+          "temp_max": -133
+        }
       },
       "description": "[b]Elara[/b] ist ein irregulärer Mond des [url=body:jupiter]Jupiter[/url] und Mitglied der Himalia-Gruppe. Mit ~40 km Durchmesser ist er einer der größeren irregulären Jupitermonde.\n\nEr wurde 1905 von Charles Dillon Perrine entdeckt und ist nach einer Geliebten des Zeus in der griechischen Mythologie benannt. Seine stark geneigte und elliptische Bahn legt nahe, dass er einst ein unabhängiger Kleinplanet war, der von Jupiter eingefangen wurde."
     },
     "enceladus": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -198,
+          "temp_min": -240,
+          "temp_max": -93,
+          "composition": {
+            "Wasserdampf (H₂O)": 91.0,
+            "Stickstoff (N₂)": 4.0,
+            "Kohlenstoffdioxid (CO₂)": 3.3,
+            "Methan (CH₄)": 1.7
+          }
+        }
       },
-      "description": "[b]Enceladus[/b] ist eines der wissenschaftlich faszinierendsten Objekte des Sonnensystems. Trotz seines Durchmessers von nur ~504 km ist er geologisch hochaktiv: Geysire am Südpol schleudern Wasserdampf, Eiskristalle und organische Moleküle ins All — direkt aus einem globalen, flüssigen Salzwasserozean unter seiner Eisoberfläche.\n\nDas ausgestoßene Material speist Saturns E-Ring. Die Cassini-Sonde durchflog die Fahnen mehrfach und detektierte Wassereis, Salze, Silikate und Wasserstoffmoleküle — Hinweise auf hydrothermale Prozesse am Meeresboden.\n\nEnceladus gilt neben [url=body:europa]Europa[/url] als der aussichtsreichste Kandidat für außerirdisches Leben im Sonnensystem."
+      "description": "[b]Enceladus[/b] ist mit einem Radius von 252 km einer der kleinsten geologisch aktiven Körper im Sonnensystem — und gleichzeitig einer der wissenschaftlich aufregendsten. Sein Südpol wird von vier parallelen Rissen überspannt, den sogenannten [b]Tigerstreifen[/b] (Baghdad, Cairo, Damascus, Alexandria Sulci), jeweils ~130 km lang und 2 km breit. Aus diesen Rissen schießen über 100 Geysirfontänen mit Geschwindigkeiten von ~1.400 km/h in den Weltraum: Wasserdampf, Eispartikel, organische Moleküle und Salze, die direkt aus dem Inneren des Mondes stammen.\n\nDas ausgestoßene Material wurde von der [b]Cassini-Sonde[/b] bei mehreren gezielten Durchflügen direkt analysiert. Die Ergebnisse sind außergewöhnlich: Wasserstoffmoleküle (H₂) in der Fahne deuten auf aktive hydrothermale Prozesse am Meeresboden hin — also Wasser-Gestein-Wechselwirkungen bei hohen Temperaturen, ähnlich den submarinen Schwarzen Rauchern auf der Erde. Diese Umgebungen gelten als mögliche Wiegen des Lebens. Darüber hinaus detektierte Cassini komplexe organische Moleküle mit Massen über 200 Dalton, darunter sauerstoff- und stickstoffhaltige Verbindungen, sowie im Jahr 2023 nachgewiesenes Phosphat — alle sechs CHNOPS-Elemente des Lebens sind in der Fahne vertreten.\n\nDer globale flüssige Salzwasserozean unter der Eiskruste (ca. 10 km dick) hat durch [url=concept:tidal_heating]Gezeitenheizung[/url] — Enceladus befindet sich in einer [url=concept:orbital_resonance]2:1-Resonanz[/url] mit Dion — seinen Wärmehaushalt aufrechterhalten. Der Ozean ist salzig (Natriumchlorid und Natriumcarbonat nachgewiesen) und hat vermutlich einen pH von ~11–12 (alkalisch). Das aus den Geysiren ausgestoßene Material speist kontinuierlich Saturns [b]E-Ring[/b] — der gesamte Ring besteht aus Enceladus-Material.\n\nEnceladus gilt neben [url=body:europa]Europa[/url] als der aussichtsreichste Kandidat für außerirdisches Leben im Sonnensystem, weil er als einziger bekannter Körper aktiv Proben seines Innenlebens in den Weltraum schleudert — eine zukünftige Sonde müsste nicht einmal landen, sondern könnte einfach durch die Fahne fliegen."
     },
     "encke": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -50,
+          "temp_min": -70,
+          "temp_max": 55
+        }
       },
       "description": "[b]2P/Encke[/b] ist der Komet mit der kürzesten bekannten Umlaufzeit (~3,3 Jahre) und der einzige Komet, der vollständig innerhalb der Jupiterbahn verbleibt. Er umkreist die Sonne seit Jahrhunderten auf derselben Bahn und hat dabei den größten Teil seines Materials verloren.\n\nEncke ist die Quelle des Tauriden-Meteorschauers. Sein Kern ist mit ~4,8 km Durchmesser für einen regelmäßig aktiven Kometen ungewöhnlich groß. Ob Encke einst ein größerer Körper war, der durch Fragmentation entstand, wird diskutiert."
     },
     "eris": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -231,
+          "temp_min": -243,
+          "temp_max": -213
+        }
       },
-      "description": "[b]Eris[/b] ist der massereichste bekannte Zwergplanet und liegt weit jenseits des [url=concept:kuiper_belt]Kuipergürtels[/url] auf einer stark elliptischen Bahn. Seine Entdeckung 2005 löste die Debatte aus, die zur Neudefinition des Planetenbegriffs und Plutos Abstufung führte.\n\nEris ist nach der griechischen Göttin der Zwietracht benannt — passend zur Kontroverse, die er auslöste. Seine Oberfläche ist eine der hellsten im Sonnensystem, bedeckt von frischem Methaneis.\n\nSein Mond Dysnomia ist der einzige bekannte Begleiter. Trotz seines großen Abstands zur Sonne konnte Eris eine dünne Methanatmosphäre aufrechterhalten, die bei größerem Sonnenabstand gefriert."
+      "description": "[b]Eris[/b] ist der massereichste bekannte Zwergplanet im Sonnensystem: Mit ~1,66 × 10²² kg ist er ~27 % schwerer als Pluto, obwohl sein Radius von ~1.163 km nur geringfügig größer oder kleiner als Plutos (je nach Messmethode) ist — Eris hat also eine höhere Dichte (~2,5 g/cm³). Er wurde am 5. Januar 2005 von Michael Brown, Chad Trujillo und David Rabinowitz entdeckt und wurde intern \"Xena\" genannt. Seine Entdeckung löste unmittelbar die Debatte aus, die zur IAU-Neudefinition von \"Planet\" führte und 2006 Plutos Abstufung zum Zwergplaneten nach sich zog. Eris ist nach der griechischen Göttin der Zwietracht benannt.\n\nEris ist kein [url=concept:kuiper_belt]Kuipergürtel[/url]-Objekt im klassischen Sinne, sondern ein Mitglied des [url=concept:scattered_disc][b]Streuscheibs[/b][/url] (Scattered Disc): Seine stark elliptische Bahn (Exzentrizität 0,44) führt ihn zwischen ~38,5 AU (Perihel, zuletzt 1699) und ~97,7 AU (Aphel). Die Umlaufzeit beträgt ~558 Jahre. Zum Zeitpunkt der Entdeckung befand er sich mit ~96 AU nahe am Aphel — trotzdem war er teleskopisch heller als erwartet.\n\nDie Oberfläche von Eris hat eine Albedo von ~0,96 — nahezu perfekte Reflexion, so hell wie frischer Schnee. Dies liegt an einer dünnen Schicht aus gefrorenem Stickstoff und Methaneis, die sich je nach Sonnenentfernung aus einer sehr dünnen saisonalen Atmosphäre niederschlägt. Spektren zeigen ähnliche Zusammensetzung wie Pluto. Eris ist derzeit so weit von der Sonne entfernt, dass praktisch die gesamte frühere Atmosphäre ausgefroren auf der Oberfläche liegt.\n\nSein einziger bekannter Mond, [url=body:dysnomia]Dysnomia[/url], umkreist Eris in ~15,8 Tagen. Durch präzise Analyse von Dysnomias Bahn (Hubble, 2007) konnte die Masse von Eris auf 0,27 % der Erdmasse bestimmt werden — und damit belegt werden, dass Eris schwerer als Pluto ist. Bisher hat kein Raumfahrzeug Eris besucht; eine Mission dorthin würde mit aktueller Technologie über 20 Jahre dauern."
     },
     "europa": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -171,
+          "temp_min": -220,
+          "temp_max": -148,
+          "composition": {
+            "Sauerstoff (O₂)": 100.0
+          }
+        }
       },
-      "description": "[b]Europa[/b] ist der kleinste der vier Galileischen Monde des [url=body:jupiter]Jupiter[/url] und gilt als einer der vielversprechendsten Orte für außerirdisches Leben im Sonnensystem.\n\nUnter einer ~10–30 km dicken Eisschicht verbirgt sich ein globaler Salzwasserozean mit möglicherweise mehr Wasser als alle Ozeane der Erde zusammen. Die Gezeitenheizung durch Jupiters Gravitation hält diesen Ozean flüssig. Geysire aus Wasserdampf wurden über Europas Südpol beobachtet.\n\nDie Eisoberfläche ist mit linearen Rissen und Verwerfungen überzogen — ein Zeichen aktiver Kryotektonik. Die NASA-Mission Europa Clipper soll ab 2030 genauer untersuchen, ob dieser Ozean lebensfreundlich ist."
+      "description": "[b]Europa[/b] ist der kleinste der vier Galileischen Monde des [url=body:jupiter]Jupiter[/url] mit einem Radius von 1.561 km und gilt als einer der vielversprechendsten Orte für außerirdisches Leben im Sonnensystem. Unter einer ~10–30 km dicken Eisschicht verbirgt sich ein globaler Salzwasserozean: Mit einer geschätzten Tiefe von ~100 km enthält er mehr flüssiges Wasser als alle Ozeane der Erde zusammen. [url=concept:tidal_heating]Gezeitenheizung[/url] durch die [url=concept:orbital_resonance]Laplace-Resonanz[/url] mit Io und Ganymed hält diesen Ozean dauerhaft flüssig.\n\nDie Eisoberfläche ist geologisch jung (schätzungsweise nur 20–180 Millionen Jahre) und zeigt eine charakteristische Struktur: [b]Lineae[/b] (dunkle Risslinien, teilweise tausende Kilometer lang), [b]Lenticulae[/b] (linsenförmige Erhebungen aus aufgewölbtem Eis) und [b]Chaos-Regionen[/b] (wo die Eisschicht gebrochen und neu gefroren ist). Diese Merkmale belegen aktive Kryotektonik — das Eis wird durch den darunter liegenden Ozean ständig in Bewegung gehalten. Europas Oberfläche ist das glatteste Objekt im Sonnensystem; Erhebungen und Vertiefungen erreichen selten mehr als ein paar hundert Meter.\n\nHubble beobachtete 2012 und 2016 Wasserdampfgeysire über dem Südpol — ein Zeichen, dass Ozeanwasser möglicherweise bis an die Oberfläche gelangt. Die magnetischen Messungen der Galileo-Sonde bestätigten durch induzierte Magnetfeldvariationen das Vorhandensein eines leitenden Ozeans. Spektroskopische Daten zeigen Magnesiumsulfate und möglicherweise Natriumchlorid auf der Eisoberfläche — Salze, die aus dem Inneren des Ozeans stammen könnten.\n\nDie NASA-Mission [b]Europa Clipper[/b] startete im Oktober 2024 und wird ab ~2030 in knapp 50 Nahe-Vorbeiflügen die Eisdicke, Zusammensetzung des Ozeans und potentielle Habitats untersuchen. Die ESA-Sonde [b]JUICE[/b] wird Europa 2031 einmalig aus nächster Nähe passieren, bevor sie in eine Ganymed-Umlaufbahn eintritt."
     },
     "ganymede": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -163,
+          "temp_min": -193,
+          "temp_max": -113,
+          "composition": {
+            "Sauerstoff (O₂)": 100.0
+          }
+        }
       },
-      "description": "[b]Ganymed[/b] ist der größte Mond im Sonnensystem — größer als der Planet Merkur — und der einzige Mond mit einem eigenen, global ausgedehnten Magnetfeld.\n\nEr ist ein Galileischer Mond des [url=body:jupiter]Jupiter[/url] und besteht aus einem Eismantel über einem Gesteinsmantel und einem eisenhaltigen Kern. Sein Magnetfeld erzeugt aurorenähnliche Leuchterscheinungen in der Jupiteratmosphäre.\n\nGanymed besitzt ebenfalls einen unterirdischen Ozean zwischen Eisschichten — laut Hubble-Beobachtungen aus Auroraschwankungen abgeleitet. Die ESA-Mission JUICE soll ihn ab 2034 eingehend untersuchen."
+      "description": "[b]Ganymed[/b] ist mit einem Radius von 2.634 km der größte Mond im Sonnensystem — größer als der Planet Merkur (Radius 2.440 km) und fast halb so groß wie die Erde. Wäre er direkt um die Sonne und nicht um Jupiter gekreist, würde er heute als Planet klassifiziert. Er ist der einzige Mond im Sonnensystem mit einem eigenen, intrinsischen Magnetfeld — erzeugt durch Konvektion in seinem flüssigen Eisenkern und lokal ~10-mal stärker als Jupiters umgebendes Feld.\n\nGanymeds innerer Aufbau ist vollständig differenziert: ein metallischer Eisenkern (~500 km Radius), umgeben von einem Silikatgesteinsmantel, darüber ein rund 800 km dicker Eismantel, in dem ein globaler Salzwasserozean eingebettet ist. Hubble-Beobachtungen (2015) bestätigten diesen Ozean indirekt: Die Nordlichter Ganymeds schwingen rhythmisch mit dem Jupitermagnetfeld — das präzise Muster war nur mit einem leitfähigen Ozean in ~150 km Tiefe vereinbar. Dieser Ozean enthält möglicherweise mehr Wasser als alle irdischen Ozeane zusammen.\n\nDie Oberfläche besteht aus zwei deutlich unterscheidbaren Terraintypen: dunklere, alte, stark kraterierte [b]Sulci[/b]-Gebiete (Regiones) und hellere, jüngere [b]Furchen-Terrain[/b]-Bereiche (Sulci), die durch tektonische Dehnung und Aufbruch der Eiskruste entstanden. Diese Gebiete wechseln sich auf der gesamten Oberfläche ab. Ganymed befindet sich in der [url=concept:orbital_resonance]Laplace-Resonanz[/url] mit [url=body:io]Io[/url] und [url=body:europa]Europa[/url] (1:2:4) — aber weit genug außen, dass die Gezeitenheizung keine dramatischen geologischen Folgen hat.\n\nDie ESA-Mission [b]JUICE[/b] (Jupiter Icy Moons Explorer) wird ab 2034 als erster Orbiter ausschließlich um Ganymed kreisen und dessen Ozean, Magnetfeld und Habitabilitätspotential systematisch untersuchen — das erste Mal, dass ein Orbiter um einen anderen Mond als den Erdmond gebracht wird."
     },
     "gonggong": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -230,
+          "temp_min": -240,
+          "temp_max": -220
+        }
       },
-      "description": "[b]Gonggong[/b] ist ein transneptunisches Objekt auf einer stark geneigten und elliptischen Bahn. Er ist nach dem chinesischen Wassergott benannt, der der Legende nach beim Verlieren eines Kampfes die Weltachse verschob — was zur schiefen Erdachse führte.\n\nGonggong hat eine rötliche Oberfläche, die auf Tholins (organische Verbindungen) hindeutet. Er besitzt einen Mond namens Xiangliu.\n\nAufgrund seiner Größe und seines Durchmessers (vermutlich ~1.200 km) gilt er als wahrscheinlicher Zwergplanet, wurde aber noch nicht offiziell klassifiziert."
+      "description": "[b]Gonggong[/b] ist ein großes transneptunisches Objekt mit einem geschätzten Durchmesser von ~1.230 km (aus Okkultationsmessungen 2019), benannt nach dem chinesischen Wassergott, der der Legende nach in einem Kampf die Weltachse verschob — und damit für die Neigung der Erdachse verantwortlich ist. Er wurde 2007 von Megan Schwamb, Michael Brown und David Rabinowitz mit dem Samuel-Oschin-Teleskop am Palomar-Observatorium entdeckt. Aufgrund seiner Größe gilt er als wahrscheinlicher Zwergplanet, wurde aber von der IAU noch nicht offiziell klassifiziert.\n\nGonggong befindet sich auf einer stark geneigten Bahn (~30° zur Ekliptik) mit hoher Exzentrizität (~0,50): Er pendelt zwischen ~33 AU (Perihel) und ~101 AU (Aphel) mit einer Umlaufzeit von ~556 Jahren. Diese Bahnparameter ordnen ihn dem [url=concept:scattered_disc][b]Streuscheibs[/b][/url] (Scattered Disc) zu — ähnlich wie [url=body:eris]Eris[/url]. Er befindet sich derzeit bei etwa 89 AU von der Sonne — einer der weitesten aktuellen Positionen großer TNOs.\n\nDie Oberfläche ist tief rot (eine der rötesten unter den großen TNOs), was auf einen hohen Anteil von [url=concept:tholins][b]Tholins[/b][/url] hindeutet — komplexe organische Moleküle, die durch UV- und kosmische Strahlung aus Methan und Stickstoff entstehen. Spektren zeigen außerdem Wassereis. Gonggongs extreme Rötung ähnelt der von Sedna und anderen sehr weit entfernten Objekten, deren Oberflächen durch Milliarden Jahre Strahlung chemisch verändert wurden.\n\nSein Mond [url=body:xiangliu]Xiangliu[/url] wurde 2016 mit dem Hubble-Weltraumteleskop entdeckt und umkreist Gonggong in ~25,2 Tagen. Die Bahnanalyse erlaubte eine Massebestimmung Gonggongs und unterstützte die Einschätzung seiner Zwergplanetenstatus. Kein Raumfahrzeug hat Gonggong bisher besucht."
     },
     "halley": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -70,
+          "temp_min": -90,
+          "temp_max": 77
+        }
       },
       "description": "[b]1P/Halley[/b] ist der bekannteste kurzperiodische Komet und der einzige, der mit bloßem Auge von der Erde aus in einem Menschenleben zweimal sichtbar ist. Seine Umlaufzeit beträgt ~75–76 Jahre; sein letztes Perihel war 1986, das nächste wird 2061 erwartet.\n\nHalley hat eine retrograde Bahn mit hoher [url=concept:eccentricity]Exzentrizität[/url]: Er reicht von der inneren Erdbahn bis jenseits von Neptun. Die europäische Giotto-Mission flog 1986 durch seine Koma und lieferte die ersten Nahaufnahmen eines Kometenkerns — ein dunkler, unregelmäßiger Körper von ~15 × 8 km.\n\nHalley ist die Quelle zweier jährlicher Meteorschauer: der Eta-Aquariiden (Mai) und der Orioniden (Oktober)."
     },
     "hartley2": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -60,
+          "temp_min": -80,
+          "temp_max": 52
+        }
       },
       "description": "[b]103P/Hartley 2[/b] ist ein kleiner, aktiver kurzperiodischer Komet (~6,5 Jahre) mit einem hantelförmigen Kern von ~2,2 km Länge. Die NASA-EPOXI-Mission flog 2010 in nur ~700 km Abstand am Kern vorbei.\n\nHartley 2 zeigte eine ungewöhnlich hohe Aktivität: CO₂ treibt Ausgasungen an seinen Enden an, während Wasser aus der Mitte strömt. Dies macht ihn zu einem der wissenschaftlich wertvollsten kleinen Kometen."
     },
     "haumea": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -241,
+          "temp_min": -250,
+          "temp_max": -223
+        }
       },
-      "description": "[b]Haumea[/b] ist ein Zwergplanet im [url=concept:kuiper_belt]Kuipergürtel[/url] mit einer außergewöhnlichen Form: Er rotiert so schnell (eine Umdrehung in ~4 Stunden), dass er stark abgeplattet ist — seine Längsachse ist doppelt so lang wie die Querachse.\n\nHaumea besitzt ein dünnes Ringsystem sowie zwei bekannte Monde, Hi'iaka und Namaka. Seine Oberfläche besteht aus nahezu reinem Wassereis und ist eine der hellsten im Kuipergürtel.\n\nEr ist nach der hawaiianischen Göttin der Geburt und Fruchtbarkeit benannt."
+      "description": "[b]Haumea[/b] ist ein Zwergplanet im [url=concept:kuiper_belt]Kuipergürtel[/url] mit einer beispiellosen Form: Er rotiert so schnell (~3,9 Stunden pro Umdrehung), dass Fliehkräfte ihn stark in die Länge gezogen haben — seine Abmessungen betragen etwa 1.960 × 1.518 × 996 km, was ihn zu einem ausgeprägten Ellipsoid macht, der einem Rugby-Ball ähnelt. Bei dieser Rotationsgeschwindigkeit ist er physikalisch stabil, weil er aus festem Gestein besteht (Dichte ~2,6 g/cm³) — ein flüssiger oder locker gebundener Körper würde auseinanderreißen. Wie Haumea so schnell rotiert, ist ungeklärt: Ein früher Kollision mit einem anderen KBO ist die wahrscheinlichste Erklärung.\n\nDie Oberfläche besteht aus fast reinem, kristallinem Wassereis mit einer Albedo von ~0,8 — eine der hellsten im Kuipergürtel. Das Wassereis ist ungewöhnlich kristallin, was auf eine relativ junge oder thermisch veränderte Oberfläche hindeutet; ältere Oberflächen im Kuipergürtel zeigen amorphes Eis durch jahrmilliardenlangen Partikeleinfall. Ein dunkler, rötlicher Fleck (Makulae) auf der Oberfläche deutet auf einen Bereich mit organischen Verbindungen ([url=concept:tholins]Tholins[/url]) hin.\n\nIm Jahr 2017 wurde durch Sternbedeckungsbeobachtungen ein [b]Ringsystem[/b] um Haumea entdeckt — das erste bekannte Ringsystem eines TNO (transneptunischen Objekts). Der Ring liegt in ~2.287 km Abstand, hat eine Breite von ~70 km und ist in einer 3:1-Resonanz mit Haumeas Rotation. Dies widerspricht klassischen Modellen der Ringbildung, die für solche Abstände keine stabilen Ringe vorhersagen.\n\nHaumea hat zwei bekannte Monde, [url=body:hiʻiaka]Hiʻiaka[/url] und [url=body:namaka]Namaka[/url], die chemisch Haumeas Oberfläche ähneln und vermutlich aus demselben Kollisionsereignis stammen, das auch die schnelle Rotation erzeugte. Die sogenannte [b]Haumea-Kollisionsfamilie[/b] — eine Gruppe von KBOs mit ähnlichen Bahnelementen und Wassereis-Spektren — ist der einzige bekannte Kollisionsfamilien-Verband jenseits von Neptun."
     },
     "himalia": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -163,
+          "temp_min": -173,
+          "temp_max": -133
+        }
       },
       "description": "[b]Himalia[/b] ist der größte der irregulären Monde des [url=body:jupiter]Jupiter[/url] mit einem Durchmesser von ~170 km. Er ist der Namensgeber der Himalia-Gruppe — einer Familie progrder irregulärer Jupitermonde mit ähnlichen Bahnparametern, die vermutlich aus demselben Ursprungskörper stammen.\n\nSeine Bahn liegt weit außerhalb der Galileischen Monde in ~11 Millionen km Abstand. Er ist wahrscheinlich ein eingefangener Asteroid vom C- oder D-Typ."
     },
     "hiʻiaka": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -241,
+          "temp_min": -250,
+          "temp_max": -223
+        }
       },
       "description": "[b]Hiʻiaka[/b] ist der größere der beiden bekannten Monde des [url=body:haumea]Haumea[/url] und nach der hawaiianischen Göttin der Insel Hawaiʻi benannt — einer Tochter von Haumea.\n\nMit einem Radius von ~160 km umkreist er Haumea in ~49.462 Tagen auf einer fast kreisförmigen Bahn. Seine Oberfläche zeigt Wassereis-Absorptionsbanden, die denen Haumeas ähneln, und deutet auf einen gemeinsamen Ursprung durch eine Kollision hin.\n\nHiʻiaka und [url=body:namaka]Namaka[/url] wurden 2005 mit dem Hubble-Weltraumteleskop entdeckt."
     },
     "hyperion": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -180,
+          "temp_min": -193,
+          "temp_max": -148
+        }
       },
-      "description": "[b]Hyperion[/b] ist ein unregelmäßig geformter Mond des [url=body:saturn]Saturn[/url] mit einer schwammartigen, porösen Oberfläche. Er ist einer der größten unregelmäßigen Körper im Sonnensystem (~360 × 266 × 205 km) und rotiert chaotisch — seine Rotationsachse und -geschwindigkeit ändern sich unvorhersehbar über kurze Zeiträume.\n\nDieses chaotische Taumeln macht Hyperion zu einem der wenigen Körper mit nachgewiesener chaotischer Rotation. Seine niedrige Dichte (~0,55 g/cm³) deutet auf ein stark poröses Inneres hin — möglicherweise ein Haufwerk (\"rubble pile\")."
+      "description": "[b]Hyperion[/b] ist ein unregelmäßig geformter Mond des [url=body:saturn]Saturn[/url] mit Ausmaßen von ~360 × 266 × 205 km — einer der größten bekannten nicht-sphärischen Körper im Sonnensystem. Seine mittlere Dichte beträgt nur ~0,55 g/cm³, deutlich weniger als Wasser (1,0 g/cm³), was auf ein extrem poröses Inneres hindeutet. Modelle schätzen den Leerraumanteil auf über 40 % — Hyperion ist möglicherweise ein locker zusammengehaltenes Haufwerk (Rubble Pile) aus Eis- und Gesteinsbrocken.\n\nDas auffälligste Merkmal ist die schwammartige Oberfläche: tiefe, steilwandige Krater mit dunklem Material an den Böden verleihen ihr eine charakteristische wabige Struktur. Anders als bei den meisten Monden scheinen die Einschlagkrater nicht durch Nachfluss von Material einzuebnen — die geringe Schwerkraft (nur ~0,017 g) und das poröse Substrat lassen das Einschlagmaterial tief in den Körper eindringen, statt es fortzuschleudern.\n\nHyperions wichtigstes wissenschaftliches Merkmal ist seine [b]chaotische Rotation[/b]: Sie ist nachweislich unvorhersehbar — Rotationsachse und Rotationsrate wechseln auf Zeitskalen von Wochen. Dies ist eine Folge seiner unregelmäßigen Form, der Nähe zu [url=body:titan]Titan[/url] (4:3-Bahnresonanz) und der mangelnden Kreisform seiner eigenen Umlaufbahn. Hyperion ist damit einer der wenigen Körper im Sonnensystem mit mathematisch nachgewiesener chaotischer Rotation.\n\nVoyager 2 fotografierte Hyperion 1981 erstmals aus nächster Nähe; die Cassini-Sonde flog 2005 in nur ~500 km Abstand vorbei und lieferte hochaufgelöste Bilder der bizarren Oberfläche. Dabei entdeckte Cassini elektrostatisch aufgeladene Oberflächen-Material — ein Phänomen, das möglicherweise durch Jupiters und Saturns Magnetfelder verursacht wird."
     },
     "iapetus": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -143,
+          "temp_min": -173,
+          "temp_max": -100
+        }
       },
-      "description": "[b]Iapetus[/b] ist der drittgrößte Mond des [url=body:saturn]Saturn[/url] und bekannt für seinen extremen Helligkeitskontrast: Eine Hemisphäre ist so dunkel wie Kohle, die andere so hell wie frischer Schnee. Dies fiel schon dem Entdecker Cassini 1671 auf.\n\nDie Ursache: Die dunkle Seite (Cassini Regio) sammelt dunkles Material aus dem äußeren Saturnmondbereich an, während die helle Seite aus reinem Eis besteht. Hinzu kommt ein thermischer Effekt, der die Farbdifferenz verstärkt.\n\nIapetus besitzt außerdem einen riesigen Äquatorialkamm mit bis zu 20 km Höhe, dessen Entstehung noch ungeklärt ist."
+      "description": "[b]Iapetus[/b] ist mit einem Radius von 735 km der drittgrößte Mond des [url=body:saturn]Saturn[/url] und bekannt für einen der extremsten Helligkeitskontraste im Sonnensystem. Seine führende Hemisphäre, [b]Cassini Regio[/b], hat eine Albedo von nur 0,03–0,05 (so dunkel wie Asphalt), während die rückseitige Hemisphäre [b]Roncevaux Terra[/b] eine Albedo von ~0,5–0,6 (wie frischer Schnee) aufweist. Dieser Kontrast fiel schon dem Entdecker Giovanni Cassini 1671 auf — er konnte Iapetus nur auf einer Seite seiner Bahn sehen, weil er auf der anderen schlicht zu dunkel war.\n\nDie Ursache ist zweiteilig: Erstens sammelt die führende Seite im Orbit feines dunkles Staubmaterial, das hauptsächlich von den äußeren irregulären Monden Saturns stammt — insbesondere von [url=body:phoebe]Phoebe[/url], deren Staub durch den Phoebe-Ring nach innen driftet und auf Iapetus auftrifft. Zweitens verstärkt ein thermischer Rückkopplungseffekt den Kontrast: Die dunkle Seite erwärmt sich stärker und verliert Wassereis durch Sublimation; das Eis wandert auf die kältere helle Seite und kondensiert dort — was das Dunkel dunkler und das Helle heller macht.\n\nDas zweite Rätsel von Iapetus ist sein [b]Äquatorialkamm[/b]: Ein riesiger Gebirgsrücken von bis zu 20 km Höhe und ~1.300 km Länge verläuft genau am Äquator und ist nur auf der dunklen Seite vollständig ausgeprägt. Für einen Mond dieser Größe ist das außergewöhnlich. Theorien reichen von früher schneller Rotation (Äquatorwulst durch Fliehkraft eingefroren) über das Einschmelzen eines früheren Ringsystems bis zum vollständig unverstandenen Prozess — keine Theorie erklärt alle Beobachtungen befriedigend.\n\nIapetus hat eine extrem geneigte Umlaufbahn (~15° zur Saturnsäquatorebene) und eine Umlaufzeit von 79 Tagen — damit ist er weit genug von Saturn entfernt, um kaum Gezeitenheizung zu erfahren. Die Cassini-Sonde führte 2007 einen nahen Vorbeiflugs in ~2.000 km Abstand durch und lieferte die bisher detailliertesten Bilder dieser rätselhaften Welt."
     },
     "io": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "pressure": 3e-06,
+          "temp_mean": -143,
+          "temp_min": -183,
+          "temp_max": -20,
+          "composition": {
+            "Schwefeldioxid (SO₂)": 90.0,
+            "Schwefelsesquioxid (SO)": 5.0,
+            "Schwefel (S₂)": 2.0,
+            "Natriumchlorid (NaCl)": 0.1
+          }
+        }
       },
-      "description": "[b]Io[/b] ist der innerste der vier Galileischen Monde des [url=body:jupiter]Jupiter[/url] und das vulkanisch aktivste Objekt im Sonnensystem. Mehr als 400 aktive Vulkane sind bekannt; manche schleudern Material bis zu 500 km hoch.\n\nDie Ursache ist die Gezeitenheizung: Io wird durch die Schwerkraft Jupiters, Europas und Ganymeds ständig geknetet — die innere Reibung erzeugt enorme Hitze. Die Oberfläche ist ständig im Wandel durch Lavaströme und Schwefelablagerungen in gelben, roten und schwarzen Tönen.\n\nIo hat eine dünne Schwefeldioxid-Atmosphäre und beeinflusst durch seine ionisierende Wirkung Jupiters Magnetfeld erheblich."
+      "description": "[b]Io[/b] ist der innerste der vier Galileischen Monde des [url=body:jupiter]Jupiter[/url] mit einem Radius von 1.821 km und das vulkanisch aktivste Objekt im Sonnensystem. Mehr als 400 aktive Vulkane sind bekannt; manche Eruptionen schleudern Material bis zu 500 km hoch in Ios dünne Exosphäre. Io existiert in einer erzwungenen Kreisbahn durch die [url=concept:orbital_resonance][b]Laplace-Resonanz[/b][/url] mit Europa und Ganymed (1:2:4) — die ständig wechselnden Gravitationszüge dieser Monde verhindern, dass die Umlaufbahn kreisförmig wird und erzeugen dadurch enorme Gezeitenreibung im Inneren.\n\nDie daraus entstehende [url=concept:tidal_heating][b]Gezeitenheizung[/b][/url] produziert schätzungsweise 100 Terawatt Wärme — das Doppelte der gesamten Erdwärme. Ios Oberfläche wird durch Lavaströme, Vulkanausbrüche und Schwefelablagerungen laufend umgestaltet; in geologischen Maßstäben ist sie vollständig neu. Bodentemperaturen an aktiven Vulkanen übersteigen 1.600 °C. Die Oberflächenfärbung von Gelb über Orange bis Schwarz und Rot entsteht durch verschiedene Schwefelmodifikationen (kurzkettiger vs. langkettiger Schwefel) und frische Basaltlava.\n\nBesonders markante Vulkane sind [b]Loki Patera[/b] — eine ~200 km große Lavaseelake, die regelmäßig zirkuliert und das hellste Infrarot-Objekt im Sonnensystem jenseits der Erde ist — sowie [b]Pele[/b] mit seinem Schwefeldioxid-Schirmschauer von ~1.200 km Durchmesser. [b]Tvashtar[/b] wurde durch die New-Horizons-Sonde 2007 beim Ausbruch mit einem ~300 km hohen Lavafontänenwall beobachtet.\n\nIos dünne SO₂-Atmosphäre (~3 µbar) entweicht kontinuierlich und versorgt Jupiters Magnetosphäre mit Ionen — Io injiziert täglich ~1 Tonne ionisierten Schwefels und Sauerstoffs in den Jovianischen Strahlungsgürtel. Dadurch erzeugt Io einen Plasmatorus entlang seiner Umlaufbahn, der Jupiters Radio-Emissionen moduliert. Die Galileo-Sonde (1995–2003) und die Juno-Sonde dokumentierten Io aus der Nähe; die NASA-Mission Io Volcano Observer (IVO) ist in der Entwicklung."
     },
     "janus": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -190,
+          "temp_min": -200,
+          "temp_max": -160
+        }
       },
       "description": "[b]Janus[/b] ist ein kleiner Mond des [url=body:saturn]Saturn[/url] mit einem mittleren Radius von ~90 km, bekannt für sein ungewöhnliches Verhalten: Er teilt seine Bahn fast exakt mit dem Mond [b]Epimetheus[/b] — beide wechseln alle ~4 Jahre ihre Bahnpositionen, wenn der innere den äußeren einholt und Energie überträgt.\n\nDieses Hufeisenbahn-System ist einzigartig im Sonnensystem. Janus liegt nahe dem äußeren Rand von Saturns A-Ring und beeinflusst dessen Struktur."
     },
     "jupiter": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "pressure": 1.0,
+          "temp_mean": -108,
+          "temp_min": -145,
+          "composition": {
+            "Wasserstoff (H₂)": 89.8,
+            "Helium (He)": 10.2,
+            "Methan (CH₄)": 0.3,
+            "Ammoniak (NH₃)": 0.026
+          }
+        }
       },
-      "description": "[b]Jupiter[/b] ist mit Abstand der massereichste Planet des Sonnensystems — über zweieinhalbmal so schwer wie alle anderen Planeten zusammen. Er ist ein Gasriese ohne feste Oberfläche: Nach außen hin geht die Gashülle aus Wasserstoff und Helium kontinuierlich in tiefere Schichten über.\n\nSein bekanntestes Merkmal ist der [b]Große Rote Fleck[/b] — ein antizykloales Sturmsystem, das seit Jahrhunderten beobachtet wird und größer als die Erde ist.\n\nJupiter fungiert als gravitativer Wächter des inneren Sonnensystems: Er lenkt oder fängt viele Kometen ab, die andernfalls die inneren Planeten treffen würden. Er verhinderte zudem die Entstehung eines weiteren Planeten im [url=concept:asteroid_belt]Asteroidengürtel[/url]."
+      "description": "[b]Jupiter[/b] ist mit einem Radius von 69.911 km und einer Masse von 1,898 × 10²⁷ kg der massereichste Planet des Sonnensystems — über zweieinhalbmal schwerer als alle anderen Planeten zusammen. Wäre Jupiter ~75-mal massereicher, würde im Kern Fusionsdruck entstehen und er wäre ein Stern. Er besitzt keine feste Oberfläche; mit zunehmender Tiefe steigen Druck und Temperatur stetig, bis Wasserstoff in einen metallischen, elektrisch leitenden Zustand übergeht — der [b]metallische Wasserstoff[/b]-Kern beginnt bei etwa 1 Million bar. Ein Jupitertag dauert nur 9 Stunden 55 Minuten — so schnell, dass der Planet merklich abgeplattet ist (Äquatorialradius ~7 % größer als Polarradius).\n\nDas bekannteste Merkmal ist der [b]Große Rote Fleck[/b] — ein antizykloanes Sturmsystem mit Windgeschwindigkeiten von über 400 km/h. Er wird seit mindestens 1830 beobachtet und war einst größer als zwei Erddurchmesser; heute hat er sich auf etwa einen Erddurchmesser verkleinert. Jupiter zeigt parallele Wolkenbänder (Zonen und Gürtel) aus Ammoniak- und Ammoniakhydridsulfidwolken, die durch die rasche Rotation des Planeten geformt werden.\n\nJupiter besitzt die stärkste [url=concept:magnetosphere]Magnetosphäre[/url] im Sonnensystem — ~20.000-mal stärker als das Erdfeld. Es erzeugt eine gewaltige Magnetosphäre, die den Jupitermond Io einschließt und dabei einen intensiven Strahlungsgürtel produziert, der Raumsonde-Elektronik schädigt. 95 bekannte Monde umkreisen Jupiter (Stand 2024), darunter die vier großen Galileischen Monde. Der NASA-Orbiter [b]Juno[/b] untersucht seit 2016 Jupiters innere Struktur, Magnetfeld und Polararauren in bisher unerreichter Detailtiefe.\n\nJupiter fungiert als gravitativer Wächter des inneren Sonnensystems: Durch seine enorme Masse fängt oder lenkt er Kometen und Asteroiden ab, die andernfalls die inneren Planeten häufiger treffen würden. Gleichzeitig verhinderte seine frühe Gravitation die Akkretion von Planetesimalen im heutigen [url=concept:asteroid_belt]Asteroidengürtel[/url] — weshalb zwischen Mars und Jupiter kein vollständiger Planet entstand."
     },
     "makemake": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -239,
+          "temp_min": -243,
+          "temp_max": -213
+        }
       },
-      "description": "[b]Makemake[/b] ist ein Zwergplanet im [url=concept:kuiper_belt]Kuipergürtel[/url] und nach der Schöpfergottheit der Rapa-Nui-Kultur der Osterinsel benannt. Er wurde 2005 entdeckt und ist nach Pluto das zweithellste transneptunische Objekt.\n\nSeine rötlich-braune Oberfläche deutet auf organische Verbindungen (Tholins) hin, die durch UV-Bestrahlung aus Methan entstehen. Er besitzt eine extrem dünne oder keine permanente Atmosphäre.\n\nEin kleiner, dunkler Mond wurde 2016 entdeckt — was darauf hindeutet, dass Makemake keine globale Atmosphäre haben kann, da ein so dunkler Körper sonst durch atmosphärische Abbremsung abgesunken wäre."
+      "description": "[b]Makemake[/b] ist ein Zwergplanet im [url=concept:kuiper_belt]Kuipergürtel[/url] mit einem Radius von ~715 km, entdeckt am 31. März 2005 von Michael Brown, Chad Trujillo und David Rabinowitz am Palomar-Observatorium — wenige Monate nach [url=body:eris]Eris[/url] und kurz nach Ostern, weshalb er intern zunächst \"Easterbunny\" genannt wurde. Er ist nach [b]Make-make[/b], der Schöpfergottheit der Rapa-Nui-Kultur der Osterinsel, benannt. Mit einer Albedo von ~0,81 ist er nach Pluto das zweithellste bekannte transneptunische Objekt.\n\nDie Oberfläche zeigt Spektren von festem Methaneis und Ethan, was auf eine aktive photochemische Oberflächenchemie hindeutet: UV-Strahlung wandelt Methan in komplexe organische Verbindungen ([url=concept:tholins]Tholins[/url]) um — diese verleihen der Oberfläche die rötlich-braune Färbung. Makemake hat keine permanente globale Atmosphäre: Eine Sternbedeckungsbeobachtung von 2011 zeigte keine atmosphärische Ablenkung des Sternlichts an mehreren Messpunkten — es kann allenfalls eine lokale, dünne Sublimationsatmosphäre über sonnenbeschienenen Bereichen geben.\n\nDer einzige bekannte Mond, [url=body:mk2]MK2[/url], wurde 2016 mit dem Hubble-Weltraumteleskop entdeckt. Er ist auffällig dunkel (Albedo ~0,04) — ein extremer Kontrast zur hellen Oberfläche Makemakes. Dies schließt eine globale Atmosphäre nahezu aus: Wäre eine solche vorhanden, würde atmosphärische Abbremsung den Mond auf eine enge, kreisförmige Bahn zwingen, was nicht beobachtet wird.\n\nMakemake umrundet die Sonne in ~309 Jahren aus einem mittleren Abstand von ~45,8 AU auf einer mäßig exzentrischen Bahn (Exzentrizität 0,16). Mit einem Neigungswinkel von ~29° zur Ekliptik gehört er zum klassischen [url=concept:kuiper_belt]Kuipergürtel[/url]. Kein Raumfahrzeug hat Makemake bisher besucht oder ist dafür in Planung."
     },
     "mars": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "pressure": 0.006,
+          "temp_mean": -63,
+          "temp_min": -125,
+          "temp_max": 20,
+          "composition": {
+            "Kohlenstoffdioxid (CO₂)": 95.32,
+            "Stickstoff (N₂)": 2.6,
+            "Argon (Ar)": 1.9,
+            "Sauerstoff (O₂)": 0.13,
+            "Kohlenmonoxid (CO)": 0.07
+          }
+        }
       },
-      "description": "[b]Mars[/b] ist der vierte Planet und der äußerste der terrestrischen Planeten. Mit einem Radius von nur etwa der Hälfte der Erde und einem Zehntel ihrer Masse konnte er keine dichte Atmosphäre halten — der Luftdruck auf der Oberfläche beträgt weniger als 1 % des irdischen.\n\nDennoch zeigt Mars deutliche Spuren einer aktiveren Vergangenheit: Trockene Flusstäler, polare Eiskappen und der Olympus Mons — der größte Vulkan im Sonnensystem mit ~22 km Höhe — zeugen von früherer geologischer und möglicherweise hydrologischer Aktivität.\n\nMars liegt am äußeren Rand der [url=concept:habitable_zone]Habitablen Zone[/url]. Seine beiden kleinen Monde Phobos und Deimos sind vermutlich eingefangene Asteroiden."
+      "description": "[b]Mars[/b] ist der vierte Planet und der äußerste der terrestrischen Planeten mit einem Radius von 3.390 km und einer Masse von 6,4 × 10²³ kg (ca. 10 % der Erdmasse). Ein Marstag dauert 24 Stunden 37 Minuten — dem Erdtag täuschend ähnlich. Ein Marsjahr hingegen entspricht ~687 Erdtagen. Seine Achsenneigung von 25,2° erzeugt ausgeprägte Jahreszeiten; die polaren Eiskappen bestehen aus gefrorenem CO₂ und darunter liegendem Wassereis.\n\nDie dünnste Atmosphäre aller terrestrischen Planeten (0,006 bar, 95 % CO₂) reicht aus, um globale Staubstürme zu erzeugen, die manchmal monatelang den gesamten Planeten einhüllen. Ohne Magnetfeld und mit dünner Atmosphäre ist die Marsoberfläche durchgehend UV-Strahlung und kosmischer Strahlung ausgesetzt — ein wesentliches Hindernis für potentielles Leben an der Oberfläche.\n\nDie Topographie ist extrem: [b]Olympus Mons[/b] (~21 km Höhe, ~600 km Basisdurchmesser) ist der größte Vulkan im Sonnensystem. [b]Valles Marineris[/b] — ein Canyonsystem von ~4.000 km Länge, bis zu 7 km Tiefe und 200 km Breite — wäre auf der Erde eine Wunde vom Atlantik bis zum Pazifik. Beide Strukturen belegen, dass Mars ohne Plattentektonik auskam: Der Mantel blieb stationär über denselben Hotspots.\n\nFlüssiges Wasser floss einst an der Marsoberfläche — erodierende Täler und Deltafächer sind der Beweis. Heute ist Wasser nur als Eis erhalten (Pole, Permafrost) oder tief unterirdisch. Der Mars-Rover Perseverance sammelt seit 2021 Gesteinsproben im Jezero-Krater, einem vormaligen Seebecken. Ingenuity absolvierte dort die ersten kontrollierten Flüge in einer anderen Planetary-Atmosphäre. Die Rücksendung dieser Proben zur Erde (Mars Sample Return) ist für die 2030er Jahre geplant."
     },
     "mercury": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": 167,
+          "temp_min": -180,
+          "temp_max": 430,
+          "composition": {
+            "Sauerstoff (O₂)": 42.0,
+            "Natrium (Na)": 29.0,
+            "Wasserstoff (H₂)": 22.0,
+            "Helium (He)": 6.0,
+            "Kalium (K)": 0.5
+          }
+        }
       },
-      "description": "[b]Merkur[/b] ist der sonnennächste und kleinste Planet des Sonnensystems. Er hat weder eine nennensw erte Atmosphäre noch einen schützenden Magnetozean — seine Oberfläche ist direkt dem Sonnenwind ausgesetzt.\n\nAufgrund seiner hohen [url=concept:eccentricity]Exzentrizität[/url] von 0,206 variiert sein Abstand zur Sonne erheblich zwischen [url=concept:periapsis]Perihel[/url] und [url=concept:apoapsis]Aphel[/url]. An seinem Perihel ist er kaum 46 Millionen km von der Sonne entfernt.\n\nMerkur ist in einer 3:2-Spin-Orbit-Resonanz gebunden: Er dreht sich genau dreimal um seine eigene Achse, während er zweimal die Sonne umkreist. Ein Sonnentag auf Merkur dauert dadurch fast zwei merkurianische Jahre."
+      "description": "[b]Merkur[/b] ist der sonnennächste und kleinste Planet des Sonnensystems mit einem Radius von 2.440 km — nur geringfügig größer als der Mond. Seine Masse beträgt 3,3 × 10²³ kg. Trotz seiner geringen Größe besitzt er ein schwaches globales Magnetfeld (~1 % der Erdstärke), das auf einen ungewöhnlich großen Eisenkern hindeutet, der etwa 85 % des Planetenradius einnimmt. Diese Besonderheit ist bis heute Gegenstand der Forschung.\n\nAufgrund seiner hohen [url=concept:eccentricity]Exzentrizität[/url] von 0,206 schwankt sein Abstand zur Sonne zwischen 46 Millionen km ([url=concept:periapsis]Perihel[/url]) und 70 Millionen km ([url=concept:apoapsis]Aphel[/url]). Merkur ist in einer 3:2-Spin-Orbit-Resonanz gebunden: Er dreht sich genau dreimal um seine Achse, während er zweimal die Sonne umkreist. Dadurch dauert ein Sonnentag auf Merkur ~176 Erdtage — länger als ein merkurianisches Jahr (88 Erdtage).\n\nDie Oberfläche ist durch Milliarden von Jahren Meteoriteneinschläge geprägt. Das markanteste Merkmal ist das [b]Caloris-Becken[/b] — ein ~1.550 km großes Einschlagbecken, eines der größten im Sonnensystem. Dem Einschlag diagonale Schockwellen erzeugten an der gegenüberliegenden Seite des Planeten ein chaotisches Geländemuster, das als \"Weird Terrain\" bekannt ist. Die Temperaturschwankungen zwischen Tag- und Nachtseite gehören zu den extremsten im Sonnensystem: von +430 °C auf bis zu −180 °C.\n\nAn Merkurs Polen — permanent im Schatten tiefer Krater — hat die NASA-Sonde MESSENGER (2011–2015) Wassereis und organische Verbindungen nachgewiesen. Die ESA/JAXA-Mission [b]BepiColombo[/b] ist seit 2018 unterwegs und wird ab 2026 aus zwei Orbitern das Magnetfeld, die Exosphäre und die innere Struktur des Planeten detailliert kartieren."
     },
     "metis": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -163,
+          "temp_min": -180,
+          "temp_max": -108
+        }
       },
-      "description": "[b]Metis[/b] ist der innerste bekannte Mond des [url=body:jupiter]Jupiter[/url] und liegt innerhalb der Roche-Grenze des Planeten. Er ist damit kein stabiler Körper auf geologischen Zeitskalen — die Gezeitenkräfte Jupiters könnten ihn letztlich zerreißen.\n\nMetis trägt zum schmalen Jupitering-System bei. Er ist unregelmäßig geformt mit einem mittleren Radius von ~22 km und wurde von Voyager 1 entdeckt. Die Oberfläche ist dunkel und stark kraternarbt."
+      "description": "[b]Metis[/b] ist der innerste bekannte Mond des [url=body:jupiter]Jupiter[/url] und liegt innerhalb der [url=concept:roche_limit]Roche-Grenze[/url] des Planeten. Er ist damit kein stabiler Körper auf geologischen Zeitskalen — die Gezeitenkräfte Jupiters könnten ihn letztlich zerreißen.\n\nMetis trägt zum schmalen Jupitering-System bei. Er ist unregelmäßig geformt mit einem mittleren Radius von ~22 km und wurde von Voyager 1 entdeckt. Die Oberfläche ist dunkel und stark kraternarbt."
     },
     "mimas": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -200,
+          "temp_min": -210,
+          "temp_max": -183
+        }
       },
-      "description": "[b]Mimas[/b] ist der innerste der größeren Monde des [url=body:saturn]Saturn[/url] und berühmt für seinen riesigen Einschlagkrater Herschel — mit ~139 km Durchmesser ist er so groß, dass der Einschlag Mimas fast zerstört hätte. Das verleiht ihm eine auffällige Ähnlichkeit mit dem Todesstern aus Star Wars.\n\nMimas ist einer der kleinsten Körper im Sonnensystem, der durch Eigengravitation eine annähernd runde Form angenommen hat. Neuere Daten deuten möglicherweise auf einen flüssigen Wasserozean unter der Eisoberfläche hin — überraschend für einen so kleinen Körper."
+      "description": "[b]Mimas[/b] ist mit einem Radius von 198 km der kleinste der runden Saturnmonde und der innerste der größeren Trabanten. Er befindet sich in einem Gebiet intensiver Strahlung knapp außerhalb der Hauptringe Saturns und umrundet Saturn in nur 22,6 Stunden. Trotz seiner geringen Größe hat Mimas durch seine Eigengravitation eine nahezu sphärische Form angenommen — die Grenze, ab der ein Körper rund wird, liegt für Eis bei etwa 200 km Durchmesser, und Mimas liegt exakt an dieser Grenze.\n\nDer dominierende Oberflächeneindruck ist der Einschlagkrater [b]Herschel[/b]: Mit ~139 km Durchmesser — einem Drittel des Mondradius — und 10 km hohen Wänden, einem 9 km tiefen Boden und einem 6 km hohen Zentralberg ist er so groß, dass der erzeugende Einschlag Mimas nahezu zerrissen hätte. Das resultierende Äußere hat eine zufällige Ähnlichkeit mit dem Todesstern aus Star Wars geschaffen. Auf der gegenüberliegenden Seite von Herschel finden sich chaotische, ungeordnete Terrainformen — möglicherweise durch Schockwellen des Einschlags entstanden.\n\nMimas spielt eine wichtige Rolle in Saturns Ringsystem: Seine [url=concept:orbital_resonance]2:1-Bahnresonanz[/url] mit dem inneren Rand des A-Rings erzeugt die [b]Cassini-Division[/b], eine ~4.800 km breite Lücke im Hauptringsystem, die durch Teilchenräumung entsteht.\n\nÜberraschende Cassini-Thermalbilder aus dem Jahr 2010 zeigten eine unerwartete Wärmeverteilung auf Mimas — ein \"Pac-Man\"-artiges Muster, das durch unterschiedliche Porosität des Oberflächeneises erklärt wird: kompaktes Eis wärmt sich anders auf als lockeres Eis. Jüngere Analysen (2024) von Mimasʼ Rotationslibration deuten darauf hin, dass unter der Eisoberfläche möglicherweise ein junger flüssiger Ozean existiert — was Mimas zu einem der jüngsten entdeckten potenziellen Ozeanwelten machen würde."
     },
     "miranda": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -213,
+          "temp_min": -223,
+          "temp_max": -193
+        }
       },
       "description": "[b]Miranda[/b] ist der kleinste der fünf großen Monde des [url=body:uranus]Uranus[/url] und hat eine der geologisch rätselhaftesten Oberflächen im Sonnensystem. Sie zeigt extreme Kontraste: alte kraterreiche Ebenen neben riesigen Canyons, Terrassen und Klippen — darunter Verona Rupes, eine Steilwand von ~20 km Höhe, die größte bekannte Steilklippe im Sonnensystem.\n\nDie ungewöhnliche Oberfläche deutet auf frühere tektonische Aktivität oder mehrere Einschläge und Neuformierungen hin. Miranda wurde 1948 von Gerard Kuiper entdeckt."
     },
     "mk2": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -239,
+          "temp_min": -243,
+          "temp_max": -213
+        }
       },
       "description": "[b]MK2[/b] (offiziell S/2015 (136472) 1) ist der einzige bekannte Mond des [url=body:makemake]Makemake[/url], entdeckt 2016 mit dem Hubble-Weltraumteleskop.\n\nEr ist bemerkenswert dunkel mit einer Albedo von nur ~0,04 — viel dunkler als Makemake selbst. Diese Eigenschaft schloss eine globale Atmosphäre auf Makemake nahezu aus: Wäre eine solche vorhanden, würde die atmosphärische Bremsung den Mond auf eine engere Bahn ziehen.\n\nMit einem Radius von ~87 km umkreist er Makemake in ~12.4 Tagen auf einer geneigten Bahn."
     },
     "moon": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -23,
+          "temp_min": -173,
+          "temp_max": 127,
+          "composition": {
+            "Neon (Ne)": 26.0,
+            "Helium (He)": 25.0,
+            "Wasserstoff (H₂)": 23.0,
+            "Argon (Ar)": 23.0,
+            "Natrium (Na)": 2.0
+          }
+        }
       },
-      "description": "Der [b]Mond[/b] ist der einzige natürliche Satellit der Erde und das fünftgrößte Objekt seiner Klasse im Sonnensystem. Er entstand nach aktueller Theorie durch einen Rieseneinschlag: Ein marsgroßer Körper (Theia) kollidierte vor ~4,5 Milliarden Jahren mit der jungen Erde, das ausgeschleuderte Material verdichtete sich zum Mond.\n\nDer Mond ist in gebundener Rotation — er zeigt der Erde stets dieselbe Seite. Seine Gravitation verursacht die Gezeiten und hat über Milliarden von Jahren die Erdrotation verlangsamt. Er entfernt sich derzeit um ~3,8 cm pro Jahr von der Erde.\n\nAls einziger extraterrestrischer Körper wurde er von Menschen betreten (Apollo-Missionen, 1969–1972)."
+      "description": "Der [b]Mond[/b] ist der einzige natürliche Satellit der Erde mit einem Radius von 1.737 km — dem fünftgrößten aller Monde im Sonnensystem. Er entstand nach der vorherrschenden Giant-Impact-Hypothese vor ~4,5 Milliarden Jahren, als ein marsgroßer Körper namens Theia schräg in die proto-Erde einschlug. Das ausgeschleuderte silikatreiche Material akkretierte in wenigen Jahrzehnten bis Jahrhunderten zum Mond. Chemische Isotopenanalysen von Apollo-Proben bestätigen den gemeinsamen Ursprung beider Körper.\n\nDie Mondoberfläche ist zweigeteilt: Die alte, hoch kraterierte [b]Hochland-Kruste[/b] (Terrae) und die dunkleren, jüngeren [b]Meeresbasalte[/b] (Maria), die vor 3,0–3,5 Milliarden Jahren durch Vulkanismus entstanden. Der [b]Südpol-Aitken-Krater[/b] (~2.500 km Durchmesser, 8 km tief) ist eines der größten Einschlagbecken im Sonnensystem. An den Polen, permanent im Schatten tiefer Krater, hat die NASA-Mission LCROSS 2009 durch einen kontrollierten Einschlag Wassereis nachgewiesen — eine wichtige Ressource für zukünftige Mondmissionen.\n\nDer Mond ist in gebundener Rotation — er zeigt der Erde stets dieselbe Seite. Seine Gravitation erzeugt die Gezeiten (Hubhöhe ~1 m auf offener See) und hat die Erdrotation über Milliarden Jahre von ursprünglich ~6 auf 24 Stunden verlangsamt. Dabei entfernt er sich jährlich um ~3,8 cm, gemessen durch Laser-Entfernungsmessung (Lunar Laser Ranging), die von Apollo-Retroreflektoren seit 1969 ermöglicht wird.\n\nVon 1969 bis 1972 landeten im Rahmen des [b]Apollo-Programms[/b] zwölf Menschen auf dem Mond — die einzigen Menschen, die bisher einen anderen Himmelskörper betreten haben. Die insgesamt 381,7 kg zurückgebrachten Gesteinsproben sind bis heute eine der wertvollsten wissenschaftlichen Sammlungen der Menschheit. Das [b]Artemis-Programm[/b] der NASA plant die Rückkehr bemannter Missionen, mit dem Ziel einer dauerhaften Präsenz in den 2030er Jahren."
     },
     "namaka": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -241,
+          "temp_min": -250,
+          "temp_max": -223
+        }
       },
       "description": "[b]Namaka[/b] ist der kleinere und innere Mond des [url=body:haumea]Haumea[/url], benannt nach der hawaiianischen Meeresgöttin und Tochter von Haumea.\n\nEr umkreist Haumea in ~18.28 Tagen auf einer leicht exzentrischen und geneigten Bahn. Die Gravitationsstörungen durch [url=body:hiʻiaka]Hiʻiaka[/url] bewirken messbare Präzession seiner Bahn — was Rückschlüsse auf die Massenverteilung des Systems ermöglichte.\n\nNameka ist deutlich kleiner als Hiʻiaka mit einem Radius von ~85 km."
     },
     "neptune": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "pressure": 1.0,
+          "temp_mean": -200,
+          "temp_min": -218,
+          "composition": {
+            "Wasserstoff (H₂)": 80.0,
+            "Helium (He)": 19.0,
+            "Methan (CH₄)": 1.5
+          }
+        }
       },
-      "description": "[b]Neptun[/b] ist der äußerste Planet des Sonnensystems und ebenfalls ein Eisriese. Trotz seiner enormen Entfernung zur Sonne weist er die stärksten Winde im Sonnensystem auf — mit Böen von über 2.000 km/h.\n\nNeptun strahlt deutlich mehr Energie ab als er von der Sonne empfängt, was auf eine interne Wärmequelle hindeutet. Der Große Dunkle Fleck, ein dem Großen Roten Fleck Jupiters ähnliches Sturmsystem, wurde bei Voyager 2 beobachtet.\n\nSein größter Mond Triton umkreist Neptun rückläufig — ein Zeichen, dass er ein eingefangenes Objekt aus dem [url=concept:kuiper_belt]Kuipergürtel[/url] ist. Triton ist geologisch aktiv und zeigt stickstoffausstoßende Geysire."
+      "description": "[b]Neptun[/b] ist der äußerste Planet des Sonnensystems mit einem Radius von 24.622 km und einer Masse von 1,024 × 10²⁶ kg. Er wurde 1846 entdeckt — als erster Planet, der durch mathematische Vorhersage gefunden wurde: Störungen in Uranus' Bahn ließen Urbain Le Verrier auf seine Position schließen. Bis 2011 hatte Neptun seit seiner Entdeckung erst einen vollständigen Umlauf (~165 Jahre) vollendet. Sein Inneres gleicht dem von Uranus — Wasser, Ammoniak und Methan dominieren unter hohem Druck — doch Neptun strahlt ~2,6-mal mehr Energie ab als er von der Sonne empfängt, was auf eine aktive interne Wärmequelle hindeutet.\n\nTrotz seiner enormen Sonnenentfernung (~30 AU) erzeugt Neptun die stärksten Winde im Sonnensystem: Windgeschwindigkeiten von über 2.100 km/h wurden gemessen. Als Voyager 2 im August 1989 vorbeiflog, beobachtete die Sonde den [b]Großen Dunklen Fleck[/b] — ein Sturmsystem von Erddurchmesser-Größe. Hubble-Aufnahmen zeigten, dass dieser Sturm verschwunden und an anderer Stelle ein neuer entstanden war, was auf schnelle atmosphärische Dynamik hindeutet. Neptuns Atmosphäre enthält ~1,5 % Methan, das Blauanteile des Lichts absorbiert und dem Planeten seine charakteristische kobaltblaue Farbe gibt.\n\nDas Magnetfeld Neptuns ist um ~47° zur Rotationsachse geneigt und hat seinen Ursprung nicht im Zentrum — strukturell ähnlich wie Uranus und möglicherweise durch einen ionischen Wasserkonvektionsbereich erzeugt. Neptun hat 16 bekannte Monde. Der größte, [url=body:triton]Triton[/url], umkreist Neptun retrograd und nähert sich durch Gezeitenbremsung langsam dem Planeten — in ~3,6 Milliarden Jahren wird er die [url=concept:roche_limit]Roche-Grenze[/url] unterschreiten und zu einem Ringsystem zerfallen.\n\nVoyager 2 (1989) ist bislang das einzige Raumfahrzeug, das Neptun besucht hat. Die Planungsarbeiten für einen dedizierten Neptun-Orbiter laufen, bisher ohne konkreten Start-Zeitplan."
     },
     "nereid": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -220,
+          "temp_min": -230,
+          "temp_max": -200
+        }
       },
       "description": "[b]Nereid[/b] ist ein irregulärer Mond des [url=body:neptune]Neptun[/url] mit einer der exzentrischsten Mondbahnenn im Sonnensystem ([url=concept:eccentricity]Exzentrizität[/url] ~0,75). Sein Abstand zu Neptun schwankt zwischen ~1,4 und ~9,7 Millionen km.\n\nEr wurde 1949 von Gerard Kuiper entdeckt und ist nach den Nymphen des Meeres in der griechischen Mythologie benannt. Seine hohe Exzentrizität deutet darauf hin, dass seine Bahn durch den Einfang von [url=body:triton]Triton[/url] stark gestört wurde."
     },
     "oberon": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -198,
+          "temp_min": -213,
+          "temp_max": -178
+        }
       },
-      "description": "[b]Oberon[/b] ist der äußerste der großen Uranusmonde und nach dem Elfenkönig in Shakespeares \"Ein Sommernachtstraum\" benannt. Ebenfalls 1787 von William Herschel entdeckt.\n\nSeine Oberfläche ist stark eingeschlagen und geologisch alt — weniger aktiv als [url=body:titania]Titania[/url] oder [url=body:ariel]Ariel[/url]. Auf einigen Kratergründen sind dunkle Ablagerungen sichtbar, die auf Kryovulkanismus in der Vergangenheit hindeuten könnten."
+      "description": "[b]Oberon[/b] ist mit einem Radius von 761 km der zweitgrößte und äußerste der fünf großen Uranusmonde. Er wurde 1787 von William Herschel entdeckt — am selben Tag wie [url=body:titania]Titania[/url]. Mit einer Dichte von ~1,63 g/cm³ besteht er aus etwa gleichen Teilen Wassereis und Silikatgestein. Oberon umrundet Uranus in 13,46 Tagen aus einer Entfernung von ~584.000 km.\n\nDie Oberfläche ist stark krateriert und zeigt wenig Zeichen innerer Aktivität. Deutlichstes Merkmal ist [b]Mommur Chasma[/b] — ein Grabenbruch von ~163 km Länge — sowie mehrere Krater mit dunklem, rötlichem Material auf ihren Böden. Dieses dunkle Material könnte aus dem Mondinneren stammen — ein Hinweis auf vergangene kryovulkanische Aktivität, bei der warme, organisch angereicherte Flüssigkeiten aus dem Inneren austraten und auf der Oberfläche gefroren. Alternativ könnte es durch Meteoriten abgelagerte organische Verbindungen sein.\n\nOberon liegt am äußersten Rand des Uranussystems und ist damit am wenigsten von Gezeitenkräften beeinflusst. Das Magnetfeld des Uranus reicht kaum bis in Oberons Umlaufbahn, was ihn zu einem strahlungsärmeren Umfeld im Vergleich zu den inneren Monden macht. Dennoch ist seine Oberfläche durch den jahrzehntelangen Einfall von Mikrometeoriten und kosmischer Strahlung dunkel und chemisch verändert.\n\nDas einzige Raumfahrzeug, das Oberon aus nächster Nähe beobachtet hat, war Voyager 2 (1986) mit einer minimalen Annäherung von ~470.800 km. Bei dieser begrenzten Annäherung waren nur ~40 % der Oberfläche kartierbar. Eine umfassende Kartierung aller Uranusmonde ist erst mit einer dedizierten Uranus-Mission zu erwarten."
     },
     "orcus": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -225,
+          "temp_min": -235,
+          "temp_max": -207
+        }
       },
-      "description": "[b]Orcus[/b] ist ein Zwergplanetkandidat im [url=concept:kuiper_belt]Kuipergürtel[/url], der oft als \"Anti-Pluto\" bezeichnet wird: Seine Bahn ist Plutos Bahn in Größe und Form ähnlich, jedoch um 180° versetzt — wenn Pluto im Perihel ist, befindet sich Orcus im Aphel.\n\nEr ist nach dem etruskischen Gott der Unterwelt benannt. Sein vergleichsweise großer Mond Vanth hat einen Durchmesser von etwa der Hälfte des Hauptkörpers.\n\nDie Oberfläche zeigt Wassereis und möglicherweise Ammoniak-Hydrate, was auf geologische Aktivität oder Kryovulkanismus in der Vergangenheit hindeutet."
+      "description": "[b]Orcus[/b] ist ein Zwergplanetkandidat im [url=concept:kuiper_belt]Kuipergürtel[/url] mit einem Radius von ~458 km. Er wird oft als \"Anti-Pluto\" bezeichnet: Beide befinden sich in einer [url=concept:orbital_resonance]3:2-Bahnresonanz[/url] mit Neptun (Plutinos), haben ähnliche Bahnachsen (~39,5 AU semi-major axis) und Exzentrizitäten — aber ihre Bahnen sind um ~180° versetzt. Wenn Pluto sein Perihel (1989) durchlief, befand sich Orcus nahe seinem Aphel, und umgekehrt. Orcus ist nach dem etruskischen Gott der Unterwelt benannt — dem Pendant zum römischen Pluto.\n\nOrcus wurde 2004 von Michael Brown, Chadwick Trujillo und David Rabinowitz entdeckt. Seine Oberfläche zeigt ein Spektrum aus Wassereis — eines der reinsten Wassereis-Signaturen unter den großen KBOs — sowie Hinweise auf Ammoniak-Hydrate. Ammoniak-Hydrate sind instabil und würden durch Strahlung auf geologischen Zeitskalen zerstört; ihr Vorhandensein deutet auf jüngere Resurfacing-Ereignisse hin, möglicherweise durch [url=concept:cryovolcanism][b]Kryovulkanismus[/b][/url]: Wasser-Ammoniak-Gemische (Schmelzpunkt ~176 K) könnten aus dem Inneren ausgetreten und auf der Oberfläche gefroren sein.\n\nSein Mond [url=body:vanth]Vanth[/url] mit einem Radius von ~221 km ist für einen KBO-Begleiter ungewöhnlich groß — etwa die Hälfte des Hauptkörpers. Diese Relation ähnelt dem Pluto-Charon-System und deutet auf eine kollisionale Entstehung hin: Ein Einschlag warf Material aus, das sich zu Vanth akkretierte. Die präzise Bahnanalyse von Vanth durch Hubble ermöglichte eine Massebestimmung des Gesamtsystems (Orcus + Vanth) von ~6,3 × 10²⁰ kg.\n\nOrcus umrundet die Sonne in ~248 Jahren — nahezu identisch mit Pluto. Er wird in einigen Taxonomien als Kandidat für eine offizielle IAU-Zwergplaneten-Klassifikation gehandelt, eine formelle Anerkennung steht aber noch aus."
     },
     "pasiphae": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -160,
+          "temp_min": -173,
+          "temp_max": -133
+        }
       },
       "description": "[b]Pasiphae[/b] ist ein retrograder irregulärer Mond des [url=body:jupiter]Jupiter[/url] und Namensgeber der Pasiphae-Gruppe retrograder Jupitermonde. Er hat einen Durchmesser von ~58 km.\n\nRetrograde Monde umkreisen ihren Planeten in entgegengesetzter Richtung zu dessen Rotation — ein starker Hinweis auf einen Einfang aus dem frühen Sonnensystem. Pasiphae wurde 1908 entdeckt und ist nach der Gemahlin des Minos in der griechischen Sage benannt."
     },
     "phobos": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -40,
+          "temp_min": -112,
+          "temp_max": -4
+        }
       },
       "description": "[b]Phobos[/b] ist der größere und innere der beiden Monde des [url=body:mars]Mars[/url]. Mit einem mittleren Radius von nur ~11 km und einem Abstand von ~9.376 km zum Marszentrum ist er der sonnensystemnächste Mond zu seinem Planeten.\n\nPhobos umkreist Mars schneller als der Planet rotiert — er geht im Westen auf und im Osten unter. Durch Gezeitenkräfte wird er langsam in Richtung Mars gezogen und wird in etwa 30–50 Millionen Jahren zerstört — entweder zerfällt er zu einem Ringsystem oder er stürzt auf den Planeten.\n\nSeine unregelmäßige Form und seine Dichte deuten auf einen lockeren, porösen Körper hin — möglicherweise ein eingefangener Asteroid."
     },
     "phoebe": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -198,
+          "temp_min": -203,
+          "temp_max": -150
+        }
       },
       "description": "[b]Phoebe[/b] ist ein irregulärer retrograder Mond des [url=body:saturn]Saturn[/url] und der erste Mond, der als eingefangenes transneptunisches Objekt identifiziert wurde. Er umkreist Saturn in ~534 Tagen in entgegengesetzter Richtung.\n\nPhoebe hat eine dunkle, kohlenstoffreiche Oberfläche ähnlich C-Typ-Asteroiden. Cassini-Daten zeigen, dass er einst Wassereis enthielt. Staub von Phoebe bildet den äußersten bekannten Ring Saturns — den Phoebe-Ring —, der das dunkle Material auf [url=body:iapetus]Iapetus[/url] liefert."
     },
     "planet_nine": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -220
+        }
       },
-      "description": "[b]Planet Nine[/b] ist ein hypothetischer Planet, der bislang nicht direkt beobachtet wurde. Seine Existenz wird aus der auffälligen Häufung von [url=concept:periapsis]Perihel[/url]-Orientierungen mehrerer weit entfernter transneptunischer Objekte wie [url=body:sedna]Sedna[/url] abgeleitet — eine statistische Anomalie, die gravitativer Einfluss eines fernen Körpers erklären könnte.\n\nModelle schätzen seine Masse auf das 5–10-fache der Erde bei einem Abstand von 400–800 AU. Bei dieser Entfernung wäre er trotz Planetengröße mit heutigen Teleskopen kaum zu finden.\n\nEinige Astronomen zweifeln an seiner Existenz und führen die Bahnanomalien auf Selektionseffekte in der Beobachtung zurück. Die Suche läuft."
+      "description": "[b]Planet Nine[/b] ist ein hypothetischer Planet im äußersten Sonnensystem, der bislang nicht direkt beobachtet wurde. Die Hypothese wurde 2016 von Konstantin Batygin und Michael Brown (Caltech) veröffentlicht, nachdem sie eine statistisch auffällige Häufung festgestellt hatten: Sechs weit entfernte transneptunische Objekte (darunter [url=body:sedna]Sedna[/url]) haben ihre [url=concept:periapsis]Perihelargumente[/url] in einem ähnlichen Winkel geclustert — eine Konfiguration, die per Zufall eine Wahrscheinlichkeit von ~1:14.000 hat. Ein massereicher, weit entfernter Planet könnte diese Objekte gravitativ in diesen Bereich gezwungen haben.\n\nModelle schätzen Masse und Bahn des hypothetischen Körpers: ~5–10 Erdmassen, Halbachse ~400–800 AU, Umlaufzeit ~10.000–20.000 Jahre. Bei diesen Distanzen wäre er in Teleskopen extrem schwach — selbst wenn er ein Superneptun wäre, hätte er eine scheinbare Helligkeit von ~22–25 mag, was selbst für moderne Surveys am Limit liegt. Das Vera-Rubin-Observatorium (LSST) wird nach seiner Inbetriebnahme die tiefste und vollständigste Durchmusterung des äußeren Sonnensystems durchführen und könnte Planet Nine entweder finden oder das Suchgebiet stark einschränken.\n\nDie Hypothese ist wissenschaftlich umstritten. Mehrere Alternativerklärungen wurden vorgeschlagen: (1) [b]Selektionsbias[/b] — die geclusterten Objekte wurden bevorzugt in bestimmten Himmelsbereichen gesucht, was die scheinbare Häufung verursacht. (2) Gravitativer Einfluss des Kuipergürtels als Ganzes. (3) Statistischer Zufall. Analysen neuerer, weniger selektiver Surveys (wie OSSOS) fanden schwächere Clustering-Signale, was die Bias-Hypothese stärkt — aber auch mit einem Planet Nine vereinbar ist.\n\nFalls Planet Nine existiert, wäre er kein klassisch geformter Planet, sondern möglicherweise ein [b]Eisriese[/b] ähnlich Uranus oder Neptun — möglicherweise ein Ejected Rogue Planet, den Neptun in der Frühzeit in die äußere Bahn warf, oder ein eingefangenes Objekt aus dem fremden Sternhaufen, in dem die Sonne entstand. Die Suche läuft weiter."
     },
     "pluto": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "pressure": 1e-05,
+          "temp_mean": -229,
+          "temp_min": -240,
+          "temp_max": -213,
+          "composition": {
+            "Stickstoff (N₂)": 98.0,
+            "Methan (CH₄)": 1.0,
+            "Kohlenmonoxid (CO)": 0.5
+          }
+        }
       },
-      "description": "[b]Pluto[/b] war von seiner Entdeckung 1930 bis 2006 als neunter Planet klassifiziert, bevor die IAU ihn zum Zwergplaneten herabstufte. Er ist das bekannteste Objekt im [url=concept:kuiper_belt]Kuipergürtel[/url].\n\nDie Raumsonde New Horizons lieferte 2015 die ersten Nahaufnahmen: Pluto zeigt eine überraschend vielfältige Oberfläche mit Stickstoffgletschern, Eisgebirgen und der herzförmigen Ebene Tombaugh Regio. Er besitzt eine dünne Stickstoffatmosphäre, die je nach Entfernung zur Sonne teilweise gefriert.\n\nSein größter Mond [url=body:charon]Charon[/url] ist im Verhältnis so groß, dass beide Körper ein Doppelsystem bilden — ihr gemeinsamer Schwerpunkt liegt außerhalb Plutos."
+      "description": "[b]Pluto[/b] wurde am 18. Februar 1930 von Clyde Tombaugh am Lowell-Observatorium in Arizona entdeckt und war bis zur Neuklassifikation durch die IAU 2006 der neunte Planet des Sonnensystems. Mit einem Radius von 1.188 km ist er der größte bekannte Körper im [url=concept:kuiper_belt]Kuipergürtel[/url] — wenngleich Eris masseicher ist. Pluto befindet sich in einer [url=concept:orbital_resonance]3:2-Bahnresonanz[/url] mit Neptun (Plutino) und umrundet die Sonne in ~248 Jahren auf einer stark elliptischen, 17° geneigten Bahn; seine Entfernung zur Sonne schwankt zwischen 29,7 AU ([url=concept:periapsis]Perihel[/url], 1989 zuletzt erreicht) und 49,3 AU ([url=concept:apoapsis]Aphel[/url]).\n\nDie [b]New Horizons[/b]-Sonde der NASA passierte Pluto am 14. Juli 2015 in nur 12.500 km Abstand und enthüllte eine überraschend vielfältige, geologisch aktive Welt. [b]Tombaugh Regio[/b] — die herzförmige Struktur — besteht aus zwei Teilen: Im Westen liegt [b]Sputnik Planitia[/b], eine ~1.000 km breite, flache Stickstoffeis-Ebene ohne Einschlagkrater, die aktiv durch thermische Konvektionszellen umgewälzt wird. Im Osten schließen sich ältere, stärker kraterierte Gebiete an. Am Rand von Sputnik Planitia erheben sich die [b]Tenzing Montes[/b] und [b]Hillary Montes[/b] mit Gipfeln von über 4.000 m aus Wassereis.\n\nPlutos dünne Stickstoffatmosphäre (~10 µbar) ist saisonal: Bei Sonnennähe sublimiert das Stickstoffeis von der Oberfläche und baut die Atmosphäre auf; bei Sonnenferne friert sie wieder aus. New Horizons maß Schichten von Dunst (Tholins) bis zu 200 km Höhe — chemisch komplexe Verbindungen aus UV-verarbeiteten Stickstoff-Methan-Gemischen.\n\nPluto hat fünf bekannte Monde: [url=body:charon]Charon[/url] (Radius ~606 km) ist so groß relativ zu Pluto, dass das gemeinsame Baryzentrum außerhalb beider Körper liegt — ein echtes Doppelsystem. Beide zeigen sich stets dieselbe Seite. Die vier kleinen Monde Styx, Nix, Kerberos und Hydra umkreisen das System in fast kreisförmigen Bahnen und entstammen vermutlich demselben Einschlagsereignis wie Charon."
     },
     "proteus": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -220,
+          "temp_min": -230,
+          "temp_max": -200
+        }
       },
       "description": "[b]Proteus[/b] ist der zweitgrößte Mond des [url=body:neptune]Neptun[/url] und ein unregelmäßig geformter, dunkler Körper mit einem mittleren Radius von ~210 km. Er wurde 1989 von Voyager 2 entdeckt — zu dunkel und zu nah an Neptun, um von der Erde aus sichtbar zu sein.\n\nProteus liegt innerhalb der Bahn von [url=body:triton]Triton[/url] und ist nach dem Meeresgott der griechischen Mythologie benannt. Seine Oberfläche ist stark kraternarbt."
     },
     "quaoar": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -220,
+          "temp_min": -230,
+          "temp_max": -197
+        }
       },
-      "description": "[b]Quaoar[/b] ist ein Zwergplanetkandidat im [url=concept:kuiper_belt]Kuipergürtel[/url], benannt nach dem Schöpfergott des Tongva-Volkes aus dem Gebiet des heutigen Los Angeles.\n\nQuaoar überraschte die Wissenschaft mit einem ungewöhnlichen Ringsystem: Sein Ring befindet sich in einem Abstand, in dem nach klassischer Theorie keine stabilen Ringe existieren sollten — außerhalb der Roche-Grenze, wo die Gezeitenkräfte eigentlich zur Ringbildung nicht ausreichen. Dies stellt bestehende Modelle der Ringdynamik in Frage.\n\nSein Mond Weywot umkreist ihn in einem Abstand von ~14.500 km."
+      "description": "[b]Quaoar[/b] ist ein Zwergplanetkandidat im [url=concept:kuiper_belt]Kuipergürtel[/url] mit einem Radius von ~543 km, benannt nach [b]Quaoar[/b], dem Schöpfergott des Tongva-Volkes aus der Region des heutigen Los Angeles. Er wurde 2002 von Michael Brown und Chadwick Trujillo entdeckt und gehörte damit zu den ersten großen Entdeckungen jenseits Plutos. Quaoar liegt in der klassischen Kuipergürtel-Region bei ~43,6 AU mit einer Umlaufzeit von ~288 Jahren auf einer mäßig geneigten (8°) und fast kreisförmigen Bahn.\n\nDie Oberfläche zeigt spektroskopisch kristallines Wassereis sowie Methanol und organische Verbindungen (Tholins). Kristallines Wassereis ist auf KBOs überraschend, da Strahlung es normalerweise in amorphes Eis umwandelt — es muss durch Wärmeprozesse regelmäßig rekristallisiert worden sein, was auf interne Wärmequellen oder geologische Aktivität in Quaoars Vergangenheit hindeutet.\n\nDas wissenschaftliche Highlight ist Quaoars [b]Ringsystem[/b], entdeckt 2022 durch Sternbedeckungsbeobachtungen (europäisches Teleskopnetzwerk) und 2023 durch das James-Webb-Weltraumteleskop bestätigt. Der Ring liegt in ~4.100 km Abstand von Quaoars Zentrum — das ist das 2,5-Fache der [url=concept:roche_limit]Roche-Grenze[/url]. Nach klassischer Theorie sollten Ringe außerhalb der [url=concept:roche_limit]Roche-Grenze[/url] zu Monden akkretieren, nicht dauerhaft als Ring bestehen. Als Erklärung wird diskutiert, dass Quaoars extreme Kälte (~−220 °C) Ringpartikel so hart macht, dass sie bei Kollisionen wie Billardkugeln abprallen statt zusammenzukleben — wodurch die Ringmasse stabil bleibt. Dies stellt fundamentale Annahmen der Ringdynamik in Frage.\n\nSein Mond [url=body:weywot]Weywot[/url] (Radius ~87 km) wurde 2006 entdeckt und umkreist Quaoar in ~12,4 Tagen aus ~14.500 km Entfernung. Die Massebestimmung aus Weywots Bahn ergab ~1,4 × 10²¹ kg für Quaoar — mit einer resultierenden Dichte von ~1,99 g/cm³, was auf einen Gesteins-Eis-Mix hindeutet."
     },
     "rhea": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -220,
+          "temp_min": -230,
+          "temp_max": -174
+        }
       },
-      "description": "[b]Rhea[/b] ist der zweitgrößte Mond des [url=body:saturn]Saturn[/url] und besteht überwiegend aus Wassereis mit einem kleinen felsigen Kern. Er ist der einzige Mond, von dem vermutet wurde, ein eigenes Ringsystem zu besitzen — diese Interpretation der Cassini-Daten ist jedoch umstritten.\n\nSeine Oberfläche ist stark eingeschlagen und zeigt kaum Anzeichen innerer Aktivität. Das Wispy Terrain auf seiner Rückseite ähnelt dem von [url=body:dione]Dione[/url] und entstand vermutlich durch tektonische Risse."
+      "description": "[b]Rhea[/b] ist mit einem Radius von 764 km der zweitgrößte Mond des [url=body:saturn]Saturn[/url] nach Titan. Mit einer Dichte von ~1,24 g/cm³ besteht er überwiegend aus Wassereis (~75 %) mit einem kleinen felsigen Kern (~25 % Silikat). Rhea umrundet Saturn in 4,52 Tagen aus einer Entfernung von ~527.000 km. Seine Oberfläche ist stark krateriert und gehört zu den ältesten und geologisch inaktivsten Oberflächen im Saturn-System.\n\nAuch Rhea besitzt [b]Wispy Terrain[/b] auf seiner hinteren Hemisphäre — ein helles Netz aus Eissteilwänden entlang tektonischer Brüche, ähnlich wie bei [url=body:dione]Dione[/url]. Der markanteste Krater ist [b]Tirawa[/b] mit ~360 km Durchmesser. Ein weiteres auffälliges Merkmal sind helle, frische Strahlenstrukturen von Einschlagkratern, die auf relativ junge Einschläge in die dunkle Untergrundschicht hindeuten.\n\nRhea ist der erste Mond außerhalb der Erde, für den eine eigene [b]Sauerstoffexosphäre[/b] bestätigt wurde. Cassini maß 2010 molekularen Sauerstoff (O₂) und Kohlendioxid (CO₂) in der unmittelbaren Umgebung — erzeugt durch Spaltung von Oberflächeneis durch Saturns Strahlung (Radiolysis). Diese Exosphäre ist extrem dünn (Druck ~5 × 10⁻¹² mbar), aber wissenschaftlich bedeutsam als Modell für ähnliche Prozesse auf anderen Eismonden.\n\nCassini-Daten deuteten 2008 vorübergehend auf ein schwaches Ringsystem um Rhea hin — das wäre der erste Mond mit eigenen Ringen gewesen. Nachfolgende Analysen konnten dieses Signal jedoch nicht eindeutig bestätigen oder widerlegen; die Frage gilt derzeit als offen."
     },
     "salacia": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -221,
+          "temp_min": -231,
+          "temp_max": -209
+        }
       },
       "description": "[b]Salacia[/b] ist ein transneptunisches Objekt im äußeren [url=concept:kuiper_belt]Kuipergürtel[/url] und benannt nach der römischen Meeresgöttin. Er ist ein Zwergplanetkandidat mit einem geschätzten Durchmesser von ~850 km.\n\nSalacia bildet zusammen mit seinem Mond Actaea ein Doppelsystem. Die Analyse ihrer gegenseitigen Umlaufbahn ermöglichte eine genaue Massebestimmung. Seine Oberfläche ist ungewöhnlich dunkel und wenig reflektiv für ein Kuipergürtel-Objekt."
     },
     "saturn": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "pressure": 1.0,
+          "temp_mean": -130,
+          "temp_min": -178,
+          "composition": {
+            "Wasserstoff (H₂)": 96.3,
+            "Helium (He)": 3.25,
+            "Methan (CH₄)": 0.45,
+            "Ammoniak (NH₃)": 0.013
+          }
+        }
       },
-      "description": "[b]Saturn[/b] ist der zweite Gasriese und berühmt für sein ausgedehntes Ringsystem — das auffälligste im Sonnensystem. Die Ringe bestehen hauptsächlich aus Eis- und Gesteinsbrocken unterschiedlicher Größe und erstrecken sich über Hunderttausende von Kilometern, sind aber nur wenige Hundert Meter dick.\n\nSaturn ist der einzige Planet mit einer mittleren Dichte geringer als Wasser — er würde theoretisch auf einem großen Ozean schwimmen. Wie Jupiter besteht er überwiegend aus Wasserstoff und Helium.\n\nSein größter Mond Titan besitzt eine dichte Stickstoffatmosphäre und Seen aus flüssigem Methan — eines der faszinierendsten Objekte des Sonnensystems für die Astrobiologie."
+      "description": "[b]Saturn[/b] ist der zweite Gasriese des Sonnensystems mit einem Radius von 58.232 km und einer Masse von 5,68 × 10²⁶ kg. Mit einer mittleren Dichte von nur 0,687 g/cm³ ist er der einzige Planet, der leichter als Wasser wäre. Wie Jupiter besteht er überwiegend aus Wasserstoff (96 %) und Helium (3 %), rotiert schnell (10 Stunden 33 Minuten pro Tag) und ist dadurch stark abgeplattet — der Äquatorialradius übersteigt den Polarradius um ~10 %.\n\nDas [b]Ringsystem[/b] erstreckt sich von ~7.000 km bis ~80.000 km über der Oberfläche und besteht zu ~90–95 % aus Wassereis mit geringen Anteilen an Staub und Gestein. Die Hauptringe (A, B, C) sind zusammen ~270.000 km breit, aber meist nur wenige Zehn bis Hundert Meter dick. Markante Lücken wie die [b]Cassini-Division[/b] (~4.800 km breit) entstehen durch [url=concept:orbital_resonance]Bahnresonanzen[/url] mit Monden — die Cassini-Division durch die 2:1-Resonanz mit Mimas. Die Ringe sind geologisch jung (schätzungsweise 10–100 Millionen Jahre), da sie sonst durch Staubakkumulation verdunkelt worden wären.\n\nSaturns Magnetfeld ist das einzige im Sonnensystem, das nahezu perfekt mit der Rotationsachse ausgerichtet ist — ein Umstand, der Dynamo-Theorien vor Rätsel stellt. Ein persistenter [b]Hexagonaler Polarsturm[/b] am Nordpol mit ~30.000 km Durchmesser wird seit seiner Entdeckung durch Voyager 1 (1980) kontinuierlich beobachtet. Die [b]Cassini-Huygens-Mission[/b] (1997–2017) lieferte 13 Jahre lang Daten über Saturn, seine Ringe und Monde — eines der ergiebigsten Planetensondenprogramme der Raumfahrtgeschichte.\n\nMit 146 bekannten Monden (Stand 2024) hat Saturn das größte Mondsystem im Sonnensystem. Titan mit seiner dichten Stickstoffatmosphäre und Methan-Seen sowie Enceladus mit seinem aktiv eruptierenden Unteroberflächenozean machen das Saturnsystem zu einem der wissenschaftlich reichhaltigsten Gebiete jenseits der Erde."
     },
     "sedna": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -240,
+          "temp_min": -243,
+          "temp_max": -233
+        }
       },
-      "description": "[b]Sedna[/b] ist eines der rätselhaftesten Objekte des Sonnensystems. Er befindet sich auf einer extrem elliptischen Bahn: Sein [url=concept:apoapsis]Aphel[/url] liegt bei über 900 AU, sein [url=concept:periapsis]Perihel[/url] bei ~76 AU — weit jenseits des [url=concept:kuiper_belt]Kuipergürtels[/url].\n\nSedna gehört zur hypothetischen Inneren Oortschen Wolke. Seine Umlaufzeit beträgt etwa 11.400 Jahre. Wie er auf diese Bahn gelangte, ist ungeklärt — mögliche Ursachen sind eine frühere Begegnung mit einem anderen Stern oder die Gravitation eines noch unentdeckten fernen Planeten ([url=body:planet_nine]Planet Nine[/url]).\n\nEr ist nach der inuit-mythologischen Meeresgöttin benannt und hat eine tief rote Farbe, ähnlich Mars."
+      "description": "[b]Sedna[/b] ist eines der rätselhaftesten Objekte des Sonnensystems. Er wurde am 14. November 2003 von Michael Brown, Chadwick Trujillo und David Rabinowitz mit dem Samuel-Oschin-Teleskop am Palomar-Observatorium entdeckt und nach [b]Sedna[/b], der Inuit-Meeresgöttin, benannt. Mit einem geschätzten Radius von ~497 km und einer tief roten Oberfläche — ähnlich Mars — ist er eines der rötesten bekannten Objekte im Sonnensystem, was auf einen hohen Gehalt an [url=concept:tholins]Tholins[/url] (strahlungsverarbeiteten organischen Verbindungen) hindeutet.\n\nSednas Bahn ist extrem: Das Perihel liegt bei ~76 AU (weit jenseits des Neptuns und des Kuipergürtels), das Aphel bei ~937 AU. Die Umlaufzeit beträgt ~11.400 Jahre. Sedna ist damit nie nahe genug an Neptun gewesen, um gravitativ von ihm gestört worden zu sein — er ist also kein durch Neptun in die äußere Bahn gestreutes [url=concept:scattered_disc]Streuscheibs[/url]-Objekt. Diese Eigenschaft macht ihn zum Prototyp der sogenannten [b]Inneren Oortschen Wolke[/b] (Detachment Disk). Derzeit befindet er sich bei ~84 AU und nähert sich seinem nächsten Periheldurchgang (~2076), wo er sein Perihel erreichen wird.\n\nWoher Sedna seine abgelegene Bahn hat, ist unbekannt. Drei Haupttheorien werden diskutiert: (1) Ein früher Vorbeiflug eines fremden Sterns hat Sedna durch Gravitation auf seine heutige Bahn gelenkt. (2) Die Gravitation eines bis heute unentdeckten fernen Planeten ([url=body:planet_nine]Planet Nine[/url]) hält Sedna und ähnliche Objekte in diesem Bahnbereich. (3) Sedna wurde in der frühesten Phase des Sonnensystems in einem dichten Sternhaufen geformt, wo Gravitationsinteraktionen mit Nachbarsternen solche Bahnen erzeugten.\n\nSedna hat keinen bekannten Mond, was seine Massebestimmung erschwert. Er ist eines von nur wenigen Objekten, die sicher zum inneren Bereich jenseits des Streuscheibs gehören — 2012 VP₁₁₃ (\"Biden\") ist ein zweites bekanntes Objekt dieser Klasse. Beide haben ähnliche Perihelwinkel, was die Planetenneun-Hypothese motivierte. Kein Raumfahrzeug hat Sedna besucht oder ist dafür in Planung."
     },
     "sun": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": 5505,
+          "composition": {
+            "Wasserstoff (H)": 73.46,
+            "Helium (He)": 24.85,
+            "Sauerstoff (O)": 0.77,
+            "Kohlenstoff (C)": 0.29,
+            "Neon (Ne)": 0.12,
+            "Eisen (Fe)": 0.16
+          }
+        }
       },
-      "description": "Die [b]Sonne[/b] ist der Zentralstern dieses Sonnensystems — ein G-Typ-Hauptreihenstern mittlerer Masse und Leuchtkraft. Sie vereint über [b]99,86 %[/b] der gesamten Masse des Systems auf sich und dominiert durch ihre Gravitation die Bewegung aller Planeten, Monde und Kleinkörper.\n\nIhr Inneres ist ein kontinuierlicher Kernfusionsreaktor, in dem Wasserstoff zu Helium verschmolzen wird. Dieser Prozess setzt pro Sekunde eine Energiemenge frei, die dem Verbrauch der gesamten menschlichen Zivilisation über Milliarden von Jahren entsprechen würde.\n\nDie Sonne bestimmt maßgeblich die [url=concept:habitable_zone]Habitable Zone[/url] und die [url=concept:frost_line]Frostlinie[/url] des Systems und prägt damit, welche Art von Körpern sich wo gebildet haben."
+      "description": "Die [b]Sonne[/b] ist der Zentralstern dieses Sonnensystems — ein G2V-Hauptreihenstern mit einem Radius von 695.700 km und einer Masse von 1,989 × 10³⁰ kg. Sie vereint über [b]99,86 %[/b] der gesamten Systemmasse auf sich und dominiert durch ihre Gravitation alle Körper bis weit jenseits der Plutobahn. Ihr Alter beträgt etwa 4,6 Milliarden Jahre; sie befindet sich in der mittleren Phase ihrer Hauptreihenexistenz.\n\nIhr Inneres ist in konzentrische Schichten gegliedert: Der [b]Kern[/b] (~0–25 % Radius) erreicht Temperaturen von 15 Millionen Kelvin und einen Druck von 250 Milliarden bar — die einzigen Bedingungen im System, unter denen Kernfusion stattfindet. Dabei werden pro Sekunde ~620 Millionen Tonnen Wasserstoff zu Helium verschmolzen und ~4,3 Millionen Tonnen Masse in Energie umgewandelt. Die so erzeugte Strahlung braucht im Durchschnitt ~170.000 Jahre, um durch die darüber liegende Strahlungszone nach außen zu diffundieren, bevor sie in der [b]Konvektionszone[/b] durch aufsteigende Plasmasäulen nach oben transportiert wird.\n\nDie sichtbare Oberfläche — die [b]Photosphäre[/b] — hat eine Temperatur von ~5.778 K und zeigt Granulation (Konvektionszellen von ~1.000 km Durchmesser), Sonnenflecken (~3.500–4.000 K, magnetically unterdrückte Regionen) und einen aktiven 11-jährigen Sonnenzyklus. Darüber liegt die [b]Chromosphäre[/b] (~10.000 K) und die [b]Korona[/b], deren Temperatur auf über eine Million Kelvin ansteigt — ein physikalisches Rätsel, das bis heute nicht vollständig gelöst ist. Den kontinuierlichen Teilchenstrom aus der Korona bezeichnet man als Sonnenwind; er formt die Heliosph­äre bis über 120 AU hinaus.\n\nDie Sonne bestimmt durch ihre Leuchtkraft die [url=concept:habitable_zone]Habitable Zone[/url] (~0,95–1,37 AU) sowie die [url=concept:frost_line]Frostlinie[/url] (~2,7 AU). In etwa 5 Milliarden Jahren wird sie nach Erschöpfung ihres Wasserstoffvorrats zum Roten Riesen expandieren — bis etwa zur heutigen Erdbahn — bevor der Kern zu einem Weißen Zwerg kollabiert."
     },
     "swift_tuttle": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -50,
+          "temp_min": -70,
+          "temp_max": 80
+        }
       },
       "description": "[b]109P/Swift-Tuttle[/b] ist der größte bekannte Körper, der die Erdbahn kreuzt und regelmäßig zurückkehrt. Sein Kern hat einen Durchmesser von ~26 km — mehr als doppelt so groß wie das Objekt, das vor 66 Millionen Jahren das Massensterben der Dinosaurier auslöste.\n\nSeine Umlaufzeit beträgt ~130 Jahre; das letzte Perihel war 1992, das nächste wird 2126 erwartet. Swift-Tuttle ist die Quelle der Perseiden — einem der intensivsten jährlichen Meteorschauer (August).\n\nTrotz der Kreuzung der Erdbahn zeigen Berechnungen, dass eine Kollision in den nächsten Jahrtausenden ausgeschlossen ist."
     },
     "tempel1": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -53,
+          "temp_min": -80,
+          "temp_max": 27
+        }
       },
       "description": "[b]9P/Tempel 1[/b] ist ein kurzperiodischer Komet (~5,5 Jahre Umlaufzeit), der durch zwei Raumfahrtmissionen untersucht wurde. Die NASA-Mission Deep Impact schoss 2005 einen 370-kg-Kupferblock auf den Kern — das ausgeworfene Material lieferte Daten über die innere Zusammensetzung.\n\nDie Stardust-NExT-Mission fotografierte 2011 denselben Kometen und zeigte den durch den Einschlag entstandenen Krater. Tempel 1 verliert pro Umlauf Schichten seiner Oberfläche durch Sublimation."
     },
@@ -346,83 +637,160 @@
           }
         }
       },
-      "description": "[b]Erde[/b] (Terra) ist der dritte Planet und das einzige bekannte Objekt im Universum, auf dem Leben existiert. Sie liegt komfortabel innerhalb der [url=concept:habitable_zone]Habitablen Zone[/url] der Sonne und besitzt flüssiges Wasser auf ihrer Oberfläche.\n\nEin starkes Magnetfeld schützt die Biosphäre vor dem Sonnenwind. Die Plattentektonik sorgt für einen langfristigen Kohlenstoffkreislauf, der die Temperatur über geologische Zeiträume stabilisiert.\n\nDer Mond ist im Verhältnis zur Planetenmasse ungewöhnlich groß. Seine Gravitation stabilisiert die Erdachse und hat die Gezeiten geprägt — beides gilt als wichtig für die Entwicklung komplexen Lebens."
+      "description": "[b]Erde[/b] (Terra) ist der dritte Planet und das einzige bekannte Objekt im Universum, auf dem Leben existiert. Mit einem Radius von 6.371 km und einer Masse von 5,97 × 10²⁴ kg ist sie der größte der terrestrischen Planeten. Sie liegt innerhalb der [url=concept:habitable_zone]Habitablen Zone[/url] der Sonne (~1,00 AU), und etwa 71 % ihrer Oberfläche sind von flüssigem Wasser bedeckt — dem einzigen natürlichen Vorkommen stabilen Oberflächenwassers im Sonnensystem.\n\nIhr innerer Aufbau ist vollständig differenziert: Ein fester innerer Eisenkern (Radius ~1.220 km), umgeben von einem flüssigen äußeren Kern (~2.260 km dick), der durch Konvektionsströme die [url=concept:magnetosphere][b]Magnetosphäre[/b][/url] der Erde erzeugt. Dieses Magnetfeld (Dipolfeldstärke ~25–65 µT an der Oberfläche) schützt die Oberfläche vor dem Sonnenwind und verhindert den Verlust der Atmosphäre. Die [b]Plattentektonik[/b] — ein auf der Erde einzigartiger, vollständig aktiver Prozess unter den bekannten Planeten — reguliert über den Kohlenstoffkreislauf die Langzeit-Temperaturstabilität: CO₂ wird durch Verwitterung gebunden, in Subduktionszonen in den Mantel geführt und durch Vulkanismus zurückgegeben.\n\nDie Atmosphäre (N₂ 78 %, O₂ 21 %) ist das Ergebnis von ~3,5 Milliarden Jahren biologischer Aktivität: Freier Sauerstoff ist thermodynamisch instabil und wird nur durch kontinuierliche Photosynthese aufrechterhalten. Die [b]Ozonschicht[/b] in ~15–35 km Höhe absorbiert den Großteil der UV-Strahlung der Sonne — eine Voraussetzung für Leben an der Landoberfläche. Die Erde ist mit ~8,7 Millionen bekannten Arten die biologisch vielfältigste bekannte Welt.\n\nDer [b]Mond[/b] mit einem Radius von 1.737 km ist im Verhältnis zur Planetenmasse ungewöhnlich groß. Seine Gravitation stabilisiert die Erdachse bei ~23,5° Neigung und verhindert chaotische Taumelbewegungen über geologische Zeiträume. Die Gezeiten haben die frühe Erdrotation über Milliarden Jahre von ~6 auf heute 24 Stunden verlangsamt und spielten möglicherweise eine Rolle bei der Entstehung des Lebens."
     },
     "tethys": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -187,
+          "temp_min": -196,
+          "temp_max": -163
+        }
       },
-      "description": "[b]Tethys[/b] ist ein Eismond des [url=body:saturn]Saturn[/url] mit zwei markanten Oberflächenmerkmalen: dem riesigen Krater Odysseus (~450 km Durchmesser, fast ein Drittel des Mondradius) und dem Ithaca Chasma — einem Grabensystem, das sich fast dreiviertel um den gesamten Mond erstreckt.\n\nTethys besteht fast vollständig aus Wassereis mit geringem Gesteinsanteil. Er hat zwei Trojaner-Monde — Telesto und Calypso — die 60° vor und hinter ihm auf derselben Bahn laufen."
+      "description": "[b]Tethys[/b] ist ein Eismond des [url=body:saturn]Saturn[/url] mit einem Radius von 531 km. Seine mittlere Dichte beträgt nur 0,98 g/cm³ — nahezu exakt die Dichte von Wasser — was bedeutet, dass Tethys fast vollständig aus Wassereis besteht, mit nur einem minimalen Anteil an Silikatgestein. Die Oberfläche ist hell (Albedo ~0,8) und stark krateriert; sie gehört zu den ältesten erhaltenen Oberflächen im Saturnsystem.\n\nZwei Merkmale dominieren die Topographie: Der Krater [b]Odysseus[/b] mit ~450 km Durchmesser — fast einem Drittel des Mondradius — ist einer der größten Einschlagkrater relativ zur Körpergröße im Sonnensystem. Anders als der Herschel-Krater auf Mimas ist Odysseus flach und ohne ausgeprägte Zentralstruktur — ein Zeichen, dass das warme, plastische Eis kurz nach dem Einschlag viskos zurückfloss und die Topographie eingeebnet hat. Das zweite Hauptmerkmal ist [b]Ithaca Chasma[/b]: ein Grabensystem von ~100 km Breite und 3–5 km Tiefe, das sich über ~75 % des Mondumfangs erstreckt. Es verläuft auffällig parallel zu Odysseus und könnte durch die Schockwellen dieses Einschlags oder durch frühere Ausdehnung beim Gefrieren des Inneren entstanden sein.\n\nTethys hat zwei [b]Trojaner-Monde[/b]: Telesto (in L4, 60° voraus) und Calypso (in L5, 60° dahinter) laufen auf derselben Bahn. Solche co-orbitalen Konfigurationen sind im Sonnensystem selten und legen nahe, dass diese Monde entweder gemeinsam mit Tethys entstanden oder durch Resonanz eingefangen wurden. Tethys umrundet Saturn in 1,89 Tagen aus einer Entfernung von ~295.000 km — innerhalb des E-Rings, der von Enceladus-Material dominiert wird."
     },
     "thebe": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -163,
+          "temp_min": -180,
+          "temp_max": -108
+        }
       },
       "description": "[b]Thebe[/b] ist ein kleiner, unregelmäßig geformter Mond des [url=body:jupiter]Jupiter[/url] mit einem mittleren Radius von ~49 km. Er wurde 1979 von Voyager 1 entdeckt.\n\nThebe befindet sich zwischen den Bahnen von [url=body:amalthea]Amalthea[/url] und [url=body:io]Io[/url] und trägt Material zum äußeren Rand von Jupiters Gossamer-Ringsystem bei. Wie Amalthea ist er in gebundener Rotation und hat eine dunkel-rote Oberfläche."
     },
     "titan": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "pressure": 1.467,
+          "temp_mean": -179,
+          "temp_min": -183,
+          "temp_max": -175,
+          "composition": {
+            "Stickstoff (N₂)": 94.2,
+            "Methan (CH₄)": 5.65,
+            "Wasserstoff (H₂)": 0.1
+          }
+        }
       },
-      "description": "[b]Titan[/b] ist der größte Mond des [url=body:saturn]Saturn[/url] und der einzige Mond im Sonnensystem mit einer dichten Atmosphäre. Diese besteht überwiegend aus Stickstoff (~95 %) und Methan (~5 %) mit einem Oberflächendruck von ~1,5 bar — etwas höher als auf der Erde.\n\nAuf Titan existiert ein vollständiger Methankreislauf analog zum Wasserkreislauf der Erde: Methanregen füllt Seen und Flüsse aus flüssigem Methan und Ethan, vor allem in Polnähe. Die Oberfläche ist mit Sanddünen aus organischen Partikeln bedeckt.\n\nDie Cassini-Huygens-Mission untersuchte Titan eingehend. Die NASA-Mission Dragonfly soll ab 2034 mit einem Rotorcraft-Lander die Oberfläche direkt erkunden."
+      "description": "[b]Titan[/b] ist der größte Mond des [url=body:saturn]Saturn[/url] mit einem Radius von 2.576 km — größer als Merkur. Er ist der einzige Mond im Sonnensystem mit einer dichten Atmosphäre: 94,2 % Stickstoff, ~5,65 % Methan, Spuren von Ethan, Acetylen und anderen organischen Verbindungen. Mit 1,467 bar Oberflächendruck (1,5-mal der Erddruck) und −179 °C liegt Titan exakt im Temperaturbereich, in dem Methan alle drei Aggregatzustände einnehmen kann — analog zum Wasser auf der Erde.\n\nAuf Titan existiert ein vollständiger [b]Methankreislauf[/b]: Methan verdunstet von der Oberfläche, kondensiert in der Troposphäre zu Wolken und fällt als Regen auf die Oberfläche zurück. Methanseen und -meere konzentrieren sich an den Polen, insbesondere um den Nordpol. Der größte See, [b]Kraken Mare[/b], ist mit ~400.000 km² größer als das Kaspische Meer. Zwischen den Polen dominieren Sanddünen aus dunklen organischen Partikeln ([url=concept:tholins]Tholins[/url]), die durch UV-Strahlung aus Methan und Stickstoff entstehen — darunter liegt ein Eis-Gestein-Gemisch aus Wassereis und Silikaten.\n\nDer [b]Huygens-Lander[/b] der ESA setzte am 14. Januar 2005 auf Titan auf — der einzige Lander bisher im äußeren Sonnensystem — und übertrug 72 Minuten lang Daten vom Boden: Bilder zeigter gerundete, durch Flüssigkeit erodierte Steine, Hinweise auf Methanregen und ein Flusssystem. Der Cassini-Orbiter (1997–2017) kartierte Titans Oberfläche durch Radarmessungen trotz der undurchdringlichen Dunstatmosphäre.\n\nDie NASA-Mission [b]Dragonfly[/b] (Startgeplant 2028, Ankunft ~2034) wird ein nuklearbetriebenes Drehflügler-Fahrzeug auf Titan absetzen, das verschiedene Standorte auf der Oberfläche anfliegen und untersuchen kann — darunter organisch reiche Dünengebiete und einen alten Einschlagkrater namens Selk. Titan ist astrobiologisch bedeutsam: Obwohl flüssiges Wasser fehlt, bietet die chemisch reich bestückte Umgebung ein Modell für präbiotische Chemie unter nicht-wässrigen Bedingungen."
     },
     "titania": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -203,
+          "temp_min": -213,
+          "temp_max": -183
+        }
       },
       "description": "[b]Titania[/b] ist der größte Mond des [url=body:uranus]Uranus[/url] und nach der Elfenkönigin in Shakespeares \"Ein Sommernachtstraum\" benannt. Sie wurde 1787 von William Herschel entdeckt.\n\nIhre Oberfläche zeigt eine Mischung aus alten Kratern und jüngeren Canyons und Gräben — Hinweise auf innere Aktivität nach der Entstehung. Titania besteht aus etwa gleichen Teilen Wassereis und felsigem Material und hat möglicherweise einen flüssigen Ozean in der Vergangenheit besessen."
     },
     "triton": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "pressure": 1.4e-05,
+          "temp_mean": -235,
+          "temp_min": -240,
+          "temp_max": -228,
+          "composition": {
+            "Stickstoff (N₂)": 99.0,
+            "Methan (CH₄)": 0.5,
+            "Kohlenmonoxid (CO)": 0.05
+          }
+        }
       },
-      "description": "[b]Triton[/b] ist der größte Mond des [url=body:neptune]Neptun[/url] und einzigartig: Er umkreist seinen Planeten retrograd — als einziger großer Mond im Sonnensystem. Dies ist der klare Beweis, dass er nicht gemeinsam mit Neptun entstanden, sondern ein eingefangenes Objekt aus dem [url=concept:kuiper_belt]Kuipergürtel[/url] ist.\n\nTriton ist geologisch aktiv: Voyager 2 beobachtete 1989 stickstoffausstoßende Geysire. Seine Oberfläche aus Stickstoff- und Methaneis ist eine der kältesten bekannten im Sonnensystem (~-235 °C).\n\nDurch Gezeitenbremsung nähert sich Triton langsam Neptun. In ~3,6 Milliarden Jahren wird er die Roche-Grenze unterschreiten und zu einem Ringsystem zerbrechen."
+      "description": "[b]Triton[/b] ist der größte Mond des [url=body:neptune]Neptun[/url] und einzigartig: Er umkreist seinen Planeten retrograd — als einziger großer Mond im Sonnensystem. Dies ist der klare Beweis, dass er nicht gemeinsam mit Neptun entstanden, sondern ein eingefangenes Objekt aus dem [url=concept:kuiper_belt]Kuipergürtel[/url] ist.\n\nTriton ist geologisch aktiv: Voyager 2 beobachtete 1989 stickstoffausstoßende Geysire. Seine Oberfläche aus Stickstoff- und Methaneis ist eine der kältesten bekannten im Sonnensystem (~-235 °C).\n\nDurch Gezeitenbremsung nähert sich Triton langsam Neptun. In ~3,6 Milliarden Jahren wird er die [url=concept:roche_limit]Roche-Grenze[/url] unterschreiten und zu einem Ringsystem zerbrechen."
     },
     "umbriel": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -198,
+          "temp_min": -213,
+          "temp_max": -178
+        }
       },
       "description": "[b]Umbriel[/b] ist der dunkelste der großen Uranusmonde und zeigt die älteste, stärker eingeschlagene Oberfläche. Er ist nach einem dunklen Geist in Alexander Popes \"Der Lockenraub\" benannt.\n\nSeine dunkle Oberfläche ist wenig reflektiv und zeigt kaum Zeichen geologischer Aktivität. Ein heller Ring im Krater Wunda auf dem Äquator ist ein auffälliges Merkmal, dessen Zusammensetzung noch ungeklärt ist."
     },
     "uranus": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "pressure": 1.0,
+          "temp_mean": -197,
+          "temp_min": -214,
+          "composition": {
+            "Wasserstoff (H₂)": 82.5,
+            "Helium (He)": 15.2,
+            "Methan (CH₄)": 2.3
+          }
+        }
       },
-      "description": "[b]Uranus[/b] ist ein Eisriese — eine Kategorie zwischen Gasriesen und terrestrischen Planeten. Sein Inneres besteht aus einem heißen, dichten Gemisch aus Wasser, Methan und Ammoniak unter enormem Druck, was häufig als \"Eis\" bezeichnet wird.\n\nUranus hat eine ungewöhnliche Eigenheit: Seine Rotationsachse ist um etwa 98° gekippt — er rollt gewissermaßen auf seiner Bahn um die Sonne. Dies führt zu extremen Jahreszeiten, bei denen jeder Pol abwechselnd 42 Jahre lang in Dunkelheit und Sonnenlicht liegt.\n\nEr besitzt ein schwaches Ringsystem sowie 27 bekannte Monde, die nach Figuren aus Shakespeare und Alexander Pope benannt sind."
+      "description": "[b]Uranus[/b] ist der erste mittels Teleskop entdeckte Planet, gefunden von William Herschel am 13. März 1781. Mit einem Radius von 25.362 km und einer Masse von 8,68 × 10²⁵ kg ist er der drittgrößte Planet nach Radius, aber der leichteste der vier Riesenplaneten. Als [b]Eisriese[/b] unterscheidet er sich fundamental von Jupiter und Saturn: Sein Inneres besteht überwiegend aus einem heißen, superkritischen Gemisch aus Wasser, Methan und Ammoniak unter Drücken bis zu mehreren Millionen bar — als \"Eis\" bezeichnet, obwohl es bei diesen Temperaturen flüssig ist. Uranus' Umlaufzeit um die Sonne beträgt 84 Jahre.\n\nDas bemerkenswerteste Merkmal ist die Rotationsachse: Sie ist um ~98° zur Ekliptik gekippt — Uranus liegt buchstäblich auf der Seite und rollt um die Sonne. Jeder Pol bekommt abwechselnd ~42 Jahre Sonnenlicht und 42 Jahre Dunkelheit. Trotzdem sind die Temperaturunterschiede zwischen Tag- und Nachtseite gering, da Uranus fast keine interne Wärmequelle emittiert — im Gegensatz zu allen anderen Riesenplaneten, die deutlich mehr Energie abstrahlen als sie von der Sonne erhalten. Die Ursache dieser \"Wärmearmut\" ist unbekannt.\n\nUranus besitzt 13 bekannte schmale Ringe, entdeckt 1977 durch Sternbedeckungsbeobachtungen. Das Magnetfeld ist ungewöhnlich: Es ist um ~59° gegenüber der Rotationsachse geneigt und hat seinen Ursprung weit außerhalb des Zentrums — ein nicht-dipolares, komplexes Feldmuster, das möglicherweise auf ionische Konvektionsprozesse im Wasserverhältnis hinweist. Die einzige Nahkamera, die Uranus je aus nächster Nähe sah, gehörte Voyager 2, der im Januar 1986 auf 81.500 km herankam.\n\n27 Monde sind bekannt, alle nach Figuren aus Shakespeare und Alexander Pope benannt — eine Konvention, die unter allen Planeten einzigartig ist. [url=body:miranda]Miranda[/url] mit seiner chaotischen Oberfläche und [url=body:titania]Titania[/url] als größter Mond sind die wissenschaftlich interessantesten. Ein zukünftiges Orbiter-Flyby-Sondenprojekt (Uranus Orbiter and Probe) wurde von der NASA als höchste Priorität für das nächste Jahrzehnt eingestuft."
     },
     "vanth": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -225,
+          "temp_min": -235,
+          "temp_max": -207
+        }
       },
       "description": "[b]Vanth[/b] ist der Mond des [url=body:orcus]Orcus[/url] und nach einer Begleiterin der Todesgöttin Vanth in der etruskischen Mythologie benannt — passend zur Unterwelt-Thematik des Hauptkörpers.\n\nMit einem Radius von ~221 km ist er im Verhältnis zu Orcus ungewöhnlich groß — ähnlich wie [url=body:charon]Charon[/url] im Pluto-System. Er umkreist Orcus in ~9.54 Tagen auf einer fast kreisförmigen Bahn.\n\nDie gegenseitige Umlaufbahn deutet darauf hin, dass Vanth durch eine kollisionale Genese entstanden ist."
     },
     "venus": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "pressure": 92.0,
+          "temp_mean": 464,
+          "temp_min": 437,
+          "temp_max": 480,
+          "composition": {
+            "Kohlenstoffdioxid (CO₂)": 96.5,
+            "Stickstoff (N₂)": 3.5,
+            "Schwefeldioxid (SO₂)": 0.015,
+            "Argon (Ar)": 0.007,
+            "Wasserdampf (H₂O)": 0.002
+          }
+        }
       },
-      "description": "[b]Venus[/b] ist der zweite Planet von der Sonne und der Erde in Größe und Masse am ähnlichsten — weshalb sie auch als \"Schwesterplanet\" bezeichnet wird. Ihre dichte Kohlendioxid-Atmosphäre erzeugt einen extremen Treibhauseffekt mit Oberflächentemperaturen von über 460 °C, heißer als Merkur trotz größerem Sonnenabstand.\n\nVenus rotiert rückläufig (retrograd) und extrem langsam — ein Venustag ist länger als ein Venusjahr. Ihre dicke Wolkendecke aus Schwefelsäure reflektiert so viel Licht, dass sie das hellste Objekt am Nachthimmel nach dem Mond ist.\n\nSie besitzt keine Monde und kein nachweisbares globales Magnetfeld."
+      "description": "[b]Venus[/b] ist der zweite Planet von der Sonne und der Erde in Größe (Radius 6.051 km) und Masse (4,87 × 10²⁴ kg) am ähnlichsten — weshalb sie als \"Schwesterplanet\" bezeichnet wird. Ihre Ähnlichkeit endet jedoch an der Oberfläche: Ein extremer Treibhauseffekt hält die Temperaturen bei ~464 °C konstant — heißer als Merkur trotz doppelt so großem Sonnenabstand. Der Oberflächendruck beträgt 92 bar, vergleichbar mit 900 m Wassertiefe auf der Erde.\n\nVenus rotiert retrograd und so langsam, dass ein Venusjahr (225 Erdtage) kürzer ist als ein Venustag (243 Erdtage). Die dicke Wolkendecke aus konzentrierter Schwefelsäure in ~45–70 km Höhe reflektiert ~75 % des einfallenden Lichts (Albedo 0,75) und macht Venus zum hellsten Objekt am irdischen Himmel nach Sonne und Mond. Die Wolken rasen mit ~360 km/h um den Planeten — während die Oberfläche darunter fast still steht.\n\nTrotz fehlender Plattentektonik ist Venus geologisch aktiv. [b]Maxwell Montes[/b] im Ishtar Terra erreicht ~11 km Höhe — der höchste Punkt der Venusoberfläche. Mehrere tausend Vulkane sind kartiert; Radar-Daten der Magellan-Sonde (1989–1994) zeigten frische Lavafelder. Untersuchungen aus dem Jahr 2023 bestätigten anhand von Magellan-Archivdaten aktiven Vulkanismus. Veneras 7–14, sowjetische Lander zwischen 1970 und 1982, waren die ersten Sonden, die von der Oberfläche eines anderen Planeten Daten sendeten — und überlebten in dieser Umgebung nur 23–110 Minuten.\n\nVenus besitzt kein messbares globales Magnetfeld trotz eisenreichen Kerns — vermutlich weil ihre langsame Rotation keinen ausreichenden Dynamo-Effekt erzeugt. Die ESA-Mission EnVision und NASA-Mission DAVINCI+ sind für die 2030er Jahre geplant, um Herkunft und Entwicklung der venusianischen Atmosphäre zu untersuchen."
     },
     "weywot": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -220,
+          "temp_min": -230,
+          "temp_max": -197
+        }
       },
       "description": "[b]Weywot[/b] ist der Mond des [url=body:quaoar]Quaoar[/url] und nach dem Himmelsgott des Tongva-Volkes und Sohn von Quaoar benannt.\n\nEr wurde 2006 entdeckt und umkreist Quaoar in ~12.44 Tagen aus ~14.500 km Entfernung. Durch die Analyse seiner Bahn wurde die Masse Quaoars bestimmt.\n\nWeywot hat einen Radius von ~87 km. Sein Verhältnis zu Quaoar ähnelt eher dem eines kleinen irregulären Trabanten als einem ausgeprägten Doppelsystem."
     },
     "wild2": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -55,
+          "temp_min": -73,
+          "temp_max": 25
+        }
       },
       "description": "[b]81P/Wild 2[/b] ist ein kurzperiodischer Komet (~6,4 Jahre), der erst 1974 durch eine Jupiterstörung auf seine heutige innere Bahn gelenkt wurde. Daher ist er für einen regelmäßigen Kometen noch vergleichsweise unverwittert.\n\nDie NASA-Stardust-Mission flog 2004 durch die Koma und fing Staubpartikel ein, die 2006 zur Erde zurückgebracht wurden. Dabei wurden komplexe organische Moleküle und sogar Aminosäuren-Vorläufer gefunden — Hinweise auf die Rolle von Kometen bei der Entstehung des Lebens."
     },
     "wirtanen": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -60,
+          "temp_min": -80,
+          "temp_max": 50
+        }
       },
       "description": "[b]46P/Wirtanen[/b] ist ein kurzperiodischer Komet (~5,4 Jahre) und Ursprungsziel der Rosetta-Mission, bevor er durch [url=body:churyumov_gerasimenko]67P/C-G[/url] ersetzt wurde. Bei seiner Erdannäherung 2018 war er mit bloßem Auge sichtbar.\n\nSein Kern ist mit ~1,2 km Durchmesser sehr klein, aber aktiv. Die grüne Farbe seiner Koma entsteht durch Dicarbon (C₂), das durch UV-Strahlung der Sonne aus dem Kometen freigesetzt wird."
     },
     "xiangliu": {
       "infobox": {
-        "atmosphere": {}
+        "atmosphere": {
+          "temp_mean": -230,
+          "temp_min": -240,
+          "temp_max": -220
+        }
       },
       "description": "[b]Xiangliu[/b] ist der Mond des [url=body:gonggong]Gonggong[/url], benannt nach dem neunköpfigen Schlangengeist aus der chinesischen Mythologie, der Gonggong begleitet.\n\nEr wurde 2016 mit dem Hubble-Weltraumteleskop entdeckt. Mit einem geschätzten Radius von ~62 km ist er deutlich kleiner als sein Hauptkörper. Er umkreist Gonggong in ~25.22 Tagen.\n\nDie Entdeckung von Xiangliu unterstützte die Einschätzung, dass Gonggong groß genug sein könnte, um als Zwergplanet zu gelten."
     }
@@ -479,6 +847,34 @@
     "habitable_zone": {
       "title": "Habitable Zone",
       "content": "[font_size=18][b]Habitable Zone[/b][/font_size]\n[i]Astronomie · Astrobiologie[/i]\n\n[color=#888888]────────────────────────[/color]\n\nDie [b]Habitable Zone[/b] (auch: Goldlöckchen-Zone) ist der Bereich um einen Stern, in dem flüssiges Wasser auf der Oberfläche eines erdähnlichen Planeten existieren kann — eine der Grundvoraussetzungen für Leben, wie wir es kennen.\n\n[b]Im Sonnensystem[/b]\nDie Habitable Zone der Sonne erstreckt sich von ca. [b]0,95 AU[/b] bis [b]1,37 AU[/b]. Die Erde befindet sich mit 1,0 AU komfortabel innerhalb dieser Zone. Mars (~1,52 AU) liegt bereits außerhalb.\n\n[b]Einschränkungen[/b]\nDie Habitable Zone berücksichtigt nur den Strahlungseinfluss des Sterns. Weitere Faktoren — Atmosphäre, Magnetfeld, geologische Aktivität — sind ebenso entscheidend für die Habitabilität.\n\n[b]Verwandte Konzepte[/b]\n• [url=concept:frost_line]Frostlinie[/url] — Grenze, ab der Eis stabil ist\n• [url=concept:astronomical_unit]Astronomische Einheit[/url]"
+    },
+    "tidal_heating": {
+      "title": "Gezeitenheizung",
+      "content": "[font_size=18][b]Gezeitenheizung[/b][/font_size]\n[i]Astronomie · Planetologie[/i]\n\n[color=#888888]────────────────────────[/color]\n\n[b]Gezeitenheizung[/b] ist ein Prozess, bei dem die Gravitationskräfte eines Zentralkörpers (oder benachbarter Monde) einen Mond oder Planeten periodisch verformen — ähnlich wie ein Gummiball, den man immer wieder zusammendrückt und loslässt. Diese innere Reibung erzeugt Wärme und kann den Körper geologisch aktiv halten, obwohl er weit von seiner Sonne entfernt und eigentlich längst erkaltet sein sollte.\n\n[b]Voraussetzungen[/b]\nGezeitenheizung wirkt besonders stark, wenn:\n[indent]• Der Mond in einer [url=concept:orbital_resonance]Bahnresonanz[/url] mit anderen Monden steht (verhindert Kreisbahnstabilisierung)\n• Der Mond nahe am massereichen Planeten kreist\n• Die Umlaufbahn eine gewisse Exzentrizität behält[/indent]\n\n[b]Beispiele im Sonnensystem[/b]\n[indent]• [url=body:io]Io[/url] — stärkste Gezeitenheizung im Sonnensystem (~100 TW), >400 aktive Vulkane\n• [url=body:europa]Europa[/url] — Ozean unter dem Eis durch Gezeitenheizung flüssig gehalten\n• [url=body:enceladus]Enceladus[/url] — aktive Geysire durch Gezeitenheizung angetrieben\n• [url=body:titan]Titan[/url] — beiträgt zur inneren Wärme[/indent]\n\n[b]Bedeutung für Astrobiologie[/b]\nGezeitenheizung kann flüssiges Wasser in Regionen weit jenseits der [url=concept:habitable_zone]Habitablen Zone[/url] aufrechterhalten — und damit Lebensräume in der Tiefe kalter Eismonde schaffen.\n\n[b]Siehe auch[/b]\n• [url=concept:orbital_resonance]Bahnresonanz[/url]\n• [url=concept:roche_limit]Roche-Grenze[/url]"
+    },
+    "orbital_resonance": {
+      "title": "Bahnresonanz",
+      "content": "[font_size=18][b]Bahnresonanz[/b][/font_size]\n[i]Astronomie · Orbitalmechanik[/i]\n\n[color=#888888]────────────────────────[/color]\n\nEine [b]Bahnresonanz[/b] liegt vor, wenn zwei Himmelskörper ihre Umlaufzeiten in einem einfachen ganzzahligen Verhältnis stehen — z. B. 1:2, 2:3 oder 1:4. Durch die regelmäßigen Gravitationsimpulse, die dabei entstehen, können Resonanzen Bahnen entweder stabilisieren oder destabilisieren.\n\n[b]Typen[/b]\n[indent]• [b]Mittelbewegungsresonanz[/b] — Umlaufzeiten stehen im Verhältnis kleiner ganzer Zahlen\n• [b]Spin-Orbit-Resonanz[/b] — Rotation und Umlauf eines Körpers sind gekoppelt (z. B. gebundene Rotation des Mondes, 3:2-Resonanz Merkurs)[/indent]\n\n[b]Bekannte Beispiele[/b]\n[indent]• [b]Laplace-Resonanz[/b] — [url=body:io]Io[/url] : [url=body:europa]Europa[/url] : [url=body:ganymede]Ganymed[/url] = 1:2:4; erzeugt [url=concept:tidal_heating]Gezeitenheizung[/url] in allen drei Monden\n• [b]Mimas / Cassini-Division[/b] — 2:1-Resonanz zwischen Mimas und Ringteilchen leert die Cassini-Division in Saturns Ringen\n• [b]Plutinos[/b] — [url=body:pluto]Pluto[/url], [url=body:orcus]Orcus[/url] und andere KBOs in 3:2-Resonanz mit Neptun\n• [b]Merkur[/b] — 3:2-Spin-Orbit-Resonanz: 3 Eigenrotationen pro 2 Sonnenumläufe[/indent]\n\n[b]Stabilisierende und destabilisierende Wirkung[/b]\nResonanzen können Bahnen über Milliarden von Jahren schützen (Plutinos) oder Regionen im [url=concept:asteroid_belt]Asteroidengürtel[/url] leerfegen (Kirkwood-Lücken durch Jupiter-Resonanzen).\n\n[b]Siehe auch[/b]\n• [url=concept:tidal_heating]Gezeitenheizung[/url]\n• [url=concept:roche_limit]Roche-Grenze[/url]"
+    },
+    "roche_limit": {
+      "title": "Roche-Grenze",
+      "content": "[font_size=18][b]Roche-Grenze[/b][/font_size]\n[i]Astronomie · Orbitalmechanik[/i]\n\n[color=#888888]────────────────────────[/color]\n\nDie [b]Roche-Grenze[/b] ist der kritische Abstand zu einem Zentralkörper, innerhalb dessen Gezeitenkräfte einen anfliegenden Körper auseinanderreißen, der nur durch seine eigene Gravitation zusammengehalten wird. Sie wurde 1848 von Édouard Roche berechnet.\n\n[b]Formel (vereinfacht)[/b]\n[indent][i]d = R · (2 · M / m)^(1/3)[/i][/indent]\nwobei R der Radius des Zentralkörpers, M seine Masse und m die Masse des kleinen Körpers ist.\n\n[b]Physikalische Bedeutung[/b]\n[indent]• [b]Innerhalb der Roche-Grenze:[/b] Gezeitenkräfte überwiegen die Eigengravitation — Material kann keinen zusammenhängenden Körper bilden. Hier entstehen Ringsysteme.\n• [b]Außerhalb der Roche-Grenze:[/b] Eigengravitation überwiegt — Monde können stabil existieren und Ringmaterial akkretiert zu Monden.[/indent]\n\n[b]Beispiele im Sonnensystem[/b]\n[indent]• Die Ringe von [url=body:saturn]Saturn[/url], [url=body:uranus]Uranus[/url] und [url=body:neptune]Neptun[/url] liegen innerhalb ihrer jeweiligen Roche-Grenze\n• [url=body:metis]Metis[/url] (Jupiter) liegt innerhalb der Roche-Grenze Jupiters\n• [url=body:triton]Triton[/url] nähert sich Neptuns Roche-Grenze (~3,6 Mrd. Jahre)\n• [url=body:quaoar]Quaoar[/url] hat überraschend einen Ring außerhalb seiner Roche-Grenze[/indent]\n\n[b]Siehe auch[/b]\n• [url=concept:tidal_heating]Gezeitenheizung[/url]\n• [url=concept:orbital_resonance]Bahnresonanz[/url]"
+    },
+    "cryovolcanism": {
+      "title": "Kryovulkanismus",
+      "content": "[font_size=18][b]Kryovulkanismus[/b][/font_size]\n[i]Planetologie · Geologie[/i]\n\n[color=#888888]────────────────────────[/color]\n\n[b]Kryovulkanismus[/b] (von griech. [i]kryos[/i] = Kälte) bezeichnet vulkanische Prozesse auf kalten Körpern, bei denen anstelle von Gesteinsschmelze [b]Wasser, Ammoniak, Methan oder Stickstoff[/b] als Magma-Analogon wirken. Wenn innere Wärme (durch [url=concept:tidal_heating]Gezeitenheizung[/url] oder radioaktiven Zerfall) diese Verbindungen verflüssigt, können sie durch Risse nach außen dringen und auf der kalten Oberfläche gefrieren.\n\n[b]Erscheinungsformen[/b]\n[indent]• [b]Geysire[/b] — gasförmige Ausbrüche (z. B. Stickstoffgeysire auf [url=body:triton]Triton[/url], Wasserdampf auf [url=body:enceladus]Enceladus[/url])\n• [b]Kryolavaströme[/b] — gefrorene Flüssigkeitsströme auf der Oberfläche\n• [b]Kryovulkankegel[/b] — Erhebungen wie Ahuna Mons auf [url=body:ceres]Ceres[/url][/indent]\n\n[b]Bedeutung[/b]\nKryovulkanismus kann Oberflächen verjüngen (weniger Krater → jüngeres Terrain) und ist ein Indikator für interne Wärme. Zusammen mit [url=concept:tidal_heating]Gezeitenheizung[/url] macht er eisige Monde zu potentiell habitablen Welten.\n\n[b]Nachgewiesene oder vermutete Kryovulkane[/b]\n[indent]• [url=body:enceladus]Enceladus[/url] — aktive Wassergeysire (bestätigt)\n• [url=body:triton]Triton[/url] — Stickstoffgeysire (bestätigt, Voyager 2)\n• [url=body:ceres]Ceres[/url] — Ahuna Mons (bestätigt, Dawn)\n• [url=body:pluto]Pluto[/url] — möglicher Kryovulkan (Wright Mons)\n• [url=body:orcus]Orcus[/url] — Ammoniak-Hydrate deuten auf frühere Aktivität[/indent]\n\n[b]Siehe auch[/b]\n• [url=concept:tidal_heating]Gezeitenheizung[/url]"
+    },
+    "tholins": {
+      "title": "Tholins",
+      "content": "[font_size=18][b]Tholins[/b][/font_size]\n[i]Planetologie · Astrochemie[/i]\n\n[color=#888888]────────────────────────[/color]\n\n[b]Tholins[/b] (von griech. [i]tholos[/i] = trüb, schlammig) sind komplexe organische Makromoleküle, die entstehen, wenn einfache Verbindungen wie [b]Methan (CH₄), Stickstoff (N₂) und Wasser[/b] durch ultraviolette Strahlung oder kosmische Teilchen chemisch verarbeitet werden. Sie wurden erstmals 1979 von Carl Sagan und Bishun Khare im Labor nachgewiesen.\n\n[b]Entstehung[/b]\n[indent]• UV-Photonen oder kosmische Strahlung brechen Bindungen in CH₄ und N₂\n• Die entstandenen Radikale reagieren miteinander zu immer komplexeren organischen Ketten\n• Das Ergebnis: ein rötlich-brauner, wachsartiger Feststoff[/indent]\n\n[b]Vorkommen im Sonnensystem[/b]\nTholins verleihen vielen äußeren Sonnensystemkörpern ihre charakteristische Rotfärbung:\n[indent]• [url=body:titan]Titan[/url] — dichte Tholinschicht in der Atmosphäre, Sanddünen aus Tholins\n• [url=body:pluto]Pluto[/url] — rötliche Bereiche (z. B. Tombaugh Regio Randgebiete)\n• [url=body:triton]Triton[/url] — polare Eiskappe mit Tholin-Überresten\n• [url=body:sedna]Sedna[/url], [url=body:gonggong]Gonggong[/url] — tiefrot, sehr hoher Tholinanteil\n• [url=body:makemake]Makemake[/url], [url=body:haumea]Haumea[/url] (Makulae) — organische Flecken[/indent]\n\n[b]Astrobiologische Bedeutung[/b]\nTholins können Aminosäure-Vorläufer enthalten und sind möglicherweise eine Art präbiotische Chemie — ein erster Schritt in Richtung komplexer Moleküle des Lebens.\n\n[b]Siehe auch[/b]\n• [url=concept:cryovolcanism]Kryovulkanismus[/url]"
+    },
+    "scattered_disc": {
+      "title": "Streuscheibs",
+      "content": "[font_size=18][b]Streuscheibs[/b][/font_size]\n[i]Astronomie · Sonnensystemregion[/i]\n\n[color=#888888]────────────────────────[/color]\n\nDer [b]Streuscheibs[/b] (engl. Scattered Disc) ist eine weitläufige, schwach bevölkerte Region des äußeren Sonnensystems, die sich von ~30 AU bis weit über 100 AU erstreckt. Im Gegensatz zum klassischen [url=concept:kuiper_belt]Kuipergürtel[/url] haben Streuscheibs-Objekte stark elliptische und oft stark geneigte Bahnen — ein Zeichen, dass ihre Bahnen durch gravitationale Wechselwirkung mit [url=body:neptune]Neptun[/url] in der Frühzeit des Sonnensystems \"gestreut\" wurden.\n\n[b]Entstehung[/b]\nAls sich die Riesenplaneten in der frühen Sonnensystemgeschichte nach außen wanderten (Nizza-Modell), streuten sie zahlreiche Planetesimale des Kuipergürtels auf weitreichende, exzentrische Bahnen. Diese Körper bilden den heutigen Streuscheibs.\n\n[b]Charakteristika[/b]\n[indent]• Perihelien typisch bei 30–38 AU (nahe Neptun)\n• Aphele können >100 AU erreichen\n• Starke Bahnneigungen zur Ekliptik[/indent]\n\n[b]Bekannte Objekte[/b]\n[indent]• [url=body:eris]Eris[/url] — massereichster bekannter Zwergplanet, Scattered Disc\n• [url=body:gonggong]Gonggong[/url] — großer roter Streuscheibs-Körper\n• [url=body:sedna]Sedna[/url] — gehört zur noch entfernteren Inneren Oortschen Wolke (Sonderfall)[/indent]\n\n[b]Abgrenzung[/b]\n[indent]• [b]Klassischer Kuipergürtel[/b]: ~42–48 AU, mäßige Exzentrizität, kaum durch Neptun beeinflusst\n• [b]Streuscheibs[/b]: durch Neptun gravitativ gestreut, stark exzentrische Bahnen\n• [b]Innere Oortsche Wolke[/b]: noch weiter, Perihelien >50 AU (Sedna-Objekte)[/indent]\n\n[b]Siehe auch[/b]\n• [url=concept:kuiper_belt]Kuipergürtel[/url]\n• [url=concept:orbital_resonance]Bahnresonanz[/url]"
+    },
+    "magnetosphere": {
+      "title": "Magnetosphäre",
+      "content": "[font_size=18][b]Magnetosphäre[/b][/font_size]\n[i]Physik · Planetologie[/i]\n\n[color=#888888]────────────────────────[/color]\n\nDie [b]Magnetosphäre[/b] ist der Bereich um einen Planeten oder Mond, in dem sein [b]Magnetfeld[/b] dominiert — gegenüber dem Sonnenwind und interplanetaren Feldern. Sie entsteht durch Konvektion in einem leitfähigen Kern (Dynamo-Effekt) oder durch induzierte Magnetfelder.\n\n[b]Entstehung: Der Dynamo-Effekt[/b]\nEin flüssiger, elektrisch leitfähiger Kern (Schmelze aus Eisen oder ionisiertem Wasser), der durch Rotation und Konvektion bewegt wird, erzeugt Elektrische Ströme — und damit ein Magnetfeld. Voraussetzungen: Leitfähigkeit, Bewegung, Rotation.\n\n[b]Schutzfunktion[/b]\nOhne Magnetosphäre prasseln Sonnenwind-Teilchen direkt auf die Atmosphäre und tragen diese über Millionen von Jahren ab ([url=body:mars]Mars[/url] ist ein Beispiel: kein Feld → dünne Atmosphäre). Die Erdmagnetosphäre schützt die Biosphäre und macht langfristiges Leben an der Oberfläche erst möglich.\n\n[b]Beispiele im Sonnensystem[/b]\n[indent]• [url=body:jupiter]Jupiter[/url] — stärkstes Planetenmagnetfeld, Magnetosphäre reicht bis [url=body:saturn]Saturns[/url] Bahn\n• [url=body:terra]Erde[/url] — schützt Atmosphäre und Biosphäre\n• [url=body:ganymede]Ganymed[/url] — einziger Mond mit eigenem intrinsischen Magnetfeld\n• [url=body:mercury]Merkur[/url] — schwaches Feld (~1 % der Erdstärke)\n• [url=body:venus]Venus[/url], [url=body:mars]Mars[/url] — kein oder nur induziertes Magnetfeld[/indent]\n\n[b]Magnetosphäre und Monde[/b]\nMonde innerhalb einer Planetenmagnetosphäre (wie [url=body:io]Io[/url] in Jupiters Feld) werden von intensiven Strahlungsgürteln durchdrungen, was ihre Oberflächen chemisch verändert und die Bewohnbarkeit beeinflusst.\n\n[b]Siehe auch[/b]\n• [url=concept:tidal_heating]Gezeitenheizung[/url]\n• [url=concept:habitable_zone]Habitable Zone[/url]"
     },
     "frost_line": {
       "title": "Frostlinie",

@@ -6,3 +6,6 @@ description = """\
 Seine Oberfläche ist dunkel und sehr heterogen: Glatte Ebenen wechseln sich mit rauem Terrain ab. Die aktiven Ausgasungsregionen liegen vor allem in der flachen Zentralregion. Borrelly ist bekannt für ungewöhnlich energiereiche Gasausströmungen."""
 
 [infobox.atmosphere]
+temp_mean = -43
+temp_min  = -73
+temp_max  = 75

@@ -1,11 +1,13 @@
 id = "terra"
 
 description = """\
-[b]Erde[/b] (Terra) ist der dritte Planet und das einzige bekannte Objekt im Universum, auf dem Leben existiert. Sie liegt komfortabel innerhalb der [url=concept:habitable_zone]Habitablen Zone[/url] der Sonne und besitzt flüssiges Wasser auf ihrer Oberfläche.
+[b]Erde[/b] (Terra) ist der dritte Planet und das einzige bekannte Objekt im Universum, auf dem Leben existiert. Mit einem Radius von 6.371 km und einer Masse von 5,97 × 10²⁴ kg ist sie der größte der terrestrischen Planeten. Sie liegt innerhalb der [url=concept:habitable_zone]Habitablen Zone[/url] der Sonne (~1,00 AU), und etwa 71 % ihrer Oberfläche sind von flüssigem Wasser bedeckt — dem einzigen natürlichen Vorkommen stabilen Oberflächenwassers im Sonnensystem.
 
-Ein starkes Magnetfeld schützt die Biosphäre vor dem Sonnenwind. Die Plattentektonik sorgt für einen langfristigen Kohlenstoffkreislauf, der die Temperatur über geologische Zeiträume stabilisiert.
+Ihr innerer Aufbau ist vollständig differenziert: Ein fester innerer Eisenkern (Radius ~1.220 km), umgeben von einem flüssigen äußeren Kern (~2.260 km dick), der durch Konvektionsströme die [url=concept:magnetosphere][b]Magnetosphäre[/b][/url] der Erde erzeugt. Dieses Magnetfeld (Dipolfeldstärke ~25–65 µT an der Oberfläche) schützt die Oberfläche vor dem Sonnenwind und verhindert den Verlust der Atmosphäre. Die [b]Plattentektonik[/b] — ein auf der Erde einzigartiger, vollständig aktiver Prozess unter den bekannten Planeten — reguliert über den Kohlenstoffkreislauf die Langzeit-Temperaturstabilität: CO₂ wird durch Verwitterung gebunden, in Subduktionszonen in den Mantel geführt und durch Vulkanismus zurückgegeben.
 
-Der Mond ist im Verhältnis zur Planetenmasse ungewöhnlich groß. Seine Gravitation stabilisiert die Erdachse und hat die Gezeiten geprägt — beides gilt als wichtig für die Entwicklung komplexen Lebens."""
+Die Atmosphäre (N₂ 78 %, O₂ 21 %) ist das Ergebnis von ~3,5 Milliarden Jahren biologischer Aktivität: Freier Sauerstoff ist thermodynamisch instabil und wird nur durch kontinuierliche Photosynthese aufrechterhalten. Die [b]Ozonschicht[/b] in ~15–35 km Höhe absorbiert den Großteil der UV-Strahlung der Sonne — eine Voraussetzung für Leben an der Landoberfläche. Die Erde ist mit ~8,7 Millionen bekannten Arten die biologisch vielfältigste bekannte Welt.
+
+Der [b]Mond[/b] mit einem Radius von 1.737 km ist im Verhältnis zur Planetenmasse ungewöhnlich groß. Seine Gravitation stabilisiert die Erdachse bei ~23,5° Neigung und verhindert chaotische Taumelbewegungen über geologische Zeiträume. Die Gezeiten haben die frühe Erdrotation über Milliarden Jahre von ~6 auf heute 24 Stunden verlangsamt und spielten möglicherweise eine Rolle bei der Entstehung des Lebens."""
 
 [infobox.atmosphere]
 pressure  = 1.013

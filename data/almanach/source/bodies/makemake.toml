@@ -1,10 +1,15 @@
 id = "makemake"
 
 description = """\
-[b]Makemake[/b] ist ein Zwergplanet im [url=concept:kuiper_belt]Kuipergürtel[/url] und nach der Schöpfergottheit der Rapa-Nui-Kultur der Osterinsel benannt. Er wurde 2005 entdeckt und ist nach Pluto das zweithellste transneptunische Objekt.
+[b]Makemake[/b] ist ein Zwergplanet im [url=concept:kuiper_belt]Kuipergürtel[/url] mit einem Radius von ~715 km, entdeckt am 31. März 2005 von Michael Brown, Chad Trujillo und David Rabinowitz am Palomar-Observatorium — wenige Monate nach [url=body:eris]Eris[/url] und kurz nach Ostern, weshalb er intern zunächst "Easterbunny" genannt wurde. Er ist nach [b]Make-make[/b], der Schöpfergottheit der Rapa-Nui-Kultur der Osterinsel, benannt. Mit einer Albedo von ~0,81 ist er nach Pluto das zweithellste bekannte transneptunische Objekt.
 
-Seine rötlich-braune Oberfläche deutet auf organische Verbindungen (Tholins) hin, die durch UV-Bestrahlung aus Methan entstehen. Er besitzt eine extrem dünne oder keine permanente Atmosphäre.
+Die Oberfläche zeigt Spektren von festem Methaneis und Ethan, was auf eine aktive photochemische Oberflächenchemie hindeutet: UV-Strahlung wandelt Methan in komplexe organische Verbindungen ([url=concept:tholins]Tholins[/url]) um — diese verleihen der Oberfläche die rötlich-braune Färbung. Makemake hat keine permanente globale Atmosphäre: Eine Sternbedeckungsbeobachtung von 2011 zeigte keine atmosphärische Ablenkung des Sternlichts an mehreren Messpunkten — es kann allenfalls eine lokale, dünne Sublimationsatmosphäre über sonnenbeschienenen Bereichen geben.
 
-Ein kleiner, dunkler Mond wurde 2016 entdeckt — was darauf hindeutet, dass Makemake keine globale Atmosphäre haben kann, da ein so dunkler Körper sonst durch atmosphärische Abbremsung abgesunken wäre."""
+Der einzige bekannte Mond, [url=body:mk2]MK2[/url], wurde 2016 mit dem Hubble-Weltraumteleskop entdeckt. Er ist auffällig dunkel (Albedo ~0,04) — ein extremer Kontrast zur hellen Oberfläche Makemakes. Dies schließt eine globale Atmosphäre nahezu aus: Wäre eine solche vorhanden, würde atmosphärische Abbremsung den Mond auf eine enge, kreisförmige Bahn zwingen, was nicht beobachtet wird.
+
+Makemake umrundet die Sonne in ~309 Jahren aus einem mittleren Abstand von ~45,8 AU auf einer mäßig exzentrischen Bahn (Exzentrizität 0,16). Mit einem Neigungswinkel von ~29° zur Ekliptik gehört er zum klassischen [url=concept:kuiper_belt]Kuipergürtel[/url]. Kein Raumfahrzeug hat Makemake bisher besucht oder ist dafür in Planung."""
 
 [infobox.atmosphere]
+temp_mean = -239
+temp_min  = -243
+temp_max  = -213

@@ -1,10 +1,18 @@
 id = "europa"
 
 description = """\
-[b]Europa[/b] ist der kleinste der vier Galileischen Monde des [url=body:jupiter]Jupiter[/url] und gilt als einer der vielversprechendsten Orte für außerirdisches Leben im Sonnensystem.
+[b]Europa[/b] ist der kleinste der vier Galileischen Monde des [url=body:jupiter]Jupiter[/url] mit einem Radius von 1.561 km und gilt als einer der vielversprechendsten Orte für außerirdisches Leben im Sonnensystem. Unter einer ~10–30 km dicken Eisschicht verbirgt sich ein globaler Salzwasserozean: Mit einer geschätzten Tiefe von ~100 km enthält er mehr flüssiges Wasser als alle Ozeane der Erde zusammen. [url=concept:tidal_heating]Gezeitenheizung[/url] durch die [url=concept:orbital_resonance]Laplace-Resonanz[/url] mit Io und Ganymed hält diesen Ozean dauerhaft flüssig.
 
-Unter einer ~10–30 km dicken Eisschicht verbirgt sich ein globaler Salzwasserozean mit möglicherweise mehr Wasser als alle Ozeane der Erde zusammen. Die Gezeitenheizung durch Jupiters Gravitation hält diesen Ozean flüssig. Geysire aus Wasserdampf wurden über Europas Südpol beobachtet.
+Die Eisoberfläche ist geologisch jung (schätzungsweise nur 20–180 Millionen Jahre) und zeigt eine charakteristische Struktur: [b]Lineae[/b] (dunkle Risslinien, teilweise tausende Kilometer lang), [b]Lenticulae[/b] (linsenförmige Erhebungen aus aufgewölbtem Eis) und [b]Chaos-Regionen[/b] (wo die Eisschicht gebrochen und neu gefroren ist). Diese Merkmale belegen aktive Kryotektonik — das Eis wird durch den darunter liegenden Ozean ständig in Bewegung gehalten. Europas Oberfläche ist das glatteste Objekt im Sonnensystem; Erhebungen und Vertiefungen erreichen selten mehr als ein paar hundert Meter.
 
-Die Eisoberfläche ist mit linearen Rissen und Verwerfungen überzogen — ein Zeichen aktiver Kryotektonik. Die NASA-Mission Europa Clipper soll ab 2030 genauer untersuchen, ob dieser Ozean lebensfreundlich ist."""
+Hubble beobachtete 2012 und 2016 Wasserdampfgeysire über dem Südpol — ein Zeichen, dass Ozeanwasser möglicherweise bis an die Oberfläche gelangt. Die magnetischen Messungen der Galileo-Sonde bestätigten durch induzierte Magnetfeldvariationen das Vorhandensein eines leitenden Ozeans. Spektroskopische Daten zeigen Magnesiumsulfate und möglicherweise Natriumchlorid auf der Eisoberfläche — Salze, die aus dem Inneren des Ozeans stammen könnten.
+
+Die NASA-Mission [b]Europa Clipper[/b] startete im Oktober 2024 und wird ab ~2030 in knapp 50 Nahe-Vorbeiflügen die Eisdicke, Zusammensetzung des Ozeans und potentielle Habitats untersuchen. Die ESA-Sonde [b]JUICE[/b] wird Europa 2031 einmalig aus nächster Nähe passieren, bevor sie in eine Ganymed-Umlaufbahn eintritt."""
 
 [infobox.atmosphere]
+temp_mean = -171
+temp_min  = -220
+temp_max  = -148
+
+[infobox.atmosphere.composition]
+"Sauerstoff (O₂)" = 100.0

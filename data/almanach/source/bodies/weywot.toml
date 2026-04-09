@@ -8,3 +8,6 @@ Er wurde 2006 entdeckt und umkreist Quaoar in ~12.44 Tagen aus ~14.500 km Entfer
 Weywot hat einen Radius von ~87 km. Sein Verhältnis zu Quaoar ähnelt eher dem eines kleinen irregulären Trabanten als einem ausgeprägten Doppelsystem."""
 
 [infobox.atmosphere]
+temp_mean = -220
+temp_min  = -230
+temp_max  = -197

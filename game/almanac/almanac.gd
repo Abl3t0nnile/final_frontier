@@ -18,25 +18,6 @@ var _concepts: Dictionary = {}
 # Prefabs
 const _UNIT_VALUE_DISPLAY = preload("res://ui/components/UnitValueDisplay.tscn")
 
-# Planeten-Texturen (sync mit InfoPanel)
-const _TEXTURE_BASE := "res://assets/textures/planets/16_levels/"
-const _BODY_TEXTURES: Dictionary = {
-	"sun":      { "surface": "2k_sun.png" },
-	"mercury":  { "surface": "2k_mercury.png" },
-	"venus":    { "surface": "black_surface.png", "cloud": "2k_venus_atmosphere.png" },
-	"terra":    { "surface": "2k_earth_daymap.png", "cloud": "2k_earth_clouds.png" },
-	"mars":     { "surface": "2k_mars.png" },
-	"jupiter":  { "surface": "black_surface.png", "cloud": "2k_jupiter.png" },
-	"saturn":   { "surface": "black_surface.png", "cloud": "2k_saturn.png" },
-	"uranus":   { "surface": "black_surface.png", "cloud": "2k_uranus.png" },
-	"neptune":  { "surface": "black_surface.png", "cloud": "2k_neptune.png" },
-	"moon":     { "surface": "2k_moon.png" },
-	"ceres":    { "surface": "2k_ceres.png" },
-	"eris":     { "surface": "2k_eris.png" },
-	"haumea":   { "surface": "2k_haumea.png" },
-	"makemake": { "surface": "2k_makemake.png" },
-	"pluto":    { "surface": "2k_pluto.png" },
-}
 
 # Node References
 @onready var _home_btn: Button        = $VBox/Header/HomeBtn
@@ -44,18 +25,18 @@ const _BODY_TEXTURES: Dictionary = {
 @onready var _fwd_btn: Button         = $VBox/Header/ForwardButton
 @onready var _zoom_btn: Button        = $VBox/Header/ZoomButton
 @onready var _title_label: Label      = $VBox/Header/TitleLabel
-@onready var _article_title: Label    = $VBox/ContentBox/Article/Header/TitleLabel
-@onready var _summary_text: RichTextLabel = $VBox/ContentBox/Article/Overview/SummaryText
-@onready var _hero_container: Control = $VBox/ContentBox/Article/Overview/Panel/Hero
-@onready var _overview_panel: VBoxContainer = $VBox/ContentBox/Article/Overview/Panel
+@onready var _article_title: Label    = $VBox/Article/Header/TitleLabel
+@onready var _summary_text: RichTextLabel = $VBox/Article/ContentBox/Overview/SummaryText
+@onready var _hero_container: Control = $VBox/Article/ContentBox/Overview/Panel/Hero
+@onready var _overview_panel: VBoxContainer = $VBox/Article/ContentBox/Overview/Panel
 
 # Data Panels (FoldableContainer – als Control typisiert)
-@onready var _orbit_data: Control   = $VBox/ContentBox/Article/Overview/Panel/OrbitData
-@onready var _physics_data: Control = $VBox/ContentBox/Article/Overview/Panel/PhysicsData
-@onready var _atmo_data: Control    = $VBox/ContentBox/Article/Overview/Panel/AthmoData
+@onready var _orbit_data: Control   = $VBox/Article/ContentBox/Overview/Panel/OrbitData
+@onready var _physics_data: Control = $VBox/Article/ContentBox/Overview/Panel/PhysicsData
+@onready var _atmo_data: Control    = $VBox/Article/ContentBox/Overview/Panel/AthmoData
 
 # Section Container (nach Overview)
-@onready var _article: VBoxContainer = $VBox/ContentBox/Article
+@onready var _article: VBoxContainer = $VBox/Article
 
 # Hero-Image (TextureRect inside MarginContainer %Hero)
 var _hero_image: TextureRect
@@ -146,7 +127,7 @@ func _update_nav_buttons() -> void:
 
 func _display_article(article_id: String) -> void:
 	# ScrollContainer zurücksetzen
-	($VBox/ContentBox as ScrollContainer).scroll_vertical = 0
+	($VBox/Article/ContentBox as ScrollContainer).scroll_vertical = 0
 
 	match article_id:
 		"home":
@@ -495,8 +476,8 @@ func _clear_article_content() -> void:
 
 
 func _clear_sections() -> void:
-	# Statische Kinder: Header (0) + Overview (1) – alles danach sind Sections
-	const STATIC_CHILDREN := 2
+	# Statische Kinder: Header (0) + HSeparator (1) + ContentBox (2) – alles danach sind Sections
+	const STATIC_CHILDREN := 3
 	while _article.get_child_count() > STATIC_CHILDREN:
 		_article.get_child(STATIC_CHILDREN).queue_free()
 
@@ -521,12 +502,10 @@ func _on_link_clicked(meta: Variant) -> void:
 
 
 func _get_hero_texture(body_id: String, content: AlmanachContentComponent) -> Texture2D:
-	# 1. Planeten-Textur aus _BODY_TEXTURES (wie InfoPanel)
-	var entry: Dictionary = _BODY_TEXTURES.get(body_id, {})
-	if not entry.is_empty():
-		var surface_path: String = _TEXTURE_BASE + (entry.get("surface", "") as String)
-		if ResourceLoader.exists(surface_path):
-			return load(surface_path) as Texture2D
+	# 1. Planeten-Textur aus BodyTextures Autoload
+	var tex := BodyTextures.load_surface(body_id)
+	if tex:
+		return tex
 	# 2. Fallback: Hero-Bild aus AlmanachContent
 	if content and not content.image.is_empty() and ResourceLoader.exists(content.image):
 		return load(content.image) as Texture2D

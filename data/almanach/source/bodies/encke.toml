@@ -6,3 +6,6 @@ description = """\
 Encke ist die Quelle des Tauriden-Meteorschauers. Sein Kern ist mit ~4,8 km Durchmesser für einen regelmäßig aktiven Kometen ungewöhnlich groß. Ob Encke einst ein größerer Körper war, der durch Fragmentation entstand, wird diskutiert."""
 
 [infobox.atmosphere]
+temp_mean = -50
+temp_min  = -70
+temp_max  = 55

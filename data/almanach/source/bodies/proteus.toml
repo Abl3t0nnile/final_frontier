@@ -6,3 +6,6 @@ description = """\
 Proteus liegt innerhalb der Bahn von [url=body:triton]Triton[/url] und ist nach dem Meeresgott der griechischen Mythologie benannt. Seine Oberfläche ist stark kraternarbt."""
 
 [infobox.atmosphere]
+temp_mean = -220
+temp_min  = -230
+temp_max  = -200

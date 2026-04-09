@@ -6,3 +6,6 @@ description = """\
 Ihre Oberfläche zeigt eine Mischung aus alten Kratern und jüngeren Canyons und Gräben — Hinweise auf innere Aktivität nach der Entstehung. Titania besteht aus etwa gleichen Teilen Wassereis und felsigem Material und hat möglicherweise einen flüssigen Ozean in der Vergangenheit besessen."""
 
 [infobox.atmosphere]
+temp_mean = -203
+temp_min  = -213
+temp_max  = -183

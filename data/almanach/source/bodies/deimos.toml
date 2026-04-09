@@ -8,3 +8,6 @@ Im Gegensatz zu [url=body:phobos]Phobos[/url] entfernt sich Deimos langsam von M
 Seine Oberfläche ist glatter als die von Phobos, bedeckt von feinem Regolith, der die Krater teilweise auffüllt."""
 
 [infobox.atmosphere]
+temp_mean = -40
+temp_min  = -110
+temp_max  = -5

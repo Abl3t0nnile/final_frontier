@@ -6,3 +6,6 @@ description = """\
 Die Stardust-NExT-Mission fotografierte 2011 denselben Kometen und zeigte den durch den Einschlag entstandenen Krater. Tempel 1 verliert pro Umlauf Schichten seiner Oberfläche durch Sublimation."""
 
 [infobox.atmosphere]
+temp_mean = -53
+temp_min  = -80
+temp_max  = 27

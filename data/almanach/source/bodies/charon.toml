@@ -8,3 +8,6 @@ Pluto und Charon bilden ein echtes Doppelsystem: Ihr gemeinsamer Schwerpunkt (Ba
 New Horizons zeigte 2015 eine vielfältige Oberfläche mit einem rötlichen Nordpolgebiet (Mordor Macula), das durch von Pluto übergeströmtes Methan entsteht, welches durch UV-Strahlung zu Tholins wird."""
 
 [infobox.atmosphere]
+temp_mean = -220
+temp_min  = -230
+temp_max  = -210

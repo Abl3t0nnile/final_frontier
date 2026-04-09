@@ -6,3 +6,6 @@ description = """\
 Seine Bahn liegt weit außerhalb der Galileischen Monde in ~11 Millionen km Abstand. Er ist wahrscheinlich ein eingefangener Asteroid vom C- oder D-Typ."""
 
 [infobox.atmosphere]
+temp_mean = -163
+temp_min  = -173
+temp_max  = -133

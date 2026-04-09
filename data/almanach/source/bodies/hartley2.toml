@@ -6,3 +6,6 @@ description = """\
 Hartley 2 zeigte eine ungewöhnlich hohe Aktivität: CO₂ treibt Ausgasungen an seinen Enden an, während Wasser aus der Mitte strömt. Dies macht ihn zu einem der wissenschaftlich wertvollsten kleinen Kometen."""
 
 [infobox.atmosphere]
+temp_mean = -60
+temp_min  = -80
+temp_max  = 52

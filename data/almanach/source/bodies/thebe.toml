@@ -6,3 +6,6 @@ description = """\
 Thebe befindet sich zwischen den Bahnen von [url=body:amalthea]Amalthea[/url] und [url=body:io]Io[/url] und trägt Material zum äußeren Rand von Jupiters Gossamer-Ringsystem bei. Wie Amalthea ist er in gebundener Rotation und hat eine dunkel-rote Oberfläche."""
 
 [infobox.atmosphere]
+temp_mean = -163
+temp_min  = -180
+temp_max  = -108

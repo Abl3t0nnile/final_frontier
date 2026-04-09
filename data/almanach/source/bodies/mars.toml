@@ -1,10 +1,23 @@
 id = "mars"
 
 description = """\
-[b]Mars[/b] ist der vierte Planet und der äußerste der terrestrischen Planeten. Mit einem Radius von nur etwa der Hälfte der Erde und einem Zehntel ihrer Masse konnte er keine dichte Atmosphäre halten — der Luftdruck auf der Oberfläche beträgt weniger als 1 % des irdischen.
+[b]Mars[/b] ist der vierte Planet und der äußerste der terrestrischen Planeten mit einem Radius von 3.390 km und einer Masse von 6,4 × 10²³ kg (ca. 10 % der Erdmasse). Ein Marstag dauert 24 Stunden 37 Minuten — dem Erdtag täuschend ähnlich. Ein Marsjahr hingegen entspricht ~687 Erdtagen. Seine Achsenneigung von 25,2° erzeugt ausgeprägte Jahreszeiten; die polaren Eiskappen bestehen aus gefrorenem CO₂ und darunter liegendem Wassereis.
 
-Dennoch zeigt Mars deutliche Spuren einer aktiveren Vergangenheit: Trockene Flusstäler, polare Eiskappen und der Olympus Mons — der größte Vulkan im Sonnensystem mit ~22 km Höhe — zeugen von früherer geologischer und möglicherweise hydrologischer Aktivität.
+Die dünnste Atmosphäre aller terrestrischen Planeten (0,006 bar, 95 % CO₂) reicht aus, um globale Staubstürme zu erzeugen, die manchmal monatelang den gesamten Planeten einhüllen. Ohne Magnetfeld und mit dünner Atmosphäre ist die Marsoberfläche durchgehend UV-Strahlung und kosmischer Strahlung ausgesetzt — ein wesentliches Hindernis für potentielles Leben an der Oberfläche.
 
-Mars liegt am äußeren Rand der [url=concept:habitable_zone]Habitablen Zone[/url]. Seine beiden kleinen Monde Phobos und Deimos sind vermutlich eingefangene Asteroiden."""
+Die Topographie ist extrem: [b]Olympus Mons[/b] (~21 km Höhe, ~600 km Basisdurchmesser) ist der größte Vulkan im Sonnensystem. [b]Valles Marineris[/b] — ein Canyonsystem von ~4.000 km Länge, bis zu 7 km Tiefe und 200 km Breite — wäre auf der Erde eine Wunde vom Atlantik bis zum Pazifik. Beide Strukturen belegen, dass Mars ohne Plattentektonik auskam: Der Mantel blieb stationär über denselben Hotspots.
+
+Flüssiges Wasser floss einst an der Marsoberfläche — erodierende Täler und Deltafächer sind der Beweis. Heute ist Wasser nur als Eis erhalten (Pole, Permafrost) oder tief unterirdisch. Der Mars-Rover Perseverance sammelt seit 2021 Gesteinsproben im Jezero-Krater, einem vormaligen Seebecken. Ingenuity absolvierte dort die ersten kontrollierten Flüge in einer anderen Planetary-Atmosphäre. Die Rücksendung dieser Proben zur Erde (Mars Sample Return) ist für die 2030er Jahre geplant."""
 
 [infobox.atmosphere]
+pressure  = 0.006
+temp_mean = -63
+temp_min  = -125
+temp_max  = 20
+
+[infobox.atmosphere.composition]
+"Kohlenstoffdioxid (CO₂)" = 95.32
+"Stickstoff (N₂)"         = 2.6
+"Argon (Ar)"              = 1.9
+"Sauerstoff (O₂)"         = 0.13
+"Kohlenmonoxid (CO)"       = 0.07

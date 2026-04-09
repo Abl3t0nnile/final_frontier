@@ -8,3 +8,6 @@ Sein Kern hat eine ungewöhnliche Hantelform (~4 × 2,5 km) aus zwei Lappen — 
 Rosetta lieferte Details über die Zusammensetzung des Kometen: Wassereis, organische Moleküle und schwere Edelgase geben Einblick in die Ur-Zusammensetzung des Sonnensystems."""
 
 [infobox.atmosphere]
+temp_mean = -70
+temp_min  = -130
+temp_max  = 70

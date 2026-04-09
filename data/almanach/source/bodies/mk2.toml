@@ -8,3 +8,6 @@ Er ist bemerkenswert dunkel mit einer Albedo von nur ~0,04 — viel dunkler als 
 Mit einem Radius von ~87 km umkreist er Makemake in ~12.4 Tagen auf einer geneigten Bahn."""
 
 [infobox.atmosphere]
+temp_mean = -239
+temp_min  = -243
+temp_max  = -213

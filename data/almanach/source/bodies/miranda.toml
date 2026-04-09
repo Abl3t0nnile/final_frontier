@@ -6,3 +6,6 @@ description = """\
 Die ungewöhnliche Oberfläche deutet auf frühere tektonische Aktivität oder mehrere Einschläge und Neuformierungen hin. Miranda wurde 1948 von Gerard Kuiper entdeckt."""
 
 [infobox.atmosphere]
+temp_mean = -213
+temp_min  = -223
+temp_max  = -193

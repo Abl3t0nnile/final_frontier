@@ -1,10 +1,21 @@
 id = "jupiter"
 
 description = """\
-[b]Jupiter[/b] ist mit Abstand der massereichste Planet des Sonnensystems — über zweieinhalbmal so schwer wie alle anderen Planeten zusammen. Er ist ein Gasriese ohne feste Oberfläche: Nach außen hin geht die Gashülle aus Wasserstoff und Helium kontinuierlich in tiefere Schichten über.
+[b]Jupiter[/b] ist mit einem Radius von 69.911 km und einer Masse von 1,898 × 10²⁷ kg der massereichste Planet des Sonnensystems — über zweieinhalbmal schwerer als alle anderen Planeten zusammen. Wäre Jupiter ~75-mal massereicher, würde im Kern Fusionsdruck entstehen und er wäre ein Stern. Er besitzt keine feste Oberfläche; mit zunehmender Tiefe steigen Druck und Temperatur stetig, bis Wasserstoff in einen metallischen, elektrisch leitenden Zustand übergeht — der [b]metallische Wasserstoff[/b]-Kern beginnt bei etwa 1 Million bar. Ein Jupitertag dauert nur 9 Stunden 55 Minuten — so schnell, dass der Planet merklich abgeplattet ist (Äquatorialradius ~7 % größer als Polarradius).
 
-Sein bekanntestes Merkmal ist der [b]Große Rote Fleck[/b] — ein antizykloales Sturmsystem, das seit Jahrhunderten beobachtet wird und größer als die Erde ist.
+Das bekannteste Merkmal ist der [b]Große Rote Fleck[/b] — ein antizykloanes Sturmsystem mit Windgeschwindigkeiten von über 400 km/h. Er wird seit mindestens 1830 beobachtet und war einst größer als zwei Erddurchmesser; heute hat er sich auf etwa einen Erddurchmesser verkleinert. Jupiter zeigt parallele Wolkenbänder (Zonen und Gürtel) aus Ammoniak- und Ammoniakhydridsulfidwolken, die durch die rasche Rotation des Planeten geformt werden.
 
-Jupiter fungiert als gravitativer Wächter des inneren Sonnensystems: Er lenkt oder fängt viele Kometen ab, die andernfalls die inneren Planeten treffen würden. Er verhinderte zudem die Entstehung eines weiteren Planeten im [url=concept:asteroid_belt]Asteroidengürtel[/url]."""
+Jupiter besitzt die stärkste [url=concept:magnetosphere]Magnetosphäre[/url] im Sonnensystem — ~20.000-mal stärker als das Erdfeld. Es erzeugt eine gewaltige Magnetosphäre, die den Jupitermond Io einschließt und dabei einen intensiven Strahlungsgürtel produziert, der Raumsonde-Elektronik schädigt. 95 bekannte Monde umkreisen Jupiter (Stand 2024), darunter die vier großen Galileischen Monde. Der NASA-Orbiter [b]Juno[/b] untersucht seit 2016 Jupiters innere Struktur, Magnetfeld und Polararauren in bisher unerreichter Detailtiefe.
+
+Jupiter fungiert als gravitativer Wächter des inneren Sonnensystems: Durch seine enorme Masse fängt oder lenkt er Kometen und Asteroiden ab, die andernfalls die inneren Planeten häufiger treffen würden. Gleichzeitig verhinderte seine frühe Gravitation die Akkretion von Planetesimalen im heutigen [url=concept:asteroid_belt]Asteroidengürtel[/url] — weshalb zwischen Mars und Jupiter kein vollständiger Planet entstand."""
 
 [infobox.atmosphere]
+pressure  = 1.0
+temp_mean = -108
+temp_min  = -145
+
+[infobox.atmosphere.composition]
+"Wasserstoff (H₂)" = 89.8
+"Helium (He)"      = 10.2
+"Methan (CH₄)"     = 0.3
+"Ammoniak (NH₃)"   = 0.026

@@ -6,3 +6,6 @@ description = """\
 Er ist nach einem Sylph in Alexander Popes "Der Lockenraub" benannt. Ariel besteht aus einer Mischung aus Wassereis und dunklem Gestein und wurde 1851 von William Lassell entdeckt."""
 
 [infobox.atmosphere]
+temp_mean = -210
+temp_min  = -223
+temp_max  = -183

@@ -8,3 +8,6 @@ Er umkreist Eris in ~15.786 Tagen auf einer nahezu kreisförmigen Bahn. Die Anal
 Dysnomia ist wahrscheinlich das Ergebnis einer Kollision in der frühen Geschichte des Eris-Systems."""
 
 [infobox.atmosphere]
+temp_mean = -231
+temp_min  = -243
+temp_max  = -213

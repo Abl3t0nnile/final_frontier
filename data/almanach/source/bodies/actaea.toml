@@ -8,3 +8,6 @@ Er wurde 2006 entdeckt und bildet mit Salacia ein enges Binärsystem: Er umkreis
 Actaea hat einen Radius von ~136 km und ist damit im Verhältnis zu Salacia relativ groß — das Paar gilt als eines der ausgewogeneren Binärsysteme im Kuipergürtel."""
 
 [infobox.atmosphere]
+temp_mean = -221
+temp_min  = -231
+temp_max  = -209

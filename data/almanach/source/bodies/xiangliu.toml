@@ -8,3 +8,6 @@ Er wurde 2016 mit dem Hubble-Weltraumteleskop entdeckt. Mit einem geschätzten R
 Die Entdeckung von Xiangliu unterstützte die Einschätzung, dass Gonggong groß genug sein könnte, um als Zwergplanet zu gelten."""
 
 [infobox.atmosphere]
+temp_mean = -230
+temp_min  = -240
+temp_max  = -220

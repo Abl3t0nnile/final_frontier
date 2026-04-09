@@ -6,3 +6,6 @@ description = """\
 Er wurde 1949 von Gerard Kuiper entdeckt und ist nach den Nymphen des Meeres in der griechischen Mythologie benannt. Seine hohe Exzentrizität deutet darauf hin, dass seine Bahn durch den Einfang von [url=body:triton]Triton[/url] stark gestört wurde."""
 
 [infobox.atmosphere]
+temp_mean = -220
+temp_min  = -230
+temp_max  = -200
