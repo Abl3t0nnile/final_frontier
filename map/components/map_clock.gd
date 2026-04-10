@@ -5,9 +5,24 @@
 class_name MapClock
 extends Node
 
+# Zeit-Skala Presets — zentrale Quelle für alle Systeme
+const TIME_SCALE_PRESETS: Array[float] = [
+	1.0,          # 1 Sek
+	3600.0,       # 1 Stunde
+	86400.0,      # 1 Tag
+	518400.0,     # 6 Tage
+	2592000.0,    # 30 Tage
+	7776000.0,    # 90 Tage
+	15552000.0,   # 180 Tage
+	31104000.0,   # 360 Tage
+	155520000.0,  # 1800 Tage
+	311040000.0,  # 3600 Tage
+]
+
 # Internal state
 var _current_time: float = 0.0
-var _time_scale: float = 86400.0   # sim-seconds per real-second
+var _time_scale: float = 86400.0   # sim-seconds per real-second (default: 1 Tag)
+var _time_scale_index: int = 2     # Index in TIME_SCALE_PRESETS (default: 1 Tag)
 var _running: bool = false
 var _reversed: bool = false
 var _live: bool = false
@@ -55,6 +70,19 @@ func set_time_scale(scale: float) -> void:
 		exit_live_mode()
 	_time_scale = scale
 
+func set_time_scale_index(index: int) -> void:
+	"""Setzt Zeit-Skala anhand des Preset-Index"""
+	_time_scale_index = clampi(index, 0, TIME_SCALE_PRESETS.size() - 1)
+	set_time_scale(TIME_SCALE_PRESETS[_time_scale_index])
+
+func step_time_scale_up() -> void:
+	"""Schaltet zur nächst schnelleren Zeit-Skala"""
+	set_time_scale_index(_time_scale_index + 1)
+
+func step_time_scale_down() -> void:
+	"""Schaltet zur nächst langsameren Zeit-Skala"""
+	set_time_scale_index(_time_scale_index - 1)
+
 func get_current_time() -> float:
 	"""Current displayed time"""
 	return _current_time
@@ -77,6 +105,10 @@ func exit_live_mode() -> void:
 func is_live() -> bool:
 	"""Query current mode"""
 	return _live
+
+func is_running() -> bool:
+	"""Gibt true zurück wenn der Clock aktiv tickt (play oder reverse)"""
+	return _running
 
 # Internal processing
 func _physics_process(delta: float) -> void:

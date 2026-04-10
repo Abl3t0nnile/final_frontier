@@ -31,6 +31,7 @@ enum ViewMode { MAP, PLANET_VIEW }
 var _view_mode: ViewMode = ViewMode.MAP
 
 
+
 ## Von GameController aufgerufen sobald SolarMap bereit ist.
 func receive_solar_map(map: Node) -> void:
 	_solar_map = map
@@ -135,6 +136,21 @@ func close_overlay() -> void:
 			_set_info_panel_visible(true)
 
 
+func toggle_planet_view() -> void:
+	if _view_mode == ViewMode.PLANET_VIEW:
+		_on_close_planet_view()
+	elif not _current_body_id.is_empty() and _planet_view != null:
+		_on_zoom_requested(_current_body_id)
+
+
+func toggle_time() -> void:
+	var clock: MapClock = _solar_map.get_map_clock()
+	if clock.is_live() or clock.is_running():
+		clock.pause()
+	else:
+		clock.play()
+
+
 # ── Body-Selektion ─────────────────────────────────────────────────────────────
 
 func _on_nav_body_focused(id: String) -> void:
@@ -210,12 +226,31 @@ func _on_viewport_resized() -> void:
 # ── Input ──────────────────────────────────────────────────────────────────────
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and not event.echo:
-		if event.keycode == KEY_ESCAPE:
-			close_overlay()
-		if event.keycode == KEY_N:
-			toggle_nav_panel()
-		if event.keycode == KEY_I and _map_view.visible:
-			toggle_info_panel()
-		if event.keycode == KEY_L:
-			toggle_almanac()
+	if not (event is InputEventKey and event.pressed and not event.echo):
+		return
+	if event.is_action_pressed("ui_close_overlay"):
+		close_overlay()
+	elif event.is_action_pressed("ui_toggle_nav"):
+		toggle_nav_panel()
+	elif event.is_action_pressed("ui_toggle_info") and _view_mode == ViewMode.MAP:
+		toggle_info_panel()
+	elif event.is_action_pressed("ui_toggle_almanac"):
+		toggle_almanac()
+	elif event.is_action_pressed("ui_toggle_planet_view"):
+		toggle_planet_view()
+	elif event.is_action_pressed("time_play_pause"):
+		toggle_time()
+	elif event.is_action_pressed("time_forward"):
+		_solar_map.get_map_clock().play()
+	elif event.is_action_pressed("time_backward"):
+		_solar_map.get_map_clock().reverse()
+	elif event.is_action_pressed("time_scale_up"):
+		_solar_map.get_map_clock().step_time_scale_up()
+	elif event.is_action_pressed("time_scale_down"):
+		_solar_map.get_map_clock().step_time_scale_down()
+	else:
+		var clock: MapClock = _solar_map.get_map_clock()
+		for i in range(5):
+			if event.is_action_pressed("time_scale_%d" % (i + 1)):
+				clock.set_time_scale_index(i)
+				return

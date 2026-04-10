@@ -88,7 +88,7 @@ func clear_all_pins() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if not (event is InputEventKey and event.pressed and not event.echo):
 		return
-	if (event as InputEventKey).keycode != KEY_P:
+	if not event.is_action_pressed("entity_pin"):
 		return
 	if _selected_id != "":
 		if is_pinned(_selected_id):

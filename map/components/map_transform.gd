@@ -146,21 +146,15 @@ func _input(event: InputEvent) -> void:
 
 ## _unhandled_input: Preset-Keys (1-5 für die 5 Presets)
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and not event.echo:
-		var key := event as InputEventKey
-		var preset_index := -1
-		match key.keycode:
-			KEY_6: preset_index = 0
-			KEY_7: preset_index = 1
-			KEY_8: preset_index = 2
-			KEY_9: preset_index = 3
-			KEY_0: preset_index = 4
-		if preset_index >= 0 and preset_index < scale_presets.size():
-			var target_exp := scale_presets[preset_index]
-			zoom_exp = target_exp
+	if not (event is InputEventKey and event.pressed and not event.echo):
+		return
+	for i in range(scale_presets.size()):
+		if event.is_action_pressed("cam_zoom_preset_%d" % (i + 1)):
+			zoom_exp = scale_presets[i]
 			km_per_px = pow(10.0, zoom_exp)
 			zoom_changed.emit(km_per_px)
 			get_viewport().set_input_as_handled()
+			return
 
 ## Zoom-at-Cursor Logik
 func _zoom_at(screen_pos: Vector2, direction: int) -> void:
