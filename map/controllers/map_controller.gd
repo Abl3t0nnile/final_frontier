@@ -105,6 +105,8 @@ func setup(model: SolarSystemModel, clock: SimClock, registry: GameObjectRegistr
 	add_child(_map_clock)
 	_map_clock.tick.connect(_on_map_time_updated)
 	_map_clock.time_changed.connect(_on_map_time_updated)
+	# MapClock ist die einzige Taktquelle im Map-View — GameClock trennen
+	_model.set_game_clock_enabled(false)
 
 	# MapTransform
 	_map_transform = MapTransform.new()

@@ -23,9 +23,12 @@ const _BASE := "UILayer/MainDisplay/VFrame/BodyPanel"
 @onready var _planet_view_overlay = $"UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay"
 @onready var _almanach_panel: Almanac = $"UILayer/MainDisplay/VFrame/BodyPanel/Almanac"
 
-var _solar_map:        Node   = null
-var _planet_view:      Node   = null
-var _current_body_id:  String = ""
+var _solar_map:       Node   = null
+var _planet_view:     Node   = null
+var _current_body_id: String = ""
+
+enum ViewMode { MAP, PLANET_VIEW }
+var _view_mode: ViewMode = ViewMode.MAP
 
 
 ## Von GameController aufgerufen sobald SolarMap bereit ist.
@@ -56,7 +59,7 @@ func receive_solar_map(map: Node) -> void:
 		if id == _current_body_id:
 			_info_panel.set_pinned(false))
 	_planet_view_overlay.setup(map)
-	_planet_view_overlay.close_requested.connect(_close_zoom)
+	_planet_view_overlay.close_requested.connect(_on_close_planet_view)
 	_planet_view_overlay.info_requested.connect(_on_planet_view_info_requested)
 
 
@@ -68,6 +71,70 @@ func receive_planet_view(planet_view: Node) -> void:
 	_body_view.visible = false
 
 
+# ── Panel-Regeln ───────────────────────────────────────────────────────────────
+
+func _set_view(mode: ViewMode) -> void:
+	_view_mode = mode
+	_map_view.visible            = (mode == ViewMode.MAP)
+	_body_view.visible           = (mode == ViewMode.PLANET_VIEW)
+	_planet_view_overlay.visible = (mode == ViewMode.PLANET_VIEW)
+	if mode == ViewMode.PLANET_VIEW:
+		_nav_panel.visible = false  # Regel: Nav nie in Planet View
+
+
+func _set_info_panel_visible(show: bool) -> void:
+	if show and _almanach_panel and _almanach_panel.visible:
+		return  # Regel: Info und Almanac exklusiv
+	_info_panel.visible = show
+
+
+func _set_almanac_visible(show: bool) -> void:
+	if _almanach_panel == null:
+		return
+	_almanach_panel.visible = show
+	if show:
+		_info_panel.visible = false  # Regel: Info und Almanac exklusiv
+		_nav_panel.visible  = false  # Regel: Nav nie mit Almanac
+
+
+# ── Öffentliches Interface (auch für künftigen InputHandler) ───────────────────
+
+func toggle_nav_panel() -> void:
+	if _view_mode == ViewMode.PLANET_VIEW:
+		return
+	if _almanach_panel and _almanach_panel.visible:
+		return
+	_nav_panel.visible = not _nav_panel.visible
+
+
+func toggle_info_panel() -> void:
+	if _almanach_panel and _almanach_panel.visible:
+		_set_almanac_visible(false)
+		if not _current_body_id.is_empty():
+			_set_info_panel_visible(true)
+	else:
+		_set_info_panel_visible(not _info_panel.visible)
+
+
+func toggle_almanac() -> void:
+	if _almanach_panel == null:
+		return
+	if _almanach_panel.visible:
+		_set_almanac_visible(false)
+	else:
+		if not _almanach_panel.has_history():
+			_almanach_panel.open_home()
+		_set_almanac_visible(true)
+
+
+func close_overlay() -> void:
+	_set_almanac_visible(false)
+	if _view_mode == ViewMode.PLANET_VIEW:
+		_set_view(ViewMode.MAP)
+		if not _current_body_id.is_empty():
+			_set_info_panel_visible(true)
+
+
 # ── Body-Selektion ─────────────────────────────────────────────────────────────
 
 func _on_nav_body_focused(id: String) -> void:
@@ -77,7 +144,7 @@ func _on_nav_body_focused(id: String) -> void:
 	if _almanach_panel:
 		_almanach_panel.open_body(id)
 	if not (_almanach_panel and _almanach_panel.visible):
-		_info_panel.visible = true
+		_set_info_panel_visible(true)
 	if _body_view.visible and _planet_view != null:
 		_planet_view.call("load_body", id)
 		_planet_view_overlay.load_body(id)
@@ -90,22 +157,21 @@ func _on_body_selected(id: String) -> void:
 	if _almanach_panel:
 		_almanach_panel.open_body(id)
 	if not (_almanach_panel and _almanach_panel.visible):
-		_info_panel.visible = true
+		_set_info_panel_visible(true)
 
 
 func _on_body_deselected() -> void:
 	_current_body_id = ""
 	_info_panel.clear()
-	_info_panel.visible = false
+	_set_info_panel_visible(false)
 
 
 # ── Panel-Übergänge ────────────────────────────────────────────────────────────
 
 func _on_almanach_requested(id: String) -> void:
-	_info_panel.visible = false
 	if _almanach_panel:
 		_almanach_panel.open_body(id)
-		_almanach_panel.visible = true
+		_set_almanac_visible(true)
 
 
 func _on_zoom_requested(id: String) -> void:
@@ -113,33 +179,22 @@ func _on_zoom_requested(id: String) -> void:
 		return
 	_planet_view.call("load_body", id)
 	_planet_view_overlay.load_body(id)
-	_body_view.visible = true
-	_map_view.visible = false
-	_planet_view_overlay.visible = true
-	_info_panel.visible = false
 	if _almanach_panel:
 		_almanach_panel.open_body(id)
-		_almanach_panel.visible = true
+	_set_almanac_visible(true)
+	_set_view(ViewMode.PLANET_VIEW)
 
 
 func _on_planet_view_info_requested(id: String) -> void:
 	if _almanach_panel:
 		_almanach_panel.open_body(id)
-		_almanach_panel.visible = not _almanach_panel.visible
-		if _almanach_panel.visible:
-			_info_panel.visible = false
+		_set_almanac_visible(not _almanach_panel.visible)
 
 
-func _close_zoom(hide_almanach: bool = false) -> void:
-	if not _body_view.visible:
-		return
-	_body_view.visible = false
-	_planet_view_overlay.visible = false
-	_map_view.visible = true
-	if hide_almanach and _almanach_panel:
-		_almanach_panel.visible = false
+func _on_close_planet_view() -> void:
+	_set_view(ViewMode.MAP)
 	if not _current_body_id.is_empty() and not (_almanach_panel and _almanach_panel.visible):
-		_info_panel.visible = true
+		_set_info_panel_visible(true)
 
 
 # ── Resize ─────────────────────────────────────────────────────────────────────
@@ -157,19 +212,10 @@ func _on_viewport_resized() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_ESCAPE:
-			_close_zoom(true)
+			close_overlay()
 		if event.keycode == KEY_N:
-			_nav_panel.visible = not _nav_panel.visible
+			toggle_nav_panel()
 		if event.keycode == KEY_I and _map_view.visible:
-			if _almanach_panel and _almanach_panel.visible:
-				_almanach_panel.visible = false
-				if not _current_body_id.is_empty():
-					_info_panel.visible = true
-			else:
-				_info_panel.visible = not _info_panel.visible
-		if event.keycode == KEY_L and _almanach_panel:
-			_almanach_panel.visible = not _almanach_panel.visible
-			if _almanach_panel.visible:
-				_info_panel.visible = false
-				if not _almanach_panel.has_history():
-					_almanach_panel.open_home()
+			toggle_info_panel()
+		if event.keycode == KEY_L:
+			toggle_almanac()

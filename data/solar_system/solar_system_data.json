@@ -2,7 +2,7 @@
 	"bodies": [
 		{
 			"id": "sun",
-			"name": "Sun",
+			"name": "Sol",
 			"type": "star",
 			"subtype": "g_type",
 			"parent_id": "",
@@ -30,7 +30,7 @@
 		},
 		{
 			"id": "mercury",
-			"name": "Mercury",
+			"name": "Merkur",
 			"type": "planet",
 			"subtype": "terrestrial",
 			"parent_id": "sun",
@@ -94,7 +94,7 @@
 		},
 		{
 			"id": "terra",
-			"name": "Earth",
+			"name": "Terra",
 			"type": "planet",
 			"subtype": "terrestrial",
 			"parent_id": "sun",
@@ -254,7 +254,7 @@
 		},
 		{
 			"id": "neptune",
-			"name": "Neptune",
+			"name": "Neptun",
 			"type": "planet",
 			"subtype": "ice_giant",
 			"parent_id": "sun",
@@ -286,7 +286,7 @@
 		},
 		{
 			"id": "planet_nine",
-			"name": "Planet Nine",
+			"name": "Planet Neun",
 			"type": "planet",
 			"subtype": "sub_neptune",
 			"parent_id": "sun",
