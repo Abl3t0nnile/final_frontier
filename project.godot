@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GameRegistry="*res://core/objects/game_object_registry.gd"
 GameClock="*res://core/simulation/sim_clock.gd"
 SolarSystem="*res://core/simulation/solar_system_model.gd"
+BodyTextures="*res://core/autoload/body_textures.gd"
 
 [debug]
 

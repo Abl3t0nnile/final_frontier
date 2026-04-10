@@ -453,17 +453,17 @@ Tholins können Aminosäure-Vorläufer enthalten und sind möglicherweise eine A
 • [url=concept:cryovolcanism]Kryovulkanismus[/url]"""
 
 [scattered_disc]
-title = "Streuscheibs"
+title = "Streuscheibe"
 content = """\
-[font_size=18][b]Streuscheibs[/b][/font_size]
+[font_size=18][b]Streuscheibe[/b][/font_size]
 [i]Astronomie · Sonnensystemregion[/i]
 
 [color=#888888]────────────────────────[/color]
 
-Der [b]Streuscheibs[/b] (engl. Scattered Disc) ist eine weitläufige, schwach bevölkerte Region des äußeren Sonnensystems, die sich von ~30 AU bis weit über 100 AU erstreckt. Im Gegensatz zum klassischen [url=concept:kuiper_belt]Kuipergürtel[/url] haben Streuscheibs-Objekte stark elliptische und oft stark geneigte Bahnen — ein Zeichen, dass ihre Bahnen durch gravitationale Wechselwirkung mit [url=body:neptune]Neptun[/url] in der Frühzeit des Sonnensystems "gestreut" wurden.
+Die [b]Streuscheibe[/b] (engl. Scattered Disc) ist eine weitläufige, schwach bevölkerte Region des äußeren Sonnensystems, die sich von ~30 AU bis weit über 100 AU erstreckt. Im Gegensatz zum klassischen [url=concept:kuiper_belt]Kuipergürtel[/url] haben Streuscheiben-Objekte stark elliptische und oft stark geneigte Bahnen — ein Zeichen, dass ihre Bahnen durch gravitationale Wechselwirkung mit [url=body:neptune]Neptun[/url] in der Frühzeit des Sonnensystems "gestreut" wurden.
 
 [b]Entstehung[/b]
-Als sich die Riesenplaneten in der frühen Sonnensystemgeschichte nach außen wanderten (Nizza-Modell), streuten sie zahlreiche Planetesimale des Kuipergürtels auf weitreichende, exzentrische Bahnen. Diese Körper bilden den heutigen Streuscheibs.
+Als sich die Riesenplaneten in der frühen Sonnensystemgeschichte nach außen wanderten (Nizza-Modell), streuten sie zahlreiche Planetesimale des Kuipergürtels auf weitreichende, exzentrische Bahnen. Diese Körper bilden die heutige Streuscheibe.
 
 [b]Charakteristika[/b]
 [indent]• Perihelien typisch bei 30–38 AU (nahe Neptun)
@@ -471,13 +471,13 @@ Als sich die Riesenplaneten in der frühen Sonnensystemgeschichte nach außen wa
 • Starke Bahnneigungen zur Ekliptik[/indent]
 
 [b]Bekannte Objekte[/b]
-[indent]• [url=body:eris]Eris[/url] — massereichster bekannter Zwergplanet, Scattered Disc
-• [url=body:gonggong]Gonggong[/url] — großer roter Streuscheibs-Körper
+[indent]• [url=body:eris]Eris[/url] — massereichster bekannter Zwergplanet, Streuscheibe
+• [url=body:gonggong]Gonggong[/url] — großer roter Streuscheiben-Körper
 • [url=body:sedna]Sedna[/url] — gehört zur noch entfernteren Inneren Oortschen Wolke (Sonderfall)[/indent]
 
 [b]Abgrenzung[/b]
 [indent]• [b]Klassischer Kuipergürtel[/b]: ~42–48 AU, mäßige Exzentrizität, kaum durch Neptun beeinflusst
-• [b]Streuscheibs[/b]: durch Neptun gravitativ gestreut, stark exzentrische Bahnen
+• [b]Streuscheibe[/b]: durch Neptun gravitativ gestreut, stark exzentrische Bahnen
 • [b]Innere Oortsche Wolke[/b]: noch weiter, Perihelien >50 AU (Sedna-Objekte)[/indent]
 
 [b]Siehe auch[/b]

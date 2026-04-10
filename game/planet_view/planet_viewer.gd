@@ -2,6 +2,9 @@
 class_name PlanetViewer
 extends Control
 
+const SHADER_PLANET := "res://assets/shaders/planet/planet_sphere_color_v3.gdshader"
+const SHADER_SUN    := "res://assets/shaders/planet/sun_sphere.gdshader"
+
 @export_group("Texture")
 @export var surface_texture: Texture2D:
 	set(value):
@@ -64,11 +67,6 @@ extends Control
 		black_floor = value
 		_set_param("black_floor", black_floor)
 
-@export_range(0.5, 1.0) var white_ceil: float = 0.8:
-	set(value):
-		white_ceil = value
-		_set_param("white_ceil", white_ceil)
-
 @export_group("Outline")
 @export var outline_enabled: bool = true:
 	set(value):
@@ -80,13 +78,28 @@ extends Control
 		outline_width = value
 		_set_param("outline_width", outline_width)
 
+@export_group("Color")
+@export var shadow_color: Color = Color.BLACK:
+	set(value):
+		shadow_color = value
+		_set_param("shadow_color", Vector3(shadow_color.r, shadow_color.g, shadow_color.b))
+
+@export_range(0.0, 2.0) var color_saturation: float = 1.0:
+	set(value):
+		color_saturation = value
+		_set_param("color_saturation", color_saturation)
+
+@export_range(2, 16) var color_levels: int = 4:
+	set(value):
+		color_levels = value
+		_set_param("color_levels", color_levels)
+
 @export_group("Sun")
 @export var use_sun_shader: bool = false:
 	set(value):
 		use_sun_shader = value
 		if _sphere_rect != null:
-			var shader := load(_get_shader_path()) as Shader
-			_material.shader = shader
+			_material.shader = load(SHADER_SUN if use_sun_shader else SHADER_PLANET) as Shader
 			_sync_all_params()
 
 @export_range(0.5, 1.0) var sphere_scale: float = 0.8:
@@ -94,25 +107,15 @@ extends Control
 		sphere_scale = value
 		_set_param("sphere_scale", sphere_scale)
 
-@export_range(0.0, 0.5) var corona_width: float = 0.15:
+@export_range(1.0, 4.0) var glow_intensity: float = 1.5:
 	set(value):
-		corona_width = value
-		_set_param("corona_width", corona_width)
+		glow_intensity = value
+		_set_param("glow_intensity", glow_intensity)
 
-@export_range(0.0, 1.0) var corona_density: float = 0.5:
+@export_range(0.0, 0.5) var halo_width: float = 0.12:
 	set(value):
-		corona_density = value
-		_set_param("corona_density", corona_density)
-
-@export_range(0.0, 10.0) var flicker_speed: float = 2.0:
-	set(value):
-		flicker_speed = value
-		_set_param("flicker_speed", flicker_speed)
-
-@export_range(0.0, 0.5) var flicker_intensity: float = 0.1:
-	set(value):
-		flicker_intensity = value
-		_set_param("flicker_intensity", flicker_intensity)
+		halo_width = value
+		_set_param("halo_width", halo_width)
 
 var _rotation_y: float = 0.0
 var _rotation_x: float = 0.0
@@ -129,9 +132,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if use_sun_shader:
-		_set_param("time", Time.get_ticks_msec() / 1000.0)
-	elif cloud_enabled and cloud_speed > 0.0:
+	if cloud_enabled and cloud_speed > 0.0:
 		_cloud_offset += delta * cloud_speed
 		if _cloud_offset > TAU:
 			_cloud_offset -= TAU
@@ -147,9 +148,8 @@ func _setup_sphere() -> void:
 	_sphere_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(_sphere_rect)
 
-	var shader := load(_get_shader_path()) as Shader
 	_material = ShaderMaterial.new()
-	_material.shader = shader
+	_material.shader = load(SHADER_SUN if use_sun_shader else SHADER_PLANET) as Shader
 	_sphere_rect.material = _material
 
 	mouse_filter = Control.MOUSE_FILTER_STOP
@@ -157,11 +157,6 @@ func _setup_sphere() -> void:
 	_update_size()
 	_update_material()
 	_sync_all_params()
-
-
-func _get_shader_path() -> String:
-	const BASE := "res://assets/shaders/planet/"
-	return BASE + ("sun_sphere.gdshader" if use_sun_shader else "planet_sphere.gdshader")
 
 
 func _set_param(param: String, value: Variant) -> void:
@@ -191,17 +186,17 @@ func _sync_all_params() -> void:
 	_set_param("rotation_x", _rotation_x)
 	_set_param("bayer_scale", bayer_scale)
 	_set_param("black_floor", black_floor)
-	_set_param("white_ceil", white_ceil)
-	_set_param("outline_enabled", outline_enabled)
-	_set_param("outline_width", outline_width)
+	_set_param("color_saturation", color_saturation)
+	_set_param("color_levels", color_levels)
 	if use_sun_shader:
 		_set_param("sphere_scale", sphere_scale)
-		_set_param("corona_width", corona_width)
-		_set_param("corona_density", corona_density)
-		_set_param("flicker_speed", flicker_speed)
-		_set_param("flicker_intensity", flicker_intensity)
+		_set_param("glow_intensity", glow_intensity)
+		_set_param("halo_width", halo_width)
 	else:
+		_set_param("outline_enabled", outline_enabled)
+		_set_param("outline_width", outline_width)
 		_set_param("light_dir", light_direction)
+		_set_param("shadow_color", Vector3(shadow_color.r, shadow_color.g, shadow_color.b))
 		_set_param("cloud_enabled", cloud_enabled)
 		_set_param("cloud_rotation_offset", cloud_rotation_offset)
 		_set_param("cloud_transparency", cloud_transparency)
@@ -238,3 +233,18 @@ func set_planet_rotation(yaw: float, pitch: float) -> void:
 
 func get_planet_rotation() -> Vector2:
 	return Vector2(_rotation_y, _rotation_x)
+
+
+## Lädt Texturen für den angegebenen Body über BodyTextures.
+## Gibt true zurück wenn eine Textur gefunden wurde, sonst false.
+func load_body(id: String) -> bool:
+	use_sun_shader = (id == "sun")
+	if not BodyTextures.has_texture(id):
+		surface_texture = null
+		cloud_texture   = null
+		cloud_enabled   = false
+		return false
+	surface_texture = BodyTextures.load_surface(id)
+	cloud_texture   = BodyTextures.load_cloud(id)
+	cloud_enabled   = cloud_texture != null
+	return true

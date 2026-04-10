@@ -270,12 +270,12 @@ func _build_orbit_data(def: BodyDef) -> void:
 			var period_s := SpaceMath.get_kepler_period(a, p_mu)
 			var vel := SpaceMath.mean_orbital_velocity_km_s(a, period_s)
 
-			_add_unit_value(grid, "Halbachse",     "%.4f" % SpaceMath.km_to_au(a),                                      "AU")
-			_add_unit_value(grid, "Umlaufzeit",    _format_period(period_s),                                             "")
-			_add_unit_value(grid, "Exzentrizität", "%.4f" % e,                                                           "")
-			_add_unit_value(grid, "Periapsis",     "%.4f" % SpaceMath.km_to_au(SpaceMath.orbit_periapsis_km(a, e)),      "AU")
-			_add_unit_value(grid, "Apoapsis",      "%.4f" % SpaceMath.km_to_au(SpaceMath.orbit_apoapsis_km(a, e)),       "AU")
-			_add_unit_value(grid, "Ø Geschw.",     _fmt_or_dash(vel, 2),                                                 "km/s")
+			_add_unit_value_auto(grid, "Halbachse",     a,                                    UnitValueDisplay.UnitType.DISTANCE)
+			_add_unit_value_auto(grid, "Umlaufzeit",    period_s,                             UnitValueDisplay.UnitType.PERIOD)
+			_add_unit_value_auto(grid, "Exzentrizität", e,                                    UnitValueDisplay.UnitType.DIMENSIONLESS)
+			_add_unit_value_auto(grid, "Periapsis",     SpaceMath.orbit_periapsis_km(a, e),   UnitValueDisplay.UnitType.DISTANCE)
+			_add_unit_value_auto(grid, "Apoapsis",      SpaceMath.orbit_apoapsis_km(a, e),    UnitValueDisplay.UnitType.DISTANCE)
+			_add_unit_value_auto(grid, "Ø Geschw.",     vel,                                  UnitValueDisplay.UnitType.VELOCITY)
 
 		"circular":
 			var cm := motion as CircularMotionDef
@@ -283,12 +283,12 @@ func _build_orbit_data(def: BodyDef) -> void:
 			var period_s := cm.orbital_period_s
 			var vel := SpaceMath.mean_orbital_velocity_km_s(r_orb, period_s)
 
-			_add_unit_value(grid, "Bahnradius",    "%.4f" % SpaceMath.km_to_au(r_orb), "AU")
-			_add_unit_value(grid, "Umlaufzeit",    _format_period(period_s),            "")
-			_add_unit_value(grid, "Exzentrizität", "0",                                 "")
-			_add_unit_value(grid, "Periapsis",     "—",                                 "")
-			_add_unit_value(grid, "Apoapsis",      "—",                                 "")
-			_add_unit_value(grid, "Ø Geschw.",     _fmt_or_dash(vel, 2),               "km/s")
+			_add_unit_value_auto(grid, "Bahnradius",    r_orb,     UnitValueDisplay.UnitType.DISTANCE)
+			_add_unit_value_auto(grid, "Umlaufzeit",    period_s,  UnitValueDisplay.UnitType.PERIOD)
+			_add_unit_value_auto(grid, "Exzentrizität", 0.0,       UnitValueDisplay.UnitType.DIMENSIONLESS)
+			_add_unit_value(grid, "Periapsis",     "—",       "")
+			_add_unit_value(grid, "Apoapsis",      "—",       "")
+			_add_unit_value_auto(grid, "Ø Geschw.",     vel,       UnitValueDisplay.UnitType.VELOCITY)
 
 
 func _build_physics_data(def: BodyDef) -> void:
@@ -300,10 +300,10 @@ func _build_physics_data(def: BodyDef) -> void:
 	var mu := def.grav_param_km3_s2
 
 	_add_unit_value(grid, "Radius",       "%.1f" % r,                                          "km")
-	_add_unit_value(grid, "Masse",        _format_mass(SpaceMath.body_mass_kg(mu)),             "kg")
-	_add_unit_value(grid, "Dichte",       _fmt_or_dash(SpaceMath.body_density_g_cm3(mu, r), 2), "g/cm³")
-	_add_unit_value(grid, "Schwerkraft",  _fmt_or_dash(SpaceMath.surface_gravity_ms2(mu, r), 2),"m/s²")
-	_add_unit_value(grid, "Fluchtgeschw.",_fmt_or_dash(SpaceMath.escape_velocity_km_s(mu, r), 2),"km/s")
+	_add_unit_value_auto(grid, "Masse",        SpaceMath.body_mass_kg(mu),              UnitValueDisplay.UnitType.MASS)
+	_add_unit_value_auto(grid, "Dichte",       SpaceMath.body_density_g_cm3(mu, r),     UnitValueDisplay.UnitType.DENSITY)
+	_add_unit_value_auto(grid, "Schwerkraft",  SpaceMath.surface_gravity_ms2(mu, r),    UnitValueDisplay.UnitType.ACCELERATION)
+	_add_unit_value_auto(grid, "Fluchtgeschw.",SpaceMath.escape_velocity_km_s(mu, r),   UnitValueDisplay.UnitType.VELOCITY)
 
 
 func _build_atmo_data(_def: BodyDef, content: AlmanachContentComponent) -> void:
@@ -330,13 +330,13 @@ func _build_atmo_data(_def: BodyDef, content: AlmanachContentComponent) -> void:
 	vbox.add_child(grid)
 
 	if atmo.has("pressure"):
-		_add_unit_value(grid, "Druck",      "%.3f" % float(atmo["pressure"]), "bar")
+		_add_unit_value_auto(grid, "Druck",      float(atmo["pressure"]), UnitValueDisplay.UnitType.PRESSURE)
 	if atmo.has("temp_mean"):
-		_add_unit_value(grid, "Temp. ⌀",   str(atmo["temp_mean"]),           "°C")
+		_add_unit_value_auto(grid, "Temp. ⌀",   float(atmo["temp_mean"]), UnitValueDisplay.UnitType.TEMPERATURE)
 	if atmo.has("temp_min"):
-		_add_unit_value(grid, "Temp. Min",  str(atmo["temp_min"]),            "°C")
+		_add_unit_value_auto(grid, "Temp. Min",  float(atmo["temp_min"]),  UnitValueDisplay.UnitType.TEMPERATURE)
 	if atmo.has("temp_max"):
-		_add_unit_value(grid, "Temp. Max",  str(atmo["temp_max"]),            "°C")
+		_add_unit_value_auto(grid, "Temp. Max",  float(atmo["temp_max"]),  UnitValueDisplay.UnitType.TEMPERATURE)
 
 	# Hauptbestandteile
 	if atmo.has("composition"):
@@ -354,7 +354,7 @@ func _build_atmo_data(_def: BodyDef, content: AlmanachContentComponent) -> void:
 			vbox.add_child(comp_grid)
 
 			for comp_name: String in composition:
-				_add_unit_value(comp_grid, comp_name, "%.3f" % float(composition[comp_name]), "%")
+				_add_unit_value_auto(comp_grid, comp_name, float(composition[comp_name]), UnitValueDisplay.UnitType.PERCENTAGE)
 
 
 func _build_body_sections(obj: GameObject) -> void:
@@ -493,6 +493,12 @@ func _add_unit_value(grid: GridContainer, caption: String, value: String, unit: 
 	unit_disp.setup(caption, value, unit)
 
 
+func _add_unit_value_auto(grid: GridContainer, caption: String, raw_value: float, unit_type: UnitValueDisplay.UnitType) -> void:
+	var unit_disp := _UNIT_VALUE_DISPLAY.instantiate()
+	grid.add_child(unit_disp)
+	unit_disp.setup_auto(caption, raw_value, unit_type)
+
+
 func _on_link_clicked(meta: Variant) -> void:
 	var link := str(meta)
 	if link.begins_with("concept:"):
@@ -519,24 +525,3 @@ func _parent_mu(parent_id: String) -> float:
 	return p.grav_param_km3_s2 if p else 0.0
 
 
-func _fmt_or_dash(value: float, decimals: int) -> String:
-	if is_zero_approx(value):
-		return "—"
-	return "%.*f" % [decimals, value]
-
-
-func _format_mass(kg: float) -> String:
-	if kg <= 0.0:
-		return "—"
-	var magnitude := floori(log(kg) / log(10.0))
-	var mantissa := kg / pow(10.0, float(magnitude))
-	return "%.3f e%d" % [mantissa, magnitude]
-
-
-func _format_period(seconds: float) -> String:
-	if seconds <= 0.0:
-		return "—"
-	var days := seconds / 86400.0
-	if days >= 365.25:
-		return "%.2f a" % (days / 365.25)
-	return "%.1f d" % days

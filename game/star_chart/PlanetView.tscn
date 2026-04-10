@@ -55,14 +55,17 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 3
 script = ExtResource("1_planet")
-cloud_transparency = 0.6
+cloud_enabled = true
 sphere_size = 724
-auto_rotate_speed = 0.0
-light_direction = Vector3(0.5, 0.6, 0.8)
-bayer_scale = 1
-black_floor = 0.1
-white_ceil = 0.6
+auto_rotate_speed = 0.1
+light_direction = Vector3(1, 1, 2)
+bayer_scale = 2
+black_floor = 0.0
 outline_enabled = false
+outline_width = 0.005
+color_saturation = 1.6
+color_levels = 5
+glow_intensity = 1.0
 
 [node name="MissingLabel" type="Label" parent="." unique_id=1690501596]
 visible = false

@@ -19,6 +19,28 @@ var _solar_map: Node  = null
 var _km_per_px: float = 1_000_000.0
 
 
+func _ready() -> void:
+	_set_mouse_ignore(self)
+	var p := get_parent() as Control
+	if p:
+		p.resized.connect(_fit_to_parent)
+		call_deferred("_fit_to_parent")
+
+
+func _set_mouse_ignore(node: Node) -> void:
+	if node is Control:
+		(node as Control).mouse_filter = Control.MOUSE_FILTER_IGNORE
+	for child in node.get_children():
+		_set_mouse_ignore(child)
+
+
+func _fit_to_parent() -> void:
+	var p := get_parent() as Control
+	if p:
+		position = Vector2.ZERO
+		size = p.size
+
+
 func setup(solar_map: Node) -> void:
 	_solar_map = solar_map
 	_km_per_px = _solar_map.get_zoom_level()

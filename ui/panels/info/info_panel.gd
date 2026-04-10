@@ -10,26 +10,6 @@ signal zoom_requested(body_id: String)
 signal pin_requested(body_id: String)
 signal unpin_requested(body_id: String)
 
-const _TEXTURE_BASE := "res://assets/textures/planets/16_levels/"
-
-## body_id → { "surface": filename, "cloud": filename (optional) }
-const _BODY_TEXTURES: Dictionary = {
-	"sun":      { "surface": "2k_sun.png" },
-	"mercury":  { "surface": "2k_mercury.png" },
-	"venus":    { "surface": "black_surface.png", "cloud": "2k_venus_atmosphere.png" },
-	"terra":    { "surface": "2k_earth_daymap.png",  "cloud": "2k_earth_clouds.png" },
-	"mars":     { "surface": "2k_mars.png" },
-	"jupiter":  { "surface": "black_surface.png", "cloud": "2k_jupiter.png" },
-	"saturn":   { "surface": "black_surface.png", "cloud": "2k_saturn.png" },
-	"uranus":   { "surface": "black_surface.png", "cloud": "2k_uranus.png" },
-	"neptune":  { "surface": "black_surface.png", "cloud": "2k_neptune.png" },
-	"moon":     { "surface": "2k_moon.png" },
-	"ceres":    { "surface": "2k_ceres.png" },
-	"eris":     { "surface": "2k_eris.png" },
-	"haumea":   { "surface": "2k_haumea.png" },
-	"makemake": { "surface": "2k_makemake.png" },
-	"pluto":    { "surface": "2k_pluto.png" },
-}
 
 @onready var _name_label:    Label = $VBox/Header/NameDisplay/NameLabel
 @onready var _type_label:    Label = $VBox/Header/NameDisplay/HBoxContainer/TypeLabel
@@ -90,22 +70,9 @@ func load_body(id: String) -> void:
 
 
 func _setup_planet_viewer(id: String) -> void:
-	var entry: Dictionary = _BODY_TEXTURES.get(id, {})
-	var surface_path: String = _TEXTURE_BASE + (entry.get("surface", "") as String)
-	var has_texture := not entry.is_empty() and ResourceLoader.exists(surface_path)
-	_planet_viewer.visible = has_texture
-	_missing_label.visible = not has_texture
-	if not has_texture:
-		return
-	_planet_viewer.use_sun_shader = (id == "sun")
-	_planet_viewer.surface_texture = load(surface_path) as Texture2D
-	if entry.has("cloud"):
-		var cloud_path: String = _TEXTURE_BASE + (entry["cloud"] as String)
-		_planet_viewer.cloud_texture = load(cloud_path) as Texture2D if ResourceLoader.exists(cloud_path) else null
-		_planet_viewer.cloud_enabled = _planet_viewer.cloud_texture != null
-	else:
-		_planet_viewer.cloud_texture = null
-		_planet_viewer.cloud_enabled = false
+	var found := _planet_viewer.load_body(id)
+	_planet_viewer.visible = found
+	_missing_label.visible = not found
 
 
 func clear() -> void:
@@ -120,11 +87,11 @@ func clear() -> void:
 func _display_physical_data(def: BodyDef) -> void:
 	var r  := def.body_radius_km
 	var mu := def.grav_param_km3_s2
-	_phys_radius.setup( "Radius",      "%.1f"  % r,                                         "km")
-	_phys_mass.setup(   "Masse",       _format_mass(SpaceMath.body_mass_kg(mu)),             "kg")
-	_phys_density.setup("Dichte",      _fmt_or_dash(SpaceMath.body_density_g_cm3(mu, r), 2), "g/cm³")
-	_phys_gravity.setup("Schwerkraft", _fmt_or_dash(SpaceMath.surface_gravity_ms2(mu, r), 2),"m/s²")
-	_phys_escape.setup( "Fluchtgeschw",_fmt_or_dash(SpaceMath.escape_velocity_km_s(mu, r), 2),  "km/s")
+	_phys_radius.setup( "Radius",      "%.1f"  % r,                        "km")
+	_phys_mass.setup_auto(   "Masse",       SpaceMath.body_mass_kg(mu),          UnitValueDisplay.UnitType.MASS)
+	_phys_density.setup_auto("Dichte",      SpaceMath.body_density_g_cm3(mu, r), UnitValueDisplay.UnitType.DENSITY)
+	_phys_gravity.setup_auto("Schwerkraft", SpaceMath.surface_gravity_ms2(mu, r),UnitValueDisplay.UnitType.ACCELERATION)
+	_phys_escape.setup_auto( "Fluchtgeschw",SpaceMath.escape_velocity_km_s(mu, r),UnitValueDisplay.UnitType.VELOCITY)
 
 
 func _display_orbital_data(def: BodyDef) -> void:
@@ -147,24 +114,24 @@ func _display_orbital_data(def: BodyDef) -> void:
 			var parent_mu := _get_parent_mu(def.parent_id)
 			var period_s  := SpaceMath.get_kepler_period(a, parent_mu)
 			var vel       := SpaceMath.mean_orbital_velocity_km_s(a, period_s)
-			_orb_axis.setup(   "Halbachse",    "%.4f" % SpaceMath.km_to_au(a),                            "AU")
-			_orb_period.setup( "Umlaufzeit",   _format_period(period_s),                                  "")
-			_orb_ecc.setup(    "Exzentrizität","%.4f" % e,                                                 "")
-			_orb_peri.setup(   "Periapsis",    "%.4f" % SpaceMath.km_to_au(SpaceMath.orbit_periapsis_km(a, e)), "AU")
-			_orb_apo.setup(    "Apoapsis",     "%.4f" % SpaceMath.km_to_au(SpaceMath.orbit_apoapsis_km(a, e)),  "AU")
-			_orb_vel.setup(    "Ø Geschw.",    _fmt_or_dash(vel, 2),                                       "km/s")
+			_orb_axis.setup_auto(   "Halbachse",    a,                                  UnitValueDisplay.UnitType.DISTANCE)
+			_orb_period.setup_auto( "Umlaufzeit",   period_s,                           UnitValueDisplay.UnitType.PERIOD)
+			_orb_ecc.setup_auto(    "Exzentrizität",e,                                   UnitValueDisplay.UnitType.DIMENSIONLESS)
+			_orb_peri.setup_auto(   "Periapsis",    SpaceMath.orbit_periapsis_km(a, e), UnitValueDisplay.UnitType.DISTANCE)
+			_orb_apo.setup_auto(    "Apoapsis",     SpaceMath.orbit_apoapsis_km(a, e),  UnitValueDisplay.UnitType.DISTANCE)
+			_orb_vel.setup_auto(    "Ø Geschw.",    vel,                                UnitValueDisplay.UnitType.VELOCITY)
 
 		"circular":
 			var cm := (motion as CircularMotionDef)
 			var r      := cm.orbital_radius_km
 			var period_s := cm.orbital_period_s
 			var vel    := SpaceMath.mean_orbital_velocity_km_s(r, period_s)
-			_orb_axis.setup(   "Bahnradius",   "%.4f" % SpaceMath.km_to_au(r), "AU")
-			_orb_period.setup( "Umlaufzeit",   _format_period(period_s),       "")
-			_orb_ecc.setup(    "Exzentrizität","0",                             "")
-			_orb_peri.setup(   "Periapsis",    "—",                            "")
-			_orb_apo.setup(    "Apoapsis",     "—",                            "")
-			_orb_vel.setup(    "Ø Geschw.",    _fmt_or_dash(vel, 2),           "km/s")
+			_orb_axis.setup_auto(   "Bahnradius",   r,         UnitValueDisplay.UnitType.DISTANCE)
+			_orb_period.setup_auto( "Umlaufzeit",   period_s,  UnitValueDisplay.UnitType.PERIOD)
+			_orb_ecc.setup_auto(    "Exzentrizität",0.0,       UnitValueDisplay.UnitType.DIMENSIONLESS)
+			_orb_peri.setup(   "Periapsis",    "—",       "")
+			_orb_apo.setup(    "Apoapsis",     "—",       "")
+			_orb_vel.setup_auto(    "Ø Geschw.",    vel,       UnitValueDisplay.UnitType.VELOCITY)
 
 		_:
 			_orb_axis.setup(   "Halbachse",    "—", "")
@@ -188,26 +155,3 @@ func _get_parent_mu(parent_id: String) -> float:
 		return 0.0
 	var parent: BodyDef = SolarSystem.get_body(parent_id)
 	return parent.grav_param_km3_s2 if parent else 0.0
-
-
-func _fmt_or_dash(value: float, decimals: int) -> String:
-	if is_zero_approx(value):
-		return "—"
-	return "%.*f" % [decimals, value]
-
-
-func _format_mass(kg: float) -> String:
-	if kg <= 0.0:
-		return "—"
-	var magnitude := floori(log(kg) / log(10.0))
-	var mantissa := kg / pow(10.0, float(magnitude))
-	return "%.3f e%d" % [mantissa, magnitude]
-
-
-func _format_period(seconds: float) -> String:
-	if seconds <= 0.0:
-		return "—"
-	var days := seconds / 86400.0
-	if days >= 365.25:
-		return "%.2f a" % (days / 365.25)
-	return "%.1f d" % days

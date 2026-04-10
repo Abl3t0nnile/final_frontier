@@ -4,25 +4,16 @@
 [ext_resource type="PackedScene" uid="uid://dy3prfbgdcq52" path="res://game/star_chart/StartChart.tscn" id="2_8gaax"]
 [ext_resource type="Script" uid="uid://c1v3wo13h2efs" path="res://game/game_controller.gd" id="3_gamecontroller"]
 [ext_resource type="PackedScene" uid="uid://cx0qx7qyomjub" path="res://game/star_chart/PlanetView.tscn" id="3_madmh"]
-[ext_resource type="Shader" uid="uid://jgquymtyyfyn" path="res://assets/shaders/fx/ui_tint_overlay.gdshader" id="5_madmh"]
 [ext_resource type="Shader" uid="uid://bti71qu06gbo0" path="res://assets/shaders/fx/crt_monitor.gdshader" id="6_yo8gm"]
 
-[sub_resource type="Environment" id="Environment_yo8gm"]
+[sub_resource type="Environment" id="Environment_madmh"]
 background_mode = 3
 glow_enabled = true
 glow_normalized = true
-glow_intensity = 0.4
-glow_strength = 1.2
-glow_bloom = 0.6
-glow_hdr_threshold = 0.7
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_madmh"]
-shader = ExtResource("5_madmh")
-shader_parameter/tint_color = Color(0.51851845, 0.44924885, 0.12819716, 1)
-shader_parameter/whiteness_threshold = 0.0
-shader_parameter/edge_softness = 0.29999999329439997
-shader_parameter/tint_strength = 0.999999977648
-shader_parameter/color_protection = 0.999999977648
+glow_intensity = 0.8
+glow_strength = 1.3
+glow_bloom = 0.3
+glow_hdr_threshold = 0.8
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fk7ia"]
 shader = ExtResource("6_yo8gm")
@@ -52,8 +43,8 @@ shader_parameter/blue_band_distort_px = 1.2
 
 [node name="Main" type="Node" unique_id=1627069167]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1195071464]
-environment = SubResource("Environment_yo8gm")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=104336732]
+environment = SubResource("Environment_madmh")
 
 [node name="GameController" type="Node" parent="." unique_id=1627069168 node_paths=PackedStringArray("start_chart")]
 script = ExtResource("3_gamecontroller")
@@ -63,18 +54,8 @@ start_chart = NodePath("../StartChart")
 
 [node name="StartChart" parent="." unique_id=-54483432 instance=ExtResource("2_8gaax")]
 
-[node name="TintLayer" type="CanvasLayer" parent="." unique_id=611693710]
-
-[node name="ColorOverlay" type="ColorRect" parent="TintLayer" unique_id=1214630113]
-material = SubResource("ShaderMaterial_madmh")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
 [node name="CRTLayer" type="CanvasLayer" parent="." unique_id=862808943]
+visible = false
 
 [node name="ColorOverlay" type="ColorRect" parent="CRTLayer" unique_id=1404396652]
 material = SubResource("ShaderMaterial_fk7ia")
