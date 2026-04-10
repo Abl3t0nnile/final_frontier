@@ -1,0 +1,21 @@
+id = "pluto"
+
+description = """\
+[b]Pluto[/b] wurde am 18. Februar 1930 von Clyde Tombaugh am Lowell-Observatorium in Arizona entdeckt und war bis zur Neuklassifikation durch die IAU 2006 der neunte Planet des Sonnensystems. Mit einem Radius von 1.188 km ist er der größte bekannte Körper im [url=concept:kuiper_belt]Kuipergürtel[/url] — wenngleich Eris masseicher ist. Pluto befindet sich in einer [url=concept:orbital_resonance]3:2-Bahnresonanz[/url] mit Neptun (Plutino) und umrundet die Sonne in ~248 Jahren auf einer stark elliptischen, 17° geneigten Bahn; seine Entfernung zur Sonne schwankt zwischen 29,7 AU ([url=concept:periapsis]Perihel[/url], 1989 zuletzt erreicht) und 49,3 AU ([url=concept:apoapsis]Aphel[/url]).
+
+Die [b]New Horizons[/b]-Sonde der NASA passierte Pluto am 14. Juli 2015 in nur 12.500 km Abstand und enthüllte eine überraschend vielfältige, geologisch aktive Welt. [b]Tombaugh Regio[/b] — die herzförmige Struktur — besteht aus zwei Teilen: Im Westen liegt [b]Sputnik Planitia[/b], eine ~1.000 km breite, flache Stickstoffeis-Ebene ohne Einschlagkrater, die aktiv durch thermische Konvektionszellen umgewälzt wird. Im Osten schließen sich ältere, stärker kraterierte Gebiete an. Am Rand von Sputnik Planitia erheben sich die [b]Tenzing Montes[/b] und [b]Hillary Montes[/b] mit Gipfeln von über 4.000 m aus Wassereis.
+
+Plutos dünne Stickstoffatmosphäre (~10 µbar) ist saisonal: Bei Sonnennähe sublimiert das Stickstoffeis von der Oberfläche und baut die Atmosphäre auf; bei Sonnenferne friert sie wieder aus. New Horizons maß Schichten von Dunst (Tholine) bis zu 200 km Höhe — chemisch komplexe Verbindungen aus UV-verarbeiteten Stickstoff-Methan-Gemischen.
+
+Pluto hat fünf bekannte Monde: [url=body:charon]Charon[/url] (Radius ~606 km) ist so groß relativ zu Pluto, dass das gemeinsame Baryzentrum außerhalb beider Körper liegt — ein echtes Doppelsystem. Beide zeigen sich stets dieselbe Seite. Die vier kleinen Monde Styx, Nix, Kerberos und Hydra umkreisen das System in fast kreisförmigen Bahnen und entstammen vermutlich demselben Einschlagsereignis wie Charon."""
+
+[infobox.atmosphere]
+pressure  = 0.000010
+temp_mean = -229
+temp_min  = -240
+temp_max  = -213
+
+[infobox.atmosphere.composition]
+"Stickstoff (N₂)" = 98.0
+"Methan (CH₄)"    = 1.0
+"Kohlenmonoxid (CO)" = 0.5

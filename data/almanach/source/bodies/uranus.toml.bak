@@ -1,0 +1,20 @@
+id = "uranus"
+
+description = """\
+[b]Uranus[/b] ist der erste mittels Teleskop entdeckte Planet, gefunden von William Herschel am 13. März 1781. Mit einem Radius von 25.362 km und einer Masse von 8,68 × 10²⁵ kg ist er der drittgrößte Planet nach Radius, aber der leichteste der vier Riesenplaneten. Als [b]Eisriese[/b] unterscheidet er sich fundamental von Jupiter und Saturn: Sein Inneres besteht überwiegend aus einem heißen, superkritischen Gemisch aus Wasser, Methan und Ammoniak unter Drücken bis zu mehreren Millionen bar — als "Eis" bezeichnet, obwohl es bei diesen Temperaturen flüssig ist. Uranus' Umlaufzeit um die Sonne beträgt 84 Jahre.
+
+Das bemerkenswerteste Merkmal ist die Rotationsachse: Sie ist um ~98° zur Ekliptik gekippt — Uranus liegt buchstäblich auf der Seite und rollt um die Sonne. Jeder Pol bekommt abwechselnd ~42 Jahre Sonnenlicht und 42 Jahre Dunkelheit. Trotzdem sind die Temperaturunterschiede zwischen Tag- und Nachtseite gering, da Uranus fast keine interne Wärmequelle emittiert — im Gegensatz zu allen anderen Riesenplaneten, die deutlich mehr Energie abstrahlen als sie von der Sonne erhalten. Die Ursache dieser "Wärmearmut" ist unbekannt.
+
+Uranus besitzt 13 bekannte schmale Ringe, entdeckt 1977 durch Sternbedeckungsbeobachtungen. Das Magnetfeld ist ungewöhnlich: Es ist um ~59° gegenüber der Rotationsachse geneigt und hat seinen Ursprung weit außerhalb des Zentrums — ein nicht-dipolares, komplexes Feldmuster, das möglicherweise auf ionische Konvektionsprozesse im Wasserverhältnis hinweist. Die einzige Nahkamera, die Uranus je aus nächster Nähe sah, gehörte Voyager 2, der im Januar 1986 auf 81.500 km herankam.
+
+27 Monde sind bekannt, alle nach Figuren aus Shakespeare und Alexander Pope benannt — eine Konvention, die unter allen Planeten einzigartig ist. [url=body:miranda]Miranda[/url] mit seiner chaotischen Oberfläche und [url=body:titania]Titania[/url] als größter Mond sind die wissenschaftlich interessantesten. Ein zukünftiges Sondenprojekt mit Orbiter und Vorbeiflug (Uranus Orbiter and Probe) wurde von der NASA als höchste Priorität für das nächste Jahrzehnt eingestuft."""
+
+[infobox.atmosphere]
+pressure  = 1.0
+temp_mean = -197
+temp_min  = -214
+
+[infobox.atmosphere.composition]
+"Wasserstoff (H₂)" = 82.5
+"Helium (He)"      = 15.2
+"Methan (CH₄)"     = 2.3

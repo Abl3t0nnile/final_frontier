@@ -1,21 +1,32 @@
 id = "enceladus"
 
 description = """\
+[b]Enceladus[/b]
+
+[b]Etymologie[/b]
+Nach Ἐγκέλαδος (Enkélados), Gigant, von Athene unter Sizilien begraben (Ätna = sein Atem).
+
+[b]Entdeckung[/b]
+Datum: 1789-08-28
+Entdecker: William Herschel
+
+[b]Physikalische Eigenschaften[/b]
 [b]Enceladus[/b] ist mit einem Radius von 252 km einer der kleinsten geologisch aktiven Körper im Sonnensystem — und gleichzeitig einer der wissenschaftlich aufregendsten. Sein Südpol wird von vier parallelen Rissen überspannt, den sogenannten [b]Tigerstreifen[/b] (Baghdad, Cairo, Damascus, Alexandria Sulci), jeweils ~130 km lang und 2 km breit. Aus diesen Rissen schießen über 100 Geysirfontänen mit Geschwindigkeiten von ~1.400 km/h in den Weltraum: Wasserdampf, Eispartikel, organische Moleküle und Salze, die direkt aus dem Inneren des Mondes stammen.
 
 Das ausgestoßene Material wurde von der [b]Cassini-Sonde[/b] bei mehreren gezielten Durchflügen direkt analysiert. Die Ergebnisse sind außergewöhnlich: Wasserstoffmoleküle (H₂) in der Fahne deuten auf aktive hydrothermale Prozesse am Meeresboden hin — also Wasser-Gestein-Wechselwirkungen bei hohen Temperaturen, ähnlich den submarinen Schwarzen Rauchern auf der Erde. Diese Umgebungen gelten als mögliche Wiegen des Lebens. Darüber hinaus detektierte Cassini komplexe organische Moleküle mit Massen über 200 Dalton, darunter sauerstoff- und stickstoffhaltige Verbindungen, sowie im Jahr 2023 nachgewiesenes Phosphat — alle sechs CHNOPS-Elemente des Lebens sind in der Fahne vertreten.
 
 Der globale flüssige Salzwasserozean unter der Eiskruste (ca. 10 km dick) hat durch [url=concept:tidal_heating]Gezeitenheizung[/url] — Enceladus befindet sich in einer [url=concept:orbital_resonance]2:1-Resonanz[/url] mit Dion — seinen Wärmehaushalt aufrechterhalten. Der Ozean ist salzig (Natriumchlorid und Natriumcarbonat nachgewiesen) und hat vermutlich einen pH von ~11–12 (alkalisch). Das aus den Geysiren ausgestoßene Material speist kontinuierlich Saturns [b]E-Ring[/b] — der gesamte Ring besteht aus Enceladus-Material.
 
-Enceladus gilt neben [url=body:europa]Europa[/url] als der aussichtsreichste Kandidat für außerirdisches Leben im Sonnensystem, weil er als einziger bekannter Körper aktiv Proben seines Innenlebens in den Weltraum schleudert — eine zukünftige Sonde müsste nicht einmal landen, sondern könnte einfach durch die Fahne fliegen."""
+Enceladus gilt neben [url=body:europa]Europa[/url] als der aussichtsreichste Kandidat für außerirdisches Leben im Sonnensystem, weil er als einziger bekannter Körper aktiv Proben seines Innenlebens in den Weltraum schleudert — eine zukünftige Sonde müsste nicht einmal landen, sondern könnte einfach durch die Fahne fliegen.
+"""
 
 [infobox.atmosphere]
 temp_mean = -198
-temp_min  = -240
-temp_max  = -93
+temp_min = -240
+temp_max = -93
 
 [infobox.atmosphere.composition]
-"Wasserdampf (H₂O)"       = 91.0
-"Stickstoff (N₂)"         = 4.0
+"Wasserdampf (H₂O)" = 91.0
+"Stickstoff (N₂)" = 4.0
 "Kohlenstoffdioxid (CO₂)" = 3.3
-"Methan (CH₄)"             = 1.7
+"Methan (CH₄)" = 1.7

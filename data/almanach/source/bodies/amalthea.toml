@@ -1,11 +1,22 @@
 id = "amalthea"
 
 description = """\
+[b]Amalthea[/b]
+
+[b]Etymologie[/b]
+Nach Ἀμάλθεια (Amáltheia), Ziege, die das Zeus-Kind nährte.
+
+[b]Entdeckung[/b]
+Datum: 1892-09-09
+Entdecker: Edward Emerson Barnard
+
+[b]Physikalische Eigenschaften[/b]
 [b]Amalthea[/b] ist der drittinnerste Mond des [url=body:jupiter]Jupiter[/url] und mit einem Durchmesser von ~168 km entlang seiner längsten Achse eines der größten irregulären Monde. Er hat eine tief rote Farbe — eine der rötesten Oberflächen im Sonnensystem.
 
-Amalthea ist in gebundener Rotation und strahlt mehr Wärme ab als sie von der Sonne empfängt — die Quelle ist Jupiters Magnetfeld, das Ströme in dem leitenden Körper induziert. Der Mond wurde 1892 von Edward Barnard entdeckt, als letzter Mond per direkter Sichtbeobachtung."""
+Amalthea ist in gebundener Rotation und strahlt mehr Wärme ab als sie von der Sonne empfängt — die Quelle ist Jupiters Magnetfeld, das Ströme in dem leitenden Körper induziert. Der Mond wurde 1892 von Edward Barnard entdeckt, als letzter Mond per direkter Sichtbeobachtung.
+"""
 
 [infobox.atmosphere]
 temp_mean = -113
-temp_min  = -163
-temp_max  = -73
+temp_min = -163
+temp_max = -73

@@ -6,45 +6,44 @@ content = """\
 
 [color=#888888]────────────────────────[/color]
 
-Die [b]große Halbachse[/b] ist die Hälfte der längsten Ausdehnung einer Ellipse und beschreibt den mittleren Abstand eines Körpers zu seinem Zentralobjekt. In der [url=concept:kepler_laws]Keplerschen Mechanik[/url] ist sie die fundamentalste Größe zur Beschreibung einer Umlaufbahn.
+Die [b]große Halbachse[/b] ([i]a[/i]) ist die Hälfte der längsten Ausdehnung einer Ellipse. Sie definiert den mittleren Abstand eines orbitierenden Körpers zum Zentralkörper und ist die fundamentalste Größe zur Beschreibung einer Umlaufbahn.
 
-Sie wird gewöhnlich in [url=concept:astronomical_unit]Astronomischen Einheiten (AU)[/url] angegeben, wenn es sich um Abstände im Sonnensystem handelt.
+Im Sonnensystem werden Abstände üblicherweise in [url=concept:astronomical_unit]Astronomischen Einheiten (AU)[/url] angegeben.
 
 [b]Zusammenhang mit der Umlaufzeit[/b]
-Nach dem dritten [url=concept:kepler_laws]Keplerschen Gesetz[/url] gilt:
+Das dritte [url=concept:kepler_laws]Keplersche Gesetz[/url] beschreibt den quantitativen Zusammenhang zwischen großer Halbachse und [url=concept:orbital_period]Umlaufzeit[/url]:
 
 [indent][i]T² ∝ a³[/i][/indent]
 
-Das heißt: Je größer die große Halbachse, desto länger die [url=concept:orbital_period]Umlaufzeit[/url]. Ein Planet mit doppelter Halbachse benötigt etwa 2,83-mal so lang für einen Umlauf.
+Die Umlaufzeit steigt mit der Potenz 3/2 der großen Halbachse. Bei doppelter Halbachse verlängert sich die Umlaufzeit um den Faktor 2^(3/2) ≈ 2,83.
 
 [b]Verwandte Begriffe[/b]
-• [url=concept:periapsis]Periapsis[/url] — Nächster Punkt der Bahn
-• [url=concept:apoapsis]Apoapsis[/url] — Fernster Punkt der Bahn
-• [url=concept:eccentricity]Exzentrizität[/url] — Maß für die Abweichung vom Kreis"""
+• [url=concept:periapsis]Periapsis[/url] — nächster Punkt der Bahn
+• [url=concept:apoapsis]Apoapsis[/url] — fernster Punkt der Bahn
+• [url=concept:eccentricity]Exzentrizität[/url] — Maß der Abweichung von der Kreisbahn"""
 
 [orbital_period]
 title = "Umlaufzeit"
 content = """\
 [font_size=18][b]Umlaufzeit[/b][/font_size]
-[i]Astronomie · Auch: Siderische Periode[/i]
+[i]Astronomie · Siderische Periode[/i]
 
 [color=#888888]────────────────────────[/color]
 
-Die [b]Umlaufzeit[/b] (auch [b]siderische Periode[/b]) ist die Zeit, die ein Himmelskörper benötigt, um seinen Zentralkörper einmal vollständig zu umkreisen — gemessen gegenüber den Fixsternen.
+Die [b]Umlaufzeit[/b] ([i]T[/i]), auch [b]siderische Periode[/b], ist das Zeitintervall für einen vollständigen Umlauf eines Himmelskörpers um seinen Zentralkörper, gemessen relativ zu den Fixsternen.
 
-Sie unterscheidet sich von der [b]synodischen Periode[/b], welche die Zeit zwischen zwei gleichartigen Konstellationen relativ zur Erde beschreibt (z. B. zwei aufeinanderfolgende Oppositionen).
+Die [b]synodische Periode[/b] unterscheidet sich hiervon: Sie gibt die Zeit zwischen zwei gleichen Konstellationen relativ zur Erde an (z. B. aufeinanderfolgende Oppositionen).
 
-[b]Berechnung nach Kepler[/b]
-Aus dem dritten [url=concept:kepler_laws]Keplerschen Gesetz[/url] folgt:
+[b]Berechnung[/b]
+Nach dem dritten [url=concept:kepler_laws]Keplerschen Gesetz[/url]:
 
 [indent][i]T = 2π · √(a³ / μ)[/i][/indent]
 
-wobei [i]a[/i] die [url=concept:semi_major_axis]große Halbachse[/url] und [i]μ[/i] der [url=concept:gravitational_parameter]Gravitationsparameter[/url] des Zentralkörpers ist.
+mit [i]a[/i] als [url=concept:semi_major_axis]große Halbachse[/url] und [i]μ[/i] als [url=concept:gravitational_parameter]Gravitationsparameter[/url] des Zentralkörpers.
 
-[b]Einheiten im Almanach[/b]
-Umlaufzeiten werden in Tagen (d) oder Jahren (a) angegeben:
-• [b]1 a[/b] = 365,25 d = 31.557.600 s
-• [b]1 d[/b] = 86.400 s"""
+[b]Einheiten[/b]
+• [b]1 a (Jahr)[/b] = 365,25 d = 31.557.600 s
+• [b]1 d (Tag)[/b] = 86.400 s"""
 
 [eccentricity]
 title = "Exzentrizität"
@@ -54,17 +53,17 @@ content = """\
 
 [color=#888888]────────────────────────[/color]
 
-Die [b]Exzentrizität[/b] (Symbol: [i]e[/i]) beschreibt, wie stark eine Umlaufbahn von einem Kreis abweicht. Sie ist dimensionslos und nimmt folgende charakteristische Werte an:
+Die [b]Exzentrizität[/b] ([i]e[/i]) ist ein dimensionsloses Maß für die Abweichung einer Umlaufbahn von der Kreisform. Charakteristische Wertebereiche:
 
-[indent]• [b]e = 0[/b] → Kreisbahn
-• [b]0 < e < 1[/b] → Ellipse (gebundene Bahn)
-• [b]e = 1[/b] → Parabel (Grenzbahn)
-• [b]e > 1[/b] → Hyperbel (nicht gebunden)[/indent]
+[indent]• [b]e = 0[/b] — Kreisbahn
+• [b]0 < e < 1[/b] — Ellipse (gebundene Bahn)
+• [b]e = 1[/b] — Parabel (Grenzbahn)
+• [b]e > 1[/b] — Hyperbel (ungebundene Bahn)[/indent]
 
-Die meisten Planeten des Sonnensystems haben Exzentrizitäten nahe Null, ihre Bahnen sind also fast kreisförmig. Kometen hingegen erreichen oft Werte nahe 1.
+Die Exzentrizitäten der Planeten des Sonnensystems liegen nahe bei null (nahezu kreisförmige Bahnen). Kometen und Objekte der Streuscheibe erreichen typischerweise Werte nahe e = 1.
 
-[b]Einfluss auf Bahn und Klima[/b]
-Eine hohe Exzentrizität bewirkt große Unterschiede zwischen [url=concept:periapsis]Periapsis[/url] und [url=concept:apoapsis]Apoapsis[/url] und damit auch zwischen den Jahreszeiten-Extremen eines Planeten.
+[b]Physikalische Bedeutung[/b]
+Die Exzentrizität bestimmt den Abstandsvariationsbereich zwischen [url=concept:periapsis]Periapsis[/url] und [url=concept:apoapsis]Apoapsis[/url]. Bei hohen Exzentrizitäten resultieren ausgeprägte jahreszeitliche Intensitätsunterschiede.
 
 [b]Verwandte Begriffe[/b]
 • [url=concept:semi_major_axis]Große Halbachse[/url]
@@ -79,17 +78,17 @@ content = """\
 
 [color=#888888]────────────────────────[/color]
 
-Die [b]Periapsis[/b] ist der [b]nächste Punkt[/b] einer Umlaufbahn zum Zentralkörper. An diesem Punkt ist die [url=concept:orbital_velocity]Orbitalgeschwindigkeit[/url] am höchsten.
+Die [b]Periapsis[/b] ist der Punkt einer Umlaufbahn mit dem geringsten Abstand zum Zentralkörper. An diesem Punkt erreicht die [url=concept:orbital_velocity]Orbitalgeschwindigkeit[/url] ihr Maximum.
 
-Der Begriff ist allgemein für jeden Zentralkörper gültig. Bei spezifischen Körpern gibt es eigene Bezeichnungen:
+Körperspezifische Terminologie:
 [indent]• [b]Perihel[/b] — nächster Punkt zur Sonne
 • [b]Perigäum[/b] — nächster Punkt zur Erde
-• [b]Perizentrum[/b] — allgemein[/indent]
+• [b]Perizentrum[/b] — allgemeine Bezeichnung[/indent]
 
 [b]Berechnung[/b]
 [indent][i]r_peri = a · (1 − e)[/i][/indent]
 
-wobei [i]a[/i] die [url=concept:semi_major_axis]große Halbachse[/url] und [i]e[/i] die [url=concept:eccentricity]Exzentrizität[/url] ist.
+mit [i]a[/i] als [url=concept:semi_major_axis]große Halbachse[/url] und [i]e[/i] als [url=concept:eccentricity]Exzentrizität[/url].
 
 [b]Siehe auch[/b]
 • [url=concept:apoapsis]Apoapsis[/url] — fernster Punkt der Bahn
@@ -103,15 +102,17 @@ content = """\
 
 [color=#888888]────────────────────────[/color]
 
-Die [b]Apoapsis[/b] ist der [b]fernste Punkt[/b] einer Umlaufbahn vom Zentralkörper. An diesem Punkt ist die [url=concept:orbital_velocity]Orbitalgeschwindigkeit[/url] am niedrigsten.
+Die [b]Apoapsis[/b] ist der Punkt einer Umlaufbahn mit dem größten Abstand zum Zentralkörper. An diesem Punkt erreicht die [url=concept:orbital_velocity]Orbitalgeschwindigkeit[/url] ihr Minimum.
 
-Wie bei der [url=concept:periapsis]Periapsis[/url] existieren zentralkörper-spezifische Bezeichnungen:
+Körperspezifische Terminologie:
 [indent]• [b]Aphel[/b] — fernster Punkt von der Sonne
 • [b]Apogäum[/b] — fernster Punkt von der Erde
-• [b]Apozentrum[/b] — allgemein[/indent]
+• [b]Apozentrum[/b] — allgemeine Bezeichnung[/indent]
 
 [b]Berechnung[/b]
 [indent][i]r_apo = a · (1 + e)[/i][/indent]
+
+mit [i]a[/i] als [url=concept:semi_major_axis]große Halbachse[/url] und [i]e[/i] als [url=concept:eccentricity]Exzentrizität[/url].
 
 [b]Siehe auch[/b]
 • [url=concept:periapsis]Periapsis[/url] — nächster Punkt der Bahn
@@ -126,15 +127,17 @@ content = """\
 
 [color=#888888]────────────────────────[/color]
 
-Die [b]Orbitalgeschwindigkeit[/b] ist die Geschwindigkeit, mit der sich ein Körper auf seiner Umlaufbahn bewegt. Sie ist nicht konstant — auf einer elliptischen Bahn ist sie an der [url=concept:periapsis]Periapsis[/url] am größten und an der [url=concept:apoapsis]Apoapsis[/url] am kleinsten (2. Keplersches Gesetz).
+Die [b]Orbitalgeschwindigkeit[/b] ist die Bahngeschwindigkeit eines Himmelskörpers relativ zum Zentralkörper. Auf elliptischen Bahnen variiert sie kontinuierlich: Maximum an der [url=concept:periapsis]Periapsis[/url], Minimum an der [url=concept:apoapsis]Apoapsis[/url] (zweites Keplersches Gesetz).
 
 [b]Mittlere Orbitalgeschwindigkeit[/b]
 [indent][i]v = 2π · a / T[/i][/indent]
 
-wobei [i]a[/i] die [url=concept:semi_major_axis]große Halbachse[/url] und [i]T[/i] die [url=concept:orbital_period]Umlaufzeit[/url] ist.
+mit [i]a[/i] als [url=concept:semi_major_axis]große Halbachse[/url] und [i]T[/i] als [url=concept:orbital_period]Umlaufzeit[/url].
 
-[b]Einordnung[/b]
-Die mittlere Orbitalgeschwindigkeit der Erde beträgt ca. [b]29,8 km/s[/b]. Innere Planeten wie Merkur (47,9 km/s) sind schneller, äußere wie Neptun (5,4 km/s) deutlich langsamer.
+[b]Referenzwerte (Sonnensystem)[/b]
+[indent]• Merkur: 47,9 km/s
+• Erde: 29,8 km/s
+• Neptun: 5,4 km/s[/indent]
 
 [b]Siehe auch[/b]
 • [url=concept:escape_velocity]Fluchtgeschwindigkeit[/url]
@@ -148,20 +151,21 @@ content = """\
 
 [color=#888888]────────────────────────[/color]
 
-Die [b]Fluchtgeschwindigkeit[/b] ist die Mindestgeschwindigkeit, die ein Körper benötigt, um dem Gravitationsfeld eines anderen Körpers zu entkommen — ohne weiteren Antrieb.
+Die [b]Fluchtgeschwindigkeit[/b] ([i]v_esc[/i]) ist die Mindestgeschwindigkeit, die ein Objekt benötigt, um dem Gravitationsfeld eines Körpers zu entkommen, ohne weiteren Schub zu erhalten.
 
 [b]Formel[/b]
 [indent][i]v_esc = √(2μ / r)[/i][/indent]
 
-wobei [i]μ[/i] der [url=concept:gravitational_parameter]Gravitationsparameter[/url] und [i]r[/i] der Radius des Körpers ist.
+mit [i]μ[/i] als [url=concept:gravitational_parameter]Gravitationsparameter[/url] und [i]r[/i] als Abstand vom Zentralkörper.
 
-[b]Beispiele[/b]
-[indent]• [b]Erde:[/b] ~11,2 km/s
-• [b]Mars:[/b] ~5,0 km/s
-• [b]Jupiter:[/b] ~59,5 km/s
-• [b]Sonne:[/b] ~617 km/s[/indent]
+[b]Referenzwerte (Oberfläche)[/b]
+[indent]• Erde: 11,2 km/s
+• Mars: 5,0 km/s
+• Jupiter: 59,5 km/s
+• Sonne: 617 km/s[/indent]
 
-Körper mit geringer Fluchtgeschwindigkeit (wie der Mond) können keine dichte Atmosphäre halten, da Gasmoleküle bei Umgebungstemperatur schnell genug sind, um zu entweichen.
+[b]Physikalische Bedeutung[/b]
+Die Fluchtgeschwindigkeit begrenzt die Fähigkeit eines Körpers, eine Atmosphäre zu binden. Bei niedriger Fluchtgeschwindigkeit und thermischen Geschwindigkeiten der Atmosphärenmoleküle kommt es zum atmosphärischen Verlust.
 
 [b]Siehe auch[/b]
 • [url=concept:gravitational_parameter]Gravitationsparameter[/url]
@@ -175,22 +179,22 @@ content = """\
 
 [color=#888888]────────────────────────[/color]
 
-Der [b]Gravitationsparameter[/b] (Symbol: [i]μ[/i]) eines Körpers ist das Produkt aus der [b]Gravitationskonstante G[/b] und der [b]Masse M[/b] des Körpers:
+Der [b]Gravitationsparameter[/b] ([i]μ[/i]) ist definiert als Produkt aus der [b]Newtonschen Gravitationskonstante G[/b] und der [b]Masse M[/b]:
 
 [indent][i]μ = G · M[/i][/indent]
 
-Er wird in km³/s² angegeben und ist in der Praxis genauer bekannt als G und M einzeln, da er direkt aus Umlaufbahnen gemessen werden kann.
+Einheit: km³/s². Der Gravitationsparameter ist präziser bestimmbar als G und M einzeln, da er direkt aus orbitalen Beobachtungen abgeleitet wird.
 
 [b]Verwendung[/b]
-Der Gravitationsparameter ist die zentrale Größe in allen orbitalmechanischen Berechnungen:
-• [url=concept:orbital_period]Umlaufzeit[/url] aus [url=concept:semi_major_axis]Halbachse[/url]
-• [url=concept:escape_velocity]Fluchtgeschwindigkeit[/url]
-• Bahnkorrekturen und Manöver
+Zentrale Größe in orbitalmechanischen Berechnungen:
+• Bestimmung der [url=concept:orbital_period]Umlaufzeit[/url] aus der [url=concept:semi_major_axis]Halbachse[/url]
+• Berechnung der [url=concept:escape_velocity]Fluchtgeschwindigkeit[/url]
+• Bahnmechanik und Manöverplanung
 
-[b]Werte (Sonnensystem)[/b]
-[indent]• [b]Sonne:[/b] 1,327 · 10¹¹ km³/s²
-• [b]Erde:[/b] 3,986 · 10⁵ km³/s²
-• [b]Jupiter:[/b] 1,267 · 10⁸ km³/s²[/indent]"""
+[b]Referenzwerte (Sonnensystem)[/b]
+[indent]• Sonne: 1,327 · 10¹¹ km³/s²
+• Jupiter: 1,267 · 10⁸ km³/s²
+• Erde: 3,986 · 10⁵ km³/s²[/indent]"""
 
 [astronomical_unit]
 title = "Astronomische Einheit"
@@ -200,44 +204,44 @@ content = """\
 
 [color=#888888]────────────────────────[/color]
 
-Die [b]Astronomische Einheit[/b] (Abkürzung: [b]AU[/b] oder [b]AE[/b]) ist eine Längeneinheit der Astronomie, definiert als der mittlere Abstand zwischen Erde und Sonne.
+Die [b]Astronomische Einheit[/b] ([i]AU[/i]) ist die Standardlängeneinheit für Abstände im Sonnensystem. Sie ist definiert als der mittlere Abstand zwischen Erde und Sonne.
 
-[b]Definition[/b]
-[indent][b]1 AU = 149.597.870,7 km[/b] (exakt, seit 2012)[/indent]
+[b]Definition (IAU 2012)[/b]
+[indent][b]1 AU = 149.597.870,7 km[/b] (exakt)[/indent]
 
-Sie ist die Standardeinheit für Abstände innerhalb von Planetensystemen.
-
-[b]Einordnung[/b]
+[b]Referenzabstände (Sonnensystem)[/b]
 [indent]• Merkur: 0,387 AU
 • Venus: 0,723 AU
-• [b]Erde: 1,000 AU[/b]
+• Erde: 1,000 AU
 • Mars: 1,524 AU
 • Jupiter: 5,203 AU
 • Neptun: 30,07 AU[/indent]
 
-Licht benötigt für eine Strecke von 1 AU etwa [b]8 Minuten und 20 Sekunden[/b]."""
+[b]Laufzeit des Lichts[/b]
+Licht benötigt für 1 AU ca. 8 Minuten 20 Sekunden (499,0 s)."""
 
 [kepler_laws]
 title = "Keplersche Gesetze"
 content = """\
 [font_size=18][b]Keplersche Gesetze[/b][/font_size]
-[i]Astronomie · Johannes Kepler (1571–1630)[/i]
+[i]Astronomie · Orbitalmechanik[/i]
 
 [color=#888888]────────────────────────[/color]
 
-Die [b]drei Keplerschen Gesetze[/b] beschreiben die Bewegung von Himmelskörpern auf Umlaufbahnen. Sie wurden von Johannes Kepler Anfang des 17. Jahrhunderts empirisch aus Tychoschen Beobachtungsdaten abgeleitet und später von Newton gravitationstheoretisch begründet.
+Die [b]Keplerschen Gesetze[/b] beschreiben die Bewegung von Himmelskörpern auf Umlaufbahnen. Empirisch abgeleitet von Johannes Kepler (1609, 1619) aus Beobachtungsdaten Tycho Brahes; theoretisch begründet durch Isaac Newton (1687) aus den Gravitationsgesetzen.
 
-[b]1. Gesetz — Ellipsenbahn[/b]
-[indent]Alle Planeten bewegen sich auf [b]Ellipsen[/b], in deren einem Brennpunkt die Sonne steht.[/indent]
+[b]1. Gesetz (Ellipsenbahn)[/b]
+[indent]Planeten bewegen sich auf Ellipsen. Der Zentralkörper befindet sich in einem der beiden Brennpunkte.[/indent]
 
-[b]2. Gesetz — Flächensatz[/b]
-[indent]Der Fahrstrahl (Verbindungslinie Planet–Sonne) überstreicht in gleichen Zeiten [b]gleiche Flächen[/b]. Planeten sind nahe der [url=concept:periapsis]Periapsis[/url] schneller als nahe der [url=concept:apoapsis]Apoapsis[/url].[/indent]
+[b]2. Gesetz (Flächensatz)[/b]
+[indent]Der Fahrstrahl überstreicht in gleichen Zeitintervallen gleiche Flächen. Die [url=concept:orbital_velocity]Orbitalgeschwindigkeit[/url] ist an der [url=concept:periapsis]Periapsis[/url] maximal, an der [url=concept:apoapsis]Apoapsis[/url] minimal.[/indent]
 
-[b]3. Gesetz — Harmonisches Gesetz[/b]
-[indent]Das Quadrat der [url=concept:orbital_period]Umlaufzeit[/url] ist proportional zur dritten Potenz der [url=concept:semi_major_axis]großen Halbachse[/url]:
-[i]T² ∝ a³[/i][/indent]
+[b]3. Gesetz (Harmonisches Gesetz)[/b]
+[indent]Das Verhältnis [i]T² / a³[/i] ist für alle Körper eines Systems konstant.
 
-Die Keplersche Mechanik bildet die Grundlage der Simulationsmodelle dieses Systems."""
+[indent][i]T² = (4π²/μ) · a³[/i][/indent][/indent]
+
+mit [i]T[/i] als [url=concept:orbital_period]Umlaufzeit[/url], [i]a[/i] als [url=concept:semi_major_axis]große Halbachse[/url] und [i]μ[/i] als [url=concept:gravitational_parameter]Gravitationsparameter[/url]."""
 
 [asteroid_belt]
 title = "Asteroidengürtel"
@@ -247,18 +251,18 @@ content = """\
 
 [color=#888888]────────────────────────[/color]
 
-Der [b]Asteroidengürtel[/b] (auch: Hauptgürtel) ist eine ringförmige Region zwischen den Orbits von [url=body:mars]Mars[/url] und [url=body:jupiter]Jupiter[/url], in der sich Millionen von Asteroiden und Kleinkörpern konzentrieren.
+Der [b]Asteroidengürtel[/b] (Hauptgürtel) ist eine konzentrische Region zwischen den Orbits von [url=body:mars]Mars[/url] (~1,5 AU) und [url=body:jupiter]Jupiter[/url] (~5,2 AU). Er enthält Millionen von Asteroiden und Kleinkörpern.
 
 [b]Lage[/b]
 [indent]• Innere Grenze: ~2,1 AU
 • Äußere Grenze: ~3,3 AU
-• Breiteste Ausdehnung: ~1,2 AU[/indent]
+• Maximale Breite: ~1,2 AU[/indent]
 
 [b]Entstehung[/b]
-Es wird angenommen, dass die starke Gravitationswirkung [url=body:jupiter]Jupiters[/url] verhindert hat, dass sich das Material des Gürtels zu einem Planeten zusammengeballt hat. [url=body:ceres]Ceres[/url] ist mit einem Durchmesser von ~940 km das größte Objekt im Hauptgürtel und wird als Zwergplanet klassifiziert.
+Die gravitative Störung durch [url=body:jupiter]Jupiter[/url] verhinderte die vollständige Akkretion des Gürtelmaterials zu einem Planeten. Stattdessen blieben zahlreiche Körper als Relikte der Planetenentstehung erhalten.
 
-[b]Bekannte Objekte[/b]
-• [url=body:ceres]Ceres[/url] — Zwergplanet, größtes Objekt im Gürtel
+[b]Größtes Objekt[/b]
+[url=body:ceres]Ceres[/url] (Durchmesser ~940 km) ist der einzige Zwergplanet im Hauptgürtel.
 
 [b]Siehe auch[/b]
 • [url=concept:kuiper_belt]Kuipergürtel[/url]
@@ -272,23 +276,24 @@ content = """\
 
 [color=#888888]────────────────────────[/color]
 
-Der [b]Kuipergürtel[/b] ist eine scheibenförmige Region des äußeren Sonnensystems, die sich von der Bahn [url=body:neptune]Neptuns[/url] (~30 AU) bis etwa 50 AU erstreckt. Er enthält eine große Anzahl kleiner Eiskörper (Trans-Neptunische Objekte, TNO).
+Der [b]Kuipergürtel[/b] ist eine scheibenförmige Region des äußeren Sonnensystems (~30 AU bis ~50 AU). Er enthält zahlreiche eisige Körper, klassifiziert als Trans-Neptunische Objekte (TNO).
 
 [b]Lage[/b]
 [indent]• Innere Grenze: ~30 AU (Neptunbahn)
 • Äußere Grenze: ~50 AU
-• Deutlich größer als der [url=concept:asteroid_belt]Asteroidengürtel][/url][/indent]
+• Gesamtmasse: ~0,1 Erdmassen (geschätzt)[/indent]
 
 [b]Bekannte Objekte[/b]
-• [url=body:pluto]Pluto[/url] (falls vorhanden) — größtes bekanntes KBO
-• [url=body:eris]Eris[/url] — massereicher Zwergplanet
+[indent]• [url=body:pluto]Pluto[/url] — erstes entdecktes KBO (1930)
+• [url=body:eris]Eris[/url] — massereichster bekannter Zwergplanet
 • [url=body:makemake]Makemake[/url] — Zwergplanet
-• [url=body:haumea]Haumea[/url] — Zwergplanet mit Ringen
+• [url=body:haumea]Haumea[/url] — Zwergplanet mit nachgewiesenem Ringsystem[/indent]
 
 [b]Bedeutung[/b]
-Der Kuipergürtel gilt als Reservoir für [b]kurzperiodische Kometen[/b]. Gravitationsstörungen durch die Gasriesen können KBOs auf innere Bahnen lenken.
+Der Kuipergürtel ist das Reservoir für kurzperiodische Kometen. Gravitative Wechselwirkungen mit den Gasriesen können KBOs auf innere Sonnensystembahnen lenken.
 
 [b]Siehe auch[/b]
+• [url=concept:scattered_disc]Streuscheibe[/url]
 • [url=concept:asteroid_belt]Asteroidengürtel[/url]"""
 
 [habitable_zone]
@@ -299,17 +304,18 @@ content = """\
 
 [color=#888888]────────────────────────[/color]
 
-Die [b]Habitable Zone[/b] (auch: Goldlöckchen-Zone) ist der Bereich um einen Stern, in dem flüssiges Wasser auf der Oberfläche eines erdähnlichen Planeten existieren kann — eine der Grundvoraussetzungen für Leben, wie wir es kennen.
+Die [b]Habitable Zone[/b] (HZ, umgangssprachlich: Goldlöckchen-Zone) ist der Abstandsbereich um einen Stern, in dem flüssiges Wasser auf der Oberfläche eines erdähnlichen Planeten stabil existieren kann. Dies gilt als notwendige, nicht hinreichende Bedingung für lebensfreundliche Bedingungen.
 
-[b]Im Sonnensystem[/b]
-Die Habitable Zone der Sonne erstreckt sich von ca. [b]0,95 AU[/b] bis [b]1,37 AU[/b]. Die Erde befindet sich mit 1,0 AU komfortabel innerhalb dieser Zone. Mars (~1,52 AU) liegt bereits außerhalb.
+[b]Sonnensystem[/b]
+Die HZ der Sonne erstreckt sich von ca. 0,95 AU bis 1,37 AU. Die Erde (1,00 AU) befindet sich innerhalb dieses Bereichs. Mars (1,52 AU) liegt außerhalb der konservativen HZ-Grenze.
 
 [b]Einschränkungen[/b]
-Die Habitable Zone berücksichtigt nur den Strahlungseinfluss des Sterns. Weitere Faktoren — Atmosphäre, Magnetfeld, geologische Aktivität — sind ebenso entscheidend für die Habitabilität.
+Die HZ-Definition berücksichtigt ausschließlich den Strahlungsfluss des Zentralgestirns. Weitere habitabilitätsrelevante Faktoren (Atmosphärendruck, Magnetfeldschutz, geologische Aktivität, Gezeitenheizung) erfordern zusätzliche Analyse.
 
 [b]Verwandte Konzepte[/b]
-• [url=concept:frost_line]Frostlinie[/url] — Grenze, ab der Eis stabil ist
-• [url=concept:astronomical_unit]Astronomische Einheit[/url]"""
+• [url=concept:frost_line]Frostlinie[/url]
+• [url=concept:astronomical_unit]Astronomische Einheit[/url]
+• [url=concept:tidal_heating]Gezeitenheizung[/url]"""
 
 [tidal_heating]
 title = "Gezeitenheizung"
@@ -319,22 +325,20 @@ content = """\
 
 [color=#888888]────────────────────────[/color]
 
-[b]Gezeitenheizung[/b] ist ein Prozess, bei dem die Gravitationskräfte eines Zentralkörpers (oder benachbarter Monde) einen Mond oder Planeten periodisch verformen — ähnlich wie ein Gummiball, den man immer wieder zusammendrückt und loslässt. Diese innere Reibung erzeugt Wärme und kann den Körper geologisch aktiv halten, obwohl er weit von seiner Sonne entfernt und eigentlich längst erkaltet sein sollte.
+[b]Gezeitenheizung[/b] ist ein thermischer Energieerzeugungsprozess in Himmelskörpern, resultierend aus periodischer gravitativer Verformung durch einen Zentralkörper oder benachbarte Massen. Die durch die Gezeitendeformation induzierte innere Reibung dissipiert mechanische Energie als Wärme.
 
-[b]Voraussetzungen[/b]
-Gezeitenheizung wirkt besonders stark, wenn:
-[indent]• Der Mond in einer [url=concept:orbital_resonance]Bahnresonanz[/url] mit anderen Monden steht (verhindert Kreisbahnstabilisierung)
-• Der Mond nahe am massereichen Planeten kreist
-• Die Umlaufbahn eine gewisse Exzentrizität behält[/indent]
+[b]Voraussetzungen für maximale Effizienz[/b]
+[indent]• [url=concept:orbital_resonance]Bahnresonanz[/url] mit anderen Monden (verhindert Kreisierung der Bahn)
+• Geringer Abstand zum Zentralkörper (stärkere Gezeitenkräfte)
+• Erhalt einer orbitalen Exzentrizität[/indent]
 
-[b]Beispiele im Sonnensystem[/b]
-[indent]• [url=body:io]Io[/url] — stärkste Gezeitenheizung im Sonnensystem (~100 TW), >400 aktive Vulkane
-• [url=body:europa]Europa[/url] — Ozean unter dem Eis durch Gezeitenheizung flüssig gehalten
-• [url=body:enceladus]Enceladus[/url] — aktive Geysire durch Gezeitenheizung angetrieben
-• [url=body:titan]Titan[/url] — beiträgt zur inneren Wärme[/indent]
+[b]Beispiele (Sonnensystem)[/b]
+[indent]• [url=body:io]Io[/url] — thermische Leistung ~100 TW, >400 aktive Vulkane
+• [url=body:europa]Europa[/url] — Subsurface-Ozean durch Gezeitenheizung aufrechterhalten
+• [url=body:enceladus]Enceladus[/url] — Südpolgeysire durch Gezeitenheizung angetrieben[/indent]
 
-[b]Bedeutung für Astrobiologie[/b]
-Gezeitenheizung kann flüssiges Wasser in Regionen weit jenseits der [url=concept:habitable_zone]Habitablen Zone[/url] aufrechterhalten — und damit Lebensräume in der Tiefe kalter Eismonde schaffen.
+[b]Astrobiologische Relevanz[/b]
+Gezeitenheizung ermöglicht die Existenz flüssigen Wassers in Eismonden jenseits der [url=concept:habitable_zone]Habitablen Zone[/url], potenziell habitabile Subsurface-Ökosysteme erzeugend.
 
 [b]Siehe auch[/b]
 • [url=concept:orbital_resonance]Bahnresonanz[/url]
@@ -348,20 +352,20 @@ content = """\
 
 [color=#888888]────────────────────────[/color]
 
-Eine [b]Bahnresonanz[/b] liegt vor, wenn zwei Himmelskörper ihre Umlaufzeiten in einem einfachen ganzzahligen Verhältnis stehen — z. B. 1:2, 2:3 oder 1:4. Durch die regelmäßigen Gravitationsimpulse, die dabei entstehen, können Resonanzen Bahnen entweder stabilisieren oder destabilisieren.
+Eine [b]Bahnresonanz[/b] besteht, wenn die Umlaufzeiten zweier Himmelskörper in einem rationalen Zahlenverhältnis stehen (z. B. 1:2, 2:3, 3:2). Die resultierenden regelmäßigen gravitativen Wechselwirkungen können Bahnen stabilisieren oder destabilisieren.
 
 [b]Typen[/b]
-[indent]• [b]Mittelbewegungsresonanz[/b] — Umlaufzeiten stehen im Verhältnis kleiner ganzer Zahlen
-• [b]Spin-Orbit-Resonanz[/b] — Rotation und Umlauf eines Körpers sind gekoppelt (z. B. gebundene Rotation des Mondes, 3:2-Resonanz Merkurs)[/indent]
+[indent]• [b]Mittelbewegungsresonanz[/b] — Umlaufzeiten im Verhältnis kleiner ganzer Zahlen
+• [b]Spin-Orbit-Resonanz[/b] — gekoppelte Rotation und Umlauf (z. B. 3:2-Resonanz Merkurs)[/indent]
 
-[b]Bekannte Beispiele[/b]
-[indent]• [b]Laplace-Resonanz[/b] — [url=body:io]Io[/url] : [url=body:europa]Europa[/url] : [url=body:ganymede]Ganymed[/url] = 1:2:4; erzeugt [url=concept:tidal_heating]Gezeitenheizung[/url] in allen drei Monden
-• [b]Mimas / Cassini-Division[/b] — 2:1-Resonanz zwischen Mimas und Ringteilchen leert die Cassini-Division in Saturns Ringen
-• [b]Plutinos[/b] — [url=body:pluto]Pluto[/url], [url=body:orcus]Orcus[/url] und andere KBOs in 3:2-Resonanz mit Neptun
-• [b]Merkur[/b] — 3:2-Spin-Orbit-Resonanz: 3 Eigenrotationen pro 2 Sonnenumläufe[/indent]
+[b]Beispiele (Sonnensystem)[/b]
+[indent]• [b]Laplace-Resonanz[/b] — Io:Europa:Ganymed = 1:2:4; erzeugt [url=concept:tidal_heating]Gezeitenheizung[/url]
+• [b]Plutinos[/b] — [url=body:pluto]Pluto[/url], [url=body:orcus]Orcus[/url] in 3:2-Resonanz mit Neptun
+• [b]Cassini-Division[/b] — 2:1-Resonanz mit Mimas stabilisiert die Ringlücke
+• [b]Merkur[/b] — 3:2 Spin-Orbit-Resonanz[/indent]
 
-[b]Stabilisierende und destabilisierende Wirkung[/b]
-Resonanzen können Bahnen über Milliarden von Jahren schützen (Plutinos) oder Regionen im [url=concept:asteroid_belt]Asteroidengürtel[/url] leerfegen (Kirkwood-Lücken durch Jupiter-Resonanzen).
+[b]Dynamische Effekte[/b]
+Resonanzen können Langzeitstabilität erzeugen (Plutinos) oder Bahnregionen leerfegen (Kirkwood-Lücken im [url=concept:asteroid_belt]Asteroidengürtel[/url] durch Jupiter-Resonanzen).
 
 [b]Siehe auch[/b]
 • [url=concept:tidal_heating]Gezeitenheizung[/url]
@@ -375,21 +379,21 @@ content = """\
 
 [color=#888888]────────────────────────[/color]
 
-Die [b]Roche-Grenze[/b] ist der kritische Abstand zu einem Zentralkörper, innerhalb dessen Gezeitenkräfte einen anfliegenden Körper auseinanderreißen, der nur durch seine eigene Gravitation zusammengehalten wird. Sie wurde 1848 von Édouard Roche berechnet.
+Die [b]Roche-Grenze[/b] ([i]d[/i]) ist der Abstand, innerhalb dessen die Gezeitenkräfte eines Zentralkörpers die Eigengravitation eines fluiden Satelliten überwiegen. Ab diesem Grenzabstand ist die Disruption des Satelliten unvermeidlich. Benannt nach Édouard Roche (1848).
 
-[b]Formel (vereinfacht)[/b]
-[indent][i]d = R · (2 · M / m)^(1/3)[/i][/indent]
-wobei R der Radius des Zentralkörpers, M seine Masse und m die Masse des kleinen Körpers ist.
+[b]Formel (fluider Körper)[/b]
+[indent][i]d ≈ 2,44 · R · (ρ_M / ρ_m)^(1/3)[/i][/indent]
 
-[b]Physikalische Bedeutung[/b]
-[indent]• [b]Innerhalb der Roche-Grenze:[/b] Gezeitenkräfte überwiegen die Eigengravitation — Material kann keinen zusammenhängenden Körper bilden. Hier entstehen Ringsysteme.
-• [b]Außerhalb der Roche-Grenze:[/b] Eigengravitation überwiegt — Monde können stabil existieren und Ringmaterial akkretiert zu Monden.[/indent]
+mit [i]R[/i] als Zentralkörperradius, [i]ρ_M[/i] als Dichte des Zentralkörpers und [i]ρ_m[/i] als Dichte des Satelliten.
 
-[b]Beispiele im Sonnensystem[/b]
-[indent]• Die Ringe von [url=body:saturn]Saturn[/url], [url=body:uranus]Uranus[/url] und [url=body:neptune]Neptun[/url] liegen innerhalb ihrer jeweiligen Roche-Grenze
-• [url=body:metis]Metis[/url] (Jupiter) liegt innerhalb der Roche-Grenze Jupiters
-• [url=body:triton]Triton[/url] nähert sich Neptuns Roche-Grenze (~3,6 Mrd. Jahre)
-• [url=body:quaoar]Quaoar[/url] hat überraschend einen Ring außerhalb seiner Roche-Grenze[/indent]
+[b]Physikalische Konsequenzen[/b]
+[indent]• [b]Innerhalb der Roche-Grenze:[/b] Keine stabile Akkretion zu Monde möglich; Material bleibt als Ringsystem dispergiert
+• [b]Außerhalb der Roche-Grenze:[/b] Monde können stabil existieren; Ringsysteme akkretieren zu Monden[/indent]
+
+[b]Beispiele (Sonnensystem)[/b]
+[indent]• Saturnringe — innerhalb der Roche-Grenze
+• [url=body:metis]Metis[/url] (Jupiter) — innerhalb der Roche-Grenze
+• [url=body:triton]Triton[/url] — Retrogradbahn führt zu orbitaler Dekay; Annäherung an die Roche-Grenze (~3,6 Ga)[/indent]
 
 [b]Siehe auch[/b]
 • [url=concept:tidal_heating]Gezeitenheizung[/url]
@@ -403,25 +407,25 @@ content = """\
 
 [color=#888888]────────────────────────[/color]
 
-[b]Kryovulkanismus[/b] (von griech. [i]kryos[/i] = Kälte) bezeichnet vulkanische Prozesse auf kalten Körpern, bei denen anstelle von Gesteinsschmelze [b]Wasser, Ammoniak, Methan oder Stickstoff[/b] als Magma-Analogon wirken. Wenn innere Wärme (durch [url=concept:tidal_heating]Gezeitenheizung[/url] oder radioaktiven Zerfall) diese Verbindungen verflüssigt, können sie durch Risse nach außen dringen und auf der kalten Oberfläche gefrieren.
+[b]Kryovulkanismus[/b] (griech. [i]kryos[/i] = Frost) bezeichnet die Extrusion flüssiger oder gasförmiger flüchtiger Substanzen (Wasser, Ammoniak, Methan, Stickstoff) an der Oberfläche kalter Himmelskörper. Die Schmelze wird durch interne Wärmequellen ([url=concept:tidal_heating]Gezeitenheizung[/url], radiogener Zerfall) aufrechterhalten.
 
 [b]Erscheinungsformen[/b]
-[indent]• [b]Geysire[/b] — gasförmige Ausbrüche (z. B. Stickstoffgeysire auf [url=body:triton]Triton[/url], Wasserdampf auf [url=body:enceladus]Enceladus[/url])
-• [b]Kryolavaströme[/b] — gefrorene Flüssigkeitsströme auf der Oberfläche
-• [b]Kryovulkankegel[/b] — Erhebungen wie Ahuna Mons auf [url=body:ceres]Ceres[/url][/indent]
+[indent]• [b]Kryogeysire[/b] — Eruption gasförmiger Phasen ([url=body:enceladus]Enceladus[/url], [url=body:triton]Triton[/url])
+• [b]Kryolavaströme[/b] — viskose Flüssigkeitsströme, post-eruptiv erstarrend
+• [b]Kryovulkankegel[/b] — positive Reliefstrukturen (Ahuna Mons, [url=body:ceres]Ceres[/url])[/indent]
 
-[b]Bedeutung[/b]
-Kryovulkanismus kann Oberflächen verjüngen (weniger Krater → jüngeres Terrain) und ist ein Indikator für interne Wärme. Zusammen mit [url=concept:tidal_heating]Gezeitenheizung[/url] macht er eisige Monde zu potentiell habitablen Welten.
+[b]Vorkommen (Sonnensystem)[/b]
+[indent]• [url=body:enceladus]Enceladus[/url] — Südpolgeysire (Wasserdampf, bestätigt)
+• [url=body:triton]Triton[/url] — Stickstoffgeysire (Voyager 2)
+• [url=body:ceres]Ceres[/url] — Ahuna Mons (Dawn-Mission)
+• [url=body:pluto]Pluto[/url] — Wright Mons (möglicher Kryovulkan)[/indent]
 
-[b]Nachgewiesene oder vermutete Kryovulkane[/b]
-[indent]• [url=body:enceladus]Enceladus[/url] — aktive Wassergeysire (bestätigt)
-• [url=body:triton]Triton[/url] — Stickstoffgeysire (bestätigt, Voyager 2)
-• [url=body:ceres]Ceres[/url] — Ahuna Mons (bestätigt, Dawn)
-• [url=body:pluto]Pluto[/url] — möglicher Kryovulkan (Wright Mons)
-• [url=body:orcus]Orcus[/url] — Ammoniak-Hydrate deuten auf frühere Aktivität[/indent]
+[b]Geologische Relevanz[/b]
+Kryovulkanismus verjüngt Oberflächen durch Resurfacing und deutet auf interne thermische Aktivität hin. In Verbindung mit [url=concept:tidal_heating]Gezeitenheizung[/url] ermöglicht er chemische Prozesse in Subsurface-Ozeanen.
 
 [b]Siehe auch[/b]
-• [url=concept:tidal_heating]Gezeitenheizung[/url]"""
+• [url=concept:tidal_heating]Gezeitenheizung[/url]
+• [url=concept:tholins]Tholins[/url]"""
 
 [tholins]
 title = "Tholins"
@@ -431,23 +435,22 @@ content = """\
 
 [color=#888888]────────────────────────[/color]
 
-[b]Tholins[/b] (von griech. [i]tholos[/i] = trüb, schlammig) sind komplexe organische Makromoleküle, die entstehen, wenn einfache Verbindungen wie [b]Methan (CH₄), Stickstoff (N₂) und Wasser[/b] durch ultraviolette Strahlung oder kosmische Teilchen chemisch verarbeitet werden. Sie wurden erstmals 1979 von Carl Sagan und Bishun Khare im Labor nachgewiesen.
+[b]Tholins[/b] (griech. [i]tholos[/i] = trüb) sind komplexe organische Makromoleküle, die durch photochemische Prozesse aus einfachen flüchtigen Substanzen (Methan CH₄, Stickstoff N₂, Wasser H₂O) entstehen. Erstmals synthetisiert und charakterisiert von Sagan & Khare (1979).
 
-[b]Entstehung[/b]
-[indent]• UV-Photonen oder kosmische Strahlung brechen Bindungen in CH₄ und N₂
-• Die entstandenen Radikale reagieren miteinander zu immer komplexeren organischen Ketten
-• Das Ergebnis: ein rötlich-brauner, wachsartiger Feststoff[/indent]
+[b]Entstehungsprozess[/b]
+[indent]• UV-Photolyse oder kosmische Strahlung dissoziiert CH₄ und N₂
+• Entstehende Radikale rekombinieren zu komplexen organischen Ketten
+• Produkt: rötlich-braune, wachsartige Feststoffe mit hoher Polymerisationsgrad[/indent]
 
-[b]Vorkommen im Sonnensystem[/b]
-Tholins verleihen vielen äußeren Sonnensystemkörpern ihre charakteristische Rotfärbung:
-[indent]• [url=body:titan]Titan[/url] — dichte Tholinschicht in der Atmosphäre, Sanddünen aus Tholins
-• [url=body:pluto]Pluto[/url] — rötliche Bereiche (z. B. Tombaugh Regio Randgebiete)
-• [url=body:triton]Triton[/url] — polare Eiskappe mit Tholin-Überresten
-• [url=body:sedna]Sedna[/url], [url=body:gonggong]Gonggong[/url] — tiefrot, sehr hoher Tholinanteil
-• [url=body:makemake]Makemake[/url], [url=body:haumea]Haumea[/url] (Makulae) — organische Flecken[/indent]
+[b]Vorkommen (Sonnensystem)[/b]
+Tholins verursachen die charakteristische Rotfärbung äußerer Sonnensystemkörper:
+[indent]• [url=body:titan]Titan[/url] — atmosphärische Tholin-Aerosole, Dünenfelder
+• [url=body:pluto]Pluto[/url] — rötliche Albedo-Variegation
+• [url=body:sedna]Sedna[/url], [url=body:gonggong]Gonggong[/url] — extrem hohe Tholinfraktion
+• [url=body:makemake]Makemake[/url], [url=body:haumea]Haumea[/url] — Makulae (organische Deposits)[/indent]
 
-[b]Astrobiologische Bedeutung[/b]
-Tholins können Aminosäure-Vorläufer enthalten und sind möglicherweise eine Art präbiotische Chemie — ein erster Schritt in Richtung komplexer Moleküle des Lebens.
+[b]Astrobiologische Relevanz[/b]
+Tholins enthalten präbiotische Molekülstrukturen (Aminosäure-Vorläufer) und sind Modellsubstanzen für frühe organische Chemie in planetaren Atmosphären.
 
 [b]Siehe auch[/b]
 • [url=concept:cryovolcanism]Kryovulkanismus[/url]"""
@@ -460,25 +463,26 @@ content = """\
 
 [color=#888888]────────────────────────[/color]
 
-Die [b]Streuscheibe[/b] (engl. Scattered Disc) ist eine weitläufige, schwach bevölkerte Region des äußeren Sonnensystems, die sich von ~30 AU bis weit über 100 AU erstreckt. Im Gegensatz zum klassischen [url=concept:kuiper_belt]Kuipergürtel[/url] haben Streuscheiben-Objekte stark elliptische und oft stark geneigte Bahnen — ein Zeichen, dass ihre Bahnen durch gravitationale Wechselwirkung mit [url=body:neptune]Neptun[/url] in der Frühzeit des Sonnensystems "gestreut" wurden.
+Die [b]Streuscheibe[/b] (engl. Scattered Disc) ist eine Population transneptunischer Objekte mit Perihelien typischerweise zwischen 30–38 AU (nahe der Neptunbahn) und Aphelien >100 AU. Die Objekte zeichnen sich durch hohe Bahnexzentrizitäten und -neigungen aus.
 
 [b]Entstehung[/b]
-Als sich die Riesenplaneten in der frühen Sonnensystemgeschichte nach außen wanderten (Nizza-Modell), streuten sie zahlreiche Planetesimale des Kuipergürtels auf weitreichende, exzentrische Bahnen. Diese Körper bilden die heutige Streuscheibe.
+Während der planetaren Migration (Nizza-Modell) streute [url=body:neptune]Neptun[/url] zahlreiche Planetesimale aus dem ursprünglichen Kuipergürtel auf weitreichende, exzentrische Bahnen. Diese dynamische Streuung formte die heutige Streuscheibe.
 
-[b]Charakteristika[/b]
-[indent]• Perihelien typisch bei 30–38 AU (nahe Neptun)
-• Aphele können >100 AU erreichen
-• Starke Bahnneigungen zur Ekliptik[/indent]
+[b]Dynamische Charakteristika[/b]
+[indent]• Perihelien: 30–38 AU (Gravitationsdomäne Neptuns)
+• Aphelien: 100–1000+ AU
+• Hohe Exzentrizitäten (e > 0,3 typisch)
+• Große Bahnneigungen zur Ekliptik[/indent]
 
 [b]Bekannte Objekte[/b]
-[indent]• [url=body:eris]Eris[/url] — massereichster bekannter Zwergplanet, Streuscheibe
-• [url=body:gonggong]Gonggong[/url] — großer roter Streuscheiben-Körper
-• [url=body:sedna]Sedna[/url] — gehört zur noch entfernteren Inneren Oortschen Wolke (Sonderfall)[/indent]
+[indent]• [url=body:eris]Eris[/url] — massereichster bekannter Zwergplanet
+• [url=body:gonggong]Gonggong[/url] — großer roter Streuscheibenkörper
+• [url=body:sedna]Sedna[/url] — Sonderfall; möglicherweise innere Oortsche Wolke[/indent]
 
 [b]Abgrenzung[/b]
-[indent]• [b]Klassischer Kuipergürtel[/b]: ~42–48 AU, mäßige Exzentrizität, kaum durch Neptun beeinflusst
-• [b]Streuscheibe[/b]: durch Neptun gravitativ gestreut, stark exzentrische Bahnen
-• [b]Innere Oortsche Wolke[/b]: noch weiter, Perihelien >50 AU (Sedna-Objekte)[/indent]
+[indent]• [b]Klassischer Kuipergürtel[/b] — stabile Bahnen, moderate Exzentrizität
+• [b]Streuscheibe[/b] — durch Neptun gestreut, hohe Exzentrizität
+• [b]Innere Oortsche Wolke[/b] — Perihelien >50 AU, detached objects[/indent]
 
 [b]Siehe auch[/b]
 • [url=concept:kuiper_belt]Kuipergürtel[/url]
@@ -492,23 +496,22 @@ content = """\
 
 [color=#888888]────────────────────────[/color]
 
-Die [b]Magnetosphäre[/b] ist der Bereich um einen Planeten oder Mond, in dem sein [b]Magnetfeld[/b] dominiert — gegenüber dem Sonnenwind und interplanetaren Feldern. Sie entsteht durch Konvektion in einem leitfähigen Kern (Dynamo-Effekt) oder durch induzierte Magnetfelder.
+Die [b]Magnetosphäre[/b] ist der Raumbereich um einen Planeten oder Mond, in dem das intrinsische Magnetfeld des Körpers das interplanetare Magnetfeld und den Sonnenwind dominiert.
 
-[b]Entstehung: Der Dynamo-Effekt[/b]
-Ein flüssiger, elektrisch leitfähiger Kern (Schmelze aus Eisen oder ionisiertem Wasser), der durch Rotation und Konvektion bewegt wird, erzeugt Elektrische Ströme — und damit ein Magnetfeld. Voraussetzungen: Leitfähigkeit, Bewegung, Rotation.
+[b]Entstehung (Dynamo-Effekt)[/b]
+Konvektive Bewegung elektrisch leitfähiger Materie (flüssiges Eisen, ionisiertes Wasser-Eis) in Verbindung mit Rotation erzeugt durch Selbstinduktion ein Magnetfeld. Voraussetzungen: Leitfähigkeit, Konvektion, Rotation.
 
 [b]Schutzfunktion[/b]
-Ohne Magnetosphäre prasseln Sonnenwind-Teilchen direkt auf die Atmosphäre und tragen diese über Millionen von Jahren ab ([url=body:mars]Mars[/url] ist ein Beispiel: kein Feld → dünne Atmosphäre). Die Erdmagnetosphäre schützt die Biosphäre und macht langfristiges Leben an der Oberfläche erst möglich.
+Die Magnetosphäre deflektiert geladene Teilchen des Sonnenwinds. Fehlender Magnetoschutz führt zu atmosphärischem Verlust durch Sputtering und thermische Escape ([url=body:mars]Mars[/url] als Referenzfall).
 
-[b]Beispiele im Sonnensystem[/b]
-[indent]• [url=body:jupiter]Jupiter[/url] — stärkstes Planetenmagnetfeld, Magnetosphäre reicht bis [url=body:saturn]Saturns[/url] Bahn
-• [url=body:terra]Erde[/url] — schützt Atmosphäre und Biosphäre
-• [url=body:ganymede]Ganymed[/url] — einziger Mond mit eigenem intrinsischen Magnetfeld
-• [url=body:mercury]Merkur[/url] — schwaches Feld (~1 % der Erdstärke)
-• [url=body:venus]Venus[/url], [url=body:mars]Mars[/url] — kein oder nur induziertes Magnetfeld[/indent]
+[b]Beispiele (Sonnensystem)[/b]
+[indent]• [url=body:jupiter]Jupiter[/url] — stärkstes Planetenmagnetfeld (~20 Gauss), Magnetosphäre reicht bis Saturnbahn
+• [url=body:terra]Erde[/url] — Dipolfeld (~25–65 µT Oberfläche), Schutz der Biosphäre
+• [url=body:ganymede]Ganymed[/url] — einziger bekannter Mond mit intrinsischem Dynamo-Feld
+• [url=body:venus]Venus[/url], [url=body:mars]Mars[/url] — keine intrinsischen Magnetfelder[/indent]
 
-[b]Magnetosphäre und Monde[/b]
-Monde innerhalb einer Planetenmagnetosphäre (wie [url=body:io]Io[/url] in Jupiters Feld) werden von intensiven Strahlungsgürteln durchdrungen, was ihre Oberflächen chemisch verändert und die Bewohnbarkeit beeinflusst.
+[b]Strahlungsgürtel[/b]
+Monde innerhalb magnetosphärischer Alfvén-Radien ([url=body:io]Io[/url] in Jupiters Magnetosphäre) werden von intensiven Plasmawolken und Strahlungsgürteln durchsetzt, was ihre Oberflächen ionisiert und chemisch modifiziert.
 
 [b]Siehe auch[/b]
 • [url=concept:tidal_heating]Gezeitenheizung[/url]
@@ -522,16 +525,17 @@ content = """\
 
 [color=#888888]────────────────────────[/color]
 
-Die [b]Frostlinie[/b] (auch: Schneelinie, Eislinie) ist die Entfernung von einem Stern, jenseits derer flüchtige Verbindungen wie Wasser, Ammoniak oder Methan zu Eis erstarren können.
+Die [b]Frostlinie[/b] (Schneelinie) ist die radiale Entfernung von einem Zentralstern, jenseits derer flüchtige Substanzen (H₂O, NH₃, CH₄) unter thermodynamischen Gleichgewichtsbedingungen als Eis kondensieren.
 
-[b]Im Sonnensystem[/b]
-Die Frostlinie der Sonne liegt bei ca. [b]4–5 AU[/b] — zwischen den Orbits von [url=body:mars]Mars[/url] und [url=body:jupiter]Jupiter[/url]. Dies erklärt, warum:
-[indent]• Die inneren Planeten (< 4 AU) klein und felsig sind
-• Die äußeren Planeten (> 4 AU) reich an Eis und Gas sind[/indent]
+[b]Sonnensystem[/b]
+Die Sonnen-Frostlinie liegt bei ca. 4–5 AU (zwischen [url=body:mars]Mars[/url] und [url=body:jupiter]Jupiter[/url]). Diese Grenze strukturiert die Planetenpopulation:
+[indent]• Innere Region (< 4 AU): felsige, wasserarme Planeten
+• Äußere Region (> 4 AU): eisreiche, massereiche Planeten[/indent]
 
-[b]Bedeutung für die Planetenentstehung[/b]
-Jenseits der Frostlinie standen in der Frühzeit des Sonnensystems deutlich mehr Feststoffe für die Planetenbildung zur Verfügung (Eis + Gestein). Dies erklärt die viel größeren Massen der [b]Gasriesen[/b].
+[b]Planetare Konsequenzen[/b]
+Jenseits der Frostlinie steht erhöhte Feststoffmasse (Eis + Gestein) für die Akkretion zur Verfügung. Dies ermöglicht die schnellere Bildung großer Kerne (10+ Erdmassen), die dann Wasserstoff/Helium akkretieren und zu [b]Gasriesen[/b] werden.
 
 [b]Siehe auch[/b]
 • [url=concept:habitable_zone]Habitable Zone[/url]
-• [url=concept:asteroid_belt]Asteroidengürtel[/url]"""
+• [url=concept:asteroid_belt]Asteroidengürtel[/url]
+• [url=concept:kuiper_belt]Kuipergürtel[/url]"""

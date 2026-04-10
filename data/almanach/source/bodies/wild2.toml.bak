@@ -1,0 +1,11 @@
+id = "wild2"
+
+description = """\
+[b]81P/Wild 2[/b] ist ein kurzperiodischer Komet (~6,4 Jahre), der erst 1974 durch eine Jupiterstörung auf seine heutige innere Bahn gelenkt wurde. Daher ist er für einen regelmäßigen Kometen noch vergleichsweise unverwittert.
+
+Die NASA-Stardust-Mission flog 2004 durch die Koma und fing Staubpartikel ein, die 2006 zur Erde zurückgebracht wurden. Dabei wurden komplexe organische Moleküle und sogar Aminosäuren-Vorläufer gefunden — Hinweise auf die Rolle von Kometen bei der Entstehung des Lebens."""
+
+[infobox.atmosphere]
+temp_mean = -55
+temp_min  = -73
+temp_max  = 25

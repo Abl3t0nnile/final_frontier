@@ -1,0 +1,11 @@
+id = "ariel"
+
+description = """\
+[b]Ariel[/b] ist der hellste der großen Uranusmonde und zeigt die geologisch jüngste Oberfläche unter ihnen: wenig Krater, dafür breite Gräben und Täler, die auf innere tektonische Aktivität und möglicherweise Kryovulkanismus hindeuten.
+
+Er ist nach einem Sylph in Alexander Popes "Der Lockenraub" benannt. Ariel besteht aus einer Mischung aus Wassereis und dunklem Gestein und wurde 1851 von William Lassell entdeckt."""
+
+[infobox.atmosphere]
+temp_mean = -210
+temp_min  = -223
+temp_max  = -183

@@ -1,0 +1,15 @@
+id = "eris"
+
+description = """\
+[b]Eris[/b] ist der massereichste bekannte Zwergplanet im Sonnensystem: Mit ~1,66 × 10²² kg ist er ~27 % schwerer als Pluto, obwohl sein Radius von ~1.163 km nur geringfügig größer oder kleiner als Plutos (je nach Messmethode) ist — Eris hat also eine höhere Dichte (~2,5 g/cm³). Er wurde am 5. Januar 2005 von Michael Brown, Chad Trujillo und David Rabinowitz entdeckt und wurde intern "Xena" genannt. Seine Entdeckung löste unmittelbar die Debatte aus, die zur IAU-Neudefinition von "Planet" führte und 2006 Plutos Abstufung zum Zwergplaneten nach sich zog. Eris ist nach der griechischen Göttin der Zwietracht benannt.
+
+Eris ist kein [url=concept:kuiper_belt]Kuipergürtel[/url]-Objekt im klassischen Sinne, sondern ein Mitglied der [url=concept:scattered_disc][b]Streuscheibe[/b][/url]: Seine stark elliptische Bahn (Exzentrizität 0,44) führt ihn zwischen ~38,5 AU (Perihel, zuletzt 1699) und ~97,7 AU (Aphel). Die Umlaufzeit beträgt ~558 Jahre. Zum Zeitpunkt der Entdeckung befand er sich mit ~96 AU nahe am Aphel — trotzdem war er teleskopisch heller als erwartet.
+
+Die Oberfläche von Eris hat eine Albedo von ~0,96 — nahezu perfekte Reflexion, so hell wie frischer Schnee. Dies liegt an einer dünnen Schicht aus gefrorenem Stickstoff und Methaneis, die sich je nach Sonnenentfernung aus einer sehr dünnen saisonalen Atmosphäre niederschlägt. Spektren zeigen ähnliche Zusammensetzung wie Pluto. Eris ist derzeit so weit von der Sonne entfernt, dass praktisch die gesamte frühere Atmosphäre ausgefroren auf der Oberfläche liegt.
+
+Sein einziger bekannter Mond, [url=body:dysnomia]Dysnomia[/url], umkreist Eris in ~15,8 Tagen. Durch präzise Analyse von Dysnomias Bahn (Hubble, 2007) konnte die Masse von Eris auf 0,27 % der Erdmasse bestimmt werden — und damit belegt werden, dass Eris schwerer als Pluto ist. Bisher hat kein Raumfahrzeug Eris besucht; eine Mission dorthin würde mit aktueller Technologie über 20 Jahre dauern."""
+
+[infobox.atmosphere]
+temp_mean = -231
+temp_min  = -243
+temp_max  = -213

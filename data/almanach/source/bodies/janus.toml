@@ -1,11 +1,22 @@
 id = "janus"
 
 description = """\
+[b]Janus[/b]
+
+[b]Etymologie[/b]
+Nach dem römischen Gott Janus (Gott der Türen, Anfänge).
+
+[b]Entdeckung[/b]
+Datum: 1966-12-15 (Audouin Dollfus); 1978-02 (bestätigt Voyager 1)
+Entdecker: Audouin Dollfus / Voyager 1 Team
+
+[b]Physikalische Eigenschaften[/b]
 [b]Janus[/b] ist ein kleiner Mond des [url=body:saturn]Saturn[/url] mit einem mittleren Radius von ~90 km, bekannt für sein ungewöhnliches Verhalten: Er teilt seine Bahn fast exakt mit dem Mond [b]Epimetheus[/b] — beide wechseln alle ~4 Jahre ihre Bahnpositionen, wenn der innere den äußeren einholt und Energie überträgt.
 
-Dieses Hufeisenbahn-System ist einzigartig im Sonnensystem. Janus liegt nahe dem äußeren Rand von Saturns A-Ring und beeinflusst dessen Struktur."""
+Dieses Hufeisenbahn-System ist einzigartig im Sonnensystem. Janus liegt nahe dem äußeren Rand von Saturns A-Ring und beeinflusst dessen Struktur.
+"""
 
 [infobox.atmosphere]
 temp_mean = -190
-temp_min  = -200
-temp_max  = -160
+temp_min = -200
+temp_max = -160

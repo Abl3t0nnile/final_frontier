@@ -1,13 +1,24 @@
 id = "vanth"
 
 description = """\
+[b]Vanth[/b]
+
+[b]Etymologie[/b]
+Benennung nach mythologischer oder kultureller Referenz.
+
+[b]Entdeckung[/b]
+Datum: Entdeckungsdatum nicht spezifiziert.
+Entdecker: —
+
+[b]Physikalische Eigenschaften[/b]
 [b]Vanth[/b] ist der Mond des [url=body:orcus]Orcus[/url] und nach einer Begleiterin der Todesgöttin Vanth in der etruskischen Mythologie benannt — passend zur Unterwelt-Thematik des Hauptkörpers.
 
 Mit einem Radius von ~221 km ist er im Verhältnis zu Orcus ungewöhnlich groß — ähnlich wie [url=body:charon]Charon[/url] im Pluto-System. Er umkreist Orcus in ~9.54 Tagen auf einer fast kreisförmigen Bahn.
 
-Die gegenseitige Umlaufbahn deutet darauf hin, dass Vanth durch eine kollisionale Genese entstanden ist."""
+Die gegenseitige Umlaufbahn deutet darauf hin, dass Vanth durch eine kollisionale Genese entstanden ist.
+"""
 
 [infobox.atmosphere]
 temp_mean = -225
-temp_min  = -235
-temp_max  = -207
+temp_min = -235
+temp_max = -207

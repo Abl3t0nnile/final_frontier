@@ -1,11 +1,22 @@
 id = "encke"
 
 description = """\
+[b]Encke[/b]
+
+[b]Etymologie[/b]
+Nach Johann Franz Encke (1791–1865), deutsch Astronom, berechnete die Bahn.
+
+[b]Entdeckung[/b]
+Datum: 1786 (Pierre Méchain); Wiederentdeckung 1818, Bahn von Encke berechnet
+Entdecker: Pierre Méchain (Entdeckung); Johann Franz Encke (Berechnung)
+
+[b]Physikalische Eigenschaften[/b]
 [b]2P/Encke[/b] ist der Komet mit der kürzesten bekannten Umlaufzeit (~3,3 Jahre) und der einzige Komet, der vollständig innerhalb der Jupiterbahn verbleibt. Er umkreist die Sonne seit Jahrhunderten auf derselben Bahn und hat dabei den größten Teil seines Materials verloren.
 
-Encke ist die Quelle des Tauriden-Meteorschauers. Sein Kern ist mit ~4,8 km Durchmesser für einen regelmäßig aktiven Kometen ungewöhnlich groß. Ob Encke einst ein größerer Körper war, der durch Fragmentierung entstand, wird diskutiert."""
+Encke ist die Quelle des Tauriden-Meteorschauers. Sein Kern ist mit ~4,8 km Durchmesser für einen regelmäßig aktiven Kometen ungewöhnlich groß. Ob Encke einst ein größerer Körper war, der durch Fragmentierung entstand, wird diskutiert.
+"""
 
 [infobox.atmosphere]
 temp_mean = -50
-temp_min  = -70
-temp_max  = 55
+temp_min = -70
+temp_max = 55

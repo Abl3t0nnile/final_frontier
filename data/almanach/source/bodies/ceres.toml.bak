@@ -1,0 +1,15 @@
+id = "ceres"
+
+description = """\
+[b]Ceres[/b] ist mit einem Radius von 473 km der größte Körper im [url=concept:asteroid_belt]Asteroidengürtel[/url] und der einzige Zwergplanet im inneren Sonnensystem. Er enthält schätzungsweise ~30 % der Gesamtmasse des Gürtels, obwohl diese Masse winzig ist verglichen mit jedem terrestrischen Planeten. Ceres wurde 1801 von Giuseppe Piazzi entdeckt — ursprünglich als Planet klassifiziert — und galt über 50 Jahre als solcher, bis die zunehmend entdeckten Nachbarkörper zur Einführung der Kategorie "Asteroid" führten. Die IAU klassifizierte ihn 2006 wieder neu, diesmal als Zwergplaneten.
+
+Seine fast kreisförmige Umlaufbahn (~4,6 Jahre, Exzentrizität 0,08) bei ~2,77 AU unterscheidet Ceres von den meisten irregulären Asteroiden des Gürtels. Die Oberfläche ist dunkel und einheitlich (Albedo ~0,09), doch die NASA-Sonde [b]Dawn[/b] (2015–2018) enthüllte bei näherer Betrachtung helle Flecken in mehreren Kratern. Die markantesten finden sich im [b]Occator-Krater[/b] (~92 km Durchmesser): Die helle Zentralstruktur [b]Cerealia Facula[/b] und umgebende Satellitenhelle Flecken (Vinalia Faculae) bestehen aus Natriumcarbonat — Salze, die durch salzhaltiges Wasser aus dem Inneren an die Oberfläche gelangten und dort im Vakuum auskristallisierten. Dampffahnen über Cerealia Facula sind ein Zeichen für andauernde Ausgasung.
+
+Ceres besitzt außerdem [b]Ahuna Mons[/b] — einen ~4 km hohen, steilwandigen Cryovulkan, der jüngsten Ursprungs ist und keine Erosionsspuren zeigt. Dies belegt aktiven [url=concept:cryovolcanism]Kryovulkanismus[/url] in der geologisch jüngeren Vergangenheit. 2014 entdeckte das Herschel-Weltraumteleskop Wasserdampf über zwei Quellen auf Ceres — die erste Bestätigung von Ausgasung im Asteroidengürtel. Ceres besitzt eine sehr dünne Wasserdampf-Exosphäre.
+
+Unter der Oberfläche deuten Dichte (2,16 g/cm³) und Gravitationsdaten auf ein differenziertes Inneres hin: ein wasserreiches Mantel-Material (möglicherweise bis zu 25 % Wasser oder Eis) über einem felsigen Kern. Ob noch flüssiges Wasser tief im Inneren vorhanden ist, ist unklar — Ceres zeigt jedoch mehr Zeichen hydrogeologischer Aktivität als jeder andere Körper im Asteroidengürtel."""
+
+[infobox.atmosphere]
+temp_mean = -105
+temp_min  = -163
+temp_max  = -38

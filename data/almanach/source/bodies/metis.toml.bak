@@ -1,0 +1,11 @@
+id = "metis"
+
+description = """\
+[b]Metis[/b] ist der innerste bekannte Mond des [url=body:jupiter]Jupiter[/url] und liegt innerhalb der [url=concept:roche_limit]Roche-Grenze[/url] des Planeten. Er ist damit kein stabiler Körper auf geologischen Zeitskalen — die Gezeitenkräfte Jupiters könnten ihn letztlich zerreißen.
+
+Metis trägt zum schmalen Jupitering-System bei. Er ist unregelmäßig geformt mit einem mittleren Radius von ~22 km und wurde von Voyager 1 entdeckt. Die Oberfläche ist dunkel und stark kraternarbt."""
+
+[infobox.atmosphere]
+temp_mean = -163
+temp_min  = -180
+temp_max  = -108

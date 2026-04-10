@@ -133,7 +133,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PanelSelector" type="HBoxContainer" parent="VBox" unique_id=1111245236]
-visible = false
 layout_mode = 2
 
 [node name="Button" type="Button" parent="VBox/PanelSelector" unique_id=851292903]

@@ -1,13 +1,24 @@
 id = "namaka"
 
 description = """\
+[b]Namaka[/b]
+
+[b]Etymologie[/b]
+Benennung nach mythologischer oder kultureller Referenz.
+
+[b]Entdeckung[/b]
+Datum: Entdeckungsdatum nicht spezifiziert.
+Entdecker: —
+
+[b]Physikalische Eigenschaften[/b]
 [b]Namaka[/b] ist der kleinere und innere Mond des [url=body:haumea]Haumea[/url], benannt nach der hawaiianischen Meeresgöttin und Tochter von Haumea.
 
 Er umkreist Haumea in ~18.28 Tagen auf einer leicht exzentrischen und geneigten Bahn. Die Gravitationsstörungen durch [url=body:hiʻiaka]Hiʻiaka[/url] bewirken messbare Präzession seiner Bahn — was Rückschlüsse auf die Massenverteilung des Systems ermöglichte.
 
-Namaka ist deutlich kleiner als Hiʻiaka mit einem Radius von ~85 km."""
+Namaka ist deutlich kleiner als Hiʻiaka mit einem Radius von ~85 km.
+"""
 
 [infobox.atmosphere]
 temp_mean = -241
-temp_min  = -250
-temp_max  = -223
+temp_min = -250
+temp_max = -223

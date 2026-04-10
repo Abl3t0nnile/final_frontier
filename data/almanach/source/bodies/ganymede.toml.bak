@@ -1,0 +1,18 @@
+id = "ganymede"
+
+description = """\
+[b]Ganymed[/b] ist mit einem Radius von 2.634 km der größte Mond im Sonnensystem — größer als der Planet Merkur (Radius 2.440 km) und fast halb so groß wie die Erde. Wäre er direkt um die Sonne und nicht um Jupiter gekreist, würde er heute als Planet klassifiziert. Er ist der einzige Mond im Sonnensystem mit einem eigenen, intrinsischen Magnetfeld — erzeugt durch Konvektion in seinem flüssigen Eisenkern und lokal ~10-mal stärker als Jupiters umgebendes Feld.
+
+Ganymeds innerer Aufbau ist vollständig differenziert: ein metallischer Eisenkern (~500 km Radius), umgeben von einem Silikatgesteinsmantel, darüber ein rund 800 km dicker Eismantel, in dem ein globaler Salzwasserozean eingebettet ist. Hubble-Beobachtungen (2015) bestätigten diesen Ozean indirekt: Die Nordlichter Ganymeds schwingen rhythmisch mit dem Jupitermagnetfeld — das präzise Muster war nur mit einem leitfähigen Ozean in ~150 km Tiefe vereinbar. Dieser Ozean enthält möglicherweise mehr Wasser als alle irdischen Ozeane zusammen.
+
+Die Oberfläche besteht aus zwei deutlich unterscheidbaren Terraintypen: dunklere, alte, stark kraterierte [b]Sulci[/b]-Gebiete (Regiones) und hellere, jüngere [b]Furchen-Terrain[/b]-Bereiche (Sulci), die durch tektonische Dehnung und Aufbruch der Eiskruste entstanden. Diese Gebiete wechseln sich auf der gesamten Oberfläche ab. Ganymed befindet sich in der [url=concept:orbital_resonance]Laplace-Resonanz[/url] mit [url=body:io]Io[/url] und [url=body:europa]Europa[/url] (1:2:4) — aber weit genug außen, dass die Gezeitenheizung keine dramatischen geologischen Folgen hat.
+
+Die ESA-Mission [b]JUICE[/b] (Jupiter Icy Moons Explorer) wird ab 2034 als erster Orbiter ausschließlich um Ganymed kreisen und dessen Ozean, Magnetfeld und Habitabilitätspotential systematisch untersuchen — das erste Mal, dass ein Orbiter um einen anderen Mond als den Erdmond gebracht wird."""
+
+[infobox.atmosphere]
+temp_mean = -163
+temp_min  = -193
+temp_max  = -113
+
+[infobox.atmosphere.composition]
+"Sauerstoff (O₂)" = 100.0

@@ -1,0 +1,11 @@
+id = "tempel1"
+
+description = """\
+[b]9P/Tempel 1[/b] ist ein kurzperiodischer Komet (~5,5 Jahre Umlaufzeit), der durch zwei Raumfahrtmissionen untersucht wurde. Die NASA-Mission Deep Impact schoss 2005 einen 370-kg-Kupferblock auf den Kern — das ausgeworfene Material lieferte Daten über die innere Zusammensetzung.
+
+Die Stardust-NExT-Mission fotografierte 2011 denselben Kometen und zeigte den durch den Einschlag entstandenen Krater. Tempel 1 verliert pro Umlauf Schichten seiner Oberfläche durch Sublimation."""
+
+[infobox.atmosphere]
+temp_mean = -53
+temp_min  = -80
+temp_max  = 27

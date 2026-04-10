@@ -1,13 +1,24 @@
 id = "phobos"
 
 description = """\
+[b]Phobos[/b]
+
+[b]Etymologie[/b]
+Nach Φόβος (Phobos), Sohn des Ares, Personifikation der Panik.
+
+[b]Entdeckung[/b]
+Datum: 1877-08-18
+Entdecker: Asaph Hall
+
+[b]Physikalische Eigenschaften[/b]
 [b]Phobos[/b] ist der größere und innere der beiden Monde des [url=body:mars]Mars[/url]. Mit einem mittleren Radius von nur ~11 km und einem Abstand von ~9.376 km zum Marszentrum ist er der sonnensystemnächste Mond zu seinem Planeten.
 
 Phobos umkreist Mars schneller als der Planet rotiert — er geht im Westen auf und im Osten unter. Durch Gezeitenkräfte wird er langsam in Richtung Mars gezogen und wird in etwa 30–50 Millionen Jahren zerstört — entweder zerfällt er zu einem Ringsystem oder er stürzt auf den Planeten.
 
-Seine unregelmäßige Form und seine Dichte deuten auf einen lockeren, porösen Körper hin — möglicherweise ein eingefangener Asteroid."""
+Seine unregelmäßige Form und seine Dichte deuten auf einen lockeren, porösen Körper hin — möglicherweise ein eingefangener Asteroid.
+"""
 
 [infobox.atmosphere]
 temp_mean = -40
-temp_min  = -112
-temp_max  = -4
+temp_min = -112
+temp_max = -4

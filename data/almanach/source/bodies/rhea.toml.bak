@@ -1,0 +1,15 @@
+id = "rhea"
+
+description = """\
+[b]Rhea[/b] ist mit einem Radius von 764 km der zweitgrößte Mond des [url=body:saturn]Saturn[/url] nach Titan. Mit einer Dichte von ~1,24 g/cm³ besteht er überwiegend aus Wassereis (~75 %) mit einem kleinen felsigen Kern (~25 % Silikat). Rhea umrundet Saturn in 4,52 Tagen aus einer Entfernung von ~527.000 km. Seine Oberfläche ist stark krateriert und gehört zu den ältesten und geologisch inaktivsten Oberflächen im Saturn-System.
+
+Auch Rhea besitzt [b]Wispy Terrain[/b] auf seiner hinteren Hemisphäre — ein helles Netz aus Eissteilwänden entlang tektonischer Brüche, ähnlich wie bei [url=body:dione]Dione[/url]. Der markanteste Krater ist [b]Tirawa[/b] mit ~360 km Durchmesser. Ein weiteres auffälliges Merkmal sind helle, frische Strahlenstrukturen von Einschlagkratern, die auf relativ junge Einschläge in die dunkle Untergrundschicht hindeuten.
+
+Rhea ist der erste Mond außerhalb der Erde, für den eine eigene [b]Sauerstoffexosphäre[/b] bestätigt wurde. Cassini maß 2010 molekularen Sauerstoff (O₂) und Kohlendioxid (CO₂) in der unmittelbaren Umgebung — erzeugt durch Spaltung von Oberflächeneis durch Saturns Strahlung (Radiolysis). Diese Exosphäre ist extrem dünn (Druck ~5 × 10⁻¹² mbar), aber wissenschaftlich bedeutsam als Modell für ähnliche Prozesse auf anderen Eismonden.
+
+Cassini-Daten deuteten 2008 vorübergehend auf ein schwaches Ringsystem um Rhea hin — das wäre der erste Mond mit eigenen Ringen gewesen. Nachfolgende Analysen konnten dieses Signal jedoch nicht eindeutig bestätigen oder widerlegen; die Frage gilt derzeit als offen."""
+
+[infobox.atmosphere]
+temp_mean = -220
+temp_min  = -230
+temp_max  = -174

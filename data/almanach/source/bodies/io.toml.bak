@@ -1,0 +1,22 @@
+id = "io"
+
+description = """\
+[b]Io[/b] ist der innerste der vier Galileischen Monde des [url=body:jupiter]Jupiter[/url] mit einem Radius von 1.821 km und das vulkanisch aktivste Objekt im Sonnensystem. Mehr als 400 aktive Vulkane sind bekannt; manche Eruptionen schleudern Material bis zu 500 km hoch in Ios dünne Exosphäre. Io existiert in einer erzwungenen Kreisbahn durch die [url=concept:orbital_resonance][b]Laplace-Resonanz[/b][/url] mit Europa und Ganymed (1:2:4) — die ständig wechselnden Gravitationszüge dieser Monde verhindern, dass die Umlaufbahn kreisförmig wird und erzeugen dadurch enorme Gezeitenreibung im Inneren.
+
+Die daraus entstehende [url=concept:tidal_heating][b]Gezeitenheizung[/b][/url] produziert schätzungsweise 100 Terawatt Wärme — das Doppelte der gesamten Erdwärme. Ios Oberfläche wird durch Lavaströme, Vulkanausbrüche und Schwefelablagerungen laufend umgestaltet; in geologischen Maßstäben ist sie vollständig neu. Bodentemperaturen an aktiven Vulkanen übersteigen 1.600 °C. Die Oberflächenfärbung von Gelb über Orange bis Schwarz und Rot entsteht durch verschiedene Schwefelmodifikationen (kurzkettiger vs. langkettiger Schwefel) und frische Basaltlava.
+
+Besonders markante Vulkane sind [b]Loki Patera[/b] — eine ~200 km große Lavaseelake, die regelmäßig zirkuliert und das hellste Infrarot-Objekt im Sonnensystem jenseits der Erde ist — sowie [b]Pele[/b] mit seinem Schwefeldioxid-Schirmschauer von ~1.200 km Durchmesser. [b]Tvashtar[/b] wurde durch die New-Horizons-Sonde 2007 beim Ausbruch mit einem ~300 km hohen Lavafontänenwall beobachtet.
+
+Ios dünne SO₂-Atmosphäre (~3 µbar) entweicht kontinuierlich und versorgt Jupiters Magnetosphäre mit Ionen — Io injiziert täglich ~1 Tonne ionisierten Schwefels und Sauerstoffs in den Jovianischen Strahlungsgürtel. Dadurch erzeugt Io einen Plasmatorus entlang seiner Umlaufbahn, der Jupiters Radio-Emissionen moduliert. Die Galileo-Sonde (1995–2003) und die Juno-Sonde dokumentierten Io aus der Nähe; die NASA-Mission Io Volcano Observer (IVO) ist in der Entwicklung."""
+
+[infobox.atmosphere]
+pressure  = 0.000003
+temp_mean = -143
+temp_min  = -183
+temp_max  = -20
+
+[infobox.atmosphere.composition]
+"Schwefeldioxid (SO₂)" = 90.0
+"Schwefelsesquioxid (SO)" = 5.0
+"Schwefel (S₂)"        = 2.0
+"Natriumchlorid (NaCl)"= 0.1

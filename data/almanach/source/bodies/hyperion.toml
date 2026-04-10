@@ -1,15 +1,26 @@
 id = "hyperion"
 
 description = """\
+[b]Hyperion[/b]
+
+[b]Etymologie[/b]
+Nach Ὑπερίων (Hyperíōn), Titan des Lichts, Vater des Helios.
+
+[b]Entdeckung[/b]
+Datum: 1848-09-16
+Entdecker: William Bond, George Bond, William Lassell
+
+[b]Physikalische Eigenschaften[/b]
 [b]Hyperion[/b] ist ein unregelmäßig geformter Mond des [url=body:saturn]Saturn[/url] mit Ausmaßen von ~360 × 266 × 205 km — einer der größten bekannten nicht-sphärischen Körper im Sonnensystem. Seine mittlere Dichte beträgt nur ~0,55 g/cm³, deutlich weniger als Wasser (1,0 g/cm³), was auf ein extrem poröses Inneres hindeutet. Modelle schätzen den Leerraumanteil auf über 40 % — Hyperion ist möglicherweise ein locker zusammengehaltenes Haufwerk (Rubble Pile) aus Eis- und Gesteinsbrocken.
 
 Das auffälligste Merkmal ist die schwammartige Oberfläche: tiefe, steilwandige Krater mit dunklem Material an den Böden verleihen ihr eine charakteristische wabige Struktur. Anders als bei den meisten Monden scheinen die Einschlagkrater nicht durch Nachfluss von Material einzuebnen — die geringe Schwerkraft (nur ~0,017 g) und das poröse Substrat lassen das Einschlagmaterial tief in den Körper eindringen, statt es fortzuschleudern.
 
 Hyperions wichtigstes wissenschaftliches Merkmal ist seine [b]chaotische Rotation[/b]: Sie ist nachweislich unvorhersehbar — Rotationsachse und Rotationsrate wechseln auf Zeitskalen von Wochen. Dies ist eine Folge seiner unregelmäßigen Form, der Nähe zu [url=body:titan]Titan[/url] (4:3-Bahnresonanz) und der mangelnden Kreisform seiner eigenen Umlaufbahn. Hyperion ist damit einer der wenigen Körper im Sonnensystem mit mathematisch nachgewiesener chaotischer Rotation.
 
-Voyager 2 fotografierte Hyperion 1981 erstmals aus nächster Nähe; die Cassini-Sonde flog 2005 in nur ~500 km Abstand vorbei und lieferte hochaufgelöste Bilder der bizarren Oberfläche. Dabei entdeckte Cassini elektrostatisch aufgeladene Oberflächen-Material — ein Phänomen, das möglicherweise durch Jupiters und Saturns Magnetfelder verursacht wird."""
+Voyager 2 fotografierte Hyperion 1981 erstmals aus nächster Nähe; die Cassini-Sonde flog 2005 in nur ~500 km Abstand vorbei und lieferte hochaufgelöste Bilder der bizarren Oberfläche. Dabei entdeckte Cassini elektrostatisch aufgeladene Oberflächen-Material — ein Phänomen, das möglicherweise durch Jupiters und Saturns Magnetfelder verursacht wird.
+"""
 
 [infobox.atmosphere]
 temp_mean = -180
-temp_min  = -193
-temp_max  = -148
+temp_min = -193
+temp_max = -148

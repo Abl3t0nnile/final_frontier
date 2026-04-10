@@ -1,13 +1,24 @@
 id = "churyumov_gerasimenko"
 
 description = """\
+[b]Churyumov_gerasimenko[/b]
+
+[b]Etymologie[/b]
+Nach Klim Churyumov (1937–2016) und Svetlana Gerasimenko (*1945), ukrainische/russische Astronomen.
+
+[b]Entdeckung[/b]
+Datum: 1969-09-11 (Plattenaufnahme), 1969-09-23 (identifiziert)
+Entdecker: Klim Churyumov, Svetlana Gerasimenko
+
+[b]Physikalische Eigenschaften[/b]
 [b]67P/Churyumov-Gerasimenko[/b] ist ein Kurzperiodkomet mit einer Umlaufzeit von ~6,4 Jahren, der durch die Rosetta-Mission der ESA Weltbekanntheit erlangte. Die Sonde begleitete den Kometen von 2014 bis 2016 auf seiner Reise durch das innere Sonnensystem.
 
 Sein Kern hat eine ungewöhnliche Hantelform (~4 × 2,5 km) aus zwei Lappen — vermutlich das Ergebnis einer sanften Kollision zweier Objekte in der Frühzeit des Sonnensystems. Die Landeeinheit Philae setzte am 12. November 2014 auf der Oberfläche auf.
 
-Rosetta lieferte Details über die Zusammensetzung des Kometen: Wassereis, organische Moleküle und schwere Edelgase geben Einblick in die Ur-Zusammensetzung des Sonnensystems."""
+Rosetta lieferte Details über die Zusammensetzung des Kometen: Wassereis, organische Moleküle und schwere Edelgase geben Einblick in die Ur-Zusammensetzung des Sonnensystems.
+"""
 
 [infobox.atmosphere]
 temp_mean = -70
-temp_min  = -130
-temp_max  = 70
+temp_min = -130
+temp_max = 70

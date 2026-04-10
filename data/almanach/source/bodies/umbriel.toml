@@ -1,11 +1,22 @@
 id = "umbriel"
 
 description = """\
+[b]Umbriel[/b]
+
+[b]Etymologie[/b]
+Nach Umbriel (düsterer Geist aus Popes 'The Rape of the Lock').
+
+[b]Entdeckung[/b]
+Datum: 1851-10-24
+Entdecker: William Lassell
+
+[b]Physikalische Eigenschaften[/b]
 [b]Umbriel[/b] ist der dunkelste der großen Uranusmonde und zeigt die älteste, stärker eingeschlagene Oberfläche. Er ist nach einem dunklen Geist in Alexander Popes "Der Lockenraub" benannt.
 
-Seine dunkle Oberfläche ist wenig reflektiv und zeigt kaum Zeichen geologischer Aktivität. Ein heller Ring im Krater Wunda auf dem Äquator ist ein auffälliges Merkmal, dessen Zusammensetzung noch ungeklärt ist."""
+Seine dunkle Oberfläche ist wenig reflektiv und zeigt kaum Zeichen geologischer Aktivität. Ein heller Ring im Krater Wunda auf dem Äquator ist ein auffälliges Merkmal, dessen Zusammensetzung noch ungeklärt ist.
+"""
 
 [infobox.atmosphere]
 temp_mean = -198
-temp_min  = -213
-temp_max  = -178
+temp_min = -213
+temp_max = -178

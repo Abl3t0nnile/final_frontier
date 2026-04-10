@@ -1,0 +1,13 @@
+id = "dysnomia"
+
+description = """\
+[b]Dysnomia[/b] ist der einzige bekannte Mond des [url=body:eris]Eris[/url] und nach der Tochter der Göttin Eris — der Göttin der Gesetzlosigkeit — benannt.
+
+Er umkreist Eris in ~15.786 Tagen auf einer nahezu kreisförmigen Bahn. Die Analyse seiner Bahn erlaubte eine präzise Massebestimmung von Eris und zeigte, dass dieser schwerer als Pluto ist — ein Schlüsselergebnis in der Debatte um die Planetendefinition.
+
+Dysnomia ist wahrscheinlich das Ergebnis einer Kollision in der frühen Geschichte des Eris-Systems."""
+
+[infobox.atmosphere]
+temp_mean = -231
+temp_min  = -243
+temp_max  = -213

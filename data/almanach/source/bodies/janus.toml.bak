@@ -1,0 +1,11 @@
+id = "janus"
+
+description = """\
+[b]Janus[/b] ist ein kleiner Mond des [url=body:saturn]Saturn[/url] mit einem mittleren Radius von ~90 km, bekannt für sein ungewöhnliches Verhalten: Er teilt seine Bahn fast exakt mit dem Mond [b]Epimetheus[/b] — beide wechseln alle ~4 Jahre ihre Bahnpositionen, wenn der innere den äußeren einholt und Energie überträgt.
+
+Dieses Hufeisenbahn-System ist einzigartig im Sonnensystem. Janus liegt nahe dem äußeren Rand von Saturns A-Ring und beeinflusst dessen Struktur."""
+
+[infobox.atmosphere]
+temp_mean = -190
+temp_min  = -200
+temp_max  = -160

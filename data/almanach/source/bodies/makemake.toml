@@ -1,15 +1,26 @@
 id = "makemake"
 
 description = """\
+[b]Makemake[/b]
+
+[b]Etymologie[/b]
+Nach dem Schöpfergott der Rapa Nui (Osterinsel).
+
+[b]Entdeckung[/b]
+Datum: 2005-03-31
+Entdecker: Michael E. Brown, Chad Trujillo, David L. Rabinowitz
+
+[b]Physikalische Eigenschaften[/b]
 [b]Makemake[/b] ist ein Zwergplanet im [url=concept:kuiper_belt]Kuipergürtel[/url] mit einem Radius von ~715 km, entdeckt am 31. März 2005 von Michael Brown, Chad Trujillo und David Rabinowitz am Palomar-Observatorium — wenige Monate nach [url=body:eris]Eris[/url] und kurz nach Ostern, weshalb er intern zunächst "Easterbunny" genannt wurde. Er ist nach [b]Make-make[/b], der Schöpfergottheit der Rapa-Nui-Kultur der Osterinsel, benannt. Mit einer Albedo von ~0,81 ist er nach Pluto das zweithellste bekannte transneptunische Objekt.
 
 Die Oberfläche zeigt Spektren von festem Methaneis und Ethan, was auf eine aktive photochemische Oberflächenchemie hindeutet: UV-Strahlung wandelt Methan in komplexe organische Verbindungen ([url=concept:tholins]Tholine[/url]) um — diese verleihen der Oberfläche die rötlich-braune Färbung. Makemake hat keine permanente globale Atmosphäre: Eine Sternbedeckungsbeobachtung von 2011 zeigte keine atmosphärische Ablenkung des Sternlichts an mehreren Messpunkten — es kann allenfalls eine lokale, dünne Sublimationsatmosphäre über sonnenbeschienenen Bereichen geben.
 
 Der einzige bekannte Mond, [url=body:mk2]MK2[/url], wurde 2016 mit dem Hubble-Weltraumteleskop entdeckt. Er ist auffällig dunkel (Albedo ~0,04) — ein extremer Kontrast zur hellen Oberfläche Makemakes. Dies schließt eine globale Atmosphäre nahezu aus: Wäre eine solche vorhanden, würde atmosphärische Abbremsung den Mond auf eine enge, kreisförmige Bahn zwingen, was nicht beobachtet wird.
 
-Makemake umrundet die Sonne in ~309 Jahren aus einem mittleren Abstand von ~45,8 AU auf einer mäßig exzentrischen Bahn (Exzentrizität 0,16). Mit einem Neigungswinkel von ~29° zur Ekliptik gehört er zum klassischen [url=concept:kuiper_belt]Kuipergürtel[/url]. Kein Raumfahrzeug hat Makemake bisher besucht oder ist dafür in Planung."""
+Makemake umrundet die Sonne in ~309 Jahren aus einem mittleren Abstand von ~45,8 AU auf einer mäßig exzentrischen Bahn (Exzentrizität 0,16). Mit einem Neigungswinkel von ~29° zur Ekliptik gehört er zum klassischen [url=concept:kuiper_belt]Kuipergürtel[/url]. Kein Raumfahrzeug hat Makemake bisher besucht oder ist dafür in Planung.
+"""
 
 [infobox.atmosphere]
 temp_mean = -239
-temp_min  = -243
-temp_max  = -213
+temp_min = -243
+temp_max = -213

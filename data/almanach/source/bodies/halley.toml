@@ -1,13 +1,24 @@
 id = "halley"
 
 description = """\
+[b]Halley[/b]
+
+[b]Etymologie[/b]
+Nach Edmond Halley (1656–1742), englischer Astronom, berechnete die Periodizität.
+
+[b]Entdeckung[/b]
+Datum: Antike (erwähnt von chinesischen, babylonischen Astronomen); periodische Natur erkannt 1705
+Entdecker: Edmond Halley (Periodizität); antike Kulturen (Erscheinungen)
+
+[b]Physikalische Eigenschaften[/b]
 [b]1P/Halley[/b] ist der bekannteste kurzperiodische Komet und der einzige, der mit bloßem Auge von der Erde aus in einem Menschenleben zweimal sichtbar ist. Seine Umlaufzeit beträgt ~75–76 Jahre; sein letztes Perihel war 1986, das nächste wird 2061 erwartet.
 
 Halley hat eine retrograde Bahn mit hoher [url=concept:eccentricity]Exzentrizität[/url]: Er reicht von der inneren Erdbahn bis jenseits von Neptun. Die europäische Giotto-Mission flog 1986 durch seine Koma und lieferte die ersten Nahaufnahmen eines Kometenkerns — ein dunkler, unregelmäßiger Körper von ~15 × 8 km.
 
-Halley ist die Quelle zweier jährlicher Meteorschauer: der Eta-Aquariiden (Mai) und der Orioniden (Oktober)."""
+Halley ist die Quelle zweier jährlicher Meteorschauer: der Eta-Aquariiden (Mai) und der Orioniden (Oktober).
+"""
 
 [infobox.atmosphere]
 temp_mean = -70
-temp_min  = -90
-temp_max  = 77
+temp_min = -90
+temp_max = 77

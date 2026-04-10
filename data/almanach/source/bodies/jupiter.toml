@@ -1,21 +1,38 @@
 id = "jupiter"
 
 description = """\
-[b]Jupiter[/b] ist mit einem Radius von 69.911 km und einer Masse von 1,898 × 10²⁷ kg der massereichste Planet des Sonnensystems — über zweieinhalbmal schwerer als alle anderen Planeten zusammen. Wäre Jupiter ~75-mal massereicher, würde im Kern Fusionsdruck entstehen und er wäre ein Stern. Er besitzt keine feste Oberfläche; mit zunehmender Tiefe steigen Druck und Temperatur stetig, bis Wasserstoff in einen metallischen, elektrisch leitenden Zustand übergeht — der [b]metallische Wasserstoff[/b]-Kern beginnt bei etwa 1 Million bar. Ein Jupitertag dauert nur 9 Stunden 55 Minuten — so schnell, dass der Planet merklich abgeplattet ist (Äquatorialradius ~7 % größer als Polarradius).
+[b]Jupiter[/b]
 
-Das bekannteste Merkmal ist der [b]Große Rote Fleck[/b] — ein antizykloanes Sturmsystem mit Windgeschwindigkeiten von über 400 km/h. Er wird seit mindestens 1830 beobachtet und war einst größer als zwei Erddurchmesser; heute hat er sich auf etwa einen Erddurchmesser verkleinert. Jupiter zeigt parallele Wolkenbänder (Zonen und Gürtel) aus Ammoniak- und Ammoniakhydridsulfidwolken, die durch die rasche Rotation des Planeten geformt werden.
+[b]Etymologie[/b]
+Nach dem römischen Göttervater Jupiter (griech. Ζεύς/Zeus). Symbol ♃ = stilisiertes Z.
 
-Jupiter besitzt die stärkste [url=concept:magnetosphere]Magnetosphäre[/url] im Sonnensystem — ~20.000-mal stärker als das Erdfeld. Es erzeugt eine gewaltige Magnetosphäre, die den Jupitermond Io einschließt und dabei einen intensiven Strahlungsgürtel produziert, der Raumsonde-Elektronik schädigt. 95 bekannte Monde umkreisen Jupiter (Stand 2024), darunter die vier großen Galileischen Monde. Der NASA-Orbiter [b]Juno[/b] untersucht seit 2016 Jupiters innere Struktur, Magnetfeld und Polarlichter in bisher unerreichter Detailtiefe.
+[b]Entdeckung[/b]
+Datum: Prähistorisch; Babylonier als Marduk.
+Entdecker: —
 
-Jupiter fungiert als gravitativer Wächter des inneren Sonnensystems: Durch seine enorme Masse fängt oder lenkt er Kometen und Asteroiden ab, die andernfalls die inneren Planeten häufiger treffen würden. Gleichzeitig verhinderte seine frühe Gravitation die Akkretion von Planetesimalen im heutigen [url=concept:asteroid_belt]Asteroidengürtel[/url] — weshalb zwischen Mars und Jupiter kein vollständiger Planet entstand."""
+[b]Physikalische Eigenschaften[/b]
+[b]Jupiter[/b] ist der massereichste Planet des Sonnensystems. Radius: 69.911 km, Masse: 1,898 × 10²⁷ kg (317,8 Erdmassen, 2,5-mal die Gesamtmasse aller anderen Planeten). Jupiter ist ein Gasriese ohne definierbare feste Oberfläche. Die Atmosphäre übergibt kontinuierlich in einen metallischen Wasserstoffmantel (Übergang bei ~1 Mbar, ~10.000 km Tiefe).
+
+[b]Rotation und Form[/b]
+Rotation: 9 h 55 min (schnellste Rotation aller Planeten). Die Rotation verursacht eine deutliche Abplattung (Äquatorialradius 7 % größer als Polarradius).
+
+[b]Atmosphäre[/b]
+Sichtbare Erscheinung: Konvektive Wolkenbänder (Zonen und Gürtel) aus kondensiertem Ammoniak und Ammoniumhydrogensulfid. Der [b]Große Rote Fleck[/b] ist ein stabiles antizyklonales Hochdrucksystem mit Windgeschwindigkeiten >400 km/h. Erstbeobachtung dokumentiert ab 1830.
+
+[b]Magnetosphäre[/b]
+Jupiter besitzt die stärkste [url=concept:magnetosphere]Magnetosphäre[/url] im Sonnensystem (Dipolmoment ~20.000-mal stärker als terrestrisch). Die Magnetosphäre erzeugt intensiv Strahlungsgürtel, die die inneren Galileischen Monde durchsetzen.
+
+[b]Dynamische Bedeutung[/b]
+Jupiters Masse dominiert die gravitationale Dynamik des inneren Sonnensystems. Die starke Gravitation verhinderte die Akkretion eines weiteren terrestrischen Planeten im Bereich des heutigen [url=concept:asteroid_belt]Asteroidengürtels[/url] und wirkt als Fänger für potenziell erdgefährdende Körper.
+"""
 
 [infobox.atmosphere]
-pressure  = 1.0
+pressure = 1.0
 temp_mean = -108
-temp_min  = -145
+temp_min = -145
 
 [infobox.atmosphere.composition]
 "Wasserstoff (H₂)" = 89.8
-"Helium (He)"      = 10.2
-"Methan (CH₄)"     = 0.3
-"Ammoniak (NH₃)"   = 0.026
+"Helium (He)" = 10.2
+"Methan (CH₄)" = 0.3
+"Ammoniak (NH₃)" = 0.026

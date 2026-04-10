@@ -1,13 +1,24 @@
 id = "swift_tuttle"
 
 description = """\
+[b]Swift_tuttle[/b]
+
+[b]Etymologie[/b]
+Nach Lewis Swift (1820–1913) und Horace Parnell Tuttle (1837–1893), US-amerikanische Astronomen.
+
+[b]Entdeckung[/b]
+Datum: 1862-07-16
+Entdecker: Lewis Swift, Horace Parnell Tuttle
+
+[b]Physikalische Eigenschaften[/b]
 [b]109P/Swift-Tuttle[/b] ist der größte bekannte Körper, der die Erdbahn kreuzt und regelmäßig zurückkehrt. Sein Kern hat einen Durchmesser von ~26 km — mehr als doppelt so groß wie das Objekt, das vor 66 Millionen Jahren das Massensterben der Dinosaurier auslöste.
 
 Seine Umlaufzeit beträgt ~130 Jahre; das letzte Perihel war 1992, das nächste wird 2126 erwartet. Swift-Tuttle ist die Quelle der Perseiden — einem der intensivsten jährlichen Meteorschauer (August).
 
-Trotz der Kreuzung der Erdbahn zeigen Berechnungen, dass eine Kollision in den nächsten Jahrtausenden ausgeschlossen ist."""
+Trotz der Kreuzung der Erdbahn zeigen Berechnungen, dass eine Kollision in den nächsten Jahrtausenden ausgeschlossen ist.
+"""
 
 [infobox.atmosphere]
 temp_mean = -50
-temp_min  = -70
-temp_max  = 80
+temp_min = -70
+temp_max = 80

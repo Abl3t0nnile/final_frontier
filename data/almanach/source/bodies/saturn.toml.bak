@@ -1,0 +1,21 @@
+id = "saturn"
+
+description = """\
+[b]Saturn[/b] ist der zweite Gasriese des Sonnensystems mit einem Radius von 58.232 km und einer Masse von 5,68 × 10²⁶ kg. Mit einer mittleren Dichte von nur 0,687 g/cm³ ist er der einzige Planet, der leichter als Wasser wäre. Wie Jupiter besteht er überwiegend aus Wasserstoff (96 %) und Helium (3 %), rotiert schnell (10 Stunden 33 Minuten pro Tag) und ist dadurch stark abgeplattet — der Äquatorialradius übersteigt den Polarradius um ~10 %.
+
+Das [b]Ringsystem[/b] erstreckt sich von ~7.000 km bis ~80.000 km über der Oberfläche und besteht zu ~90–95 % aus Wassereis mit geringen Anteilen an Staub und Gestein. Die Hauptringe (A, B, C) sind zusammen ~270.000 km breit, aber meist nur wenige Zehn bis Hundert Meter dick. Markante Lücken wie die [b]Cassini-Division[/b] (~4.800 km breit) entstehen durch [url=concept:orbital_resonance]Bahnresonanzen[/url] mit Monden — die Cassini-Division durch die 2:1-Resonanz mit Mimas. Die Ringe sind geologisch jung (schätzungsweise 10–100 Millionen Jahre), da sie sonst durch Staubakkumulation verdunkelt worden wären.
+
+Saturns Magnetfeld ist das einzige im Sonnensystem, das nahezu perfekt mit der Rotationsachse ausgerichtet ist — ein Umstand, der Dynamo-Theorien vor Rätsel stellt. Ein persistenter [b]Hexagonaler Polarsturm[/b] am Nordpol mit ~30.000 km Durchmesser wird seit seiner Entdeckung durch Voyager 1 (1980) kontinuierlich beobachtet. Die [b]Cassini-Huygens-Mission[/b] (1997–2017) lieferte 13 Jahre lang Daten über Saturn, seine Ringe und Monde — eines der ergiebigsten Planetensondenprogramme der Raumfahrtgeschichte.
+
+Mit 146 bekannten Monden (Stand 2024) hat Saturn das größte Mondsystem im Sonnensystem. Titan mit seiner dichten Stickstoffatmosphäre und Methan-Seen sowie Enceladus mit seinem aktiv eruptierenden Unteroberflächenozean machen das Saturnsystem zu einem der wissenschaftlich reichhaltigsten Gebiete jenseits der Erde."""
+
+[infobox.atmosphere]
+pressure  = 1.0
+temp_mean = -130
+temp_min  = -178
+
+[infobox.atmosphere.composition]
+"Wasserstoff (H₂)" = 96.3
+"Helium (He)"      = 3.25
+"Methan (CH₄)"     = 0.45
+"Ammoniak (NH₃)"   = 0.013

@@ -1,0 +1,11 @@
+id = "elara"
+
+description = """\
+[b]Elara[/b] ist ein irregulärer Mond des [url=body:jupiter]Jupiter[/url] und Mitglied der Himalia-Gruppe. Mit ~40 km Durchmesser ist er einer der größeren irregulären Jupitermonde.
+
+Er wurde 1905 von Charles Dillon Perrine entdeckt und ist nach einer Geliebten des Zeus in der griechischen Mythologie benannt. Seine stark geneigte und elliptische Bahn legt nahe, dass er einst ein unabhängiger Kleinplanet war, der von Jupiter eingefangen wurde."""
+
+[infobox.atmosphere]
+temp_mean = -161
+temp_min  = -173
+temp_max  = -133

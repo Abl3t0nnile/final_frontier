@@ -1,11 +1,22 @@
 id = "salacia"
 
 description = """\
+[b]Salacia[/b]
+
+[b]Etymologie[/b]
+Benennung nach mythologischer oder kultureller Referenz.
+
+[b]Entdeckung[/b]
+Datum: Entdeckungsdatum nicht spezifiziert.
+Entdecker: —
+
+[b]Physikalische Eigenschaften[/b]
 [b]Salacia[/b] ist ein transneptunisches Objekt im äußeren [url=concept:kuiper_belt]Kuipergürtel[/url] und benannt nach der römischen Meeresgöttin. Er ist ein Zwergplanetkandidat mit einem geschätzten Durchmesser von ~850 km.
 
-Salacia bildet zusammen mit seinem Mond Actaea ein Doppelsystem. Die Analyse ihrer gegenseitigen Umlaufbahn ermöglichte eine genaue Massebestimmung. Seine Oberfläche ist ungewöhnlich dunkel und wenig reflektiv für ein Kuipergürtel-Objekt."""
+Salacia bildet zusammen mit seinem Mond Actaea ein Doppelsystem. Die Analyse ihrer gegenseitigen Umlaufbahn ermöglichte eine genaue Massebestimmung. Seine Oberfläche ist ungewöhnlich dunkel und wenig reflektiv für ein Kuipergürtel-Objekt.
+"""
 
 [infobox.atmosphere]
 temp_mean = -221
-temp_min  = -231
-temp_max  = -209
+temp_min = -231
+temp_max = -209

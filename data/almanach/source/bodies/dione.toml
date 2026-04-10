@@ -1,15 +1,26 @@
 id = "dione"
 
 description = """\
+[b]Dione[/b]
+
+[b]Etymologie[/b]
+Nach Διώνη (Diṓnē), Tochter des Okeanos, Mutter der Aphrodite.
+
+[b]Entdeckung[/b]
+Datum: 1684-03-21
+Entdecker: Giovanni Cassini
+
+[b]Physikalische Eigenschaften[/b]
 [b]Dione[/b] ist ein Eismond des [url=body:saturn]Saturn[/url] mit einem Radius von 561 km und einer Dichte von ~1,48 g/cm³ — ein Zeichen, dass er neben Wassereis auch einen bedeutenden Silikatgesteinsanteil enthält, möglicherweise bis zu 45 % des Volumens. Er umrundet Saturn in 2,74 Tagen und befindet sich in einer 1:2-Bahnresonanz mit [url=body:enceladus]Enceladus[/url], die zu Gezeitenheizung in beiden Monden beiträgt.
 
 Das markanteste visuelle Merkmal ist das [b]Wispy Terrain[/b] auf der Rückseite: ein Netz aus hellen, schmalen Klippen, die sich über Hunderte von Kilometern erstrecken. Voyager-Bilder interpretierten dies zunächst als Frostablagerungen; Cassini-Daten zeigten, dass es sich um gefrorene Steilwände tektonischer Brüche handelt — das Eis wurde durch innere Kräfte auseinandergerissen, die Bruchkanten blieben als helle Felsen stehen. Dies belegt tektonische Aktivität in Diones Vergangenheit.
 
 Cassini-Magnetfeldmessungen aus dem Jahr 2015 zeigten Anomalien, die mit einem leitfähigen, flüssigen Ozean in ~100 km Tiefe kompatibel sind — allerdings schwächer als die eindeutigen Signale von Enceladus oder Europa. Sauerstoffionen in der Umgebung Diones, entdeckt von Cassini 2011, deuten auf eine sehr dünne Exosphäre hin, die durch die Spaltung von Wassermolekülen durch Saturns Strahlung erzeugt wird.
 
-Wie [url=body:tethys]Tethys[/url] hat Dione zwei Trojaner-Monde: [b]Helene[/b] (L4) und [b]Polydeuces[/b] (L5), von denen letzterer ungewöhnlich weit von seinem Lagrangepunkt abweicht und eine komplexe librierende Bahn beschreibt."""
+Wie [url=body:tethys]Tethys[/url] hat Dione zwei Trojaner-Monde: [b]Helene[/b] (L4) und [b]Polydeuces[/b] (L5), von denen letzterer ungewöhnlich weit von seinem Lagrangepunkt abweicht und eine komplexe librierende Bahn beschreibt.
+"""
 
 [infobox.atmosphere]
 temp_mean = -186
-temp_min  = -195
-temp_max  = -145
+temp_min = -195
+temp_max = -145

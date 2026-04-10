@@ -1,0 +1,15 @@
+id = "sedna"
+
+description = """\
+[b]Sedna[/b] ist eines der rätselhaftesten Objekte des Sonnensystems. Er wurde am 14. November 2003 von Michael Brown, Chadwick Trujillo und David Rabinowitz mit dem Samuel-Oschin-Teleskop am Palomar-Observatorium entdeckt und nach [b]Sedna[/b], der Inuit-Meeresgöttin, benannt. Mit einem geschätzten Radius von ~497 km und einer tief roten Oberfläche — ähnlich Mars — ist er eines der rötesten bekannten Objekte im Sonnensystem, was auf einen hohen Gehalt an [url=concept:tholins]Tholine[/url] (strahlungsverarbeiteten organischen Verbindungen) hindeutet.
+
+Sednas Bahn ist extrem: Das Perihel liegt bei ~76 AU (weit jenseits des Neptuns und des Kuipergürtels), das Aphel bei ~937 AU. Die Umlaufzeit beträgt ~11.400 Jahre. Sedna ist damit nie nahe genug an Neptun gewesen, um gravitativ von ihm gestört worden zu sein — er ist also kein durch Neptun in die äußere Bahn gestreutes [url=concept:scattered_disc]Streuscheiben[/url]-Objekt. Diese Eigenschaft macht ihn zum Prototyp der sogenannten [b]Inneren Oortschen Wolke[/b] (oder abgetrennten Scheibe). Derzeit befindet er sich bei ~84 AU und nähert sich seinem nächsten Periheldurchgang (~2076), wo er sein Perihel erreichen wird.
+
+Woher Sedna seine abgelegene Bahn hat, ist unbekannt. Drei Haupttheorien werden diskutiert: (1) Ein früher Vorbeiflug eines fremden Sterns hat Sedna durch Gravitation auf seine heutige Bahn gelenkt. (2) Die Gravitation eines bis heute unentdeckten fernen Planeten ([url=body:planet_nine]Planet Neun[/url]) hält Sedna und ähnliche Objekte in diesem Bahnbereich. (3) Sedna wurde in der frühesten Phase des Sonnensystems in einem dichten Sternhaufen geformt, wo Gravitationsinteraktionen mit Nachbarsternen solche Bahnen erzeugten.
+
+Sedna hat keinen bekannten Mond, was seine Massebestimmung erschwert. Er ist eines von nur wenigen Objekten, die sicher zum inneren Bereich jenseits der Streuscheibe gehören — 2012 VP₁₁₃ ("Biden") ist ein zweites bekanntes Objekt dieser Klasse. Beide haben ähnliche Perihelwinkel, was die Planet-Neun-Hypothese motivierte. Kein Raumfahrzeug hat Sedna besucht oder ist dafür in Planung."""
+
+[infobox.atmosphere]
+temp_mean = -240
+temp_min  = -243
+temp_max  = -233

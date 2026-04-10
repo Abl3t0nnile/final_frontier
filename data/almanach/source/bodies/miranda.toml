@@ -1,11 +1,22 @@
 id = "miranda"
 
 description = """\
+[b]Miranda[/b]
+
+[b]Etymologie[/b]
+Nach Miranda (Heldin in Shakespeares 'Der Sturm').
+
+[b]Entdeckung[/b]
+Datum: 1948-02-16
+Entdecker: Gerard Kuiper
+
+[b]Physikalische Eigenschaften[/b]
 [b]Miranda[/b] ist der kleinste der fünf großen Monde des [url=body:uranus]Uranus[/url] und hat eine der geologisch rätselhaftesten Oberflächen im Sonnensystem. Sie zeigt extreme Kontraste: alte kraterreiche Ebenen neben riesigen Canyons, Terrassen und Klippen — darunter Verona Rupes, eine Steilwand von ~20 km Höhe, die größte bekannte Steilklippe im Sonnensystem.
 
-Die ungewöhnliche Oberfläche deutet auf frühere tektonische Aktivität oder mehrere Einschläge und Neuformierungen hin. Miranda wurde 1948 von Gerard Kuiper entdeckt."""
+Die ungewöhnliche Oberfläche deutet auf frühere tektonische Aktivität oder mehrere Einschläge und Neuformierungen hin. Miranda wurde 1948 von Gerard Kuiper entdeckt.
+"""
 
 [infobox.atmosphere]
 temp_mean = -213
-temp_min  = -223
-temp_max  = -193
+temp_min = -223
+temp_max = -193

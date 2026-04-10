@@ -1,0 +1,11 @@
+id = "phoebe"
+
+description = """\
+[b]Phoebe[/b] ist ein irregulärer retrograder Mond des [url=body:saturn]Saturn[/url] und der erste Mond, der als eingefangenes transneptunisches Objekt identifiziert wurde. Er umkreist Saturn in ~534 Tagen in entgegengesetzter Richtung.
+
+Phoebe hat eine dunkle, kohlenstoffreiche Oberfläche ähnlich C-Typ-Asteroiden. Cassini-Daten zeigen, dass er einst Wassereis enthielt. Staub von Phoebe bildet den äußersten bekannten Ring Saturns — den Phoebe-Ring —, der das dunkle Material auf [url=body:iapetus]Iapetus[/url] liefert."""
+
+[infobox.atmosphere]
+temp_mean = -198
+temp_min  = -203
+temp_max  = -150

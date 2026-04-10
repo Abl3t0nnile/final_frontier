@@ -1,15 +1,26 @@
 id = "quaoar"
 
 description = """\
+[b]Quaoar[/b]
+
+[b]Etymologie[/b]
+Nach dem Tongva-Schöpfergott Quaoar (Mythologie Los Angeles Basin).
+
+[b]Entdeckung[/b]
+Datum: 2002-06-04
+Entdecker: Chad Trujillo, Michael E. Brown
+
+[b]Physikalische Eigenschaften[/b]
 [b]Quaoar[/b] ist ein Zwergplanetkandidat im [url=concept:kuiper_belt]Kuipergürtel[/url] mit einem Radius von ~543 km, benannt nach [b]Quaoar[/b], dem Schöpfergott des Tongva-Volkes aus der Region des heutigen Los Angeles. Er wurde 2002 von Michael Brown und Chadwick Trujillo entdeckt und gehörte damit zu den ersten großen Entdeckungen jenseits Plutos. Quaoar liegt in der klassischen Kuipergürtel-Region bei ~43,6 AU mit einer Umlaufzeit von ~288 Jahren auf einer mäßig geneigten (8°) und fast kreisförmigen Bahn.
 
 Die Oberfläche zeigt spektroskopisch kristallines Wassereis sowie Methanol und organische Verbindungen (Tholine). Kristallines Wassereis ist auf KBOs überraschend, da Strahlung es normalerweise in amorphes Eis umwandelt — es muss durch Wärmeprozesse regelmäßig rekristallisiert worden sein, was auf interne Wärmequellen oder geologische Aktivität in Quaoars Vergangenheit hindeutet.
 
 Das wissenschaftliche Highlight ist Quaoars [b]Ringsystem[/b], entdeckt 2022 durch Sternbedeckungsbeobachtungen (europäisches Teleskopnetzwerk) und 2023 durch das James-Webb-Weltraumteleskop bestätigt. Der Ring liegt in ~4.100 km Abstand von Quaoars Zentrum — das ist das 2,5-Fache der [url=concept:roche_limit]Roche-Grenze[/url]. Nach klassischer Theorie sollten Ringe außerhalb der [url=concept:roche_limit]Roche-Grenze[/url] zu Monden akkretieren, nicht dauerhaft als Ring bestehen. Als Erklärung wird diskutiert, dass Quaoars extreme Kälte (~−220 °C) Ringpartikel so hart macht, dass sie bei Kollisionen wie Billardkugeln abprallen statt zusammenzukleben — wodurch die Ringmasse stabil bleibt. Dies stellt fundamentale Annahmen der Ringdynamik in Frage.
 
-Sein Mond [url=body:weywot]Weywot[/url] (Radius ~87 km) wurde 2006 entdeckt und umkreist Quaoar in ~12,4 Tagen aus ~14.500 km Entfernung. Die Massebestimmung aus Weywots Bahn ergab ~1,4 × 10²¹ kg für Quaoar — mit einer resultierenden Dichte von ~1,99 g/cm³, was auf einen Gesteins-Eis-Mix hindeutet."""
+Sein Mond [url=body:weywot]Weywot[/url] (Radius ~87 km) wurde 2006 entdeckt und umkreist Quaoar in ~12,4 Tagen aus ~14.500 km Entfernung. Die Massebestimmung aus Weywots Bahn ergab ~1,4 × 10²¹ kg für Quaoar — mit einer resultierenden Dichte von ~1,99 g/cm³, was auf einen Gesteins-Eis-Mix hindeutet.
+"""
 
 [infobox.atmosphere]
 temp_mean = -220
-temp_min  = -230
-temp_max  = -197
+temp_min = -230
+temp_max = -197
