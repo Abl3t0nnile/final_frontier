@@ -5,12 +5,15 @@
 class_name MapController
 extends Node2D
 
+signal marker_right_clicked(id: String)
+
 ## Configuration (set via apply_config() from SolarMap)
 var zoom_exp_min: float      = 3.0
 var zoom_exp_max: float      = 10.0
 var zoom_exp_step: float     = 0.1
 var zoom_exp_initial: float  = 6.5
 var scale_presets: Array[float] = [3.7, 5.7, 6.5, 7.7, 8.7]
+var pinch_zoom_sensitivity: float = 0.5
 
 var move_speed_px_s: float = 500.0
 var move_accel: float      = 14.0
@@ -116,6 +119,7 @@ func setup(model: SolarSystemModel, clock: SimClock, registry: GameObjectRegistr
 	_map_transform.zoom_exp_max    = zoom_exp_max
 	_map_transform.zoom_exp_step   = zoom_exp_step
 	_map_transform.scale_presets   = scale_presets
+	_map_transform.pinch_zoom_sensitivity = pinch_zoom_sensitivity
 	_map_transform.move_speed_px_s = move_speed_px_s
 	_map_transform.move_accel      = move_accel
 	_map_transform.move_decel      = move_decel
@@ -162,7 +166,8 @@ func setup(model: SolarSystemModel, clock: SimClock, registry: GameObjectRegistr
 		var id: String = game_object.id
 		var marker := _entity_manager.create_marker(game_object)
 		_apply_marker_config(marker)
-		marker.clicked.connect(func(_m: MapMarker): _interaction_manager.select_entity(id))
+		marker.clicked.connect(func(_m: MapMarker): _on_marker_clicked(id))
+		marker.right_clicked.connect(func(_m: MapMarker): _on_marker_right_clicked(id))
 		marker.hovered.connect(func(_m: MapMarker): _interaction_manager.on_marker_hovered(id))
 		marker.unhovered.connect(func(_m: MapMarker): _interaction_manager.on_marker_unhovered(id))
 
@@ -240,6 +245,7 @@ func apply_config(config: Dictionary) -> void:
 	if config.has("zoom_exp_step"):     zoom_exp_step = config.zoom_exp_step
 	if config.has("zoom_exp_initial"):  zoom_exp_initial = config.zoom_exp_initial
 	if config.has("scale_presets"):     scale_presets = config.scale_presets
+	if config.has("pinch_zoom_sensitivity"): pinch_zoom_sensitivity = config.pinch_zoom_sensitivity
 	# Pan
 	if config.has("move_speed_px_s"):   move_speed_px_s = config.move_speed_px_s
 	if config.has("move_accel"):        move_accel = config.move_accel
@@ -470,6 +476,15 @@ func _on_marker_hovered_orbit(id: String) -> void:
 func _on_marker_unhovered_orbit(id: String) -> void:
 	if _orbit_manager:
 		_orbit_manager.set_highlight(id, false)
+
+
+func _on_marker_clicked(id: String) -> void:
+	center_on_body(id)
+	_interaction_manager.select_entity(id)
+
+
+func _on_marker_right_clicked(id: String) -> void:
+	marker_right_clicked.emit(id)
 
 
 ## Getters for Managers

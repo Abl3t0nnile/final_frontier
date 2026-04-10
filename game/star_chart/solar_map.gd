@@ -12,6 +12,7 @@ extends Node
 @export var zoom_exp_step: float     = 0.1
 @export var zoom_exp_initial: float  = 6.5
 @export var zoom_scale_presets: Array[float] = [3.7, 5.7, 6.5, 7.7, 8.7]
+@export_range(0.1, 2.0, 0.1) var pinch_zoom_sensitivity: float = 0.5
 
 ## Konfiguration – Pan
 @export_group("Pan")
@@ -109,6 +110,7 @@ signal marker_hovered(id: String)
 signal marker_unhovered(id: String)
 signal body_pinned(id: String)
 signal body_unpinned(id: String)
+signal marker_right_clicked(id: String)
 
 signal time_changed(sim_time: float)
 signal time_scale_changed(scale: float)
@@ -315,6 +317,9 @@ func _connect_signals() -> void:
 	interaction.marker_unhovered.connect(marker_unhovered.emit)
 	interaction.body_pinned.connect(body_pinned.emit)
 	interaction.body_unpinned.connect(body_unpinned.emit)
+	
+	# Right-click on marker from MapController
+	_map_controller.marker_right_clicked.connect(marker_right_clicked.emit)
 
 	# Time events from clock
 	GameClock.tick.connect(func(t: float): time_changed.emit(t))
@@ -336,6 +341,7 @@ func _build_config() -> Dictionary:
 		"zoom_exp_step": zoom_exp_step,
 		"zoom_exp_initial": zoom_exp_initial,
 		"scale_presets": zoom_scale_presets,
+		"pinch_zoom_sensitivity": pinch_zoom_sensitivity,
 		# Pan
 		"move_speed_px_s": move_speed_px_s,
 		"move_accel": move_accel,

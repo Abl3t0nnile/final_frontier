@@ -134,6 +134,12 @@ func close_overlay() -> void:
 		_set_view(ViewMode.MAP)
 		if not _current_body_id.is_empty():
 			_set_info_panel_visible(true)
+	elif _view_mode == ViewMode.MAP:
+		# Im MapView: Panel schließen und Marker deselectieren
+		_set_info_panel_visible(false)
+		if not _current_body_id.is_empty():
+			_solar_map.deselect_body()
+			_current_body_id = ""
 
 
 func toggle_planet_view() -> void:

@@ -6,7 +6,7 @@ class_name MapMarker
 extends Area2D
 
 signal clicked(marker: MapMarker)
-signal double_clicked(marker: MapMarker)
+signal right_clicked(marker: MapMarker)
 signal hovered(marker: MapMarker)
 signal unhovered(marker: MapMarker)
 
@@ -155,11 +155,13 @@ func _draw() -> void:
 		draw_arc(Vector2.ZERO, r, 0.0, TAU, 32, pinned_color, pinned_width, true)
 
 
-func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+func _on_input_event(viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		var mb := event as InputEventMouseButton
-		if mb.button_index == MOUSE_BUTTON_LEFT and mb.pressed:
-			if mb.double_click:
-				double_clicked.emit(self)
-			else:
+		if mb.pressed:
+			if mb.button_index == MOUSE_BUTTON_LEFT:
 				clicked.emit(self)
+				viewport.set_input_as_handled()
+			elif mb.button_index == MOUSE_BUTTON_RIGHT:
+				right_clicked.emit(self)
+				viewport.set_input_as_handled()

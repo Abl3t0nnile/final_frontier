@@ -301,6 +301,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="MonthLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=102075549]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 1
@@ -629,6 +630,7 @@ layout_mode = 2
 size_flags_vertical = 8
 
 [node name="TitlePanel" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomLeftPanel" unique_id=1535624263]
+custom_minimum_size = Vector2(320, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_iu7s2")

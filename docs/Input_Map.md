@@ -17,8 +17,7 @@ This document defines the input format for the Final Frontier game. The game scr
 **Marker Interaction**
 
 - Hover Marker -> highlights the marker
-- Left click on MapMarker -> pans the map to the marker
-- Double left clock on marker -> opens InfoPanel (IP)
+- Left click on MapMarker -> pans the map to the marker and selects the marker
 - Right click on marker -> opens context menu (pin body, show PV, show AA)
 - Right click on empty space with selected marker -> deselects the marker
 
