@@ -2,23 +2,12 @@
 
 [ext_resource type="LabelSettings" uid="uid://djss0uyws4nlk" path="res://ui/resources/label_settings/label_settings_ui_caption_h2.tres" id="1_bbw2b"]
 [ext_resource type="Texture2D" uid="uid://cjrwdwdj6bu3g" path="res://assets/icons/ui/white/information.png" id="1_ii5fe"]
+[ext_resource type="Theme" uid="uid://bjcahkix8bvsn" path="res://ui/resources/themes/ui_default_theme.tres" id="1_jvlja"]
 [ext_resource type="PackedScene" uid="uid://bpxdjhjimm5yy" path="res://ui/components/UnitValueDisplay.tscn" id="2_y13in"]
-[ext_resource type="Texture2D" uid="uid://dnk3bdvjj6boy" path="res://assets/icons/ui/white/larger.png" id="3_bbw2b"]
 [ext_resource type="Texture2D" uid="uid://faxthe42pkba" path="res://assets/icons/ui/white/locked.png" id="3_ii5fe"]
+[ext_resource type="Texture2D" uid="uid://l8m6lh2mhnbe" path="res://assets/icons/ui/white/target.png" id="3_jvlja"]
 [ext_resource type="Texture2D" uid="uid://l5iaiwtotp8b" path="res://assets/icons/ui/white/unlocked.png" id="4_ywat7"]
 [ext_resource type="PackedScene" uid="uid://bqqgkplfw8yb8" path="res://game/planet_view/PlanetViewer.tscn" id="6_wn4l6"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx451"]
-content_margin_left = 8.0
-content_margin_top = 4.0
-content_margin_right = 8.0
-content_margin_bottom = 0.0
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
 
 [node name="InfoPanel" type="PanelContainer" unique_id=1197745249]
 custom_minimum_size = Vector2(480, 0)
@@ -30,69 +19,80 @@ offset_left = -8.0
 offset_right = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_cx451")
+theme = ExtResource("1_jvlja")
+theme_type_variation = &"PanelContainerOutline"
 
-[node name="VBox" type="VBoxContainer" parent="." unique_id=1267853833]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=903437743]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer" unique_id=1267853833]
 layout_mode = 2
 theme_override_constants/separation = 24
 
-[node name="Header" type="HBoxContainer" parent="VBox" unique_id=1486959362]
+[node name="Header" type="HBoxContainer" parent="MarginContainer/VBox" unique_id=1486959362]
 layout_mode = 2
 
-[node name="NameDisplay" type="VBoxContainer" parent="VBox/Header" unique_id=1771135755]
+[node name="NameDisplay" type="VBoxContainer" parent="MarginContainer/VBox/Header" unique_id=1771135755]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBox/Header/NameDisplay" unique_id=1035645127]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBox/Header/NameDisplay" unique_id=1035645127]
 layout_mode = 2
 
-[node name="TypeLabel" type="Label" parent="VBox/Header/NameDisplay/HBoxContainer" unique_id=1595095378]
+[node name="TypeLabel" type="Label" parent="MarginContainer/VBox/Header/NameDisplay/HBoxContainer" unique_id=1595095378]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
 theme_override_font_sizes/font_size = 12
 text = "Type"
 
-[node name="SubtypeLabel" type="Label" parent="VBox/Header/NameDisplay/HBoxContainer" unique_id=420032760]
+[node name="SubtypeLabel" type="Label" parent="MarginContainer/VBox/Header/NameDisplay/HBoxContainer" unique_id=420032760]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
 theme_override_font_sizes/font_size = 12
 text = "Subtype"
 
-[node name="NameLabel" type="Label" parent="VBox/Header/NameDisplay" unique_id=1217086208]
+[node name="NameLabel" type="Label" parent="MarginContainer/VBox/Header/NameDisplay" unique_id=1217086208]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Object Name"
 label_settings = ExtResource("1_bbw2b")
 uppercase = true
 
-[node name="AlmanachBtn" type="Button" parent="VBox/Header" unique_id=1411066641]
-custom_minimum_size = Vector2(24, 0)
+[node name="ZoomBtn" type="Button" parent="MarginContainer/VBox/Header" unique_id=28450127]
+custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 6
+tooltip_text = "Zeigt das Objekt in einem extra Fenster."
+icon = ExtResource("3_jvlja")
+icon_alignment = 1
+expand_icon = true
+
+[node name="AlmanachBtn" type="Button" parent="MarginContainer/VBox/Header" unique_id=1411066641]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
 tooltip_text = "Öffnet den Almanach mit dem Eintrag zu diesem Objekt."
 icon = ExtResource("1_ii5fe")
 icon_alignment = 1
 expand_icon = true
 
-[node name="ZoomBtn" type="Button" parent="VBox/Header" unique_id=28450127]
-custom_minimum_size = Vector2(24, 0)
+[node name="PinBtn" type="Button" parent="MarginContainer/VBox/Header" unique_id=1691663874]
+custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
-size_flags_vertical = 3
-tooltip_text = "Zeigt das Objekt in einem extra Fenster."
-icon = ExtResource("3_bbw2b")
-icon_alignment = 1
-expand_icon = true
-
-[node name="PinBtn" type="Button" parent="VBox/Header" unique_id=1691663874]
-custom_minimum_size = Vector2(24, 0)
-layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 6
 tooltip_text = "Pinnt das Objekt an, sodass es immer zu sehen ist."
 icon = ExtResource("3_ii5fe")
 icon_alignment = 1
 expand_icon = true
 
-[node name="UnpinBtn" type="Button" parent="VBox/Header" unique_id=751722372]
+[node name="UnpinBtn" type="Button" parent="MarginContainer/VBox/Header" unique_id=751722372]
 visible = false
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
@@ -101,25 +101,25 @@ icon = ExtResource("4_ywat7")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Image" type="SubViewportContainer" parent="VBox" unique_id=343856192]
+[node name="Image" type="SubViewportContainer" parent="MarginContainer/VBox" unique_id=343856192]
 custom_minimum_size = Vector2(0, 320)
 layout_mode = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="VBox/Image" unique_id=1940307446]
+[node name="SubViewport" type="SubViewport" parent="MarginContainer/VBox/Image" unique_id=1940307446]
 handle_input_locally = false
 use_hdr_2d = true
-size = Vector2i(464, 320)
+size = Vector2i(444, 320)
 render_target_update_mode = 4
 
-[node name="PlanetViewer" parent="VBox/Image/SubViewport" unique_id=985037799 instance=ExtResource("6_wn4l6")]
+[node name="PlanetViewer" parent="MarginContainer/VBox/Image/SubViewport" unique_id=985037799 instance=ExtResource("6_wn4l6")]
 light_direction = Vector3(0.5, 0.5, 1.4)
 outline_enabled = true
 outline_width = 0.01
 color_saturation = 1.6
 color_levels = 3
 
-[node name="MissingLabel" type="Label" parent="VBox/Image/SubViewport" unique_id=123456789]
+[node name="MissingLabel" type="Label" parent="MarginContainer/VBox/Image/SubViewport" unique_id=123456789]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -132,81 +132,81 @@ text = "--- MISSING IMAGE ---"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PanelSelector" type="HBoxContainer" parent="VBox" unique_id=1111245236]
+[node name="PanelSelector" type="HBoxContainer" parent="MarginContainer/VBox" unique_id=1111245236]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="VBox/PanelSelector" unique_id=851292903]
+[node name="Button" type="Button" parent="MarginContainer/VBox/PanelSelector" unique_id=851292903]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Data"
 
-[node name="Button2" type="Button" parent="VBox/PanelSelector" unique_id=1522535809]
+[node name="Button2" type="Button" parent="MarginContainer/VBox/PanelSelector" unique_id=1522535809]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Info"
 
-[node name="Button3" type="Button" parent="VBox/PanelSelector" unique_id=1903940798]
+[node name="Button3" type="Button" parent="MarginContainer/VBox/PanelSelector" unique_id=1903940798]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Satelites"
 
-[node name="OrbitSection" type="VBoxContainer" parent="VBox" unique_id=1111245237]
+[node name="OrbitSection" type="VBoxContainer" parent="MarginContainer/VBox" unique_id=1111245237]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBox/OrbitSection" unique_id=2087667960]
+[node name="Label" type="Label" parent="MarginContainer/VBox/OrbitSection" unique_id=2087667960]
 layout_mode = 2
 text = "Orbit"
 
-[node name="HSeparator" type="HSeparator" parent="VBox/OrbitSection" unique_id=1378644551]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBox/OrbitSection" unique_id=1378644551]
 layout_mode = 2
 
-[node name="OrbitGrid" type="GridContainer" parent="VBox/OrbitSection" unique_id=1317425049]
+[node name="OrbitGrid" type="GridContainer" parent="MarginContainer/VBox/OrbitSection" unique_id=1317425049]
 layout_mode = 2
 columns = 2
 
-[node name="Halbachse" parent="VBox/OrbitSection/OrbitGrid" unique_id=1441746687 instance=ExtResource("2_y13in")]
+[node name="Halbachse" parent="MarginContainer/VBox/OrbitSection/OrbitGrid" unique_id=1441746687 instance=ExtResource("2_y13in")]
 layout_mode = 2
 
-[node name="Umlaufzeit" parent="VBox/OrbitSection/OrbitGrid" unique_id=1698933232 instance=ExtResource("2_y13in")]
+[node name="Umlaufzeit" parent="MarginContainer/VBox/OrbitSection/OrbitGrid" unique_id=1698933232 instance=ExtResource("2_y13in")]
 layout_mode = 2
 
-[node name="Periapsis" parent="VBox/OrbitSection/OrbitGrid" unique_id=210411637 instance=ExtResource("2_y13in")]
+[node name="Periapsis" parent="MarginContainer/VBox/OrbitSection/OrbitGrid" unique_id=210411637 instance=ExtResource("2_y13in")]
 layout_mode = 2
 
-[node name="Geschwindigkeit" parent="VBox/OrbitSection/OrbitGrid" unique_id=1752216032 instance=ExtResource("2_y13in")]
+[node name="Geschwindigkeit" parent="MarginContainer/VBox/OrbitSection/OrbitGrid" unique_id=1752216032 instance=ExtResource("2_y13in")]
 layout_mode = 2
 
-[node name="Apoapsis" parent="VBox/OrbitSection/OrbitGrid" unique_id=2061630386 instance=ExtResource("2_y13in")]
+[node name="Apoapsis" parent="MarginContainer/VBox/OrbitSection/OrbitGrid" unique_id=2061630386 instance=ExtResource("2_y13in")]
 layout_mode = 2
 
-[node name="Exzentrizitaet" parent="VBox/OrbitSection/OrbitGrid" unique_id=119915109 instance=ExtResource("2_y13in")]
+[node name="Exzentrizitaet" parent="MarginContainer/VBox/OrbitSection/OrbitGrid" unique_id=119915109 instance=ExtResource("2_y13in")]
 layout_mode = 2
 
-[node name="PhysikSection" type="VBoxContainer" parent="VBox" unique_id=1570577791]
+[node name="PhysikSection" type="VBoxContainer" parent="MarginContainer/VBox" unique_id=1570577791]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBox/PhysikSection" unique_id=1824520681]
+[node name="Label" type="Label" parent="MarginContainer/VBox/PhysikSection" unique_id=1824520681]
 layout_mode = 2
 text = "Physik"
 
-[node name="HSeparator" type="HSeparator" parent="VBox/PhysikSection" unique_id=985400722]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBox/PhysikSection" unique_id=985400722]
 layout_mode = 2
 
-[node name="PhysikGrid" type="GridContainer" parent="VBox/PhysikSection" unique_id=825436254]
+[node name="PhysikGrid" type="GridContainer" parent="MarginContainer/VBox/PhysikSection" unique_id=825436254]
 layout_mode = 2
 columns = 2
 
-[node name="Radius" parent="VBox/PhysikSection/PhysikGrid" unique_id=2097675926 instance=ExtResource("2_y13in")]
+[node name="Radius" parent="MarginContainer/VBox/PhysikSection/PhysikGrid" unique_id=2097675926 instance=ExtResource("2_y13in")]
 layout_mode = 2
 
-[node name="Masse" parent="VBox/PhysikSection/PhysikGrid" unique_id=288945367 instance=ExtResource("2_y13in")]
+[node name="Masse" parent="MarginContainer/VBox/PhysikSection/PhysikGrid" unique_id=288945367 instance=ExtResource("2_y13in")]
 layout_mode = 2
 
-[node name="Dichte" parent="VBox/PhysikSection/PhysikGrid" unique_id=1754418589 instance=ExtResource("2_y13in")]
+[node name="Dichte" parent="MarginContainer/VBox/PhysikSection/PhysikGrid" unique_id=1754418589 instance=ExtResource("2_y13in")]
 layout_mode = 2
 
-[node name="Schwerkraft" parent="VBox/PhysikSection/PhysikGrid" unique_id=1082168978 instance=ExtResource("2_y13in")]
+[node name="Schwerkraft" parent="MarginContainer/VBox/PhysikSection/PhysikGrid" unique_id=1082168978 instance=ExtResource("2_y13in")]
 layout_mode = 2
 
-[node name="Fluchtgeschw" parent="VBox/PhysikSection/PhysikGrid" unique_id=2036421093 instance=ExtResource("2_y13in")]
+[node name="Fluchtgeschw" parent="MarginContainer/VBox/PhysikSection/PhysikGrid" unique_id=2036421093 instance=ExtResource("2_y13in")]
 layout_mode = 2

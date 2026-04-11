@@ -28,6 +28,7 @@ extends Node
 @export_group("Features")
 @export var has_orbits: bool  = true
 @export var has_grid: bool    = true
+@export var grid_color: Color = Color(0.29, 1.0, 0.54, 1.0)
 @export var has_belts: bool   = true
 @export var has_zones: bool   = true
 @export var has_comets: bool  = true
@@ -383,6 +384,7 @@ func _build_config() -> Dictionary:
 		# Feature Flags
 		"has_orbits": has_orbits,
 		"has_grid": has_grid,
+		"grid_color": grid_color,
 		"has_belts": has_belts,
 		"has_zones": has_zones,
 		"has_comets": has_comets,

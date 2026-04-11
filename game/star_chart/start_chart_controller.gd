@@ -16,7 +16,7 @@ const _BASE := "UILayer/MainDisplay/VFrame/BodyPanel"
 @onready var _body_view: Control = $"UILayer/MainDisplay/VFrame/BodyPanel/BodyView"
 
 ## Komponenten
-@onready var _clock_control       = $"UILayer/MainDisplay/VFrame/FooterPanel/ClockControl"
+@onready var _clock_control       = $"UILayer/MainDisplay/VFrame/ClockPanel/ClockControl"
 @onready var _nav_panel           = $"UILayer/MainDisplay/VFrame/BodyPanel/NavPanel"
 @onready var _info_panel: InfoPanel = $"UILayer/MainDisplay/VFrame/BodyPanel/InfoPanel"
 @onready var _map_overlay         = $"UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay"
@@ -150,11 +150,7 @@ func toggle_planet_view() -> void:
 
 
 func toggle_time() -> void:
-	var clock: MapClock = _solar_map.get_map_clock()
-	if clock.is_live() or clock.is_running():
-		clock.pause()
-	else:
-		clock.play()
+	_clock_control.toggle_time()
 
 
 # ── Body-Selektion ─────────────────────────────────────────────────────────────
@@ -244,19 +240,20 @@ func _unhandled_input(event: InputEvent) -> void:
 		toggle_almanac()
 	elif event.is_action_pressed("ui_toggle_planet_view"):
 		toggle_planet_view()
+	elif event.is_action_pressed("time_jump_live"):
+		_clock_control.jump_to_live()
 	elif event.is_action_pressed("time_play_pause"):
 		toggle_time()
 	elif event.is_action_pressed("time_forward"):
-		_solar_map.get_map_clock().play()
+		_clock_control.play_forward()
 	elif event.is_action_pressed("time_backward"):
-		_solar_map.get_map_clock().reverse()
+		_clock_control.play_backward()
 	elif event.is_action_pressed("time_scale_up"):
-		_solar_map.get_map_clock().step_time_scale_up()
+		_clock_control.time_scale_up()
 	elif event.is_action_pressed("time_scale_down"):
-		_solar_map.get_map_clock().step_time_scale_down()
+		_clock_control.time_scale_down()
 	else:
-		var clock: MapClock = _solar_map.get_map_clock()
 		for i in range(5):
 			if event.is_action_pressed("time_scale_%d" % (i + 1)):
-				clock.set_time_scale_index(i)
+				_clock_control.time_scale_set(i)
 				return

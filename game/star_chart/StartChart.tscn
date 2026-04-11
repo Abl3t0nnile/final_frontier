@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dy3prfbgdcq52"]
 
 [ext_resource type="Material" uid="uid://d11tqxhxmom8p" path="res://ui/resources/shader_materials/shader_material_scan_lines.tres" id="2_6h8u5"]
+[ext_resource type="Theme" uid="uid://bjcahkix8bvsn" path="res://ui/resources/themes/ui_default_theme.tres" id="3_2sxqo"]
 [ext_resource type="PackedScene" uid="uid://pf507g31tv1q" path="res://ui/panels/nav/NavPanel.tscn" id="3_kfx34"]
 [ext_resource type="Texture2D" uid="uid://71kkbyb55g02" path="res://assets/icons/ui/black/previous.png" id="3_oqwm6"]
 [ext_resource type="Script" uid="uid://c8e8ug2ip6bq6" path="res://game/star_chart/map_overlay.gd" id="4_60spy"]
 [ext_resource type="Texture2D" uid="uid://cxq0qsvwc2k6a" path="res://assets/icons/ui/black/rewind.png" id="4_uetrt"]
-[ext_resource type="LabelSettings" uid="uid://crccqnjhmdewf" path="res://ui/resources/label_settings/label_setting_ui_caption_h1.tres" id="5_4lm6u"]
 [ext_resource type="Texture2D" uid="uid://cjrwdwdj6bu3g" path="res://assets/icons/ui/white/information.png" id="5_5bfw3"]
 [ext_resource type="Texture2D" uid="uid://c4w172cw8ihtk" path="res://assets/icons/ui/black/pause.png" id="5_cx451"]
 [ext_resource type="Texture2D" uid="uid://b2xi1if5c8h5a" path="res://assets/icons/ui/white/smaller.png" id="5_ki4up"]
@@ -22,33 +22,27 @@
 [ext_resource type="LabelSettings" uid="uid://clkwfyc31268q" path="res://ui/resources/label_settings/label_settings_ui_caption_small.tres" id="7_moesl"]
 [ext_resource type="Texture2D" uid="uid://cpxr8nhj15ixg" path="res://assets/icons/input/keyboard_q_outline.png" id="8_7ref0"]
 [ext_resource type="Script" uid="uid://x6le68o1sye" path="res://game/star_chart/start_chart_controller.gd" id="8_controller"]
+[ext_resource type="Texture2D" uid="uid://l8m6lh2mhnbe" path="res://assets/icons/ui/white/target.png" id="9_2ovya"]
 [ext_resource type="Script" uid="uid://qr7os7f21yr0" path="res://game/star_chart/clock_control.gd" id="9_clock"]
 [ext_resource type="Texture2D" uid="uid://rp0y0o7p2mnk" path="res://assets/icons/input/keyboard_e_outline.png" id="9_moesl"]
+[ext_resource type="Texture2D" uid="uid://bycohtpvdyoce" path="res://assets/icons/ui/white/menuList.png" id="9_stl2x"]
 [ext_resource type="Texture2D" uid="uid://bdov46djoii76" path="res://assets/icons/input/keyboard_n_outline.png" id="14_7ref0"]
 [ext_resource type="Texture2D" uid="uid://cfk5465j3cag2" path="res://assets/icons/input/keyboard_escape_outline.png" id="15_c6t65"]
 [ext_resource type="Texture2D" uid="uid://b3i6g1po8balc" path="res://assets/icons/input/keyboard_i_outline.png" id="15_moesl"]
 [ext_resource type="Texture2D" uid="uid://80xuukg5r0yo" path="res://assets/icons/input/keyboard_l_outline.png" id="16_421ri"]
 [ext_resource type="PackedScene" uid="uid://qgkgsneq1nsf" path="res://game/almanac/Almanac.tscn" id="20_6h8u5"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_footer"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iu7s2"]
 content_margin_left = 8.0
 content_margin_top = 2.0
 content_margin_right = 8.0
 content_margin_bottom = 2.0
 bg_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lhq7x"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4lm6u"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_64tcr"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jdc0y"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_cx451"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uetrt"]
-bg_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqwm6"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(1, 1, 1, 0.039215688)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skbn7"]
 content_margin_left = 16.0
@@ -62,25 +56,18 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2g6yo"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lhq7x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2sxqo"]
+bg_color = Color(0.7058824, 0.7058824, 0.7058824, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ovya"]
+bg_color = Color(0.7058824, 0.7058824, 0.7058824, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jdc0y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6h8u5"]
 draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iu7s2"]
-content_margin_left = 8.0
-content_margin_top = 2.0
-content_margin_right = 8.0
-content_margin_bottom = 2.0
-bg_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqwm6"]
-content_margin_left = 8.0
-content_margin_right = 8.0
-bg_color = Color(1, 1, 1, 0.039215688)
 
 [node name="StartChart" type="Node" unique_id=-54483432]
 script = ExtResource("8_controller")
@@ -104,6 +91,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_2sxqo")
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
@@ -112,359 +100,6 @@ theme_override_constants/margin_bottom = 16
 [node name="VFrame" type="VBoxContainer" parent="UILayer/MainDisplay" unique_id=115957714]
 layout_mode = 2
 theme_override_constants/separation = 8
-
-[node name="FooterPanel" type="PanelContainer" parent="UILayer/MainDisplay/VFrame" unique_id=1304846700]
-custom_minimum_size = Vector2(0, 42)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_footer")
-
-[node name="ClockControl" type="HBoxContainer" parent="UILayer/MainDisplay/VFrame/FooterPanel" unique_id=-1752777716]
-layout_mode = 2
-script = ExtResource("9_clock")
-
-[node name="ModeLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl" unique_id=1055099106]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
-text = "Live Mode"
-vertical_alignment = 1
-
-[node name="TimeDisplay" type="HBoxContainer" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl" unique_id=1906680764]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 0
-
-[node name="Grid" type="GridContainer" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/TimeDisplay" unique_id=1945188908]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-columns = 2
-
-[node name="MapTimeCaption" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/TimeDisplay/Grid" unique_id=1137277447]
-custom_minimum_size = Vector2(140, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
-theme_override_font_sizes/font_size = 16
-text = "Map Time"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="MapTimeLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/TimeDisplay/Grid" unique_id=1717691207]
-custom_minimum_size = Vector2(140, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
-theme_override_font_sizes/font_size = 16
-text = "0000:000:00:00:00"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SSTCaption" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/TimeDisplay/Grid" unique_id=2037882264]
-custom_minimum_size = Vector2(140, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
-theme_override_font_sizes/font_size = 12
-text = "Solar Standard Time"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="SSTLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/TimeDisplay/Grid" unique_id=1831278098]
-custom_minimum_size = Vector2(140, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
-theme_override_font_sizes/font_size = 12
-text = "0000:000:00:00:00"
-vertical_alignment = 1
-
-[node name="JumpBtn" type="Button" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl" unique_id=1909128394]
-custom_minimum_size = Vector2(36, 24)
-layout_mode = 2
-theme_override_colors/icon_normal_color = Color(0.627451, 0.627451, 0.627451, 1)
-theme_override_colors/icon_focus_color = Color(0.627451, 0.627451, 0.627451, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
-theme_override_colors/icon_disabled_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
-theme_override_icons/icon = ExtResource("3_oqwm6")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_lhq7x")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_4lm6u")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_64tcr")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_jdc0y")
-toggle_mode = true
-icon = ExtResource("3_oqwm6")
-flat = true
-icon_alignment = 1
-expand_icon = true
-
-[node name="RewindBtn" type="Button" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl" unique_id=1384426576]
-custom_minimum_size = Vector2(36, 24)
-layout_mode = 2
-theme_override_colors/icon_normal_color = Color(0.627451, 0.627451, 0.627451, 1)
-theme_override_colors/icon_focus_color = Color(0.627451, 0.627451, 0.627451, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
-theme_override_colors/icon_disabled_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
-theme_override_icons/icon = ExtResource("4_uetrt")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_lhq7x")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_4lm6u")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_64tcr")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_jdc0y")
-icon = ExtResource("4_uetrt")
-flat = true
-icon_alignment = 1
-expand_icon = true
-
-[node name="PauseBtn" type="Button" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl" unique_id=448184894]
-custom_minimum_size = Vector2(36, 24)
-layout_mode = 2
-theme_override_colors/icon_normal_color = Color(0.627451, 0.627451, 0.627451, 1)
-theme_override_colors/icon_focus_color = Color(0.627451, 0.627451, 0.627451, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
-theme_override_colors/icon_disabled_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
-theme_override_icons/icon = ExtResource("5_cx451")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_lhq7x")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_4lm6u")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_64tcr")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_jdc0y")
-icon = ExtResource("5_cx451")
-flat = true
-icon_alignment = 1
-expand_icon = true
-
-[node name="PlayBtn" type="Button" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl" unique_id=-1050717756]
-custom_minimum_size = Vector2(36, 24)
-layout_mode = 2
-theme_override_colors/icon_normal_color = Color(0.627451, 0.627451, 0.627451, 1)
-theme_override_colors/icon_focus_color = Color(0.627451, 0.627451, 0.627451, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
-theme_override_colors/icon_disabled_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
-theme_override_icons/icon = ExtResource("6_jwid8")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_lhq7x")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_4lm6u")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_64tcr")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_jdc0y")
-icon = ExtResource("6_jwid8")
-flat = true
-icon_alignment = 1
-expand_icon = true
-
-[node name="ForwardBtn" type="Button" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl" unique_id=1461343241]
-custom_minimum_size = Vector2(36, 24)
-layout_mode = 2
-theme_override_colors/icon_normal_color = Color(0.627451, 0.627451, 0.627451, 1)
-theme_override_colors/icon_focus_color = Color(0.627451, 0.627451, 0.627451, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
-theme_override_colors/icon_disabled_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
-theme_override_icons/icon = ExtResource("7_cx451")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_lhq7x")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_4lm6u")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_64tcr")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_jdc0y")
-icon = ExtResource("7_cx451")
-flat = true
-icon_alignment = 1
-expand_icon = true
-
-[node name="DateDisplay" type="VBoxContainer" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl" unique_id=568863706]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="HBox" type="HBoxContainer" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay" unique_id=1556057040]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
-
-[node name="DayLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=1788200182]
-custom_minimum_size = Vector2(32, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
-theme_override_font_sizes/font_size = 18
-text = "1"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="MonthLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=102075549]
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
-theme_override_font_sizes/font_size = 18
-text = "Sol"
-vertical_alignment = 1
-
-[node name="YearLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=1391561111]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
-theme_override_font_sizes/font_size = 18
-text = "2475"
-vertical_alignment = 1
-
-[node name="HourLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=458840706]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
-theme_override_font_sizes/font_size = 18
-text = "00"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Dots" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=448045391]
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
-theme_override_font_sizes/font_size = 18
-text = ":"
-horizontal_alignment = 1
-
-[node name="MinuteLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=913400673]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
-theme_override_font_sizes/font_size = 18
-text = "00"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Dots2" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=2008748717]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
-theme_override_font_sizes/font_size = 18
-text = ":"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SecondLabel" type="Label" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/DateDisplay/HBox" unique_id=1905749685]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
-theme_override_font_sizes/font_size = 18
-text = "00"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TimeScaleBtns" type="HBoxContainer" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl" unique_id=1706207590]
-layout_mode = 2
-
-[node name="SecBtn" type="Button" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/TimeScaleBtns" unique_id=865392868]
-custom_minimum_size = Vector2(36, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.627451, 0.627451, 0.627451, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
-toggle_mode = true
-button_group = SubResource("ButtonGroup_cx451")
-text = "1 s"
-flat = true
-
-[node name="MinBtn" type="Button" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/TimeScaleBtns" unique_id=34720386]
-custom_minimum_size = Vector2(36, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.627451, 0.627451, 0.627451, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
-toggle_mode = true
-button_group = SubResource("ButtonGroup_cx451")
-text = "1 m"
-flat = true
-
-[node name="HourBtn" type="Button" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/TimeScaleBtns" unique_id=433475590]
-custom_minimum_size = Vector2(36, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.627451, 0.627451, 0.627451, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
-toggle_mode = true
-button_pressed = true
-button_group = SubResource("ButtonGroup_cx451")
-text = "1 h"
-flat = true
-
-[node name="DayBtn" type="Button" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/TimeScaleBtns" unique_id=1765508924]
-custom_minimum_size = Vector2(36, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.627451, 0.627451, 0.627451, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
-toggle_mode = true
-button_group = SubResource("ButtonGroup_cx451")
-text = "1 d"
-flat = true
-
-[node name="WeekBtn" type="Button" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/TimeScaleBtns" unique_id=646765707]
-custom_minimum_size = Vector2(36, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.627451, 0.627451, 0.627451, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
-toggle_mode = true
-button_group = SubResource("ButtonGroup_cx451")
-text = "1 w"
-flat = true
-
-[node name="MonthBtn" type="Button" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/TimeScaleBtns" unique_id=1002908504]
-custom_minimum_size = Vector2(36, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.627451, 0.627451, 0.627451, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
-toggle_mode = true
-button_group = SubResource("ButtonGroup_cx451")
-text = "1 M"
-flat = true
-
-[node name="Month6Btn" type="Button" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/TimeScaleBtns" unique_id=535690723]
-custom_minimum_size = Vector2(36, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.627451, 0.627451, 0.627451, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
-toggle_mode = true
-button_group = SubResource("ButtonGroup_cx451")
-text = "6 M"
-flat = true
-
-[node name="YearBtn" type="Button" parent="UILayer/MainDisplay/VFrame/FooterPanel/ClockControl/TimeScaleBtns" unique_id=927546954]
-custom_minimum_size = Vector2(36, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.627451, 0.627451, 0.627451, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
-toggle_mode = true
-button_group = SubResource("ButtonGroup_cx451")
-text = "1 Y"
-flat = true
-
-[node name="HeaderPanel" type="PanelContainer" parent="UILayer/MainDisplay/VFrame" unique_id=2048708553]
-visible = false
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_uetrt")
 
 [node name="BodyPanel" type="HBoxContainer" parent="UILayer/MainDisplay/VFrame" unique_id=277468794]
 layout_mode = 2
@@ -475,20 +110,26 @@ theme_override_constants/separation = 8
 visible = false
 custom_minimum_size = Vector2(420, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_skbn7")
+theme_type_variation = &"PanelContainerOutline"
 
 [node name="MapView" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel" unique_id=1979707458]
 custom_minimum_size = Vector2(940, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_2g6yo")
+theme_type_variation = &"PanelContainerOutline"
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView" unique_id=1578271659]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer" unique_id=1383873112]
+handle_input_locally = false
+use_hdr_2d = true
+size = Vector2i(1884, 991)
+render_target_update_mode = 4
 
 [node name="MapOverlay" type="MarginContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer" unique_id=12944065]
 z_index = 10
@@ -504,20 +145,19 @@ layout_mode = 2
 columns = 3
 
 [node name="TopLeftPanel" type="VBoxContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay" unique_id=1696522759]
-custom_minimum_size = Vector2(280, 0)
+custom_minimum_size = Vector2(360, 0)
 layout_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/TopLeftPanel" unique_id=1654848880]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_iu7s2")
+theme_type_variation = &"PanelContainerSolid"
 
 [node name="Title" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/TopLeftPanel/PanelContainer" unique_id=1698702608]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_type_variation = &"LabelDark"
 theme_override_font_sizes/font_size = 32
 text = "Solar System"
-label_settings = ExtResource("5_4lm6u")
 uppercase = true
 
 [node name="MarginContainer" type="MarginContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/TopLeftPanel" unique_id=1271678805]
@@ -555,65 +195,131 @@ label_settings = ExtResource("6_u7t25")
 layout_mode = 2
 mouse_filter = 2
 
-[node name="TopRightPanel" type="VBoxContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay" unique_id=96694540]
+[node name="MenuButtons" type="HBoxContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay" unique_id=61180376]
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+alignment = 2
+
+[node name="FilterButton" type="MenuButton" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/MenuButtons" unique_id=2125695943]
+custom_minimum_size = Vector2(180, 48)
+layout_mode = 2
+tooltip_text = "Filter Optionen um verschiedene Objekte oder visuelle Marker auszublenden."
+toggle_mode = false
+icon = ExtResource("9_stl2x")
+icon_alignment = 2
+expand_icon = true
+item_count = 12
+popup/item_0/text = "Objekte"
+popup/item_0/id = 0
+popup/item_0/separator = true
+popup/item_1/text = "Monde"
+popup/item_1/checkable = 1
+popup/item_1/checked = true
+popup/item_1/id = 1
+popup/item_2/text = "Kleine Monde"
+popup/item_2/checkable = 1
+popup/item_2/id = 2
+popup/item_3/text = "Zwergplaneten"
+popup/item_3/checkable = 1
+popup/item_3/checked = true
+popup/item_3/id = 3
+popup/item_4/text = "Kometen"
+popup/item_4/checkable = 1
+popup/item_4/id = 4
+popup/item_5/text = "Strukturen"
+popup/item_5/checkable = 1
+popup/item_5/id = 5
+popup/item_6/text = "Visuals"
+popup/item_6/id = 6
+popup/item_6/separator = true
+popup/item_7/text = "Orbitlinien"
+popup/item_7/checkable = 1
+popup/item_7/checked = true
+popup/item_7/id = 7
+popup/item_8/text = "Ringe"
+popup/item_8/checkable = 1
+popup/item_8/checked = true
+popup/item_8/id = 8
+popup/item_9/text = "Zonen"
+popup/item_9/id = 9
+popup/item_9/separator = true
+popup/item_10/text = "Gürtel"
+popup/item_10/checkable = 1
+popup/item_10/checked = true
+popup/item_10/id = 10
+popup/item_11/text = "Zonen"
+popup/item_11/checkable = 1
+popup/item_11/id = 11
+
+[node name="GridButton" type="Button" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/MenuButtons" unique_id=857458798]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+tooltip_text = "Schaltet das Radiale Grid an und aus"
+toggle_mode = true
+icon = ExtResource("9_2ovya")
+icon_alignment = 2
+expand_icon = true
+
+[node name="FocusList" type="VBoxContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay" unique_id=96694540]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 
-[node name="Focus" type="VBoxContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/TopRightPanel" unique_id=1540186459]
+[node name="Spacer" type="Control" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList" unique_id=298049275]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="Focus" type="VBoxContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList" unique_id=1540186459]
 visible = false
 layout_mode = 2
 
-[node name="FocusTitle" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/TopRightPanel/Focus" unique_id=1466102864]
+[node name="FocusTitle" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList/Focus" unique_id=1466102864]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_iu7s2")
 
-[node name="CaptionLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/TopRightPanel/Focus/FocusTitle" unique_id=2107730454]
+[node name="CaptionLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList/Focus/FocusTitle" unique_id=2107730454]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 theme_override_font_sizes/font_size = 16
 text = "Focus Body"
 
-[node name="FocusDisplay" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/TopRightPanel/Focus" unique_id=1104229318]
+[node name="FocusDisplay" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList/Focus" unique_id=1104229318]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_oqwm6")
 
-[node name="BodyNameLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/TopRightPanel/Focus/FocusDisplay" unique_id=1614106233]
+[node name="BodyNameLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList/Focus/FocusDisplay" unique_id=1614106233]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
 theme_override_font_sizes/font_size = 12
 text = "Focus Body"
 
-[node name="Pins" type="VBoxContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/TopRightPanel" unique_id=1497816328]
+[node name="Pins" type="VBoxContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList" unique_id=1497816328]
 visible = false
 layout_mode = 2
 
-[node name="PinnedTitle" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/TopRightPanel/Pins" unique_id=1469524484]
+[node name="PinnedTitle" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList/Pins" unique_id=1469524484]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_iu7s2")
 
-[node name="CaptionDisplay" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/TopRightPanel/Pins/PinnedTitle" unique_id=-1568459562]
+[node name="CaptionDisplay" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList/Pins/PinnedTitle" unique_id=-1568459562]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 theme_override_font_sizes/font_size = 16
 text = "Pinned Bodys"
 
-[node name="PinnedDisplay" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/TopRightPanel/Pins" unique_id=231981044]
+[node name="PinnedDisplay" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList/Pins" unique_id=231981044]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_oqwm6")
 
-[node name="BodyNameLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/TopRightPanel/Pins/PinnedDisplay" unique_id=1051896967]
+[node name="BodyNameLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList/Pins/PinnedDisplay" unique_id=1051896967]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
 theme_override_font_sizes/font_size = 12
 text = "Pinned Body A"
-
-[node name="CenterLeftPanel" type="Control" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay" unique_id=1474339380]
-layout_mode = 2
-mouse_filter = 2
 
 [node name="CenterPanel" type="Control" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay" unique_id=333646954]
 layout_mode = 2
@@ -633,7 +339,7 @@ size_flags_vertical = 8
 custom_minimum_size = Vector2(320, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_iu7s2")
+theme_type_variation = &"PanelContainerSolid"
 
 [node name="CaptionLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomLeftPanel/TitlePanel" unique_id=1562881742]
 layout_mode = 2
@@ -766,19 +472,13 @@ layout_mode = 2
 text = "Toggle Almanach Panel"
 label_settings = ExtResource("7_moesl")
 
-[node name="SubViewport" type="SubViewport" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer" unique_id=1383873112]
-handle_input_locally = false
-use_hdr_2d = true
-size = Vector2i(1884, 991)
-render_target_update_mode = 4
-
 [node name="BodyView" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel" unique_id=1659349015]
 visible = false
 custom_minimum_size = Vector2(940, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_2g6yo")
+theme_type_variation = &"PanelContainerOutline"
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView" unique_id=1020409411]
 layout_mode = 2
@@ -812,14 +512,13 @@ layout_mode = 2
 [node name="PanelContainer" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/TopLeftPanel" unique_id=1488840916]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_iu7s2")
+theme_type_variation = &"PanelContainerSolid"
 
 [node name="BodyNameLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/TopLeftPanel/PanelContainer" unique_id=1184051958]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_type_variation = &"LabelDark"
 theme_override_font_sizes/font_size = 32
 text = "Body Name"
-label_settings = ExtResource("5_4lm6u")
 uppercase = true
 
 [node name="MarginContainer" type="MarginContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/TopLeftPanel" unique_id=1696842451]
@@ -902,7 +601,7 @@ size_flags_vertical = 8
 [node name="TitlePanel" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/BottomLeftPanel" unique_id=858238521]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_iu7s2")
+theme_type_variation = &"PanelContainerSolid"
 
 [node name="CaptionLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/BottomLeftPanel/TitlePanel" unique_id=1290308531]
 layout_mode = 2
@@ -1003,3 +702,261 @@ visible = false
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_skbn7")
 script = ExtResource("6_skbn7")
+
+[node name="ClockPanel" type="PanelContainer" parent="UILayer/MainDisplay/VFrame" unique_id=1304846700]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+theme_type_variation = &"PanelContainerSolid"
+
+[node name="ClockControl" type="HBoxContainer" parent="UILayer/MainDisplay/VFrame/ClockPanel" unique_id=-1752777716]
+layout_mode = 2
+script = ExtResource("9_clock")
+
+[node name="ModeLabel" type="Label" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl" unique_id=1055099106]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_type_variation = &"LabelDark"
+text = "Live Mode"
+vertical_alignment = 1
+
+[node name="TimeDisplay" type="HBoxContainer" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl" unique_id=1906680764]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Grid" type="GridContainer" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl/TimeDisplay" unique_id=1945188908]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+columns = 2
+
+[node name="MapTimeCaption" type="Label" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl/TimeDisplay/Grid" unique_id=1137277447]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_type_variation = &"LabelDark"
+theme_override_font_sizes/font_size = 16
+text = "Map Time"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MapTimeLabel" type="Label" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl/TimeDisplay/Grid" unique_id=1717691207]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_type_variation = &"LabelDark"
+theme_override_font_sizes/font_size = 16
+text = "0000:000:00:00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SSTCaption" type="Label" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl/TimeDisplay/Grid" unique_id=2037882264]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_type_variation = &"LabelDark"
+theme_override_font_sizes/font_size = 12
+text = "Solar Standard Time"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SSTLabel" type="Label" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl/TimeDisplay/Grid" unique_id=1831278098]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_type_variation = &"LabelDark"
+theme_override_font_sizes/font_size = 12
+text = "0000:000:00:00:00"
+vertical_alignment = 1
+
+[node name="JumpBtn" type="Button" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl" unique_id=1909128394]
+custom_minimum_size = Vector2(36, 24)
+layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.39215687, 0.39215687, 0.39215687, 1)
+theme_override_colors/icon_disabled_color = Color(0.7058824, 0.7058824, 0.7058824, 1)
+theme_override_icons/icon = ExtResource("3_oqwm6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lhq7x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2sxqo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ovya")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jdc0y")
+toggle_mode = true
+icon = ExtResource("3_oqwm6")
+icon_alignment = 1
+expand_icon = true
+
+[node name="RewindBtn" type="Button" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl" unique_id=1384426576]
+custom_minimum_size = Vector2(36, 24)
+layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.39215687, 0.39215687, 0.39215687, 1)
+theme_override_colors/icon_disabled_color = Color(0.7058824, 0.7058824, 0.7058824, 1)
+theme_override_icons/icon = ExtResource("4_uetrt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lhq7x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2sxqo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ovya")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jdc0y")
+icon = ExtResource("4_uetrt")
+icon_alignment = 1
+expand_icon = true
+
+[node name="PauseBtn" type="Button" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl" unique_id=448184894]
+custom_minimum_size = Vector2(36, 24)
+layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.39215687, 0.39215687, 0.39215687, 1)
+theme_override_colors/icon_disabled_color = Color(0.7058824, 0.7058824, 0.7058824, 1)
+theme_override_icons/icon = ExtResource("5_cx451")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lhq7x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2sxqo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ovya")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jdc0y")
+icon = ExtResource("5_cx451")
+icon_alignment = 1
+expand_icon = true
+
+[node name="PlayBtn" type="Button" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl" unique_id=-1050717756]
+custom_minimum_size = Vector2(36, 24)
+layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.39215687, 0.39215687, 0.39215687, 1)
+theme_override_colors/icon_disabled_color = Color(0.7058824, 0.7058824, 0.7058824, 1)
+theme_override_icons/icon = ExtResource("6_jwid8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lhq7x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2sxqo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ovya")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jdc0y")
+icon = ExtResource("6_jwid8")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ForwardBtn" type="Button" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl" unique_id=1461343241]
+custom_minimum_size = Vector2(36, 24)
+layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.39215687, 0.39215687, 0.39215687, 1)
+theme_override_colors/icon_disabled_color = Color(0.7058824, 0.7058824, 0.7058824, 1)
+theme_override_icons/icon = ExtResource("7_cx451")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lhq7x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2sxqo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2ovya")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_jdc0y")
+icon = ExtResource("7_cx451")
+icon_alignment = 1
+expand_icon = true
+
+[node name="DateDisplay" type="VBoxContainer" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl" unique_id=568863706]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBox" type="HBoxContainer" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl/DateDisplay" unique_id=1556057040]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="DayLabel" type="Label" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl/DateDisplay/HBox" unique_id=1788200182]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_type_variation = &"LabelDark"
+theme_override_font_sizes/font_size = 18
+text = "1"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MonthLabel" type="Label" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl/DateDisplay/HBox" unique_id=102075549]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_type_variation = &"LabelDark"
+theme_override_font_sizes/font_size = 18
+text = "Sol"
+vertical_alignment = 1
+
+[node name="YearLabel" type="Label" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl/DateDisplay/HBox" unique_id=1391561111]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_type_variation = &"LabelDark"
+theme_override_font_sizes/font_size = 18
+text = "2475"
+vertical_alignment = 1
+
+[node name="HourLabel" type="Label" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl/DateDisplay/HBox" unique_id=458840706]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_type_variation = &"LabelDark"
+theme_override_font_sizes/font_size = 18
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dots" type="Label" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl/DateDisplay/HBox" unique_id=448045391]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_type_variation = &"LabelDark"
+theme_override_font_sizes/font_size = 18
+text = ":"
+horizontal_alignment = 1
+
+[node name="MinuteLabel" type="Label" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl/DateDisplay/HBox" unique_id=913400673]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_type_variation = &"LabelDark"
+theme_override_font_sizes/font_size = 18
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dots2" type="Label" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl/DateDisplay/HBox" unique_id=2008748717]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_type_variation = &"LabelDark"
+theme_override_font_sizes/font_size = 18
+text = ":"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SecondLabel" type="Label" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl/DateDisplay/HBox" unique_id=1905749685]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_type_variation = &"LabelDark"
+theme_override_font_sizes/font_size = 18
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeStepLabel" type="Label" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl" unique_id=288327428]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_type_variation = &"LabelDark"
+text = "Time Step"
+vertical_alignment = 1
+
+[node name="TimeStepSelector" type="OptionButton" parent="UILayer/MainDisplay/VFrame/ClockPanel/ClockControl" unique_id=2097311882]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_6h8u5")
+icon_alignment = 1
+expand_icon = true
+allow_reselect = true

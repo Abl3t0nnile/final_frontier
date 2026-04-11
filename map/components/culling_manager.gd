@@ -31,6 +31,10 @@ var _belt_manager: PointCloudManager = null  # Updated from BeltManager
 var _ring_manager: PointCloudManager = null  # Updated from RingManager
 var _zone_manager: ZoneManager       = null
 
+# Sichtbarkeitsfilter (key vorhanden = ausgeblendet)
+var _hidden_types:    Dictionary = {}
+var _hidden_subtypes: Dictionary = {}
+
 
 func setup(entity_manager: EntityManager, model: SolarSystemModel, map_transform: MapTransform, registry: GameObjectRegistry = null) -> void:
 	_entity_manager = entity_manager
@@ -53,6 +57,20 @@ func set_ring_manager(ring_manager: PointCloudManager) -> void:
 
 func set_zone_manager(zone_manager: ZoneManager) -> void:
 	_zone_manager = zone_manager
+
+
+func set_type_visible(type: String, visible: bool) -> void:
+	if visible:
+		_hidden_types.erase(type)
+	else:
+		_hidden_types[type] = false
+
+
+func set_subtype_visible(subtype: String, visible: bool) -> void:
+	if visible:
+		_hidden_subtypes.erase(subtype)
+	else:
+		_hidden_subtypes[subtype] = false
 
 
 func apply_culling(selected_id: String, pinned_ids: Array[String]) -> void:
@@ -132,6 +150,17 @@ func apply_culling(selected_id: String, pinned_ids: Array[String]) -> void:
 					marker_b.set_state(MapMarker.MarkerState.INACTIVE)
 				else:
 					marker_a.set_state(MapMarker.MarkerState.INACTIVE)
+
+	# Pass 4: Sichtbarkeitsfilter — gefilterte Typen/Subtypen ausblenden
+	if not _hidden_types.is_empty() or not _hidden_subtypes.is_empty():
+		for id in markers:
+			if markers[id].current_state == MapMarker.MarkerState.INACTIVE:
+				continue
+			var def: BodyDef = _model.get_body(id)
+			if def == null:
+				continue
+			if _hidden_types.has(def.type) or _hidden_subtypes.has(def.subtype):
+				markers[id].set_state(MapMarker.MarkerState.INACTIVE)
 
 	# Orbits synchronisieren
 	if _orbit_manager:

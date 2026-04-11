@@ -46,6 +46,8 @@ var body_id: String = ""
 var groups: Array[String] = []
 var current_state: MarkerState = MarkerState.DEFAULT
 var current_size_px: int = 24
+var _base_icon_color: Color = Color.WHITE
+var _is_hovered: bool = false
 
 @onready var _icon: MarkerIcon       = $MarkerIcon
 @onready var _label: Label           = $Label
@@ -81,7 +83,15 @@ func set_state(state: MarkerState) -> void:
 
 
 func set_icon_color(color: Color) -> void:
-	_icon.self_modulate = color
+	_base_icon_color = color
+	_icon.self_modulate = color.lightened(0.4) if _is_hovered else color
+
+
+func set_hovered(on: bool) -> void:
+	if _is_hovered == on:
+		return
+	_is_hovered = on
+	_icon.self_modulate = _base_icon_color.lightened(0.4) if on else _base_icon_color
 
 
 func set_size_px(px: int) -> void:

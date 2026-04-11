@@ -8,19 +8,19 @@
       "geometry": "ring",
       "inner_radius_km": 128000000,
       "outer_radius_km": 213000000,
-      "color_rgba": [0.20, 0.65, 0.20, 0.08],
-      "border_color_rgba": [0.30, 0.80, 0.30, 0.35]
+      "color_rgba": [0.20, 0.65, 0.20, 0.01],
+      "border_color_rgba": [0.30, 0.80, 0.30, 0.0]
     },
     {
       "id": "sun_frost_line",
       "name": "Frost Line",
       "parent_id": "sun",
       "zone_type": "frost_line",
-      "geometry": "ring",
-      "inner_radius_km": 700000000,
-      "outer_radius_km": 740000000,
-      "color_rgba": [0.55, 0.75, 0.95, 0.10],
-      "border_color_rgba": [0.60, 0.80, 1.00, 0.50]
+      "geometry": "line",
+      "radius_km": 720000000,
+      "line_width_px": 2.0,
+      "color_rgba": [0.60, 0.80, 1.00, 0.00],
+      "border_color_rgba": [0.60, 0.80, 1.00, 0.70]
     },
     {
       "id": "jupiter_magnetosphere",
@@ -29,8 +29,8 @@
       "zone_type": "magnetic",
       "geometry": "circle",
       "radius_km": 4000000,
-      "color_rgba": [0.55, 0.20, 0.75, 0.07],
-      "border_color_rgba": [0.65, 0.30, 0.90, 0.30]
+      "color_rgba": [0.55, 0.20, 0.75, 0.01],
+      "border_color_rgba": [0.65, 0.30, 0.90, 0.40]
     },
     {
       "id": "saturn_magnetosphere",
@@ -39,8 +39,30 @@
       "zone_type": "magnetic",
       "geometry": "circle",
       "radius_km": 1200000,
-      "color_rgba": [0.45, 0.55, 0.80, 0.07],
-      "border_color_rgba": [0.55, 0.65, 0.90, 0.30]
+      "color_rgba": [0.45, 0.55, 0.80, 0.01],
+      "border_color_rgba": [0.55, 0.65, 0.90, 0.40]
+    },
+    {
+      "id": "sun_termination_shock",
+      "name": "Termination Shock",
+      "parent_id": "sun",
+      "zone_type": "termination_shock",
+      "geometry": "line",
+      "radius_km": 12716000000,
+      "line_width_px": 1.5,
+      "color_rgba": [0.60, 0.85, 1.00, 0.00],
+      "border_color_rgba": [0.60, 0.85, 1.00, 0.55]
+    },
+    {
+      "id": "sun_heliopause",
+      "name": "Heliopause",
+      "parent_id": "sun",
+      "zone_type": "heliopause",
+      "geometry": "line",
+      "radius_km": 17940000000,
+      "line_width_px": 2.0,
+      "color_rgba": [0.40, 0.75, 0.90, 0.00],
+      "border_color_rgba": [0.40, 0.75, 0.90, 0.70]
     },
     {
       "id": "earth_magnetosphere",
@@ -49,8 +71,8 @@
       "zone_type": "magnetic",
       "geometry": "circle",
       "radius_km": 65000,
-      "color_rgba": [0.20, 0.40, 0.80, 0.08],
-      "border_color_rgba": [0.30, 0.55, 0.95, 0.35]
+      "color_rgba": [0.20, 0.40, 0.80, 0.01],
+      "border_color_rgba": [0.30, 0.55, 0.95, 0.40]
     }
   ]
 }

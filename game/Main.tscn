@@ -55,7 +55,6 @@ start_chart = NodePath("../StartChart")
 [node name="StartChart" parent="." unique_id=-54483432 instance=ExtResource("2_8gaax")]
 
 [node name="CRTLayer" type="CanvasLayer" parent="." unique_id=862808943]
-visible = false
 
 [node name="ColorOverlay" type="ColorRect" parent="CRTLayer" unique_id=1404396652]
 material = SubResource("ShaderMaterial_fk7ia")

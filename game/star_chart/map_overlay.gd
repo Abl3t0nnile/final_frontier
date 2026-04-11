@@ -8,12 +8,14 @@ extends MarginContainer
 @onready var _title:       Label       = $MapOverlay/TopLeftPanel/PanelContainer/Title
 @onready var _scale_value: Label       = $MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer/ScaleValue
 @onready var _km_px_value: Label       = $MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer/KmPxValue
-@onready var _focus_box:   VBoxContainer = $MapOverlay/TopRightPanel/Focus
-@onready var _focus_name:  Label       = $MapOverlay/TopRightPanel/Focus/FocusDisplay/BodyNameLabel
-@onready var _pins_box:    VBoxContainer = $MapOverlay/TopRightPanel/Pins
-@onready var _pins_name:   Label       = $MapOverlay/TopRightPanel/Pins/PinnedDisplay/BodyNameLabel
-@onready var _pos_x:       Label       = $MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer/PosXValue
-@onready var _pos_y:       Label       = $MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer/PosYValue
+@onready var _focus_box:   VBoxContainer = $MapOverlay/FocusList/Focus
+@onready var _focus_name:  Label       = $MapOverlay/FocusList/Focus/FocusDisplay/BodyNameLabel
+@onready var _pins_box:    VBoxContainer = $MapOverlay/FocusList/Pins
+@onready var _pins_name:   Label       = $MapOverlay/FocusList/Pins/PinnedDisplay/BodyNameLabel
+@onready var _pos_x:        Label      = $MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer/PosXValue
+@onready var _pos_y:        Label      = $MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer/PosYValue
+@onready var _filter_btn:   MenuButton = $MapOverlay/MenuButtons/FilterButton
+@onready var _grid_btn:     Button     = $MapOverlay/MenuButtons/GridButton
 
 var _solar_map: Node  = null
 var _km_per_px: float = 1_000_000.0
@@ -21,6 +23,10 @@ var _km_per_px: float = 1_000_000.0
 
 func _ready() -> void:
 	_set_mouse_ignore(self)
+	var popup := _filter_btn.get_popup()
+	popup.hide_on_checkable_item_selection = false
+	popup.hide_on_item_selection           = false
+	popup.index_pressed.connect(_on_filter_index_pressed)
 	var p := get_parent() as Control
 	if p:
 		p.resized.connect(_fit_to_parent)
@@ -28,7 +34,7 @@ func _ready() -> void:
 
 
 func _set_mouse_ignore(node: Node) -> void:
-	if node is Control:
+	if node is Control and not node is BaseButton:
 		(node as Control).mouse_filter = Control.MOUSE_FILTER_IGNORE
 	for child in node.get_children():
 		_set_mouse_ignore(child)
@@ -46,6 +52,9 @@ func setup(solar_map: Node) -> void:
 	_km_per_px = _solar_map.get_zoom_level()
 	_connect_signals()
 	_update_scale_display()
+	_grid_btn.toggled.connect(func(on: bool) -> void:
+		_solar_map.get_map_controller().set_grid_visible(on))
+	_grid_btn.button_pressed = false
 	if _focus_box: _focus_box.visible = false
 	if _pins_box:  _pins_box.visible  = false
 
@@ -151,3 +160,13 @@ func _refresh_pins() -> void:
 		names.append(def.name if def else id)
 	_pins_name.text   = "\n".join(names)
 	_pins_box.visible = true
+
+
+func _on_filter_index_pressed(index: int) -> void:
+	var popup := _filter_btn.get_popup()
+	if popup.is_item_separator(index):
+		return
+	var new_state := not popup.is_item_checked(index)
+	popup.set_item_checked(index, new_state)
+	if _solar_map:
+		_solar_map.get_map_controller().set_filter(popup.get_item_id(index), new_state)

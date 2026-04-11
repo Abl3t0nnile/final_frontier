@@ -20,23 +20,23 @@ const _UNIT_VALUE_DISPLAY = preload("res://ui/components/UnitValueDisplay.tscn")
 
 
 # Node References
-@onready var _home_btn: Button        = $VBox/Header/HomeBtn
-@onready var _back_btn: Button        = $VBox/Header/BackButton
-@onready var _fwd_btn: Button         = $VBox/Header/ForwardButton
-@onready var _zoom_btn: Button        = $VBox/Header/ZoomButton
-@onready var _title_label: Label      = $VBox/Header/TitleLabel
-@onready var _article_title: Label    = $VBox/Article/Header/TitleLabel
-@onready var _summary_text: RichTextLabel = $VBox/Article/ContentBox/Overview/SummaryText
-@onready var _hero_container: Control = $VBox/Article/ContentBox/Overview/Panel/Hero
-@onready var _overview_panel: VBoxContainer = $VBox/Article/ContentBox/Overview/Panel
+@onready var _home_btn: Button        = $MarginContainer/VBox/Header/HomeBtn
+@onready var _back_btn: Button        = $MarginContainer/VBox/Header/BackButton
+@onready var _fwd_btn: Button         = $MarginContainer/VBox/Header/ForwardButton
+@onready var _zoom_btn: Button        = $MarginContainer/VBox/Header/ZoomButton
+@onready var _title_label: Label      = $MarginContainer/VBox/Header/TitleLabel
+@onready var _article_title: Label    = $MarginContainer/VBox/Article/Header/TitleLabel
+@onready var _summary_text: RichTextLabel = $MarginContainer/VBox/Article/ContentBox/Overview/SummaryText
+@onready var _hero_container: Control = $MarginContainer/VBox/Article/ContentBox/Overview/Panel/Hero
+@onready var _overview_panel: VBoxContainer = $MarginContainer/VBox/Article/ContentBox/Overview/Panel
 
 # Data Panels (FoldableContainer – als Control typisiert)
-@onready var _orbit_data: Control   = $VBox/Article/ContentBox/Overview/Panel/OrbitData
-@onready var _physics_data: Control = $VBox/Article/ContentBox/Overview/Panel/PhysicsData
-@onready var _atmo_data: Control    = $VBox/Article/ContentBox/Overview/Panel/AthmoData
+@onready var _orbit_data: Control   = $MarginContainer/VBox/Article/ContentBox/Overview/Panel/OrbitData
+@onready var _physics_data: Control = $MarginContainer/VBox/Article/ContentBox/Overview/Panel/PhysicsData
+@onready var _atmo_data: Control    = $MarginContainer/VBox/Article/ContentBox/Overview/Panel/AthmoData
 
 # Section Container (nach Overview)
-@onready var _article: VBoxContainer = $VBox/Article
+@onready var _article: VBoxContainer = $MarginContainer/VBox/Article
 
 # Hero-Image (TextureRect inside MarginContainer %Hero)
 var _hero_image: TextureRect
@@ -127,7 +127,7 @@ func _update_nav_buttons() -> void:
 
 func _display_article(article_id: String) -> void:
 	# ScrollContainer zurücksetzen
-	($VBox/Article/ContentBox as ScrollContainer).scroll_vertical = 0
+	($MarginContainer/VBox/Article/ContentBox as ScrollContainer).scroll_vertical = 0
 
 	match article_id:
 		"home":

@@ -24,6 +24,7 @@ var culling_min_parent_dist_px: float  = 32.0
 # Feature Flags
 var has_orbits: bool  = true
 var has_grid: bool    = true
+var grid_color: Color = Color(0.29, 1.0, 0.54, 1.0)
 var has_belts: bool   = false
 var has_zones: bool   = false
 var has_rings: bool   = false
@@ -168,8 +169,8 @@ func setup(model: SolarSystemModel, clock: SimClock, registry: GameObjectRegistr
 		_apply_marker_config(marker)
 		marker.clicked.connect(func(_m: MapMarker): _on_marker_clicked(id))
 		marker.right_clicked.connect(func(_m: MapMarker): _on_marker_right_clicked(id))
-		marker.hovered.connect(func(_m: MapMarker): _interaction_manager.on_marker_hovered(id))
-		marker.unhovered.connect(func(_m: MapMarker): _interaction_manager.on_marker_unhovered(id))
+		marker.hovered.connect(func(m: MapMarker): m.set_hovered(true); _interaction_manager.on_marker_hovered(id))
+		marker.unhovered.connect(func(m: MapMarker): m.set_hovered(false); _interaction_manager.on_marker_unhovered(id))
 
 	# MapTransform signals
 	_map_transform.panned.connect(_on_panned)
@@ -196,6 +197,13 @@ func setup(model: SolarSystemModel, clock: SimClock, registry: GameObjectRegistr
 	if has_rings:
 		_setup_rings()
 		_culling_manager.set_ring_manager(_ring_manager)
+
+	# Default-Filter: Kometen und Strukturen ausgeblendet
+	_culling_manager.set_subtype_visible("minor_moon", false)
+	_culling_manager.set_type_visible("comet",  false)
+	_culling_manager.set_type_visible("struct", false)
+	if has_zones and _zone_layer:  _zone_layer.visible  = false
+	if has_grid  and _grid_layer:  _grid_layer.visible  = false
 
 	# Initialer State
 	_entity_manager.update_all_positions()
@@ -287,6 +295,7 @@ func apply_config(config: Dictionary) -> void:
 	# Feature Flags
 	if config.has("has_orbits"): has_orbits = config.has_orbits
 	if config.has("has_grid"):   has_grid = config.has_grid
+	if config.has("grid_color"): grid_color = config.grid_color
 	if config.has("has_belts"):  has_belts = config.has_belts
 	if config.has("has_zones"):  has_zones = config.has_zones
 	if config.has("has_rings"):   has_rings = config.has_rings
@@ -410,6 +419,11 @@ func _setup_grid() -> void:
 	_grid = GridRenderer.new()
 	_grid.name = "GridRenderer"
 	_grid_layer.add_child(_grid)
+	var c := grid_color
+	_grid.ring_color  = Color(c.r, c.g, c.b, 0.06)
+	_grid.major_color = Color(c.r, c.g, c.b, 0.12)
+	_grid.axis_color  = Color(c.r, c.g, c.b, 0.22)
+	_grid.label_color = Color(c.r, c.g, c.b, 0.35)
 	_grid.setup(_map_transform)
 
 
@@ -503,3 +517,27 @@ func get_ring_manager() -> PointCloudManager:
 
 func get_orbit_manager() -> OrbitManager:
 	return _orbit_manager
+
+
+func set_grid_visible(enabled: bool) -> void:
+	if _grid_layer:
+		_grid_layer.visible = enabled
+
+
+func set_filter(filter_id: int, enabled: bool) -> void:
+	if _culling_manager == null:
+		return
+	match filter_id:
+		1:  _culling_manager.set_subtype_visible("major_moon", enabled)
+		2:  _culling_manager.set_subtype_visible("minor_moon", enabled)
+		3:  _culling_manager.set_type_visible("dwarf", enabled)
+		4:  _culling_manager.set_type_visible("comet", enabled)
+		5:  _culling_manager.set_type_visible("struct", enabled)
+		7:  if _orbit_layer: _orbit_layer.visible = enabled
+		8:  if _ring_layer:  _ring_layer.visible  = enabled
+		10: if _belt_layer:  _belt_layer.visible  = enabled
+		11: if _zone_layer:  _zone_layer.visible  = enabled
+	_culling_manager.apply_culling(
+		_interaction_manager.get_selected_entity(),
+		_interaction_manager.get_pinned_entities()
+	)

@@ -1,100 +1,17 @@
 [gd_scene format=3 uid="uid://qgkgsneq1nsf"]
 
 [ext_resource type="Script" uid="uid://cjtscfxett5j2" path="res://game/almanac/almanac.gd" id="1_almanac"]
+[ext_resource type="Theme" uid="uid://bjcahkix8bvsn" path="res://ui/resources/themes/ui_default_theme.tres" id="1_qowm7"]
 [ext_resource type="Texture2D" uid="uid://ib8eckgxchmb" path="res://assets/icons/ui/white/home.png" id="1_wgtfk"]
 [ext_resource type="Texture2D" uid="uid://oe5lrq85fvet" path="res://assets/icons/ui/white/backward.png" id="2_gssl0"]
 [ext_resource type="Texture2D" uid="uid://c1dv6tkdak65" path="res://assets/img/planets/terra_hero.jpg" id="4_gssl0"]
 [ext_resource type="Texture2D" uid="uid://b1qx4f57hy75q" path="res://assets/icons/ui/white/forward.png" id="4_hdqyh"]
-[ext_resource type="Texture2D" uid="uid://dnk3bdvjj6boy" path="res://assets/icons/ui/white/larger.png" id="4_w4vcb"]
 [ext_resource type="PackedScene" uid="uid://bpxdjhjimm5yy" path="res://ui/components/UnitValueDisplay.tscn" id="4_wgtfk"]
+[ext_resource type="Texture2D" uid="uid://l8m6lh2mhnbe" path="res://assets/icons/ui/white/target.png" id="5_qowm7"]
 [ext_resource type="FontFile" uid="uid://cysj7b68qqiw8" path="res://assets/fonts/SUSEMono-Bold.ttf" id="6_w4vcb"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4vcb"]
-content_margin_left = 16.0
-content_margin_top = 16.0
-content_margin_right = 16.0
-content_margin_bottom = 16.0
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qowm7"]
-content_margin_left = 6.0
-content_margin_top = 2.0
-content_margin_right = 6.0
-content_margin_bottom = 2.0
-draw_center = false
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.9411765, 0.9411765, 0.9411765, 0.4)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xdu6e"]
-content_margin_left = 6.0
-content_margin_top = 2.0
-content_margin_right = 6.0
-content_margin_bottom = 2.0
-bg_color = Color(0.9411765, 0.9411765, 0.9411765, 0.12)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.9411765, 0.9411765, 0.9411765, 0.6)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4nm25"]
-content_margin_left = 6.0
-content_margin_top = 2.0
-content_margin_right = 6.0
-content_margin_bottom = 2.0
-draw_center = false
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.9411765, 0.9411765, 0.9411765, 0.15)
 
 [sub_resource type="LabelSettings" id="LabelSettings_b0ch5"]
 font_size = 32
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b0ch5"]
-content_margin_left = 6.0
-content_margin_top = 2.0
-content_margin_right = 6.0
-content_margin_bottom = 2.0
-draw_center = false
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.9411765, 0.9411765, 0.9411765, 0.4)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jb4x3"]
-content_margin_left = 6.0
-content_margin_top = 2.0
-content_margin_right = 6.0
-content_margin_bottom = 2.0
-bg_color = Color(0.9411765, 0.9411765, 0.9411765, 0.12)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.9411765, 0.9411765, 0.9411765, 0.6)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8htlp"]
-content_margin_left = 6.0
-content_margin_top = 2.0
-content_margin_right = 6.0
-content_margin_bottom = 2.0
-draw_center = false
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.9411765, 0.9411765, 0.9411765, 0.15)
 
 [sub_resource type="LabelSettings" id="LabelSettings_qowm7"]
 font = ExtResource("6_w4vcb")
@@ -106,33 +23,34 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_w4vcb")
+theme = ExtResource("1_qowm7")
+theme_type_variation = &"PanelContainerOutline"
 script = ExtResource("1_almanac")
 
-[node name="VBox" type="VBoxContainer" parent="." unique_id=2125989611]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=780801597]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer" unique_id=2125989611]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="Header" type="HBoxContainer" parent="VBox" unique_id=1389490786]
+[node name="Header" type="HBoxContainer" parent="MarginContainer/VBox" unique_id=1389490786]
 layout_mode = 2
 theme_override_constants/separation = 6
 
-[node name="HomeBtn" type="Button" parent="VBox/Header" unique_id=314635298]
-custom_minimum_size = Vector2(32, 32)
+[node name="HomeBtn" type="Button" parent="MarginContainer/VBox/Header" unique_id=314635298]
+custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
-theme_override_colors/font_disabled_color = Color(0.9411765, 0.9411765, 0.9411765, 0.25)
-theme_override_font_sizes/font_size = 12
-theme_override_styles/normal = SubResource("StyleBoxFlat_qowm7")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_xdu6e")
-theme_override_styles/hover = SubResource("StyleBoxFlat_xdu6e")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_4nm25")
 disabled = true
 icon = ExtResource("1_wgtfk")
 expand_icon = true
 
-[node name="TitleLabel" type="Label" parent="VBox/Header" unique_id=1404147061]
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBox/Header" unique_id=1404147061]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -143,82 +61,61 @@ label_settings = SubResource("LabelSettings_b0ch5")
 vertical_alignment = 1
 uppercase = true
 
-[node name="BackButton" type="Button" parent="VBox/Header" unique_id=862391306]
-custom_minimum_size = Vector2(32, 32)
+[node name="BackButton" type="Button" parent="MarginContainer/VBox/Header" unique_id=862391306]
+custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
-theme_override_colors/font_disabled_color = Color(0.9411765, 0.9411765, 0.9411765, 0.25)
-theme_override_font_sizes/font_size = 12
-theme_override_styles/normal = SubResource("StyleBoxFlat_qowm7")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_xdu6e")
-theme_override_styles/hover = SubResource("StyleBoxFlat_xdu6e")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_4nm25")
 disabled = true
 icon = ExtResource("2_gssl0")
 expand_icon = true
 
-[node name="ZoomButton" type="Button" parent="VBox/Header" unique_id=431424022]
+[node name="ZoomButton" type="Button" parent="MarginContainer/VBox/Header" unique_id=431424022]
 visible = false
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
-theme_override_colors/font_disabled_color = Color(0.9411765, 0.9411765, 0.9411765, 0.25)
-theme_override_font_sizes/font_size = 12
-theme_override_styles/normal = SubResource("StyleBoxFlat_b0ch5")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_jb4x3")
-theme_override_styles/hover = SubResource("StyleBoxFlat_jb4x3")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_8htlp")
-icon = ExtResource("4_w4vcb")
+icon = ExtResource("5_qowm7")
 expand_icon = true
 
-[node name="ForwardButton" type="Button" parent="VBox/Header" unique_id=849681104]
-custom_minimum_size = Vector2(32, 32)
+[node name="ForwardButton" type="Button" parent="MarginContainer/VBox/Header" unique_id=849681104]
+custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
-theme_override_colors/font_disabled_color = Color(0.9411765, 0.9411765, 0.9411765, 0.25)
-theme_override_font_sizes/font_size = 12
-theme_override_styles/normal = SubResource("StyleBoxFlat_qowm7")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_xdu6e")
-theme_override_styles/hover = SubResource("StyleBoxFlat_xdu6e")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_4nm25")
 disabled = true
 icon = ExtResource("4_hdqyh")
 expand_icon = true
 
-[node name="HSeparator" type="HSeparator" parent="VBox" unique_id=1163784331]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBox" unique_id=1163784331]
 layout_mode = 2
 
-[node name="Article" type="VBoxContainer" parent="VBox" unique_id=1295564859]
+[node name="Article" type="VBoxContainer" parent="MarginContainer/VBox" unique_id=1295564859]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 8
 
-[node name="Header" type="HBoxContainer" parent="VBox/Article" unique_id=941198124]
+[node name="Header" type="HBoxContainer" parent="MarginContainer/VBox/Article" unique_id=941198124]
 layout_mode = 2
 
-[node name="TitleLabel" type="Label" parent="VBox/Article/Header" unique_id=1737685456]
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBox/Article/Header" unique_id=1737685456]
 layout_mode = 2
 text = "Article Title"
 label_settings = SubResource("LabelSettings_qowm7")
 uppercase = true
 
-[node name="HSeparator" type="HSeparator" parent="VBox/Article" unique_id=1803623976]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBox/Article" unique_id=1803623976]
 layout_mode = 2
 
-[node name="ContentBox" type="ScrollContainer" parent="VBox/Article" unique_id=1226740331]
+[node name="ContentBox" type="ScrollContainer" parent="MarginContainer/VBox/Article" unique_id=1226740331]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Overview" type="HBoxContainer" parent="VBox/Article/ContentBox" unique_id=1197234601]
+[node name="Overview" type="HBoxContainer" parent="MarginContainer/VBox/Article/ContentBox" unique_id=1197234601]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="SummaryText" type="RichTextLabel" parent="VBox/Article/ContentBox/Overview" unique_id=1181222208]
+[node name="SummaryText" type="RichTextLabel" parent="MarginContainer/VBox/Article/ContentBox/Overview" unique_id=1181222208]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
@@ -230,73 +127,73 @@ Der Mond ist im Verhältnis zur Planetenmasse ungewöhnlich groß. Seine Gravita
 "
 fit_content = true
 
-[node name="Panel" type="VBoxContainer" parent="VBox/Article/ContentBox/Overview" unique_id=2110886432]
+[node name="Panel" type="VBoxContainer" parent="MarginContainer/VBox/Article/ContentBox/Overview" unique_id=2110886432]
 custom_minimum_size = Vector2(480, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Hero" type="MarginContainer" parent="VBox/Article/ContentBox/Overview/Panel" unique_id=860450107]
+[node name="Hero" type="MarginContainer" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel" unique_id=860450107]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Image" type="TextureRect" parent="VBox/Article/ContentBox/Overview/Panel/Hero" unique_id=1939540305]
+[node name="Image" type="TextureRect" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel/Hero" unique_id=1939540305]
 layout_mode = 2
 texture = ExtResource("4_gssl0")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="OrbitData" type="FoldableContainer" parent="VBox/Article/ContentBox/Overview/Panel" unique_id=948194930]
+[node name="OrbitData" type="FoldableContainer" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel" unique_id=948194930]
 layout_mode = 2
 title = "ORBITAL DATEN"
 
-[node name="Grid" type="GridContainer" parent="VBox/Article/ContentBox/Overview/Panel/OrbitData" unique_id=1064933122]
+[node name="Grid" type="GridContainer" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel/OrbitData" unique_id=1064933122]
 layout_mode = 2
 theme_override_constants/h_separation = 16
 columns = 2
 
-[node name="UnitValueDisplay" parent="VBox/Article/ContentBox/Overview/Panel/OrbitData/Grid" unique_id=375893399 instance=ExtResource("4_wgtfk")]
+[node name="UnitValueDisplay" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel/OrbitData/Grid" unique_id=375893399 instance=ExtResource("4_wgtfk")]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="VBox/Article/ContentBox/Overview/Panel" unique_id=1393381792]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel" unique_id=1393381792]
 layout_mode = 2
 
-[node name="PhysicsData" type="FoldableContainer" parent="VBox/Article/ContentBox/Overview/Panel" unique_id=1525752492]
+[node name="PhysicsData" type="FoldableContainer" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel" unique_id=1525752492]
 layout_mode = 2
 title = "PHYSIKALISCHE DATEN"
 
-[node name="Grid" type="GridContainer" parent="VBox/Article/ContentBox/Overview/Panel/PhysicsData" unique_id=1671513938]
+[node name="Grid" type="GridContainer" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel/PhysicsData" unique_id=1671513938]
 layout_mode = 2
 theme_override_constants/h_separation = 16
 columns = 2
 
-[node name="UnitValueDisplay" parent="VBox/Article/ContentBox/Overview/Panel/PhysicsData/Grid" unique_id=590644221 instance=ExtResource("4_wgtfk")]
+[node name="UnitValueDisplay" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel/PhysicsData/Grid" unique_id=590644221 instance=ExtResource("4_wgtfk")]
 layout_mode = 2
 
-[node name="HSeparator2" type="HSeparator" parent="VBox/Article/ContentBox/Overview/Panel" unique_id=2100975980]
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel" unique_id=2100975980]
 layout_mode = 2
 
-[node name="AthmoData" type="FoldableContainer" parent="VBox/Article/ContentBox/Overview/Panel" unique_id=27622522]
+[node name="AthmoData" type="FoldableContainer" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel" unique_id=27622522]
 layout_mode = 2
 title = "ATHMOSPHÄRISCHE DATEN"
 
-[node name="VBox" type="VBoxContainer" parent="VBox/Article/ContentBox/Overview/Panel/AthmoData" unique_id=1943884056]
+[node name="VBox" type="VBoxContainer" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel/AthmoData" unique_id=1943884056]
 layout_mode = 2
 
-[node name="Grid" type="GridContainer" parent="VBox/Article/ContentBox/Overview/Panel/AthmoData/VBox" unique_id=188203920]
+[node name="Grid" type="GridContainer" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel/AthmoData/VBox" unique_id=188203920]
 layout_mode = 2
 theme_override_constants/h_separation = 16
 columns = 2
 
-[node name="UnitValueDisplay" parent="VBox/Article/ContentBox/Overview/Panel/AthmoData/VBox/Grid" unique_id=1840174611 instance=ExtResource("4_wgtfk")]
+[node name="UnitValueDisplay" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel/AthmoData/VBox/Grid" unique_id=1840174611 instance=ExtResource("4_wgtfk")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBox/Article/ContentBox/Overview/Panel/AthmoData/VBox" unique_id=1089891171]
+[node name="Label" type="Label" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel/AthmoData/VBox" unique_id=1089891171]
 layout_mode = 2
 text = "Hauptbestandteile"
 
-[node name="AtmoGasLabel" parent="VBox/Article/ContentBox/Overview/Panel/AthmoData/VBox" unique_id=1527128674 instance=ExtResource("4_wgtfk")]
+[node name="AtmoGasLabel" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel/AthmoData/VBox" unique_id=1527128674 instance=ExtResource("4_wgtfk")]
 layout_mode = 2
 caption = "Stickstoff (N)"
 unit = "%"

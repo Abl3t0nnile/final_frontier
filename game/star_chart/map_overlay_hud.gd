@@ -7,11 +7,11 @@ extends CanvasLayer
 @onready var _scale_value: Label = $MapOverlay/MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer/ScaleValue
 @onready var _km_px_value: Label = $MapOverlay/MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer/KmPxValue
 
-@onready var _focus_box: VBoxContainer = $MapOverlay/MapOverlay/TopRightPanel/Focus
-@onready var _focus_name: Label        = $MapOverlay/MapOverlay/TopRightPanel/Focus/FocusDisplay/BodyNameLabel
+@onready var _focus_box: VBoxContainer = $MapOverlay/MapOverlay/FocusList/Focus
+@onready var _focus_name: Label        = $MapOverlay/MapOverlay/FocusList/Focus/FocusDisplay/BodyNameLabel
 
-@onready var _pins_box: VBoxContainer  = $MapOverlay/MapOverlay/TopRightPanel/Pins
-@onready var _pins_name: Label         = $MapOverlay/MapOverlay/TopRightPanel/Pins/PinnedDisplay/BodyNameLabel
+@onready var _pins_box: VBoxContainer  = $MapOverlay/MapOverlay/FocusList/Pins
+@onready var _pins_name: Label         = $MapOverlay/MapOverlay/FocusList/Pins/PinnedDisplay/BodyNameLabel
 
 @onready var _pos_x: Label = $MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer/PosXValue
 @onready var _pos_y: Label = $MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer/PosYValue

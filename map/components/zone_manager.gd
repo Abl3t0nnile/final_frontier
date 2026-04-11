@@ -104,6 +104,7 @@ func _build_zone_def(data: Dictionary) -> ZoneDef:
 	def.radius_km        = float(data.get("radius_km", 0.0))
 	def.inner_radius_km  = float(data.get("inner_radius_km", 0.0))
 	def.outer_radius_km  = float(data.get("outer_radius_km", 0.0))
+	def.line_width_px    = float(data.get("line_width_px", 2.0))
 	def.color_rgba       = _parse_color(data.get("color_rgba", [0.5, 0.5, 1.0, 0.1]))
 	def.border_color_rgba = _parse_color(data.get("border_color_rgba", [0.5, 0.5, 1.0, 0.4]))
 	return def
