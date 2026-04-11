@@ -6,7 +6,7 @@ class_name MapMarker
 extends Area2D
 
 signal clicked(marker: MapMarker)
-signal double_clicked(marker: MapMarker)
+signal right_clicked(marker: MapMarker)
 signal hovered(marker: MapMarker)
 signal unhovered(marker: MapMarker)
 
@@ -46,6 +46,8 @@ var body_id: String = ""
 var groups: Array[String] = []
 var current_state: MarkerState = MarkerState.DEFAULT
 var current_size_px: int = 24
+var _base_icon_color: Color = Color.WHITE
+var _is_hovered: bool = false
 
 @onready var _icon: MarkerIcon       = $MarkerIcon
 @onready var _label: Label           = $Label
@@ -81,7 +83,15 @@ func set_state(state: MarkerState) -> void:
 
 
 func set_icon_color(color: Color) -> void:
-	_icon.self_modulate = color
+	_base_icon_color = color
+	_icon.self_modulate = color.lightened(0.4) if _is_hovered else color
+
+
+func set_hovered(on: bool) -> void:
+	if _is_hovered == on:
+		return
+	_is_hovered = on
+	_icon.self_modulate = _base_icon_color.lightened(0.4) if on else _base_icon_color
 
 
 func set_size_px(px: int) -> void:
@@ -155,11 +165,13 @@ func _draw() -> void:
 		draw_arc(Vector2.ZERO, r, 0.0, TAU, 32, pinned_color, pinned_width, true)
 
 
-func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+func _on_input_event(viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		var mb := event as InputEventMouseButton
-		if mb.button_index == MOUSE_BUTTON_LEFT and mb.pressed:
-			if mb.double_click:
-				double_clicked.emit(self)
-			else:
+		if mb.pressed:
+			if mb.button_index == MOUSE_BUTTON_LEFT:
 				clicked.emit(self)
+				viewport.set_input_as_handled()
+			elif mb.button_index == MOUSE_BUTTON_RIGHT:
+				right_clicked.emit(self)
+				viewport.set_input_as_handled()

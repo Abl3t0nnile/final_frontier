@@ -12,6 +12,7 @@ extends Node
 @export var zoom_exp_step: float     = 0.1
 @export var zoom_exp_initial: float  = 6.5
 @export var zoom_scale_presets: Array[float] = [3.7, 5.7, 6.5, 7.7, 8.7]
+@export_range(0.1, 2.0, 0.1) var pinch_zoom_sensitivity: float = 0.5
 
 ## Konfiguration – Pan
 @export_group("Pan")
@@ -27,6 +28,7 @@ extends Node
 @export_group("Features")
 @export var has_orbits: bool  = true
 @export var has_grid: bool    = true
+@export var grid_color: Color = Color(0.29, 1.0, 0.54, 1.0)
 @export var has_belts: bool   = true
 @export var has_zones: bool   = true
 @export var has_comets: bool  = true
@@ -109,6 +111,7 @@ signal marker_hovered(id: String)
 signal marker_unhovered(id: String)
 signal body_pinned(id: String)
 signal body_unpinned(id: String)
+signal marker_right_clicked(id: String)
 
 signal time_changed(sim_time: float)
 signal time_scale_changed(scale: float)
@@ -315,6 +318,9 @@ func _connect_signals() -> void:
 	interaction.marker_unhovered.connect(marker_unhovered.emit)
 	interaction.body_pinned.connect(body_pinned.emit)
 	interaction.body_unpinned.connect(body_unpinned.emit)
+	
+	# Right-click on marker from MapController
+	_map_controller.marker_right_clicked.connect(marker_right_clicked.emit)
 
 	# Time events from clock
 	GameClock.tick.connect(func(t: float): time_changed.emit(t))
@@ -336,6 +342,7 @@ func _build_config() -> Dictionary:
 		"zoom_exp_step": zoom_exp_step,
 		"zoom_exp_initial": zoom_exp_initial,
 		"scale_presets": zoom_scale_presets,
+		"pinch_zoom_sensitivity": pinch_zoom_sensitivity,
 		# Pan
 		"move_speed_px_s": move_speed_px_s,
 		"move_accel": move_accel,
@@ -377,6 +384,7 @@ func _build_config() -> Dictionary:
 		# Feature Flags
 		"has_orbits": has_orbits,
 		"has_grid": has_grid,
+		"grid_color": grid_color,
 		"has_belts": has_belts,
 		"has_zones": has_zones,
 		"has_comets": has_comets,

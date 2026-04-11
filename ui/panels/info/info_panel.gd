@@ -11,32 +11,32 @@ signal pin_requested(body_id: String)
 signal unpin_requested(body_id: String)
 
 
-@onready var _name_label:    Label = $VBox/Header/NameDisplay/NameLabel
-@onready var _type_label:    Label = $VBox/Header/NameDisplay/HBoxContainer/TypeLabel
-@onready var _subtype_label: Label = $VBox/Header/NameDisplay/HBoxContainer/SubtypeLabel
-@onready var _planet_viewer:  PlanetViewer = $VBox/Image/SubViewport/PlanetViewer
-@onready var _missing_label:  Label        = $VBox/Image/SubViewport/MissingLabel
-@onready var _almanach_btn:   Button = $VBox/Header/AlmanachBtn
-@onready var _pin_btn:        Button = $VBox/Header/PinBtn
-@onready var _unpin_btn:      Button = $VBox/Header/UnpinBtn
-@onready var _zoom_btn:       Button = $VBox/Header/ZoomBtn
+@onready var _name_label:    Label = $MarginContainer/VBox/Header/NameDisplay/NameLabel
+@onready var _type_label:    Label = $MarginContainer/VBox/Header/NameDisplay/HBoxContainer/TypeLabel
+@onready var _subtype_label: Label = $MarginContainer/VBox/Header/NameDisplay/HBoxContainer/SubtypeLabel
+@onready var _planet_viewer:  PlanetViewer = $MarginContainer/VBox/Image/SubViewport/PlanetViewer
+@onready var _missing_label:  Label        = $MarginContainer/VBox/Image/SubViewport/MissingLabel
+@onready var _almanach_btn:   Button = $MarginContainer/VBox/Header/AlmanachBtn
+@onready var _pin_btn:        Button = $MarginContainer/VBox/Header/PinBtn
+@onready var _unpin_btn:      Button = $MarginContainer/VBox/Header/UnpinBtn
+@onready var _zoom_btn:       Button = $MarginContainer/VBox/Header/ZoomBtn
 
 var _current_id: String = ""
 
 ## Physikalische Felder
-@onready var _phys_radius:   Node = $VBox/PhysikSection/PhysikGrid/Radius
-@onready var _phys_mass:     Node = $VBox/PhysikSection/PhysikGrid/Masse
-@onready var _phys_density:  Node = $VBox/PhysikSection/PhysikGrid/Dichte
-@onready var _phys_gravity:  Node = $VBox/PhysikSection/PhysikGrid/Schwerkraft
-@onready var _phys_escape:   Node = $VBox/PhysikSection/PhysikGrid/Fluchtgeschw
+@onready var _phys_radius:   Node = $MarginContainer/VBox/PhysikSection/PhysikGrid/Radius
+@onready var _phys_mass:     Node = $MarginContainer/VBox/PhysikSection/PhysikGrid/Masse
+@onready var _phys_density:  Node = $MarginContainer/VBox/PhysikSection/PhysikGrid/Dichte
+@onready var _phys_gravity:  Node = $MarginContainer/VBox/PhysikSection/PhysikGrid/Schwerkraft
+@onready var _phys_escape:   Node = $MarginContainer/VBox/PhysikSection/PhysikGrid/Fluchtgeschw
 
 ## Orbitale Felder
-@onready var _orb_axis:      Node = $VBox/OrbitSection/OrbitGrid/Halbachse
-@onready var _orb_period:    Node = $VBox/OrbitSection/OrbitGrid/Umlaufzeit
-@onready var _orb_ecc:       Node = $VBox/OrbitSection/OrbitGrid/Exzentrizitaet
-@onready var _orb_peri:      Node = $VBox/OrbitSection/OrbitGrid/Periapsis
-@onready var _orb_apo:       Node = $VBox/OrbitSection/OrbitGrid/Apoapsis
-@onready var _orb_vel:       Node = $VBox/OrbitSection/OrbitGrid/Geschwindigkeit
+@onready var _orb_axis:      Node = $MarginContainer/VBox/OrbitSection/OrbitGrid/Halbachse
+@onready var _orb_period:    Node = $MarginContainer/VBox/OrbitSection/OrbitGrid/Umlaufzeit
+@onready var _orb_ecc:       Node = $MarginContainer/VBox/OrbitSection/OrbitGrid/Exzentrizitaet
+@onready var _orb_peri:      Node = $MarginContainer/VBox/OrbitSection/OrbitGrid/Periapsis
+@onready var _orb_apo:       Node = $MarginContainer/VBox/OrbitSection/OrbitGrid/Apoapsis
+@onready var _orb_vel:       Node = $MarginContainer/VBox/OrbitSection/OrbitGrid/Geschwindigkeit
 
 
 

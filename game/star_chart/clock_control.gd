@@ -22,21 +22,13 @@ extends HBoxContainer
 @onready var _play_btn:    Button  = $PlayBtn
 @onready var _forward_btn: Button  = $ForwardBtn
 
-@onready var _sec_btn:    Button   = $TimeScaleBtns/SecBtn
-@onready var _min_btn:    Button   = $TimeScaleBtns/MinBtn
-@onready var _hour_btn:   Button   = $TimeScaleBtns/HourBtn
-@onready var _day_btn:    Button   = $TimeScaleBtns/DayBtn
-@onready var _week_btn:   Button   = $TimeScaleBtns/WeekBtn
-@onready var _month_btn:  Button   = $TimeScaleBtns/MonthBtn
-@onready var _month6_btn: Button   = $TimeScaleBtns/Month6Btn
-@onready var _year_btn:   Button   = $TimeScaleBtns/YearBtn
+@onready var _time_scale_selector: OptionButton = $TimeStepSelector
 
-var _solar_map: Node        = null
-var _is_live_mode: bool     = true
-var _map_is_playing: bool   = false  # MapClock läuft (play oder reverse)
-var _dot_label: Label       = null
-var _pulse_tween: Tween     = null
-var _updating_buttons: bool = false  # Guard gegen Toggle-Feedback beim programmatischen Setzen
+var _solar_map: Node      = null
+var _is_live_mode: bool   = true
+var _map_is_playing: bool = false  # MapClock läuft (play oder reverse)
+var _dot_label: Label     = null
+var _pulse_tween: Tween   = null
 
 
 func _ready() -> void:
@@ -55,6 +47,12 @@ func setup(solar_map: Node) -> void:
 	_solar_map = solar_map
 	_is_live_mode = _solar_map.is_live_mode()
 
+	# Transport-Buttons: kein Keyboard-Fokus — Pfeiltasten/Space sollen nicht geschluckt werden
+	for btn in [_jump_btn, _rewind_btn, _pause_btn, _play_btn, _forward_btn]:
+		if btn:
+			btn.focus_mode = Control.FOCUS_NONE
+	_time_scale_selector.focus_mode = Control.FOCUS_NONE
+
 	# JumpBtn ist kein Toggle — immer nur Richtung Map → Live
 	_jump_btn.toggle_mode = false
 	_jump_btn.pressed.connect(_on_jump_pressed)
@@ -63,21 +61,18 @@ func setup(solar_map: Node) -> void:
 	_play_btn.pressed.connect(_on_play_pressed)
 	_forward_btn.pressed.connect(_on_forward_pressed)
 
-	_sec_btn.toggled.connect(_on_time_scale_toggled.bind(1.0))
-	_min_btn.toggled.connect(_on_time_scale_toggled.bind(60.0))
-	_hour_btn.toggled.connect(_on_time_scale_toggled.bind(3600.0))
-	_day_btn.toggled.connect(_on_time_scale_toggled.bind(86400.0))
-	_week_btn.toggled.connect(_on_time_scale_toggled.bind(518400.0))
-	_month_btn.toggled.connect(_on_time_scale_toggled.bind(2592000.0))
-	_month6_btn.toggled.connect(_on_time_scale_toggled.bind(15552000.0))
-	_year_btn.toggled.connect(_on_time_scale_toggled.bind(31536000.0))
+	# TimeStepSelector mit MapClock-Presets befüllen
+	_time_scale_selector.clear()
+	for ts in MapClock.TIME_SCALE_PRESETS:
+		_time_scale_selector.add_item(_scale_label(ts))
+	_time_scale_selector.item_selected.connect(_on_time_scale_selected)
 
 	if _solar_map.has_signal("clock_mode_changed"):
 		_solar_map.clock_mode_changed.connect(_on_clock_mode_changed)
 
 	_apply_live_mode_state(_is_live_mode)
 	var map_clock: MapClock = _solar_map.get_map_clock()
-	_update_time_scale_buttons(map_clock.get_time_scale() if map_clock else 86400.0)
+	_update_time_scale_selector(map_clock.get_time_scale() if map_clock else 86400.0)
 
 
 func _process(_delta: float) -> void:
@@ -135,7 +130,7 @@ func _stop_pulse() -> void:
 		_pulse_tween.kill()
 		_pulse_tween = null
 	if _dot_label:
-		_dot_label.modulate.a = 0.0  # unsichtbar aber Layout bleibt stabil
+		_dot_label.modulate.a = 0.35  # sichtbar aber gedimmt — Uhr steht
 
 
 # ── Button Callbacks ──────────────────────────────────────────────────────────
@@ -187,14 +182,10 @@ func _on_forward_pressed() -> void:
 	_update_play_pause_buttons()
 
 
-func _on_time_scale_toggled(pressed: bool, time_scale: float) -> void:
-	if _updating_buttons or not pressed:
-		return
-	# Time-Scale-Buttons steuern nur die MapClock — Live-Mode läuft immer 1:1
+func _on_time_scale_selected(index: int) -> void:
 	var map_clock: MapClock = _solar_map.get_map_clock()
 	if map_clock:
-		map_clock.set_time_scale(time_scale)
-	_update_time_scale_buttons(time_scale)
+		map_clock.set_time_scale_index(index)
 
 
 # ── Clock Signal Handlers ─────────────────────────────────────────────────────
@@ -212,16 +203,10 @@ func _on_clock_mode_changed(is_live: bool) -> void:
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
 func _apply_live_mode_state(is_live: bool) -> void:
-	if _mode_label:
-		_mode_label.text = "Live Mode" if is_live else "Map Clock"
 	if _jump_btn:
 		_jump_btn.disabled = is_live
-	if is_live:
-		if _solar_map:
-			_solar_map.set_time_scale(1.0)  # Live ist immer 1:1
-		_start_pulse()
-	else:
-		_stop_pulse()
+	if is_live and _solar_map:
+		_solar_map.set_time_scale(1.0)  # Live ist immer 1:1
 	_update_play_pause_buttons()
 
 
@@ -231,13 +216,102 @@ func _update_play_pause_buttons() -> void:
 	var show_pause: bool = _is_live_mode or _map_is_playing
 	if _pause_btn: _pause_btn.visible = show_pause
 	if _play_btn:  _play_btn.visible  = not show_pause
+	_update_dot()
+	_update_mode_label()
 
 
-func _update_time_scale_buttons(current_scale: float) -> void:
-	_updating_buttons = true
-	var btns   := [_sec_btn, _min_btn, _hour_btn, _day_btn, _week_btn, _month_btn, _month6_btn, _year_btn]
-	var scales := [1.0, 60.0, 3600.0, 86400.0, 518400.0, 2592000.0, 15552000.0, 31536000.0]
-	for i in btns.size():
-		if btns[i]:
-			btns[i].button_pressed = abs(current_scale - scales[i]) < 0.1
-	_updating_buttons = false
+func _update_dot() -> void:
+	if _is_live_mode or _map_is_playing:
+		_start_pulse()
+	else:
+		_stop_pulse()
+
+
+func _update_mode_label() -> void:
+	if not _mode_label:
+		return
+	if _is_live_mode:
+		_mode_label.text = "Live Mode"
+	elif _map_is_playing:
+		_mode_label.text = "Map Clock"
+	else:
+		_mode_label.text = "Map Paused"
+
+
+func _update_time_scale_selector(current_scale: float) -> void:
+	if not _time_scale_selector:
+		return
+	for i in MapClock.TIME_SCALE_PRESETS.size():
+		if abs(MapClock.TIME_SCALE_PRESETS[i] - current_scale) < 0.1:
+			_time_scale_selector.selected = i
+			return
+
+
+static func _scale_label(ts: float) -> String:
+	if ts < 60.0:        return "%d s"   % int(ts)
+	elif ts < 3600.0:    return "%d min" % int(ts / 60.0)
+	elif ts < 86400.0:   return "%d h"   % int(ts / 3600.0)
+	else:                return "%d d"   % int(ts / 86400.0)
+
+
+# ── Öffentliches Interface (für Keyboard-Handler) ─────────────────────────────
+
+## Gleiche Logik wie Jump-Button — wechselt aus Map-Mode zurück in Live-Mode.
+func jump_to_live() -> void:
+	if _solar_map == null or _is_live_mode:
+		return
+	_on_jump_pressed()
+
+
+## Gleiche Logik wie Pause/Play-Button — wechselt ggf. in Map-Mode.
+func toggle_time() -> void:
+	if _solar_map == null:
+		return
+	if _is_live_mode or _map_is_playing:
+		_on_pause_pressed()
+	else:
+		_on_play_pressed()
+
+
+## Gleiche Logik wie Forward-Button — wechselt in Map-Mode, startet Vorwärtslauf.
+func play_forward() -> void:
+	if _solar_map == null:
+		return
+	_on_forward_pressed()
+
+
+## Gleiche Logik wie Rewind-Button — wechselt in Map-Mode, startet Rückwärtslauf.
+func play_backward() -> void:
+	if _solar_map == null:
+		return
+	_on_rewind_pressed()
+
+
+## Schaltet zur nächst schnelleren Zeit-Skala und aktualisiert die Buttons.
+func time_scale_up() -> void:
+	if _solar_map == null:
+		return
+	var clock: MapClock = _solar_map.get_map_clock()
+	if clock:
+		clock.step_time_scale_up()
+		_update_time_scale_selector(clock.get_time_scale())
+
+
+## Schaltet zur nächst langsameren Zeit-Skala und aktualisiert die Buttons.
+func time_scale_down() -> void:
+	if _solar_map == null:
+		return
+	var clock: MapClock = _solar_map.get_map_clock()
+	if clock:
+		clock.step_time_scale_down()
+		_update_time_scale_selector(clock.get_time_scale())
+
+
+## Setzt Zeit-Skala per Preset-Index und aktualisiert die Buttons.
+func time_scale_set(preset_index: int) -> void:
+	if _solar_map == null:
+		return
+	var clock: MapClock = _solar_map.get_map_clock()
+	if clock:
+		clock.set_time_scale_index(preset_index)
+		_update_time_scale_selector(clock.get_time_scale())

@@ -13,6 +13,7 @@ signal panned()
 var zoom_exp_min: float = 3.0
 var zoom_exp_max: float = 10.0
 var zoom_exp_step: float = 0.1
+var pinch_zoom_sensitivity: float = 0.5
 var zoom_overshoot: float = 0.5
 var zoom_overshoot_damping: float = 0.25
 var zoom_spring: float = 12.0
@@ -37,6 +38,8 @@ var _is_dragging: bool = false
 var _drag_start_mouse: Vector2 = Vector2.ZERO
 var _drag_start_cam: Vector2 = Vector2.ZERO
 var _zoom_hold_timer: float = 0.0
+var _pinch_zoom_pending: float = 1.0  # Akkumulierter Zoom-Faktor (1.0 = keine Änderung)
+var _pinch_zoom_pos: Vector2 = Vector2.ZERO
 
 ## Coordinate transformation
 func km_to_px(pos_km: Vector2) -> Vector2:
@@ -112,6 +115,11 @@ func _process(delta: float) -> void:
 	else:
 		_zoom_hold_timer = 0.0
 
+	# Pinch-Zoom einmal pro Frame anwenden
+	if not is_equal_approx(_pinch_zoom_pending, 1.0):
+		_zoom_by_factor(_pinch_zoom_pending, _pinch_zoom_pos)
+		_pinch_zoom_pending = 1.0
+	
 	# Rubber-Band Spring
 	var clamped := clampf(zoom_exp, zoom_exp_min, zoom_exp_max)
 	if not is_equal_approx(clamped, zoom_exp):
@@ -119,8 +127,9 @@ func _process(delta: float) -> void:
 		km_per_px = pow(10.0, zoom_exp)
 		zoom_changed.emit(km_per_px)
 
-## _input: Maus-Scroll und Linksklick-Drag
+## _input: Maus-Scroll + Trackpad-Gesten (immer aktiv)
 func _input(event: InputEvent) -> void:
+	# Maus-Scroll
 	if event is InputEventMouseButton:
 		var mb := event as InputEventMouseButton
 		if mb.button_index == MOUSE_BUTTON_WHEEL_UP and mb.pressed:
@@ -129,23 +138,46 @@ func _input(event: InputEvent) -> void:
 		elif mb.button_index == MOUSE_BUTTON_WHEEL_DOWN and mb.pressed:
 			_zoom_at(mb.position, 1)
 			get_viewport().set_input_as_handled()
-		elif mb.button_index == MOUSE_BUTTON_LEFT:
+	
+	# Trackpad Pan (macOS)
+	elif event is InputEventPanGesture:
+		var pan := event as InputEventPanGesture
+		cam_pos_px += pan.delta * 2.0  # Skaliert für natürliches Gefühl
+		camera_moved.emit(cam_pos_px)
+		panned.emit()
+		get_viewport().set_input_as_handled()
+	
+	# Trackpad Pinch-to-Zoom (macOS) - akkumulieren, in _process anwenden
+	elif event is InputEventMagnifyGesture:
+		var mag := event as InputEventMagnifyGesture
+		_pinch_zoom_pending *= mag.factor
+		_pinch_zoom_pos = get_viewport().get_mouse_position()
+		get_viewport().set_input_as_handled()
+
+## _unhandled_input: Linksklick-Drag + Preset-Keys
+func _unhandled_input(event: InputEvent) -> void:
+	# Linksklick-Drag auf leerem Raum
+	if event is InputEventMouseButton:
+		var mb := event as InputEventMouseButton
+		if mb.button_index == MOUSE_BUTTON_LEFT:
 			if mb.pressed:
 				_is_dragging = true
 				_drag_start_mouse = mb.position
 				_drag_start_cam = cam_pos_px
 			else:
 				_is_dragging = false
-	elif event is InputEventMouseMotion and _is_dragging:
+		return
+	
+	if event is InputEventMouseMotion and _is_dragging:
 		var mm := event as InputEventMouseMotion
 		var delta_screen := mm.position - _drag_start_mouse
 		cam_pos_px = _drag_start_cam - delta_screen
 		camera_moved.emit(cam_pos_px)
 		panned.emit()
 		get_viewport().set_input_as_handled()
-
-## _unhandled_input: Preset-Keys (1-5 für die 5 Presets)
-func _unhandled_input(event: InputEvent) -> void:
+		return
+	
+	# Preset-Keys (1-5 für die 5 Presets)
 	if not (event is InputEventKey and event.pressed and not event.echo):
 		return
 	for i in range(scale_presets.size()):
@@ -155,6 +187,28 @@ func _unhandled_input(event: InputEvent) -> void:
 			zoom_changed.emit(km_per_px)
 			get_viewport().set_input_as_handled()
 			return
+
+## Zoom-by-Factor (für Trackpad Pinch)
+func _zoom_by_factor(factor: float, screen_pos: Vector2) -> void:
+	var old_km_px: float = km_per_px
+	# factor > 1 = zoom in (kleinere km_per_px), factor < 1 = zoom out
+	var delta_exp: float = -log(factor) / log(10.0) * pinch_zoom_sensitivity
+	
+	zoom_exp = clamp(zoom_exp + delta_exp, zoom_exp_min - zoom_overshoot, zoom_exp_max + zoom_overshoot)
+	km_per_px = pow(10.0, zoom_exp)
+	
+	if is_equal_approx(km_per_px, old_km_px):
+		return
+	
+	# Punkt unter dem Cursor bleibt stationär
+	var vp_center := get_viewport().get_visible_rect().size * 0.5
+	var mouse_offset := screen_pos - vp_center
+	var ratio: float = old_km_px / km_per_px
+	cam_pos_px = (cam_pos_px + mouse_offset) * ratio - mouse_offset
+	
+	zoom_changed.emit(km_per_px)
+	camera_moved.emit(cam_pos_px)
+
 
 ## Zoom-at-Cursor Logik
 func _zoom_at(screen_pos: Vector2, direction: int) -> void:
