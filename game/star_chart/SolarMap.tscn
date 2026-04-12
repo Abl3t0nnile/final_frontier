@@ -30,7 +30,7 @@ shader_parameter/star_color = Color(1, 1, 1, 1)
 
 [node name="SolarMap" type="Node" unique_id=92857702]
 script = ExtResource("1_solar_map")
-zoom_exp_min = 2.0
+zoom_exp_min = 1.0
 zoom_exp_max = 20.0
 zoom_exp_step = 0.05
 zoom_exp_initial = 5.5

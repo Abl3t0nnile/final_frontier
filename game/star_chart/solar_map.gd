@@ -112,6 +112,10 @@ signal marker_unhovered(id: String)
 signal body_pinned(id: String)
 signal body_unpinned(id: String)
 signal marker_right_clicked(id: String)
+signal zone_clicked(zone_id: String)
+signal belt_clicked(belt_id: String)
+signal area_hovered(display_name: String)
+signal area_unhovered()
 
 signal time_changed(sim_time: float)
 signal time_scale_changed(scale: float)
@@ -321,6 +325,10 @@ func _connect_signals() -> void:
 	
 	# Right-click on marker from MapController
 	_map_controller.marker_right_clicked.connect(marker_right_clicked.emit)
+	_map_controller.zone_clicked.connect(zone_clicked.emit)
+	_map_controller.belt_clicked.connect(belt_clicked.emit)
+	_map_controller.area_hovered.connect(area_hovered.emit)
+	_map_controller.area_unhovered.connect(area_unhovered.emit)
 
 	# Time events from clock
 	GameClock.tick.connect(func(t: float): time_changed.emit(t))

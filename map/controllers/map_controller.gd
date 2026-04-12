@@ -6,6 +6,10 @@ class_name MapController
 extends Node2D
 
 signal marker_right_clicked(id: String)
+signal zone_clicked(zone_id: String)
+signal belt_clicked(belt_id: String)
+signal area_hovered(display_name: String)
+signal area_unhovered()
 
 ## Configuration (set via apply_config() from SolarMap)
 var zoom_exp_min: float      = 3.0
@@ -80,6 +84,7 @@ var belt_point_size_far: float  = 1.0
 @onready var _belt_layer: Node2D    = $WorldRoot/BeltLayer
 @onready var _ring_layer: Node2D    = $WorldRoot/RingLayer
 
+var _hovered_areas: Dictionary          = {}   # id -> display_name
 var _map_transform: MapTransform        = null
 var _entity_manager: EntityManager      = null
 var _model: SolarSystemModel            = null
@@ -461,6 +466,9 @@ func _setup_belts() -> void:
 	_belt_manager.point_size_far  = belt_point_size_far
 	add_child(_belt_manager)
 	_belt_manager.setup(_belt_layer, _map_transform, _model, "res://data/solar_system/belt_data.json", "belts")
+	_belt_manager.cloud_clicked.connect(func(id: String): belt_clicked.emit(id))
+	_belt_manager.cloud_hovered.connect(func(id: String, display_name: String): _on_area_hovered(id, display_name))
+	_belt_manager.cloud_unhovered.connect(func(id: String): _on_area_unhovered(id))
 
 
 func _setup_zones() -> void:
@@ -468,6 +476,9 @@ func _setup_zones() -> void:
 	_zone_manager.name = "ZoneManager"
 	add_child(_zone_manager)
 	_zone_manager.setup(_zone_layer, _map_transform, _model)
+	_zone_manager.zone_clicked.connect(func(id: String): zone_clicked.emit(id))
+	_zone_manager.zone_hovered.connect(func(id: String, display_name: String): _on_area_hovered(id, display_name))
+	_zone_manager.zone_unhovered.connect(func(id: String): _on_area_unhovered(id))
 
 
 func _setup_rings() -> void:
@@ -541,3 +552,16 @@ func set_filter(filter_id: int, enabled: bool) -> void:
 		_interaction_manager.get_selected_entity(),
 		_interaction_manager.get_pinned_entities()
 	)
+
+
+func _on_area_hovered(id: String, display_name: String) -> void:
+	_hovered_areas[id] = display_name
+	area_hovered.emit(display_name)
+
+
+func _on_area_unhovered(id: String) -> void:
+	_hovered_areas.erase(id)
+	if _hovered_areas.is_empty():
+		area_unhovered.emit()
+	else:
+		area_hovered.emit(_hovered_areas.values().back())

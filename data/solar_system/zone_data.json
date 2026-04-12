@@ -8,50 +8,50 @@
       "geometry": "ring",
       "inner_radius_km": 128000000,
       "outer_radius_km": 213000000,
-      "color_rgba": [0.20, 0.65, 0.20, 0.01],
-      "border_color_rgba": [0.30, 0.80, 0.30, 0.0]
+      "color_rgba": [0.20, 0.65, 0.20, 0.05],
+      "border_color_rgba": [0.30, 0.80, 0.30, 0.4]
     },
     {
       "id": "sun_frost_line",
-      "name": "Frost Line",
+      "name": "Frostline",
       "parent_id": "sun",
       "zone_type": "frost_line",
       "geometry": "line",
       "radius_km": 720000000,
       "line_width_px": 2.0,
-      "color_rgba": [0.60, 0.80, 1.00, 0.00],
-      "border_color_rgba": [0.60, 0.80, 1.00, 0.70]
+      "color_rgba": [0.60, 0.80, 1.00, 0.0],
+      "border_color_rgba": [0.60, 0.80, 1.00, 0.40]
     },
     {
       "id": "jupiter_magnetosphere",
-      "name": "Jupiter Magnetosphere",
+      "name": "Jupiter Magnetosphäre",
       "parent_id": "jupiter",
       "zone_type": "magnetic",
       "geometry": "circle",
       "radius_km": 4000000,
-      "color_rgba": [0.55, 0.20, 0.75, 0.01],
+      "color_rgba": [0.55, 0.20, 0.75, 0.0],
       "border_color_rgba": [0.65, 0.30, 0.90, 0.40]
     },
     {
       "id": "saturn_magnetosphere",
-      "name": "Saturn Magnetosphere",
+      "name": "Saturn Magnetosphäre",
       "parent_id": "saturn",
       "zone_type": "magnetic",
       "geometry": "circle",
       "radius_km": 1200000,
-      "color_rgba": [0.45, 0.55, 0.80, 0.01],
+      "color_rgba": [0.45, 0.55, 0.80, 0.0],
       "border_color_rgba": [0.55, 0.65, 0.90, 0.40]
     },
     {
       "id": "sun_termination_shock",
-      "name": "Termination Shock",
+      "name": "Randstoßwelle",
       "parent_id": "sun",
       "zone_type": "termination_shock",
       "geometry": "line",
       "radius_km": 12716000000,
       "line_width_px": 1.5,
-      "color_rgba": [0.60, 0.85, 1.00, 0.00],
-      "border_color_rgba": [0.60, 0.85, 1.00, 0.55]
+      "color_rgba": [0.60, 0.85, 1.00, 0.0],
+      "border_color_rgba": [0.60, 0.85, 1.00, 0.4]
     },
     {
       "id": "sun_heliopause",
@@ -61,17 +61,17 @@
       "geometry": "line",
       "radius_km": 17940000000,
       "line_width_px": 2.0,
-      "color_rgba": [0.40, 0.75, 0.90, 0.00],
-      "border_color_rgba": [0.40, 0.75, 0.90, 0.70]
+      "color_rgba": [0.40, 0.75, 0.90, 0.0],
+      "border_color_rgba": [0.40, 0.75, 0.90, 0.4]
     },
     {
       "id": "earth_magnetosphere",
-      "name": "Earth Magnetosphere",
-      "parent_id": "earth",
+      "name": "Erde Magnetosphäre",
+      "parent_id": "terra",
       "zone_type": "magnetic",
       "geometry": "circle",
       "radius_km": 65000,
-      "color_rgba": [0.20, 0.40, 0.80, 0.01],
+      "color_rgba": [0.20, 0.40, 0.80, 0.0],
       "border_color_rgba": [0.30, 0.55, 0.95, 0.40]
     }
   ]

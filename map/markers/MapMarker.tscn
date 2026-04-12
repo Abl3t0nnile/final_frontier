@@ -1,22 +1,15 @@
 [gd_scene format=3 uid="uid://dmk4p7xwn2qef"]
 
 [ext_resource type="Script" uid="uid://hfy07cp3h0ru" path="res://map/markers/map_marker.gd" id="1_marker"]
-[ext_resource type="FontFile" uid="uid://dpe512ervf1h1" path="res://assets/fonts/Syncopate-Bold.ttf" id="2_ffplx"]
+[ext_resource type="LabelSettings" uid="uid://wapdtmeron1" path="res://ui/resources/label_settings/label_settings_map_marker.tres" id="2_er5lj"]
 [ext_resource type="Script" uid="uid://bq5r8cntj6yvx" path="res://map/markers/map_marker_icon.gd" id="2_icon"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_0woa5"]
-font = ExtResource("2_ffplx")
-font_size = 12
-font_color = Color(0.627545, 0.627545, 0.627545, 1)
-outline_size = 3
-outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1"]
 radius = 18.0
 
 [node name="MapMarker" type="Area2D" unique_id=1707746605]
 script = ExtResource("1_marker")
-label_settings = SubResource("LabelSettings_0woa5")
+label_settings = ExtResource("2_er5lj")
 
 [node name="MarkerIcon" type="Sprite2D" parent="." unique_id=1962418193]
 script = ExtResource("2_icon")

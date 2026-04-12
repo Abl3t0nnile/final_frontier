@@ -7,8 +7,14 @@
 class_name BeltRenderer
 extends Node2D
 
+signal clicked(belt_id: String)
+signal hovered(belt_id: String, display_name: String)
+signal unhovered(belt_id: String)
+
 var belt_def: BeltDef      = null
 var belt_id:  String       = ""
+
+var _is_hovered: bool = false
 
 var _map_transform: MapTransform = null
 var _mmi: MultiMeshInstance2D    = null
@@ -76,8 +82,23 @@ func notify_zoom_changed(km_per_px: float) -> void:
 
 func _process(delta: float) -> void:
 	if belt_def and belt_def.apply_rotation and _mmi.visible:
-		# Einfache Node-Rotation
 		rotation += deg_to_rad(_rotation_speed) * delta
+
+	if not is_visible_in_tree() or belt_def == null or _map_transform == null:
+		if _is_hovered:
+			_is_hovered = false
+			_mmi.self_modulate = Color.WHITE
+			unhovered.emit(belt_id)
+		return
+	var over := _is_hit(to_local(get_viewport().get_mouse_position()))
+	if over == _is_hovered:
+		return
+	_is_hovered = over
+	_mmi.self_modulate = Color(1.4, 1.4, 1.4, 1.0) if _is_hovered else Color.WHITE
+	if _is_hovered:
+		hovered.emit(belt_id, belt_def.name)
+	else:
+		unhovered.emit(belt_id)
 
 # ---------------------------------------------------------------------------
 # Intern
@@ -181,6 +202,33 @@ func set_rotation_enabled(enabled: bool) -> void:
 
 func set_rotation_speed(speed: float) -> void:
 	_rotation_speed = speed
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if not visible or belt_def == null or _map_transform == null:
+		return
+	if not (event is InputEventMouseButton and event.pressed
+			and event.button_index == MOUSE_BUTTON_LEFT):
+		return
+	var local_pos := to_local(get_viewport().get_mouse_position())
+	if _is_hit(local_pos):
+		clicked.emit(belt_id)
+
+
+func _is_hit(p: Vector2) -> bool:
+	var d     := p.length()
+	var kpp   := _map_transform.km_per_px
+	var r_in  := belt_def.inner_radius_km / kpp
+	var r_out := belt_def.outer_radius_km / kpp
+	if d < r_in or d > r_out:
+		return false
+	if belt_def.angular_spread_rad >= _FULL_RING_THRESHOLD:
+		return true
+	# Wolke: Winkel im lokalen Raum prüfen (Node-Rotation bereits über to_local() herausgerechnet)
+	var mid_angle := belt_def.angular_offset_rad + belt_def.angular_spread_rad * 0.5
+	var half_span := belt_def.angular_spread_rad * 0.5 + 0.12  # ~7° Toleranz
+	var diff      := fmod(atan2(p.y, p.x) - mid_angle + PI * 3.0, TAU) - PI
+	return abs(diff) <= half_span
 
 
 func _parse_shape(s: String) -> void:

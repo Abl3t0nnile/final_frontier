@@ -26,23 +26,12 @@
 [ext_resource type="Script" uid="uid://qr7os7f21yr0" path="res://game/star_chart/clock_control.gd" id="9_clock"]
 [ext_resource type="Texture2D" uid="uid://rp0y0o7p2mnk" path="res://assets/icons/input/keyboard_e_outline.png" id="9_moesl"]
 [ext_resource type="Texture2D" uid="uid://bycohtpvdyoce" path="res://assets/icons/ui/white/menuList.png" id="9_stl2x"]
+[ext_resource type="StyleBox" uid="uid://bnib6yc4owxte" path="res://ui/resources/styleboxes/ui_stylebox_solid_black_transparent.tres" id="10_stl2x"]
 [ext_resource type="Texture2D" uid="uid://bdov46djoii76" path="res://assets/icons/input/keyboard_n_outline.png" id="14_7ref0"]
 [ext_resource type="Texture2D" uid="uid://cfk5465j3cag2" path="res://assets/icons/input/keyboard_escape_outline.png" id="15_c6t65"]
 [ext_resource type="Texture2D" uid="uid://b3i6g1po8balc" path="res://assets/icons/input/keyboard_i_outline.png" id="15_moesl"]
 [ext_resource type="Texture2D" uid="uid://80xuukg5r0yo" path="res://assets/icons/input/keyboard_l_outline.png" id="16_421ri"]
 [ext_resource type="PackedScene" uid="uid://qgkgsneq1nsf" path="res://game/almanac/Almanac.tscn" id="20_6h8u5"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iu7s2"]
-content_margin_left = 8.0
-content_margin_top = 2.0
-content_margin_right = 8.0
-content_margin_bottom = 2.0
-bg_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqwm6"]
-content_margin_left = 8.0
-content_margin_right = 8.0
-bg_color = Color(1, 1, 1, 0.039215688)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skbn7"]
 content_margin_left = 16.0
@@ -276,7 +265,7 @@ layout_mode = 2
 [node name="FocusTitle" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList/Focus" unique_id=1466102864]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_iu7s2")
+theme_type_variation = &"PanelContainerSolid"
 
 [node name="CaptionLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList/Focus/FocusTitle" unique_id=2107730454]
 layout_mode = 2
@@ -287,7 +276,7 @@ text = "Focus Body"
 [node name="FocusDisplay" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList/Focus" unique_id=1104229318]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_oqwm6")
+theme_override_styles/panel = ExtResource("10_stl2x")
 
 [node name="BodyNameLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList/Focus/FocusDisplay" unique_id=1614106233]
 layout_mode = 2
@@ -302,7 +291,7 @@ layout_mode = 2
 [node name="PinnedTitle" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList/Pins" unique_id=1469524484]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_iu7s2")
+theme_type_variation = &"PanelContainerSolid"
 
 [node name="CaptionDisplay" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList/Pins/PinnedTitle" unique_id=-1568459562]
 layout_mode = 2
@@ -313,7 +302,7 @@ text = "Pinned Bodys"
 [node name="PinnedDisplay" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList/Pins" unique_id=231981044]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_oqwm6")
+theme_override_styles/panel = ExtResource("10_stl2x")
 
 [node name="BodyNameLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList/Pins/PinnedDisplay" unique_id=1051896967]
 layout_mode = 2
@@ -471,6 +460,12 @@ stretch_mode = 4
 layout_mode = 2
 text = "Toggle Almanach Panel"
 label_settings = ExtResource("7_moesl")
+
+[node name="MouseLayer" type="CanvasLayer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay" unique_id=1326644783]
+
+[node name="MouseLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MouseLayer" unique_id=1146687140]
+offset_right = 40.0
+offset_bottom = 21.0
 
 [node name="BodyView" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel" unique_id=1659349015]
 visible = false

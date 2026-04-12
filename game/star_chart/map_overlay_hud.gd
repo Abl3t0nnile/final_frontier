@@ -19,11 +19,19 @@ extends CanvasLayer
 var _solar_map: Node  = null
 var _km_per_px: float = 1_000_000.0
 
+var _tooltip: Label = null
+
 
 func _ready() -> void:
 	_solar_map = get_parent()
 	# SolarMap._ready() läuft nach dem der Kinder – via ready-Signal warten
 	_solar_map.ready.connect(_setup, CONNECT_ONE_SHOT)
+	_tooltip = Label.new()
+	_tooltip.mouse_filter   = Control.MOUSE_FILTER_IGNORE
+	_tooltip.visible        = false
+	_tooltip.uppercase      = true
+	_tooltip.label_settings = load("res://ui/resources/label_settings/label_setting_map_tooltip.tres")
+	add_child(_tooltip)  # Direkt im CanvasLayer — kein Container-Layout
 
 
 func _setup() -> void:
@@ -33,6 +41,10 @@ func _setup() -> void:
 	_solar_map.body_deselected.connect(_on_body_deselected)
 	_solar_map.body_pinned.connect(_on_body_pinned)
 	_solar_map.body_unpinned.connect(_on_body_unpinned)
+	if _solar_map.has_signal("area_hovered"):
+		_solar_map.area_hovered.connect(_on_area_hovered)
+	if _solar_map.has_signal("area_unhovered"):
+		_solar_map.area_unhovered.connect(_on_area_unhovered)
 	_update_scale_display()
 
 
@@ -40,6 +52,20 @@ func _process(_delta: float) -> void:
 	if _solar_map == null:
 		return
 	_update_cursor_position()
+	if _tooltip:
+		_tooltip.position = get_viewport().get_mouse_position() + Vector2(14.0, -20.0)
+
+
+func _on_area_hovered(display_name: String) -> void:
+	if _tooltip == null:
+		return
+	_tooltip.text    = display_name
+	_tooltip.visible = true
+
+
+func _on_area_unhovered() -> void:
+	if _tooltip:
+		_tooltip.visible = false
 
 
 ## Zoom-Update

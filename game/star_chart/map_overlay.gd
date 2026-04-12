@@ -16,6 +16,7 @@ extends MarginContainer
 @onready var _pos_y:        Label      = $MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer/PosYValue
 @onready var _filter_btn:   MenuButton = $MapOverlay/MenuButtons/FilterButton
 @onready var _grid_btn:     Button     = $MapOverlay/MenuButtons/GridButton
+@onready var _tooltip:      Label      = $MouseLayer/MouseLabel
 
 var _solar_map: Node  = null
 var _km_per_px: float = 1_000_000.0
@@ -31,6 +32,11 @@ func _ready() -> void:
 	if p:
 		p.resized.connect(_fit_to_parent)
 		call_deferred("_fit_to_parent")
+	if _tooltip:
+		_tooltip.mouse_filter   = Control.MOUSE_FILTER_IGNORE
+		_tooltip.uppercase      = true
+		_tooltip.label_settings = load("res://ui/resources/label_settings/label_setting_map_tooltip.tres")
+		_tooltip.visible        = false
 
 
 func _set_mouse_ignore(node: Node) -> void:
@@ -60,6 +66,8 @@ func setup(solar_map: Node) -> void:
 
 
 func _process(_delta: float) -> void:
+	if _tooltip:
+		_tooltip.position = get_viewport().get_mouse_position() + Vector2(14.0, -20.0)
 	if _solar_map == null:
 		return
 	_update_cursor_position()
@@ -78,6 +86,10 @@ func _connect_signals() -> void:
 		_solar_map.body_pinned.connect(_on_body_pinned)
 	if _solar_map.has_signal("body_unpinned"):
 		_solar_map.body_unpinned.connect(_on_body_unpinned)
+	if _solar_map.has_signal("area_hovered"):
+		_solar_map.area_hovered.connect(_on_area_hovered)
+	if _solar_map.has_signal("area_unhovered"):
+		_solar_map.area_unhovered.connect(_on_area_unhovered)
 
 
 func _on_zoom_changed(km_per_px: float) -> void:
@@ -160,6 +172,17 @@ func _refresh_pins() -> void:
 		names.append(def.name if def else id)
 	_pins_name.text   = "\n".join(names)
 	_pins_box.visible = true
+
+
+func _on_area_hovered(display_name: String) -> void:
+	if _tooltip:
+		_tooltip.text    = display_name
+		_tooltip.visible = true
+
+
+func _on_area_unhovered() -> void:
+	if _tooltip:
+		_tooltip.visible = false
 
 
 func _on_filter_index_pressed(index: int) -> void:

@@ -4,6 +4,10 @@
 class_name ZoneManager
 extends Node
 
+signal zone_clicked(zone_id: String)
+signal zone_hovered(zone_id: String, display_name: String)
+signal zone_unhovered(zone_id: String)
+
 const DEFAULT_DATA_PATH := "res://data/solar_system/zone_data.json"
 
 var _zone_layer: Node2D          = null
@@ -24,6 +28,9 @@ func setup(zone_layer: Node2D, map_transform: MapTransform, model: SolarSystemMo
 		var renderer := ZoneRenderer.new()
 		_zone_layer.add_child(renderer)
 		renderer.setup(def, _map_transform)
+		renderer.clicked.connect(func(id: String): zone_clicked.emit(id))
+		renderer.hovered.connect(func(id: String, display_name: String): zone_hovered.emit(id, display_name))
+		renderer.unhovered.connect(func(id: String): zone_unhovered.emit(id))
 		_renderers.append(renderer)
 
 

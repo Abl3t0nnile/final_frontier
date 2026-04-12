@@ -5,6 +5,10 @@
 class_name PointCloudManager
 extends Node
 
+signal cloud_clicked(belt_id: String)
+signal cloud_hovered(belt_id: String, display_name: String)
+signal cloud_unhovered(belt_id: String)
+
 # Config (sets BeltRenderer parameters)
 var zoom_exp_near: float   = 5.0
 var zoom_exp_mid: float    = 6.5
@@ -36,6 +40,9 @@ func setup(layer: Node2D, map_transform: MapTransform, model: SolarSystemModel,
 		_layer.add_child(renderer)
 		_apply_config(renderer)
 		renderer.setup(def, _map_transform)
+		renderer.clicked.connect(func(id: String): cloud_clicked.emit(id))
+		renderer.hovered.connect(func(id: String, display_name: String): cloud_hovered.emit(id, display_name))
+		renderer.unhovered.connect(func(id: String): cloud_unhovered.emit(id))
 		_renderers.append(renderer)
 
 
