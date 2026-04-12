@@ -160,6 +160,10 @@ func toggle_planet_view() -> void:
 	elif not _current_body_id.is_empty() and _planet_view != null:
 		_planet_view.call("load_body", _current_body_id)
 		_planet_view_overlay.load_body(_current_body_id)
+		# Info → Almanac beim Wechsel zu Planet View
+		if _info_panel.visible and _almanach_panel:
+			_almanach_panel.open_body(_current_body_id)
+			_set_almanac_visible(true)
 		_set_view(ViewMode.PLANET_VIEW)
 
 
