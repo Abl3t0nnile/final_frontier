@@ -14,7 +14,8 @@ var zone_def: ZoneDef    = null
 var zone_id:  String     = ""
 
 var _map_transform: MapTransform = null
-var _is_hovered: bool = false
+var _is_hovered: bool  = false
+var hover_active: bool = true
 
 const BORDER_WIDTH_PX := 1.5
 const MIN_DRAW_R_PX   := 0.5
@@ -33,7 +34,7 @@ func notify_zoom_changed(_km_per_px: float) -> void:
 
 
 func _process(_delta: float) -> void:
-	if not is_visible_in_tree() or zone_def == null or _map_transform == null:
+	if not hover_active or not is_visible_in_tree() or zone_def == null or _map_transform == null:
 		if _is_hovered:
 			_is_hovered = false
 			unhovered.emit(zone_id)
@@ -51,7 +52,7 @@ func _process(_delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not visible or zone_def == null or _map_transform == null:
+	if not is_visible_in_tree() or zone_def == null or _map_transform == null:
 		return
 	if not (event is InputEventMouseButton and event.pressed
 			and event.button_index == MOUSE_BUTTON_LEFT):

@@ -14,7 +14,8 @@ signal unhovered(belt_id: String)
 var belt_def: BeltDef      = null
 var belt_id:  String       = ""
 
-var _is_hovered: bool = false
+var _is_hovered: bool  = false
+var hover_active: bool = true
 
 var _map_transform: MapTransform = null
 var _mmi: MultiMeshInstance2D    = null
@@ -84,7 +85,7 @@ func _process(delta: float) -> void:
 	if belt_def and belt_def.apply_rotation and _mmi.visible:
 		rotation += deg_to_rad(_rotation_speed) * delta
 
-	if not is_visible_in_tree() or belt_def == null or _map_transform == null:
+	if not hover_active or not is_visible_in_tree() or belt_def == null or _map_transform == null:
 		if _is_hovered:
 			_is_hovered = false
 			_mmi.self_modulate = Color.WHITE
@@ -205,7 +206,7 @@ func set_rotation_speed(speed: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not visible or belt_def == null or _map_transform == null:
+	if not is_visible_in_tree() or belt_def == null or _map_transform == null:
 		return
 	if not (event is InputEventMouseButton and event.pressed
 			and event.button_index == MOUSE_BUTTON_LEFT):

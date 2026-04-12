@@ -9,6 +9,7 @@ const _BASE := "UILayer/MainDisplay/VFrame/BodyPanel"
 
 ## Viewports
 @onready var _map_subviewport:  SubViewport = $"UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/SubViewport"
+@onready var _map_svc: SubViewportContainer = $"UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer"
 @onready var _body_subviewport: SubViewport = $"UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/SubViewport"
 
 ## Panels
@@ -42,12 +43,23 @@ func receive_solar_map(map: Node) -> void:
 	_nav_panel.body_focused.connect(_on_nav_body_focused)
 	_map_overlay.setup(map)
 	_map_subviewport.size_changed.connect(_on_viewport_resized)
+	_map_svc.mouse_entered.connect(func() -> void:
+		_solar_map.get_map_controller().set_area_hover_enabled(true))
+	_map_svc.mouse_exited.connect(func() -> void:
+		_solar_map.get_map_controller().set_area_hover_enabled(false))
 	if map.has_signal("body_selected"):
 		map.body_selected.connect(_on_body_selected)
 	if map.has_signal("body_deselected"):
 		map.body_deselected.connect(_on_body_deselected)
+	if map.has_signal("zone_clicked"):
+		map.zone_clicked.connect(_on_area_entry_clicked)
+	if map.has_signal("belt_clicked"):
+		map.belt_clicked.connect(_on_area_entry_clicked)
 	_info_panel.almanach_requested.connect(_on_almanach_requested)
 	_info_panel.zoom_requested.connect(_on_zoom_requested)
+	_info_panel.body_focused.connect(func(id: String) -> void:
+		_solar_map.get_map_controller().center_on_body(id)
+		_on_nav_body_focused(id))
 	_almanach_panel.zoom_requested.connect(_on_zoom_requested)
 	_info_panel.pin_requested.connect(func(id: String) -> void:
 		_solar_map.pin_body(id))
@@ -182,6 +194,14 @@ func _on_body_deselected() -> void:
 	_current_body_id = ""
 	_info_panel.clear()
 	_set_info_panel_visible(false)
+
+
+func _on_area_entry_clicked(id: String) -> void:
+	if _almanach_panel:
+		_almanach_panel.open_concept(id)
+		_set_almanac_visible(true)
+
+
 
 
 # ── Panel-Übergänge ────────────────────────────────────────────────────────────

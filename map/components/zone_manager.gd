@@ -53,6 +53,27 @@ func update_zoom(km_per_px: float) -> void:
 		renderer.notify_zoom_changed(km_per_px)
 
 
+func set_hover_active(active: bool) -> void:
+	for renderer in _renderers:
+		(renderer as ZoneRenderer).hover_active = active
+
+
+func restore_hovered_ids(ids: Array) -> void:
+	for i in _renderers.size():
+		if _zone_defs[i].id in ids:
+			var r := _renderers[i] as ZoneRenderer
+			r._is_hovered = true
+			r.queue_redraw()
+
+
+func reset_hover_state() -> void:
+	for renderer in _renderers:
+		var r := renderer as ZoneRenderer
+		if r._is_hovered:
+			r._is_hovered = false
+			r.queue_redraw()
+
+
 func get_renderers() -> Array:
 	return _renderers
 

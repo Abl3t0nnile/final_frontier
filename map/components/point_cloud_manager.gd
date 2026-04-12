@@ -74,6 +74,27 @@ func update_zoom(km_per_px: float) -> void:
 		renderer.notify_zoom_changed(km_per_px)
 
 
+func set_hover_active(active: bool) -> void:
+	for renderer in _renderers:
+		(renderer as BeltRenderer).hover_active = active
+
+
+func restore_hovered_ids(ids: Array) -> void:
+	for i in _renderers.size():
+		if _defs[i].id in ids:
+			var r := _renderers[i] as BeltRenderer
+			r._is_hovered = true
+			r._mmi.self_modulate = Color(1.4, 1.4, 1.4, 1.0)
+
+
+func reset_hover_state() -> void:
+	for renderer in _renderers:
+		var r := renderer as BeltRenderer
+		if r._is_hovered:
+			r._is_hovered = false
+			r._mmi.self_modulate = Color.WHITE
+
+
 func get_renderers() -> Array:
 	return _renderers
 

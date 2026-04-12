@@ -85,6 +85,8 @@ var belt_point_size_far: float  = 1.0
 @onready var _ring_layer: Node2D    = $WorldRoot/RingLayer
 
 var _hovered_areas: Dictionary          = {}   # id -> display_name
+var _saved_hovered_areas: Dictionary    = {}   # saved on hover disable, restored on enable
+var _area_hover_enabled: bool           = true
 var _map_transform: MapTransform        = null
 var _entity_manager: EntityManager      = null
 var _model: SolarSystemModel            = null
@@ -486,6 +488,9 @@ func _setup_rings() -> void:
 	_ring_manager.name = "RingManager"
 	add_child(_ring_manager)
 	_ring_manager.setup(_ring_layer, _map_transform, _model, "res://data/solar_system/ring_data.json", "rings")
+	_ring_manager.cloud_clicked.connect(func(id: String): belt_clicked.emit(id))
+	_ring_manager.cloud_hovered.connect(func(id: String, display_name: String): _on_area_hovered(id, display_name))
+	_ring_manager.cloud_unhovered.connect(func(id: String): _on_area_unhovered(id))
 
 
 func _update_orbits() -> void:
@@ -554,12 +559,46 @@ func set_filter(filter_id: int, enabled: bool) -> void:
 	)
 
 
+func set_area_hover_enabled(enabled: bool) -> void:
+	_area_hover_enabled = enabled
+	if not enabled:
+		# Save current hover state so we can restore it on re-entry
+		_saved_hovered_areas = _hovered_areas.duplicate()
+		if not _hovered_areas.is_empty():
+			_hovered_areas.clear()
+			area_unhovered.emit()
+		# Disable hover detection in renderers — _process() will clear _is_hovered
+		if _zone_manager: _zone_manager.set_hover_active(false)
+		if _belt_manager: _belt_manager.set_hover_active(false)
+		if _ring_manager: _ring_manager.set_hover_active(false)
+	else:
+		# Re-enable detection first
+		if _zone_manager: _zone_manager.set_hover_active(true)
+		if _belt_manager: _belt_manager.set_hover_active(true)
+		if _ring_manager: _ring_manager.set_hover_active(true)
+		# Restore prior hover state so _process() can detect leave (false→true→false)
+		# and so the tooltip appears immediately without waiting one frame
+		if not _saved_hovered_areas.is_empty():
+			var saved_ids := _saved_hovered_areas.keys()
+			_hovered_areas = _saved_hovered_areas.duplicate()
+			_saved_hovered_areas.clear()
+			# Force _is_hovered=true on matching renderers; _process() corrects next frame
+			if _zone_manager: _zone_manager.restore_hovered_ids(saved_ids)
+			if _belt_manager: _belt_manager.restore_hovered_ids(saved_ids)
+			if _ring_manager: _ring_manager.restore_hovered_ids(saved_ids)
+			area_hovered.emit(_hovered_areas.values().back())
+
+
 func _on_area_hovered(id: String, display_name: String) -> void:
+	if not _area_hover_enabled:
+		return
 	_hovered_areas[id] = display_name
 	area_hovered.emit(display_name)
 
 
 func _on_area_unhovered(id: String) -> void:
+	if not _area_hover_enabled:
+		return  # Already cleared in set_area_hover_enabled; avoid duplicate emits
 	_hovered_areas.erase(id)
 	if _hovered_areas.is_empty():
 		area_unhovered.emit()
