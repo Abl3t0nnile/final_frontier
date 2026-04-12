@@ -26,17 +26,20 @@ const _UNIT_VALUE_DISPLAY = preload("res://ui/components/UnitValueDisplay.tscn")
 @onready var _zoom_btn: Button        = $MarginContainer/VBox/Header/ZoomButton
 @onready var _title_label: Label      = $MarginContainer/VBox/Header/TitleLabel
 @onready var _article_title: Label    = $MarginContainer/VBox/Article/Header/TitleLabel
-@onready var _summary_text: RichTextLabel = $MarginContainer/VBox/Article/ContentBox/Overview/SummaryText
-@onready var _hero_container: Control = $MarginContainer/VBox/Article/ContentBox/Overview/Panel/Hero
-@onready var _overview_panel: VBoxContainer = $MarginContainer/VBox/Article/ContentBox/Overview/Panel
+@onready var _summary_text: RichTextLabel = $MarginContainer/VBox/Article/ContentBox/VBox/Overview/SummaryText
+@onready var _hero_container: Control = $MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/Hero
+@onready var _overview_panel: VBoxContainer = $MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel
 
 # Data Panels (FoldableContainer – als Control typisiert)
-@onready var _orbit_data: Control   = $MarginContainer/VBox/Article/ContentBox/Overview/Panel/OrbitData
-@onready var _physics_data: Control = $MarginContainer/VBox/Article/ContentBox/Overview/Panel/PhysicsData
-@onready var _atmo_data: Control    = $MarginContainer/VBox/Article/ContentBox/Overview/Panel/AthmoData
+@onready var _orbit_data: Control        = $MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/OrbitData
+@onready var _parent_display: BodyLinkDisplay = $MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/OrbitData/VBox/ParentDisplay
+@onready var _physics_data: Control    = $MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/PhysicsData
+@onready var _atmo_data: Control       = $MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/AthmoData
+@onready var _satelite_data: Control   = $MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/SateliteData
+@onready var _satelite_list: RichTextLabel = $MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/SateliteData/SateliteList
 
-# Section Container (nach Overview)
-@onready var _article: VBoxContainer = $MarginContainer/VBox/Article
+# Section Container (VBox innerhalb ContentBox – Spacer + Overview sind statische Kinder)
+@onready var _content_vbox: VBoxContainer = $MarginContainer/VBox/Article/ContentBox/VBox
 
 # Hero-Image (TextureRect inside MarginContainer %Hero)
 var _hero_image: TextureRect
@@ -56,6 +59,9 @@ func _ready() -> void:
 	_back_btn.pressed.connect(_navigate_back)
 	_fwd_btn.pressed.connect(_navigate_forward)
 	_summary_text.meta_clicked.connect(_on_link_clicked)
+	_parent_display.body_link_pressed.connect(open_body)
+	_satelite_list.bbcode_enabled = true
+	_satelite_list.meta_clicked.connect(_on_link_clicked)
 	_update_nav_buttons()
 
 
@@ -249,6 +255,7 @@ func _build_body_overview(obj: GameObject) -> void:
 	_build_orbit_data(def)
 	_build_physics_data(def)
 	_build_atmo_data(def, content)
+	_build_satelite_list(def.id)
 
 
 func _build_orbit_data(def: BodyDef) -> void:
@@ -257,8 +264,14 @@ func _build_orbit_data(def: BodyDef) -> void:
 		return
 
 	_orbit_data.visible = true
-	var grid := _orbit_data.get_node("Grid") as GridContainer
+	var grid := _orbit_data.get_node("VBox/Grid") as GridContainer
 	_clear_grid(grid)
+
+	if not def.parent_id.is_empty():
+		var parent: BodyDef = SolarSystem.get_body(def.parent_id)
+		_parent_display.setup("Umkreist", def.parent_id, parent.name if parent else def.parent_id)
+	else:
+		_parent_display.clear()
 
 	var motion := def.motion
 	match motion.model:
@@ -394,7 +407,7 @@ func _render_text_section(section: Dictionary) -> void:
 		heading_label.text = heading
 		heading_label.add_theme_font_size_override("font_size", 16)
 		heading_label.add_theme_color_override("font_color", Color(0.94, 0.94, 0.94))
-		_article.add_child(heading_label)
+		_content_vbox.add_child(heading_label)
 
 	if not content.is_empty():
 		var rich_text := RichTextLabel.new()
@@ -403,7 +416,7 @@ func _render_text_section(section: Dictionary) -> void:
 		rich_text.fit_content = true
 		rich_text.custom_minimum_size.y = 0
 		rich_text.size_flags_vertical = Control.SIZE_SHRINK_CENTER
-		_article.add_child(rich_text)
+		_content_vbox.add_child(rich_text)
 		rich_text.meta_clicked.connect(_on_link_clicked)
 
 
@@ -416,7 +429,7 @@ func _render_gallery_section(section: Dictionary) -> void:
 		heading_label.text = heading
 		heading_label.add_theme_font_size_override("font_size", 16)
 		heading_label.add_theme_color_override("font_color", Color(0.94, 0.94, 0.94))
-		_article.add_child(heading_label)
+		_content_vbox.add_child(heading_label)
 
 	var gallery := HFlowContainer.new()
 	gallery.add_theme_constant_override("h_separation", 8)
@@ -432,7 +445,7 @@ func _render_gallery_section(section: Dictionary) -> void:
 			img_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 			gallery.add_child(img_rect)
 
-	_article.add_child(gallery)
+	_content_vbox.add_child(gallery)
 
 
 func _render_table_section(section: Dictionary) -> void:
@@ -445,7 +458,7 @@ func _render_table_section(section: Dictionary) -> void:
 		heading_label.text = heading
 		heading_label.add_theme_font_size_override("font_size", 16)
 		heading_label.add_theme_color_override("font_color", Color(0.94, 0.94, 0.94))
-		_article.add_child(heading_label)
+		_content_vbox.add_child(heading_label)
 
 	var table := GridContainer.new()
 	table.columns = headers.size()
@@ -463,23 +476,46 @@ func _render_table_section(section: Dictionary) -> void:
 			label.text = str(cell)
 			table.add_child(label)
 
-	_article.add_child(table)
+	_content_vbox.add_child(table)
 
 
 ## Helpers
+
+func _build_satelite_list(body_id: String) -> void:
+	var children: Array[BodyDef] = []
+	for obj: GameObject in GameRegistry.get_all_objects():
+		if obj.body_def.parent_id == body_id:
+			children.append(obj.body_def)
+
+	if children.is_empty():
+		_satelite_data.visible = false
+		return
+
+	_satelite_data.visible = true
+	var text := "[b]Monde & Satelliten[/b]\n"
+	for def: BodyDef in children:
+		var type_hint := ""
+		if not def.subtype.is_empty():
+			type_hint = " [color=#888888](%s)[/color]" % def.subtype
+		elif not def.type.is_empty():
+			type_hint = " [color=#888888](%s)[/color]" % def.type
+		text += "  • [url=body:%s]%s[/url]%s\n" % [def.id, def.name, type_hint]
+	_satelite_list.text = text
+
 
 func _clear_article_content() -> void:
 	_summary_text.text = ""
 	_hero_container.visible = false
 	_overview_panel.visible = false
+	_satelite_data.visible = false
 	_clear_sections()
 
 
 func _clear_sections() -> void:
-	# Statische Kinder: Header (0) + HSeparator (1) + ContentBox (2) – alles danach sind Sections
-	const STATIC_CHILDREN := 3
-	while _article.get_child_count() > STATIC_CHILDREN:
-		_article.get_child(STATIC_CHILDREN).queue_free()
+	# Statische Kinder in ContentBox/VBox: Spacer (0) + Overview (1) – alles danach sind Sections
+	const STATIC_CHILDREN := 2
+	for i in range(_content_vbox.get_child_count() - 1, STATIC_CHILDREN - 1, -1):
+		_content_vbox.get_child(i).queue_free()
 
 
 func _clear_grid(grid: GridContainer) -> void:
@@ -523,5 +559,3 @@ func _parent_mu(parent_id: String) -> float:
 		return 0.0
 	var p: BodyDef = SolarSystem.get_body(parent_id)
 	return p.grav_param_km3_s2 if p else 0.0
-
-

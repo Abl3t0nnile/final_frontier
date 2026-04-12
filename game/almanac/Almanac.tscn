@@ -8,13 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://b1qx4f57hy75q" path="res://assets/icons/ui/white/forward.png" id="4_hdqyh"]
 [ext_resource type="PackedScene" uid="uid://bpxdjhjimm5yy" path="res://ui/components/UnitValueDisplay.tscn" id="4_wgtfk"]
 [ext_resource type="Texture2D" uid="uid://l8m6lh2mhnbe" path="res://assets/icons/ui/white/target.png" id="5_qowm7"]
-[ext_resource type="FontFile" uid="uid://cysj7b68qqiw8" path="res://assets/fonts/SUSEMono-Bold.ttf" id="6_w4vcb"]
+[ext_resource type="LabelSettings" uid="uid://c0h2alu1tdmva" path="res://ui/resources/label_settings/label_settings_almanac_h1.tres" id="7_4nm25"]
+[ext_resource type="PackedScene" uid="uid://bnd83xit2lm4e" path="res://ui/components/BodyLinkDisplay.tscn" id="7_bld"]
+[ext_resource type="LabelSettings" uid="uid://bq52q1y2sb3ay" path="res://ui/resources/label_settings/label_settings_almanac_h2.tres" id="11_b0ch5"]
+[ext_resource type="Script" uid="uid://bbu75llcfgpvp" path="res://game/almanac/sub_section.gd" id="11_jb4x3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_b0ch5"]
-font_size = 32
-
-[sub_resource type="LabelSettings" id="LabelSettings_qowm7"]
-font = ExtResource("6_w4vcb")
 font_size = 32
 
 [node name="Almanac" type="PanelContainer" unique_id=1838614985]
@@ -100,7 +99,7 @@ layout_mode = 2
 [node name="TitleLabel" type="Label" parent="MarginContainer/VBox/Article/Header" unique_id=1737685456]
 layout_mode = 2
 text = "Article Title"
-label_settings = SubResource("LabelSettings_qowm7")
+label_settings = ExtResource("7_4nm25")
 uppercase = true
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBox/Article" unique_id=1803623976]
@@ -110,12 +109,22 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Overview" type="HBoxContainer" parent="MarginContainer/VBox/Article/ContentBox" unique_id=1197234601]
+[node name="VBox" type="VBoxContainer" parent="MarginContainer/VBox/Article/ContentBox" unique_id=1015275298]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBox/Article/ContentBox/VBox" unique_id=1078202562]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="Overview" type="HBoxContainer" parent="MarginContainer/VBox/Article/ContentBox/VBox" unique_id=1552714664]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="SummaryText" type="RichTextLabel" parent="MarginContainer/VBox/Article/ContentBox/Overview" unique_id=1181222208]
+[node name="SummaryText" type="RichTextLabel" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview" unique_id=1181222208]
 layout_mode = 2
 size_flags_horizontal = 3
 bbcode_enabled = true
@@ -127,73 +136,112 @@ Der Mond ist im Verhältnis zur Planetenmasse ungewöhnlich groß. Seine Gravita
 "
 fit_content = true
 
-[node name="Panel" type="VBoxContainer" parent="MarginContainer/VBox/Article/ContentBox/Overview" unique_id=2110886432]
+[node name="Panel" type="VBoxContainer" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview" unique_id=2110886432]
 custom_minimum_size = Vector2(480, 0)
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Hero" type="MarginContainer" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel" unique_id=860450107]
+[node name="Hero" type="MarginContainer" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel" unique_id=860450107]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Image" type="TextureRect" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel/Hero" unique_id=1939540305]
+[node name="Image" type="TextureRect" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/Hero" unique_id=1939540305]
 layout_mode = 2
 texture = ExtResource("4_gssl0")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="OrbitData" type="FoldableContainer" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel" unique_id=948194930]
+[node name="OrbitData" type="FoldableContainer" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel" unique_id=948194930]
 layout_mode = 2
 title = "ORBITAL DATEN"
 
-[node name="Grid" type="GridContainer" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel/OrbitData" unique_id=1064933122]
+[node name="VBox" type="VBoxContainer" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/OrbitData" unique_id=1004074551]
+layout_mode = 2
+
+[node name="ParentDisplay" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/OrbitData/VBox" unique_id=112233445 instance=ExtResource("7_bld")]
+layout_mode = 2
+
+[node name="Grid" type="GridContainer" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/OrbitData/VBox" unique_id=1064933122]
 layout_mode = 2
 theme_override_constants/h_separation = 16
 columns = 2
 
-[node name="UnitValueDisplay" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel/OrbitData/Grid" unique_id=375893399 instance=ExtResource("4_wgtfk")]
+[node name="UnitValueDisplay" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/OrbitData/VBox/Grid" unique_id=375893399 instance=ExtResource("4_wgtfk")]
 layout_mode = 2
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel" unique_id=1393381792]
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel" unique_id=1393381792]
 layout_mode = 2
 
-[node name="PhysicsData" type="FoldableContainer" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel" unique_id=1525752492]
+[node name="PhysicsData" type="FoldableContainer" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel" unique_id=1525752492]
 layout_mode = 2
+folded = true
 title = "PHYSIKALISCHE DATEN"
 
-[node name="Grid" type="GridContainer" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel/PhysicsData" unique_id=1671513938]
+[node name="Grid" type="GridContainer" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/PhysicsData" unique_id=1671513938]
+visible = false
 layout_mode = 2
 theme_override_constants/h_separation = 16
 columns = 2
 
-[node name="UnitValueDisplay" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel/PhysicsData/Grid" unique_id=590644221 instance=ExtResource("4_wgtfk")]
+[node name="UnitValueDisplay" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/PhysicsData/Grid" unique_id=590644221 instance=ExtResource("4_wgtfk")]
 layout_mode = 2
 
-[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel" unique_id=2100975980]
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel" unique_id=2100975980]
 layout_mode = 2
 
-[node name="AthmoData" type="FoldableContainer" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel" unique_id=27622522]
+[node name="AthmoData" type="FoldableContainer" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel" unique_id=27622522]
 layout_mode = 2
+folded = true
 title = "ATHMOSPHÄRISCHE DATEN"
 
-[node name="VBox" type="VBoxContainer" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel/AthmoData" unique_id=1943884056]
+[node name="VBox" type="VBoxContainer" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/AthmoData" unique_id=1943884056]
+visible = false
 layout_mode = 2
 
-[node name="Grid" type="GridContainer" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel/AthmoData/VBox" unique_id=188203920]
+[node name="Grid" type="GridContainer" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/AthmoData/VBox" unique_id=188203920]
 layout_mode = 2
 theme_override_constants/h_separation = 16
 columns = 2
 
-[node name="UnitValueDisplay" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel/AthmoData/VBox/Grid" unique_id=1840174611 instance=ExtResource("4_wgtfk")]
+[node name="UnitValueDisplay" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/AthmoData/VBox/Grid" unique_id=1840174611 instance=ExtResource("4_wgtfk")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel/AthmoData/VBox" unique_id=1089891171]
+[node name="Label" type="Label" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/AthmoData/VBox" unique_id=1089891171]
 layout_mode = 2
 text = "Hauptbestandteile"
 
-[node name="AtmoGasLabel" parent="MarginContainer/VBox/Article/ContentBox/Overview/Panel/AthmoData/VBox" unique_id=1527128674 instance=ExtResource("4_wgtfk")]
+[node name="AtmoGasLabel" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/AthmoData/VBox" unique_id=1527128674 instance=ExtResource("4_wgtfk")]
 layout_mode = 2
 caption = "Stickstoff (N)"
 unit = "%"
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel" unique_id=1371024259]
+layout_mode = 2
+
+[node name="SateliteData" type="FoldableContainer" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel" unique_id=852385016]
+layout_mode = 2
+folded = true
+title = "SATELITEN"
+
+[node name="SateliteList" type="RichTextLabel" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/SateliteData" unique_id=227886342]
+visible = false
+layout_mode = 2
+fit_content = true
+
+[node name="SubSection" type="VBoxContainer" parent="MarginContainer/VBox/Article/ContentBox/VBox" unique_id=1703360450]
+layout_mode = 2
+script = ExtResource("11_jb4x3")
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBox/Article/ContentBox/VBox/SubSection" unique_id=358332080]
+layout_mode = 2
+text = "Subsection"
+label_settings = ExtResource("11_b0ch5")
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBox/Article/ContentBox/VBox/SubSection" unique_id=2115941316]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBox/Article/ContentBox/VBox/SubSection" unique_id=1447300065]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
