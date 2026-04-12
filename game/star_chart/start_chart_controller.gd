@@ -156,9 +156,11 @@ func close_overlay() -> void:
 
 func toggle_planet_view() -> void:
 	if _view_mode == ViewMode.PLANET_VIEW:
-		_on_close_planet_view()
+		_set_view(ViewMode.MAP)
 	elif not _current_body_id.is_empty() and _planet_view != null:
-		_on_zoom_requested(_current_body_id)
+		_planet_view.call("load_body", _current_body_id)
+		_planet_view_overlay.load_body(_current_body_id)
+		_set_view(ViewMode.PLANET_VIEW)
 
 
 func toggle_time() -> void:
@@ -250,9 +252,7 @@ func _on_viewport_resized() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if not (event is InputEventKey and event.pressed and not event.echo):
 		return
-	if event.is_action_pressed("ui_close_overlay"):
-		close_overlay()
-	elif event.is_action_pressed("ui_toggle_nav"):
+	if event.is_action_pressed("ui_toggle_nav"):
 		toggle_nav_panel()
 	elif event.is_action_pressed("ui_toggle_info") and _view_mode == ViewMode.MAP:
 		toggle_info_panel()
