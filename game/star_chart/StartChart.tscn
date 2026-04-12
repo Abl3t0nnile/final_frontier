@@ -117,7 +117,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer" unique_id=1383873112]
 handle_input_locally = false
 use_hdr_2d = true
-size = Vector2i(1884, 991)
+size = Vector2i(936, 991)
 render_target_update_mode = 4
 
 [node name="MapOverlay" type="MarginContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer" unique_id=12944065]
@@ -242,7 +242,7 @@ popup/item_11/checkable = 1
 popup/item_11/id = 11
 
 [node name="GridButton" type="Button" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/MenuButtons" unique_id=857458798]
-custom_minimum_size = Vector2(60, 0)
+custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 tooltip_text = "Schaltet das Radiale Grid an und aus"
 toggle_mode = true
@@ -468,7 +468,6 @@ offset_right = 40.0
 offset_bottom = 21.0
 
 [node name="BodyView" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel" unique_id=1659349015]
-visible = false
 custom_minimum_size = Vector2(940, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -484,8 +483,8 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer" unique_id=1199682425]
 handle_input_locally = false
 use_hdr_2d = true
-size = Vector2i(2, 2)
-render_target_update_mode = 0
+size = Vector2i(936, 991)
+render_target_update_mode = 4
 
 [node name="PlanetViewOverlay" type="MarginContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer" unique_id=1624871091]
 z_index = 1
@@ -561,6 +560,7 @@ alignment = 2
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 size_flags_horizontal = 8
+size_flags_vertical = 0
 icon = ExtResource("5_5bfw3")
 icon_alignment = 1
 expand_icon = true
@@ -569,6 +569,7 @@ expand_icon = true
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 size_flags_horizontal = 8
+size_flags_vertical = 0
 icon = ExtResource("5_ki4up")
 icon_alignment = 1
 expand_icon = true

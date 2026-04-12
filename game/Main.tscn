@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dy3prfbgdcq52" path="res://game/star_chart/StartChart.tscn" id="2_8gaax"]
 [ext_resource type="Script" uid="uid://c1v3wo13h2efs" path="res://game/game_controller.gd" id="3_gamecontroller"]
 [ext_resource type="PackedScene" uid="uid://cx0qx7qyomjub" path="res://game/star_chart/PlanetView.tscn" id="3_madmh"]
+[ext_resource type="PackedScene" uid="uid://dg46e66pkmm57" path="res://game/MainMenu.tscn" id="6_fk7ia"]
 [ext_resource type="Shader" uid="uid://bti71qu06gbo0" path="res://assets/shaders/fx/crt_monitor.gdshader" id="6_yo8gm"]
 
 [sub_resource type="Environment" id="Environment_madmh"]
@@ -64,3 +65,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="MainMenu" parent="." unique_id=1287822065 instance=ExtResource("6_fk7ia")]

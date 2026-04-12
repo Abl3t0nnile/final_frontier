@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://dg46e66pkmm57"]
+
+[ext_resource type="Script" uid="uid://dv0bvybgke3ag" path="res://game/main_menu.gd" id="1_iek8j"]
+[ext_resource type="Theme" uid="uid://bjcahkix8bvsn" path="res://ui/resources/themes/ui_default_theme.tres" id="1_yqcqj"]
+[ext_resource type="Shader" uid="uid://duttwxgcqtue6" path="res://assets/shaders/fx/Blur.gdshader" id="3_8nu7y"]
+[ext_resource type="FontFile" uid="uid://dpe512ervf1h1" path="res://assets/fonts/Syncopate-Bold.ttf" id="4_iek8j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iek8j"]
+shader = ExtResource("3_8nu7y")
+shader_parameter/blur_amount = 10.0
+shader_parameter/lod = 2.000000095
+
+[node name="MainMenu" type="CanvasLayer" unique_id=1287822065]
+layer = 100
+script = ExtResource("1_iek8j")
+
+[node name="BlurShader" type="ColorRect" parent="." unique_id=266863942]
+material = SubResource("ShaderMaterial_iek8j")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MenuPanel" type="MarginContainer" parent="." unique_id=471534356]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -20.0
+offset_right = 75.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="PanelContainer" type="PanelContainer" parent="MenuPanel" unique_id=1990023550]
+layout_mode = 2
+theme = ExtResource("1_yqcqj")
+theme_type_variation = &"PanelContainerOutline"
+
+[node name="MarginContainer" type="MarginContainer" parent="MenuPanel/PanelContainer" unique_id=766923587]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPanel/PanelContainer/MarginContainer" unique_id=1609093929]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TitlePanel" type="PanelContainer" parent="MenuPanel/PanelContainer/MarginContainer/VBoxContainer" unique_id=750267872]
+layout_mode = 2
+theme_type_variation = &"PanelContainerSolid"
+
+[node name="TitleLabel" type="Label" parent="MenuPanel/PanelContainer/MarginContainer/VBoxContainer/TitlePanel" unique_id=1017239901]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+theme_override_fonts/font = ExtResource("4_iek8j")
+theme_override_font_sizes/font_size = 24
+text = "Main Menu"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="MenuPanel/PanelContainer/MarginContainer/VBoxContainer" unique_id=1092798478]
+layout_mode = 2
+
+[node name="VisualsLabel" type="Label" parent="MenuPanel/PanelContainer/MarginContainer/VBoxContainer" unique_id=864411]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_iek8j")
+theme_override_font_sizes/font_size = 18
+text = "Visuals"
+horizontal_alignment = 1
+
+[node name="CrtEffectButton" type="Button" parent="MenuPanel/PanelContainer/MarginContainer/VBoxContainer" unique_id=783263270]
+layout_mode = 2
+text = "CRT Effekt"
+
+[node name="HSeparator2" type="HSeparator" parent="MenuPanel/PanelContainer/MarginContainer/VBoxContainer" unique_id=1670662672]
+layout_mode = 2
+
+[node name="MenuButtons" type="HBoxContainer" parent="MenuPanel/PanelContainer/MarginContainer/VBoxContainer" unique_id=380760741]
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="MenuPanel/PanelContainer/MarginContainer/VBoxContainer/MenuButtons" unique_id=1303303069]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Resume"
+
+[node name="QuitButton" type="Button" parent="MenuPanel/PanelContainer/MarginContainer/VBoxContainer/MenuButtons" unique_id=1466854710]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Quit"
