@@ -1,7 +1,11 @@
 id = "thebe"
 
 description = """\
-[b]Thebe[/b]
+[b]Thebe[/b] ist ein kleiner, unregelmäßig geformter Mond des [url=body:jupiter]Jupiter[/url] mit einem mittleren Radius von ~49 km. Er wurde 1979 von Voyager 1 entdeckt.
+
+Thebe befindet sich bei ~222.000 km von Jupiter auf einer Bahn zwischen [url=body:amalthea]Amalthea[/url] und [url=body:io]Io[/url] und speist mit seinen Einschlagsejekta den äußeren [b]Thebe-Gossamer-Ring[/b] des Jupitersystems. Wie Amalthea ist er in gebundener Rotation, hat eine dunkel-rote Oberfläche (Albedo ~0,047) und ist von [url=body:io]Io[/url]-Schwefel gezeichnet.
+
+Thebe ist unregelmäßig geformt (~116 × 98 × 84 km) und stark krateriert. Sein Umlauf dauert nur ~16 Stunden — auch er liegt innerhalb der synchronen Umlaufbahn Jupiters. Wie Metis und Amalthea ist Thebe damit gravitativ dem langfristigen Abtrieb ausgesetzt. Das Gossamer-Ringsystem aus Amalthea- und Thebe-Material ist so dünn und ausgedehnt, dass es erst durch Galileo-Bilder in den 1990ern vollständig kartiert werden konnte.
 
 [b]Etymologie[/b]
 After Θήβη (Thḗbē), Nymphe, Geliebte Zeus', Mutter von Aigypios.
@@ -9,11 +13,6 @@ After Θήβη (Thḗbē), Nymphe, Geliebte Zeus', Mutter von Aigypios.
 [b]Entdeckung[/b]
 Datum: 1979-03-05 (Voyager 1)
 Entdecker: Stephen Synnott (Voyager 1)
-
-[b]Physikalische Eigenschaften[/b]
-[b]Thebe[/b] ist ein kleiner, unregelmäßig geformter Mond des [url=body:jupiter]Jupiter[/url] mit einem mittleren Radius von ~49 km. Er wurde 1979 von Voyager 1 entdeckt.
-
-Thebe befindet sich zwischen den Bahnen von [url=body:amalthea]Amalthea[/url] und [url=body:io]Io[/url] und trägt Material zum äußeren Rand von Jupiters Gossamer-Ringsystem bei. Wie Amalthea ist er in gebundener Rotation und hat eine dunkel-rote Oberfläche.
 """
 
 [infobox.atmosphere]

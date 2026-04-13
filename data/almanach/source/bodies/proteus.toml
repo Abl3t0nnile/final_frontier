@@ -1,7 +1,11 @@
 id = "proteus"
 
 description = """\
-[b]Proteus[/b]
+[b]Proteus[/b] ist der zweitgrößte Mond des [url=body:neptune]Neptun[/url] und ein unregelmäßig geformter, dunkler Körper mit einem mittleren Radius von ~210 km. Er wurde 1989 von Voyager 2 entdeckt — zu dunkel und zu nah an Neptun, um von der Erde aus sichtbar zu sein.
+
+Proteus liegt mit ~117.600 km Abstand zu Neptun knapp außerhalb des Adams-Rings und ist nach dem gestaltwandelnden Meeresgott der griechischen Mythologie benannt. Seine Oberfläche ist eine der dunkelsten im Sonnensystem (Albedo ~0,096) und schwer krateriert — das größte Merkmal ist [b]Pharos[/b], ein Krater von ~230 km Durchmesser, fast ein Drittel des Mondradius.
+
+Proteus ist trotz seiner Größe — mit ~436 × 416 × 402 km der zweitgrößte Neptunmond nach [url=body:triton]Triton[/url] — erst 1989 von Voyager 2 entdeckt worden, weil er zu nah an Neptun steht und zu dunkel ist, um irdischen Teleskopen sichtbar zu sein. Er ist knapp groß genug, um durch Eigengravi­tation annähernd rund zu sein, zeigt aber noch deutliche Abweichungen von der Kugelform. Über seine innere Zusammensetzung oder mögliche geologische Geschichte ist kaum etwas bekannt.
 
 [b]Etymologie[/b]
 Nach Πρωτεύς (Prōteús), Meeresgott, Gestaltwandler, Diener Poseidons.
@@ -9,11 +13,6 @@ Nach Πρωτεύς (Prōteús), Meeresgott, Gestaltwandler, Diener Poseidons.
 [b]Entdeckung[/b]
 Datum: 1989-06-16 (Voyager 2)
 Entdecker: Voyager 2 Imaging Team
-
-[b]Physikalische Eigenschaften[/b]
-[b]Proteus[/b] ist der zweitgrößte Mond des [url=body:neptune]Neptun[/url] und ein unregelmäßig geformter, dunkler Körper mit einem mittleren Radius von ~210 km. Er wurde 1989 von Voyager 2 entdeckt — zu dunkel und zu nah an Neptun, um von der Erde aus sichtbar zu sein.
-
-Proteus liegt innerhalb der Bahn von [url=body:triton]Triton[/url] und ist nach dem Meeresgott der griechischen Mythologie benannt. Seine Oberfläche ist stark kraternarbt.
 """
 
 [infobox.atmosphere]

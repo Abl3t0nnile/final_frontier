@@ -1,0 +1,21 @@
+id = "neowise"
+
+description = """\
+[b]C/2020 F3 NEOWISE[/b] war der hellste Komet der nördlichen Hemisphäre seit [url=body:hale_bopp]Hale-Bopp[/url] (1997). Im Juli 2020 war er mit bloßem Auge sichtbar und begeisterte Millionen von Beobachtern weltweit während der COVID-19-Pandemie.
+
+Mit einer extremen [url=concept:eccentricity]Exzentrizität[/url] von 0,9992 hat NEOWISE eine der elliptischsten Bahnen unter den bekannten Kometen. Sein Perihel liegt bei nur 0,29 AU (innerhalb der Merkurbahn), sein Aphel bei ~715 AU. Die Umlaufzeit beträgt ~6.800 Jahre.
+
+Der Kern hat einen Durchmesser von ~5 km. Bei seiner Sonnenannäherung überlebte er die intensive Hitze und entwickelte einen ausgeprägten Staubschweif.
+
+[b]Etymologie[/b]
+Nach dem NASA-Weltraumteleskop NEOWISE (Near-Earth Object Wide-field Infrared Survey Explorer).
+
+[b]Entdeckung[/b]
+Datum: 2020-03-27
+Entdecker: NEOWISE-Mission (automatisch)
+"""
+
+[infobox.atmosphere]
+temp_mean = -90
+temp_min = -260
+temp_max = 200

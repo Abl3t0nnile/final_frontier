@@ -1,7 +1,11 @@
 id = "amalthea"
 
 description = """\
-[b]Amalthea[/b]
+[b]Amalthea[/b] ist der drittinnerste Mond des [url=body:jupiter]Jupiter[/url] und mit einem Durchmesser von ~168 km entlang seiner längsten Achse eines der größten irregulären Monde. Er hat eine tief rote Farbe — eine der rötesten Oberflächen im Sonnensystem.
+
+Amalthea ist in gebundener Rotation und strahlt mehr Wärme ab als sie von der Sonne empfängt — die Quelle ist Jupiters Magnetfeld, das Ströme in dem leitenden Körper induziert. Der Mond wurde 1892 von Edward Barnard entdeckt, als letzter Mond per direkter Sichtbeobachtung (alle späteren Entdeckungen erforderten fotografische Verfahren).
+
+Amaltheas unregelmäßige Kartoffelform (~252 × 146 × 128 km) trägt zwei große Einschlagkrater: [b]Pan[/b] (~100 km) und [b]Gaea[/b] (~80 km), deren Flanken hell schimmernde Flecken aufweisen — vermutlich Schwefeldepots, die von [url=body:io]Io[/url] stammen und durch Jupiters Magnetfeld auf die Oberfläche gelenkt werden. Mit einem Umlauf von nur ~11,9 Stunden liegt Amalthea deutlich innerhalb der synchronen Umlaufbahn Jupiters. Durch Gezeitenkräfte sinkt ihre Bahn auf geologischen Zeitskalen weiter ab. Einschläge auf ihrer Oberfläche schleudern Staub in den inneren [b]Gossamer-Ring[/b] des Jupitersystems, dessen äußerer Teil von Amalthea gespeist wird.
 
 [b]Etymologie[/b]
 Nach Ἀμάλθεια (Amáltheia), Ziege, die das Zeus-Kind nährte.
@@ -9,11 +13,6 @@ Nach Ἀμάλθεια (Amáltheia), Ziege, die das Zeus-Kind nährte.
 [b]Entdeckung[/b]
 Datum: 1892-09-09
 Entdecker: Edward Emerson Barnard
-
-[b]Physikalische Eigenschaften[/b]
-[b]Amalthea[/b] ist der drittinnerste Mond des [url=body:jupiter]Jupiter[/url] und mit einem Durchmesser von ~168 km entlang seiner längsten Achse eines der größten irregulären Monde. Er hat eine tief rote Farbe — eine der rötesten Oberflächen im Sonnensystem.
-
-Amalthea ist in gebundener Rotation und strahlt mehr Wärme ab als sie von der Sonne empfängt — die Quelle ist Jupiters Magnetfeld, das Ströme in dem leitenden Körper induziert. Der Mond wurde 1892 von Edward Barnard entdeckt, als letzter Mond per direkter Sichtbeobachtung.
 """
 
 [infobox.atmosphere]

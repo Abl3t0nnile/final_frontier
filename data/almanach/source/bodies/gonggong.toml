@@ -1,16 +1,6 @@
 id = "gonggong"
 
 description = """\
-[b]Gonggong[/b]
-
-[b]Etymologie[/b]
-Nach dem chinesischen Wassergott 共工 (Gònggōng). Namensgebung 2019.
-
-[b]Entdeckung[/b]
-Datum: 2007-07-17 (Bilder), 2009 (Ankündigung)
-Entdecker: Megan E. Schwamb, Michael E. Brown, David L. Rabinowitz
-
-[b]Physikalische Eigenschaften[/b]
 [b]Gonggong[/b] ist ein großes transneptunisches Objekt mit einem geschätzten Durchmesser von ~1.230 km (aus Okkultationsmessungen 2019), benannt nach dem chinesischen Wassergott, der der Legende nach in einem Kampf die Weltachse verschob — und damit für die Neigung der Erdachse verantwortlich ist. Er wurde 2007 von Megan Schwamb, Michael Brown und David Rabinowitz mit dem Samuel-Oschin-Teleskop am Palomar-Observatorium entdeckt. Aufgrund seiner Größe gilt er als wahrscheinlicher Zwergplanet, wurde aber von der IAU noch nicht offiziell klassifiziert.
 
 Gonggong befindet sich auf einer stark geneigten Bahn (~30° zur Ekliptik) mit hoher Exzentrizität (~0,50): Er pendelt zwischen ~33 AU (Perihel) und ~101 AU (Aphel) mit einer Umlaufzeit von ~556 Jahren. Diese Bahnparameter ordnen ihn der [url=concept:scattered_disc][b]Streuscheibe[/b][/url] zu — ähnlich wie [url=body:eris]Eris[/url]. Er befindet sich derzeit bei etwa 89 AU von der Sonne — einer der weitesten aktuellen Positionen großer TNOs.
@@ -18,6 +8,13 @@ Gonggong befindet sich auf einer stark geneigten Bahn (~30° zur Ekliptik) mit h
 Die Oberfläche ist tief rot (eine der rötesten unter den großen TNOs), was auf einen hohen Anteil von [url=concept:tholins][b]Tholine[/b][/url] hindeutet — komplexe organische Moleküle, die durch UV- und kosmische Strahlung aus Methan und Stickstoff entstehen. Spektren zeigen außerdem Wassereis. Gonggongs extreme Rötung ähnelt der von Sedna und anderen sehr weit entfernten Objekten, deren Oberflächen durch Milliarden Jahre Strahlung chemisch verändert wurden.
 
 Sein Mond [url=body:xiangliu]Xiangliu[/url] wurde 2016 mit dem Hubble-Weltraumteleskop entdeckt und umkreist Gonggong in ~25,2 Tagen. Die Bahnanalyse erlaubte eine Massebestimmung Gonggongs und unterstützte die Einschätzung seines Zwergplanetenstatus. Kein Raumfahrzeug hat Gonggong bisher besucht.
+
+[b]Etymologie[/b]
+Nach dem chinesischen Wassergott 共工 (Gònggōng). Namensgebung 2019.
+
+[b]Entdeckung[/b]
+Datum: 2007-07-17 (Bilder), 2009 (Ankündigung)
+Entdecker: Megan E. Schwamb, Michael E. Brown, David L. Rabinowitz
 """
 
 [infobox.atmosphere]

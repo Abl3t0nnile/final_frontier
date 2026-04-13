@@ -1,7 +1,11 @@
 id = "umbriel"
 
 description = """\
-[b]Umbriel[/b]
+[b]Umbriel[/b] ist der dunkelste der großen Uranusmonde und zeigt die älteste, stärker eingeschlagene Oberfläche. Er ist nach einem dunklen Geist in Alexander Popes "Der Lockenraub" benannt.
+
+Umbriel (Radius ~585 km) hat eine Albedo von nur ~0,26 — deutlich dunkler als Ariel oder Titania. Seine stark kraterierte Oberfläche ist geologisch die älteste der großen Uranusmond-Familie und zeigt kaum Anzeichen tektonischer oder kryovulkanischer Aktivität. Das spricht dafür, dass Umbriel nach der frühen Abkühlungsphase kaum innere Wärme erzeugte.
+
+Das rätselhafteste Merkmal ist [b]Wunda[/b]: ein 131 km großer Krater auf dem Äquator, in dessen Boden sich ein heller Ring befindet. Er könnte aus CO₂-Frost oder frisch freigeleg­tem Wassereis bestehen, oder aus einer chemisch abweichenden Ablagerung. Die dunkle Grundfärbung wird einem Belag aus kohlenstoffhaltigen Verbindungen oder durch Raumverwitterung zersetztem Methaneis (Tholine) zugeschrieben — der gleiche Prozess, der auch auf Titania und anderen dunklen Körpern wirkt. Voyager 2 fotografierte 1986 nur die südliche Hemisphäre.
 
 [b]Etymologie[/b]
 Nach Umbriel (düsterer Geist aus Popes 'The Rape of the Lock').
@@ -9,11 +13,6 @@ Nach Umbriel (düsterer Geist aus Popes 'The Rape of the Lock').
 [b]Entdeckung[/b]
 Datum: 1851-10-24
 Entdecker: William Lassell
-
-[b]Physikalische Eigenschaften[/b]
-[b]Umbriel[/b] ist der dunkelste der großen Uranusmonde und zeigt die älteste, stärker eingeschlagene Oberfläche. Er ist nach einem dunklen Geist in Alexander Popes "Der Lockenraub" benannt.
-
-Seine dunkle Oberfläche ist wenig reflektiv und zeigt kaum Zeichen geologischer Aktivität. Ein heller Ring im Krater Wunda auf dem Äquator ist ein auffälliges Merkmal, dessen Zusammensetzung noch ungeklärt ist.
 """
 
 [infobox.atmosphere]

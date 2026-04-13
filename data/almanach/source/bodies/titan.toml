@@ -1,16 +1,6 @@
 id = "titan"
 
 description = """\
-[b]Titan[/b]
-
-[b]Etymologie[/b]
-Nach den Τιτᾶνες (Titanes), Urgeschlecht der griechischen Götter.
-
-[b]Entdeckung[/b]
-Datum: 1655-03-25
-Entdecker: Christiaan Huygens
-
-[b]Physikalische Eigenschaften[/b]
 [b]Titan[/b] ist der größte Mond des [url=body:saturn]Saturn[/url] mit einem Radius von 2.576 km — größer als Merkur. Er ist der einzige Mond im Sonnensystem mit einer dichten Atmosphäre: 94,2 % Stickstoff, ~5,65 % Methan, Spuren von Ethan, Acetylen und anderen organischen Verbindungen. Mit 1,467 bar Oberflächendruck (1,5-mal der Erddruck) und −179 °C liegt Titan exakt im Temperaturbereich, in dem Methan alle drei Aggregatzustände einnehmen kann — analog zum Wasser auf der Erde.
 
 Auf Titan existiert ein vollständiger [b]Methankreislauf[/b]: Methan verdunstet von der Oberfläche, kondensiert in der Troposphäre zu Wolken und fällt als Regen auf die Oberfläche zurück. Methanseen und -meere konzentrieren sich an den Polen, insbesondere um den Nordpol. Der größte See, [b]Kraken Mare[/b], ist mit ~400.000 km² größer als das Kaspische Meer. Zwischen den Polen dominieren Sanddünen aus dunklen organischen Partikeln ([url=concept:tholins]Tholine[/url]), die durch UV-Strahlung aus Methan und Stickstoff entstehen — darunter liegt ein Eis-Gestein-Gemisch aus Wassereis und Silikaten.
@@ -18,6 +8,13 @@ Auf Titan existiert ein vollständiger [b]Methankreislauf[/b]: Methan verdunstet
 Der [b]Huygens-Lander[/b] der ESA setzte am 14. Januar 2005 auf Titan auf — der einzige Lander bisher im äußeren Sonnensystem — und übertrug 72 Minuten lang Daten vom Boden: Bilder zeigten gerundete, durch Flüssigkeit erodierte Steine, Hinweise auf Methanregen und ein Flusssystem. Der Cassini-Orbiter (1997–2017) kartierte Titans Oberfläche durch Radarmessungen trotz der undurchdringlichen Dunstatmosphäre.
 
 Die NASA-Mission [b]Dragonfly[/b] (Start geplant 2028, Ankunft ~2034) wird ein nuklearbetriebenes Drehflügler-Fahrzeug auf Titan absetzen, das verschiedene Standorte auf der Oberfläche anfliegen und untersuchen kann — darunter organisch reiche Dünengebiete und einen alten Einschlagkrater namens Selk. Titan ist astrobiologisch bedeutsam: Obwohl flüssiges Wasser fehlt, bietet die chemisch reich bestückte Umgebung ein Modell für präbiotische Chemie unter nicht-wässrigen Bedingungen.
+
+[b]Etymologie[/b]
+Nach den Τιτᾶνες (Titanes), Urgeschlecht der griechischen Götter.
+
+[b]Entdeckung[/b]
+Datum: 1655-03-25
+Entdecker: Christiaan Huygens
 """
 
 [infobox.atmosphere]

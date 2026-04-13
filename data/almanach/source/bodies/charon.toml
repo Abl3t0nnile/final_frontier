@@ -1,7 +1,11 @@
 id = "charon"
 
 description = """\
-[b]Charon[/b]
+[b]Charon[/b] ist der größte Mond des [url=body:pluto]Pluto[/url] und im Verhältnis zum Hauptkörper der massereichste Mond im Sonnensystem. Mit einem Durchmesser von ~1.212 km ist er etwa halb so groß wie Pluto selbst.
+
+Pluto und Charon bilden ein echtes Doppelsystem: Ihr gemeinsamer Schwerpunkt (Baryzentrum) liegt außerhalb beider Körper. Beide sind in gebundener Rotation — sie zeigen sich stets dieselbe Seite.
+
+New Horizons zeigte 2015 eine vielfältige Oberfläche mit einem rötlichen Nordpolgebiet (Mordor Macula), das durch von Pluto übergeströmtes Methan entsteht, welches durch UV-Strahlung zu Tholine wird.
 
 [b]Etymologie[/b]
 After Χάρων (Chárōn), Fährmann der Toten. 'C-H' = Christy + Charlene.
@@ -9,13 +13,6 @@ After Χάρων (Chárōn), Fährmann der Toten. 'C-H' = Christy + Charlene.
 [b]Entdeckung[/b]
 Datum: 1978-06-22 (Aufnahme), 1978-07-07 (Bestätigung)
 Entdecker: James W. Christy
-
-[b]Physikalische Eigenschaften[/b]
-[b]Charon[/b] ist der größte Mond des [url=body:pluto]Pluto[/url] und im Verhältnis zum Hauptkörper der massereichste Mond im Sonnensystem. Mit einem Durchmesser von ~1.212 km ist er etwa halb so groß wie Pluto selbst.
-
-Pluto und Charon bilden ein echtes Doppelsystem: Ihr gemeinsamer Schwerpunkt (Baryzentrum) liegt außerhalb beider Körper. Beide sind in gebundener Rotation — sie zeigen sich stets dieselbe Seite.
-
-New Horizons zeigte 2015 eine vielfältige Oberfläche mit einem rötlichen Nordpolgebiet (Mordor Macula), das durch von Pluto übergeströmtes Methan entsteht, welches durch UV-Strahlung zu Tholine wird.
 """
 
 [infobox.atmosphere]

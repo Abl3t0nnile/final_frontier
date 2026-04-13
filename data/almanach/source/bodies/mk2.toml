@@ -1,21 +1,18 @@
 id = "mk2"
 
 description = """\
-[b]Mk2[/b]
-
-[b]Etymologie[/b]
-Benennung nach mythologischer oder kultureller Referenz.
-
-[b]Entdeckung[/b]
-Datum: Entdeckungsdatum nicht spezifiziert.
-Entdecker: —
-
-[b]Physikalische Eigenschaften[/b]
 [b]MK2[/b] (offiziell S/2015 (136472) 1) ist der einzige bekannte Mond des [url=body:makemake]Makemake[/url], entdeckt 2016 mit dem Hubble-Weltraumteleskop.
 
 Er ist bemerkenswert dunkel mit einer Albedo von nur ~0,04 — viel dunkler als Makemake selbst. Diese Eigenschaft schloss eine globale Atmosphäre auf Makemake nahezu aus: Wäre eine solche vorhanden, würde die atmosphärische Bremsung den Mond auf eine engere Bahn ziehen.
 
 Mit einem Radius von ~87 km umkreist er Makemake in ~12.4 Tagen auf einer geneigten Bahn.
+
+[b]Etymologie[/b]
+Vorläufige Bezeichnung S/2015 (136472) 1; offizieller Name noch nicht vergeben (Stand 2024). Inoffiziell als "MK2" bekannt, nach dem Hauptkörper Makemake.
+
+[b]Entdeckung[/b]
+Datum: 2016-04-26 (identifiziert in Archivaufnahmen vom April 2015)
+Entdecker: Alex Parker et al. (Hubble-Weltraumteleskop)
 """
 
 [infobox.atmosphere]

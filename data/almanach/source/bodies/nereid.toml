@@ -1,7 +1,11 @@
 id = "nereid"
 
 description = """\
-[b]Nereid[/b]
+[b]Nereid[/b] ist ein irregulärer Mond des [url=body:neptune]Neptun[/url] mit einer der exzentrischsten Mondbahnen im Sonnensystem ([url=concept:eccentricity]Exzentrizität[/url] ~0,75). Sein Abstand zu Neptun schwankt zwischen ~1,4 und ~9,7 Millionen km.
+
+Er wurde 1949 von Gerard Kuiper entdeckt und ist nach den Nymphen des Meeres in der griechischen Mythologie benannt. Seine extreme Exzentrizität ist der Schlüssel zur Geschichte des Neptun-Systems: Als Triton — wahrscheinlich ein eingefangenes Kuipergürtel-Objekt — in eine retrograde Bahn gezwungen wurde, zerstörte das gravitative Chaos die ursprünglichen Bahnen aller damaligen Neptunmonde. Nereid überlebte als einziger regulärer Mond, aber auf einer stark verzerrten Bahn.
+
+Nereid ist unregelmäßig geformt mit einem mittleren Radius von ~170 km und hat eine sehr dunkle Oberfläche (Albedo ~0,16). Voyager 2 passierte ihn 1989 aus ~4,7 Millionen km Entfernung — zu weit für Details. Langzeitbeobachtungen vom Boden zeigen starke Helligkeitsschwankungen im Stunden- bis Tagesbereich, was auf eine unregelmäßige Form oder eine heterogene Oberfläche hindeutet. Seine Umlaufzeit beträgt ~360 Erdtage — fast exakt ein Jahr, aber um Neptun.
 
 [b]Etymologie[/b]
 Nach Νηρηΐδες (Nērēḯdes), die 50 Meeresnymphen, Töchter Nereus'.
@@ -9,11 +13,6 @@ Nach Νηρηΐδες (Nērēḯdes), die 50 Meeresnymphen, Töchter Nereus'.
 [b]Entdeckung[/b]
 Datum: 1949-05-01
 Entdecker: Gerard Kuiper
-
-[b]Physikalische Eigenschaften[/b]
-[b]Nereid[/b] ist ein irregulärer Mond des [url=body:neptune]Neptun[/url] mit einer der exzentrischsten Mondbahnen im Sonnensystem ([url=concept:eccentricity]Exzentrizität[/url] ~0,75). Sein Abstand zu Neptun schwankt zwischen ~1,4 und ~9,7 Millionen km.
-
-Er wurde 1949 von Gerard Kuiper entdeckt und ist nach den Nymphen des Meeres in der griechischen Mythologie benannt. Seine hohe Exzentrizität deutet darauf hin, dass seine Bahn durch den Einfang von [url=body:triton]Triton[/url] stark gestört wurde.
 """
 
 [infobox.atmosphere]

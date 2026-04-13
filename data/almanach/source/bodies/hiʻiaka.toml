@@ -1,21 +1,18 @@
 id = "hiʻiaka"
 
 description = """\
-[b]Hiʻiaka[/b]
-
-[b]Etymologie[/b]
-Benennung nach mythologischer oder kultureller Referenz.
-
-[b]Entdeckung[/b]
-Datum: Entdeckungsdatum nicht spezifiziert.
-Entdecker: —
-
-[b]Physikalische Eigenschaften[/b]
 [b]Hiʻiaka[/b] ist der größere der beiden bekannten Monde des [url=body:haumea]Haumea[/url] und nach der hawaiianischen Göttin der Insel Hawaiʻi benannt — einer Tochter von Haumea.
 
 Mit einem Radius von ~160 km umkreist er Haumea in ~49.462 Tagen auf einer fast kreisförmigen Bahn. Seine Oberfläche zeigt Wassereis-Absorptionsbanden, die denen Haumeas ähneln, und deutet auf einen gemeinsamen Ursprung durch eine Kollision hin.
 
 Hiʻiaka und [url=body:namaka]Namaka[/url] wurden 2005 mit dem Hubble-Weltraumteleskop entdeckt.
+
+[b]Etymologie[/b]
+Nach Hiʻiakaikapoliopele, der jüngsten Schwester der Feuergöttin Pele in der hawaiianischen Mythologie — Göttin der Insel Hawaiʻi, der Heilpflanzen und des Hula-Tanzes; Tochter von Haumea.
+
+[b]Entdeckung[/b]
+Datum: 2005-01-26
+Entdecker: Michael Brown, Kristina Barkume, Emily Schaller (Keck-Observatorium, Mauna Kea)
 """
 
 [infobox.atmosphere]

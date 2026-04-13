@@ -1,21 +1,18 @@
 id = "dysnomia"
 
 description = """\
-[b]Dysnomia[/b]
-
-[b]Etymologie[/b]
-Benennung nach mythologischer oder kultureller Referenz.
-
-[b]Entdeckung[/b]
-Datum: Entdeckungsdatum nicht spezifiziert.
-Entdecker: —
-
-[b]Physikalische Eigenschaften[/b]
 [b]Dysnomia[/b] ist der einzige bekannte Mond des [url=body:eris]Eris[/url] und nach der Tochter der Göttin Eris — der Göttin der Gesetzlosigkeit — benannt.
 
 Er umkreist Eris in ~15.786 Tagen auf einer nahezu kreisförmigen Bahn. Die Analyse seiner Bahn erlaubte eine präzise Massebestimmung von Eris und zeigte, dass dieser schwerer als Pluto ist — ein Schlüsselergebnis in der Debatte um die Planetendefinition.
 
 Dysnomia ist wahrscheinlich das Ergebnis einer Kollision in der frühen Geschichte des Eris-Systems.
+
+[b]Etymologie[/b]
+Nach Δυσνομία (Dysnomía), Tochter der Göttin Eris in der griechischen Mythologie — Personifikation von Gesetzlosigkeit und Unrecht; passend zur Benennung des Hauptkörpers Eris (Göttin der Zwietracht).
+
+[b]Entdeckung[/b]
+Datum: 2005-09-10
+Entdecker: Michael Brown, Chad Trujillo, David Rabinowitz (Keck-Observatorium, Mauna Kea)
 """
 
 [infobox.atmosphere]

@@ -1,7 +1,11 @@
 id = "triton"
 
 description = """\
-[b]Triton[/b]
+[b]Triton[/b] ist der größte Mond des [url=body:neptune]Neptun[/url] und einzigartig: Er umkreist seinen Planeten retrograd — als einziger großer Mond im Sonnensystem. Dies ist der klare Beweis, dass er nicht gemeinsam mit Neptun entstanden, sondern ein eingefangenes Objekt aus dem [url=concept:kuiper_belt]Kuipergürtel[/url] ist.
+
+Triton ist geologisch aktiv: Voyager 2 beobachtete 1989 stickstoffausstoßende Geysire. Seine Oberfläche aus Stickstoff- und Methaneis ist eine der kältesten bekannten im Sonnensystem (~-235 °C).
+
+Durch Gezeitenbremsung nähert sich Triton langsam Neptun. In ~3,6 Milliarden Jahren wird er die [url=concept:roche_limit]Roche-Grenze[/url] unterschreiten und zu einem Ringsystem zerbrechen.
 
 [b]Etymologie[/b]
 Nach Τρίτων (Trítōn), Sohn Poseidons/Neptuns, Meeresgott mit Dreizack.
@@ -9,13 +13,6 @@ Nach Τρίτων (Trítōn), Sohn Poseidons/Neptuns, Meeresgott mit Dreizack.
 [b]Entdeckung[/b]
 Datum: 1846-10-10 (16 Tage nach Neptun)
 Entdecker: William Lassell
-
-[b]Physikalische Eigenschaften[/b]
-[b]Triton[/b] ist der größte Mond des [url=body:neptune]Neptun[/url] und einzigartig: Er umkreist seinen Planeten retrograd — als einziger großer Mond im Sonnensystem. Dies ist der klare Beweis, dass er nicht gemeinsam mit Neptun entstanden, sondern ein eingefangenes Objekt aus dem [url=concept:kuiper_belt]Kuipergürtel[/url] ist.
-
-Triton ist geologisch aktiv: Voyager 2 beobachtete 1989 stickstoffausstoßende Geysire. Seine Oberfläche aus Stickstoff- und Methaneis ist eine der kältesten bekannten im Sonnensystem (~-235 °C).
-
-Durch Gezeitenbremsung nähert sich Triton langsam Neptun. In ~3,6 Milliarden Jahren wird er die [url=concept:roche_limit]Roche-Grenze[/url] unterschreiten und zu einem Ringsystem zerbrechen.
 """
 
 [infobox.atmosphere]

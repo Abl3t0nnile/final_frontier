@@ -1,7 +1,11 @@
 id = "himalia"
 
 description = """\
-[b]Himalia[/b]
+[b]Himalia[/b] ist der größte der irregulären Monde des [url=body:jupiter]Jupiter[/url] mit einem Durchmesser von ~170 km. Er ist der Namensgeber der Himalia-Gruppe — einer Familie progrder irregulärer Jupitermonde mit ähnlichen Bahnparametern, die vermutlich aus demselben Ursprungskörper stammen.
+
+Seine Bahn liegt weit außerhalb der Galileischen Monde in ~11,5 Millionen km Abstand mit einer Umlaufzeit von ~250 Tagen und einer Inklination von ~28°. Spektralanalysen zeigen eine dunkle, rötliche Oberfläche (Albedo ~0,06) ähnlich C- oder D-Typ-Asteroiden aus dem äußeren Asteroidengürtel — ein Hinweis auf primitives, kohlenstoffreiches Material.
+
+Die [b]Himalia-Gruppe[/b] umfasst Himalia, Elara, Leda, Lysithea sowie die neueren Entdeckungen Ersa und Pandia — alle mit nahezu identischen Bahnelementen. Die Hypothese ist, dass dieser gesamte Cluster aus einem einzigen eingefangenen Körper stammt, der durch eine spätere Kollision in Fragmente zerbrach. Die Sonde Cassini fotografierte Himalia im Jahr 2000 während ihres Vorbeiflugs am Jupiter auf dem Weg zu Saturn — winzig klein im Bild, aber erkennbar als erster irregulärer Jupitermond überhaupt aus nächster Nähe.
 
 [b]Etymologie[/b]
 Nach Ἱμαλία (Himalia), Nymphe, Mutter der Schäfer (auf Kos).
@@ -9,11 +13,6 @@ Nach Ἱμαλία (Himalia), Nymphe, Mutter der Schäfer (auf Kos).
 [b]Entdeckung[/b]
 Datum: 1904-12-03
 Entdecker: Charles Dillon Perrine
-
-[b]Physikalische Eigenschaften[/b]
-[b]Himalia[/b] ist der größte der irregulären Monde des [url=body:jupiter]Jupiter[/url] mit einem Durchmesser von ~170 km. Er ist der Namensgeber der Himalia-Gruppe — einer Familie progrder irregulärer Jupitermonde mit ähnlichen Bahnparametern, die vermutlich aus demselben Ursprungskörper stammen.
-
-Seine Bahn liegt weit außerhalb der Galileischen Monde in ~11 Millionen km Abstand. Er ist wahrscheinlich ein eingefangener Asteroid vom C- oder D-Typ.
 """
 
 [infobox.atmosphere]

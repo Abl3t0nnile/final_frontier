@@ -1,7 +1,11 @@
 id = "encke"
 
 description = """\
-[b]Encke[/b]
+[b]2P/Encke[/b] ist der Komet mit der kürzesten bekannten Umlaufzeit (~3,3 Jahre) und der einzige Komet, der vollständig innerhalb der Jupiterbahn verbleibt. Er umkreist die Sonne seit Jahrhunderten auf derselben Bahn und hat dabei den größten Teil seines Materials verloren.
+
+Encke ist die Quelle der [b]Tauriden[/b]: aufgeteilt in die Süd-Tauriden (Oktober) und Nord-Tauriden (November). Der Trümmerstrom entlang seiner Bahn ist ungewöhnlich breit und alt — manche Forscher sehen einen Zusammenhang mit dem [b]Tunguska-Ereignis[/b] von 1908, das möglicherweise durch ein Fragment aus diesem Schuttgürtel verursacht wurde. Sein Kern (~4,8 km) ist für einen so häufig besuchten Kometen groß, zeigt aber, dass weite Teile seiner Oberfläche inaktiv und von einer dunklen Kruste bedeckt sind.
+
+Enckes Bahn liegt vollständig innerhalb der Jupiterbahn — sein Perihel erreicht nur ~0,34 AU (zwischen Merkur und Venus), sein Aphel ~4,1 AU. Nicht-gravitative Kräfte durch asymmetrische Ausgasung verschieben seine Bahn von Umlauf zu Umlauf messbar und machen präzise Ephemeridenberechnungen schwierig. Nach Hunderten von Umläufen hat Encke den größten Teil seiner flüchtigen Substanzen verloren und gilt als klassisches Endstadium eines kurzperiodischen Kometen auf dem Weg zum erloschenen, asteroidenähnlichen Körper.
 
 [b]Etymologie[/b]
 Nach Johann Franz Encke (1791–1865), deutsch Astronom, berechnete die Bahn.
@@ -9,11 +13,6 @@ Nach Johann Franz Encke (1791–1865), deutsch Astronom, berechnete die Bahn.
 [b]Entdeckung[/b]
 Datum: 1786 (Pierre Méchain); Wiederentdeckung 1818, Bahn von Encke berechnet
 Entdecker: Pierre Méchain (Entdeckung); Johann Franz Encke (Berechnung)
-
-[b]Physikalische Eigenschaften[/b]
-[b]2P/Encke[/b] ist der Komet mit der kürzesten bekannten Umlaufzeit (~3,3 Jahre) und der einzige Komet, der vollständig innerhalb der Jupiterbahn verbleibt. Er umkreist die Sonne seit Jahrhunderten auf derselben Bahn und hat dabei den größten Teil seines Materials verloren.
-
-Encke ist die Quelle des Tauriden-Meteorschauers. Sein Kern ist mit ~4,8 km Durchmesser für einen regelmäßig aktiven Kometen ungewöhnlich groß. Ob Encke einst ein größerer Körper war, der durch Fragmentierung entstand, wird diskutiert.
 """
 
 [infobox.atmosphere]

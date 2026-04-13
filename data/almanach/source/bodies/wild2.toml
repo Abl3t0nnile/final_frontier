@@ -1,7 +1,11 @@
 id = "wild2"
 
 description = """\
-[b]Wild2[/b]
+[b]81P/Wild 2[/b] ist ein kurzperiodischer Komet (~6,4 Jahre), der erst 1974 durch eine Jupiterstörung auf seine heutige innere Bahn gelenkt wurde. Daher ist er für einen regelmäßigen Kometen noch vergleichsweise unverwittert.
+
+[b]Stardust[/b] flog am 2. Januar 2004 in nur ~240 km Abstand am Kern vorbei und sammelte Tausende Koma-Partikel in einem Aerogel-Kollektor. Die Rückgabekapsel landete im Januar 2006 in der Utah-Wüste. Die Analyse der Partikel enthüllte: kristalline Silikate, die nur bei hohen Temperaturen nahe der Sonne entstehen können — ein Hinweis auf radiale Durchmischung im frühen Sonnensystem, die Material von der inneren Scheibe in die äußere transportierte. 2009 wurde zudem [b]Glycin[/b] in den Partikeln nachgewiesen — die einfachste Aminosäure, erstmals direkt aus einem Kometen gewonnen.
+
+Wild 2 verbrachte die meiste seiner Geschichte jenseits von Jupiter (Aphel ~5 AU) und wurde erst 1974 durch einen nahen Jupitervorbeiflug in seine heutige, sonnennahe Bahn (Aphel ~2,5 AU) gelenkt. In nur 30 Jahren hat er daher erst fünf Umläufe auf seiner neuen Bahn absolviert — weshalb seine Oberfläche im Vergleich zu langperiodischen Kometen noch relativ unverwittert ist und ein direktes Fenster in die Urstoffe des Sonnensystems bietet.
 
 [b]Etymologie[/b]
 Nach Paul Wild (1925–2014), schweizer Astronom, Entdecker zahlreicher Kometen.
@@ -9,11 +13,6 @@ Nach Paul Wild (1925–2014), schweizer Astronom, Entdecker zahlreicher Kometen.
 [b]Entdeckung[/b]
 Datum: 1978-01-06
 Entdecker: Paul Wild
-
-[b]Physikalische Eigenschaften[/b]
-[b]81P/Wild 2[/b] ist ein kurzperiodischer Komet (~6,4 Jahre), der erst 1974 durch eine Jupiterstörung auf seine heutige innere Bahn gelenkt wurde. Daher ist er für einen regelmäßigen Kometen noch vergleichsweise unverwittert.
-
-Die NASA-Stardust-Mission flog 2004 durch die Koma und fing Staubpartikel ein, die 2006 zur Erde zurückgebracht wurden. Dabei wurden komplexe organische Moleküle und sogar Aminosäuren-Vorläufer gefunden — Hinweise auf die Rolle von Kometen bei der Entstehung des Lebens.
 """
 
 [infobox.atmosphere]

@@ -1,7 +1,11 @@
 id = "tempel1"
 
 description = """\
-[b]Tempel1[/b]
+[b]9P/Tempel 1[/b] ist ein kurzperiodischer Komet (~5,5 Jahre Umlaufzeit), der durch zwei Raumfahrtmissionen untersucht wurde. Die NASA-Mission Deep Impact schoss 2005 einen 370-kg-Kupferblock auf den Kern — das ausgeworfene Material lieferte Daten über die innere Zusammensetzung.
+
+Die [b]Stardust-NExT[/b]-Mission fotografierte 2011 denselben Kometen und zeigte den durch den Einschlag entstandenen Krater — er war flacher und kleiner (~150 m breit) als erwartet, was auf eine sehr poröse, lockere Struktur des Kerns hindeutet. Tempel 1 verliert pro Umlauf Schichten seiner Oberfläche durch Sublimation und zeigt auffällige Mesas und Ebenen, die durch unterschiedlich schnelles Abtragen entstehen.
+
+Das Deep-Impact-Experiment lieferte Überraschungen: Das ausgeworfene Material enthielt Wassereis — direkter Beweis für Eis nahe der Oberfläche — sowie organische Verbindungen und Karbonate, die auf Kontakt mit flüssigem Wasser in der frühen Geschichte des Kometen hindeuten. Der enorme Staub-zu-Gas-Anteil im Ejecta war höher als erwartet und deutet auf ein feines, pudriges Oberflächenmaterial hin. Tempel 1 gilt seitdem als eines der wissenschaftlich am besten charakterisierten Kometensysteme.
 
 [b]Etymologie[/b]
 Nach Wilhelm Tempel (1821–1889), deutsch Astronom, entdeckte viele Kometen und Nebel.
@@ -9,11 +13,6 @@ Nach Wilhelm Tempel (1821–1889), deutsch Astronom, entdeckte viele Kometen und
 [b]Entdeckung[/b]
 Datum: 1867-04-03
 Entdecker: Wilhelm Tempel
-
-[b]Physikalische Eigenschaften[/b]
-[b]9P/Tempel 1[/b] ist ein kurzperiodischer Komet (~5,5 Jahre Umlaufzeit), der durch zwei Raumfahrtmissionen untersucht wurde. Die NASA-Mission Deep Impact schoss 2005 einen 370-kg-Kupferblock auf den Kern — das ausgeworfene Material lieferte Daten über die innere Zusammensetzung.
-
-Die Stardust-NExT-Mission fotografierte 2011 denselben Kometen und zeigte den durch den Einschlag entstandenen Krater. Tempel 1 verliert pro Umlauf Schichten seiner Oberfläche durch Sublimation.
 """
 
 [infobox.atmosphere]

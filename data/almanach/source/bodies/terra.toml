@@ -1,16 +1,6 @@
 id = "terra"
 
 description = """\
-[b]Terra[/b]
-
-[b]Etymologie[/b]
-Erde: germanisch *erþō (Boden). Terra: lat. für 'Land'. Symbol ♁ = Globus mit Meridianen.
-
-[b]Entdeckung[/b]
-Datum: —
-Entdecker: —
-
-[b]Physikalische Eigenschaften[/b]
 [b]Erde[/b] (Terra) ist der dritte Planet des Sonnensystems und der massereichste sowie voluminöseste der vier terrestrischen Planeten. Radius: 6.371 km, Masse: 5,97 × 10²⁴ kg. Die Erde befindet sich bei ~1,00 AU innerhalb der [url=concept:habitable_zone]Habitablen Zone[/url]. Die Oberfläche ist zu ~71 % von flüssigem Wasser bedeckt.
 
 [b]Interne Struktur[/b]
@@ -24,6 +14,13 @@ Zusammensetzung: N₂ 78,08 %, O₂ 20,95 %, Ar 0,93 %, Spurengase. Der atmosph�
 
 [b]Mond[/b]
 Der Erdmond (Radius 1.737 km) besitzt eine ungewöhnlich hohe Masse im Verhältnis zum Zentralkörper (1:81). Die Gravitationswechselwirkung stabilisiert die Erdachsneigung bei ~23,5° und verhindert chaotische Präzessionsbewegungen. Die Gezeitenkraft des Mondes verlangsamt die Erdrotation (Tidal braking).
+
+[b]Etymologie[/b]
+Erde: germanisch *erþō (Boden). Terra: lat. für 'Land'. Symbol ♁ = Globus mit Meridianen.
+
+[b]Entdeckung[/b]
+Datum: —
+Entdecker: —
 """
 
 [infobox.atmosphere]

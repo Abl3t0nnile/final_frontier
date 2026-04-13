@@ -1,16 +1,6 @@
 id = "oberon"
 
 description = """\
-[b]Oberon[/b]
-
-[b]Etymologie[/b]
-Nach Oberon (König der Feen in 'Sommernachtstraum').
-
-[b]Entdeckung[/b]
-Datum: 1787-01-11
-Entdecker: William Herschel
-
-[b]Physikalische Eigenschaften[/b]
 [b]Oberon[/b] ist mit einem Radius von 761 km der zweitgrößte und äußerste der fünf großen Uranusmonde. Er wurde 1787 von William Herschel entdeckt — am selben Tag wie [url=body:titania]Titania[/url]. Mit einer Dichte von ~1,63 g/cm³ besteht er aus etwa gleichen Teilen Wassereis und Silikatgestein. Oberon umrundet Uranus in 13,46 Tagen aus einer Entfernung von ~584.000 km.
 
 Die Oberfläche ist stark krateriert und zeigt wenig Zeichen innerer Aktivität. Deutlichstes Merkmal ist [b]Mommur Chasma[/b] — ein Grabenbruch von ~163 km Länge — sowie mehrere Krater mit dunklem, rötlichem Material auf ihren Böden. Dieses dunkle Material könnte aus dem Mondinneren stammen — ein Hinweis auf vergangene kryovulkanische Aktivität, bei der warme, organisch angereicherte Flüssigkeiten aus dem Inneren austraten und auf der Oberfläche gefroren. Alternativ könnte es durch Meteoriten abgelagerte organische Verbindungen sein.
@@ -18,6 +8,13 @@ Die Oberfläche ist stark krateriert und zeigt wenig Zeichen innerer Aktivität.
 Oberon liegt am äußersten Rand des Uranussystems und ist damit am wenigsten von Gezeitenkräften beeinflusst. Das Magnetfeld des Uranus reicht kaum bis in Oberons Umlaufbahn, was ihn zu einem strahlungsärmeren Umfeld im Vergleich zu den inneren Monden macht. Dennoch ist seine Oberfläche durch den jahrzehntelangen Einfall von Mikrometeoriten und kosmischer Strahlung dunkel und chemisch verändert.
 
 Das einzige Raumfahrzeug, das Oberon aus nächster Nähe beobachtet hat, war Voyager 2 (1986) mit einer minimalen Annäherung von ~470.800 km. Bei dieser begrenzten Annäherung waren nur ~40 % der Oberfläche kartierbar. Eine umfassende Kartierung aller Uranusmonde ist erst mit einer dedizierten Uranus-Mission zu erwarten.
+
+[b]Etymologie[/b]
+Nach Oberon (König der Feen in 'Sommernachtstraum').
+
+[b]Entdeckung[/b]
+Datum: 1787-01-11
+Entdecker: William Herschel
 """
 
 [infobox.atmosphere]

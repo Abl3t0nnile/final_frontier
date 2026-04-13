@@ -1,16 +1,6 @@
 id = "haumea"
 
 description = """\
-[b]Haumea[/b]
-
-[b]Etymologie[/b]
-Nach der hawaiianischen Göttin Haumea der Geburt und Fruchtbarkeit.
-
-[b]Entdeckung[/b]
-Datum: 2004-12-28 (Ankündigung 2005, Namensgabe 2008)
-Entdecker: Michael E. Brown et al.; unabhängig J. L. Ortiz Moreno et al.
-
-[b]Physikalische Eigenschaften[/b]
 [b]Haumea[/b] ist ein Zwergplanet im [url=concept:kuiper_belt]Kuipergürtel[/url] mit einer beispiellosen Form: Er rotiert so schnell (~3,9 Stunden pro Umdrehung), dass Fliehkräfte ihn stark in die Länge gezogen haben — seine Abmessungen betragen etwa 1.960 × 1.518 × 996 km, was ihn zu einem ausgeprägten Ellipsoid macht, der einem Rugby-Ball ähnelt. Bei dieser Rotationsgeschwindigkeit ist er physikalisch stabil, weil er aus festem Gestein besteht (Dichte ~2,6 g/cm³) — ein flüssiger oder locker gebundener Körper würde auseinanderreißen. Wie Haumea so schnell rotiert, ist ungeklärt: Ein früher Kollision mit einem anderen KBO ist die wahrscheinlichste Erklärung.
 
 Die Oberfläche besteht aus fast reinem, kristallinem Wassereis mit einer Albedo von ~0,8 — eine der hellsten im Kuipergürtel. Das Wassereis ist ungewöhnlich kristallin, was auf eine relativ junge oder thermisch veränderte Oberfläche hindeutet; ältere Oberflächen im Kuipergürtel zeigen amorphes Eis durch jahrmilliardenlangen Partikeleinfall. Ein dunkler, rötlicher Fleck (Makulae) auf der Oberfläche deutet auf einen Bereich mit organischen Verbindungen ([url=concept:tholins]Tholine[/url]) hin.
@@ -18,6 +8,13 @@ Die Oberfläche besteht aus fast reinem, kristallinem Wassereis mit einer Albedo
 Im Jahr 2017 wurde durch Sternbedeckungsbeobachtungen ein [b]Ringsystem[/b] um Haumea entdeckt — das erste bekannte Ringsystem eines TNO (transneptunischen Objekts). Der Ring liegt in ~2.287 km Abstand, hat eine Breite von ~70 km und ist in einer 3:1-Resonanz mit Haumeas Rotation. Dies widerspricht klassischen Modellen der Ringbildung, die für solche Abstände keine stabilen Ringe vorhersagen.
 
 Haumea hat zwei bekannte Monde, [url=body:hiʻiaka]Hiʻiaka[/url] und [url=body:namaka]Namaka[/url], die chemisch Haumeas Oberfläche ähneln und vermutlich aus demselben Kollisionsereignis stammen, das auch die schnelle Rotation erzeugte. Die sogenannte [b]Haumea-Kollisionsfamilie[/b] — eine Gruppe von KBOs mit ähnlichen Bahnelementen und Wassereis-Spektren — ist der einzige bekannte Kollisionsfamilien-Verband jenseits von Neptun.
+
+[b]Etymologie[/b]
+Nach der hawaiianischen Göttin Haumea der Geburt und Fruchtbarkeit.
+
+[b]Entdeckung[/b]
+Datum: 2004-12-28 (Ankündigung 2005, Namensgabe 2008)
+Entdecker: Michael E. Brown et al.; unabhängig J. L. Ortiz Moreno et al.
 """
 
 [infobox.atmosphere]

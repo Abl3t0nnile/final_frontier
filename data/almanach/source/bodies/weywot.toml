@@ -1,7 +1,11 @@
 id = "weywot"
 
 description = """\
-[b]Weywot[/b]
+[b]Weywot[/b] ist der Mond des [url=body:quaoar]Quaoar[/url] und nach dem Himmelsgott des Tongva-Volkes und Sohn von Quaoar benannt.
+
+Er wurde 2006 entdeckt und umkreist Quaoar in ~12.44 Tagen aus ~14.500 km Entfernung. Durch die Analyse seiner Bahn wurde die Masse Quaoars bestimmt.
+
+Weywot hat einen Radius von ~87 km. Sein Verhältnis zu Quaoar ähnelt eher dem eines kleinen irregulären Trabanten als einem ausgeprägten Doppelsystem.
 
 [b]Etymologie[/b]
 Benennung nach mythologischer oder kultureller Referenz.
@@ -9,13 +13,6 @@ Benennung nach mythologischer oder kultureller Referenz.
 [b]Entdeckung[/b]
 Datum: Entdeckungsdatum nicht spezifiziert.
 Entdecker: —
-
-[b]Physikalische Eigenschaften[/b]
-[b]Weywot[/b] ist der Mond des [url=body:quaoar]Quaoar[/url] und nach dem Himmelsgott des Tongva-Volkes und Sohn von Quaoar benannt.
-
-Er wurde 2006 entdeckt und umkreist Quaoar in ~12.44 Tagen aus ~14.500 km Entfernung. Durch die Analyse seiner Bahn wurde die Masse Quaoars bestimmt.
-
-Weywot hat einen Radius von ~87 km. Sein Verhältnis zu Quaoar ähnelt eher dem eines kleinen irregulären Trabanten als einem ausgeprägten Doppelsystem.
 """
 
 [infobox.atmosphere]

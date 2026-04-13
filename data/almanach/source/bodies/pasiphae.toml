@@ -1,7 +1,11 @@
 id = "pasiphae"
 
 description = """\
-[b]Pasiphae[/b]
+[b]Pasiphae[/b] ist ein retrograder irregulärer Mond des [url=body:jupiter]Jupiter[/url] und Namensgeber der Pasiphae-Gruppe retrograder Jupitermonde. Er hat einen Durchmesser von ~58 km.
+
+Retrograde Monde umkreisen ihren Planeten in entgegengesetzter Richtung zu dessen Rotation — ein starkes Zeichen für einen Einfang aus dem frühen Sonnensystem. Pasiphae wurde 1908 entdeckt und ist nach der Gemahlin des Minos benannt. Sein Abstand zu Jupiter beträgt ~23,6 Millionen km; die Umlaufzeit liegt bei ~744 Erdtagen, die Inklination bei ~151° (also ~29° zur rückläufigen Äquatorialebene).
+
+Die [b]Pasiphae-Gruppe[/b] umfasst alle großen retrograden Jupitermonde (Pasiphae, Sinope, Carme, Ananke und Dutzende kleinerer Objekte) — allerdings unterscheiden sich diese Gruppen in Inklination und Exzentrizität so sehr, dass sie wahrscheinlich mehrere separate Einfahrereignisse repräsentieren, nicht einen einzigen zerbrochenen Körper. Die prograde Himalia-Gruppe und die verschiedenen retrograden Gruppen zeigen, dass Jupiters Gravitationseinfluss im frühen Sonnensystem viele Objekte verschiedener Herkunft einfangen konnte.
 
 [b]Etymologie[/b]
 Nach Πασιφάη (Pasipháē), Frau des Minos, Mutter des Minotaurus.
@@ -9,11 +13,6 @@ Nach Πασιφάη (Pasipháē), Frau des Minos, Mutter des Minotaurus.
 [b]Entdeckung[/b]
 Datum: 1908-01-28
 Entdecker: Philbert Jacques Melotte
-
-[b]Physikalische Eigenschaften[/b]
-[b]Pasiphae[/b] ist ein retrograder irregulärer Mond des [url=body:jupiter]Jupiter[/url] und Namensgeber der Pasiphae-Gruppe retrograder Jupitermonde. Er hat einen Durchmesser von ~58 km.
-
-Retrograde Monde umkreisen ihren Planeten in entgegengesetzter Richtung zu dessen Rotation — ein starker Hinweis auf einen Einfang aus dem frühen Sonnensystem. Pasiphae wurde 1908 entdeckt und ist nach der Gemahlin des Minos in der griechischen Sage benannt.
 """
 
 [infobox.atmosphere]

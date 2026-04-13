@@ -1,7 +1,11 @@
 id = "phoebe"
 
 description = """\
-[b]Phoebe[/b]
+[b]Phoebe[/b] ist ein irregulärer retrograder Mond des [url=body:saturn]Saturn[/url] und der erste Mond, der als eingefangenes transneptunisches Objekt identifiziert wurde. Er umkreist Saturn in ~534 Tagen in entgegengesetzter Richtung.
+
+Phoebe hat eine dunkle, kohlenstoffreiche Oberfläche (Albedo ~0,08) ähnlich C-Typ-Asteroiden. [b]Cassini[/b] flog am 11. Juni 2004 auf dem Weg zu Saturn in nur ~2.068 km Abstand an Phoebe vorbei — der bis heute einzige Nahflug. Die Aufnahmen zeigen eine stark kraterierte Oberfläche mit Kratern bis ~100 km Durchmesser ([b]Jason-Krater[/b]: ~101 km) und hellen Einschlagsstreifen, wo frisches Wassereis aus dem Inneren freigelegt wurde. Dies bestätigt: Phoebe ist ein differenzierter Körper mit Wassereis unter seiner dunklen Oberfläche.
+
+Der [b]Phoebe-Ring[/b], entdeckt 2009 mit dem Spitzer-Weltraumteleskop, ist der größte bekannte Planetenring: Er erstreckt sich von ~128 bis ~207 Saturnradien und ist trotz seiner enormen Ausdehnung extrem dünn und dunkel. Phoebe umkreist Saturn retrograd — ihr Trümmermaterial driftet daher durch Bahnmechanik nach innen und trifft auf Iapetus immer von vorne (der führenden Hemisphäre). Dies erklärt Iapetus' auffällige schwarz-weiße Zweiteilung, eine der rätselhaftesten Erscheinungen des Sonnensystems, die Giovanni Cassini 1671 zuerst beobachtete.
 
 [b]Etymologie[/b]
 Nach Φοίβη (Phoíbē), Titanin, Mutter der Leto.
@@ -9,11 +13,6 @@ Nach Φοίβη (Phoíbē), Titanin, Mutter der Leto.
 [b]Entdeckung[/b]
 Datum: 1898-08-16
 Entdecker: William Henry Pickering
-
-[b]Physikalische Eigenschaften[/b]
-[b]Phoebe[/b] ist ein irregulärer retrograder Mond des [url=body:saturn]Saturn[/url] und der erste Mond, der als eingefangenes transneptunisches Objekt identifiziert wurde. Er umkreist Saturn in ~534 Tagen in entgegengesetzter Richtung.
-
-Phoebe hat eine dunkle, kohlenstoffreiche Oberfläche ähnlich C-Typ-Asteroiden. Cassini-Daten zeigen, dass er einst Wassereis enthielt. Staub von Phoebe bildet den äußersten bekannten Ring Saturns — den Phoebe-Ring —, der das dunkle Material auf [url=body:iapetus]Iapetus[/url] liefert.
 """
 
 [infobox.atmosphere]

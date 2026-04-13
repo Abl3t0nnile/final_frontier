@@ -539,3 +539,56 @@ Jenseits der Frostlinie steht erhöhte Feststoffmasse (Eis + Gestein) für die A
 • [url=concept:habitable_zone]Habitable Zone[/url]
 • [url=concept:asteroid_belt]Asteroidengürtel[/url]
 • [url=concept:kuiper_belt]Kuipergürtel[/url]"""
+
+[jupiter_trojans_l4]
+title = "Jupiter Trojaner L4 (Griechen)"
+content = """\
+[font_size=18][b]Jupiter Trojaner L4 — Griechen[/b][/font_size]
+[i]Sonnensystem · Asteroidengruppe[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Griechische Gruppe[/b] (L4) ist eine der beiden Trojaner-Populationen des [url=body:jupiter]Jupiter[/url]. Sie sammelt sich um den vorauslaufenden Lagrangepunkt L4 — 60° vor Jupiter auf seiner Bahn. Wie alle Trojaner befinden sich diese Körper in einer stabilen 1:1-Bahnresonanz mit Jupiter.
+
+[b]Lage[/b]
+[indent]• Lagrangepunkt: L4 (60° vor Jupiter)
+• Mittlere Entfernung zur Sonne: ~5,2 AU
+• Stabile Libration um L4[/indent]
+
+[b]Entstehung[/b]
+Nach dem Nizza-Modell wurden die Trojaner während der Migrationsphase der Gasriesen eingefangen. Die ursprüngliche Population war deutlich größer — ein Großteil wurde durch Gravitationsstreuung während der planetaren Umstrukturierung herausgeworfen.
+
+[b]Bekannte Objekte[/b]
+[indent]• [b]624 Hektor[/b] — größtes bekanntes Trojaner-Objekt (~225 × 400 km, Kontaktzweikörper)
+• [b]588 Achilles[/b] — erstes entdecktes Trojanerobjekt (1906)
+• Die Gruppe ist nach griechischen Helden des Trojanischen Krieges benannt[/indent]
+
+[b]Siehe auch[/b]
+• [url=concept:jupiter_trojans_l5]Jupiter Trojaner L5 (Trojaner)[/url]
+• [url=concept:orbital_resonance]Bahnresonanz[/url]"""
+
+[jupiter_trojans_l5]
+title = "Jupiter Trojaner L5 (Trojaner)"
+content = """\
+[font_size=18][b]Jupiter Trojaner L5 — Trojaner[/b][/font_size]
+[i]Sonnensystem · Asteroidengruppe[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Trojaner-Gruppe[/b] (L5) ist die nachlaufende Jupiter-Trojanergruppe, versammelt um den Lagrangepunkt L5 — 60° hinter Jupiter auf seiner Bahn. Zusammen mit der L4-Gruppe (Griechen) bildet sie eine der größten Asteroidenpopulationen im Sonnensystem, mit schätzungsweise einer Million Körper über 1 km Durchmesser.
+
+[b]Lage[/b]
+[indent]• Lagrangepunkt: L5 (60° hinter Jupiter)
+• Mittlere Entfernung zur Sonne: ~5,2 AU
+• Stabile Libration um L5[/indent]
+
+[b]NASA Lucy-Mission[/b]
+Die Sonde [b]Lucy[/b] (Start 2021) ist die erste Mission zu den Jupiter-Trojanern. Sie wird zwischen 2027 und 2033 sieben Trojaner-Objekte aus beiden Gruppen besuchen und damit erstmals direkte Messdaten dieser Urgesteine der Planetenentstehung liefern.
+
+[b]Bekannte Objekte[/b]
+[indent]• Die Gruppe ist nach trojanischen Helden des Trojanischen Krieges benannt
+• [b]617 Patroclus[/b] — Doppelkörper, eines der Lucy-Ziele[/indent]
+
+[b]Siehe auch[/b]
+• [url=concept:jupiter_trojans_l4]Jupiter Trojaner L4 (Griechen)[/url]
+• [url=concept:orbital_resonance]Bahnresonanz[/url]"""

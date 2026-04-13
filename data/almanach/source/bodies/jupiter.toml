@@ -1,16 +1,6 @@
 id = "jupiter"
 
 description = """\
-[b]Jupiter[/b]
-
-[b]Etymologie[/b]
-Nach dem römischen Göttervater Jupiter (griech. Ζεύς/Zeus). Symbol ♃ = stilisiertes Z.
-
-[b]Entdeckung[/b]
-Datum: Prähistorisch; Babylonier als Marduk.
-Entdecker: —
-
-[b]Physikalische Eigenschaften[/b]
 [b]Jupiter[/b] ist der massereichste Planet des Sonnensystems. Radius: 69.911 km, Masse: 1,898 × 10²⁷ kg (317,8 Erdmassen, 2,5-mal die Gesamtmasse aller anderen Planeten). Jupiter ist ein Gasriese ohne definierbare feste Oberfläche. Die Atmosphäre übergibt kontinuierlich in einen metallischen Wasserstoffmantel (Übergang bei ~1 Mbar, ~10.000 km Tiefe).
 
 [b]Rotation und Form[/b]
@@ -24,6 +14,13 @@ Jupiter besitzt die stärkste [url=concept:magnetosphere]Magnetosphäre[/url] im
 
 [b]Dynamische Bedeutung[/b]
 Jupiters Masse dominiert die gravitationale Dynamik des inneren Sonnensystems. Die starke Gravitation verhinderte die Akkretion eines weiteren terrestrischen Planeten im Bereich des heutigen [url=concept:asteroid_belt]Asteroidengürtels[/url] und wirkt als Fänger für potenziell erdgefährdende Körper.
+
+[b]Etymologie[/b]
+Nach dem römischen Göttervater Jupiter (griech. Ζεύς/Zeus). Symbol ♃ = stilisiertes Z.
+
+[b]Entdeckung[/b]
+Datum: Prähistorisch; Babylonier als Marduk.
+Entdecker: —
 """
 
 [infobox.atmosphere]

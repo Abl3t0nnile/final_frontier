@@ -1,16 +1,6 @@
 id = "orcus"
 
 description = """\
-[b]Orcus[/b]
-
-[b]Etymologie[/b]
-Nach dem etruskisch-römischen Unterweltsgott Orcus.
-
-[b]Entdeckung[/b]
-Datum: 2004-02-17
-Entdecker: Michael E. Brown, Chad Trujillo, David L. Rabinowitz
-
-[b]Physikalische Eigenschaften[/b]
 [b]Orcus[/b] ist ein Zwergplanetkandidat im [url=concept:kuiper_belt]Kuipergürtel[/url] mit einem Radius von ~458 km. Er wird oft als "Anti-Pluto" bezeichnet: Beide befinden sich in einer [url=concept:orbital_resonance]3:2-Bahnresonanz[/url] mit Neptun (Plutinos), haben ähnliche Bahnachsen (~39,5 AU semi-major axis) und Exzentrizitäten — aber ihre Bahnen sind um ~180° versetzt. Wenn Pluto sein Perihel (1989) durchlief, befand sich Orcus nahe seinem Aphel, und umgekehrt. Orcus ist nach dem etruskischen Gott der Unterwelt benannt — dem Pendant zum römischen Pluto.
 
 Orcus wurde 2004 von Michael Brown, Chadwick Trujillo und David Rabinowitz entdeckt. Seine Oberfläche zeigt ein Spektrum aus Wassereis — eines der reinsten Wassereis-Signaturen unter den großen KBOs — sowie Hinweise auf Ammoniak-Hydrate. Ammoniak-Hydrate sind instabil und würden durch Strahlung auf geologischen Zeitskalen zerstört; ihr Vorhandensein deutet auf jüngere Resurfacing-Ereignisse hin, möglicherweise durch [url=concept:cryovolcanism][b]Kryovulkanismus[/b][/url]: Wasser-Ammoniak-Gemische (Schmelzpunkt ~176 K) könnten aus dem Inneren ausgetreten und auf der Oberfläche gefroren sein.
@@ -18,6 +8,13 @@ Orcus wurde 2004 von Michael Brown, Chadwick Trujillo und David Rabinowitz entde
 Sein Mond [url=body:vanth]Vanth[/url] mit einem Radius von ~221 km ist für einen KBO-Begleiter ungewöhnlich groß — etwa die Hälfte des Hauptkörpers. Diese Relation ähnelt dem Pluto-Charon-System und deutet auf eine kollisionale Entstehung hin: Ein Einschlag warf Material aus, das sich zu Vanth akkretierte. Die präzise Bahnanalyse von Vanth durch Hubble ermöglichte eine Massebestimmung des Gesamtsystems (Orcus + Vanth) von ~6,3 × 10²⁰ kg.
 
 Orcus umrundet die Sonne in ~248 Jahren — nahezu identisch mit Pluto. Er wird in einigen Taxonomien als Kandidat für eine offizielle IAU-Zwergplaneten-Klassifikation gehandelt, eine formelle Anerkennung steht aber noch aus.
+
+[b]Etymologie[/b]
+Nach dem etruskisch-römischen Unterweltsgott Orcus.
+
+[b]Entdeckung[/b]
+Datum: 2004-02-17
+Entdecker: Michael E. Brown, Chad Trujillo, David L. Rabinowitz
 """
 
 [infobox.atmosphere]

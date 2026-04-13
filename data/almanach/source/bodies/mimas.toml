@@ -1,16 +1,6 @@
 id = "mimas"
 
 description = """\
-[b]Mimas[/b]
-
-[b]Etymologie[/b]
-Nach Μῖμᾱς (Mīmās), Gigant, von Hephaistos/Hephaestus getötet.
-
-[b]Entdeckung[/b]
-Datum: 1789-09-17
-Entdecker: William Herschel
-
-[b]Physikalische Eigenschaften[/b]
 [b]Mimas[/b] ist mit einem Radius von 198 km der kleinste der runden Saturnmonde und der innerste der größeren Trabanten. Er befindet sich in einem Gebiet intensiver Strahlung knapp außerhalb der Hauptringe Saturns und umrundet Saturn in nur 22,6 Stunden. Trotz seiner geringen Größe hat Mimas durch seine Eigengravitation eine nahezu sphärische Form angenommen — die Grenze, ab der ein Körper rund wird, liegt für Eis bei etwa 200 km Durchmesser, und Mimas liegt exakt an dieser Grenze.
 
 Der dominierende Oberflächeneindruck ist der Einschlagkrater [b]Herschel[/b]: Mit ~139 km Durchmesser — einem Drittel des Mondradius — und 10 km hohen Wänden, einem 9 km tiefen Boden und einem 6 km hohen Zentralberg ist er so groß, dass der erzeugende Einschlag Mimas nahezu zerrissen hätte. Das resultierende Äußere hat eine zufällige Ähnlichkeit mit dem Todesstern aus Star Wars geschaffen. Auf der gegenüberliegenden Seite von Herschel finden sich chaotische, ungeordnete Terrainformen — möglicherweise durch Schockwellen des Einschlags entstanden.
@@ -18,6 +8,13 @@ Der dominierende Oberflächeneindruck ist der Einschlagkrater [b]Herschel[/b]: M
 Mimas spielt eine wichtige Rolle in Saturns Ringsystem: Seine [url=concept:orbital_resonance]2:1-Bahnresonanz[/url] mit dem inneren Rand des A-Rings erzeugt die [b]Cassini-Division[/b], eine ~4.800 km breite Lücke im Hauptringsystem, die durch Teilchenräumung entsteht.
 
 Überraschende Cassini-Thermalbilder aus dem Jahr 2010 zeigten eine unerwartete Wärmeverteilung auf Mimas — ein "Pac-Man"-artiges Muster, das durch unterschiedliche Porosität des Oberflächeneises erklärt wird: kompaktes Eis wärmt sich anders auf als lockeres Eis. Jüngere Analysen (2024) von Mimasʼ Rotationslibration deuten darauf hin, dass unter der Eisoberfläche möglicherweise ein junger flüssiger Ozean existiert — was Mimas zu einem der jüngsten entdeckten potenziellen Ozeanwelten machen würde.
+
+[b]Etymologie[/b]
+Nach Μῖμᾱς (Mīmās), Gigant, von Hephaistos/Hephaestus getötet.
+
+[b]Entdeckung[/b]
+Datum: 1789-09-17
+Entdecker: William Herschel
 """
 
 [infobox.atmosphere]

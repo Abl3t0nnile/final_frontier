@@ -1,0 +1,21 @@
+id = "tempel_tuttle"
+
+description = """\
+[b]55P/Tempel-Tuttle[/b] ist ein kurzperiodischer Komet mit einer Umlaufzeit von ~33 Jahren und einer hohen [url=concept:eccentricity]Exzentrizität[/url] von 0,906. Seine retrograde Bahn führt ihn von knapp innerhalb der Erdbahn bis fast zur Uranusbahn.
+
+Tempel-Tuttle ist die Quelle der [b]Leoniden[/b] — eines der spektakulärsten Meteorschauer, der alle ~33 Jahre zu Meteorsturm-Ausbrüchen mit tausenden Sternschnuppen pro Stunde führen kann. Die letzten großen Ausbrüche waren 1999 und 2001.
+
+Der Kern hat einen Durchmesser von ~3,6 km und ist sehr dunkel (Albedo ~0,04).
+
+[b]Etymologie[/b]
+Nach Wilhelm Tempel (1821–1889) und Horace Tuttle (1837–1923), unabhängige Entdecker.
+
+[b]Entdeckung[/b]
+Datum: 1865-12-19 (Tempel), 1866-01-06 (Tuttle)
+Entdecker: Wilhelm Tempel, Horace Tuttle
+"""
+
+[infobox.atmosphere]
+temp_mean = -80
+temp_min = -100
+temp_max = 60

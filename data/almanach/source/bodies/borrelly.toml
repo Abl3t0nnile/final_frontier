@@ -1,7 +1,11 @@
 id = "borrelly"
 
 description = """\
-[b]Borrelly[/b]
+[b]19P/Borrelly[/b] ist ein kurzperiodischer Komet (~6,9 Jahre) mit einem langgezogenen, kegelförmigen Kern (~8 km). Die Deep Space 1 Mission fotografierte ihn 2001 aus nächster Nähe.
+
+Seine Oberfläche ist dunkel (Albedo ~0,03) und sehr heterogen: Glatte Ebenen wechseln sich mit rauem Terrain ab. Die aktiven Ausgasungsregionen liegen vor allem in der flachen Zentralregion. Borrelly ist bekannt für ungewöhnlich gebündelte, energiereiche Gasausströmungen — heller und gerichteter als bei den meisten anderen bekannten Kometen.
+
+[b]Deep Space 1[/b] näherte sich am 22. September 2001 auf ~2.171 km an den Kern heran und lieferte die bis dahin detailliertesten Bilder eines Kometenkerns. Das ausgedehnte Massenspektrometer stellte fest, dass das ausgegaste Material fast ausschließlich aus Wasser (~95 %) besteht, mit geringen Anteilen von CO und CO₂. Trotz starker Aktivität zeigt der Kern kaum freiliegendes Eis auf seiner Oberfläche: Eine dunkle Mantelschicht aus Staub und organischen Verbindungen isoliert das darunter liegende Material — das ausgasende Eis tritt nur durch Risse und Öffnungen in dieser Kruste aus.
 
 [b]Etymologie[/b]
 Nach Alphonse Louis Nicolas Borrelly (1842–1926), französischer Astronom.
@@ -9,11 +13,6 @@ Nach Alphonse Louis Nicolas Borrelly (1842–1926), französischer Astronom.
 [b]Entdeckung[/b]
 Datum: 1904-12-28
 Entdecker: Alphonse Borrelly
-
-[b]Physikalische Eigenschaften[/b]
-[b]19P/Borrelly[/b] ist ein kurzperiodischer Komet (~6,9 Jahre) mit einem langgezogenen, kegelförmigen Kern (~8 km). Die Deep Space 1 Mission fotografierte ihn 2001 aus nächster Nähe.
-
-Seine Oberfläche ist dunkel und sehr heterogen: Glatte Ebenen wechseln sich mit rauem Terrain ab. Die aktiven Ausgasungsregionen liegen vor allem in der flachen Zentralregion. Borrelly ist bekannt für ungewöhnlich energiereiche Gasausströmungen.
 """
 
 [infobox.atmosphere]

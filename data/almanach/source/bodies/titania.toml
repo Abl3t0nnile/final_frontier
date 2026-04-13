@@ -1,7 +1,11 @@
 id = "titania"
 
 description = """\
-[b]Titania[/b]
+[b]Titania[/b] ist der größte Mond des [url=body:uranus]Uranus[/url] und nach der Elfenkönigin in Shakespeares "Ein Sommernachtstraum" benannt. Sie wurde 1787 von William Herschel entdeckt.
+
+Titania (Radius ~788 km) besteht aus etwa gleichen Teilen Wassereis und Silikatgestein und hat eine mittlere Dichte von ~1,71 g/cm³. Ihre Oberfläche zeigt eine Mischung aus älteren Kratern und jüngeren Canyons und Gräben, die auf innere Aktivität nach der Entstehung hinweisen. Das herausragende Merkmal ist [b]Messina Chasma[/b]: ein Grabensystem von über 1.500 km Länge und 2–5 km Tiefe — eines der längsten tektonischen Riftsysteme im Sonnensystem.
+
+[b]Voyager 2[/b] ist der einzige Besucher (1986) und fotografierte ~40 % der Oberfläche. Die Riftzonen entstanden wahrscheinlich als Titania's Inneres sich in der Frühphase abkühlte und dabei ausdehnte — das gefrorene Wassereis dehnt sich beim Erstarren aus und spreizt die Kruste auseinander. Modelle legen nahe, dass tief im Inneren noch flüssiges Wasser vorhanden sein könnte, aufgewärmt durch radioaktive Zerfallswärme im Silikatanteil.
 
 [b]Etymologie[/b]
 After Titania (Königin der Feen in Shakespeares 'Sommernachtstraum').
@@ -9,11 +13,6 @@ After Titania (Königin der Feen in Shakespeares 'Sommernachtstraum').
 [b]Entdeckung[/b]
 Datum: 1787-01-11
 Entdecker: William Herschel
-
-[b]Physikalische Eigenschaften[/b]
-[b]Titania[/b] ist der größte Mond des [url=body:uranus]Uranus[/url] und nach der Elfenkönigin in Shakespeares "Ein Sommernachtstraum" benannt. Sie wurde 1787 von William Herschel entdeckt.
-
-Ihre Oberfläche zeigt eine Mischung aus alten Kratern und jüngeren Canyons und Gräben — Hinweise auf innere Aktivität nach der Entstehung. Titania besteht aus etwa gleichen Teilen Wassereis und felsigem Material und hat möglicherweise einen flüssigen Ozean in der Vergangenheit besessen.
 """
 
 [infobox.atmosphere]

@@ -1,19 +1,18 @@
 id = "salacia"
 
 description = """\
-[b]Salacia[/b]
-
-[b]Etymologie[/b]
-Benennung nach mythologischer oder kultureller Referenz.
-
-[b]Entdeckung[/b]
-Datum: Entdeckungsdatum nicht spezifiziert.
-Entdecker: —
-
-[b]Physikalische Eigenschaften[/b]
 [b]Salacia[/b] ist ein transneptunisches Objekt im äußeren [url=concept:kuiper_belt]Kuipergürtel[/url] und benannt nach der römischen Meeresgöttin. Er ist ein Zwergplanetkandidat mit einem geschätzten Durchmesser von ~850 km.
 
-Salacia bildet zusammen mit seinem Mond Actaea ein Doppelsystem. Die Analyse ihrer gegenseitigen Umlaufbahn ermöglichte eine genaue Massebestimmung. Seine Oberfläche ist ungewöhnlich dunkel und wenig reflektiv für ein Kuipergürtel-Objekt.
+Salacia bildet zusammen mit seinem Mond [url=body:actaea]Actaea[/url] ein enges Binärsystem. Die Analyse ihrer gemeinsamen Umlaufbahn (5,49 Tage) erlaubte eine präzise Massebestimmung: ~4,38 × 10²¹ kg — vergleichbar mit Ceres. Auf Basis dieser Masse und eines Durchmessers von ~850 km gilt Salacia als wahrscheinlicher Zwergplanet, ist aber offiziell noch nicht so klassifiziert.
+
+Salacia umkreist die Sonne in ~67,7 AU Abstand (Halbachse) mit einer Umlaufzeit von ~274 Jahren auf einer relativ schwach exzentrischen Bahn. Seine Oberfläche ist auffällig dunkel (Albedo ~0,044) — ungewöhnlich für ein großes Kuipergürtel-Objekt, da die meisten TNOs durch oberflächliches Wassereis heller sind. Spektren zeigen keinerlei Wassereis-Absorption, was auf eine inaktive, kohlenstoffreiche oder strahlungsbehandelte Oberfläche hindeutet.
+
+[b]Etymologie[/b]
+Nach Salacia, der römischen Göttin des schimmernden Meeres und Gemahlin Neptuns.
+
+[b]Entdeckung[/b]
+Datum: 2004-09-22
+Entdecker: Henry Rae, Marc Buie, Will Grundy (Hubble-Weltraumteleskop)
 """
 
 [infobox.atmosphere]

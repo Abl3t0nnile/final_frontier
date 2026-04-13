@@ -1,7 +1,11 @@
 id = "janus"
 
 description = """\
-[b]Janus[/b]
+[b]Janus[/b] ist ein kleiner Mond des [url=body:saturn]Saturn[/url] mit einem mittleren Radius von ~90 km, bekannt für sein ungewöhnliches Verhalten: Er teilt seine Bahn fast exakt mit dem Mond [b]Epimetheus[/b] — beide wechseln alle ~4 Jahre ihre Bahnpositionen, wenn der innere den äußeren einholt und Energie überträgt.
+
+Die Mechanik dieses co-orbitalen Systems ist einzigartig: Der innere Mond läuft schneller und holt den äußeren ein. Kurz vor dem Einholen tauschen beide gravitativ Energie aus — der innere wird auf eine höhere, langsamere Bahn versetzt, der äußere auf eine niedrigere, schnellere. Sie kommen dabei nie näher als ~15.000 km aneinander heran und wechseln alle ~4 Jahre erneut die Plätze. Janus und [b]Epimetheus[/b] (Radius ~58 km) sind damit die einzigen bekannten Körper im Sonnensystem, die dauerhaft eine Umlaufbahn teilen.
+
+Janus liegt nahe dem äußeren Rand von Saturns A-Ring bei ~151.000 km und beeinflusst dessen Struktur durch Resonanzen. Beide Monde sind unregelmäßig geformt und stark krateriert. Voyager 1 entdeckte 1980 Epimetheus, konnte es aber zunächst nicht eindeutig von Janus trennen — erst 1978 wurde klar, dass es zwei verschiedene Körper sind.
 
 [b]Etymologie[/b]
 Nach dem römischen Gott Janus (Gott der Türen, Anfänge).
@@ -9,11 +13,6 @@ Nach dem römischen Gott Janus (Gott der Türen, Anfänge).
 [b]Entdeckung[/b]
 Datum: 1966-12-15 (Audouin Dollfus); 1978-02 (bestätigt Voyager 1)
 Entdecker: Audouin Dollfus / Voyager 1 Team
-
-[b]Physikalische Eigenschaften[/b]
-[b]Janus[/b] ist ein kleiner Mond des [url=body:saturn]Saturn[/url] mit einem mittleren Radius von ~90 km, bekannt für sein ungewöhnliches Verhalten: Er teilt seine Bahn fast exakt mit dem Mond [b]Epimetheus[/b] — beide wechseln alle ~4 Jahre ihre Bahnpositionen, wenn der innere den äußeren einholt und Energie überträgt.
-
-Dieses Hufeisenbahn-System ist einzigartig im Sonnensystem. Janus liegt nahe dem äußeren Rand von Saturns A-Ring und beeinflusst dessen Struktur.
 """
 
 [infobox.atmosphere]

@@ -1,16 +1,6 @@
 id = "planet_nine"
 
 description = """\
-[b]Planet_nine[/b]
-
-[b]Etymologie[/b]
-Benennung nach mythologischer oder kultureller Referenz.
-
-[b]Entdeckung[/b]
-Datum: Entdeckungsdatum nicht spezifiziert.
-Entdecker: —
-
-[b]Physikalische Eigenschaften[/b]
 [b]Planet Neun[/b] ist ein hypothetischer Planet im äußersten Sonnensystem, der bislang nicht direkt beobachtet wurde. Die Hypothese wurde 2016 von Konstantin Batygin und Michael Brown (Caltech) veröffentlicht, nachdem sie eine statistisch auffällige Häufung festgestellt hatten: Sechs weit entfernte transneptunische Objekte (darunter [url=body:sedna]Sedna[/url]) haben ihre [url=concept:periapsis]Perihelargumente[/url] in einem ähnlichen Winkel gebündelt — eine Konfiguration, die per Zufall eine Wahrscheinlichkeit von ~1:14.000 hat. Ein massereicher, weit entfernter Planet könnte diese Objekte gravitativ in diesen Bereich gezwungen haben.
 
 Modelle schätzen Masse und Bahn des hypothetischen Körpers: ~5–10 Erdmassen, Halbachse ~400–800 AU, Umlaufzeit ~10.000–20.000 Jahre. Bei diesen Distanzen wäre er in Teleskopen extrem schwach — selbst wenn er ein Superneptun wäre, hätte er eine scheinbare Helligkeit von ~22–25 mag, was selbst für moderne Durchmusterungen am Limit liegt. Das Vera-Rubin-Observatorium (LSST) wird nach seiner Inbetriebnahme die tiefste und vollständigste Durchmusterung des äußeren Sonnensystems durchführen und könnte Planet Neun entweder finden oder das Suchgebiet stark einschränken.
@@ -18,6 +8,13 @@ Modelle schätzen Masse und Bahn des hypothetischen Körpers: ~5–10 Erdmassen,
 Die Hypothese ist wissenschaftlich umstritten. Mehrere Alternativerklärungen wurden vorgeschlagen: (1) [b]Auswahlverzerrung[/b] — die gebündelten Objekte wurden bevorzugt in bestimmten Himmelsbereichen gesucht, was die scheinbare Häufung verursacht. (2) Gravitativer Einfluss des Kuipergürtels als Ganzes. (3) Statistischer Zufall. Analysen neuerer, weniger selektiver Durchmusterungen (wie OSSOS) fanden schwächere Häufungssignale, was die Verzerrungs-Hypothese stärkt — aber auch mit einem Planet Neun vereinbar ist.
 
 Falls Planet Neun existiert, wäre er kein klassisch geformter Planet, sondern möglicherweise ein [b]Eisriese[/b] ähnlich Uranus oder Neptun — möglicherweise ein vagabundierender Planet, den Neptun in der Frühzeit in die äußere Bahn warf, oder ein eingefangenes Objekt aus dem fremden Sternhaufen, in dem die Sonne entstand. Die Suche läuft weiter.
+
+[b]Etymologie[/b]
+Benennung nach mythologischer oder kultureller Referenz.
+
+[b]Entdeckung[/b]
+Datum: Entdeckungsdatum nicht spezifiziert.
+Entdecker: —
 """
 
 [infobox.atmosphere]

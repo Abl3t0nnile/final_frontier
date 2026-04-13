@@ -1,21 +1,18 @@
 id = "actaea"
 
 description = """\
-[b]Actaea[/b]
-
-[b]Etymologie[/b]
-Benennung nach mythologischer oder kultureller Referenz.
-
-[b]Entdeckung[/b]
-Datum: Entdeckungsdatum nicht spezifiziert.
-Entdecker: —
-
-[b]Physikalische Eigenschaften[/b]
 [b]Actaea[/b] ist der Mond des [url=body:salacia]Salacia[/url], benannt nach einer der Nereiden der griechischen Mythologie.
 
 Er wurde 2006 entdeckt und bildet mit Salacia ein enges Binärsystem: Er umkreist den Hauptkörper aus nur ~5.720 km Entfernung in ~5.49 Tagen. Diese enge Bahn erlaubte eine sehr präzise Massenbestimmung des Gesamtsystems.
 
 Actaea hat einen Radius von ~136 km und ist damit im Verhältnis zu Salacia relativ groß — das Paar gilt als eines der ausgewogeneren Binärsysteme im Kuipergürtel.
+
+[b]Etymologie[/b]
+Nach Ἀκταία (Aktaía), einer der 50 Nereiden — Töchter des Meeresgottes Nereus — in der griechischen Mythologie; passend zur Benennung des Hauptkörpers Salacia nach der Meeresgöttin.
+
+[b]Entdeckung[/b]
+Datum: 2006-07-26
+Entdecker: Keith Noll, Will Grundy, Denise Stephens, Hal Levison, Marc Buie (Hubble-Weltraumteleskop)
 """
 
 [infobox.atmosphere]

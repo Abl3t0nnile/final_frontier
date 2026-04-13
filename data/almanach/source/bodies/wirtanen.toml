@@ -1,7 +1,11 @@
 id = "wirtanen"
 
 description = """\
-[b]Wirtanen[/b]
+[b]46P/Wirtanen[/b] ist ein kurzperiodischer Komet (~5,4 Jahre) und Ursprungsziel der Rosetta-Mission, bevor er durch [url=body:churyumov_gerasimenko]67P/C-G[/url] ersetzt wurde. Bei seiner Erdannäherung 2018 war er mit bloßem Auge sichtbar.
+
+Sein Kern ist mit ~1,2 km Durchmesser sehr klein, aber erstaunlich aktiv — er produziert pro Umlauf überproportional viel Wasser für seine Größe, was ihn zu einem der hyperaktivsten bekannten Kometen macht. Die charakteristische grüne Koma entsteht durch Dicarbon (C₂), das durch UV-Strahlung der Sonne aus Kohlenwasserstoffen freigesetzt wird.
+
+46P war ursprünglich das Ziel der [b]Rosetta[/b]-Mission der ESA. Nach einer Ariane-5-Fehlfunktion 2002 verzögerte sich der Start um zwei Jahre — das ursprüngliche Startfenster zu Wirtanen war verpasst, und [url=body:churyumov_gerasimenko]67P/C-G[/url] wurde als Ersatzziel gewählt. Im Dezember 2018 näherte sich Wirtanen auf ~11,6 Millionen km an die Erde an — der engste Kometen-Vorbeiflug seit Jahrzehnten für einen hellen Kometen. Er war bis Magnitude ~3 sichtbar und begeisterte Hobbyastronomen weltweit. Sein Perihel liegt bei ~1,06 AU, knapp außerhalb der Erdbahn.
 
 [b]Etymologie[/b]
 Nach Carl Alvar Wirtanen (1910–1990), US-amerikanischer Astronom finnischer Herkunft.
@@ -9,11 +13,6 @@ Nach Carl Alvar Wirtanen (1910–1990), US-amerikanischer Astronom finnischer He
 [b]Entdeckung[/b]
 Datum: 1948-01-17
 Entdecker: Carl A. Wirtanen
-
-[b]Physikalische Eigenschaften[/b]
-[b]46P/Wirtanen[/b] ist ein kurzperiodischer Komet (~5,4 Jahre) und Ursprungsziel der Rosetta-Mission, bevor er durch [url=body:churyumov_gerasimenko]67P/C-G[/url] ersetzt wurde. Bei seiner Erdannäherung 2018 war er mit bloßem Auge sichtbar.
-
-Sein Kern ist mit ~1,2 km Durchmesser sehr klein, aber aktiv. Die grüne Farbe seiner Koma entsteht durch Dicarbon (C₂), das durch UV-Strahlung der Sonne aus dem Kometen freigesetzt wird.
 """
 
 [infobox.atmosphere]
