@@ -123,8 +123,7 @@ func toggle_nav_panel() -> void:
 func toggle_info_panel() -> void:
 	if _almanach_panel and _almanach_panel.visible:
 		_set_almanac_visible(false)
-		if not _current_body_id.is_empty():
-			_set_info_panel_visible(true)
+		_set_info_panel_visible(true)
 	else:
 		_set_info_panel_visible(not _info_panel.visible)
 
