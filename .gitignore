@@ -27,3 +27,6 @@ assets/textures/
 # Prototype & IDE tool folders
 .prototype/
 .windsurf/
+
+# Affinity Designer lock files
+*.af~lock~
