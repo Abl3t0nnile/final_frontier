@@ -14,9 +14,11 @@ extends MarginContainer
 @onready var _pins_name:   Label       = $MapOverlay/FocusList/Pins/PinnedDisplay/BodyNameLabel
 @onready var _pos_x:        Label      = $MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer/PosXValue
 @onready var _pos_y:        Label      = $MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer/PosYValue
-@onready var _filter_btn:   MenuButton = $MapOverlay/MenuButtons/FilterButton
-@onready var _grid_btn:     Button     = $MapOverlay/MenuButtons/GridButton
-@onready var _tooltip:      Label      = $MouseLayer/MouseLabel
+@onready var _filter_btn:   MenuButton  = $MapOverlay/MenuButtons/FilterButton
+@onready var _grid_btn:     Button      = $MapOverlay/MenuButtons/GridButton
+@onready var _tooltip:      Label       = $MouseLayer/MouseLabel
+@onready var _key_v_icon:   TextureRect = $MapOverlay/ButtonDisplay/KeyVIcon
+@onready var _view_label:   Label       = $MapOverlay/ButtonDisplay/ViewLabel
 
 var _solar_map: Node  = null
 var _km_per_px: float = 1_000_000.0
@@ -61,8 +63,10 @@ func setup(solar_map: Node) -> void:
 	_grid_btn.toggled.connect(func(on: bool) -> void:
 		_solar_map.get_map_controller().set_grid_visible(on))
 	_grid_btn.button_pressed = false
-	if _focus_box: _focus_box.visible = false
-	if _pins_box:  _pins_box.visible  = false
+	if _focus_box:   _focus_box.visible  = false
+	if _pins_box:    _pins_box.visible   = false
+	if _key_v_icon:  _key_v_icon.visible = false
+	if _view_label:  _view_label.visible = false
 
 
 func _process(_delta: float) -> void:
@@ -105,6 +109,8 @@ func _on_body_selected(id: String) -> void:
 	_focus_box.visible = true
 	if _title:
 		_title.text = _system_title(def)
+	if _key_v_icon:  _key_v_icon.visible = true
+	if _view_label:  _view_label.visible = true
 
 
 func _on_body_deselected() -> void:
@@ -112,6 +118,8 @@ func _on_body_deselected() -> void:
 		_focus_box.visible = false
 	if _title:
 		_title.text = "Solar System"
+	if _key_v_icon:  _key_v_icon.visible = false
+	if _view_label:  _view_label.visible = false
 
 
 func _on_body_pinned(_id: String) -> void:

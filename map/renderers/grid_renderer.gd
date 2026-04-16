@@ -26,6 +26,16 @@ var show_labels: bool   = true
 
 var _map_transform: MapTransform = null
 
+func _ready() -> void:
+	add_to_group("map_grid")
+
+func set_base_color(color: Color) -> void:
+	ring_color  = Color(color.r, color.g, color.b, 0.06)
+	major_color = Color(color.r, color.g, color.b, 0.12)
+	axis_color  = Color(color.r, color.g, color.b, 0.22)
+	label_color = Color(color.r, color.g, color.b, 0.35)
+	queue_redraw()
+
 func setup(map_transform: MapTransform) -> void:
 	_map_transform = map_transform
 	queue_redraw()

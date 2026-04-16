@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://c3uif55gf74ep"]
 
-[ext_resource type="LabelSettings" uid="uid://djss0uyws4nlk" path="res://ui/resources/label_settings/label_settings_ui_caption_h2.tres" id="1_bbw2b"]
+[ext_resource type="Theme" uid="uid://lfjaa2chbqj7" path="res://ui/resources/themes/ui_amber_theme.tres" id="1_1j1w5"]
 [ext_resource type="Texture2D" uid="uid://cjrwdwdj6bu3g" path="res://assets/icons/ui/white/information.png" id="1_ii5fe"]
-[ext_resource type="Theme" uid="uid://bjcahkix8bvsn" path="res://ui/resources/themes/ui_default_theme.tres" id="1_jvlja"]
 [ext_resource type="PackedScene" uid="uid://bpxdjhjimm5yy" path="res://ui/components/UnitValueDisplay.tscn" id="2_y13in"]
 [ext_resource type="Texture2D" uid="uid://faxthe42pkba" path="res://assets/icons/ui/white/locked.png" id="3_ii5fe"]
 [ext_resource type="Texture2D" uid="uid://l8m6lh2mhnbe" path="res://assets/icons/ui/white/target.png" id="3_jvlja"]
@@ -22,7 +21,6 @@ offset_left = -8.0
 offset_right = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_jvlja")
 theme_type_variation = &"PanelContainerOutline"
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=903437743]
@@ -48,48 +46,45 @@ layout_mode = 2
 
 [node name="TypeLabel" type="Label" parent="MarginContainer/VBox/Header/NameDisplay/HBoxContainer" unique_id=1595095378]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
-theme_override_font_sizes/font_size = 12
+theme_type_variation = &"LabelDimmed"
 text = "Type"
 
 [node name="SubtypeLabel" type="Label" parent="MarginContainer/VBox/Header/NameDisplay/HBoxContainer" unique_id=420032760]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
-theme_override_font_sizes/font_size = 12
+theme_type_variation = &"LabelDimmed"
 text = "Subtype"
 
 [node name="NameLabel" type="Label" parent="MarginContainer/VBox/Header/NameDisplay" unique_id=1217086208]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_type_variation = &"InfoPanelH1"
 text = "Object Name"
-label_settings = ExtResource("1_bbw2b")
 uppercase = true
 
 [node name="ZoomBtn" type="Button" parent="MarginContainer/VBox/Header" unique_id=28450127]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 6
+size_flags_vertical = 10
 tooltip_text = "Zeigt das Objekt in einem extra Fenster."
 icon = ExtResource("3_jvlja")
 icon_alignment = 1
 expand_icon = true
 
 [node name="AlmanachBtn" type="Button" parent="MarginContainer/VBox/Header" unique_id=1411066641]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 6
+size_flags_vertical = 10
 tooltip_text = "Öffnet den Almanach mit dem Eintrag zu diesem Objekt."
 icon = ExtResource("1_ii5fe")
 icon_alignment = 1
 expand_icon = true
 
 [node name="PinBtn" type="Button" parent="MarginContainer/VBox/Header" unique_id=1691663874]
-custom_minimum_size = Vector2(48, 48)
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 6
+size_flags_vertical = 10
 tooltip_text = "Pinnt das Objekt an, sodass es immer zu sehen ist."
 icon = ExtResource("3_ii5fe")
 icon_alignment = 1
@@ -112,7 +107,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="MarginContainer/VBox/Image" unique_id=1940307446]
 handle_input_locally = false
 use_hdr_2d = true
-size = Vector2i(444, 320)
+size = Vector2i(448, 320)
 render_target_update_mode = 4
 
 [node name="PlanetViewer" parent="MarginContainer/VBox/Image/SubViewport" unique_id=985037799 instance=ExtResource("6_wn4l6")]
@@ -144,7 +139,7 @@ size_flags_horizontal = 3
 toggle_mode = true
 button_pressed = true
 button_group = SubResource("ButtonGroup_1j1w5")
-text = "Data"
+text = "Daten"
 
 [node name="Button2" type="Button" parent="MarginContainer/VBox/PanelSelector" unique_id=1522535809]
 layout_mode = 2
@@ -158,7 +153,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 toggle_mode = true
 button_group = SubResource("ButtonGroup_1j1w5")
-text = "Satelites"
+text = "Satelliten"
 
 [node name="SubPanels" type="ScrollContainer" parent="MarginContainer/VBox" unique_id=1842974368]
 layout_mode = 2
@@ -180,6 +175,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBox/SubPanels/VBox/DataPanel/OrbitSection" unique_id=2087667960]
 layout_mode = 2
+theme_type_variation = &"InfoPanelH2"
 text = "Orbit"
 uppercase = true
 
@@ -187,12 +183,13 @@ uppercase = true
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="ParentDisplay" parent="MarginContainer/VBox/SubPanels/VBox/DataPanel/OrbitSection" unique_id=375893399 instance=ExtResource("8_1j1w5")]
+[node name="Spacer" type="Control" parent="MarginContainer/VBox/SubPanels/VBox/DataPanel/OrbitSection" unique_id=1499876108]
+custom_minimum_size = Vector2(0, 16)
 layout_mode = 2
 
-[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBox/SubPanels/VBox/DataPanel/OrbitSection" unique_id=175641850]
+[node name="ParentDisplay" parent="MarginContainer/VBox/SubPanels/VBox/DataPanel/OrbitSection" unique_id=375893399 instance=ExtResource("8_1j1w5")]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme = ExtResource("1_1j1w5")
 
 [node name="OrbitGrid" type="GridContainer" parent="MarginContainer/VBox/SubPanels/VBox/DataPanel/OrbitSection" unique_id=1317425049]
 layout_mode = 2
@@ -202,27 +199,34 @@ columns = 2
 
 [node name="Halbachse" parent="MarginContainer/VBox/SubPanels/VBox/DataPanel/OrbitSection/OrbitGrid" unique_id=1441746687 instance=ExtResource("2_y13in")]
 layout_mode = 2
+theme = ExtResource("1_1j1w5")
 
 [node name="Umlaufzeit" parent="MarginContainer/VBox/SubPanels/VBox/DataPanel/OrbitSection/OrbitGrid" unique_id=1698933232 instance=ExtResource("2_y13in")]
 layout_mode = 2
+theme = ExtResource("1_1j1w5")
 
 [node name="Periapsis" parent="MarginContainer/VBox/SubPanels/VBox/DataPanel/OrbitSection/OrbitGrid" unique_id=210411637 instance=ExtResource("2_y13in")]
 layout_mode = 2
+theme = ExtResource("1_1j1w5")
 
 [node name="Geschwindigkeit" parent="MarginContainer/VBox/SubPanels/VBox/DataPanel/OrbitSection/OrbitGrid" unique_id=1752216032 instance=ExtResource("2_y13in")]
 layout_mode = 2
+theme = ExtResource("1_1j1w5")
 
 [node name="Apoapsis" parent="MarginContainer/VBox/SubPanels/VBox/DataPanel/OrbitSection/OrbitGrid" unique_id=2061630386 instance=ExtResource("2_y13in")]
 layout_mode = 2
+theme = ExtResource("1_1j1w5")
 
 [node name="Exzentrizitaet" parent="MarginContainer/VBox/SubPanels/VBox/DataPanel/OrbitSection/OrbitGrid" unique_id=119915109 instance=ExtResource("2_y13in")]
 layout_mode = 2
+theme = ExtResource("1_1j1w5")
 
 [node name="PhysikSection" type="VBoxContainer" parent="MarginContainer/VBox/SubPanels/VBox/DataPanel" unique_id=1570577791]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBox/SubPanels/VBox/DataPanel/PhysikSection" unique_id=1824520681]
 layout_mode = 2
+theme_type_variation = &"InfoPanelH2"
 text = "Physik"
 uppercase = true
 
@@ -236,18 +240,23 @@ columns = 2
 
 [node name="Radius" parent="MarginContainer/VBox/SubPanels/VBox/DataPanel/PhysikSection/PhysikGrid" unique_id=2097675926 instance=ExtResource("2_y13in")]
 layout_mode = 2
+theme = ExtResource("1_1j1w5")
 
 [node name="Masse" parent="MarginContainer/VBox/SubPanels/VBox/DataPanel/PhysikSection/PhysikGrid" unique_id=288945367 instance=ExtResource("2_y13in")]
 layout_mode = 2
+theme = ExtResource("1_1j1w5")
 
 [node name="Dichte" parent="MarginContainer/VBox/SubPanels/VBox/DataPanel/PhysikSection/PhysikGrid" unique_id=1754418589 instance=ExtResource("2_y13in")]
 layout_mode = 2
+theme = ExtResource("1_1j1w5")
 
 [node name="Schwerkraft" parent="MarginContainer/VBox/SubPanels/VBox/DataPanel/PhysikSection/PhysikGrid" unique_id=1082168978 instance=ExtResource("2_y13in")]
 layout_mode = 2
+theme = ExtResource("1_1j1w5")
 
 [node name="Fluchtgeschw" parent="MarginContainer/VBox/SubPanels/VBox/DataPanel/PhysikSection/PhysikGrid" unique_id=2036421093 instance=ExtResource("2_y13in")]
 layout_mode = 2
+theme = ExtResource("1_1j1w5")
 
 [node name="InfoPanel" type="RichTextLabel" parent="MarginContainer/VBox/SubPanels/VBox" unique_id=215563413]
 visible = false

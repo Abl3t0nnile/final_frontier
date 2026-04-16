@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dy3prfbgdcq52"]
 
+[ext_resource type="Theme" uid="uid://lfjaa2chbqj7" path="res://ui/resources/themes/ui_amber_theme.tres" id="1_theme"]
 [ext_resource type="Material" uid="uid://d11tqxhxmom8p" path="res://ui/resources/shader_materials/shader_material_scan_lines.tres" id="2_6h8u5"]
-[ext_resource type="Theme" uid="uid://bjcahkix8bvsn" path="res://ui/resources/themes/ui_default_theme.tres" id="3_2sxqo"]
 [ext_resource type="PackedScene" uid="uid://pf507g31tv1q" path="res://ui/panels/nav/NavPanel.tscn" id="3_kfx34"]
 [ext_resource type="Texture2D" uid="uid://71kkbyb55g02" path="res://assets/icons/ui/black/previous.png" id="3_oqwm6"]
 [ext_resource type="Script" uid="uid://c8e8ug2ip6bq6" path="res://game/star_chart/map_overlay.gd" id="4_60spy"]
@@ -10,40 +10,20 @@
 [ext_resource type="Texture2D" uid="uid://c4w172cw8ihtk" path="res://assets/icons/ui/black/pause.png" id="5_cx451"]
 [ext_resource type="Texture2D" uid="uid://b2xi1if5c8h5a" path="res://assets/icons/ui/white/smaller.png" id="5_ki4up"]
 [ext_resource type="Script" uid="uid://fxkkygw3wa8m" path="res://game/star_chart/planet_view_overlay.gd" id="5_lhq7x"]
-[ext_resource type="PackedScene" uid="uid://b00mvf8jh3x6i" path="res://ui/panels/almanach/AlmanachPanel.tscn" id="5_reej1"]
 [ext_resource type="Texture2D" uid="uid://dben4by1skq6e" path="res://assets/icons/ui/black/forward.png" id="6_jwid8"]
 [ext_resource type="Script" uid="uid://c1acrqnc55nes" path="res://ui/panels/info/info_panel.gd" id="6_skbn7"]
-[ext_resource type="LabelSettings" uid="uid://daljrct8h8sc8" path="res://ui/resources/label_settings/label_settings_ui_caption_value.tres" id="6_u7t25"]
-[ext_resource type="Texture2D" uid="uid://bruaibdm7aobl" path="res://assets/icons/input/mouse_left_outline.png" id="6_uvj5g"]
 [ext_resource type="PackedScene" uid="uid://c3uif55gf74ep" path="res://ui/panels/info/InfoPanel.tscn" id="7_4lm6u"]
-[ext_resource type="LabelSettings" uid="uid://cf17clutp4k4a" path="res://ui/resources/label_settings/label_settings_ui_value.tres" id="7_6h8u5"]
 [ext_resource type="Texture2D" uid="uid://c04d6kumv6re5" path="res://assets/icons/ui/black/fastForward.png" id="7_cx451"]
-[ext_resource type="Texture2D" uid="uid://ohefi31rn4li" path="res://assets/icons/input/keyboard_arrows_none.png" id="7_hdwyb"]
-[ext_resource type="LabelSettings" uid="uid://clkwfyc31268q" path="res://ui/resources/label_settings/label_settings_ui_caption_small.tres" id="7_moesl"]
-[ext_resource type="Texture2D" uid="uid://cpxr8nhj15ixg" path="res://assets/icons/input/keyboard_q_outline.png" id="8_7ref0"]
 [ext_resource type="Script" uid="uid://x6le68o1sye" path="res://game/star_chart/start_chart_controller.gd" id="8_controller"]
 [ext_resource type="Texture2D" uid="uid://l8m6lh2mhnbe" path="res://assets/icons/ui/white/target.png" id="9_2ovya"]
+[ext_resource type="Script" uid="uid://d2hjec1vqdhma" path="res://ui/components/themed_icon.gd" id="9_c6t65"]
 [ext_resource type="Script" uid="uid://qr7os7f21yr0" path="res://game/star_chart/clock_control.gd" id="9_clock"]
-[ext_resource type="Texture2D" uid="uid://rp0y0o7p2mnk" path="res://assets/icons/input/keyboard_e_outline.png" id="9_moesl"]
 [ext_resource type="Texture2D" uid="uid://bycohtpvdyoce" path="res://assets/icons/ui/white/menuList.png" id="9_stl2x"]
-[ext_resource type="StyleBox" uid="uid://bnib6yc4owxte" path="res://ui/resources/styleboxes/ui_stylebox_solid_black_transparent.tres" id="10_stl2x"]
 [ext_resource type="Texture2D" uid="uid://bdov46djoii76" path="res://assets/icons/input/keyboard_n_outline.png" id="14_7ref0"]
-[ext_resource type="Texture2D" uid="uid://cfk5465j3cag2" path="res://assets/icons/input/keyboard_escape_outline.png" id="15_c6t65"]
+[ext_resource type="Texture2D" uid="uid://cj0kbojxartkw" path="res://assets/icons/input/keyboard_v_outline.png" id="15_2sxqo"]
 [ext_resource type="Texture2D" uid="uid://b3i6g1po8balc" path="res://assets/icons/input/keyboard_i_outline.png" id="15_moesl"]
 [ext_resource type="Texture2D" uid="uid://80xuukg5r0yo" path="res://assets/icons/input/keyboard_l_outline.png" id="16_421ri"]
 [ext_resource type="PackedScene" uid="uid://qgkgsneq1nsf" path="res://game/almanac/Almanac.tscn" id="20_6h8u5"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skbn7"]
-content_margin_left = 16.0
-content_margin_top = 16.0
-content_margin_right = 16.0
-content_margin_bottom = 16.0
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lhq7x"]
 
@@ -75,12 +55,12 @@ grow_vertical = 2
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1406926380]
 
 [node name="MainDisplay" type="MarginContainer" parent="UILayer" unique_id=2084443813]
+theme = ExtResource("1_theme")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3_2sxqo")
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
@@ -144,7 +124,7 @@ theme_type_variation = &"PanelContainerSolid"
 
 [node name="Title" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/TopLeftPanel/PanelContainer" unique_id=1698702608]
 layout_mode = 2
-theme_type_variation = &"LabelDark"
+theme_type_variation = &"UiOverlayH1"
 theme_override_font_sizes/font_size = 32
 text = "Solar System"
 uppercase = true
@@ -159,26 +139,26 @@ layout_mode = 2
 
 [node name="ScaleLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=-13651632]
 layout_mode = 2
+theme_type_variation = &"UiDisplayCaption"
 text = "Scale:"
-label_settings = ExtResource("6_u7t25")
 
 [node name="ScaleValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=2043207273]
 custom_minimum_size = Vector2(36, 0)
 layout_mode = 2
+theme_type_variation = &"UiDisplayValue"
 text = "5.8"
-label_settings = ExtResource("7_6h8u5")
 
 [node name="KmPxValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=2057114572]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+theme_type_variation = &"UiDisplayValue"
 text = "2.347 e 23"
-label_settings = ExtResource("7_6h8u5")
 horizontal_alignment = 2
 
 [node name="KmPxLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=1960992700]
 layout_mode = 2
+theme_type_variation = &"UiDisplayCaption"
 text = "per px"
-label_settings = ExtResource("6_u7t25")
 
 [node name="TopCenterPanel" type="Control" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay" unique_id=-775725622]
 layout_mode = 2
@@ -253,6 +233,7 @@ expand_icon = true
 [node name="FocusList" type="VBoxContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay" unique_id=96694540]
 custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
+theme_override_constants/separation = 16
 
 [node name="Spacer" type="Control" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList" unique_id=298049275]
 custom_minimum_size = Vector2(0, 48)
@@ -276,12 +257,11 @@ text = "Focus Body"
 [node name="FocusDisplay" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList/Focus" unique_id=1104229318]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("10_stl2x")
+theme_type_variation = &"PanelContainerSolidDark"
 
 [node name="BodyNameLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList/Focus/FocusDisplay" unique_id=1614106233]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
-theme_override_font_sizes/font_size = 12
+theme_type_variation = &"UnitValueCaptionLabel"
 text = "Focus Body"
 
 [node name="Pins" type="VBoxContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList" unique_id=1497816328]
@@ -302,12 +282,11 @@ text = "Pinned Bodys"
 [node name="PinnedDisplay" type="PanelContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList/Pins" unique_id=231981044]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("10_stl2x")
+theme_type_variation = &"PanelContainerSolidDark"
 
 [node name="BodyNameLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/FocusList/Pins/PinnedDisplay" unique_id=1051896967]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
-theme_override_font_sizes/font_size = 12
+theme_type_variation = &"UnitValueCaptionLabel"
 text = "Pinned Body A"
 
 [node name="CenterPanel" type="Control" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay" unique_id=333646954]
@@ -332,8 +311,7 @@ theme_type_variation = &"PanelContainerSolid"
 
 [node name="CaptionLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomLeftPanel/TitlePanel" unique_id=1562881742]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
-theme_override_font_sizes/font_size = 16
+theme_type_variation = &"UnitValueLabel"
 text = "Cursor Position"
 
 [node name="MarginContainer" type="MarginContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomLeftPanel" unique_id=1755217452]
@@ -346,120 +324,92 @@ layout_mode = 2
 
 [node name="PosXLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=-199448676]
 layout_mode = 2
+theme_type_variation = &"UiDisplayCaption"
 text = "Pos X:"
-label_settings = ExtResource("6_u7t25")
 
 [node name="PosXValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=1519932630]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_type_variation = &"UiDisplayValue"
 text = "5.789 AU"
-label_settings = ExtResource("7_6h8u5")
 
 [node name="PosYLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=1197648830]
 layout_mode = 2
+theme_type_variation = &"UiDisplayCaption"
 text = "Pos Y:"
-label_settings = ExtResource("6_u7t25")
 
 [node name="PosYValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=1897152234]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_type_variation = &"UiDisplayValue"
 text = "-3.436 AU"
-label_settings = ExtResource("7_6h8u5")
 horizontal_alignment = 2
 
 [node name="BottomCenterPanel" type="Control" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay" unique_id=1608756588]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="BottomRightPanel" type="GridContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay" unique_id=1338980326]
+[node name="ButtonDisplay" type="GridContainer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay" unique_id=1338980326]
 layout_mode = 2
 size_flags_vertical = 4
 mouse_filter = 2
 columns = 2
 
-[node name="TextureRect" type="TextureRect" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomRightPanel" unique_id=855961946]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-texture = ExtResource("6_uvj5g")
-expand_mode = 2
-stretch_mode = 4
-
-[node name="Label5" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomRightPanel" unique_id=859871526]
-layout_mode = 2
-text = "Drag - Pan Camera"
-label_settings = ExtResource("7_moesl")
-
-[node name="TextureRect4" type="TextureRect" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomRightPanel" unique_id=454195529]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-texture = ExtResource("7_hdwyb")
-expand_mode = 4
-stretch_mode = 4
-
-[node name="Label3" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomRightPanel" unique_id=1618728971]
-layout_mode = 2
-text = "WASD - Pan Camera"
-label_settings = ExtResource("7_moesl")
-
-[node name="TextureRect6" type="TextureRect" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomRightPanel" unique_id=2019362344]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-texture = ExtResource("8_7ref0")
-expand_mode = 4
-stretch_mode = 4
-
-[node name="Label6" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomRightPanel" unique_id=1458961421]
-layout_mode = 2
-text = "Zoom Out"
-label_settings = ExtResource("7_moesl")
-
-[node name="TextureRect7" type="TextureRect" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomRightPanel" unique_id=1904968185]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-texture = ExtResource("9_moesl")
-expand_mode = 4
-stretch_mode = 4
-
-[node name="Label7" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomRightPanel" unique_id=613465724]
-layout_mode = 2
-text = "Zoom In"
-label_settings = ExtResource("7_moesl")
-
-[node name="TextureRect5" type="TextureRect" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomRightPanel" unique_id=133196480]
+[node name="KeyNIcon" type="TextureRect" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/ButtonDisplay" unique_id=133196480]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("14_7ref0")
 expand_mode = 4
 stretch_mode = 4
+script = ExtResource("9_c6t65")
 
-[node name="Label4" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomRightPanel" unique_id=926879740]
+[node name="NavLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/ButtonDisplay" unique_id=926879740]
 layout_mode = 2
+theme_type_variation = &"UiInputLabel"
 text = "Toggle Nav Panel"
-label_settings = ExtResource("7_moesl")
 
-[node name="TextureRect2" type="TextureRect" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomRightPanel" unique_id=45262058]
+[node name="KeyIIcon" type="TextureRect" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/ButtonDisplay" unique_id=45262058]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("15_moesl")
 expand_mode = 4
 stretch_mode = 4
+script = ExtResource("9_c6t65")
 
-[node name="Label" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomRightPanel" unique_id=890214769]
+[node name="InfoLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/ButtonDisplay" unique_id=890214769]
 layout_mode = 2
+theme_type_variation = &"UiInputLabel"
 text = "Toggle Info Panel"
-label_settings = ExtResource("7_moesl")
 
-[node name="TextureRect3" type="TextureRect" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomRightPanel" unique_id=1289061317]
+[node name="KeyLIcon" type="TextureRect" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/ButtonDisplay" unique_id=1289061317]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("16_421ri")
 expand_mode = 4
 stretch_mode = 4
+script = ExtResource("9_c6t65")
 
-[node name="Label2" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/BottomRightPanel" unique_id=1450305922]
+[node name="AlmanacLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/ButtonDisplay" unique_id=1450305922]
 layout_mode = 2
+theme_type_variation = &"UiInputLabel"
 text = "Toggle Almanach Panel"
-label_settings = ExtResource("7_moesl")
+
+[node name="KeyVIcon" type="TextureRect" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/ButtonDisplay" unique_id=1117413348]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("15_2sxqo")
+expand_mode = 4
+stretch_mode = 4
+script = ExtResource("9_c6t65")
+
+[node name="ViewLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay/MapOverlay/ButtonDisplay" unique_id=1131921877]
+layout_mode = 2
+theme_type_variation = &"UiInputLabel"
+text = "Switch View"
 
 [node name="MouseLayer" type="CanvasLayer" parent="UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay" unique_id=1326644783]
 
@@ -510,7 +460,7 @@ theme_type_variation = &"PanelContainerSolid"
 
 [node name="BodyNameLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/TopLeftPanel/PanelContainer" unique_id=1184051958]
 layout_mode = 2
-theme_type_variation = &"LabelDark"
+theme_type_variation = &"UiOverlayH1"
 theme_override_font_sizes/font_size = 32
 text = "Body Name"
 uppercase = true
@@ -525,25 +475,25 @@ layout_mode = 2
 
 [node name="TypeLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=398496916]
 layout_mode = 2
+theme_type_variation = &"UiDisplayCaption"
 text = "Type:"
-label_settings = ExtResource("6_u7t25")
 
 [node name="TypeValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=265800583]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
+theme_type_variation = &"UiDisplayValue"
 text = "planet"
-label_settings = ExtResource("7_6h8u5")
 
 [node name="SubTypeLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=1797796455]
 layout_mode = 2
+theme_type_variation = &"UiDisplayCaption"
 text = "Subtype:"
-label_settings = ExtResource("6_u7t25")
 
 [node name="SubTypeValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/TopLeftPanel/MarginContainer/HBoxContainer" unique_id=1352467786]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
+theme_type_variation = &"UiDisplayValue"
 text = "terrestrial"
-label_settings = ExtResource("7_6h8u5")
 horizontal_alignment = 2
 
 [node name="TopCenterPanel" type="Control" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid" unique_id=1559039054]
@@ -615,25 +565,25 @@ layout_mode = 2
 
 [node name="PosXLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=1632225214]
 layout_mode = 2
+theme_type_variation = &"UiDisplayCaption"
 text = "Pos X:"
-label_settings = ExtResource("6_u7t25")
 
 [node name="PosXValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=2075639708]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_type_variation = &"UiDisplayValue"
 text = "5.789 AU"
-label_settings = ExtResource("7_6h8u5")
 
 [node name="PosYLabel" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=244560311]
 layout_mode = 2
+theme_type_variation = &"UiDisplayCaption"
 text = "Pos Y:"
-label_settings = ExtResource("6_u7t25")
 
 [node name="PosYValue" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/BottomLeftPanel/MarginContainer/HBoxContainer" unique_id=1478705721]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_type_variation = &"UiDisplayValue"
 text = "-3.436 AU"
-label_settings = ExtResource("7_6h8u5")
 horizontal_alignment = 2
 
 [node name="BottomCenterPanel" type="Control" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid" unique_id=1603623508]
@@ -647,48 +597,35 @@ size_flags_vertical = 4
 mouse_filter = 2
 columns = 2
 
-[node name="TextureRect" type="TextureRect" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/BottomRightPanel" unique_id=1020851430]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-texture = ExtResource("6_uvj5g")
-expand_mode = 2
-stretch_mode = 4
-
-[node name="Label3" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/BottomRightPanel" unique_id=1733914392]
-layout_mode = 2
-text = "Drag - Rotate Body"
-label_settings = ExtResource("7_moesl")
-
 [node name="TextureRect5" type="TextureRect" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/BottomRightPanel" unique_id=63058807]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-texture = ExtResource("14_7ref0")
+texture = ExtResource("16_421ri")
 expand_mode = 4
 stretch_mode = 4
+script = ExtResource("9_c6t65")
 
 [node name="Label4" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/BottomRightPanel" unique_id=1214255794]
 layout_mode = 2
-text = "Toggle Nav Panel"
-label_settings = ExtResource("7_moesl")
+theme_type_variation = &"UiInputLabel"
+text = "Toggle Almanac Panel"
 
 [node name="TextureRect3" type="TextureRect" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/BottomRightPanel" unique_id=399634052]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-texture = ExtResource("15_c6t65")
+texture = ExtResource("15_2sxqo")
 expand_mode = 4
 stretch_mode = 4
+script = ExtResource("9_c6t65")
 
 [node name="Label2" type="Label" parent="UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay/Grid/BottomRightPanel" unique_id=533313558]
 layout_mode = 2
-text = "Quit View"
-label_settings = ExtResource("7_moesl")
+theme_type_variation = &"UiInputLabel"
+text = "Switch View"
 
 [node name="Almanac" parent="UILayer/MainDisplay/VFrame/BodyPanel" unique_id=1838614985 instance=ExtResource("20_6h8u5")]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="AlmanachPanel" parent="UILayer/MainDisplay/VFrame/BodyPanel" unique_id=1947621699 instance=ExtResource("5_reej1")]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
@@ -696,7 +633,6 @@ size_flags_horizontal = 3
 [node name="InfoPanel" parent="UILayer/MainDisplay/VFrame/BodyPanel" unique_id=1197745249 instance=ExtResource("7_4lm6u")]
 visible = false
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_skbn7")
 script = ExtResource("6_skbn7")
 
 [node name="ClockPanel" type="PanelContainer" parent="UILayer/MainDisplay/VFrame" unique_id=1304846700]

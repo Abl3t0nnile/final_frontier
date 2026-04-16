@@ -1,20 +1,14 @@
 [gd_scene format=3 uid="uid://qgkgsneq1nsf"]
 
 [ext_resource type="Script" uid="uid://cjtscfxett5j2" path="res://game/almanac/almanac.gd" id="1_almanac"]
-[ext_resource type="Theme" uid="uid://bjcahkix8bvsn" path="res://ui/resources/themes/ui_default_theme.tres" id="1_qowm7"]
 [ext_resource type="Texture2D" uid="uid://ib8eckgxchmb" path="res://assets/icons/ui/white/home.png" id="1_wgtfk"]
 [ext_resource type="Texture2D" uid="uid://oe5lrq85fvet" path="res://assets/icons/ui/white/backward.png" id="2_gssl0"]
 [ext_resource type="Texture2D" uid="uid://c1dv6tkdak65" path="res://assets/img/planets/terra_hero.jpg" id="4_gssl0"]
 [ext_resource type="Texture2D" uid="uid://b1qx4f57hy75q" path="res://assets/icons/ui/white/forward.png" id="4_hdqyh"]
 [ext_resource type="PackedScene" uid="uid://bpxdjhjimm5yy" path="res://ui/components/UnitValueDisplay.tscn" id="4_wgtfk"]
 [ext_resource type="Texture2D" uid="uid://l8m6lh2mhnbe" path="res://assets/icons/ui/white/target.png" id="5_qowm7"]
-[ext_resource type="LabelSettings" uid="uid://c0h2alu1tdmva" path="res://ui/resources/label_settings/label_settings_almanac_h1.tres" id="7_4nm25"]
 [ext_resource type="PackedScene" uid="uid://bnd83xit2lm4e" path="res://ui/components/BodyLinkDisplay.tscn" id="7_bld"]
-[ext_resource type="LabelSettings" uid="uid://bq52q1y2sb3ay" path="res://ui/resources/label_settings/label_settings_almanac_h2.tres" id="11_b0ch5"]
 [ext_resource type="Script" uid="uid://bbu75llcfgpvp" path="res://game/almanac/sub_section.gd" id="11_jb4x3"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_b0ch5"]
-font_size = 32
 
 [node name="Almanac" type="PanelContainer" unique_id=1838614985]
 anchors_preset = 15
@@ -22,7 +16,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_qowm7")
 theme_type_variation = &"PanelContainerOutline"
 script = ExtResource("1_almanac")
 
@@ -53,10 +46,9 @@ expand_icon = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.9411765, 0.9411765, 0.9411765, 0.6)
-theme_override_font_sizes/font_size = 11
-text = "Almanac"
-label_settings = SubResource("LabelSettings_b0ch5")
+theme_type_variation = &"InfoPanelH2"
+theme_override_font_sizes/font_size = 36
+text = "Solar System Wiki"
 vertical_alignment = 1
 uppercase = true
 
@@ -98,8 +90,9 @@ layout_mode = 2
 
 [node name="TitleLabel" type="Label" parent="MarginContainer/VBox/Article/Header" unique_id=1737685456]
 layout_mode = 2
+theme_type_variation = &"InfoPanelH1"
+theme_override_font_sizes/font_size = 36
 text = "Article Title"
-label_settings = ExtResource("7_4nm25")
 uppercase = true
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBox/Article" unique_id=1803623976]
@@ -108,6 +101,7 @@ layout_mode = 2
 [node name="ContentBox" type="ScrollContainer" parent="MarginContainer/VBox/Article" unique_id=1226740331]
 layout_mode = 2
 size_flags_vertical = 3
+scroll_hint_mode = 1
 
 [node name="VBox" type="VBoxContainer" parent="MarginContainer/VBox/Article/ContentBox" unique_id=1015275298]
 layout_mode = 2
@@ -199,6 +193,7 @@ title = "ATHMOSPHÄRISCHE DATEN"
 [node name="VBox" type="VBoxContainer" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/AthmoData" unique_id=1943884056]
 visible = false
 layout_mode = 2
+theme_override_constants/separation = 16
 
 [node name="Grid" type="GridContainer" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/AthmoData/VBox" unique_id=188203920]
 layout_mode = 2
@@ -210,6 +205,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/AthmoData/VBox" unique_id=1089891171]
 layout_mode = 2
+theme_type_variation = &"UiDisplayValue"
 text = "Hauptbestandteile"
 
 [node name="AtmoGasLabel" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/AthmoData/VBox" unique_id=1527128674 instance=ExtResource("4_wgtfk")]
@@ -223,7 +219,7 @@ layout_mode = 2
 [node name="SateliteData" type="FoldableContainer" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel" unique_id=852385016]
 layout_mode = 2
 folded = true
-title = "SATELITEN"
+title = "SATELLITEN"
 
 [node name="SateliteList" type="RichTextLabel" parent="MarginContainer/VBox/Article/ContentBox/VBox/Overview/Panel/SateliteData" unique_id=227886342]
 visible = false
@@ -236,8 +232,9 @@ script = ExtResource("11_jb4x3")
 
 [node name="TitleLabel" type="Label" parent="MarginContainer/VBox/Article/ContentBox/VBox/SubSection" unique_id=358332080]
 layout_mode = 2
+theme_type_variation = &"InfoPanelH2"
+theme_override_font_sizes/font_size = 24
 text = "Subsection"
-label_settings = ExtResource("11_b0ch5")
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBox/Article/ContentBox/VBox/SubSection" unique_id=2115941316]
 layout_mode = 2

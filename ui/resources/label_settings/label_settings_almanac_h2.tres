@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://bq52q1y2sb3ay"]
+
+[ext_resource type="FontFile" uid="uid://dpe512ervf1h1" path="res://assets/fonts/Syncopate-Bold.ttf" id="1_ls5d6"]
+
+[resource]
+font = ExtResource("1_ls5d6")
+font_size = 20
+font_color = Color(0.8627451, 0.8627451, 0.8627451, 1)

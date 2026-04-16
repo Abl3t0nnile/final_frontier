@@ -8,7 +8,7 @@ script = ExtResource("1_bld")
 
 [node name="Caption" type="Label" parent="." unique_id=680023644]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.35, 0.35, 0.35, 1)
+theme_type_variation = &"UnitValueCaptionLabel"
 theme_override_font_sizes/font_size = 12
 text = "UMKREIST"
 uppercase = true
@@ -18,3 +18,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 alignment = 0
 expand_icon = true
+
+[node name="HSeparator2" type="HSeparator" parent="." unique_id=2081060674]
+layout_mode = 2
+theme_override_constants/separation = 16

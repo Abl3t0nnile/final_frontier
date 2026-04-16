@@ -158,7 +158,7 @@ func _display_article(article_id: String) -> void:
 func _show_home() -> void:
 	_current_body_id = ""
 	_zoom_btn.visible = false
-	_title_label.text = "Almanac"
+	_title_label.text = "Solar System Wiki"
 	_article_title.text = "Übersicht"
 	_clear_article_content()
 
@@ -167,23 +167,46 @@ func _show_home() -> void:
 	text += "Alle physikalischen Daten basieren auf realen Messwerten. Verlinkte Begriffe führen zu erklärenden Artikeln über Konzepte der Orbitalmechanik und Astronomie.\n\n"
 	text += "[color=#888888]────────────────────────[/color]\n\n"
 
-	# Himmelskörper
-	text += "[b]Himmelskörper[/b]\n"
+	# Himmelskörper gruppiert nach Typ
+	var body_groups := {
+		"star":   {"label": "Sterne",        "entries": []},
+		"planet": {"label": "Planeten",       "entries": []},
+		"dwarf":  {"label": "Zwergplaneten",  "entries": []},
+		"moon":   {"label": "Monde",          "entries": []},
+		"comet":  {"label": "Kometen",        "entries": []},
+	}
 	for obj: GameObject in GameRegistry.get_all_objects():
 		var def := obj.body_def
-		var type_hint := ""
-		if not def.subtype.is_empty():
-			type_hint = " [color=#888888](%s)[/color]" % def.subtype
-		elif not def.type.is_empty():
-			type_hint = " [color=#888888](%s)[/color]" % def.type
-		text += "  • [url=body:%s]%s[/url]%s\n" % [def.id, def.name, type_hint]
+		if body_groups.has(def.type):
+			body_groups[def.type]["entries"].append(def)
+	for type_key in ["star", "planet", "dwarf", "moon", "comet"]:
+		var entries: Array = body_groups[type_key]["entries"]
+		if entries.is_empty():
+			continue
+		text += "[b]%s[/b]\n" % body_groups[type_key]["label"]
+		for def in entries:
+			text += "  • [url=body:%s]%s[/url]\n" % [def.id, def.name]
+		text += "\n"
 
-	# Konzepte
+	# Konzepte gruppiert nach Kategorie
 	if not _concepts.is_empty():
-		text += "\n[b]Konzepte & Begriffserklärungen[/b]\n"
+		var sections := {
+			"heliosphere": {"label": "Heliosphäre", "entries": []},
+			"belts":       {"label": "Asteroidengürtel & Trojaner", "entries": []},
+			"concepts":    {"label": "Konzepte & Begriffe", "entries": []},
+		}
 		for concept_id: String in _concepts:
 			var article: Dictionary = _concepts[concept_id]
-			text += "  • [url=concept:%s]%s[/url]\n" % [concept_id, article.get("title", concept_id)]
+			var cat: String = article.get("category", "concepts")
+			if sections.has(cat):
+				sections[cat]["entries"].append([concept_id, article.get("title", concept_id)])
+		for cat in ["heliosphere", "belts", "concepts"]:
+			var entries: Array = sections[cat]["entries"]
+			if entries.is_empty():
+				continue
+			text += "\n[b]%s[/b]\n" % sections[cat]["label"]
+			for entry in entries:
+				text += "  • [url=concept:%s]%s[/url]\n" % [entry[0], entry[1]]
 
 	_summary_text.text = text
 	_overview_panel.hide()
@@ -197,7 +220,7 @@ func _show_body_article(id: String) -> void:
 
 	_current_body_id = id
 	_zoom_btn.visible = true
-	_title_label.text = "Almanac"
+	_title_label.text = "Solar System Wiki"
 	_article_title.text = obj.body_def.name
 
 	_build_body_overview(obj)
@@ -214,7 +237,7 @@ func _show_concept_article(id: String) -> void:
 	var article: Dictionary = _concepts[id]
 	_current_body_id = ""
 	_zoom_btn.visible = false
-	_title_label.text = "Almanac"
+	_title_label.text = "Solar System Wiki"
 	_article_title.text = article.get("title", id)
 
 	_clear_article_content()
@@ -357,6 +380,7 @@ func _build_atmo_data(_def: BodyDef, content: AlmanachContentComponent) -> void:
 		if not composition.is_empty():
 			var comp_label := Label.new()
 			comp_label.text = "Hauptbestandteile"
+			comp_label.theme_type_variation = "UiDisplayValue"
 			vbox.add_child(comp_label)
 
 			var sep := HSeparator.new()

@@ -4,8 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://dy3prfbgdcq52" path="res://game/star_chart/StartChart.tscn" id="2_8gaax"]
 [ext_resource type="Script" uid="uid://c1v3wo13h2efs" path="res://game/game_controller.gd" id="3_gamecontroller"]
 [ext_resource type="PackedScene" uid="uid://cx0qx7qyomjub" path="res://game/star_chart/PlanetView.tscn" id="3_madmh"]
+[ext_resource type="Script" uid="uid://c26jo4s52kfkc" path="res://game/start_screen.gd" id="5_startscr"]
 [ext_resource type="PackedScene" uid="uid://dg46e66pkmm57" path="res://game/MainMenu.tscn" id="6_fk7ia"]
 [ext_resource type="Shader" uid="uid://bti71qu06gbo0" path="res://assets/shaders/fx/crt_monitor.gdshader" id="6_yo8gm"]
+[ext_resource type="Shader" uid="uid://dhiv1gcuoq7qo" path="res://assets/shaders/map/stars_bg.gdshader" id="7_fk7ia"]
+[ext_resource type="Theme" uid="uid://bjcahkix8bvsn" path="res://ui/resources/themes/ui_default_theme.tres" id="8_0btcf"]
+[ext_resource type="FontFile" uid="uid://dpe512ervf1h1" path="res://assets/fonts/Syncopate-Bold.ttf" id="8_v2tjf"]
+[ext_resource type="FontFile" uid="uid://cysj7b68qqiw8" path="res://assets/fonts/SUSEMono-Bold.ttf" id="9_0btcf"]
 
 [sub_resource type="Environment" id="Environment_madmh"]
 background_mode = 3
@@ -22,16 +27,18 @@ shader_parameter/pixel_size = 1.0
 shader_parameter/lod_blur = 0.0
 shader_parameter/chroma_offset_px = 2.000000095
 shader_parameter/saturation = 1.6000000760000002
-shader_parameter/contrast = 1.12000002945
+shader_parameter/contrast = 1.126000029735
 shader_parameter/shadow_lift = 0.06
-shader_parameter/scanline_strength = 0.0400000019
+shader_parameter/scanline_strength = 0.04
+shader_parameter/scanline_thickness = 0.60000002198023
+shader_parameter/scanline_glow = 0.015
 shader_parameter/vignette_strength = 0.1
 shader_parameter/noise_strength = 0.0
 shader_parameter/noise_speed = 10.000000475
 shader_parameter/base_jitter_px = 0.08
 shader_parameter/base_jitter_speed = 12.0
 shader_parameter/glitchiness = 0.800000038
-shader_parameter/glitch_rate = 6.0
+shader_parameter/glitch_rate = 2.000000095
 shader_parameter/glitch_shift_px = 8.0
 shader_parameter/glitch_window_min = 0.03
 shader_parameter/glitch_window_max = 0.1
@@ -42,16 +49,105 @@ shader_parameter/blue_band_strength = 0.0
 shader_parameter/blue_band_glitch = 0.25
 shader_parameter/blue_band_distort_px = 1.2
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6t0ec"]
+shader = ExtResource("7_fk7ia")
+shader_parameter/scroll_offset_far = Vector2(0, 0)
+shader_parameter/density_far = 0.9310000442225
+shader_parameter/size_min_far = 0.4
+shader_parameter/size_max_far = 1.8
+shader_parameter/size_bias_far = 2.5
+shader_parameter/twinkle_speed_far = 0.8
+shader_parameter/twinkle_amount_far = 0.6000000285
+shader_parameter/twinkle_variation_far = 1.0
+shader_parameter/brightness_far = 0.75
+shader_parameter/seed_far = 336.00001596
+shader_parameter/scroll_offset_near = Vector2(0, 0)
+shader_parameter/density_near = 0.50000002375
+shader_parameter/size_min_near = 1.5
+shader_parameter/size_max_near = 4.0
+shader_parameter/size_bias_near = 2.0
+shader_parameter/twinkle_speed_near = 0.70000003325
+shader_parameter/twinkle_amount_near = 1.0
+shader_parameter/twinkle_variation_near = 0.7
+shader_parameter/brightness_near = 1.0
+shader_parameter/seed_near = 42.0
+shader_parameter/star_color = Color(0.6666667, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cf05b"]
+font = ExtResource("8_v2tjf")
+font_size = 72
+
+[sub_resource type="LabelSettings" id="LabelSettings_6lgcj"]
+font = ExtResource("9_0btcf")
+font_size = 32
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6lgcj"]
+shader = ExtResource("6_yo8gm")
+shader_parameter/pixel_size = 2.0
+shader_parameter/lod_blur = 0.7
+shader_parameter/chroma_offset_px = 0.8
+shader_parameter/saturation = 1.200000057
+shader_parameter/contrast = 1.1000000285
+shader_parameter/shadow_lift = 0.02000000095
+shader_parameter/scanline_strength = 0.04
+shader_parameter/scanline_thickness = 1.1
+shader_parameter/scanline_glow = 0.050000002375
+shader_parameter/vignette_strength = 0.1
+shader_parameter/noise_strength = 0.0
+shader_parameter/noise_speed = 18.0
+shader_parameter/base_jitter_px = 0.08
+shader_parameter/base_jitter_speed = 12.0
+shader_parameter/glitchiness = 0.18
+shader_parameter/glitch_rate = 6.0
+shader_parameter/glitch_shift_px = 1.8
+shader_parameter/glitch_window_min = 0.03
+shader_parameter/glitch_window_max = 0.1
+shader_parameter/blue_band_start_y = 0.45
+shader_parameter/blue_band_speed = 0.06
+shader_parameter/blue_band_width = 0.035
+shader_parameter/blue_band_strength = 0.1
+shader_parameter/blue_band_glitch = 0.25
+shader_parameter/blue_band_distort_px = 1.2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cf05b"]
+shader = ExtResource("6_yo8gm")
+shader_parameter/pixel_size = 2.0
+shader_parameter/lod_blur = 0.7
+shader_parameter/chroma_offset_px = 1.4000000665
+shader_parameter/saturation = 0.90000004275
+shader_parameter/contrast = 1.1000000285
+shader_parameter/shadow_lift = 0.050000002375
+shader_parameter/scanline_strength = 0.04
+shader_parameter/scanline_thickness = 1.1
+shader_parameter/scanline_glow = 0.015
+shader_parameter/vignette_strength = 0.1
+shader_parameter/noise_strength = 0.0
+shader_parameter/noise_speed = 18.0
+shader_parameter/base_jitter_px = 0.08
+shader_parameter/base_jitter_speed = 12.0
+shader_parameter/glitchiness = 0.18
+shader_parameter/glitch_rate = 6.0
+shader_parameter/glitch_shift_px = 1.8
+shader_parameter/glitch_window_min = 0.03
+shader_parameter/glitch_window_max = 0.1
+shader_parameter/blue_band_start_y = 0.45
+shader_parameter/blue_band_speed = 0.06
+shader_parameter/blue_band_width = 0.035
+shader_parameter/blue_band_strength = 0.1
+shader_parameter/blue_band_glitch = 0.25
+shader_parameter/blue_band_distort_px = 1.2
+
 [node name="Main" type="Node" unique_id=1627069167]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=104336732]
 environment = SubResource("Environment_madmh")
 
-[node name="GameController" type="Node" parent="." unique_id=1627069168 node_paths=PackedStringArray("start_chart")]
+[node name="GameController" type="Node" parent="." unique_id=1627069168 node_paths=PackedStringArray("start_chart", "start_screen")]
 script = ExtResource("3_gamecontroller")
 solar_map_scene = ExtResource("2_2fjjk")
 planet_view_scene = ExtResource("3_madmh")
 start_chart = NodePath("../StartChart")
+start_screen = NodePath("../StartScreen")
 
 [node name="StartChart" parent="." unique_id=-54483432 instance=ExtResource("2_8gaax")]
 
@@ -67,3 +163,104 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="MainMenu" parent="." unique_id=1287822065 instance=ExtResource("6_fk7ia")]
+visible = false
+
+[node name="StartScreen" type="CanvasLayer" parent="." unique_id=918173249]
+layer = 200
+script = ExtResource("5_startscr")
+
+[node name="DarkBg" type="ColorRect" parent="StartScreen" unique_id=1721578546]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+
+[node name="StarField" type="ColorRect" parent="StartScreen" unique_id=1155454835]
+material = SubResource("ShaderMaterial_6t0ec")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="StartScreen" unique_id=1080814229]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("8_0btcf")
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 128
+
+[node name="StartMenu" type="VBoxContainer" parent="StartScreen/MarginContainer" unique_id=1838720661]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="StartScreen/MarginContainer/StartMenu" unique_id=448110895]
+layout_mode = 2
+text = "Final Frontier"
+label_settings = SubResource("LabelSettings_cf05b")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="StartScreen/MarginContainer/StartMenu" unique_id=107203549]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="StartScreen/MarginContainer/StartMenu" unique_id=2030118951]
+layout_mode = 2
+text = "Entdecke das Sonnensystem"
+label_settings = SubResource("LabelSettings_6lgcj")
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="StartScreen/MarginContainer/StartMenu" unique_id=205580622]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="StartScreen/MarginContainer/StartMenu" unique_id=64475364]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="StartScreen/MarginContainer/StartMenu" unique_id=1108795195]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Beenden"
+
+[node name="PanelContainer" type="PanelContainer" parent="StartScreen/MarginContainer" unique_id=551611180]
+layout_mode = 2
+theme = ExtResource("8_0btcf")
+theme_type_variation = &"PanelContainerSolidOutline"
+
+[node name="ColorRect" type="ColorRect" parent="StartScreen/MarginContainer/PanelContainer" unique_id=1692993831]
+material = SubResource("ShaderMaterial_6lgcj")
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="StartScreen/MarginContainer/PanelContainer" unique_id=2016828895]
+layout_mode = 2
+theme_override_constants/margin_left = 256
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 256
+theme_override_constants/margin_bottom = 128
+
+[node name="ScrollAnimation" type="ScrollContainer" parent="StartScreen/MarginContainer/PanelContainer/MarginContainer" unique_id=958237068]
+material = SubResource("ShaderMaterial_cf05b")
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartScreen/MarginContainer/PanelContainer/MarginContainer/ScrollAnimation" unique_id=1844733477]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

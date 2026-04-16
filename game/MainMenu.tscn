@@ -1,9 +1,28 @@
 [gd_scene format=3 uid="uid://dg46e66pkmm57"]
 
 [ext_resource type="Script" uid="uid://dv0bvybgke3ag" path="res://game/main_menu.gd" id="1_iek8j"]
-[ext_resource type="Theme" uid="uid://bjcahkix8bvsn" path="res://ui/resources/themes/ui_default_theme.tres" id="1_yqcqj"]
 [ext_resource type="Shader" uid="uid://duttwxgcqtue6" path="res://assets/shaders/fx/Blur.gdshader" id="3_8nu7y"]
+[ext_resource type="Theme" uid="uid://lfjaa2chbqj7" path="res://ui/resources/themes/ui_amber_theme.tres" id="3_upoqq"]
 [ext_resource type="FontFile" uid="uid://dpe512ervf1h1" path="res://assets/fonts/Syncopate-Bold.ttf" id="4_iek8j"]
+[ext_resource type="Texture2D" uid="uid://bruaibdm7aobl" path="res://assets/icons/input/mouse_left_outline.png" id="6_upoqq"]
+[ext_resource type="Script" uid="uid://d2hjec1vqdhma" path="res://ui/components/themed_icon.gd" id="6_yvj37"]
+[ext_resource type="LabelSettings" uid="uid://deq7k4q4usv2j" path="res://ui/resources/label_settings/label_settings_main_menu_h3.tres" id="7_6f7p1"]
+[ext_resource type="Texture2D" uid="uid://in2uigg4yqk6" path="res://assets/icons/input/mouse_right_outline.png" id="7_yvj37"]
+[ext_resource type="Texture2D" uid="uid://cpxr8nhj15ixg" path="res://assets/icons/input/keyboard_q_outline.png" id="8_1tqhj"]
+[ext_resource type="Texture2D" uid="uid://daak72ksqpbp" path="res://assets/icons/input/keyboard_arrows.png" id="8_6f7p1"]
+[ext_resource type="Texture2D" uid="uid://rp0y0o7p2mnk" path="res://assets/icons/input/keyboard_e_outline.png" id="9_r8myb"]
+[ext_resource type="Texture2D" uid="uid://bdov46djoii76" path="res://assets/icons/input/keyboard_n_outline.png" id="10_r3hnw"]
+[ext_resource type="Texture2D" uid="uid://b3i6g1po8balc" path="res://assets/icons/input/keyboard_i_outline.png" id="11_6hnod"]
+[ext_resource type="Texture2D" uid="uid://80xuukg5r0yo" path="res://assets/icons/input/keyboard_l_outline.png" id="12_3v66l"]
+[ext_resource type="Texture2D" uid="uid://cj0kbojxartkw" path="res://assets/icons/input/keyboard_v_outline.png" id="13_1tqhj"]
+[ext_resource type="Texture2D" uid="uid://cfk5465j3cag2" path="res://assets/icons/input/keyboard_escape_outline.png" id="13_40nt4"]
+[ext_resource type="Texture2D" uid="uid://lsgbvxbdsu07" path="res://assets/icons/input/keyboard_space_outline.png" id="14_kvhq1"]
+[ext_resource type="Texture2D" uid="uid://ceklywqqbbdhp" path="res://assets/icons/input/keyboard_c_outline.png" id="15_s4m7y"]
+[ext_resource type="Texture2D" uid="uid://dwm5knba1aw0r" path="res://assets/icons/input/keyboard_arrow_left_outline.png" id="16_uywyc"]
+[ext_resource type="Texture2D" uid="uid://dufdn2k6dla71" path="res://assets/icons/input/keyboard_arrow_right_outline.png" id="17_qoqs8"]
+[ext_resource type="Texture2D" uid="uid://blv7xa0ekqr5f" path="res://assets/icons/input/keyboard_arrow_up_outline.png" id="18_pn5ge"]
+[ext_resource type="Texture2D" uid="uid://b46p2y0l5dqlh" path="res://assets/icons/input/keyboard_arrow_down_outline.png" id="19_o84ra"]
+[ext_resource type="Texture2D" uid="uid://fdk7c4y6wkiq" path="res://assets/icons/input/keyboard_p_outline.png" id="20_152fq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iek8j"]
 shader = ExtResource("3_8nu7y")
@@ -23,27 +42,24 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="MenuPanel" type="MarginContainer" parent="." unique_id=471534356]
+[node name="MenuPanel" type="HBoxContainer" parent="." unique_id=1772093532]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -75.0
-offset_top = -20.0
-offset_right = 75.0
-offset_bottom = 20.0
+offset_left = -692.0
+offset_top = -301.5
+offset_right = 692.0
+offset_bottom = 301.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
+theme = ExtResource("3_upoqq")
+theme_override_constants/separation = 16
 
 [node name="PanelContainer" type="PanelContainer" parent="MenuPanel" unique_id=1990023550]
 layout_mode = 2
-theme = ExtResource("1_yqcqj")
-theme_type_variation = &"PanelContainerOutline"
+theme_type_variation = &"PanelContainerSolidOutline"
 
 [node name="MarginContainer" type="MarginContainer" parent="MenuPanel/PanelContainer" unique_id=766923587]
 layout_mode = 2
@@ -52,54 +68,529 @@ theme_override_constants/margin_top = 64
 theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 64
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuPanel/PanelContainer/MarginContainer" unique_id=1609093929]
+[node name="Menu" type="VBoxContainer" parent="MenuPanel/PanelContainer/MarginContainer" unique_id=1609093929]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="TitlePanel" type="PanelContainer" parent="MenuPanel/PanelContainer/MarginContainer/VBoxContainer" unique_id=750267872]
+[node name="TitlePanel" type="PanelContainer" parent="MenuPanel/PanelContainer/MarginContainer/Menu" unique_id=750267872]
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 theme_type_variation = &"PanelContainerSolid"
 
-[node name="TitleLabel" type="Label" parent="MenuPanel/PanelContainer/MarginContainer/VBoxContainer/TitlePanel" unique_id=1017239901]
+[node name="TitleLabel" type="Label" parent="MenuPanel/PanelContainer/MarginContainer/Menu/TitlePanel" unique_id=1017239901]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
-theme_override_fonts/font = ExtResource("4_iek8j")
-theme_override_font_sizes/font_size = 24
-text = "Main Menu"
+size_flags_vertical = 1
+theme_type_variation = &"UiOverlayH1"
+text = "Optionen"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="MenuPanel/PanelContainer/MarginContainer/Menu" unique_id=1092798478]
+layout_mode = 2
+
+[node name="VisualsLabel" type="Label" parent="MenuPanel/PanelContainer/MarginContainer/Menu" unique_id=864411]
+layout_mode = 2
+theme_type_variation = &"InfoPanelH1"
+text = "Darstellung"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="HSeparator" type="HSeparator" parent="MenuPanel/PanelContainer/MarginContainer/VBoxContainer" unique_id=1092798478]
+[node name="CrtEffectButton" type="Button" parent="MenuPanel/PanelContainer/MarginContainer/Menu" unique_id=783263270]
+layout_mode = 2
+text = "CRT Effekt"
+
+[node name="UIColorButton" type="MenuButton" parent="MenuPanel/PanelContainer/MarginContainer/Menu" unique_id=1695181653]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "UI Farbschema"
+item_count = 4
+popup/item_0/text = "Default (White)"
+popup/item_0/checkable = 1
+popup/item_0/checked = true
+popup/item_0/id = 0
+popup/item_1/text = "Amber"
+popup/item_1/checkable = 1
+popup/item_1/id = 1
+popup/item_2/text = "Teal"
+popup/item_2/checkable = 1
+popup/item_2/id = 2
+popup/item_3/text = "Grün"
+popup/item_3/checkable = 1
+popup/item_3/id = 3
+
+[node name="MapColorButton" type="MenuButton" parent="MenuPanel/PanelContainer/MarginContainer/Menu" unique_id=1294286917]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "Map Farbschema"
+item_count = 1
+popup/item_0/text = "Default"
+popup/item_0/checkable = 1
+popup/item_0/checked = true
+popup/item_0/id = 0
+
+[node name="Control" type="Control" parent="MenuPanel/PanelContainer/MarginContainer/Menu" unique_id=101788790]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MenuButtons" type="HBoxContainer" parent="MenuPanel/PanelContainer/MarginContainer/Menu" unique_id=380760741]
 layout_mode = 2
 
-[node name="VisualsLabel" type="Label" parent="MenuPanel/PanelContainer/MarginContainer/VBoxContainer" unique_id=864411]
+[node name="ResumeButton" type="Button" parent="MenuPanel/PanelContainer/MarginContainer/Menu/MenuButtons" unique_id=1303303069]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Zurück"
+
+[node name="QuitButton" type="Button" parent="MenuPanel/PanelContainer/MarginContainer/Menu/MenuButtons" unique_id=1466854710]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Beenden"
+
+[node name="PanelContainer2" type="PanelContainer" parent="MenuPanel" unique_id=1830049245]
+layout_mode = 2
+theme_type_variation = &"PanelContainerSolidOutline"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MenuPanel/PanelContainer2" unique_id=1657430119]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="ControlScheme" type="VBoxContainer" parent="MenuPanel/PanelContainer2/MarginContainer2" unique_id=1833296695]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TitlePanel" type="PanelContainer" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme" unique_id=1982042073]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_type_variation = &"PanelContainerSolid"
+
+[node name="TitleLabel" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/TitlePanel" unique_id=2018797885]
+layout_mode = 2
+size_flags_vertical = 1
+theme_type_variation = &"UiOverlayH1"
+text = "Tastenbelegung"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="HSeparator" type="HSeparator" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme" unique_id=494211155]
+layout_mode = 2
+
+[node name="ControlSchemes" type="HBoxContainer" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme" unique_id=760984966]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="MapControls" type="VBoxContainer" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes" unique_id=793225302]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls" unique_id=359479772]
+layout_mode = 2
+theme_type_variation = &"InfoPanelH1"
+text = "Sternenkarte"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HSeparator2" type="HSeparator" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls" unique_id=457291743]
+layout_mode = 2
+
+[node name="HBoxContainer" type="GridContainer" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls" unique_id=120591610]
+layout_mode = 2
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 16
+columns = 3
+
+[node name="Label2" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer" unique_id=1395115960]
+layout_mode = 2
+theme_type_variation = &"InfoPanelH2"
+theme_override_fonts/font = ExtResource("4_iek8j")
+text = "Kamera"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer" unique_id=9051957]
+layout_mode = 2
+theme_type_variation = &"InfoPanelH2"
+theme_override_fonts/font = ExtResource("4_iek8j")
+text = "Zeit"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer" unique_id=567521157]
+layout_mode = 2
+theme_type_variation = &"InfoPanelH2"
+theme_override_fonts/font = ExtResource("4_iek8j")
+text = "UI"
+horizontal_alignment = 1
+
+[node name="ControlGrid" type="GridContainer" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer" unique_id=1121617764]
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_constants/h_separation = 8
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid" unique_id=1961773153]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("6_upoqq")
+expand_mode = 2
+stretch_mode = 4
+script = ExtResource("6_yvj37")
+
+[node name="Label5" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid" unique_id=1049170465]
+layout_mode = 2
+theme_type_variation = &"LabelLight"
+text = "Click - Select"
+
+[node name="TextureRect9" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid" unique_id=1939336600]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("7_yvj37")
+expand_mode = 2
+stretch_mode = 4
+script = ExtResource("6_yvj37")
+
+[node name="Label9" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid" unique_id=1206061342]
+layout_mode = 2
+theme_type_variation = &"LabelLight"
+text = "Click - Context / Deselect"
+
+[node name="TextureRect2" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid" unique_id=1056112462]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("6_upoqq")
+expand_mode = 2
+stretch_mode = 4
+script = ExtResource("6_yvj37")
+
+[node name="Label8" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid" unique_id=698160060]
+layout_mode = 2
+theme_type_variation = &"LabelLight"
+text = "Drag  - Pan Camera"
+
+[node name="TextureRect4" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid" unique_id=1103662275]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("8_6f7p1")
+expand_mode = 4
+stretch_mode = 4
+script = ExtResource("6_yvj37")
+
+[node name="Label3" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid" unique_id=721289449]
+layout_mode = 2
+theme_type_variation = &"LabelLight"
+text = "WASD  - Pan Camera"
+
+[node name="TextureRect6" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid" unique_id=74612557]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("8_1tqhj")
+expand_mode = 4
+stretch_mode = 4
+script = ExtResource("6_yvj37")
+
+[node name="Label6" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid" unique_id=1112244732]
+layout_mode = 2
+theme_type_variation = &"LabelLight"
+text = "Zoom Out"
+
+[node name="TextureRect7" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid" unique_id=312702845]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("9_r8myb")
+expand_mode = 4
+stretch_mode = 4
+script = ExtResource("6_yvj37")
+
+[node name="Label7" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid" unique_id=1168777462]
+layout_mode = 2
+theme_type_variation = &"LabelLight"
+text = "Zoom In"
+
+[node name="ControlGrid2" type="GridContainer" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer" unique_id=769353175]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+mouse_filter = 2
+theme_override_constants/h_separation = 8
+columns = 2
+
+[node name="TextureRect5" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid2" unique_id=1425662200]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("14_kvhq1")
+expand_mode = 4
+stretch_mode = 4
+script = ExtResource("6_yvj37")
+
+[node name="Label5" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid2" unique_id=559872206]
+layout_mode = 2
+theme_type_variation = &"LabelLight"
+text = "Play / Pause"
+
+[node name="TextureRect7" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid2" unique_id=1134827712]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("15_s4m7y")
+expand_mode = 4
+stretch_mode = 4
+script = ExtResource("6_yvj37")
+
+[node name="Label7" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid2" unique_id=923374656]
+layout_mode = 2
+theme_type_variation = &"LabelLight"
+text = "Live Mode"
+
+[node name="TextureRect6" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid2" unique_id=1495100368]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("16_uywyc")
+expand_mode = 4
+stretch_mode = 4
+script = ExtResource("6_yvj37")
+
+[node name="Label6" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid2" unique_id=489911306]
+layout_mode = 2
+theme_type_variation = &"LabelLight"
+text = "Zurück spulen"
+
+[node name="TextureRect2" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid2" unique_id=55788711]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("17_qoqs8")
+expand_mode = 4
+stretch_mode = 4
+script = ExtResource("6_yvj37")
+
+[node name="Label4" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid2" unique_id=146847172]
+layout_mode = 2
+theme_type_variation = &"LabelLight"
+text = "Vor spulen"
+
+[node name="TextureRect3" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid2" unique_id=1188438584]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("18_pn5ge")
+expand_mode = 4
+stretch_mode = 4
+script = ExtResource("6_yvj37")
+
+[node name="Label" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid2" unique_id=1749017584]
+layout_mode = 2
+theme_type_variation = &"LabelLight"
+text = "Zeitschritt Plus"
+
+[node name="TextureRect8" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid2" unique_id=1352014779]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("19_o84ra")
+expand_mode = 4
+stretch_mode = 4
+script = ExtResource("6_yvj37")
+
+[node name="Label2" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid2" unique_id=1350875398]
+layout_mode = 2
+theme_type_variation = &"LabelLight"
+text = "Zeitschritt Minus"
+
+[node name="ControlGrid3" type="GridContainer" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer" unique_id=1975175857]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+mouse_filter = 2
+theme_override_constants/h_separation = 8
+columns = 2
+
+[node name="TextureRect5" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid3" unique_id=1748992542]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("20_152fq")
+expand_mode = 4
+stretch_mode = 4
+script = ExtResource("6_yvj37")
+
+[node name="Label4" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid3" unique_id=1957807190]
+layout_mode = 2
+theme_type_variation = &"LabelLight"
+text = "Pin Body"
+
+[node name="TextureRect6" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid3" unique_id=154254379]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("10_r3hnw")
+expand_mode = 4
+stretch_mode = 4
+script = ExtResource("6_yvj37")
+
+[node name="Label5" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid3" unique_id=1795539293]
+layout_mode = 2
+theme_type_variation = &"LabelLight"
+text = "Toggle Nav Panel"
+
+[node name="TextureRect2" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid3" unique_id=67149705]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("11_6hnod")
+expand_mode = 4
+stretch_mode = 4
+script = ExtResource("6_yvj37")
+
+[node name="Label" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid3" unique_id=1186068084]
+layout_mode = 2
+theme_type_variation = &"LabelLight"
+text = "Toggle Info Panel"
+
+[node name="TextureRect3" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid3" unique_id=1178075196]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("12_3v66l")
+expand_mode = 4
+stretch_mode = 4
+script = ExtResource("6_yvj37")
+
+[node name="Label2" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid3" unique_id=572778651]
+layout_mode = 2
+theme_type_variation = &"LabelLight"
+text = "Toggle Almanach Panel"
+
+[node name="TextureRect8" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid3" unique_id=1601976807]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("13_1tqhj")
+expand_mode = 4
+stretch_mode = 4
+script = ExtResource("6_yvj37")
+
+[node name="Label8" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid3" unique_id=91822444]
+layout_mode = 2
+theme_type_variation = &"LabelLight"
+text = "Switch View"
+
+[node name="TextureRect9" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid3" unique_id=1252545431]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("13_40nt4")
+expand_mode = 4
+stretch_mode = 4
+script = ExtResource("6_yvj37")
+
+[node name="Label9" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/MapControls/HBoxContainer/ControlGrid3" unique_id=1531965503]
+layout_mode = 2
+theme_type_variation = &"LabelLight"
+text = "Open Main Menu"
+
+[node name="PlanetControls" type="GridContainer" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes" unique_id=1990763289]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 16
+
+[node name="Label" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/PlanetControls" unique_id=134852644]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"InfoPanelH1"
+text = "Planetare Ansicht"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HSeparator2" type="HSeparator" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/PlanetControls" unique_id=2029016787]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label4" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/PlanetControls" unique_id=955527909]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("4_iek8j")
 theme_override_font_sizes/font_size = 18
-text = "Visuals"
+text = " "
+label_settings = ExtResource("7_6f7p1")
 horizontal_alignment = 1
 
-[node name="CrtEffectButton" type="Button" parent="MenuPanel/PanelContainer/MarginContainer/VBoxContainer" unique_id=783263270]
+[node name="ControlGrid" type="GridContainer" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/PlanetControls" unique_id=275273617]
 layout_mode = 2
-text = "CRT Effekt"
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/h_separation = 8
+columns = 2
 
-[node name="HSeparator2" type="HSeparator" parent="MenuPanel/PanelContainer/MarginContainer/VBoxContainer" unique_id=1670662672]
+[node name="TextureRect" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/PlanetControls/ControlGrid" unique_id=198854386]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+texture = ExtResource("6_upoqq")
+expand_mode = 2
+stretch_mode = 4
+script = ExtResource("6_yvj37")
 
-[node name="MenuButtons" type="HBoxContainer" parent="MenuPanel/PanelContainer/MarginContainer/VBoxContainer" unique_id=380760741]
+[node name="Label3" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/PlanetControls/ControlGrid" unique_id=1088242874]
 layout_mode = 2
+theme_type_variation = &"LabelLight"
+text = "Drag - Rotate Body"
 
-[node name="ResumeButton" type="Button" parent="MenuPanel/PanelContainer/MarginContainer/VBoxContainer/MenuButtons" unique_id=1303303069]
-custom_minimum_size = Vector2(180, 0)
+[node name="TextureRect5" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/PlanetControls/ControlGrid" unique_id=551107113]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-size_flags_horizontal = 3
-text = "Resume"
+texture = ExtResource("12_3v66l")
+expand_mode = 4
+stretch_mode = 4
+script = ExtResource("6_yvj37")
 
-[node name="QuitButton" type="Button" parent="MenuPanel/PanelContainer/MarginContainer/VBoxContainer/MenuButtons" unique_id=1466854710]
-custom_minimum_size = Vector2(180, 0)
+[node name="Label4" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/PlanetControls/ControlGrid" unique_id=708960325]
 layout_mode = 2
-size_flags_horizontal = 3
-text = "Quit"
+theme_type_variation = &"LabelLight"
+text = "Toggle Almanac Panel"
+
+[node name="TextureRect3" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/PlanetControls/ControlGrid" unique_id=3346802]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("13_1tqhj")
+expand_mode = 4
+stretch_mode = 4
+script = ExtResource("6_yvj37")
+
+[node name="Label2" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/PlanetControls/ControlGrid" unique_id=1475236314]
+layout_mode = 2
+theme_type_variation = &"LabelLight"
+text = "Switch to Map View"
+
+[node name="TextureRect9" type="TextureRect" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/PlanetControls/ControlGrid" unique_id=55580151]
+modulate = Color(0.79607844, 0.57254905, 0.1764706, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("13_40nt4")
+expand_mode = 4
+stretch_mode = 4
+script = ExtResource("6_yvj37")
+
+[node name="Label9" type="Label" parent="MenuPanel/PanelContainer2/MarginContainer2/ControlScheme/ControlSchemes/PlanetControls/ControlGrid" unique_id=1464113457]
+layout_mode = 2
+theme_type_variation = &"LabelLight"
+text = "Open Main Menu"

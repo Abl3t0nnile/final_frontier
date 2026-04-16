@@ -1,11 +1,11 @@
-[gd_resource type="Theme" format=3 uid="uid://bjcahkix8bvsn"]
+[gd_resource type="Theme" format=3 uid="uid://dcd5vk4q8ihmt"]
 
 [ext_resource type="FontFile" uid="uid://dpe512ervf1h1" path="res://assets/fonts/Syncopate-Bold.ttf" id="1_5islo"]
 [ext_resource type="FontFile" uid="uid://cysj7b68qqiw8" path="res://assets/fonts/SUSEMono-Bold.ttf" id="1_cfj5d"]
 [ext_resource type="FontFile" uid="uid://x86ksuga1q3t" path="res://assets/fonts/SUSEMono-Regular.ttf" id="1_cy84l"]
-[ext_resource type="StyleBox" uid="uid://b387vh8yxttpd" path="res://ui/resources/styleboxes/ui_stylebox_outline.tres" id="1_jlsdo"]
-[ext_resource type="StyleBox" uid="uid://cqa1vrondmjy6" path="res://ui/resources/styleboxes/ui_stylebox_solid.tres" id="2_7uax4"]
-[ext_resource type="StyleBox" uid="uid://de5bc6qs5itcn" path="res://ui/resources/styleboxes/ui_stylebox_solid_outline.tres" id="3_222nv"]
+[ext_resource type="StyleBox" path="res://ui/resources/styleboxes/ui_stylebox_outline_teal.tres" id="1_jlsdo"]
+[ext_resource type="StyleBox" path="res://ui/resources/styleboxes/ui_stylebox_solid_teal.tres" id="2_7uax4"]
+[ext_resource type="StyleBox" path="res://ui/resources/styleboxes/ui_stylebox_solid_outline_teal.tres" id="3_222nv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_222nv"]
 content_margin_left = 8.0
@@ -18,10 +18,10 @@ content_margin_left = 8.0
 content_margin_top = 8.0
 content_margin_right = 8.0
 content_margin_bottom = 8.0
-bg_color = Color(0.9411765, 0.9411765, 0.9411765, 1)
+bg_color = Color(0.35, 0.62, 0.55, 1)
 draw_center = false
 border_width_bottom = 2
-border_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
+border_color = Color(0.35, 0.62, 0.55, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7uax4"]
 content_margin_left = 8.0
@@ -36,10 +36,10 @@ content_margin_right = 8.0
 content_margin_bottom = 8.0
 draw_center = false
 border_width_bottom = 2
-border_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
+border_color = Color(0.35, 0.62, 0.55, 1)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_3iqa0"]
-color = Color(0.8627451, 0.8627451, 0.8627451, 1)
+color = Color(0.35, 0.62, 0.55, 1)
 thickness = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm4fp"]
@@ -50,51 +50,51 @@ content_margin_bottom = 8.0
 bg_color = Color(0.1231095, 0.1231095, 0.1231095, 0.8627451)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_222nv"]
-color = Color(0.8627451, 0.8627451, 0.8627451, 1)
+color = Color(0.35, 0.62, 0.55, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5islo"]
-bg_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
+bg_color = Color(0.35, 0.62, 0.55, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xf3gj"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.42, 0.74, 0.66, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0c1h"]
-bg_color = Color(0.5607843, 0.5607843, 0.5607843, 1)
+bg_color = Color(0.23, 0.41, 0.36, 1)
 
 [resource]
 default_font = ExtResource("1_cy84l")
 default_font_size = 16
-Button/colors/font_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
-Button/colors/font_disabled_color = Color(0.8627451, 0.8627451, 0.8627451, 0.5019608)
-Button/colors/font_hover_color = Color(1.0039216, 1.0039216, 1.0039216, 1)
-Button/colors/font_pressed_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
-Button/colors/icon_disabled_color = Color(0.8627451, 0.8627451, 0.8627451, 0.5019608)
-Button/colors/icon_hover_color = Color(1, 1, 1, 1)
-Button/colors/icon_normal_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
-Button/colors/icon_pressed_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
+Button/colors/font_color = Color(0.35, 0.62, 0.55, 1)
+Button/colors/font_disabled_color = Color(0.35, 0.62, 0.55, 0.5019608)
+Button/colors/font_hover_color = Color(0.42, 0.74, 0.66, 1)
+Button/colors/font_pressed_color = Color(0.35, 0.62, 0.55, 1)
+Button/colors/icon_disabled_color = Color(0.35, 0.62, 0.55, 0.5019608)
+Button/colors/icon_hover_color = Color(0.42, 0.74, 0.66, 1)
+Button/colors/icon_normal_color = Color(0.35, 0.62, 0.55, 1)
+Button/colors/icon_pressed_color = Color(0.35, 0.62, 0.55, 1)
 Button/styles/disabled = SubResource("StyleBoxEmpty_222nv")
 Button/styles/hover = SubResource("StyleBoxFlat_222nv")
 Button/styles/normal = SubResource("StyleBoxEmpty_7uax4")
 Button/styles/pressed = SubResource("StyleBoxFlat_7uax4")
-FoldableContainer/colors/collapsed_font_color = Color(0.3921569, 0.3921569, 0.3921569, 1)
-FoldableContainer/colors/font_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
-FoldableContainer/colors/hover_font_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
+FoldableContainer/colors/collapsed_font_color = Color(0.23, 0.41, 0.36, 1)
+FoldableContainer/colors/font_color = Color(0.35, 0.62, 0.55, 1)
+FoldableContainer/colors/hover_font_color = Color(0.35, 0.62, 0.55, 1)
 HSeparator/styles/separator = SubResource("StyleBoxLine_3iqa0")
 InfoPanelH1/base_type = &"Label"
-InfoPanelH1/colors/font_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
+InfoPanelH1/colors/font_color = Color(0.35, 0.62, 0.55, 1)
 InfoPanelH1/font_sizes/font_size = 24
 InfoPanelH1/fonts/font = ExtResource("1_5islo")
 InfoPanelH2/base_type = &"Label"
-InfoPanelH2/colors/font_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
+InfoPanelH2/colors/font_color = Color(0.35, 0.62, 0.55, 1)
 InfoPanelH2/font_sizes/font_size = 20
 InfoPanelH2/fonts/font = ExtResource("1_cfj5d")
-Label/colors/font_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
+Label/colors/font_color = Color(0.35, 0.62, 0.55, 1)
 LabelDark/base_type = &"Label"
 LabelDark/colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 LabelDimmed/base_type = &"Label"
 LabelDimmed/colors/font_color = Color(0.3137255, 0.3137255, 0.3137255, 1)
 LabelLight/base_type = &"Label"
-LabelLight/colors/font_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
+LabelLight/colors/font_color = Color(0.35, 0.62, 0.55, 1)
 OptionButton/colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 OptionButton/icons/arrow = null
 PanelContainerOutline/base_type = &"PanelContainerSolid"
@@ -105,8 +105,8 @@ PanelContainerSolidDark/base_type = &"PanelContainer"
 PanelContainerSolidDark/styles/panel = SubResource("StyleBoxFlat_cm4fp")
 PanelContainerSolidOutline/base_type = &"PanelContainer"
 PanelContainerSolidOutline/styles/panel = ExtResource("3_222nv")
-PopupMenu/colors/font_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
-PopupMenu/colors/font_hover_color = Color(1, 1, 1, 1)
+PopupMenu/colors/font_color = Color(0.35, 0.62, 0.55, 1)
+PopupMenu/colors/font_hover_color = Color(0.42, 0.74, 0.66, 1)
 PopupMenu/colors/font_separator_color = Color(0.3529412, 0.3529412, 0.3529412, 1)
 PopupMenu/font_sizes/font_separator_size = 18
 PopupMenu/font_sizes/font_size = 16
@@ -114,29 +114,29 @@ PopupMenu/font_sizes/title_font_size = 16
 PopupMenu/styles/panel = ExtResource("3_222nv")
 PopupMenu/styles/separator = SubResource("StyleBoxLine_222nv")
 PopupPanel/styles/panel = ExtResource("3_222nv")
-RichTextLabel/colors/default_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
+RichTextLabel/colors/default_color = Color(0.35, 0.62, 0.55, 1)
 RichTextLabel/font_sizes/bold_font_size = 20
 RichTextLabel/font_sizes/bold_italics_font_size = 20
 RichTextLabel/font_sizes/italics_font_size = 18
 RichTextLabel/font_sizes/mono_font_size = 18
 RichTextLabel/font_sizes/normal_font_size = 18
 RichTextLabel/fonts/bold_font = ExtResource("1_cfj5d")
-ScrollContainer/colors/scroll_hint_horizontal_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
-ScrollContainer/colors/scroll_hint_vertical_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
+ScrollContainer/colors/scroll_hint_horizontal_color = Color(0.35, 0.62, 0.55, 1)
+ScrollContainer/colors/scroll_hint_vertical_color = Color(0.35, 0.62, 0.55, 1)
 ThemedIcon/base_type = &"TextureRect"
-ThemedIcon/colors/icon_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
+ThemedIcon/colors/icon_color = Color(0.35, 0.62, 0.55, 1)
 UiDisplayCaption/base_type = &"Label"
-UiDisplayCaption/colors/font_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
+UiDisplayCaption/colors/font_color = Color(0.35, 0.62, 0.55, 1)
 UiDisplayCaption/colors/font_outline_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 UiDisplayCaption/constants/outline_size = 4
 UiDisplayCaption/fonts/font = ExtResource("1_cfj5d")
 UiDisplayValue/base_type = &"Label"
-UiDisplayValue/colors/font_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
+UiDisplayValue/colors/font_color = Color(0.35, 0.62, 0.55, 1)
 UiDisplayValue/colors/font_outline_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 UiDisplayValue/constants/outline_size = 4
 UiDisplayValue/fonts/font = ExtResource("1_cy84l")
 UiInputLabel/base_type = &"Label"
-UiInputLabel/colors/font_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
+UiInputLabel/colors/font_color = Color(0.35, 0.62, 0.55, 1)
 UiInputLabel/colors/font_outline_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 UiInputLabel/constants/outline_size = 4
 UiInputLabel/font_sizes/font_size = 18
@@ -146,7 +146,7 @@ UiOverlayH1/colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 UiOverlayH1/font_sizes/font_size = 24
 UiOverlayH1/fonts/font = ExtResource("1_cfj5d")
 UnitValueCaptionLabel/base_type = &"Label"
-UnitValueCaptionLabel/colors/font_color = Color(0.8627451, 0.8627451, 0.8627451, 1)
+UnitValueCaptionLabel/colors/font_color = Color(0.35, 0.62, 0.55, 1)
 UnitValueLabel/base_type = &"Label"
 UnitValueLabel/colors/font_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_5islo")

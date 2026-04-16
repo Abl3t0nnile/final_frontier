@@ -205,6 +205,10 @@ func setup(model: SolarSystemModel, clock: SimClock, registry: GameObjectRegistr
 		_setup_rings()
 		_culling_manager.set_ring_manager(_ring_manager)
 
+	# Area tooltip hiding when marker is hovered
+	_interaction_manager.marker_hovered.connect(_on_marker_hovered_area)
+	_interaction_manager.marker_unhovered.connect(_on_marker_unhovered_area)
+
 	# Default-Filter: Kometen und Strukturen ausgeblendet
 	_culling_manager.set_subtype_visible("minor_moon", false)
 	_culling_manager.set_type_visible("comet",  false)
@@ -506,6 +510,18 @@ func _on_marker_hovered_orbit(id: String) -> void:
 func _on_marker_unhovered_orbit(id: String) -> void:
 	if _orbit_manager:
 		_orbit_manager.set_highlight(id, false)
+
+
+func _on_marker_hovered_area(_id: String) -> void:
+	# Hide area tooltip when hovering a marker
+	if not _hovered_areas.is_empty():
+		area_unhovered.emit()
+
+
+func _on_marker_unhovered_area(_id: String) -> void:
+	# Restore area tooltip when leaving marker
+	if not _hovered_areas.is_empty():
+		area_hovered.emit(_hovered_areas.values().back())
 
 
 func _on_marker_clicked(id: String) -> void:

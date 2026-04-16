@@ -11,6 +11,8 @@ uniform float saturation : hint_range(0.0, 2.0) = 0.78;
 uniform float contrast : hint_range(0.5, 1.5) = 0.90;
 uniform float shadow_lift : hint_range(0.0, 0.25) = 0.06;
 uniform float scanline_strength : hint_range(0.0, 0.20) = 0.04;
+uniform float scanline_thickness : hint_range(0.2, 2.0) = 1.1;
+uniform float scanline_glow : hint_range(0.0, 0.08) = 0.015;
 uniform float vignette_strength : hint_range(0.0, 0.5) = 0.10;
 
 // animated noise
@@ -121,9 +123,10 @@ void fragment() {
 
 	col += ((grain - 0.5) * 0.7 + (line_snow - 0.5) * 0.3) * noise_strength;
 
-	// scanlines
-	float scan = sin((FRAGCOORD.y + t * 8.0) * 1.1) * 0.5 + 0.5;
+	// scanlines (multiplicative + additive for dark bg visibility)
+	float scan = sin((FRAGCOORD.y + t * 8.0) * scanline_thickness) * 0.5 + 0.5;
 	col *= 1.0 - scan * scanline_strength;
+	col += (1.0 - scan) * scanline_glow;
 
 	// vignette
 	vec2 centered = SCREEN_UV * 2.0 - 1.0;
