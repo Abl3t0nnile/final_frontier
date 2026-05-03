@@ -27,6 +27,7 @@ assets/textures/
 # Prototype & IDE tool folders
 .prototype/
 .windsurf/
+.VSCodeCounter/
 
 # Affinity Designer lock files
 *.af~lock~
