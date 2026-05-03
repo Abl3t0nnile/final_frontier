@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d11tqxhxmom8p"]
+
+[ext_resource type="Shader" uid="uid://by65xe0atpxl5" path="res://assets/shaders/fx/scan_lines.gdshader" id="1_ruyy2"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_ruyy2")
+shader_parameter/line_width = 4.0
+shader_parameter/color_bright = Color(0.07, 0.08, 0.05, 1)
+shader_parameter/color_dark = Color(0.03, 0.03, 0.02, 1)
+shader_parameter/glow_strength = 0.25
+shader_parameter/vignette_strength = 0.85
+shader_parameter/vignette_softness = 0.2

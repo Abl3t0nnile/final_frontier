@@ -11,13 +11,16 @@ extends Resource
 @export var parent_id: String = ""
 @export var zone_type: String = ""
 
-## "circle" = gefüllter Kreis, "ring" = Hohlring
+## "circle" = gefüllter Kreis, "donut"/"ring" = Hohlring, "line" = kreisförmige Linie
 @export var geometry: String = "circle"
 
 @export var radius_km: float = 0.0
 
 @export var inner_radius_km: float = 0.0
 @export var outer_radius_km: float = 0.0
+
+## Nur für geometry = "line": Linienbreite in Bildschirm-Pixeln (zoom-invariant)
+@export var line_width_px: float = 2.0
 
 @export var color_rgba: Color = Color(0.5, 0.5, 1.0, 0.1)
 @export var border_color_rgba: Color = Color(0.5, 0.5, 1.0, 0.4)

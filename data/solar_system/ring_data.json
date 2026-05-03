@@ -2,7 +2,7 @@
   "rings": [
     {
       "id": "saturn_rings_main",
-      "name": "Saturn Rings (C/B/A)",
+      "name": "Saturn Ringsystem (C/B/A)",
       "parent_id": "saturn",
       "reference_body_id": "",
       "inner_radius_km": 74510,
@@ -44,7 +44,7 @@
     },
     {
       "id": "uranus_rings",
-      "name": "Uranus Rings",
+      "name": "Uranus Ringsystem",
       "parent_id": "uranus",
       "reference_body_id": "",
       "inner_radius_km": 41800,
@@ -65,7 +65,7 @@
     },
     {
       "id": "neptune_rings",
-      "name": "Neptune Rings",
+      "name": "Neptun Ringsystem",
       "parent_id": "neptune",
       "reference_body_id": "",
       "inner_radius_km": 41900,

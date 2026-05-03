@@ -1,0 +1,594 @@
+[semi_major_axis]
+title = "Große Halbachse"
+content = """\
+[font_size=18][b]Große Halbachse[/b][/font_size]
+[i]Astronomie · Orbitalmechanik[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]große Halbachse[/b] ([i]a[/i]) ist die Hälfte der längsten Ausdehnung einer Ellipse. Sie definiert den mittleren Abstand eines orbitierenden Körpers zum Zentralkörper und ist die fundamentalste Größe zur Beschreibung einer Umlaufbahn.
+
+Im Sonnensystem werden Abstände üblicherweise in [url=concept:astronomical_unit]Astronomischen Einheiten (AU)[/url] angegeben.
+
+[b]Zusammenhang mit der Umlaufzeit[/b]
+Das dritte [url=concept:kepler_laws]Keplersche Gesetz[/url] beschreibt den quantitativen Zusammenhang zwischen großer Halbachse und [url=concept:orbital_period]Umlaufzeit[/url]:
+
+[indent][i]T² ∝ a³[/i][/indent]
+
+Die Umlaufzeit steigt mit der Potenz 3/2 der großen Halbachse. Bei doppelter Halbachse verlängert sich die Umlaufzeit um den Faktor 2^(3/2) ≈ 2,83.
+
+[b]Verwandte Begriffe[/b]
+• [url=concept:periapsis]Periapsis[/url] — nächster Punkt der Bahn
+• [url=concept:apoapsis]Apoapsis[/url] — fernster Punkt der Bahn
+• [url=concept:eccentricity]Exzentrizität[/url] — Maß der Abweichung von der Kreisbahn"""
+
+[orbital_period]
+title = "Umlaufzeit"
+content = """\
+[font_size=18][b]Umlaufzeit[/b][/font_size]
+[i]Astronomie · Siderische Periode[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Umlaufzeit[/b] ([i]T[/i]), auch [b]siderische Periode[/b], ist das Zeitintervall für einen vollständigen Umlauf eines Himmelskörpers um seinen Zentralkörper, gemessen relativ zu den Fixsternen.
+
+Die [b]synodische Periode[/b] unterscheidet sich hiervon: Sie gibt die Zeit zwischen zwei gleichen Konstellationen relativ zur Erde an (z. B. aufeinanderfolgende Oppositionen).
+
+[b]Berechnung[/b]
+Nach dem dritten [url=concept:kepler_laws]Keplerschen Gesetz[/url]:
+
+[indent][i]T = 2π · √(a³ / μ)[/i][/indent]
+
+mit [i]a[/i] als [url=concept:semi_major_axis]große Halbachse[/url] und [i]μ[/i] als [url=concept:gravitational_parameter]Gravitationsparameter[/url] des Zentralkörpers.
+
+[b]Einheiten[/b]
+• [b]1 a (Jahr)[/b] = 365,25 d = 31.557.600 s
+• [b]1 d (Tag)[/b] = 86.400 s"""
+
+[eccentricity]
+title = "Exzentrizität"
+content = """\
+[font_size=18][b]Exzentrizität[/b][/font_size]
+[i]Astronomie · Orbitalmechanik[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Exzentrizität[/b] ([i]e[/i]) ist ein dimensionsloses Maß für die Abweichung einer Umlaufbahn von der Kreisform. Charakteristische Wertebereiche:
+
+[indent]• [b]e = 0[/b] — Kreisbahn
+• [b]0 < e < 1[/b] — Ellipse (gebundene Bahn)
+• [b]e = 1[/b] — Parabel (Grenzbahn)
+• [b]e > 1[/b] — Hyperbel (ungebundene Bahn)[/indent]
+
+Die Exzentrizitäten der Planeten des Sonnensystems liegen nahe bei null (nahezu kreisförmige Bahnen). Kometen und Objekte der Streuscheibe erreichen typischerweise Werte nahe e = 1.
+
+[b]Physikalische Bedeutung[/b]
+Die Exzentrizität bestimmt den Abstandsvariationsbereich zwischen [url=concept:periapsis]Periapsis[/url] und [url=concept:apoapsis]Apoapsis[/url]. Bei hohen Exzentrizitäten resultieren ausgeprägte jahreszeitliche Intensitätsunterschiede.
+
+[b]Verwandte Begriffe[/b]
+• [url=concept:semi_major_axis]Große Halbachse[/url]
+• [url=concept:periapsis]Periapsis[/url]
+• [url=concept:apoapsis]Apoapsis[/url]"""
+
+[periapsis]
+title = "Periapsis"
+content = """\
+[font_size=18][b]Periapsis[/b][/font_size]
+[i]Astronomie · Orbitalmechanik[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Periapsis[/b] ist der Punkt einer Umlaufbahn mit dem geringsten Abstand zum Zentralkörper. An diesem Punkt erreicht die [url=concept:orbital_velocity]Orbitalgeschwindigkeit[/url] ihr Maximum.
+
+Körperspezifische Terminologie:
+[indent]• [b]Perihel[/b] — nächster Punkt zur Sonne
+• [b]Perigäum[/b] — nächster Punkt zur Erde
+• [b]Perizentrum[/b] — allgemeine Bezeichnung[/indent]
+
+[b]Berechnung[/b]
+[indent][i]r_peri = a · (1 − e)[/i][/indent]
+
+mit [i]a[/i] als [url=concept:semi_major_axis]große Halbachse[/url] und [i]e[/i] als [url=concept:eccentricity]Exzentrizität[/url].
+
+[b]Siehe auch[/b]
+• [url=concept:apoapsis]Apoapsis[/url] — fernster Punkt der Bahn
+• [url=concept:eccentricity]Exzentrizität[/url]"""
+
+[apoapsis]
+title = "Apoapsis"
+content = """\
+[font_size=18][b]Apoapsis[/b][/font_size]
+[i]Astronomie · Orbitalmechanik[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Apoapsis[/b] ist der Punkt einer Umlaufbahn mit dem größten Abstand zum Zentralkörper. An diesem Punkt erreicht die [url=concept:orbital_velocity]Orbitalgeschwindigkeit[/url] ihr Minimum.
+
+Körperspezifische Terminologie:
+[indent]• [b]Aphel[/b] — fernster Punkt von der Sonne
+• [b]Apogäum[/b] — fernster Punkt von der Erde
+• [b]Apozentrum[/b] — allgemeine Bezeichnung[/indent]
+
+[b]Berechnung[/b]
+[indent][i]r_apo = a · (1 + e)[/i][/indent]
+
+mit [i]a[/i] als [url=concept:semi_major_axis]große Halbachse[/url] und [i]e[/i] als [url=concept:eccentricity]Exzentrizität[/url].
+
+[b]Siehe auch[/b]
+• [url=concept:periapsis]Periapsis[/url] — nächster Punkt der Bahn
+• [url=concept:semi_major_axis]Große Halbachse[/url]
+• [url=concept:eccentricity]Exzentrizität[/url]"""
+
+[orbital_velocity]
+title = "Orbitalgeschwindigkeit"
+content = """\
+[font_size=18][b]Orbitalgeschwindigkeit[/b][/font_size]
+[i]Astronomie · Orbitalmechanik[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Orbitalgeschwindigkeit[/b] ist die Bahngeschwindigkeit eines Himmelskörpers relativ zum Zentralkörper. Auf elliptischen Bahnen variiert sie kontinuierlich: Maximum an der [url=concept:periapsis]Periapsis[/url], Minimum an der [url=concept:apoapsis]Apoapsis[/url] (zweites Keplersches Gesetz).
+
+[b]Mittlere Orbitalgeschwindigkeit[/b]
+[indent][i]v = 2π · a / T[/i][/indent]
+
+mit [i]a[/i] als [url=concept:semi_major_axis]große Halbachse[/url] und [i]T[/i] als [url=concept:orbital_period]Umlaufzeit[/url].
+
+[b]Referenzwerte (Sonnensystem)[/b]
+[indent]• Merkur: 47,9 km/s
+• Erde: 29,8 km/s
+• Neptun: 5,4 km/s[/indent]
+
+[b]Siehe auch[/b]
+• [url=concept:escape_velocity]Fluchtgeschwindigkeit[/url]
+• [url=concept:kepler_laws]Keplersche Gesetze[/url]"""
+
+[escape_velocity]
+title = "Fluchtgeschwindigkeit"
+content = """\
+[font_size=18][b]Fluchtgeschwindigkeit[/b][/font_size]
+[i]Astronomie · Physik[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Fluchtgeschwindigkeit[/b] ([i]v_esc[/i]) ist die Mindestgeschwindigkeit, die ein Objekt benötigt, um dem Gravitationsfeld eines Körpers zu entkommen, ohne weiteren Schub zu erhalten.
+
+[b]Formel[/b]
+[indent][i]v_esc = √(2μ / r)[/i][/indent]
+
+mit [i]μ[/i] als [url=concept:gravitational_parameter]Gravitationsparameter[/url] und [i]r[/i] als Abstand vom Zentralkörper.
+
+[b]Referenzwerte (Oberfläche)[/b]
+[indent]• Erde: 11,2 km/s
+• Mars: 5,0 km/s
+• Jupiter: 59,5 km/s
+• Sonne: 617 km/s[/indent]
+
+[b]Physikalische Bedeutung[/b]
+Die Fluchtgeschwindigkeit begrenzt die Fähigkeit eines Körpers, eine Atmosphäre zu binden. Bei niedriger Fluchtgeschwindigkeit und thermischen Geschwindigkeiten der Atmosphärenmoleküle kommt es zum atmosphärischen Verlust.
+
+[b]Siehe auch[/b]
+• [url=concept:gravitational_parameter]Gravitationsparameter[/url]
+• [url=concept:orbital_velocity]Orbitalgeschwindigkeit[/url]"""
+
+[gravitational_parameter]
+title = "Gravitationsparameter"
+content = """\
+[font_size=18][b]Gravitationsparameter[/b][/font_size]
+[i]Physik · Orbitalmechanik[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Der [b]Gravitationsparameter[/b] ([i]μ[/i]) ist definiert als Produkt aus der [b]Newtonschen Gravitationskonstante G[/b] und der [b]Masse M[/b]:
+
+[indent][i]μ = G · M[/i][/indent]
+
+Einheit: km³/s². Der Gravitationsparameter ist präziser bestimmbar als G und M einzeln, da er direkt aus orbitalen Beobachtungen abgeleitet wird.
+
+[b]Verwendung[/b]
+Zentrale Größe in orbitalmechanischen Berechnungen:
+• Bestimmung der [url=concept:orbital_period]Umlaufzeit[/url] aus der [url=concept:semi_major_axis]Halbachse[/url]
+• Berechnung der [url=concept:escape_velocity]Fluchtgeschwindigkeit[/url]
+• Bahnmechanik und Manöverplanung
+
+[b]Referenzwerte (Sonnensystem)[/b]
+[indent]• Sonne: 1,327 · 10¹¹ km³/s²
+• Jupiter: 1,267 · 10⁸ km³/s²
+• Erde: 3,986 · 10⁵ km³/s²[/indent]"""
+
+[astronomical_unit]
+title = "Astronomische Einheit"
+content = """\
+[font_size=18][b]Astronomische Einheit[/b][/font_size]
+[i]Astronomie · Maßeinheit[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Astronomische Einheit[/b] ([i]AU[/i]) ist die Standardlängeneinheit für Abstände im Sonnensystem. Sie ist definiert als der mittlere Abstand zwischen Erde und Sonne.
+
+[b]Definition (IAU 2012)[/b]
+[indent][b]1 AU = 149.597.870,7 km[/b] (exakt)[/indent]
+
+[b]Referenzabstände (Sonnensystem)[/b]
+[indent]• Merkur: 0,387 AU
+• Venus: 0,723 AU
+• Erde: 1,000 AU
+• Mars: 1,524 AU
+• Jupiter: 5,203 AU
+• Neptun: 30,07 AU[/indent]
+
+[b]Laufzeit des Lichts[/b]
+Licht benötigt für 1 AU ca. 8 Minuten 20 Sekunden (499,0 s)."""
+
+[kepler_laws]
+title = "Keplersche Gesetze"
+content = """\
+[font_size=18][b]Keplersche Gesetze[/b][/font_size]
+[i]Astronomie · Orbitalmechanik[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Keplerschen Gesetze[/b] beschreiben die Bewegung von Himmelskörpern auf Umlaufbahnen. Empirisch abgeleitet von Johannes Kepler (1609, 1619) aus Beobachtungsdaten Tycho Brahes; theoretisch begründet durch Isaac Newton (1687) aus den Gravitationsgesetzen.
+
+[b]1. Gesetz (Ellipsenbahn)[/b]
+[indent]Planeten bewegen sich auf Ellipsen. Der Zentralkörper befindet sich in einem der beiden Brennpunkte.[/indent]
+
+[b]2. Gesetz (Flächensatz)[/b]
+[indent]Der Fahrstrahl überstreicht in gleichen Zeitintervallen gleiche Flächen. Die [url=concept:orbital_velocity]Orbitalgeschwindigkeit[/url] ist an der [url=concept:periapsis]Periapsis[/url] maximal, an der [url=concept:apoapsis]Apoapsis[/url] minimal.[/indent]
+
+[b]3. Gesetz (Harmonisches Gesetz)[/b]
+[indent]Das Verhältnis [i]T² / a³[/i] ist für alle Körper eines Systems konstant.
+
+[indent][i]T² = (4π²/μ) · a³[/i][/indent][/indent]
+
+mit [i]T[/i] als [url=concept:orbital_period]Umlaufzeit[/url], [i]a[/i] als [url=concept:semi_major_axis]große Halbachse[/url] und [i]μ[/i] als [url=concept:gravitational_parameter]Gravitationsparameter[/url]."""
+
+[asteroid_belt]
+title = "Asteroidengürtel"
+content = """\
+[font_size=18][b]Asteroidengürtel[/b][/font_size]
+[i]Sonnensystem · Region[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Der [b]Asteroidengürtel[/b] (Hauptgürtel) ist eine konzentrische Region zwischen den Orbits von [url=body:mars]Mars[/url] (~1,5 AU) und [url=body:jupiter]Jupiter[/url] (~5,2 AU). Er enthält Millionen von Asteroiden und Kleinkörpern.
+
+[b]Lage[/b]
+[indent]• Innere Grenze: ~2,1 AU
+• Äußere Grenze: ~3,3 AU
+• Maximale Breite: ~1,2 AU[/indent]
+
+[b]Entstehung[/b]
+Die gravitative Störung durch [url=body:jupiter]Jupiter[/url] verhinderte die vollständige Akkretion des Gürtelmaterials zu einem Planeten. Stattdessen blieben zahlreiche Körper als Relikte der Planetenentstehung erhalten.
+
+[b]Größtes Objekt[/b]
+[url=body:ceres]Ceres[/url] (Durchmesser ~940 km) ist der einzige Zwergplanet im Hauptgürtel.
+
+[b]Siehe auch[/b]
+• [url=concept:kuiper_belt]Kuipergürtel[/url]
+• [url=concept:frost_line]Frostlinie[/url]"""
+
+[kuiper_belt]
+title = "Kuipergürtel"
+content = """\
+[font_size=18][b]Kuipergürtel[/b][/font_size]
+[i]Sonnensystem · Region[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Der [b]Kuipergürtel[/b] ist eine scheibenförmige Region des äußeren Sonnensystems (~30 AU bis ~50 AU). Er enthält zahlreiche eisige Körper, klassifiziert als Trans-Neptunische Objekte (TNO).
+
+[b]Lage[/b]
+[indent]• Innere Grenze: ~30 AU (Neptunbahn)
+• Äußere Grenze: ~50 AU
+• Gesamtmasse: ~0,1 Erdmassen (geschätzt)[/indent]
+
+[b]Bekannte Objekte[/b]
+[indent]• [url=body:pluto]Pluto[/url] — erstes entdecktes KBO (1930)
+• [url=body:eris]Eris[/url] — massereichster bekannter Zwergplanet
+• [url=body:makemake]Makemake[/url] — Zwergplanet
+• [url=body:haumea]Haumea[/url] — Zwergplanet mit nachgewiesenem Ringsystem[/indent]
+
+[b]Bedeutung[/b]
+Der Kuipergürtel ist das Reservoir für kurzperiodische Kometen. Gravitative Wechselwirkungen mit den Gasriesen können KBOs auf innere Sonnensystembahnen lenken.
+
+[b]Siehe auch[/b]
+• [url=concept:scattered_disc]Streuscheibe[/url]
+• [url=concept:asteroid_belt]Asteroidengürtel[/url]"""
+
+[habitable_zone]
+title = "Habitable Zone"
+content = """\
+[font_size=18][b]Habitable Zone[/b][/font_size]
+[i]Astronomie · Astrobiologie[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Habitable Zone[/b] (HZ, umgangssprachlich: Goldlöckchen-Zone) ist der Abstandsbereich um einen Stern, in dem flüssiges Wasser auf der Oberfläche eines erdähnlichen Planeten stabil existieren kann. Dies gilt als notwendige, nicht hinreichende Bedingung für lebensfreundliche Bedingungen.
+
+[b]Sonnensystem[/b]
+Die HZ der Sonne erstreckt sich von ca. 0,95 AU bis 1,37 AU. Die Erde (1,00 AU) befindet sich innerhalb dieses Bereichs. Mars (1,52 AU) liegt außerhalb der konservativen HZ-Grenze.
+
+[b]Einschränkungen[/b]
+Die HZ-Definition berücksichtigt ausschließlich den Strahlungsfluss des Zentralgestirns. Weitere habitabilitätsrelevante Faktoren (Atmosphärendruck, Magnetfeldschutz, geologische Aktivität, Gezeitenheizung) erfordern zusätzliche Analyse.
+
+[b]Verwandte Konzepte[/b]
+• [url=concept:frost_line]Frostlinie[/url]
+• [url=concept:astronomical_unit]Astronomische Einheit[/url]
+• [url=concept:tidal_heating]Gezeitenheizung[/url]"""
+
+[tidal_heating]
+title = "Gezeitenheizung"
+content = """\
+[font_size=18][b]Gezeitenheizung[/b][/font_size]
+[i]Astronomie · Planetologie[/i]
+
+[color=#888888]────────────────────────[/color]
+
+[b]Gezeitenheizung[/b] ist ein thermischer Energieerzeugungsprozess in Himmelskörpern, resultierend aus periodischer gravitativer Verformung durch einen Zentralkörper oder benachbarte Massen. Die durch die Gezeitendeformation induzierte innere Reibung dissipiert mechanische Energie als Wärme.
+
+[b]Voraussetzungen für maximale Effizienz[/b]
+[indent]• [url=concept:orbital_resonance]Bahnresonanz[/url] mit anderen Monden (verhindert Kreisierung der Bahn)
+• Geringer Abstand zum Zentralkörper (stärkere Gezeitenkräfte)
+• Erhalt einer orbitalen Exzentrizität[/indent]
+
+[b]Beispiele (Sonnensystem)[/b]
+[indent]• [url=body:io]Io[/url] — thermische Leistung ~100 TW, >400 aktive Vulkane
+• [url=body:europa]Europa[/url] — Subsurface-Ozean durch Gezeitenheizung aufrechterhalten
+• [url=body:enceladus]Enceladus[/url] — Südpolgeysire durch Gezeitenheizung angetrieben[/indent]
+
+[b]Astrobiologische Relevanz[/b]
+Gezeitenheizung ermöglicht die Existenz flüssigen Wassers in Eismonden jenseits der [url=concept:habitable_zone]Habitablen Zone[/url], potenziell habitabile Subsurface-Ökosysteme erzeugend.
+
+[b]Siehe auch[/b]
+• [url=concept:orbital_resonance]Bahnresonanz[/url]
+• [url=concept:roche_limit]Roche-Grenze[/url]"""
+
+[orbital_resonance]
+title = "Bahnresonanz"
+content = """\
+[font_size=18][b]Bahnresonanz[/b][/font_size]
+[i]Astronomie · Orbitalmechanik[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Eine [b]Bahnresonanz[/b] besteht, wenn die Umlaufzeiten zweier Himmelskörper in einem rationalen Zahlenverhältnis stehen (z. B. 1:2, 2:3, 3:2). Die resultierenden regelmäßigen gravitativen Wechselwirkungen können Bahnen stabilisieren oder destabilisieren.
+
+[b]Typen[/b]
+[indent]• [b]Mittelbewegungsresonanz[/b] — Umlaufzeiten im Verhältnis kleiner ganzer Zahlen
+• [b]Spin-Orbit-Resonanz[/b] — gekoppelte Rotation und Umlauf (z. B. 3:2-Resonanz Merkurs)[/indent]
+
+[b]Beispiele (Sonnensystem)[/b]
+[indent]• [b]Laplace-Resonanz[/b] — Io:Europa:Ganymed = 1:2:4; erzeugt [url=concept:tidal_heating]Gezeitenheizung[/url]
+• [b]Plutinos[/b] — [url=body:pluto]Pluto[/url], [url=body:orcus]Orcus[/url] in 3:2-Resonanz mit Neptun
+• [b]Cassini-Division[/b] — 2:1-Resonanz mit Mimas stabilisiert die Ringlücke
+• [b]Merkur[/b] — 3:2 Spin-Orbit-Resonanz[/indent]
+
+[b]Dynamische Effekte[/b]
+Resonanzen können Langzeitstabilität erzeugen (Plutinos) oder Bahnregionen leerfegen (Kirkwood-Lücken im [url=concept:asteroid_belt]Asteroidengürtel[/url] durch Jupiter-Resonanzen).
+
+[b]Siehe auch[/b]
+• [url=concept:tidal_heating]Gezeitenheizung[/url]
+• [url=concept:roche_limit]Roche-Grenze[/url]"""
+
+[roche_limit]
+title = "Roche-Grenze"
+content = """\
+[font_size=18][b]Roche-Grenze[/b][/font_size]
+[i]Astronomie · Orbitalmechanik[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Roche-Grenze[/b] ([i]d[/i]) ist der Abstand, innerhalb dessen die Gezeitenkräfte eines Zentralkörpers die Eigengravitation eines fluiden Satelliten überwiegen. Ab diesem Grenzabstand ist die Disruption des Satelliten unvermeidlich. Benannt nach Édouard Roche (1848).
+
+[b]Formel (fluider Körper)[/b]
+[indent][i]d ≈ 2,44 · R · (ρ_M / ρ_m)^(1/3)[/i][/indent]
+
+mit [i]R[/i] als Zentralkörperradius, [i]ρ_M[/i] als Dichte des Zentralkörpers und [i]ρ_m[/i] als Dichte des Satelliten.
+
+[b]Physikalische Konsequenzen[/b]
+[indent]• [b]Innerhalb der Roche-Grenze:[/b] Keine stabile Akkretion zu Monde möglich; Material bleibt als Ringsystem dispergiert
+• [b]Außerhalb der Roche-Grenze:[/b] Monde können stabil existieren; Ringsysteme akkretieren zu Monden[/indent]
+
+[b]Beispiele (Sonnensystem)[/b]
+[indent]• Saturnringe — innerhalb der Roche-Grenze
+• [url=body:metis]Metis[/url] (Jupiter) — innerhalb der Roche-Grenze
+• [url=body:triton]Triton[/url] — Retrogradbahn führt zu orbitaler Dekay; Annäherung an die Roche-Grenze (~3,6 Ga)[/indent]
+
+[b]Siehe auch[/b]
+• [url=concept:tidal_heating]Gezeitenheizung[/url]
+• [url=concept:orbital_resonance]Bahnresonanz[/url]"""
+
+[cryovolcanism]
+title = "Kryovulkanismus"
+content = """\
+[font_size=18][b]Kryovulkanismus[/b][/font_size]
+[i]Planetologie · Geologie[/i]
+
+[color=#888888]────────────────────────[/color]
+
+[b]Kryovulkanismus[/b] (griech. [i]kryos[/i] = Frost) bezeichnet die Extrusion flüssiger oder gasförmiger flüchtiger Substanzen (Wasser, Ammoniak, Methan, Stickstoff) an der Oberfläche kalter Himmelskörper. Die Schmelze wird durch interne Wärmequellen ([url=concept:tidal_heating]Gezeitenheizung[/url], radiogener Zerfall) aufrechterhalten.
+
+[b]Erscheinungsformen[/b]
+[indent]• [b]Kryogeysire[/b] — Eruption gasförmiger Phasen ([url=body:enceladus]Enceladus[/url], [url=body:triton]Triton[/url])
+• [b]Kryolavaströme[/b] — viskose Flüssigkeitsströme, post-eruptiv erstarrend
+• [b]Kryovulkankegel[/b] — positive Reliefstrukturen (Ahuna Mons, [url=body:ceres]Ceres[/url])[/indent]
+
+[b]Vorkommen (Sonnensystem)[/b]
+[indent]• [url=body:enceladus]Enceladus[/url] — Südpolgeysire (Wasserdampf, bestätigt)
+• [url=body:triton]Triton[/url] — Stickstoffgeysire (Voyager 2)
+• [url=body:ceres]Ceres[/url] — Ahuna Mons (Dawn-Mission)
+• [url=body:pluto]Pluto[/url] — Wright Mons (möglicher Kryovulkan)[/indent]
+
+[b]Geologische Relevanz[/b]
+Kryovulkanismus verjüngt Oberflächen durch Resurfacing und deutet auf interne thermische Aktivität hin. In Verbindung mit [url=concept:tidal_heating]Gezeitenheizung[/url] ermöglicht er chemische Prozesse in Subsurface-Ozeanen.
+
+[b]Siehe auch[/b]
+• [url=concept:tidal_heating]Gezeitenheizung[/url]
+• [url=concept:tholins]Tholins[/url]"""
+
+[tholins]
+title = "Tholins"
+content = """\
+[font_size=18][b]Tholins[/b][/font_size]
+[i]Planetologie · Astrochemie[/i]
+
+[color=#888888]────────────────────────[/color]
+
+[b]Tholins[/b] (griech. [i]tholos[/i] = trüb) sind komplexe organische Makromoleküle, die durch photochemische Prozesse aus einfachen flüchtigen Substanzen (Methan CH₄, Stickstoff N₂, Wasser H₂O) entstehen. Erstmals synthetisiert und charakterisiert von Sagan & Khare (1979).
+
+[b]Entstehungsprozess[/b]
+[indent]• UV-Photolyse oder kosmische Strahlung dissoziiert CH₄ und N₂
+• Entstehende Radikale rekombinieren zu komplexen organischen Ketten
+• Produkt: rötlich-braune, wachsartige Feststoffe mit hoher Polymerisationsgrad[/indent]
+
+[b]Vorkommen (Sonnensystem)[/b]
+Tholins verursachen die charakteristische Rotfärbung äußerer Sonnensystemkörper:
+[indent]• [url=body:titan]Titan[/url] — atmosphärische Tholin-Aerosole, Dünenfelder
+• [url=body:pluto]Pluto[/url] — rötliche Albedo-Variegation
+• [url=body:sedna]Sedna[/url], [url=body:gonggong]Gonggong[/url] — extrem hohe Tholinfraktion
+• [url=body:makemake]Makemake[/url], [url=body:haumea]Haumea[/url] — Makulae (organische Deposits)[/indent]
+
+[b]Astrobiologische Relevanz[/b]
+Tholins enthalten präbiotische Molekülstrukturen (Aminosäure-Vorläufer) und sind Modellsubstanzen für frühe organische Chemie in planetaren Atmosphären.
+
+[b]Siehe auch[/b]
+• [url=concept:cryovolcanism]Kryovulkanismus[/url]"""
+
+[scattered_disc]
+title = "Streuscheibe"
+content = """\
+[font_size=18][b]Streuscheibe[/b][/font_size]
+[i]Astronomie · Sonnensystemregion[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Streuscheibe[/b] (engl. Scattered Disc) ist eine Population transneptunischer Objekte mit Perihelien typischerweise zwischen 30–38 AU (nahe der Neptunbahn) und Aphelien >100 AU. Die Objekte zeichnen sich durch hohe Bahnexzentrizitäten und -neigungen aus.
+
+[b]Entstehung[/b]
+Während der planetaren Migration (Nizza-Modell) streute [url=body:neptune]Neptun[/url] zahlreiche Planetesimale aus dem ursprünglichen Kuipergürtel auf weitreichende, exzentrische Bahnen. Diese dynamische Streuung formte die heutige Streuscheibe.
+
+[b]Dynamische Charakteristika[/b]
+[indent]• Perihelien: 30–38 AU (Gravitationsdomäne Neptuns)
+• Aphelien: 100–1000+ AU
+• Hohe Exzentrizitäten (e > 0,3 typisch)
+• Große Bahnneigungen zur Ekliptik[/indent]
+
+[b]Bekannte Objekte[/b]
+[indent]• [url=body:eris]Eris[/url] — massereichster bekannter Zwergplanet
+• [url=body:gonggong]Gonggong[/url] — großer roter Streuscheibenkörper
+• [url=body:sedna]Sedna[/url] — Sonderfall; möglicherweise innere Oortsche Wolke[/indent]
+
+[b]Abgrenzung[/b]
+[indent]• [b]Klassischer Kuipergürtel[/b] — stabile Bahnen, moderate Exzentrizität
+• [b]Streuscheibe[/b] — durch Neptun gestreut, hohe Exzentrizität
+• [b]Innere Oortsche Wolke[/b] — Perihelien >50 AU, detached objects[/indent]
+
+[b]Siehe auch[/b]
+• [url=concept:kuiper_belt]Kuipergürtel[/url]
+• [url=concept:orbital_resonance]Bahnresonanz[/url]"""
+
+[magnetosphere]
+title = "Magnetosphäre"
+content = """\
+[font_size=18][b]Magnetosphäre[/b][/font_size]
+[i]Physik · Planetologie[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Magnetosphäre[/b] ist der Raumbereich um einen Planeten oder Mond, in dem das intrinsische Magnetfeld des Körpers das interplanetare Magnetfeld und den Sonnenwind dominiert.
+
+[b]Entstehung (Dynamo-Effekt)[/b]
+Konvektive Bewegung elektrisch leitfähiger Materie (flüssiges Eisen, ionisiertes Wasser-Eis) in Verbindung mit Rotation erzeugt durch Selbstinduktion ein Magnetfeld. Voraussetzungen: Leitfähigkeit, Konvektion, Rotation.
+
+[b]Schutzfunktion[/b]
+Die Magnetosphäre deflektiert geladene Teilchen des Sonnenwinds. Fehlender Magnetoschutz führt zu atmosphärischem Verlust durch Sputtering und thermische Escape ([url=body:mars]Mars[/url] als Referenzfall).
+
+[b]Beispiele (Sonnensystem)[/b]
+[indent]• [url=body:jupiter]Jupiter[/url] — stärkstes Planetenmagnetfeld (~20 Gauss), Magnetosphäre reicht bis Saturnbahn
+• [url=body:terra]Erde[/url] — Dipolfeld (~25–65 µT Oberfläche), Schutz der Biosphäre
+• [url=body:ganymede]Ganymed[/url] — einziger bekannter Mond mit intrinsischem Dynamo-Feld
+• [url=body:venus]Venus[/url], [url=body:mars]Mars[/url] — keine intrinsischen Magnetfelder[/indent]
+
+[b]Strahlungsgürtel[/b]
+Monde innerhalb magnetosphärischer Alfvén-Radien ([url=body:io]Io[/url] in Jupiters Magnetosphäre) werden von intensiven Plasmawolken und Strahlungsgürteln durchsetzt, was ihre Oberflächen ionisiert und chemisch modifiziert.
+
+[b]Siehe auch[/b]
+• [url=concept:tidal_heating]Gezeitenheizung[/url]
+• [url=concept:habitable_zone]Habitable Zone[/url]"""
+
+[frost_line]
+title = "Frostlinie"
+content = """\
+[font_size=18][b]Frostlinie[/b][/font_size]
+[i]Astronomie · Planetenentstehung[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Frostlinie[/b] (Schneelinie) ist die radiale Entfernung von einem Zentralstern, jenseits derer flüchtige Substanzen (H₂O, NH₃, CH₄) unter thermodynamischen Gleichgewichtsbedingungen als Eis kondensieren.
+
+[b]Sonnensystem[/b]
+Die Sonnen-Frostlinie liegt bei ca. 4–5 AU (zwischen [url=body:mars]Mars[/url] und [url=body:jupiter]Jupiter[/url]). Diese Grenze strukturiert die Planetenpopulation:
+[indent]• Innere Region (< 4 AU): felsige, wasserarme Planeten
+• Äußere Region (> 4 AU): eisreiche, massereiche Planeten[/indent]
+
+[b]Planetare Konsequenzen[/b]
+Jenseits der Frostlinie steht erhöhte Feststoffmasse (Eis + Gestein) für die Akkretion zur Verfügung. Dies ermöglicht die schnellere Bildung großer Kerne (10+ Erdmassen), die dann Wasserstoff/Helium akkretieren und zu [b]Gasriesen[/b] werden.
+
+[b]Siehe auch[/b]
+• [url=concept:habitable_zone]Habitable Zone[/url]
+• [url=concept:asteroid_belt]Asteroidengürtel[/url]
+• [url=concept:kuiper_belt]Kuipergürtel[/url]"""
+
+[jupiter_trojans_l4]
+title = "Jupiter Trojaner L4 (Griechen)"
+content = """\
+[font_size=18][b]Jupiter Trojaner L4 — Griechen[/b][/font_size]
+[i]Sonnensystem · Asteroidengruppe[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Griechische Gruppe[/b] (L4) ist eine der beiden Trojaner-Populationen des [url=body:jupiter]Jupiter[/url]. Sie sammelt sich um den vorauslaufenden Lagrangepunkt L4 — 60° vor Jupiter auf seiner Bahn. Wie alle Trojaner befinden sich diese Körper in einer stabilen 1:1-Bahnresonanz mit Jupiter.
+
+[b]Lage[/b]
+[indent]• Lagrangepunkt: L4 (60° vor Jupiter)
+• Mittlere Entfernung zur Sonne: ~5,2 AU
+• Stabile Libration um L4[/indent]
+
+[b]Entstehung[/b]
+Nach dem Nizza-Modell wurden die Trojaner während der Migrationsphase der Gasriesen eingefangen. Die ursprüngliche Population war deutlich größer — ein Großteil wurde durch Gravitationsstreuung während der planetaren Umstrukturierung herausgeworfen.
+
+[b]Bekannte Objekte[/b]
+[indent]• [b]624 Hektor[/b] — größtes bekanntes Trojaner-Objekt (~225 × 400 km, Kontaktzweikörper)
+• [b]588 Achilles[/b] — erstes entdecktes Trojanerobjekt (1906)
+• Die Gruppe ist nach griechischen Helden des Trojanischen Krieges benannt[/indent]
+
+[b]Siehe auch[/b]
+• [url=concept:jupiter_trojans_l5]Jupiter Trojaner L5 (Trojaner)[/url]
+• [url=concept:orbital_resonance]Bahnresonanz[/url]"""
+
+[jupiter_trojans_l5]
+title = "Jupiter Trojaner L5 (Trojaner)"
+content = """\
+[font_size=18][b]Jupiter Trojaner L5 — Trojaner[/b][/font_size]
+[i]Sonnensystem · Asteroidengruppe[/i]
+
+[color=#888888]────────────────────────[/color]
+
+Die [b]Trojaner-Gruppe[/b] (L5) ist die nachlaufende Jupiter-Trojanergruppe, versammelt um den Lagrangepunkt L5 — 60° hinter Jupiter auf seiner Bahn. Zusammen mit der L4-Gruppe (Griechen) bildet sie eine der größten Asteroidenpopulationen im Sonnensystem, mit schätzungsweise einer Million Körper über 1 km Durchmesser.
+
+[b]Lage[/b]
+[indent]• Lagrangepunkt: L5 (60° hinter Jupiter)
+• Mittlere Entfernung zur Sonne: ~5,2 AU
+• Stabile Libration um L5[/indent]
+
+[b]NASA Lucy-Mission[/b]
+Die Sonde [b]Lucy[/b] (Start 2021) ist die erste Mission zu den Jupiter-Trojanern. Sie wird zwischen 2027 und 2033 sieben Trojaner-Objekte aus beiden Gruppen besuchen und damit erstmals direkte Messdaten dieser Urgesteine der Planetenentstehung liefern.
+
+[b]Bekannte Objekte[/b]
+[indent]• Die Gruppe ist nach trojanischen Helden des Trojanischen Krieges benannt
+• [b]617 Patroclus[/b] — Doppelkörper, eines der Lucy-Ziele[/indent]
+
+[b]Siehe auch[/b]
+• [url=concept:jupiter_trojans_l4]Jupiter Trojaner L4 (Griechen)[/url]
+• [url=concept:orbital_resonance]Bahnresonanz[/url]"""

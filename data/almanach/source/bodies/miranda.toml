@@ -1,0 +1,21 @@
+id = "miranda"
+
+description = """\
+[b]Miranda[/b] ist der kleinste der fünf großen Monde des [url=body:uranus]Uranus[/url] und hat eine der geologisch rätselhaftesten Oberflächen im Sonnensystem. Sie zeigt extreme Kontraste: alte kraterreiche Ebenen neben riesigen Canyons, Terrassen und Klippen — darunter Verona Rupes, eine Steilwand von ~20 km Höhe, die größte bekannte Steilklippe im Sonnensystem.
+
+Die drei auffälligsten Strukturen sind die sogenannten [b]Coronae[/b] — Arden, Inverness und Elsinore: großflächige, eiförmige Regionen mit konzentrischen Rillen und Gräben, die in keiner anderen bekannten Welt vorkommen. Sie entstanden wahrscheinlich durch frühe interne Aufheizung, möglicherweise ausgelöst durch eine vergangene Bahnresonanz mit Ariel oder Umbriel, die Gezeitenreibung erzeugte. Miranda wurde 1948 von Gerard Kuiper entdeckt.
+
+[b]Verona Rupes[/b] mit ~20 km Höhe ist die größte bekannte Steilklippe im Sonnensystem. Wegen Mirandas extrem geringer Schwerkraft (0,079 m/s²) würde ein frei fallender Stein ~12 Minuten brauchen, um den Fuß zu erreichen. Voyager 2 ist der einzige Besucher (1986) und fotografierte nur die südliche Hemisphäre — was die nördliche Hälfte verbirgt, bleibt unbekannt.
+
+[b]Etymologie[/b]
+Nach Miranda (Heldin in Shakespeares 'Der Sturm').
+
+[b]Entdeckung[/b]
+Datum: 1948-02-16
+Entdecker: Gerard Kuiper
+"""
+
+[infobox.atmosphere]
+temp_mean = -213
+temp_min = -223
+temp_max = -193

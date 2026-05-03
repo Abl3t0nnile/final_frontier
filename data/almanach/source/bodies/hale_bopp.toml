@@ -1,0 +1,21 @@
+id = "hale_bopp"
+
+description = """\
+[b]C/1995 O1 Hale-Bopp[/b] war einer der hellsten und am längsten sichtbaren Kometen des 20. Jahrhunderts. Er war über 18 Monate mit bloßem Auge sichtbar — ein Rekord in der modernen Astronomie.
+
+Mit einem Kerndurchmesser von ~60 km ist Hale-Bopp einer der größten bekannten Kometen. Seine extreme [url=concept:eccentricity]Exzentrizität[/url] von 0,995 führt ihn auf einer Bahn von nur 0,91 AU (innerhalb der Erdbahn) bis zu ~370 AU (weit jenseits des Kuipergürtels). Die Umlaufzeit beträgt ~2.533 Jahre.
+
+Bei seinem Perihel 1997 entwickelte Hale-Bopp einen spektakulären Doppelschweif: einen blauen Ionenschweif und einen weißen Staubschweif, die deutlich voneinander getrennt waren.
+
+[b]Etymologie[/b]
+Nach Alan Hale (*1958) und Thomas Bopp (1949–2018), amerikanische Amateurastronomen.
+
+[b]Entdeckung[/b]
+Datum: 1995-07-23
+Entdecker: Alan Hale, Thomas Bopp (unabhängig)
+"""
+
+[infobox.atmosphere]
+temp_mean = -100
+temp_min = -250
+temp_max = 50

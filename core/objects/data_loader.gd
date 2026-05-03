@@ -5,7 +5,10 @@
 class_name DataLoader
 extends RefCounted
 
+const AlmanachContentComponentClass = preload("res://core/objects/components/almanach_content_component.gd")
+
 const DEFAULT_DATA_PATH := "res://data/solar_system/solar_system_data.json"
+const ALMANACH_DATA_PATH := "res://data/almanach/almanach_data.json"
 
 
 ## Public Methods
@@ -69,6 +72,37 @@ func save_component(component: GameDataComponent, path: String) -> void:
 	var error := ResourceSaver.save(component, path)
 	if error != OK:
 		push_error("DataLoader: failed to save component to '%s'" % path)
+
+
+func load_almanach_content() -> Dictionary:
+	"""Lädt Almanach-Daten. Gibt Dictionary zurück:
+	{ "bodies": { id: AlmanachContentComponent }, "concepts": Dictionary }"""
+	var result := { "bodies": {}, "concepts": {} }
+
+	var raw: Variant = _load_json_file(ALMANACH_DATA_PATH)
+	if typeof(raw) != TYPE_DICTIONARY:
+		push_warning("DataLoader: almanach data is not a dictionary")
+		return result
+
+	# Body-Content → AlmanachContentComponent
+	var bodies: Dictionary = raw.get("bodies", {})
+	for id: String in bodies:
+		var data: Dictionary = bodies[id]
+		var comp := AlmanachContentComponentClass.new()
+		comp.component_id = "almanach"
+		comp.summary = data.get("summary", "")
+		comp.image = data.get("image", "")
+		comp.infobox = data.get("infobox", {})
+		comp.sections = _to_dict_array(data.get("sections", []))
+		comp.related_concepts = _to_string_array(data.get("related_concepts", []))
+		comp.description = data.get("description", "")
+		comp._is_loaded = true
+		result["bodies"][id] = comp
+
+	# Concepts bleiben Dictionaries (kein eigener Component-Typ nötig)
+	result["concepts"] = raw.get("concepts", {})
+
+	return result
 
 
 ## Private Methods
@@ -185,6 +219,16 @@ func _to_string_array(value: Variant) -> Array[String]:
 		return result
 	for entry in value:
 		result.append(String(entry))
+	return result
+
+
+func _to_dict_array(value: Variant) -> Array[Dictionary]:
+	var result: Array[Dictionary] = []
+	if typeof(value) != TYPE_ARRAY:
+		return result
+	for entry in value:
+		if typeof(entry) == TYPE_DICTIONARY:
+			result.append(entry)
 	return result
 
 

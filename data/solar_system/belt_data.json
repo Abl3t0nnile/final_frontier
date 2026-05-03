@@ -2,7 +2,7 @@
   "belts": [
     {
       "id": "asteroid_belt",
-      "name": "Asteroid Belt",
+      "name": "Asteroidengürtel",
       "parent_id": "sun",
       "reference_body_id": "",
       "inner_radius_km": 329115316,
@@ -23,7 +23,7 @@
     },
     {
       "id": "kuiper_belt",
-      "name": "Kuiper Belt",
+      "name": "Kuiper Gürtel",
       "parent_id": "sun",
       "reference_body_id": "",
       "inner_radius_km": 4487936130,
@@ -65,7 +65,7 @@
     },
     {
       "id": "jupiter_trojans_l4",
-      "name": "Jupiter Trojans L4 (Greeks)",
+      "name": "Jupiter Trojaner L4 (Griechen)",
       "parent_id": "sun",
       "reference_body_id": "jupiter",
       "inner_radius_km": 700000000,
@@ -86,7 +86,7 @@
     },
     {
       "id": "jupiter_trojans_l5",
-      "name": "Jupiter Trojans L5",
+      "name": "Jupiter Trojaner L5",
       "parent_id": "sun",
       "reference_body_id": "jupiter",
       "inner_radius_km": 700000000,
@@ -107,15 +107,15 @@
     },
     {
       "id": "oort_cloud",
-      "name": "Oort Cloud",
+      "name": "Oort Wolke",
       "parent_id": "sun",
       "reference_body_id": "",
       "inner_radius_km": 299195742000,
-      "outer_radius_km": 1495978710000,
+      "outer_radius_km": 2991960000000,
       "angular_offset_rad": 0.0,
       "angular_spread_rad": 6.2832,
-      "min_points": 200,
-      "max_points": 800,
+      "min_points": 100,
+      "max_points": 400,
       "seed": 6,
       "color_rgba": [
         0.2,

@@ -9,6 +9,7 @@ const _BASE := "UILayer/MainDisplay/VFrame/BodyPanel"
 
 ## Viewports
 @onready var _map_subviewport:  SubViewport = $"UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/SubViewport"
+@onready var _map_svc: SubViewportContainer = $"UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer"
 @onready var _body_subviewport: SubViewport = $"UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/SubViewport"
 
 ## Panels
@@ -16,16 +17,20 @@ const _BASE := "UILayer/MainDisplay/VFrame/BodyPanel"
 @onready var _body_view: Control = $"UILayer/MainDisplay/VFrame/BodyPanel/BodyView"
 
 ## Komponenten
-@onready var _clock_control       = $"UILayer/MainDisplay/VFrame/FooterPanel/ClockControl"
+@onready var _clock_control       = $"UILayer/MainDisplay/VFrame/ClockPanel/ClockControl"
 @onready var _nav_panel           = $"UILayer/MainDisplay/VFrame/BodyPanel/NavPanel"
 @onready var _info_panel: InfoPanel = $"UILayer/MainDisplay/VFrame/BodyPanel/InfoPanel"
-@onready var _map_overlay         = $"UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/SubViewport/MapOverlay"
+@onready var _map_overlay         = $"UILayer/MainDisplay/VFrame/BodyPanel/MapView/SubViewportContainer/MapOverlay"
 @onready var _planet_view_overlay = $"UILayer/MainDisplay/VFrame/BodyPanel/BodyView/SubViewportContainer/PlanetViewOverlay"
-@onready var _almanach_panel      = $"UILayer/MainDisplay/VFrame/BodyPanel/AlmanachPanel"
+@onready var _almanach_panel: Almanac = $"UILayer/MainDisplay/VFrame/BodyPanel/Almanac"
 
-var _solar_map:        Node   = null
-var _planet_view:      Node   = null
-var _current_body_id:  String = ""
+var _solar_map:       Node   = null
+var _planet_view:     Node   = null
+var _current_body_id: String = ""
+
+enum ViewMode { MAP, PLANET_VIEW }
+var _view_mode: ViewMode = ViewMode.MAP
+
 
 
 ## Von GameController aufgerufen sobald SolarMap bereit ist.
@@ -38,12 +43,23 @@ func receive_solar_map(map: Node) -> void:
 	_nav_panel.body_focused.connect(_on_nav_body_focused)
 	_map_overlay.setup(map)
 	_map_subviewport.size_changed.connect(_on_viewport_resized)
+	_map_svc.mouse_entered.connect(func() -> void:
+		_solar_map.get_map_controller().set_area_hover_enabled(true))
+	_map_svc.mouse_exited.connect(func() -> void:
+		_solar_map.get_map_controller().set_area_hover_enabled(false))
 	if map.has_signal("body_selected"):
 		map.body_selected.connect(_on_body_selected)
 	if map.has_signal("body_deselected"):
 		map.body_deselected.connect(_on_body_deselected)
+	if map.has_signal("zone_clicked"):
+		map.zone_clicked.connect(_on_area_entry_clicked)
+	if map.has_signal("belt_clicked"):
+		map.belt_clicked.connect(_on_area_entry_clicked)
 	_info_panel.almanach_requested.connect(_on_almanach_requested)
 	_info_panel.zoom_requested.connect(_on_zoom_requested)
+	_info_panel.body_focused.connect(func(id: String) -> void:
+		_solar_map.get_map_controller().center_on_body(id)
+		_on_nav_body_focused(id))
 	_almanach_panel.zoom_requested.connect(_on_zoom_requested)
 	_info_panel.pin_requested.connect(func(id: String) -> void:
 		_solar_map.pin_body(id))
@@ -56,7 +72,7 @@ func receive_solar_map(map: Node) -> void:
 		if id == _current_body_id:
 			_info_panel.set_pinned(false))
 	_planet_view_overlay.setup(map)
-	_planet_view_overlay.close_requested.connect(_close_zoom)
+	_planet_view_overlay.close_requested.connect(_on_close_planet_view)
 	_planet_view_overlay.info_requested.connect(_on_planet_view_info_requested)
 
 
@@ -68,6 +84,92 @@ func receive_planet_view(planet_view: Node) -> void:
 	_body_view.visible = false
 
 
+# ── Panel-Regeln ───────────────────────────────────────────────────────────────
+
+func _set_view(mode: ViewMode) -> void:
+	_view_mode = mode
+	_map_view.visible            = (mode == ViewMode.MAP)
+	_body_view.visible           = (mode == ViewMode.PLANET_VIEW)
+	_planet_view_overlay.visible = (mode == ViewMode.PLANET_VIEW)
+	if mode == ViewMode.PLANET_VIEW:
+		_nav_panel.visible = false  # Regel: Nav nie in Planet View
+
+
+func _set_info_panel_visible(show: bool) -> void:
+	if show and _almanach_panel and _almanach_panel.visible:
+		return  # Regel: Info und Almanac exklusiv
+	_info_panel.visible = show
+
+
+func _set_almanac_visible(show: bool) -> void:
+	if _almanach_panel == null:
+		return
+	_almanach_panel.visible = show
+	if show:
+		_info_panel.visible = false  # Regel: Info und Almanac exklusiv
+		_nav_panel.visible  = false  # Regel: Nav nie mit Almanac
+
+
+# ── Öffentliches Interface (auch für künftigen InputHandler) ───────────────────
+
+func toggle_nav_panel() -> void:
+	if _view_mode == ViewMode.PLANET_VIEW:
+		return
+	if _almanach_panel and _almanach_panel.visible:
+		return
+	_nav_panel.visible = not _nav_panel.visible
+
+
+func toggle_info_panel() -> void:
+	if _almanach_panel and _almanach_panel.visible:
+		_set_almanac_visible(false)
+		_set_info_panel_visible(true)
+	else:
+		_set_info_panel_visible(not _info_panel.visible)
+
+
+func toggle_almanac() -> void:
+	if _almanach_panel == null:
+		return
+	if _almanach_panel.visible:
+		_set_almanac_visible(false)
+	else:
+		if not _almanach_panel.has_history():
+			_almanach_panel.open_home()
+		_set_almanac_visible(true)
+
+
+func close_overlay() -> void:
+	_set_almanac_visible(false)
+	if _view_mode == ViewMode.PLANET_VIEW:
+		_set_view(ViewMode.MAP)
+		if not _current_body_id.is_empty():
+			_set_info_panel_visible(true)
+	elif _view_mode == ViewMode.MAP:
+		# Im MapView: Panel schließen und Marker deselectieren
+		_set_info_panel_visible(false)
+		if not _current_body_id.is_empty():
+			_solar_map.deselect_body()
+			_current_body_id = ""
+
+
+func toggle_planet_view() -> void:
+	if _view_mode == ViewMode.PLANET_VIEW:
+		_set_view(ViewMode.MAP)
+	elif not _current_body_id.is_empty() and _planet_view != null:
+		_planet_view.call("load_body", _current_body_id)
+		_planet_view_overlay.load_body(_current_body_id)
+		# Info → Almanac beim Wechsel zu Planet View
+		if _info_panel.visible and _almanach_panel:
+			_almanach_panel.open_body(_current_body_id)
+			_set_almanac_visible(true)
+		_set_view(ViewMode.PLANET_VIEW)
+
+
+func toggle_time() -> void:
+	_clock_control.toggle_time()
+
+
 # ── Body-Selektion ─────────────────────────────────────────────────────────────
 
 func _on_nav_body_focused(id: String) -> void:
@@ -77,7 +179,7 @@ func _on_nav_body_focused(id: String) -> void:
 	if _almanach_panel:
 		_almanach_panel.open_body(id)
 	if not (_almanach_panel and _almanach_panel.visible):
-		_info_panel.visible = true
+		_set_info_panel_visible(true)
 	if _body_view.visible and _planet_view != null:
 		_planet_view.call("load_body", id)
 		_planet_view_overlay.load_body(id)
@@ -90,22 +192,29 @@ func _on_body_selected(id: String) -> void:
 	if _almanach_panel:
 		_almanach_panel.open_body(id)
 	if not (_almanach_panel and _almanach_panel.visible):
-		_info_panel.visible = true
+		_set_info_panel_visible(true)
 
 
 func _on_body_deselected() -> void:
 	_current_body_id = ""
 	_info_panel.clear()
-	_info_panel.visible = false
+	_set_info_panel_visible(false)
+
+
+func _on_area_entry_clicked(id: String) -> void:
+	if _almanach_panel:
+		_almanach_panel.open_concept(id)
+		_set_almanac_visible(true)
+
+
 
 
 # ── Panel-Übergänge ────────────────────────────────────────────────────────────
 
 func _on_almanach_requested(id: String) -> void:
-	_info_panel.visible = false
 	if _almanach_panel:
 		_almanach_panel.open_body(id)
-		_almanach_panel.visible = true
+		_set_almanac_visible(true)
 
 
 func _on_zoom_requested(id: String) -> void:
@@ -113,33 +222,22 @@ func _on_zoom_requested(id: String) -> void:
 		return
 	_planet_view.call("load_body", id)
 	_planet_view_overlay.load_body(id)
-	_body_view.visible = true
-	_map_view.visible = false
-	_planet_view_overlay.visible = true
-	_info_panel.visible = false
 	if _almanach_panel:
 		_almanach_panel.open_body(id)
-		_almanach_panel.visible = true
+	_set_almanac_visible(true)
+	_set_view(ViewMode.PLANET_VIEW)
 
 
 func _on_planet_view_info_requested(id: String) -> void:
 	if _almanach_panel:
 		_almanach_panel.open_body(id)
-		_almanach_panel.visible = not _almanach_panel.visible
-		if _almanach_panel.visible:
-			_info_panel.visible = false
+		_set_almanac_visible(not _almanach_panel.visible)
 
 
-func _close_zoom(hide_almanach: bool = false) -> void:
-	if not _body_view.visible:
-		return
-	_body_view.visible = false
-	_planet_view_overlay.visible = false
-	_map_view.visible = true
-	if hide_almanach and _almanach_panel:
-		_almanach_panel.visible = false
+func _on_close_planet_view() -> void:
+	_set_view(ViewMode.MAP)
 	if not _current_body_id.is_empty() and not (_almanach_panel and _almanach_panel.visible):
-		_info_panel.visible = true
+		_set_info_panel_visible(true)
 
 
 # ── Resize ─────────────────────────────────────────────────────────────────────
@@ -155,21 +253,30 @@ func _on_viewport_resized() -> void:
 # ── Input ──────────────────────────────────────────────────────────────────────
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and not event.echo:
-		if event.keycode == KEY_ESCAPE:
-			_close_zoom(true)
-		if event.keycode == KEY_N:
-			_nav_panel.visible = not _nav_panel.visible
-		if event.keycode == KEY_I and _map_view.visible:
-			if _almanach_panel and _almanach_panel.visible:
-				_almanach_panel.visible = false
-				if not _current_body_id.is_empty():
-					_info_panel.visible = true
-			else:
-				_info_panel.visible = not _info_panel.visible
-		if event.keycode == KEY_L and _almanach_panel:
-			_almanach_panel.visible = not _almanach_panel.visible
-			if _almanach_panel.visible:
-				_info_panel.visible = false
-				if not _almanach_panel.has_history():
-					_almanach_panel.open_home()
+	if not (event is InputEventKey and event.pressed and not event.echo):
+		return
+	if event.is_action_pressed("ui_toggle_nav"):
+		toggle_nav_panel()
+	elif event.is_action_pressed("ui_toggle_info") and _view_mode == ViewMode.MAP:
+		toggle_info_panel()
+	elif event.is_action_pressed("ui_toggle_almanac"):
+		toggle_almanac()
+	elif event.is_action_pressed("ui_toggle_planet_view"):
+		toggle_planet_view()
+	elif event.is_action_pressed("time_jump_live"):
+		_clock_control.jump_to_live()
+	elif event.is_action_pressed("time_play_pause"):
+		toggle_time()
+	elif event.is_action_pressed("time_forward"):
+		_clock_control.play_forward()
+	elif event.is_action_pressed("time_backward"):
+		_clock_control.play_backward()
+	elif event.is_action_pressed("time_scale_up"):
+		_clock_control.time_scale_up()
+	elif event.is_action_pressed("time_scale_down"):
+		_clock_control.time_scale_down()
+	else:
+		for i in range(5):
+			if event.is_action_pressed("time_scale_%d" % (i + 1)):
+				_clock_control.time_scale_set(i)
+				return

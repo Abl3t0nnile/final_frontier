@@ -4,6 +4,10 @@
 class_name ZoneManager
 extends Node
 
+signal zone_clicked(zone_id: String)
+signal zone_hovered(zone_id: String, display_name: String)
+signal zone_unhovered(zone_id: String)
+
 const DEFAULT_DATA_PATH := "res://data/solar_system/zone_data.json"
 
 var _zone_layer: Node2D          = null
@@ -24,6 +28,9 @@ func setup(zone_layer: Node2D, map_transform: MapTransform, model: SolarSystemMo
 		var renderer := ZoneRenderer.new()
 		_zone_layer.add_child(renderer)
 		renderer.setup(def, _map_transform)
+		renderer.clicked.connect(func(id: String): zone_clicked.emit(id))
+		renderer.hovered.connect(func(id: String, display_name: String): zone_hovered.emit(id, display_name))
+		renderer.unhovered.connect(func(id: String): zone_unhovered.emit(id))
 		_renderers.append(renderer)
 
 
@@ -44,6 +51,27 @@ func update_zones() -> void:
 func update_zoom(km_per_px: float) -> void:
 	for renderer in _renderers:
 		renderer.notify_zoom_changed(km_per_px)
+
+
+func set_hover_active(active: bool) -> void:
+	for renderer in _renderers:
+		(renderer as ZoneRenderer).hover_active = active
+
+
+func restore_hovered_ids(ids: Array) -> void:
+	for i in _renderers.size():
+		if _zone_defs[i].id in ids:
+			var r := _renderers[i] as ZoneRenderer
+			r._is_hovered = true
+			r.queue_redraw()
+
+
+func reset_hover_state() -> void:
+	for renderer in _renderers:
+		var r := renderer as ZoneRenderer
+		if r._is_hovered:
+			r._is_hovered = false
+			r.queue_redraw()
 
 
 func get_renderers() -> Array:
@@ -104,6 +132,7 @@ func _build_zone_def(data: Dictionary) -> ZoneDef:
 	def.radius_km        = float(data.get("radius_km", 0.0))
 	def.inner_radius_km  = float(data.get("inner_radius_km", 0.0))
 	def.outer_radius_km  = float(data.get("outer_radius_km", 0.0))
+	def.line_width_px    = float(data.get("line_width_px", 2.0))
 	def.color_rgba       = _parse_color(data.get("color_rgba", [0.5, 0.5, 1.0, 0.1]))
 	def.border_color_rgba = _parse_color(data.get("border_color_rgba", [0.5, 0.5, 1.0, 0.4]))
 	return def

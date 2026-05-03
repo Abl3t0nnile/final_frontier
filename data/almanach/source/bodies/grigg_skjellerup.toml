@@ -1,0 +1,21 @@
+id = "grigg_skjellerup"
+
+description = """\
+[b]26P/Grigg-Skjellerup[/b] ist ein kurzperiodischer Komet mit einer Umlaufzeit von ~5,3 Jahren. Er war das zweite Ziel der ESA-Sonde Giotto, die ihn 1992 nach ihrer berühmten [url=body:halley]Halley[/url]-Begegnung besuchte — trotz Beschädigungen durch den Halley-Flyby.
+
+Der Komet hat einen der kleinsten bekannten aktiven Kerne mit nur ~2,6 km Durchmesser. Seine niedrige Aktivität machte ihn zu einem schwierigen, aber wissenschaftlich wertvollen Ziel.
+
+Grigg-Skjellerup ist die Quelle der [b]Pi-Puppiden[/b], eines schwachen Meteorschauers im April.
+
+[b]Etymologie[/b]
+Nach John Grigg (1838–1920) und Frank Skjellerup (1875–1952), neuseeländischer und australischer Astronom.
+
+[b]Entdeckung[/b]
+Datum: 1902-07-23 (Grigg), 1922-05-17 (Skjellerup, Wiederentdeckung)
+Entdecker: John Grigg
+"""
+
+[infobox.atmosphere]
+temp_mean = -50
+temp_min = -70
+temp_max = 55

@@ -38,6 +38,19 @@ func setup(clock: SimClock, bodies: Array[BodyDef]) -> void:
 		_clock.tick.connect(_on_clock_tick)
 
 
+func set_game_clock_enabled(enabled: bool) -> void:
+	"""GameClock-Updates aktivieren oder deaktivieren.
+	Wird von MapController genutzt: Map-View wird ausschließlich von MapClock gesteuert."""
+	if _clock == null:
+		return
+	if enabled:
+		if not _clock.tick.is_connected(_on_clock_tick):
+			_clock.tick.connect(_on_clock_tick)
+	else:
+		if _clock.tick.is_connected(_on_clock_tick):
+			_clock.tick.disconnect(_on_clock_tick)
+
+
 func get_body(id: String) -> BodyDef:
 	"""Holt BodyDef nach ID"""
 	return _bodies_by_id.get(id, null)

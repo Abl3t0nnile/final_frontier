@@ -59,7 +59,6 @@ func _on_zoom_changed(km_per_px: float) -> void:
 
 func _on_panned() -> void:
 	_follow_manager.stop_following()
-	_interaction_manager.deselect_current()
 
 
 func _refresh_culling(_id: String = "") -> void:

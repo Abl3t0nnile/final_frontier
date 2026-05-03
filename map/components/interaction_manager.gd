@@ -86,9 +86,19 @@ func clear_all_pins() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	# Right-click auf leeren Raum → Deselect
+	if event is InputEventMouseButton:
+		var mb := event as InputEventMouseButton
+		if mb.button_index == MOUSE_BUTTON_RIGHT and mb.pressed:
+			if _selected_id != "":
+				deselect_current()
+				get_viewport().set_input_as_handled()
+		return
+	
+	# Keyboard: Pin/Unpin
 	if not (event is InputEventKey and event.pressed and not event.echo):
 		return
-	if (event as InputEventKey).keycode != KEY_P:
+	if not event.is_action_pressed("entity_pin"):
 		return
 	if _selected_id != "":
 		if is_pinned(_selected_id):

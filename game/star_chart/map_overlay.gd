@@ -8,15 +8,51 @@ extends MarginContainer
 @onready var _title:       Label       = $MapOverlay/TopLeftPanel/PanelContainer/Title
 @onready var _scale_value: Label       = $MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer/ScaleValue
 @onready var _km_px_value: Label       = $MapOverlay/TopLeftPanel/MarginContainer/HBoxContainer/KmPxValue
-@onready var _focus_box:   VBoxContainer = $MapOverlay/TopRightPanel/Focus
-@onready var _focus_name:  Label       = $MapOverlay/TopRightPanel/Focus/FocusDisplay/BodyNameLabel
-@onready var _pins_box:    VBoxContainer = $MapOverlay/TopRightPanel/Pins
-@onready var _pins_name:   Label       = $MapOverlay/TopRightPanel/Pins/PinnedDisplay/BodyNameLabel
-@onready var _pos_x:       Label       = $MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer/PosXValue
-@onready var _pos_y:       Label       = $MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer/PosYValue
+@onready var _focus_box:   VBoxContainer = $MapOverlay/FocusList/Focus
+@onready var _focus_name:  Label       = $MapOverlay/FocusList/Focus/FocusDisplay/BodyNameLabel
+@onready var _pins_box:    VBoxContainer = $MapOverlay/FocusList/Pins
+@onready var _pins_name:   Label       = $MapOverlay/FocusList/Pins/PinnedDisplay/BodyNameLabel
+@onready var _pos_x:        Label      = $MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer/PosXValue
+@onready var _pos_y:        Label      = $MapOverlay/BottomLeftPanel/MarginContainer/HBoxContainer/PosYValue
+@onready var _filter_btn:   MenuButton  = $MapOverlay/MenuButtons/FilterButton
+@onready var _grid_btn:     Button      = $MapOverlay/MenuButtons/GridButton
+@onready var _tooltip:      Label       = $MouseLayer/MouseLabel
+@onready var _key_v_icon:   TextureRect = $MapOverlay/ButtonDisplay/KeyVIcon
+@onready var _view_label:   Label       = $MapOverlay/ButtonDisplay/ViewLabel
 
 var _solar_map: Node  = null
 var _km_per_px: float = 1_000_000.0
+
+
+func _ready() -> void:
+	_set_mouse_ignore(self)
+	var popup := _filter_btn.get_popup()
+	popup.hide_on_checkable_item_selection = false
+	popup.hide_on_item_selection           = false
+	popup.index_pressed.connect(_on_filter_index_pressed)
+	var p := get_parent() as Control
+	if p:
+		p.resized.connect(_fit_to_parent)
+		call_deferred("_fit_to_parent")
+	if _tooltip:
+		_tooltip.mouse_filter   = Control.MOUSE_FILTER_IGNORE
+		_tooltip.uppercase      = true
+		_tooltip.label_settings = load("res://ui/resources/label_settings/label_setting_map_tooltip.tres")
+		_tooltip.visible        = false
+
+
+func _set_mouse_ignore(node: Node) -> void:
+	if node is Control and not node is BaseButton:
+		(node as Control).mouse_filter = Control.MOUSE_FILTER_IGNORE
+	for child in node.get_children():
+		_set_mouse_ignore(child)
+
+
+func _fit_to_parent() -> void:
+	var p := get_parent() as Control
+	if p:
+		position = Vector2.ZERO
+		size = p.size
 
 
 func setup(solar_map: Node) -> void:
@@ -24,11 +60,18 @@ func setup(solar_map: Node) -> void:
 	_km_per_px = _solar_map.get_zoom_level()
 	_connect_signals()
 	_update_scale_display()
-	if _focus_box: _focus_box.visible = false
-	if _pins_box:  _pins_box.visible  = false
+	_grid_btn.toggled.connect(func(on: bool) -> void:
+		_solar_map.get_map_controller().set_grid_visible(on))
+	_grid_btn.button_pressed = false
+	if _focus_box:   _focus_box.visible  = false
+	if _pins_box:    _pins_box.visible   = false
+	if _key_v_icon:  _key_v_icon.visible = false
+	if _view_label:  _view_label.visible = false
 
 
 func _process(_delta: float) -> void:
+	if _tooltip:
+		_tooltip.position = get_viewport().get_mouse_position() + Vector2(14.0, -20.0)
 	if _solar_map == null:
 		return
 	_update_cursor_position()
@@ -47,6 +90,10 @@ func _connect_signals() -> void:
 		_solar_map.body_pinned.connect(_on_body_pinned)
 	if _solar_map.has_signal("body_unpinned"):
 		_solar_map.body_unpinned.connect(_on_body_unpinned)
+	if _solar_map.has_signal("area_hovered"):
+		_solar_map.area_hovered.connect(_on_area_hovered)
+	if _solar_map.has_signal("area_unhovered"):
+		_solar_map.area_unhovered.connect(_on_area_unhovered)
 
 
 func _on_zoom_changed(km_per_px: float) -> void:
@@ -62,6 +109,8 @@ func _on_body_selected(id: String) -> void:
 	_focus_box.visible = true
 	if _title:
 		_title.text = _system_title(def)
+	if _key_v_icon:  _key_v_icon.visible = true
+	if _view_label:  _view_label.visible = true
 
 
 func _on_body_deselected() -> void:
@@ -69,6 +118,8 @@ func _on_body_deselected() -> void:
 		_focus_box.visible = false
 	if _title:
 		_title.text = "Solar System"
+	if _key_v_icon:  _key_v_icon.visible = false
+	if _view_label:  _view_label.visible = false
 
 
 func _on_body_pinned(_id: String) -> void:
@@ -129,3 +180,24 @@ func _refresh_pins() -> void:
 		names.append(def.name if def else id)
 	_pins_name.text   = "\n".join(names)
 	_pins_box.visible = true
+
+
+func _on_area_hovered(display_name: String) -> void:
+	if _tooltip:
+		_tooltip.text    = display_name
+		_tooltip.visible = true
+
+
+func _on_area_unhovered() -> void:
+	if _tooltip:
+		_tooltip.visible = false
+
+
+func _on_filter_index_pressed(index: int) -> void:
+	var popup := _filter_btn.get_popup()
+	if popup.is_item_separator(index):
+		return
+	var new_state := not popup.is_item_checked(index)
+	popup.set_item_checked(index, new_state)
+	if _solar_map:
+		_solar_map.get_map_controller().set_filter(popup.get_item_id(index), new_state)

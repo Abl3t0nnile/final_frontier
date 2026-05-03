@@ -5,6 +5,10 @@
 class_name PointCloudManager
 extends Node
 
+signal cloud_clicked(belt_id: String)
+signal cloud_hovered(belt_id: String, display_name: String)
+signal cloud_unhovered(belt_id: String)
+
 # Config (sets BeltRenderer parameters)
 var zoom_exp_near: float   = 5.0
 var zoom_exp_mid: float    = 6.5
@@ -36,6 +40,9 @@ func setup(layer: Node2D, map_transform: MapTransform, model: SolarSystemModel,
 		_layer.add_child(renderer)
 		_apply_config(renderer)
 		renderer.setup(def, _map_transform)
+		renderer.clicked.connect(func(id: String): cloud_clicked.emit(id))
+		renderer.hovered.connect(func(id: String, display_name: String): cloud_hovered.emit(id, display_name))
+		renderer.unhovered.connect(func(id: String): cloud_unhovered.emit(id))
 		_renderers.append(renderer)
 
 
@@ -65,6 +72,27 @@ func update_positions() -> void:
 func update_zoom(km_per_px: float) -> void:
 	for renderer in _renderers:
 		renderer.notify_zoom_changed(km_per_px)
+
+
+func set_hover_active(active: bool) -> void:
+	for renderer in _renderers:
+		(renderer as BeltRenderer).hover_active = active
+
+
+func restore_hovered_ids(ids: Array) -> void:
+	for i in _renderers.size():
+		if _defs[i].id in ids:
+			var r := _renderers[i] as BeltRenderer
+			r._is_hovered = true
+			r._mmi.self_modulate = Color(1.4, 1.4, 1.4, 1.0)
+
+
+func reset_hover_state() -> void:
+	for renderer in _renderers:
+		var r := renderer as BeltRenderer
+		if r._is_hovered:
+			r._is_hovered = false
+			r._mmi.self_modulate = Color.WHITE
 
 
 func get_renderers() -> Array:

@@ -5,24 +5,6 @@ class_name PlanetView
 extends Control
 
 
-const _TEXTURE_BASE := "res://assets/textures/planets/16_levels/"
-const _BODY_TEXTURES: Dictionary = {
-	"sun":      { "surface": "2k_sun.png" },
-	"mercury":  { "surface": "2k_mercury.png" },
-	"venus":    { "surface": "black_surface.png", "cloud": "2k_venus_atmosphere.png" },
-	"terra":    { "surface": "2k_earth_daymap.png", "cloud": "2k_earth_clouds.png" },
-	"mars":     { "surface": "2k_mars.png" },
-	"jupiter":  { "surface": "black_surface.png", "cloud": "2k_jupiter.png" },
-	"saturn":   { "surface": "black_surface.png", "cloud": "2k_saturn.png" },
-	"uranus":   { "surface": "black_surface.png", "cloud": "2k_uranus.png" },
-	"neptune":  { "surface": "black_surface.png", "cloud": "2k_neptune.png" },
-	"moon":     { "surface": "2k_moon.png" },
-	"ceres":    { "surface": "2k_ceres.png" },
-	"eris":     { "surface": "2k_eris.png" },
-	"haumea":   { "surface": "2k_haumea.png" },
-	"makemake": { "surface": "2k_makemake.png" },
-	"pluto":    { "surface": "2k_pluto.png" },
-}
 
 @onready var _planet_viewer:  PlanetViewer = $PlanetViewer
 @onready var _missing_label:  Label        = $MissingLabel
@@ -48,22 +30,7 @@ func _update_layout() -> void:
 
 
 func load_body(id: String) -> void:
-	var entry: Dictionary = _BODY_TEXTURES.get(id, {})
-	_planet_viewer.use_sun_shader = (id == "sun")
-	if entry.is_empty():
-		_planet_viewer.visible = false
-		if _missing_label:
-			_missing_label.visible = true
-		_planet_viewer.surface_texture = null
-		_planet_viewer.cloud_enabled   = false
-		return
-	_planet_viewer.visible = true
+	var found := _planet_viewer.load_body(id)
+	_planet_viewer.visible = found
 	if _missing_label:
-		_missing_label.visible = false
-	_planet_viewer.surface_texture = load(_TEXTURE_BASE + entry.get("surface", "black_surface.png")) as Texture2D
-	if entry.has("cloud"):
-		_planet_viewer.cloud_texture = load(_TEXTURE_BASE + entry["cloud"]) as Texture2D
-		_planet_viewer.cloud_enabled = true
-	else:
-		_planet_viewer.cloud_texture = null
-		_planet_viewer.cloud_enabled = false
+		_missing_label.visible = not found

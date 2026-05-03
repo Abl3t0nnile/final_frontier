@@ -1,0 +1,21 @@
+id = "metis"
+
+description = """\
+[b]Metis[/b] ist der innerste bekannte Mond des [url=body:jupiter]Jupiter[/url] und liegt innerhalb der [url=concept:roche_limit]Roche-Grenze[/url] des Planeten. Er ist damit kein stabiler Körper auf geologischen Zeitskalen — die Gezeitenkräfte Jupiters könnten ihn letztlich zerreißen.
+
+Metis trägt maßgeblich zum [b]Hauptring[/b] des Jupitersystems bei: Mikrometeoriteneinschläge schlagen Staub von seiner Oberfläche, der durch Jupiters Magnetfeld in den Ring eingespeist wird. Er ist unregelmäßig geformt (~60 × 40 × 34 km), dunkel (Albedo ~0,06) und wurde von Voyager 1 entdeckt. Die Oberfläche ist stark kraternarbt.
+
+Metis umrundet Jupiter in nur ~7,1 Stunden — schneller als Jupiter selbst rotiert (9,9 Stunden). Da er innerhalb der [url=concept:roche_limit]Roche-Grenze[/url] liegt, übersteigen Jupiters Gezeitenkräfte die Selbstgravitation eines losen Schüttmaterials. Metis überlebt wahrscheinlich nur, weil er ein ausreichend kompakter, festerer Körper ist — auf sehr langen Zeitskalen wird die Gezeiteninduktion seine Bahn weiter senken und ihn dem Zerfall entgegentreiben.
+
+[b]Etymologie[/b]
+After Μῆτις (Mē̂tis), Titanin der List, erste Gemahlin Zeus', Mutter Athenes.
+
+[b]Entdeckung[/b]
+Datum: 1979-03-04 (Voyager 1)
+Entdecker: Stephen Synnott (Voyager 1)
+"""
+
+[infobox.atmosphere]
+temp_mean = -163
+temp_min = -180
+temp_max = -108
